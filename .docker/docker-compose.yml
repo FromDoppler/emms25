@@ -1,0 +1,99 @@
+services:
+
+  web:
+    build:
+      context: ./config/php
+    container_name: web_${COMPOSE_PROJECT_NAME}
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      ID_SPREADSHEET: ${ID_SPREADSHEET}
+      ID_SPREADSHEET_VIP: ${ID_SPREADSHEET_VIP}
+      ID_SPREADSHEET_DT_VIP: ${ID_SPREADSHEET_DT_VIP}
+      ACCOUNT_DOPPLER: ${ACCOUNT_DOPPLER}
+      API_KEY_DOPPLER: ${API_KEY_DOPPLER}
+      API_KEY_WIX: ${API_KEY_WIX}
+      WIX_PLAN_INDIVIDUAL_ID: ${WIX_PLAN_INDIVIDUAL_ID}
+      WIX_PLAN_INVITADO_ID: ${WIX_PLAN_INVITADO_ID}
+      WIX_PLAN_PACK_EMPRESA_BASIC_ID: ${WIX_PLAN_PACK_EMPRESA_BASIC_ID}
+      WIX_PLAN_PACK_EMPRESA_FULL_ID: ${WIX_PLAN_PACK_EMPRESA_FULL_ID}
+      WIX_CLIENT_ID: ${WIX_CLIENT_ID}
+      WIX_ACCOUNT_ID: ${WIX_ACCOUNT_ID}
+      WIX_SITE_ID: ${WIX_SITE_ID}
+      ACCOUNT_RELAY: ${ACCOUNT_RELAY}
+      API_KEY_RELAY: ${API_KEY_RELAY}
+      CONSUMER_KEY: ${CONSUMER_KEY}
+      CONSUMER_SECRET: ${CONSUMER_SECRET}
+      OATH_TOKEN: ${OATH_TOKEN}
+      OATH_TOKEN_SECRET : ${OATH_TOKEN_SECRET}
+      BEARER_TOKEN : ${BEARER_TOKEN}
+      ADMIN_RESTRICTED_SERVERS: ${ADMIN_RESTRICTED_SERVERS}
+      ADMIN_ALLOW_IPS: ${ADMIN_ALLOW_IPS}
+      SECRET_REFRESH: ${SECRET_REFRESH}
+      STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY}
+      STRIPE_URL_SERVER: ${STRIPE_URL_SERVER}
+    volumes:
+      - ${REPO}:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - emmsnetwork
+
+  db:
+    container_name: db_${COMPOSE_PROJECT_NAME}
+    image: mariadb:10.5.18
+    #command: --lower_case_table_names=1
+    volumes:
+      - ./db/:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+        - ${MYSQL_PORT}:3306
+    networks:
+      - emmsnetwork
+
+  phpmyadmin:
+    container_name: phpmyadmin_${COMPOSE_PROJECT_NAME}
+    image: phpmyadmin/phpmyadmin:5.1.3
+    environment:
+      PMA_USER:  ${PMA_USER}
+    ports:
+      - ${PMA_PORT}:80
+    depends_on:
+      - db
+    networks:
+      - emmsnetwork
+
+  nginx:
+    build:
+      context: ./config/nginx
+      args:
+        WEB_PORT: ${WEB_PORT}
+    container_name: nginx_${COMPOSE_PROJECT_NAME}
+    depends_on:
+      - web
+    ports:
+      - ${WEB_PORT}:80
+    volumes:
+      - ${REPO}:/var/www/html
+      - ${NGINX_LOG_DIR}:/var/log/nginx
+      - ${CERTS_DIR}:/etc/letsencrypt
+    networks:
+      - emmsnetwork
+
+  memcached:
+    container_name: memcached
+    image: memcached:latest
+    ports:
+        - "11211:11211"
+    networks:
+      - emmsnetwork
+networks:
+  emmsnetwork:
+    driver: bridge

@@ -1,0 +1,338 @@
+.emms__centralvideo {
+    padding: 70px 0;
+    position: relative;
+}
+
+.emms__centralvideo .emms__centralvideo-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.emms__centralvideo.emms__centralvideo--live {
+    margin-bottom: 60px;
+}
+
+.emms__container--lg--column .emms__centralvideo__video {
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.emms__centralvideo .emms__container--lg {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.emms__centralvideo .emms__container--lg.emms__container--lg--column {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-direction: column;
+}
+
+.emms__centralvideo__head {
+    margin: 0 0 70px 0;
+    text-align: center;
+}
+
+.emms__centralvideo__head h2 {
+    font-size: 46px;
+    line-height: 46px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    max-width: 606px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+}
+
+.emms__centralvideo__head span {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #333333;
+    margin: 0 auto;
+    max-width: 850px;
+}
+
+.emms__centralvideo__title {
+    width: 50%;
+    animation-delay: .1s;
+}
+
+.emms__container--lg--column .emms__centralvideo__title {
+    text-align: center;
+    width: 67%;
+}
+
+.emms__container--lg--column .emms__centralvideo__title h2 {
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 21px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.emms__container--lg--column .emms__centralvideo__title p {
+    font-size: 15px;
+    line-height: 24px;
+    color: #333333;
+    max-width: 552px;
+    margin: 0 auto;
+}
+
+.emms__centralvideo__title h2 {
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 700;
+    color: #333333;
+    max-width: 552px;
+    margin: 0 0 18px 0;
+}
+
+.emms__centralvideo__title p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.emms__centralvideo .emms__cta {
+    margin: 30px 0 0 0;
+}
+
+.emms__centralvideo__list {
+    width: 33%;
+}
+
+.emms__centralvideo__list li {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 0 0 40px;
+    margin: 0 0 10px 0;
+    position: relative;
+}
+
+
+ul.emms__centralvideo__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background: url("../../../img/icons/icon-check--violet.svg") no-repeat;
+    background-size: contain;
+}
+
+ul.emms__centralvideo__list.emms__centralvideo__list--live li::before {
+    background: url("../../../img/icons/icon-check--black--rounded.svg") no-repeat;
+}
+
+.emms__centralvideo__list.emms__centralvideo__list--live li em {
+    color: #242424;
+    font-weight: bold;
+}
+
+.emms__centralvideo__list li em {
+    font-style: normal;
+    color: #7D04F6;
+}
+
+.emms__centralvideo__tag-play {
+    font-size: 13px;
+    line-height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    background: #7D04F6;
+    position: relative;
+    padding: 0 10px 0 37px;
+    display: inline-block;
+    margin: 0 0 30px 0;
+}
+
+.emms__centralvideo__tag-play.emms__centralvideo__tag-play--live {
+    background: #242424;
+}
+
+.emms__centralvideo__tag-play.tag-play--playable {
+    cursor: pointer;
+}
+
+
+.emms__centralvideo__tag-play.emms__centralvideo__tag-play--live::after {
+    border-left: 15px solid #242424;
+}
+
+.emms__centralvideo__tag-play::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid #7d04f6;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.emms__centralvideo__tag-play::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background: url("../../../img/icons/icon-play-video.svg") no-repeat;
+    background-size: contain;
+}
+
+.emms__centralvideo__video {
+    width: 50%;
+    position: relative;
+    animation-delay: .2s;
+}
+
+.emms__centralvideo__video.lg {
+    width: 67%;
+}
+
+.emms__centralvideo__video iframe,
+.emms__centralvideo__video video {
+    width: 100%;
+    background: #000;
+    box-shadow: -20px 15px 0 #310e44;
+    min-height: 477px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .emms__centralvideo__video iframe,
+    .emms__centralvideo__video video {
+        box-shadow: -11px 9px 0 #310e44;
+        min-height: unset;
+    }
+}
+
+.emms__centralvideo__video span {
+    position: absolute;
+    left: -22px;
+    bottom: -18px;
+    width: 100%;
+    height: 100%;
+    background: #310E44;
+    z-index: -1;
+}
+
+.emms__centralvideo__bottom {
+    margin: 90px 0 -85px 0;
+    border-top: solid 1px #EF2AAC;
+    border-bottom: solid 1px #EF2AAC;
+    height: 80px;
+    position: relative;
+}
+
+.emms__centralvideo__bottom__container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    animation-delay: .4s;
+}
+
+.emms__centralvideo__bottom__container p {
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #ef2aac;
+    white-space: nowrap;
+    margin: 0 5px 0 0;
+    animation: text-bottom 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes text-bottom {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Dark version */
+
+.emms__centralvideo--dark .emms__centralvideo__title h2,
+.emms__centralvideo--dark .emms__centralvideo__title p {
+    color: #ffffff;
+}
+
+
+
+/* ---------------------------------------------- Responsive ---------------------------------------------- */
+
+@media(max-width:992px) {
+    .emms__centralvideo .emms__container--lg {
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .emms__centralvideo .emms__container--lg.reverse-mb {
+        flex-direction: column-reverse;
+    }
+
+    .emms__container--lg--column .emms__centralvideo__title {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .emms__centralvideo__title h2 {
+        margin: 0 auto 18px auto;
+    }
+
+    .emms__centralvideo__list {
+        width: 100%;
+    }
+
+    .emms__centralvideo__video,
+    .emms__centralvideo__video.lg {
+        width: 100%;
+    }
+}
+
+@media(max-width:620px) {
+
+    .emms__centralvideo__head {
+        margin: 0 auto 40px auto;
+        max-width: 90%;
+    }
+
+    .emms__centralvideo__head h2 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .emms__centralvideo__title h2 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .emms__centralvideo__video span {
+        left: -12px;
+        bottom: -8px;
+    }
+}

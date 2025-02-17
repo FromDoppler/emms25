@@ -1,0 +1,540 @@
+.emms__hero-registration {
+    padding: 190px 0 88px 0;
+    background: #000;
+    position: relative;
+}
+
+.emms__hero-registration__columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1022px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.emms__hero-registration .emms__hero-registration__text {
+    width: 48%;
+    color: #fff;
+    animation-delay: .2s;
+}
+
+.emms__hero-registration .emms_mobile-counter .emms__hero-registration__text {
+    position: relative;
+    padding-bottom: 117px;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1,
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h2 {
+    font-size: 56px;
+    line-height: 0.9;
+    font-weight: 800;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1 em,
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h2 em {
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0 0 20px 0;
+    display: block;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1 em small,
+.emms__hero-registration--registered h1 em small {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #79F66E;
+}
+
+@media screen and (max-width: 768px) {
+    .emms__hero-registration .emms__hero-registration__text h1 em {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h1 span {
+    margin-bottom: 40px;
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h1 span:nth-child(1) {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h1 span:nth-child(2) {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h1 span:nth-child(3) {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h1 span:nth-child(4) {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 129px;
+    line-height: 101px;
+    color: #FFFFFF;
+}
+
+.emms__hero-registration .emms__hero-registration__text.emms__hero-registration__text--live h2 em span {
+    color: #79F66E;
+    display: inline-block;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1 span {
+    display: block;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1 span.top {
+    font-size: 106px;
+    font-weight: 900;
+}
+
+.emms__hero-registration .emms__hero-registration__text h1 span.bottom {
+    font-size: 129px;
+    font-weight: 300;
+}
+
+.emms__hero-registration .emms__hero-registration__text p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 24px 0 0 0;
+    max-width: 330px;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist {
+    max-width: 380px;
+    margin: 30px 0 0 0;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 28px;
+    position: relative;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li:last-child {
+    margin: 0;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    background: url("../../../img/icons/icon-check--blue.svg") no-repeat;
+    background-size: contain;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__strong {
+    margin: 32px 0 0 0;
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__strong__icon {
+    width: 48px;
+    height: 48px;
+    background: url("../../../img/icons/icon-arrow--white.svg") no-repeat;
+    background-size: 25px;
+    background-position: center;
+    border-radius: 100%;
+    border: solid 1px #fff;
+    margin: 0 auto;
+    transform: rotate(90deg);
+}
+
+.emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__strong p {
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 700;
+    margin: 35px 0 0 0;
+}
+
+.emms__hero-registration .emms__form__btn .emms__cta {
+    width: 100%;
+}
+
+/* Center checklist in desktop */
+
+@media(min-width:992px) {
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist.checklist--center {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist.checklist--center li {
+        padding: 48px 0 0 0px;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist.checklist--center li::before {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+.emms__hero-registration .emms__hero-registration__form {
+    max-width: 530px;
+    width: 50%;
+    animation-delay: .4s;
+}
+
+.emms__hero-registration__bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+    animation-delay: .4s;
+}
+
+.emms__hero-registration__bottom p {
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #EF2AAC;
+    white-space: nowrap;
+    margin: 0 5px 0 0;
+    animation: text-bottom 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes text-bottom {
+    0% {
+        transform: translateX(0%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+.emms__hero-registration__bottom.images p {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+}
+
+.emms__hero-registration__bottom.images p img {
+    height: 30px;
+}
+
+.emms__hero-registration__bottom.images p img.sm {
+    height: 20px;
+}
+
+
+/* Registered */
+
+.emms__hero-registration--registered {
+    text-align: center;
+    background: #310E44;
+    padding: 190px 0 200px 0;
+    position: relative;
+}
+
+.emms__hero-registration--registered .text-with-icon-container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.emms__hero-registration--registered .emms__container--md {
+    max-width: 540px;
+}
+
+.emms__hero-registration--registered h1 {
+    font-size: 49px;
+    line-height: 52px;
+    font-weight: 700;
+    color: #FFFFFF;
+    animation-delay: .1s;
+    max-width: 856px;
+    margin: 0 auto;
+}
+
+.emms__hero-registration--registered h1 em {
+    font-size: 16px;
+    line-height: 18px;
+    font-style: normal;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 0 30px 0;
+}
+
+.emms__hero-registration--registered p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    margin: 30px 0 0 0;
+    animation-delay: .5s;
+}
+
+.emms__hero-registration--registered p a {
+    font-weight: 700;
+    color: #33AD73;
+}
+
+.emms__hero-registration--registered p a:hover {
+    text-decoration: underline;
+}
+
+.emms__hero-registration--registered .emms__hero-registration__add-event {
+    position: relative;
+    width: 300px;
+    padding: 0 0 0 50px;
+    margin: 30px auto 0 auto;
+    font-weight: 700;
+    display: block;
+    cursor: pointer;
+    transition-duration: .2s;
+    animation-delay: .7s;
+}
+
+.emms__hero-registration--registered .emms__hero-registration__add-event span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    background: linear-gradient(-140deg, #7D04F6 50%, #F604CF 120%);
+    display: block;
+    padding: 15px 0;
+    border-radius: 100px;
+}
+
+.emms__hero-registration--registered .emms__hero-registration__add-event::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 44px;
+    height: 55px;
+    background: url("../../../img/icons/icon-calendar.svg") no-repeat;
+    background-size: contain;
+}
+
+.emms__hero-registration--registered .emms__cta {
+    margin: 40px 0 0 0;
+    animation-delay: .6s;
+}
+
+.emms__hero-registration--registered #emmsCounter {
+    animation-delay: .8s;
+}
+
+
+/* ---------------------------------------------- Responsive ---------------------------------------------- */
+
+
+@media(max-width:992px) {
+
+    .emms__hero-registration {
+        padding: 82px 0 88px 0;
+    }
+
+    .emms__hero-registration.emms__hero-registration--video.hellobar-space {
+        padding: 200px 0 88px 0;
+    }
+
+    .emms__hero-registration.emms__hero-registration--with-counter {
+        padding: 100px 0 88px 0;
+    }
+
+    .emms__hero-registration__columns {
+        display: block;
+        max-width: 620px;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0 0 50px 0;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text p {
+        margin: 16px auto 0 auto;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist {
+        margin: 30px auto 0 auto;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li {
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: solid 1px #BD7AFF;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li:last-child {
+        border-bottom: none;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text .emms__hero-registration__text__checklist li::before {
+        display: none;
+    }
+
+    .emms__hero-registration .emms__hero-registration__form {
+        max-width: initial;
+        width: 100%;
+    }
+
+}
+
+@media(max-width:620px) {
+
+    .emms__hero-registration .emms__hero-registration__text h1 {
+        font-size: 34px;
+        line-height: 0.9;
+    }
+
+    .emms__hero-registration--registered {
+        padding: 140px 0 110px 0;
+    }
+
+    .emms__hero-registration--registered h1 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text h1 span.top {
+        font-size: 76px;
+    }
+
+    .emms__hero-registration .emms__hero-registration__text h1 span.bottom {
+        font-size: 99px;
+    }
+
+    .emms__hero-registration--registered .emms__hero-registration__add-event {
+        width: 230px;
+        padding: 0;
+    }
+
+    .emms__hero-registration--registered .emms__hero-registration__add-event::before {
+        display: none;
+    }
+
+    .emms__hero-registration--registered .emms__hero-registration__add-event span {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* ---------------------------------------- WITHOUT FORM ------------------------------------- */
+/* ------------------------------------------------------------------------------------------- */
+
+
+.emms__hero-registration.emms__hero-registration--noform {
+    padding: 220px 0 158px 0;
+}
+
+.emms__hero-registration.emms__hero-registration--noform .emms__hero-registration__text {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 690px;
+    width: 100%;
+}
+
+.emms__hero-registration.emms__hero-registration--noform .emms__hero-registration__text p a {
+    font-weight: 700;
+    color: #33AD73;
+}
+
+.emms__hero-registration.emms__hero-registration--noform .emms__hero-registration__text p a:hover {
+    text-decoration: underline;
+}
+
+.emms__hero-registration.emms__hero-registration--noform .emms__hero-registration__text .emms__cta {
+    margin: 45px 0 0 0;
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* ---------------------------------------- BACK VIDEO ------------------------------------- */
+/* ------------------------------------------------------------------------------------------- */
+
+.emms__hero-registration.emms__hero-registration--video {
+    background: none;
+    padding: 150px 0;
+}
+
+.emms__hero-registration.emms__hero-registration--video .emms__hero-registration__back {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.emms__hero-registration.emms__hero-registration--video .emms__hero-registration__back video {
+    width: 100%;
+}
+
+.emms__hero-registration.emms__hero-registration--video .emms__hero-registration__back::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 2.95%, rgba(0, 0, 0, 0.70) 41.28%, rgba(0, 0, 0, 0.70) 65.59%, rgba(0, 0, 0, 0.00) 99.93%);
+}
+
+@media(max-width:992px) {
+    .emms__hero-registration.emms__hero-registration--video {
+        padding: 100px 0 88px 0;
+    }
+
+    .emms__hero-registration.emms__hero-registration--video .emms__hero-registration__back video {
+        width: 500%;
+        height: 100%;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* ---------------------------------------- POST ------------------------------------- */
+/* ------------------------------------------------------------------------------------------- */
+
+
+.emms__hero-registration--registered.emms__hero-registration--registered--post {
+    background: #1C0329;
+}
+
+.emms__hero-registration--registered.emms__hero-registration--registered--post .emms__calendar__list {
+    margin: 80px auto 0 auto;
+}

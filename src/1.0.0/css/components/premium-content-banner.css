@@ -1,0 +1,122 @@
+.emms__premium-content {
+    padding: 80px 0 120px 0;
+    position: relative;
+}
+
+.emms__premium-content.emms__premium-content--live {
+    padding: 40px 0 120px 0;
+}
+
+.emms__premium-content .emms__container--lg {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.emms__premium-content__text {
+    width: 50%;
+    color: #333333;
+    padding-left: 10%;
+    box-sizing: border-box;
+    animation-delay: .1s;
+}
+
+.emms__premium-content__text h2 {
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 700;
+    margin: 0 0 18px 0;
+}
+
+.emms__premium-content__text p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.emms__premium-content__text .emms__cta {
+    margin: 34px 0 0 0;
+}
+
+.emms__premium-content__picture {
+    width: 40%;
+    animation-delay: .2s;
+}
+
+.emms__premium-content__picture img {
+    width: 100%;
+}
+
+/* Dark version */
+
+.emms__premium-content.emms__premium-content--dark {
+    background: #310E44;
+}
+
+.emms__premium-content.emms__premium-content--dark .emms__container--lg {
+    max-width: 800px;
+    justify-content: space-between;
+}
+
+.emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
+    color: #FFFFFF;
+    padding: 40px 0 0 0;
+    width: 55%;
+}
+
+.emms__premium-content.emms__premium-content--dark .emms__premium-content__picture {
+    width: 40%;
+}
+
+
+
+/* ---------------------------------------------- Responsive ---------------------------------------------- */
+
+
+
+@media(max-width:992px) {
+
+    .emms__premium-content__text h2 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    /* Dark version */
+
+    .emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
+        padding: 0;
+    }
+}
+
+@media(max-width:620px) {
+
+    .emms__premium-content {
+        padding: 60px 0px 50px 0;
+    }
+
+    .emms__premium-content__text {
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .emms__premium-content__picture {
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto 30px auto;
+    }
+
+    /* Dark version */
+
+    .emms__premium-content.emms__premium-content--dark {
+        padding: 53px 0 113px 0;
+    }
+
+    .emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
+        width: 100%;
+    }
+
+    .emms__premium-content.emms__premium-content--dark .emms__premium-content__picture {
+        width: 100%;
+    }
+}

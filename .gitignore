@@ -1,0 +1,7 @@
+logs/*
+.docker/.env
+.docker/db/data/*
+wix/logs/*
+*Zone.Identifier
+admin/speakers/uploads/*
+!admin/speakers/uploads/.gitkeep
