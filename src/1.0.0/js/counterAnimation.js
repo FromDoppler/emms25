@@ -55,10 +55,10 @@ const observerBoxNumberLarge = new IntersectionObserver((entries) => {
                 };
                 window.requestAnimationFrame(step);
             };
-            counterAnimL("#count1L", 0, 250, 1000);
-            counterAnimL("#count2L", 0, 15, 1200);
+            counterAnimL("#count1L", 0, 355, 1000);
+            counterAnimL("#count2L", 0, 16, 1200);
             counterAnimL("#count3L", 0, 10, 1400);
-            counterAnimL("#count4L", 0, 180, 1600);
+            counterAnimL("#count4L", 0, 230, 1600);
             // End number counter animation
         } else {
             false

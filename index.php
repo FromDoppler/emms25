@@ -23,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
         checkEncodeUrl
     } from '/src/<?= VERSION ?>/js/user.js';
     checkEncodeUrl();
-    if (userRegisteredInEvent(eventsType.DIGITALTRENDS)) {
+    if (userRegisteredInEvent(eventsType.ECOMMERCE)) {
         window.location.href = getUrlWithParams('/registrado');
     }
 </script>

@@ -4,12 +4,12 @@ function getContentForUrl($url)
 
     $contentMap = [
         'default' => [
-            'heading' => 'Accede a la Biblioteca de Recursos ¡gratis!',
-            'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas potenciar al máximo tu negocio.',
+            'heading' => 'Potencia tu negocio con la Biblioteca de Recursos Gratuita',
+            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.',
         ],
         'group1' => [
-            'heading' => 'Accede a la Biblioteca de Recursos ¡gratis!',
-            'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas potenciar al máximo tu negocio.',
+            'heading' => 'Potencia tu negocio con la Biblioteca de Recursos Gratuita',
+            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.',
         ],
         'group2' => [
             'heading' => 'Capacítate con la Biblioteca de Recursos ¡gratis!',

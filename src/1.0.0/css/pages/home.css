@@ -77,6 +77,11 @@
     color: #fff;
     max-width: 560px;
     margin: 0 auto;
+    font-weight: bold;
+}
+
+.emms__home__hero__title p span {
+    color: #EC6CFF;
 }
 
 .emms__home__hero__title.emms__home__hero__title__during p strong a {
@@ -91,7 +96,7 @@
 /* Event Numbers */
 
 .emms__home .emms__eventnumbers {
-    background: #192254;
+    background: #230966;
 }
 
 

@@ -5,12 +5,12 @@
     <ul class="emms__fade-in">
       <li>
         <img src="/src/img/icons/icon-eventnumber-speakers.svg" alt="Icon">
-        <p class="number" id="count4L">210</p>
+        <p class="number" id="count4L">230</p>
         <span>Speakers</span>
       </li>
       <li>
         <img src="/src/img/icons/icon-eventnumber-registered.svg" alt="Icon">
-        <p class="number" id="count1L">315</p>
+        <p class="number" id="count1L">355</p>
         <span>REGISTRADOS</span>
       </li>
       <li>

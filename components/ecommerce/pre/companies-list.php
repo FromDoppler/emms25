@@ -1,36 +1,3 @@
-<?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
-$normalizedUrl = getNormalizeUrl();
-function getCompaniesBlock($url)
-{
-    $blocks = [
-        '/' => [
-            'block' => 'noButtonBlock',
-            'content' => '¿Quieres ser aliado del EMMS 2024? ¡Hablemos! Escríbenos a',
-        ],
-        '/registrado' => [
-            'block' => 'noButtonBlock',
-            'content' => '¿Quieres ser aliado del EMMS 2024? ¡Hablemos! Escríbenos a',
-        ],
-        '/digital-trends' => [
-            'block' => 'buttonBlock',
-            'content' => '¿Quieres ser aliado del EMMS 2024? ¡Hablemos! Escríbenos a',
-        ],
-        '/digital-trends-registrado' => [
-            'block' => 'buttonBlock',
-            'content' => '<strong>¿Quieres ser Media Partner o Sponsor del EMMS 2024?</strong> ¡Hablemos! Escríbenos a',
-        ],
-        '/*' => [
-            'block' => 'noButtonBlock',
-            'content' => '¿Quieres ser aliado del EMMS 2024? ¡Hablemos! Escríbenos a',
-        ],
-    ];
-
-    return $blocks[$url] ?? $blocks['/*'];
-}
-$block = getCompaniesBlock($normalizedUrl);
-
-?>
 <section class="emms__companies ">
     <div class="emms__container--lg">
         <h2 class="emms__fade-in">Nos han acompañado en ediciones anteriores</h2>
@@ -51,15 +18,9 @@ $block = getCompaniesBlock($normalizedUrl);
             <li class="emms__companies__list__item"><img src="/src/img/logos/logo-doofinder.png" alt="Doofinder"></li>
             <li class="emms__companies__list__item"><img src="/src/img/logos/logo-easycommerce.png" alt="Easycommerce"></li>
         </ul>
-        <?php if ($block['block'] === 'noButtonBlock') : ?>
-        <?php elseif ($block['block'] === 'buttonBlock') : ?>
-            <a href="/sponsors-promo" class="emms__cta emms__fade-in emms__cta--nd xl">CONVIÉRTETE EN ALIADO</a>
-        <?php endif; ?>
-
-        <small class="emms__fade-in">
-            <?= $block['content'] ?>
-            <a href="mailto:partners@fromdoppler.com">partners@fromdoppler.com</a>
-        </small>
+        <p class="emms__companies__body">Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España
+        </p>
+        <a href="/sponsors-promo" class="emms__cta emms__fade-in emms__cta--nd xl">CONVIÉRTETE EN ALIADO</a>
 
     </div>
 
