@@ -16,10 +16,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/digital-trends" class="nav-link"
-                        data-registered-url="/digital-trends-registrado"
-                        data-unregistered-url="/digital-trends">
-                        digital trends
+                    <a href="/ecommerce" class="nav-link"
+                        data-registered-url="/ecommerce-registrado"
+                        data-unregistered-url="/ecommerce">
+                        Ecommerce
                     </a>
                 </li>
                 <li>
