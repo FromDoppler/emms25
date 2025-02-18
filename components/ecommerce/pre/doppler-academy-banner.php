@@ -3,8 +3,10 @@
             <div class="emms__container--sm">
                 <div class="emms__doppleracademybanner__description">
                     <h2>Lleva tu conocimiento a otro nivel con Doppler Academy</h2>
-                    <p>En Doppler, además de ayudar al crecimiento de tu negocio, formamos profesionales de Marketing a lo largo de todo el mundo <strong>de forma online y 100% gratuita.</strong>
-                      <br> Cursa a tu ritmo, donde quieras y cuando quieras</p>
+                    <p>Además de ayudar al crecimiento de tu negocio, formamos profesionales de Marketing
+                        a lo largo de todo el mundo <strong>de forma online y 100% gratuita.</strong>
+                        <br> Cursa a tu ritmo, donde quieras y cuando quieras 🙂
+                    </p>
                     <div class="text-with-icon-container">
                         <div class="text-with-icon">
                             <img src="/src/img/icons/icon-check--purple.svg" alt="Check icon">
@@ -25,11 +27,11 @@
                 <div class="emms__doppleracademybanner__carousel academy-carousel" data-flickity>
                     <a class="emms__doppleracademybanner__carousel__item">
                         <div class="emms__doppleracademybanner__carousel__item__text">
-                            <h3>Certificaciones</h3>
+                            <h3>CURSOS</h3>
                             <ul>
-                                <li>Tendencias en Marketing Digital</li>
+                                <li>Estructurados en módulos prácticos y tests</li>
                                 <li>Aprende a tu ritmo</li>
-                                <li>Valida tus conocimientos</li>
+                                <li>Certificación oficial</li>
                             </ul>
                         </div>
                         <div class="emms__doppleracademybanner__carousel__item__image">
@@ -40,8 +42,8 @@
                         <div class="emms__doppleracademybanner__carousel__item__text">
                             <h3>Podcasts</h3>
                             <ul>
-                                <li>Conversaciones reveladoras</li>
-                                <li>Speakers de marcas destacadas</li>
+                                <li>Conversaciones con los líderes del Marketing</li>
+                                <li>Contenido flexible y sin horarios fijos</li>
                                 <li>Reflexiones sobre las últimas tendencias</li>
                             </ul>
                         </div>
