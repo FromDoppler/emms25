@@ -1,6 +1,8 @@
 .emms__eventnumbers {
     padding: 70px 0;
 }
+/* Rectangle 1332 */
+
 
 .emms__eventnumbers .emms22__container--lg {
     position: relative;
@@ -40,7 +42,7 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: end;
-    background: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.15);
     padding: 40px 0 50px 0;
     border-radius: 20px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.1);

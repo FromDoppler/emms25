@@ -501,19 +501,19 @@ p {
 }
 
 .emms__bg-section-1 {
-    background: url("../../../img/bg-section-1.png") #320e45 no-repeat;
+    background: url("../../../img/backgrounds/bg-section-1.png") #320e45 no-repeat;
     background-size: contain;
     background-position: top;
 }
 
 .emms__bg-section-2 {
-    background: url("../../../img/bg-section-2.png") #320e45 no-repeat;
+    background: url("../../../img/backgrounds/bg-section-2.png") #320e45 no-repeat;
     background-size: cover;
     background-position: top;
 }
 
 .emms__bg-section-3 {
-    background: url("../../../img/bg-section-3.png") #1B245B no-repeat;
+    background: url("../../../img/backgrounds/bg-section-3.png") #1B245B no-repeat;
     background-size: 100%;
     background-position: bottom;
 }
@@ -521,13 +521,13 @@ p {
 
 
 .emms__bg-section-4 {
-    background: url("../../../img/bg-section-4.png") #0B0627 no-repeat;
+    background: url("../../../img/backgrounds/bg-section-4.png") #0B0627 no-repeat;
     background-size: 100%;
     background-position: bottom;
 }
 
 .emms__bg-section-5 {
-    background: url("../../../img/bg-section-5.png") #0B0627 no-repeat;
+    background: url("../../../img/backgrounds/bg-section-5.png") #0B0627 no-repeat;
     background-size: 100%;
     background-position: bottom;
 }
