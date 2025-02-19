@@ -7,57 +7,55 @@ import {
     toHex,
     fromHex
 } from './index.js';
-
 const submitFormFetch = async (form, fetchType) => {
+    if (!validateForm(form)) return;
+
     const endPoint = './services/register.php';
     const formData = new FormData(form);
-    const user = {
-        'userEmail': formData.get('email'),
-        'userEvents': []
-    }
-    const encodeEmail = toHex(formData.get('email'));
-    const dialCode = document.querySelector('.iti__selected-dial-code').innerHTML;
-    const userData = {
-        'name': formData.get('name'),
-        'email': formData.get('email'),
-        'phone': (formData.get('phone').trim() != '') ? dialCode + formData.get('phone') : null,
-        'encodeEmail': encodeEmail,
-        'acceptPolicies': (formData.get('privacy') === 'true') ? true : null,
-        'acceptPromotions': (formData.get('promotions') === 'true') ? true : null,
-        'utm_source': (searchUrlParam('utm_source') === '') ? 'direct' : searchUrlParam('utm_source'),
-        'utm_campaign': searchUrlParam('utm_campaign'),
-        'utm_content': searchUrlParam('utm_content'),
-        'utm_term': searchUrlParam('utm_term'),
-        'utm_medium': searchUrlParam('utm_medium'),
-        'origin': searchUrlParam('origin'),
-        'type': fetchType,
-        'events': ''
-    };
-    const isValidForm = validateForm(form);
-    if (isValidForm) {
-        form.querySelector('button').classList.add('button--loading');
+    const email = formData.get('email');
+    const encodeEmail = toHex(email);
+    const dialCode = document.querySelector('.iti__selected-dial-code')?.innerHTML || '';
 
-        userData.events = setEventInLocalStorage(fetchType, encodeEmail);
-        user.userEvents = userData.events;
-        userData.encodeEmail = toHex(JSON.stringify(user));
-        try {
-            const fetchResp = await fetch(endPoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData),
-            });
-            return {
-                fetchResp, encodeEmail
-            };
-        } catch (error) {
-            customError('Fetch error', error);
-        }
+    const userData = {
+        name: formData.get('name'),
+        email,
+        phone: formData.get('phone').trim() ? dialCode + formData.get('phone') : null,
+        encodeEmail,
+        acceptPolicies: formData.get('privacy') === 'true' || null,
+        acceptPromotions: formData.get('promotions') === 'true' || null,
+        utm_source: searchUrlParam('utm_source') || 'direct',
+        utm_campaign: searchUrlParam('utm_campaign'),
+        utm_content: searchUrlParam('utm_content'),
+        utm_term: searchUrlParam('utm_term'),
+        utm_medium: searchUrlParam('utm_medium'),
+        origin: searchUrlParam('origin'),
+        type: fetchType,
+        events: setEventInLocalStorage(fetchType, encodeEmail)
+    };
+
+    const user = {
+        userEmail: email,
+        userEvents: userData.events
+    };
+
+    userData.encodeEmail = toHex(JSON.stringify(user));
+
+    form.querySelector('button').classList.add('button--loading');
+
+    try {
+        const fetchResp = await fetch(endPoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData),
+        });
+        return { fetchResp, encodeEmail };
+    } catch (error) {
+        customError('Fetch error', error);
+    } finally {
         form.querySelector('button').classList.remove('button--loading');
     }
-
 };
+
 
 const submitWithoutForm = async (fetchType) => {
 
