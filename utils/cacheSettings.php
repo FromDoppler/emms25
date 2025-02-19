@@ -5,14 +5,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 $mem_var = new Memcached();
 $mem_var->addServer(MEMCACHED_SERVER, 11211);
 
-$settings_phase = $mem_var->get("settings_phase_ecommerce25");
-$settings_phase_DT = $mem_var->get("settings_phase_digital-trends24");
+$settings_phase = $mem_var->get("settings_phase_".ECOMMERCE);
+$settings_phase_DT = $mem_var->get("settings_phase_".DIGITALTRENDS);
 
 if (!$settings_phase) {
     $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $settings_phase = $db->getCurrentPhase(ECOMMERCE)[0];
     $db->close();
-    $mem_var->set("settings_phase_ecommerce25", $settings_phase, CACHE_TIME);
+    $mem_var->set("settings_phase_".ECOMMERCE, $settings_phase, CACHE_TIME);
 }
 
 function determineState($event, $settings_phase)
@@ -33,7 +33,7 @@ if (!$settings_phase_DT) {
     $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $settings_phase_DT = $db->getCurrentPhase(DIGITALTRENDS)[0];
     $db->close();
-    $mem_var->set("settings_phase_digital-trends24", $settings_phase_DT, CACHE_TIME);
+    $mem_var->set("settings_phase_".DIGITALTRENDS, $settings_phase_DT, CACHE_TIME);
 }
 
 $digitalTrendsStates = determineState(DIGITALTRENDS, $settings_phase_DT);
