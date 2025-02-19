@@ -1,4 +1,4 @@
-<section class="emms__hero-registration--registered digital--trends">
+<section class="hero-registration--registered digital--trends">
     <div class="emms__container--md">
         <h1 class="emms__fade-top"><em>TE DAMOS LA BIENVENIDA AL EVENTO MÁS IMPORTANTE DE MARKETING DIGITAL</em>Felicitaciones, ¡Ya eres parte <br>
         del EMMS Digital Trends 2024!</h1>

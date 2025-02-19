@@ -5,7 +5,7 @@
 
 /* Hero */
 
-.emms__digitaltrends .emms__hero-registration .emms__hero-registration__text {
+.emms__digitaltrends .hero-registration .hero-registration__text {
     max-width: 450px;
     width: 90%;
     padding: 60px 0 0 0;
@@ -88,11 +88,11 @@
 /* Logueado */
 
 
-.emms__digitaltrends-logueado .emms__hero-registration--registered .emms__container--md {
+.emms__digitaltrends-logueado .hero-registration--registered .emms__container--md {
     max-width: 400px;
 }
 
-.emms__digitaltrends-logueado .emms__hero-registration .emms__hero-registration__text{
+.emms__digitaltrends-logueado .hero-registration .hero-registration__text{
     max-width: 620px;
 }
 
@@ -128,7 +128,7 @@
 
 @media(max-width:992px) {
 
-    .emms__digitaltrends .emms__hero-registration .emms__hero-registration__text {
+    .emms__digitaltrends .hero-registration .hero-registration__text {
         padding: 0;
     }
 
@@ -154,11 +154,11 @@
 
 /* No Logueado */
 
-.emms__digitaltrends--during .emms__hero-registration .emms__hero-registration__columns {
+.emms__digitaltrends--during .hero-registration .hero-registration__columns {
     align-items: center;
 }
 
-.emms__digitaltrends--during .emms__hero-registration__text p.emms__hero-registration__text__live {
+.emms__digitaltrends--during .hero-registration__text p.hero-registration__text__live {
     font-size: 16px;
     font-weight: 700;
     color: #ED1E79;
@@ -168,7 +168,7 @@
     display: none;
 }
 
-.emms__digitaltrends--during .emms__hero-registration__text p.emms__hero-registration__text__live::before {
+.emms__digitaltrends--during .hero-registration__text p.hero-registration__text__live::before {
     content: "";
     position: absolute;
     left: 0;
@@ -179,16 +179,16 @@
     background-size: contain;
 }
 
-.emms__digitaltrends--during .emms__hero-registration.emms__hero-registration--noform {
+.emms__digitaltrends--during .hero-registration.hero-registration--noform {
     padding: 220px 0 158px 0;
 }
 
-.emms__digitaltrends--during .emms__hero-registration.emms__hero-registration--noform.emms__hero-registration--with-counter {
+.emms__digitaltrends--during .hero-registration.hero-registration--noform.hero-registration--with-counter {
     padding: 220px 0 98px 0;
 }
 
 @media(max-width:992px) {
-    .emms__digitaltrends--during .emms__hero-registration__text p.emms__hero-registration__text__live {
+    .emms__digitaltrends--during .hero-registration__text p.hero-registration__text__live {
         display: inline-block;
     }
 }
@@ -219,11 +219,11 @@
 
 /* No Logueado */
 
-.emms__digitaltrends--post .emms__hero-registration .emms__hero-registration__columns {
+.emms__digitaltrends--post .hero-registration .hero-registration__columns {
     align-items: center;
 }
 
-.emms__digitaltrends--post .emms__hero-registration__text p.emms__hero-registration__text__live {
+.emms__digitaltrends--post .hero-registration__text p.hero-registration__text__live {
     font-size: 16px;
     font-weight: 700;
     color: #ED1E79;
@@ -233,7 +233,7 @@
     display: none;
 }
 
-.emms__digitaltrends--post .emms__hero-registration__text p.emms__hero-registration__text__live::before {
+.emms__digitaltrends--post .hero-registration__text p.hero-registration__text__live::before {
     content: "";
     position: absolute;
     left: 0;
@@ -244,11 +244,11 @@
     background-size: contain;
 }
 
-.emms__digitaltrends--post .emms__hero-registration.emms__hero-registration--noform {
+.emms__digitaltrends--post .hero-registration.hero-registration--noform {
     padding: 220px 0 158px 0;
 }
 
-.emms__digitaltrends--post .emms__hero-registration.emms__hero-registration--noform.emms__hero-registration--with-counter {
+.emms__digitaltrends--post .hero-registration.hero-registration--noform.hero-registration--with-counter {
     padding: 220px 0 98px 0;
 }
 
@@ -262,14 +262,14 @@
 }
 
 @media(max-width:992px) {
-    .emms__digitaltrends--post .emms__hero-registration__text p.emms__hero-registration__text__live {
+    .emms__digitaltrends--post .hero-registration__text p.hero-registration__text__live {
         display: inline-block;
     }
 }
 
 /* Logueado */
 
-.emms__digitaltrends-logueado.emms__digitaltrends--post .emms__hero-registration--registered{
+.emms__digitaltrends-logueado.emms__digitaltrends--post .hero-registration--registered{
     background: #1c0329;
 }
 
