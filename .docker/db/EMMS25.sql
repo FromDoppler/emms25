@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 17-02-2025 a las 15:11:02
+-- Tiempo de generación: 17-02-2025 a las 17:39:30
 -- Versión del servidor: 10.5.18-MariaDB-1:10.5.18+maria~ubu2004
 -- Versión de PHP: 8.0.15
 
@@ -36,6 +36,12 @@ CREATE TABLE IF NOT EXISTS `google_oauth` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `google_oauth`
+--
+
+INSERT INTO `google_oauth` (`id`, `provider`, `provider_value`) VALUES
+(1, 'google', '{\"access_token\":\"ya29.a0AeDClZAfKrKHYjqjK2tEiKTfSET_esmT7D5UkexPR5b7ibIuXSFcZXJ-8RORqwkbxEoXdSSu-Axak1jNbI7exRNEXlLLu23UYw8bhCUz5JixIwnzwCdRUcE-ZrAPRyy16RN8Lf5LLmhZqmv3hU_X-kyW2iwaO8RUv_L6wH525joaCgYKAesSARISFQHGX2MidjKYs7y-liaZZOfDSE1OBQ0178\",\"expires_in\":3599,\"scope\":\"https://www.googleapis.com/auth/spreadsheets\",\"token_type\":\"Bearer\",\"refresh_token\":\"1//0hxOIS9W4oqXZCgYIARAAGBESNwF-L9Irgwst8lyC5Bae8RyYuX6y3U-m1_wZdZYDIPoZSIJKyl1xdEcXlke10sDSBblQAPcWMfs\"}');
 -- --------------------------------------------------------
 
 --
@@ -83,17 +89,6 @@ CREATE TABLE IF NOT EXISTS `registered` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `settings_during_days`
---
-
-CREATE TABLE IF NOT EXISTS `settings_during_days` (
-  `day` int(11) NOT NULL,
-  `live` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `settings_phase`
 --
 
@@ -112,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `settings_phase` (
 --
 
 INSERT INTO `settings_phase` (`event`, `pre`, `during`, `post`, `transition`, `transmission`) VALUES
-('digital-trends24', 0, 0, 1, 'live-off', 'youtube'),
-('ecommerce25', 0, 0, 1, 'live-off', 'youtube');
+('digital-trends25', 0, 0, 1, 'live-off', 'youtube'),
+('ecommerce25', 1, 0, 0, 'live-off', 'youtube');
 
 -- --------------------------------------------------------
 
@@ -164,7 +159,7 @@ INSERT INTO `speakers` (`id`, `event`, `exposes`, `name`, `image`, `alt_image`, 
 (5, 'digital-trends', 'conference', 'Manuel García Cuerva', 'manuel-garcia-cuerva-agenda.png', 'Manuel García Cuerva - VTEX', 'Head Global VTEX Profit Pools en VTEX', '', 'https://www.linkedin.com/in/manuatbetamod/', '', '', 'sss', 'Social Selling: qué es lo que aprendimos y qué se viene', 'Manuel García Cuerva es un emprendedor y experto en tecnología con más de 20 años de experiencia en la industria del comercio electrónico. Antes de unirse a VTEX como Head of Live Shopping, fundó y dirigió varias empresas exitosas.', 'vtex-agenda.png', 'VTEX', '', '', '40', '1', '', 'manuelgarcíacuerva', NULL, '', '', '', ''),
 (6, 'digital-trends', 'conference', 'Ricardo Tayar', 'ricardo-tayar-agenda.png', 'Ricardo Tayar', 'CEO y Fundador de Flat 101', '', 'https://es.linkedin.com/in/ricardotayar', '', '', 'sss', 'CRO en E-commerce: best practices para mejorar la conversión', 'Fundador y CEO de Flat 101, agencia de marketing digital lider en estrategias de conversión y experiencia de usuario. Con más de 20 años de experiencia en la industria, es además autor de varios libros sobre marketing digital y UX.', 'flat101-agenda.png', 'Flat 101', '', '', '30', '1', '', 'ricardotayar', NULL, '', '', '', ''),
 (7, 'digital-trends', 'conference', 'Ana Ivars', 'ana-ivars-agenda.png', 'Ana Ivars', ' Founder & CEO en Dinamiza Digital ', 'https://mobile.twitter.com/AnaIvarsParcero/status/1641388231106101248', 'https://www.linkedin.com/in/anaivarsparcero/', 'https://www.instagram.com/ana.ivars/?hl=es', '', 'ssss', 'A confirmar', 'Consultora, Formadora y Speaker | CEO en Agencia Dinamiza Digital | Forbes Business Council Official Member 2023♟ Ayuda a empresas y profesionales a vender más desde la estrategia digital y publicidad online.', 'anaivars-agenda.png', 'Ana Ivars', '', '', '10', '1', '', 'anaivars', NULL, '', '', '', ''),
-(8, 'digital-trends', 'interview', 'pedrito', 'siteground.png', 'harold', 'home office', 'dfdf', '', '', '', 'pepito', 'pedrito clavara un clavito en vivo', 'pedrito clavara un clavito en vivo', 'siteground.png', 'pedrito clavara un clavito en vivo', '', '', '', '2', 'https://www.youtube.com/watch?v=m25Kkj9M9v8&ab_channel=FromDoppler', 'pedrito clavara un clavito en vivo', NULL, '', '', '', ''),
+(8, 'digital-trends', 'interview', 'pedrito2', 'siteground.png', 'harold', 'home office', 'dfdf', '', '', '', 'pepito', 'pedrito clavara un clavito en vivo', 'pedrito clavara un clavito en vivo', 'siteground.png', 'pedrito clavara un clavito en vivo', '', '', '', '2', 'https://www.youtube.com/watch?v=m25Kkj9M9v8&ab_channel=FromDoppler', 'pedrito clavara un clavito en vivo', NULL, '', '', '', ''),
 (9, 'digital-trends', 'conference', 'matias', 'neilpatel.png', 'harold', 'home office', 'dfdf', '', '', '', 'dsfgsdfsdf', 'dgjdjfgjgj', 'yhertyrtyertyrty', 'neilpatel.png', 'retyrtyrety', '', '', '', '2', '', 'rtyrtyrtyrtyrty', NULL, '', '', '', ''),
 (10, 'digital-trends', 'conference', 'amtias', 'woo.png', '', '', '', '', '', '', 'yhedhdfh', 'ddfghdfgdfg', '', '', '', '', '', '', '3', '', '', NULL, '', '', '', '');
 
