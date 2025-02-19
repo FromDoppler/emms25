@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 ?>
 
 <!DOCTYPE html>
@@ -26,26 +26,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/cacheSettings.php');
     </script>
 </head>
 
-<body class="emms__ecommerce emms__ecommerce-logueado">
+<body class="ecommerce ecommerce-logueado">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/date-counter.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
-        <div class="show--vip">
+
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/hello-module.php') ?>
-        </div>
-        <div class="hidden--vip">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/hello-vip-module.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/video-ticketing.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/vip-features.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/entry-plans.php') ?>
-        </div>
-        <div class="emms__bg-dark-gradient">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
-        </div>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/grid-event-types.php') ?>
         <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
