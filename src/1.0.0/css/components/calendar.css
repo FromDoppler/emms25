@@ -13,15 +13,15 @@
 }
 
 
-.emms__ecommerce-logueado--during .emms__calendar.emms__calendar--live {
+.ecommerce-logueado--during .emms__calendar.emms__calendar--live {
     background: linear-gradient(1deg, #0C0E25 0%, #0D102A 54.45%, #1B245B 94.04%);
 }
 
-.emms__ecommerce-logueado--post .emms__calendar.emms__calendar--post .emms__cta {
+.ecommerce-logueado--post .emms__calendar.emms__calendar--post .emms__cta {
     margin: 40px 0px;
 }
 
-.emms__ecommerce-logueado--post .emms__calendar.emms__calendar--post,
+.ecommerce-logueado--post .emms__calendar.emms__calendar--post,
 .emms__calendar.emms__calendar--post {
     background: linear-gradient(1deg, #0C0E25 0%, #0D102A 54.45%, #1B245B 94.04%);
     text-align: center;

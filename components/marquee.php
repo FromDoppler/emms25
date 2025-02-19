@@ -1,5 +1,5 @@
     <!-- Marquee -->
-    <div class="emms__hero-registration__bottom images emms__fade-in">
+    <div class="hero-registration__bottom images emms__fade-in">
         <p>
             <img src="/src/img/marquee/google.png" alt="Google">
             <img class="sm" src="/src/img/marquee/meta.png" alt="Meta">

@@ -1,4 +1,4 @@
-<div class="emms__hero-registration__form emms__fade-in" id="registro">
+<div class="hero-registration__form emms__fade-in" id="registro">
     <!-- Form -->
     <div class="emms_switch__container">
         <span class="emms_switch__container__switch">
@@ -45,7 +45,7 @@
             </li>
         </ul>
         <div class="emms__form__btn">
-            <button class="emms__cta emms__cta--during" id="register-button" type="button"><span class="button__text">Reg&iacute;strate ahora</span></button>
+            <button class="emms__cta" id="register-button" type="button"><span class="button__text">Reg&iacute;strate ahora</span></button>
         </div>
         <div class="emms__form__legal close">
             <a class="emms__form__legal__btn" id="legalBtn">Información básica sobre privacidad </a>

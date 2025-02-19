@@ -1,5 +1,6 @@
 .emms__grid {
     padding: 90px 0;
+    background: linear-gradient(180deg, #14092F 0%, #230966 94.04%);
 }
 
 .emms__grid__title h2 {
@@ -16,13 +17,15 @@
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    max-width: 730px;
+    margin: 55px auto;
 }
 
 .emms__grid .grid__footer strong {
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 44px;
     color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .emms__grid .emms__grid__content {

@@ -1,7 +1,8 @@
-<section class="emms__hero-registration--registered digital--trends">
+<section class="hero-registration--registered hero-registration--withoutform">
     <div class="emms__container--md">
-        <h1 class="emms__fade-in"><em>ONLINE Y GRATUITO - DEL 26 AL 28 DE NOVIEMBRE</em>¡Llega el DIGITAL TRENDS 2024!</h1>
-        <p class="emms__fade-in">Súmate al evento exclusivo pensado para que conozcas de la mano de expertos y referentes internacionales todas las tendencias del Marketing Digital.</p>
+        <h1 class="emms__fade-in"><em>EVENTO ONLINE Y GRATUITO - 28 y 29 DE ABRIL
+        </em>EMMS E-commerce 2025</h1>
+        <p class="emms__fade-in">Domina el Marketing de tu Tienda Online con los mejores referentes del mundo. ¡Regístrate gratis ahora y asegura tu acceso!</p>
         <div class="text-with-icon-container">
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check icon">

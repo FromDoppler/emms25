@@ -8,18 +8,17 @@ $contents = [
         'link' => 'digital-trends#registro',
         'youtubeCode' => 'ZGS-lmiXHFE',
     ],
-    '/digital-trends' => [
-        'heading' => 'Inspírate con el mayor evento hispano de Marketing Digital',
-        'body' => 'Conoce en este video qué hace al EMMS Digital Trends el lugar ideal para capacitarte
-y aprender cómo hacer crecer tu negocio junto a los líderes del sector.',
-        'button' => 'REGÍSTRATE AHORA',
+    '/ecommerce' => [
+        'heading' => 'Inspírate en el evento más grande de E-commerce',
+        'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
+        'button' => 'REGÍSTRATE GRATIS',
         'link' => '#registro',
-        'youtubeCode' => 'ZGS-lmiXHFE',
+        'youtubeCode' => 'T8Crntnfgak',
     ],
-    '/digital-trends-registrado' => [
-        'heading' => '¡Gracias por sumarte al EMMS Digital Trends 2024!',
-        'body' => 'Comenzó la cuenta regresiva para que descubras las últimas innovaciones en Marketing Digital',
-        'youtubeCode' => 'isDPHOi2mAs',
+    '/ecommerce-registrado' => [
+        'heading' => 'Inspírate en el evento más grande de E-commerce',
+        'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
+        'youtubeCode' => 'T8Crntnfgak',
     ],
     '/*' => [
         'heading' => 'Súmate al EMMS Digital Trends 2024 y entérate las últimas innovaciones en Marketing Digital',
@@ -40,10 +39,10 @@ $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
 
 ?>
 
-<section class="emms__centralvideo">
+<section class="centralvideo">
     <div class="emms__container--lg emms__container--lg--column">
         <?php if (!empty($content['heading']) || !empty($content['body'])): ?>
-            <div class="emms__centralvideo__title emms__fade-in">
+            <div class="centralvideo__title emms__fade-in">
                 <?php if (!empty($content['heading'])): ?>
                     <h2><?php echo $content['heading']; ?></h2>
                 <?php endif; ?>
@@ -53,7 +52,7 @@ $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
             </div>
         <?php endif; ?>
 
-        <div class="emms__centralvideo__video emms__fade-in">
+        <div class="centralvideo__video emms__fade-in">
             <iframe width="560" height="315" src="<?php echo $videoUrl ?>" frameborder="0" allowfullscreen></iframe>
         </div>
 
