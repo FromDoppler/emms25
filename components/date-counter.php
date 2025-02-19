@@ -1,5 +1,5 @@
 <div id="emmsCounter" class="emms-counter">
-    <h5 class="emms-counter__title">¡Llega el EMMS Digital Trends 2024! Reserva tu lugar.</h5>
+    <h5 class="emms-counter__title">¡Llega el EMMS E-Commerce 2025! Reserva tu lugar.</h5>
     <ul class="emms-counter__list">
         <li class="emms-counter__item">
             <div class="emms-counter__box d">

@@ -13,7 +13,7 @@ isIPAllow($ip, $ALLOW_IPS);
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 </head>
 
-<body class="emms__ecommerce">
+<body class="ecommerce">
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/schedule/schedule.php') ?>
     </main>

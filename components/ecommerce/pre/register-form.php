@@ -1,13 +1,13 @@
-<section class="emms__hero-registration digital--trends">
-    <div class="emms__hero-registration__columns">
+<section class="hero-registration">
+    <div class="hero-registration__columns">
 
-        <div class="emms__hero-registration__text emms__fade-in">
-            <h1><em> REVIVE EL EVENTO GRATUITO</em><span class="top">EMMS</span>Ecommerce<span class="bottom">2025</span></h1>
-            <p>Vuelve a vivir el evento más importante de Latam y España. ¡Inspírate y capacítate gratis con las últimas tendencias de Marketing Digital junto a los líderes de la industria!</p>
-            <ul class="emms__hero-registration__text__checklist dk">
+        <div class="hero-registration__text emms__fade-in">
+            <h1><em>EVENTO ONLINE Y GRATUITO - 28 y 29 DE ABRIL</em><span class="top">EMMS</span>E-commerce<span class="bottom">2025</span></h1>
+            <p>Domina el Marketing de tu Tienda Online con los mejores referentes del mundo. ¡Regístrate gratis ahora y asegura tu acceso!</p>
+            <ul class="hero-registration__text__checklist dk">
                 <li>SPEAKERS INTERNACIONALES</li>
-                <li>HERRAMIENTAS Y RECURSOS</li>
                 <li>WORKSHOPS Y NETWORKING</li>
+                <li>REGALOS Y PREMIOS</li>
             </ul>
         </div>
         <!-- Form -->
@@ -19,11 +19,11 @@
         <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/register-form-component.php'); ?>
         <!-- End form -->
 
-        <div class="emms__hero-registration__text emms__fade-in mb">
-            <ul class="emms__hero-registration__text__checklist">
+        <div class="hero-registration__text emms__fade-in mb">
+            <ul class="hero-registration__text__checklist">
                 <li>SPEAKERS INTERNACIONALES</li>
-                <li>HERRAMIENTAS Y RECURSOS</li>
                 <li>WORKSHOPS Y NETWORKING</li>
+                <li>REGALOS Y PREMIOS</li>
             </ul>
         </div>
     </div>

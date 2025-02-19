@@ -2,7 +2,7 @@
     <div class="emms__container--lg emms__fade-in">
         <div class="emms__header__logo emms__header__logo--digital-trends">
             <a href="/" id="logo-link">
-                <img src="/src/img/logos/logo-emms.png" alt="Emms Digital Trends 2024">
+                <img src="/src/img/logos/logo-emms.png" alt="Emms Digital Trends 2025">
             </a>
         </div>
         <a class="emms__header__nav--mb" id="btn-burger"></a>

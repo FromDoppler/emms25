@@ -5,10 +5,10 @@ $normalizedUrl = getNormalizeUrl();
 function getGridBlock($url)
 {
     $blocks = [
-        '/digital-trends' => [
+        '/ecommerce' => [
             'block' => 'CtaBlock',
         ],
-        '/digital-trends-registrado' => [
+        '/ecommerce-registrado' => [
             'block' => 'TextBlock',
         ],
         '/*' => [
@@ -87,8 +87,10 @@ $block = getGridBlock($normalizedUrl);
                 <a href="#registro" class="emms__cta emms__fade-in-animation eventHiddenElements">REGÍSTRATE GRATIS</a>
                 <button class="emms__cta emms__fade-in-animation eventShowElements alreadyRegisterForm"><span class="button__text">Regístrate gratis</span></button>
             <?php elseif ($block['block'] === 'TextBlock') : ?>
-                <p> <strong>Pronto podrás comprar tus entradas VIP para acceder a los Workshops y el Networking, ¡mantente pendiente a tu casilla de Email!</strong></p>
+                <p> <strong>Pronto podrás comprar tus entradas VIP para acceder a los Workshops y el Networking. ¡Mantente pendiente de tu casilla de Email!</strong></p>
             <?php endif; ?>
+        </div>
+        <div class="emms__separator emms__separator--white">
         </div>
     </div>
 </section>

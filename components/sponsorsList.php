@@ -5,7 +5,7 @@
         ?>
          <section class="emms__companies emms__companies--categories" id="aliados">
              <div class="emms__container--lg">
-                 <h2 class="emms__fade-in">Nuestros aliados en el EMMS Digital Trends</h2>
+                 <h2 class="emms__fade-in">Apoyan el EMMS E-commerce 2025</h2>
                  <h3>SPONSORS</h3>
                  <ul class="emms__companies__list emms__companies__list--lg  emms__fade-in">
                      <?php
@@ -45,8 +45,9 @@
                  <h3>MEDIA PARTNERS STARTERS</h3>
                  <ul class="emms__companies__list emms__companies__list  emms__fade-in" id="mediaPartenersStarters">
                  </ul>
-                 <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href="https://goemms.com/#preguntas-frecuentes"> Haz clic aquí </a>y encuentra las preguntas más frecuentes sobre el evento</strong></small>
+                 <p><strong>Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España</strong></p>
                  <a href="https://goemms.com/sponsors-promo" class="emms__cta">CONVIÉRTETE EN ALIADO</a>
+                 <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href="https://goemms.com/#preguntas-frecuentes"> Haz clic aquí </a> </strong>y encuentra las preguntas más frecuentes sobre el evento</small>
              </div>
          </section>
          <script src="/src/<?= VERSION ?>/js/sponsors.js"></script>
