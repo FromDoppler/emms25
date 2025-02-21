@@ -8,8 +8,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 <html lang="en">
 
 <head>
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/head-home.php'); ?>
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/head.php'); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head-home.php'); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 
     <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
     <script>
@@ -346,7 +346,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
     </main>
 
     <!-- Footer -->
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/footer.php'); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 
 
 
