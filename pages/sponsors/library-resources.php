@@ -9,16 +9,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <head>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
-    <script type="module">
-        import {
-            isUserLogged,
-            getUrlWithParams
-        } from '/src/<?= VERSION ?>/js/common/index.js';
-
-        if (isUserLogged()) {
-            window.location.href = getUrlWithParams('/sponsors-registrado');
-        }
-    </script>
 </head>
 
 <body class="emms__ecommerce">
