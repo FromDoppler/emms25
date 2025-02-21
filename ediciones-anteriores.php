@@ -1,0 +1,376 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head-home.php'); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+
+    <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
+    <script>
+        const socket = io("wss://<?= URL_REFRESH ?>", {
+            path: "/<?= PATH_REFRESH ?>/socket.io"
+        });
+        socket.on("state", (args) => {
+            location.reload();
+        });
+    </script>
+    <script type="module">
+        import {
+            isUserLogged,
+            getUrlWithParams
+        } from '/src/<?= VERSION ?>/js/common/index.js';
+
+        if (isUserLogged()) {
+            window.location.href = getUrlWithParams('/ediciones-anteriores-registrado');
+        }
+    </script>
+</head>
+
+<body class="emms__previous-editions">
+
+    <!-- Header -->
+    <header class="emms__header">
+        <div class="emms__container--lg emms__fade-in">
+            <div class="emms__header__logo">
+                <a href="/"><img src="/src/img/logos/logo-emms.png" alt="Emms 2025"></a>
+            </div>
+            <?php if ($digitalTrendsStates['isLive']) : ?>
+                <div class="emms__header__live">
+                    <p>¡ESTAMOS EN VIVO EN EMMS DIGITAL TRENDS!</p>
+                </div>
+            <?php endif ?>
+            <a class="emms__header__nav--mb" id="btn-burger"></a>
+            <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
+                <ul class="emms__header__nav__menu">
+                    <li><a href="/">home</a></li>
+                    <li><a href="/ecommerce">Ecommerce</a>
+                    </li>
+                    <li><a href="./sponsors">biblioteca de recursos</a></li>
+                    <li class="emms__header__nav__menu__dropdown"><a href="#" class="active">Qué es el EMMS</a>
+                        <ul class="emms__header__nav__submenu">
+                            <li><a href="#sobre-emms">Sobre el EMMS</a></li>
+                            <li><a href="#ediciones-anteriores">Revive ediciones anteriores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/sponsors-promo">sponsors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Share -->
+    <div class="emms__share">
+        <a id="btn-share" class="emms__share__open-list"><img src="/src/img/icons/icon-share.svg" alt="Share"></a>
+        <ul id="list-share" class="emms__share__list">
+            <li>
+                <a href="javascript: void(0);" onclick="window.open ('https://www.facebook.com/sharer/sharer.php?u=https%3A//goemms.com/digital-trends-registrado', 'Facebook', 'toolbar=0, status=0, width=550, height=350');">
+                    <img src="/src/img/Facebook-w.svg" alt="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="javascript: void(0);" onclick="window.open ('https://twitter.com/intent/tweet?text=¡Vuelve%20el%20EMMS%20Digital%20Trends!%20El%20evento%20online%20y%20gratuito%20de%20Marketing%20Digital%20más%20importante%20de%20España%20y%20Latinoamérica.%20Es%20gratis%20y%20online%20:%29%20Reserva%20tu%20lugar%20ahora:%20https://goemms.com/digital-trends', 'Twitter', 'toolbar=0, status=0, width=550, height=350');">
+                    <img src="/src/img/Twitter-w.svg" alt="Twitter">
+                </a>
+            </li>
+            <li>
+                <a href="javascript: void(0);" onclick="window.open ('https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fgoemms.com%2Fdigital-trends-registrado&title=%C2%A1Cuenta%20regresiva%20para%20una%20nueva%20edici%C3%B3n%20de%20EMMS%20Digital%20Trends!&summary=%C2%A1Cuenta%20regresiva%20para%20una%20nueva%20edici%C3%B3n%20de%20EMMS%20Digital%20Trends!%20Llega%20el%20evento%20online%20y%20gratuito%20de%20Marketing%20Digital%20m%C3%A1s%20importante%20de%20Espa%C3%B1a%20y%20Latinoam%C3%A9rica.%20Conferencias%2C%20Entrevistas%2C%20Casos%20de%20%C3%A9xito%2C%20Workshops%2C%20Networking%20%C2%A1y%20mucho%20m%C3%A1s!%20Cada%20a%C3%B1o%2C%20miles%20de%20profesionales%20y%20referentes%20en%20la%20industria%20eligen%20este%20evento%20para%20capacitarse.%20Es%20gratis%20y%20online%20%3A)%20Reserva%20tu%20lugar%20ahora%3A%20goemms.com%2Fdigital-trends&mini=true', 'Linkedin', 'toolbar=0, status=0, width=550, height=550');">
+                    <img src="/src/img/LinkedIn-w.svg" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="emms__previous-editions__hero emms__bg-section-4" id="sobre-emms">
+            <div class="emms__container--lg emms__previous-editions__hero__row">
+                <div class="emms__previous-editions__hero__column-text">
+                    <h1 class="emms__fade-top">Acerca del EMMS</h1>
+                    <p class="emms__fade-in">El EMMS es el <strong>evento online de Marketing Digital más convocante en Latinoamérica y España</strong>. Se desarrolla de forma <strong>100% virtual</strong> y es organizado por <a href="https://www.fromdoppler.com/es/" target="_blank">Doppler</a>, la <strong>herramienta de Marketing Automation</strong> líder entre el público hispanohablante, hace <strong>más de 16 años</strong>. <br><br>Cada edición cuenta con los referentes y marcas más destacados en la industria, abordando las temáticas más resonantes de los últimos meses ante más de 50 mil registrados. <br>Además, actualmente el EMMS ofrece dos ediciones: una exclusiva para la industria E-commerce y otra sobre tendencias globales de marketing digital.
+                    </p>
+                </div>
+                <div class="emms__previous-editions__hero__column-img">
+                    <img src="/src/img/team-doppler.png" alt="Equipo de Doppler" class="emms__fade-in">
+                </div>
+            </div>
+        </section>
+
+        <!-- Editions list -->
+        <section class="emms__previous-editions__list" id="ediciones-anteriores">
+            <div class="emms__container--md">
+                <h2>Revive las ediciones anteriores</h2>
+                <div class="emms__previous-editions__list__container emms__previous-editions__list__container--xl emms__fade-in">
+                    <div class="emms__previous-editions__list__item emms__previous-editions__list__item--xl">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/edicion2024-dt-xl.png" alt="EMMS 2024 E-commerce" class="desktop">
+                                <img src="/src/img/editions/emms2023-dt.png" alt="EMMS 2024 Digital Trends" class="mobile">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h4>EMMS Digital Trends 2024</h4>
+                                <p>
+                                    Revive tres días épicos en el evento online que reunió a más de 30,000 personas de todo el mundo para descubrir las últimas tendencias del Marketing Digital. Durante esta edición, exploramos qué están haciendo las empresas más influyentes del mundo y disfrutamos de entrevistas exclusivas con líderes
+                                    de la industria. Si te lo perdiste o querés volver a inspirarte con ideas innovadoras para tu negocio, ¡accede ahora!
+                                </p>
+                                <span>REVIVE ESTA EDICIÓN</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <ul class="emms__previous-editions__list__container emms__previous-editions__list__container--lg">
+                    <li class="emms__previous-editions__list__item emms__previous-editions__list__item--lg emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2023-ecommerce.png" alt="EMMS 2024 E-commerce">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS E-commerce 2024</h3>
+                                <p>Más de 40 mil personas se capacitaron en la última edición del EMMS E-commerce 2024. Aprovecha esta oportunidad y revive de manera gratuita entrevistas exclusivas con especialistas, Casos de Éxito y Conferencias, como así también
+                                    los mejores insights en Inteligencia Artificial aplicada a este mercado.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__previous-editions__list__item--lg emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2023-ecommerce.png" alt="EMMS 2023 E-commerce">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS E-COMMERCE 2023</h3>
+                                <p>Más de 13 mil personas se unieron a la primera edición especializada en la industria del Retail e E-commerce del EMMS. Contamos con entrevistas exclusivas con especialistas, casos de éxitos y conferencias, así como también los mejores insights en Inteligencia Artificial aplicada a este mercado. </p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="emms__previous-editions__list__container">
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2022.png" alt="EMMS 2022">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS Digital Trends 2023</h3>
+                                <p>Líderes en el ámbito del marketing digital
+                                    y referentes de las compañías más competitivas del mercado exploraron
+                                    las últimas tendencias y estrategias
+                                    en el mundo digital. Se abordó desde
+                                    la experiencia del usuario hasta innovaciones en inteligencia artificial.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2022.png" alt="EMMS 2022">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2022</h3>
+                                <p>A lo largo de 3 días, 21 speakers internacionales de las compañías más vanguardistas del mercado revolucionaron el evento de Marketing Digital más esperado del año. ¡Revívelo y descubre por qué 55.000 personas no quisieron perdérselo!</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2021.png" alt="EMMS 2021">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2021</h3>
+                                <p>Los líderes de la industria se reunieron para dar respuesta y soluciones a los desafíos actuales.
+                                    Revive esta edición especial, pensada para todos aquellos que toman decisiones de negocio en su día a día y llevan sus empresas al próximo nivel.
+                                </p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2020.png" alt="EMMS 2020">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2020</h3>
+                                <p>A lo largo de 5 días, 18 oradores de primer nivel compartieron su conocimiento sobre Marketing Digital enfocado en 5 industrias clave. ¡Las sesiones virtuales de Networking fueron el complemento clave!</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2019.png" alt="EMMS 2019">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2019</h3>
+                                <p>Las temáticas más votadas por el público y los especialistas que están cambiando el Marketing Digital en el mundo. ¡Revive la jornada que se convirtió en el evento online del año!</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2018.png" alt="EMMS 2018">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2018</h3>
+                                <p>Las conferencias en inglés con traducción en simultáneo marcaron un antes y un después para los eventos de Marketing del mercado hispano. Hubo speakers de primer nivel y miles de asistentes.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2017.png" alt="EMMS 2017">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2017</h3>
+                                <p>¡La décima edición tuvo récord de registros! Fueron 8 conferencias organizadas en nivel inicial y avanzado para que cada uno pudiera capacitarse en base a su experiencia y necesidades.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2016.png" alt="EMMS 2016">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2016</h3>
+                                <p>Se sumaron novedosos formatos como charlas motivacionales, entrevistas a expertos, debates en vivo y más. Esta vez fue la audiencia quien eligió de qué manera aprender.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2015.png" alt="EMMS 2015">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2015</h3>
+                                <p>Como cada edición, el EMMS se renovó. Las conferencias se convirtieron en un evento de dos días con 10 oradores destacados dentro de 2 temáticas: motivación y acción.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2014.png" alt="EMMS 2014">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2014</h3>
+                                <p>El evento se transformó volviéndose 100% online, internacional y gratis. Con una duración de 10 horas ininterrumpidas, 10 increíbles speakers y más de 10.000 asistentes.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2013.png" alt="EMMS 2013">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2013</h3>
+                                <p>Por primera vez el evento viajó por 5 países: Ecuador, España, República Dominicana, México y Argentina. Los influencers del sector se lucieron con charlas magníficas.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2012.png" alt="EMMS 2012">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2012</h3>
+                                <p>Inspirado en el “fin del mundo”, volvió el EMMS para salvar a aquellos que no pensaban actualizarse con las últimas tendencias del Marketing. Más de 2.000 participantes.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2011.png" alt="EMMS 2011">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2011</h3>
+                                <p>El evento más relevante de Marketing Online llegó a México. Se discutieron temas como el Mobile Marketing, tendencias del mercado y se inauguró el panel de casos de éxito.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2010.png" alt="EMMS 2010">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2010</h3>
+                                <p>Los asistentes aprendieron sobre el análisis de Métricas, Social Email Marketing, Diseño y Conversión, en el reconocido seminario del Email Marketing Made Simple.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="emms__previous-editions__list__item emms__fade-in">
+                        <a data-target="modalRegister2" data-toggle="emms__register-modal">
+                            <div class="emms__previous-editions__list__item__image">
+                                <img src="/src/img/editions/emms2009.png" alt="EMMS 2009">
+                            </div>
+                            <div class="emms__previous-editions__list__item__description">
+                                <h3>EMMS 2009</h3>
+                                <p>Solo 500 personas tuvieron la posibilidad de vivir este evento en Buenos Aires, Argentina. Tendencias en Social Media, Content Marketing, SEO y mucho más.</p>
+                                <span>Revive esta edición</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+
+        <!-- Register modal -->
+
+        <div id="modalRegister2" class="emms__register-modal">
+            <div class="emms__register-modal__window">
+                <!-- Form -->
+                <?
+                $formTitle = 'Revive las ediciones anteriores 🙂';
+                $formSubTitle = 'Regístrate aquí de forma gratuita para volver a ver las charlas de todas tus ediciones preferidas del EMMS, desbloquear la Biblioteca de Recursos y ¡ser parte de la próxima edición!';
+                $eventType = DIGITALTRENDS;
+                ?>
+                <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/register-form-component.php'); ?>
+                <!-- End form -->
+                <button class="emms__register-modal__window__close" data-dismiss="emms__register-modal"></button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
+
+    <script src="/src/<?= VERSION ?>/js/previousEditions.js" type="module"></script>
+
+
+
+</body>
+
+</html>
