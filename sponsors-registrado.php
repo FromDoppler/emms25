@@ -24,12 +24,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
         checkEncodeUrl
     } from '/src/<?= VERSION ?>/js/user.js';
     checkEncodeUrl();
-    if (userRegisteredInEvent(eventsType.ECOMMERCE)) {
-        window.location.href = getUrlWithParams('/sponsors-registrado');
+    if (!userRegisteredInEvent(eventsType.ECOMMERCE)) {
+        window.location.href = getUrlWithParams('/sponsors');
     }
 </script>
 <?php
 $response = processPhaseToShow(ECOMMERCE);
-$isRegistred=0;
+$isRegistred=1;
 require_once($_SERVER['DOCUMENT_ROOT'] . "/pages/sponsors/library-resources.php");
 ?>
