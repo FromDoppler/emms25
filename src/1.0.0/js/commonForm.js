@@ -23,11 +23,11 @@ const redirectToRegisteredPage = () => {
             const slug = sessionStorage.getItem('currentSlug')
             nextPage = `/sponsors-registrado?slug=${slug}`;
         case '/digital-trends':
-            nextPage = '/digital-trends-registrado';
+            nextPage = '/ecommerce-registrado';
         case '/ediciones-anteriores':
             nextPage = '/ediciones-anteriores-registrado';
         default:
-            nextPage = '/digital-trends-registrado';
+            nextPage = '/ecommerce-registrado';
             break;
     }
 
