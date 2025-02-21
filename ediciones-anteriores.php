@@ -367,7 +367,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
     <!-- Footer -->
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 
-    <script src="/src/<?= VERSION ?>/js/collapsibles.js"></script>
     <script src="/src/<?= VERSION ?>/js/previousEditions.js" type="module"></script>
 
 
