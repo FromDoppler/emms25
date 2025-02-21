@@ -38,7 +38,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
     <header class="emms__header">
         <div class="emms__container--lg emms__fade-in">
             <div class="emms__header__logo">
-                <a href="/"><img src="/src/img/logos/logo-emms.png" alt="Emms 2024"></a>
+                <a href="/"><img src="/src/img/logos/logo-emms.png" alt="Emms 2025"></a>
             </div>
             <?php if ($digitalTrendsStates['isLive']) : ?>
                 <div class="emms__header__live">
@@ -49,7 +49,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
             <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
                 <ul class="emms__header__nav__menu">
                     <li><a href="/">home</a></li>
-                    <li><a href="/digital-trends">digital trends</a>
+                    <li><a href="/ecommerce">Ecommerce</a>
                     </li>
                     <li><a href="./sponsors">biblioteca de recursos</a></li>
                     <li class="emms__header__nav__menu__dropdown"><a href="#" class="active">Qué es el EMMS</a>
