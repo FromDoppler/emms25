@@ -123,7 +123,7 @@ class Relay
     public static function getEcommerceEmailTemplate($encodeEmail)
     {
         // $templateName = 'ecommerce-pre-template.html';
-        $templateName = 'ecommerce-early-template';
+        $templateName = 'ecommerce-early-template.html';
         return self::getTemplate('ecommerce', $templateName, $encodeEmail);
     }
 
