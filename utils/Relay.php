@@ -7,7 +7,7 @@ class Relay
     private static $account;
 
     private const urlBase = 'https://api.dopplerrelay.com/accounts/';
-    private const fromName = 'EMMS 2024';
+    private const fromName = 'EMMS 2025';
     private const fromEmail = 'info@goemms.com';
     private const TEMPLATE_DIR = __DIR__ . '/relay-templates/';
 
@@ -122,7 +122,8 @@ class Relay
 
     public static function getEcommerceEmailTemplate($encodeEmail)
     {
-        $templateName = 'ecommerce-pre-template.html';
+        // $templateName = 'ecommerce-pre-template.html';
+        $templateName = 'ecommerce-early-template';
         return self::getTemplate('ecommerce', $templateName, $encodeEmail);
     }
 
