@@ -5,15 +5,15 @@
 $contents = [
     '/' => [
         'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'REGÍSTRATE GRATIS',
+        'DTCardButton' => 'REGÍSTRATE GRATIS'
     ],
     '/registrado' => [
         'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'INGRESA AHORA',
+        'DTCardButton' => 'INGRESA AHORA'
     ],
     '/*' => [
         'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'REGÍSTRATE GRATIS',
+        'DTCardButton' => 'REGÍSTRATE GRATIS'
     ],
 ];
 
@@ -38,29 +38,61 @@ $content = $contents[$normalizedUrl] ?? $contents['/*'];
         <div class="emms__container--lg">
             <ul class="emms__eventCards__list emms__eventCards__list--dk emms__fade-in">
                 <?php
-                echo renderEventCard(array(
-                    'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
-                    'imageAlt' => 'Ecommerce image',
-                    'title' => 'EMMS E-commerce',
-                    'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
+                if ($isRegistred) {
+                    echo renderEventCard(array(
+                        'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
+                        'imageAlt' => 'Ecommerce image',
+                        'title' => 'EMMS E-commerce',
+                        'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
 y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
-                    'buttonText' => 'REGÍSTRATE GRATIS',
-                    'buttonLink' => '/ecommerce',
-                    'ribbonText' => '',
-                    'isSecondaryButton' => false
-                ), $ecommerceStates);
+                        'buttonText' => 'ACCEDE',
+                        'buttonLink' => '/ecommerce-registrado',
+                        'ribbonText' => '',
+                        'isRegistered' => true,
+                        'isSecondaryButton' => false
+                    ), $ecommerceStates);
 
 
-                echo renderEventCard(array(
-                    'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
-                    'imageAlt' => 'Image Digital Trends',
-                    'title' => 'EMMS Digital Trends',
-                    'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
-                    'buttonText' => 'REVÍVELO AHORA',
-                    'buttonLink' => '/ediciones-anteriores',
-                    'ribbonText' => '',
-                    'isSecondaryButton' => true
-                ), $digitalTrendsStates);
+                    echo renderEventCard(array(
+                        'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
+                        'imageAlt' => 'Image Digital Trends',
+                        'title' => 'EMMS Digital Trends',
+                        'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
+                        'buttonText' => 'REVÍVELO AHORA',
+                        'buttonLink' => '/ediciones-anteriores-registrado',
+                        'ribbonText' => '',
+                        'isRegistered' => false,
+                        'isSecondaryButton' => true
+                    ), $digitalTrendsStates);
+                } else {
+
+                    echo renderEventCard(array(
+                        'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
+                        'imageAlt' => 'Ecommerce image',
+                        'title' => 'EMMS E-commerce',
+                        'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
+y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
+                        'buttonText' => 'REGÍSTRATE GRATIS',
+                        'buttonLink' => '/ecommerce',
+                        'ribbonText' => '',
+                        'isRegistered' => false,
+                        'isSecondaryButton' => false
+                    ), $ecommerceStates);
+
+
+                    echo renderEventCard(array(
+                        'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
+                        'imageAlt' => 'Image Digital Trends',
+                        'title' => 'EMMS Digital Trends',
+                        'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
+                        'buttonText' => 'REVÍVELO AHORA',
+                        'buttonLink' => '/ediciones-anteriores',
+                        'ribbonText' => '',
+                        'isRegistered' => false,
+                        'isSecondaryButton' => true
+                    ), $digitalTrendsStates);
+                }
+
                 ?>
             </ul>
             <ul class="emms__eventCards__list emms__eventCards__list--mb emms__fade-in main-carousel" data-flickity>
@@ -74,6 +106,7 @@ y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
                     'buttonText' => 'REGÍSTRATE GRATIS',
                     'buttonLink' => '/ecommerce',
                     'ribbonText' => '',
+                    'isRegistered' => $content['isRegistered'],
                     'isSecondaryButton' => false
                 ), $ecommerceStates);
 
@@ -86,6 +119,7 @@ y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
                     'buttonText' => 'REVÍVELO AHORA',
                     'buttonLink' => '/ediciones-anteriores',
                     'ribbonText' => '',
+                    'isRegistered' => false,
                     'isSecondaryButton' => true
                 ), $digitalTrendsStates);
                 ?>

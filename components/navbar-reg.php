@@ -8,11 +8,11 @@
             <ul class="emms__header__nav__menu" id="navMenu">
                 <li><a href="/registrado">home</a></li>
                 <li><a href="/ecommerce-registrado">Ecommerce</a></li>
-                <li><a href="/sponsors">biblioteca de recursos</a></li>
-                <li class="emms__header__nav__menu__dropdown"><a href="/ediciones-anteriores">Qué es el EMMS</a>
+                <li><a href="/sponsors-registrado">biblioteca de recursos</a></li>
+                <li class="emms__header__nav__menu__dropdown"><a href="/ediciones-anteriores-registrado">Qué es el EMMS</a>
                     <ul class="emms__header__nav__submenu">
-                        <li><a href="/ediciones-anteriores#sobre-emms">Sobre el EMMS</a></li>
-                        <li><a href="/ediciones-anteriores#ediciones-anteriores">Revive ediciones anteriores</a></li>
+                        <li><a href="/ediciones-anteriores-registrado#sobre-emms">Sobre el EMMS</a></li>
+                        <li><a href="/ediciones-anteriores-registrado#ediciones-anteriores">Revive ediciones anteriores</a></li>
                     </ul>
                 </li>
                 <li><a href="/sponsors-promo">sponsors</a></li>

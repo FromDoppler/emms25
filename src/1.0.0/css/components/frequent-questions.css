@@ -5,7 +5,7 @@
 }
 
 .emms__frequentquestions.frequentquestions--checkout {
-    background: url("../../../img/bg-section-7.png") #0B0627 no-repeat;
+    background: url("../../../img/backgrounds/bg-section-7.png") #0B0627 no-repeat;
     background-size: cover;
     background-position: bottom;
 }
@@ -37,7 +37,7 @@
 }
 
 .emms__frequentquestions.emms__frequentquestions--during {
-    background: #000 url('../../../img/bg-section-6.png') no-repeat;
+    background: #000 url('../../../img/backgrounds/bg-section-6.png') no-repeat;
     background-size: 100%;
 }
 

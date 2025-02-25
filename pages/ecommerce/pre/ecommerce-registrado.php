@@ -18,12 +18,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         } from '/src/<?= VERSION ?>/js/enums/eventsType.enum.js';
         hiddenOrShowUserUI(eventsType.ECOMMERCE);
     </script>
-    <script type="module">
+    <!-- <script type="module">
         import {
             toggleVipDigitalTrendsElements
         } from '/src/<?= VERSION ?>/js/toggleVipElements.js';
         toggleVipDigitalTrendsElements();
-    </script>
+    </script> -->
 </head>
 
 <body class="ecommerce ecommerce-logueado">
@@ -40,8 +40,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
-    <script src="src/<?= VERSION ?>/js/newDate.js" type="module"></script>
-
 </body>
 
 </html>

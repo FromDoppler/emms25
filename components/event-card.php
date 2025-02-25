@@ -40,6 +40,7 @@ function renderEventCard($eventData, $eventState)
         'buttonText' => '',
         'buttonLink' => '',
         'ribbonText' => '',
+        'isRegistered' => '',
         'isSecondaryButton' => false
     );
 
@@ -50,6 +51,7 @@ function renderEventCard($eventData, $eventState)
     $postEventHtml = $eventState['isPost'] ? '<p class="top hide">EVENTO FINALIZADO</p>' : '';
     $liveEventHtml = $eventState['isLive'] ? '<span>EN VIVO</span>' : '';
     $ribbonHtml = $ribbonText ? "<div class=\"ribbon__end\">$ribbonText</div>" : '';
+    $spanRegistered = $isRegistered ? "<small class=\"success-register\">🗹 YA TE HAS REGISTRADO</small>" : '';
 
     $buttonHtml = renderButton(array(
         'buttonText' => $buttonText,
@@ -69,6 +71,7 @@ function renderEventCard($eventData, $eventState)
                 $liveEventHtml
             </h3>
             <p>$description</p>
+            $spanRegistered
             <span>ONLINE Y GRATUITO</span>
             <div class="emms__eventCards__list__item__text--bottom">
                 $buttonHtml
