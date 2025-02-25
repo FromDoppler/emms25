@@ -28,19 +28,19 @@ function getLinkDuringByCurrentUrl($url)
 {
     $urls = [
         '/' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Ya%20comenz%C3%B3%20el%20EMMS%20Digital%20Trends%202024.%20S%C3%BAmate%20gratis%20y%20disfruta%20de%20Conferencias%20sobre%20Marketing%20Digital,%20Workshops,%20Networking%20y%20mucho%20m%C3%A1s.%20%0AReg%C3%ADstrate%20ahora%20:)',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends-registrado&title=¡Empezó%20el%20EMMS%20Digital%20Trends!&summary=Únete%20a%20la%20transmisión%20del%20evento%20que%20te%20acerca%20a%20los%20mayores%20expertos%20internacionales%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online&source=EMMS',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+            'twitter' => 'https://twitter.com/intent/tweet?url=http://goemms.com/ecommerce&text=Llega%20el%20EMMS%20E-commerce%202025%2C%20¡súmate%20ahora!%20Conferencias%2C%20Workshops%20y%20beneficios%20especiales.%20Regístrate%20y%20descubre%20en%20un%20solo%20evento%20las%20mentes%20más%20brillantes%20del%20E-commerce%20de%20LATAM%20y%20España.%20Reserva%20tu%20lugar%20en%20goemms.com%2Fecommerce',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=http://goemms.com/ecommerce&title=¡Ya%20puedes%20inscribirte%20gratis%20en%20el%20EMMS%20E-commerce%202025!&summary=El%20evento%20de%20comercio%20digital%20más%20esperado%20del%20año.%20Conferencias%20con%20referentes%20internacionales%2C%20workshops%20exclusivos%2C%20recursos%20descargables%2C%20sorteos%20y%20beneficios%20especiales.%20Es%20gratis%20y%20online.%20¡Regístrate%20ahora!&source=EMMS',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/ecommerce',0
         ],
-        '/digital-trends-registrado' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Ya%20comenz%C3%B3%20el%20EMMS%20Digital%20Trends%202024.%20S%C3%BAmate%20gratis%20y%20disfruta%20de%20Conferencias%20sobre%20Marketing%20Digital,%20Workshops,%20Networking%20y%20mucho%20m%C3%A1s.%20%0AReg%C3%ADstrate%20ahora%20:)',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends-registrado&title=¡Empezó%20el%20EMMS%20Digital%20Trends!&summary=Únete%20a%20la%20transmisión%20del%20evento%20que%20te%20acerca%20a%20los%20mayores%20expertos%20internacionales%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online&source=EMMS',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+        '/ecommerce-registrado' => [
+            'twitter' => 'https://twitter.com/intent/tweet?url=http://goemms.com/ecommerce&text=Cuenta%20regresiva%20para%20el%20EMMS%20E-commerce%202025.%20Conferencias%2C%20Workshops%20y%20beneficios%20especiales.%20El%20evento%20que%20reúne%20a%20las%20mentes%20más%20brillantes%20del%20E-commerce%20de%20LATAM%20y%20España%20vuelve%20a%20realizarse%20este%2028%20y%2029%20de%20abril.%20Es%20online%20y%20gratuito.%20%0A%0A¡Regístrate%20ahora!',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=http://goemms.com/ecommerce&title=¡Cuenta%20regresiva%20para%20el%20EMMS%20E-commerce%202025!&summary=¡El%20evento%20de%20comercio%20digital%20más%20esperado%20del%20año!%20Conferencias%20con%20referentes%20internacionales%2C%20workshops%20exclusivos%2C%20recursos%20descargables%2C%20sorteos%20y%20beneficios%20especiales.%20Es%20gratis%20y%20online.%20No%20te%20lo%20pierdas.&source=EMMS',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/ecommerce',
         ],
         '/*' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Ya%20comenz%C3%B3%20el%20EMMS%20Digital%20Trends%202024.%20S%C3%BAmate%20gratis%20y%20disfruta%20de%20Conferencias%20sobre%20Marketing%20Digital,%20Workshops,%20Networking%20y%20mucho%20m%C3%A1s.%20%0AReg%C3%ADstrate%20ahora%20:)',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends-registrado&title=¡Empezó%20el%20EMMS%20Digital%20Trends!&summary=Únete%20a%20la%20transmisión%20del%20evento%20que%20te%20acerca%20a%20los%20mayores%20expertos%20internacionales%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online&source=EMMS',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+            'twitter' => 'https://twitter.com/intent/tweet?url=http://goemms.com/ecommerce&text=Llega%20el%20EMMS%20E-commerce%202025%2C%20¡súmate%20ahora!%20Conferencias%2C%20Workshops%20y%20beneficios%20especiales.%20Regístrate%20y%20descubre%20en%20un%20solo%20evento%20las%20mentes%20más%20brillantes%20del%20E-commerce%20de%20LATAM%20y%20España.%20Reserva%20tu%20lugar%20en%20goemms.com%2Fecommerce',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=http://goemms.com/ecommerce&title=¡Ya%20puedes%20inscribirte%20gratis%20en%20el%20EMMS%20E-commerce%202025!&summary=El%20evento%20de%20comercio%20digital%20más%20esperado%20del%20año.%20Conferencias%20con%20referentes%20internacionales%2C%20workshops%20exclusivos%2C%20recursos%20descargables%2C%20sorteos%20y%20beneficios%20especiales.%20Es%20gratis%20y%20online.%20¡Regístrate%20ahora!&source=EMMS',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/ecommerce',
         ],
     ];
 
