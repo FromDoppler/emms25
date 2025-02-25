@@ -44,7 +44,7 @@
                 <div class="emms__userscomments__list__item__content">
                     <p class="emms__userscomments__list__item__text">“El EMMS fue una experiencia transformadora para mi negocio. No solo aprendí estrategias que pude implementar al instante, sino que también hice alianzas con otros emprendedores de toda la región. ¡Totalmente recomendado!"</p>
                     <div class="emms__userscomments__list__item__author">
-                        <img class="emms__userscomments__list__item__author--photo" src="/src/img/quotes/quote-Andrea.png" alt="Andrea">
+                        <img class="emms__userscomments__list__item__author--photo" src="/src/img/quotes/quote-andrea.png" alt="Andrea">
                         <div class="emms__userscomments__list__item__author--name">
                             <p>Andrea</p>
                             <img src="/src/img/flag-colombia.png" alt="Colombia">

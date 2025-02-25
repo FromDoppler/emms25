@@ -88,14 +88,12 @@ $block = getBlock($normalizedUrl);
             </ul>
         </div>
         <?php if ($block['block'] === 'home') : ?>
-            <small class="emms__fade-in">Pronto conocerás a los Speakers del EMMS DIGITAL TRENDS 2024
-                <br> Regístrate al evento para descubrir quiénes nos acompañarán en esta edición.
-                <br> Mientras tanto, puedes revivir las mejores conferencias de años anteriores.
+            <small class="emms__fade-in">Regístrate a la próxima edición y descubre la agenda antes que nadie.
             </small>
             <a href="/ediciones-anteriores#ediciones-anteriores" class="emms__cta emms__fade-in">REVIVE EDICIONES ANTERIORES</a>
         <?php elseif ($block['block'] === 'registerHome') : ?>
-            <p> <strong> ¡No te duermas! Pronto llega el EMMS Digital Trends 2024</strong></p>
-            <p>Descubre muy pronto la agenda de Speakers, Workshops y todas las novedades de la nueva edición.</p>
+            <p> <strong>¡No te duermas! Pronto llega el EMMS E-commerce 2025</strong></p>
+            <p>En breve descubrirás la agenda de Speakers, Workshops y todas las novedades de esta nueva edición.</p>
         <?php elseif ($block['block'] === 'ecommerce') : ?>
             <small class="emms__fade-in">✨ ¡Pronto revelaremos los speakers 2025! Regístrate gratis y descúbrelos antes que nadie.
             </small>

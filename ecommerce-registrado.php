@@ -30,5 +30,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
 </script>
 <?php
 $response = processPhaseToShow(ECOMMERCE);
+$isRegistred=1;
 require_once($_SERVER['DOCUMENT_ROOT'] . "/pages/ecommerce/$response[phaseToShow]/ecommerce-registrado.php");
 ?>
