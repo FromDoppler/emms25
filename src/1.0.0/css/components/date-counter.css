@@ -1,5 +1,5 @@
 .emms-counter {
-    background-color: #6B44BB;
+    background: linear-gradient(#DF24C1, #7D04F6);
     padding: 15px 0px 25px 0;
     display: flex;
     flex-direction: row;

@@ -36,7 +36,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
             <div class="emms__register-modal__window emms__register-modal--sponsor-promo">
                 <!-- Form -->
                 <form class="emms__form" id="sponsorsPromoForm" novalidate autocomplete="off">
-                    <h3>Déjanos tus datos de contacto para ser parte del EMMS 2024 :)</h3>
+                    <h3>Déjanos tus datos de contacto para ser parte del EMMS 2025 :)</h3>
                     <h4>En breve nuestro equipo te escribirá para conversar sobre la mejor forma de sumarte como <span id="sponsorType"></span> al EMMS</h4>
                     <ul class="emms__form__field-group">
                         <li class="emms__form__field-item">
