@@ -34,7 +34,7 @@ $normalizedUrl = getNormalizeUrl();
 $content = $contents[$normalizedUrl] ?? $contents['/*'];
 
 $youtubeBaseUrl = "https://www.youtube.com/embed/";
-$youtubeParams = "?controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&autoplay=1&loop=1";
+$youtubeParams = "?controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&autoplay=0&loop=1";
 $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
 
 ?>

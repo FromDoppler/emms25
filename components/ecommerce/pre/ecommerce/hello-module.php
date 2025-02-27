@@ -5,7 +5,7 @@
             Guarda la fecha y no te pierdas esta oportunidad única para impulsar tu negocio.
         </p>
         <div class="hero-registration__add-event">
-            <span><a class=" emms__fade-in" href="./checkout">AGÉNDALO EN TU CALENDARIO</a></span>
+            <span><a class=" emms__fade-in" href="https://www.addevent.com/event/nt24784790" target="_blank">AGÉNDALO EN TU CALENDARIO</a></span>
         </div>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
