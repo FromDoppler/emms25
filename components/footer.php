@@ -5,11 +5,12 @@
    <div class="emms__footer__social emms__fade-in">
      <ul>
        <li><a href="https://www.instagram.com/fromdoppler/" target="_blank"><img src="/src/img/icons/icono-instagram.svg" alt="Instagram"></a></li>
-       <li><a href="https://www.facebook.com/DopplerEmailMarketing" target="_blank"><img src="/src/img/icons/icono-facebook.svg" alt="Facebook"></a></li>
-       <li><a href="https://www.youtube.com/user/FromDoppler" target="_blank"><img src="/src/img/icons/icono-youtube.svg" alt="Youtube"></a>
-       </li>
        <li><a href="https://www.linkedin.com/company/228261" target="_blank"><img src="/src/img/icons/icono-linkedin.svg" alt="LinkedIn"></a></li>
+       <li><a href="https://www.youtube.com/user/FromDoppler" target="_blank"><img src="/src/img/icons/icono-youtube.svg" alt="Youtube"></a>
+       <li><a href="https://www.tiktok.com/@fromdoppler" target="_blank"><img src="/src/img/icons/icono-tiktok.svg" alt="TikTok"></a>
        <li><a href="https://twitter.com/fromDoppler" target="_blank"><img src="/src/img/icons/icono-twitter.svg" alt="Twitter"></a></li>
+       <li><a href="https://www.facebook.com/DopplerEmailMarketing" target="_blank"><img src="/src/img/icons/icono-facebook.svg" alt="Facebook"></a></li>
+       </li>
      </ul>
    </div>
    <div class="emms__footer__actions emms__fade-in">

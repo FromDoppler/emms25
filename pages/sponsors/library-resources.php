@@ -18,7 +18,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/hero.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/sponsorsList.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/conferences.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/registerModal.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php') ?>

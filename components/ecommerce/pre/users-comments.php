@@ -16,7 +16,7 @@
             </li>
             <li class="emms__userscomments__list__item">
                 <div class="emms__userscomments__list__item__content">
-                    <p class="emms__userscomments__list__item__text">“Ver las conferencias online es increíble. Pude disfrutar de la última edición en el trabajo y verlo con mis compañeros”</p>
+                    <p class="emms__userscomments__list__item__text">"Nunca imaginé que un evento digital me proporcionaría tanto valor. Los workshops prácticos fueron claves para mejorar nuestras campañas y optimizar la conversión. ¡Definitivamente, un must para cualquier profesional del marketing!"</p>
                     <div class="emms__userscomments__list__item__author">
                         <img class="emms__userscomments__list__item__author--photo" src="/src/img/quotes/quote-beatriz.png" alt="Beatriz">
                         <div class="emms__userscomments__list__item__author--name">
@@ -28,7 +28,8 @@
             </li>
             <li class="emms__userscomments__list__item">
                 <div class="emms__userscomments__list__item__content">
-                    <p class="emms__userscomments__list__item__text">“Recomiendo este evento porque ofrece contenido de un valor excepcional que supera incluso a los eventos pagos más destacados, ¡y gratis!”</p>
+                    <p class="emms__userscomments__list__item__text">"El EMMS me brindó las herramientas exactas que necesitaba para aumentar las ventas de mis clientes. Los casos
+                    de éxito compartidos fueron inspiradores. Ahora mi tienda está escalando como nunca."</p>
                     <div class="emms__userscomments__list__item__author">
                         <img class="emms__userscomments__list__item__author--photo" src="/src/img/quotes/quote-juan.png" alt="Juan Pablo">
                         <div class="emms__userscomments__list__item__author--name">

@@ -7,7 +7,7 @@
         <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
             <ul class="emms__header__nav__menu" id="navMenu">
                 <li><a href="/registrado">home</a></li>
-                <li><a href="/ecommerce-registrado">Ecommerce</a></li>
+                <li><a href="/ecommerce-registrado">E-commerce</a></li>
                 <li><a href="/sponsors-registrado">biblioteca de recursos</a></li>
                 <li class="emms__header__nav__menu__dropdown"><a href="/ediciones-anteriores-registrado">Qué es el EMMS</a>
                     <ul class="emms__header__nav__submenu">

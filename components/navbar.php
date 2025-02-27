@@ -19,7 +19,7 @@
                     <a href="/ecommerce" class="nav-link"
                         data-registered-url="/ecommerce-registrado"
                         data-unregistered-url="/ecommerce">
-                        Ecommerce
+                        E-commerce
                     </a>
                 </li>
                 <li>

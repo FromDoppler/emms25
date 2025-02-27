@@ -191,7 +191,7 @@ ul.centralvideo__list.centralvideo__list--live li::before {
 }
 
 .centralvideo__video {
-    width: 50%;
+    width: 55%;
     position: relative;
     animation-delay: .2s;
 }

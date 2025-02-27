@@ -13,7 +13,7 @@
                 <p class="emms__frequentquestions__list__item__content">Con tu registro podrás acceder a todas las Conferencias de esta y todas las ediciones anteriores para siempre. Además, podrás acceder a una biblioteca repleta de recursos como <b>E-books, Plantillas, descuentos y material audiovisual</b> para que puedas hacer crecer tu negocio aún más.</p>
             </li>
             <li class="emms__frequentquestions__list__item close">
-                <button class="emms__frequentquestions__list__item__head">📅 ¿Cuándo se realizará el EMMS 2024?</button>
+                <button class="emms__frequentquestions__list__item__head">📅 ¿Cuándo se realizará el EMMS 2025?</button>
                 <p class="emms__frequentquestions__list__item__content">El<b> EMMS 2025 tiene 2 ediciones: E-commerce, que tendrá lugar el 28 y 29 de abril de 2025 y Digital Trends</b>, en <b>octubre próximo (fecha a definir).</b> Registrándote al evento recibirás por Email todos las novedades.</p>
             </li>
             <li class="emms__frequentquestions__list__item close">
