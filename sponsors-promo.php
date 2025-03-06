@@ -13,8 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 </head>
 
 <body class="emms__sponsor-promo">
-
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
+    <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
