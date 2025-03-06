@@ -50,7 +50,6 @@
                  <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href="https://goemms.com/#preguntas-frecuentes"> Haz clic aquí </a> </strong>y encuentra las preguntas más frecuentes sobre el evento</small>
              </div>
          </section>
-         <script src="/src/<?= VERSION ?>/js/sponsors.js"></script>
          <script>
              'use strict';
 
