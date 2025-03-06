@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 <html lang="en">
 
 <head>
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head-home.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 
     <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
