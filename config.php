@@ -52,6 +52,12 @@ $digitalTrends = 'digital-trends25';
 if (!defined('ECOMMERCE')) define('ECOMMERCE', $ecommerce);
 if (!defined('DIGITALTRENDS')) define('DIGITALTRENDS', $digitalTrends);
 
+#GTM (Google Tag Manager) Containers
+if (!defined('GTM_IDS')) define('GTM_IDS', [
+    'dhtrack' => 'GTM-M768WZR',
+    'hotjar'  => 'GTM-TMMV2DF'
+]);
+
 #IPS WHITE LIST
 
 if (!defined('ALLOW_IPS')) define('ALLOW_IPS', $ALLOW_IPS);

@@ -37,25 +37,26 @@
   function OptanonWrapper() {}
 </script>
 <!-- El aviso de consentimiento de cookies de OneTrust finaliza para goemms.com. -->
-
 <!-- Google Tag Manager -->
+<?php
+if (PRODUCTION) {
+?>
 <script>
-  (function(w, d, s, l, i) {
+  (function(w, d, s, l, ids) {
     w[l] = w[l] || [];
-    w[l].push({
-      'gtm.start': new Date().getTime(),
-      event: 'gtm.js'
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+
+    Object.values(ids).forEach((id) => {
+      const dl = l !== 'dataLayer' ? '&l=' + l : '';
+      const j = d.createElement(s);
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id + dl;
+      const f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(j, f);
     });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src =
-      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-M768WZR');
+  })(window, document, 'script', 'dataLayer', <?php echo json_encode(GTM_IDS); ?>);
 </script>
+<?php } ?>
 <!-- End Google Tag Manager -->
 
-<!-- Doppler Dhtrack necesario para envio de notif. push -->
-<script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js" ></script>
+
