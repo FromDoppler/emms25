@@ -44,7 +44,7 @@ if (!$sponsor) {
 </head>
 
 <body class="emms__internal-sponsors">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
+    <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/date-counter.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>

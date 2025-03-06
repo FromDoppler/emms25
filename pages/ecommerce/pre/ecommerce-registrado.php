@@ -18,16 +18,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         } from '/src/<?= VERSION ?>/js/enums/eventsType.enum.js';
         hiddenOrShowUserUI(eventsType.ECOMMERCE);
     </script>
-    <!-- <script type="module">
-        import {
-            toggleVipDigitalTrendsElements
-        } from '/src/<?= VERSION ?>/js/toggleVipElements.js';
-        toggleVipDigitalTrendsElements();
-    </script> -->
 </head>
 
 <body class="ecommerce ecommerce-logueado">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
+    <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
