@@ -106,7 +106,7 @@ y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
                     'buttonText' => 'REGÍSTRATE GRATIS',
                     'buttonLink' => '/ecommerce',
                     'ribbonText' => '',
-                    'isRegistered' => $content['isRegistered'],
+                    'isRegistered' => $content['isRegistered'] ?? null,
                     'isSecondaryButton' => false
                 ), $ecommerceStates);
 
