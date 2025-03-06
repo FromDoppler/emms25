@@ -43,7 +43,7 @@ $videos = [
                 <?php foreach ($videos as $video): ?>
                     <div class="emms__conferences__cards emms__fade-in">
                         <a
-                            <?php if (!$isRegistred): ?>
+                            <?php if (!$isRegistered): ?>
                                 data-target="modalRegister" data-toggle="emms__register-modal" href="#"
                             <?php else: ?>
                                 href="<?= $video['link'] ?>" target="_blank"

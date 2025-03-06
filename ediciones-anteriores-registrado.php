@@ -47,7 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
             <a class="emms__header__nav--mb" id="btn-burger"></a>
             <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
                 <ul class="emms__header__nav__menu">
-                    <li><a href="/">home</a></li>
+                    <li><a href="/registrado">home</a></li>
                     <li><a href="/ecommerce-registrado">Ecommerce</a>
                     </li>
                     <li><a href="./sponsors-registrado">biblioteca de recursos</a></li>

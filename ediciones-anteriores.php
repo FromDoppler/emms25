@@ -335,7 +335,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                 <?
                 $formTitle = 'Revive las ediciones anteriores 🙂';
                 $formSubTitle = 'Regístrate aquí de forma gratuita para volver a ver las charlas de todas tus ediciones preferidas del EMMS, desbloquear la Biblioteca de Recursos y ¡ser parte de la próxima edición!';
-                $eventType = DIGITALTRENDS;
+                $eventType = ECOMMERCE;
                 ?>
                 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/register-form-component.php'); ?>
                 <!-- End form -->

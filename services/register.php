@@ -98,20 +98,17 @@ function setSponsorDataRequest($ip, $countryGeo)
 
 function setDataRequest($ip, $countryGeo)
 {
-    error_log("setDataRequest hastaaca entre lo mas bien");
     $requestWithoutForm = false;
     $eventsData = processEvents(json_decode(getFieldValue('events')));
     $ecommerce = $eventsData['ecommerce'];
     $digital_trends = $eventsData['digital_trends'];
     $firstname = getFieldValue('name');
-    error_log("antes de la db jhoya \n");
     if ($firstname === null) {
         $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         $firstname = $db->getUserNameByEmail(getFieldValue('email'))[0]['firstname'];
         $db->close();
         $requestWithoutForm = true;
     }
-    error_log("despues de la db jhoya \n");
     $email = getFieldValue('email');
     error_log($email. " \n");
     $encode_email = getFieldValue('encodeEmail');
@@ -128,11 +125,9 @@ function setDataRequest($ip, $countryGeo)
     $term_utm = getFieldValue('utm_term');
     $origin = getFieldValue('origin');
     $type = getFieldValue('type');
-    error_log("type ".$type." phase \n");
     $phase = getCurrentPhase($type);
 
     $list = ($type === ECOMMERCE) ? LIST_LANDING_ECOMMERCE : LIST_LANDING_DIGITALT;
-    error_log("despeus de la lsita jhoya \n");
     $subject = getSubjectEmail($type, $phase);
     $user = array(
         'register' => date("Y-m-d h:i:s A"),
@@ -157,7 +152,6 @@ function setDataRequest($ip, $countryGeo)
         'list' => $list,
         'subject' => $subject
     );
-    error_log("Datos recibidos: " . json_encode($user));
 
     try {
         Validator::validateEmail($email);
@@ -201,7 +195,6 @@ function getCurrentPhase($type)
         $mem_var = new Memcached();
         $mem_var->addServer(MEMCACHED_SERVER, 11211);
         $settings_phase = $mem_var->get("settings_phase_" . $type);
-        error_log("settings_phase ".$settings_phase."\n");
         if (!$settings_phase) {
             $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
             $settings_phase = $db->getCurrentPhase($type)[0];
@@ -209,7 +202,6 @@ function getCurrentPhase($type)
             $mem_var->set("settings_phase_" . $type, $settings_phase, CACHE_TIME);
         }
         $phaseToShow = array_search(1, $settings_phase);
-        error_log("phaseToShow ".$phaseToShow."\n");
         return $phaseToShow;
     } catch (Exception $e) {
         header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
@@ -302,28 +294,13 @@ function getCountryName()
 error_log("Inicio de ejecución de register.php");
 
 $ip = getIp();
-error_log("IP obtenida: " . json_encode($ip));
-
 $countryGeo = getCountryName();
-error_log("País detectado: " . json_encode($countryGeo));
-
 isSubmitValid($ip);
-error_log("Validación de envío completada");
-
 $user = setDataRequest($ip, $countryGeo);
 error_log("Datos del usuario: " . json_encode($user));
-
 saveSubscriptionDoppler($user);
-error_log("Guardado en Doppler");
-
 saveSubscriptionDopplerTable($user);
-error_log("Guardado en tabla Doppler");
-
 saveSubscriptionSpreadSheet($user);
-error_log("Guardado en SpreadSheet");
-
 sendEmail($user, $user['subject']);
-error_log("Correo enviado");
-
 $response = ['status' => 'success', 'message' => 'User registered successfully.'];
 echo json_encode($response);
