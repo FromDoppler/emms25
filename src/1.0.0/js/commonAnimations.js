@@ -73,13 +73,10 @@ window.addEventListener('scroll', function () {
     checkPosition2();
 })();
 
-
 // Flickity Carousel Home
-
-if (flkty != undefined) {
-    var elem = document.querySelector('.main-carousel');
-    var flkty = new Flickity(elem, {
-        // options
+const homeCarousel = document.querySelector('.main-carousel');
+if (homeCarousel) {
+    const flktyHome = new Flickity(homeCarousel, {
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
@@ -88,21 +85,19 @@ if (flkty != undefined) {
     });
 }
 
-
 // Flickity Carousel Academy Banner
-
-var elem = document.querySelector('.academy-carousel');
-var flkty = new Flickity(elem, {
-    // options
-    groupCells: 1,
-    cellAlign: 'left',
-    contain: true,
-    prevNextButtons: true,
-    fade: true,
-    wrapAround: true,
-    pageDots: false,
-});
-
+const academyCarousel = document.querySelector('.academy-carousel');
+if (academyCarousel) {
+    const flktyAcademy = new Flickity(academyCarousel, {
+        groupCells: 1,
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: true,
+        fade: true,
+        wrapAround: true,
+        pageDots: false
+    });
+}
 
 // Mobile nav
 
