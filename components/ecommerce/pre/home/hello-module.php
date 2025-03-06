@@ -38,7 +38,7 @@ $content = $contents[$normalizedUrl] ?? $contents['/*'];
         <div class="emms__container--lg">
             <ul class="emms__eventCards__list emms__eventCards__list--dk emms__fade-in">
                 <?php
-                if ($isRegistred) {
+                if ($isRegistered) {
                     echo renderEventCard(array(
                         'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
                         'imageAlt' => 'Ecommerce image',

@@ -27,7 +27,7 @@ if (!empty($sponsors)) {
                         <?php if (empty($sponsor['slug'])) : ?>
                             <a class="inactive">Accede →</a>
                         <?php else : ?>
-                            <?php if ($isRegistred) : ?>
+                            <?php if ($isRegistered) : ?>
                                 <a href="/sponsors-interna?slug=<?= urlencode($sponsor['slug']) ?>">Accede ahora</a>
                             <?php else : ?>
                                 <a data-target="modalRegister" data-toggle="emms__register-modal" href="#">Accede ahora</a>

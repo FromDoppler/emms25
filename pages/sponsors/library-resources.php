@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <body class="emms__ecommerce">
     <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/date-counter.php'); ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . ($isRegistered ? '/components/navbar-reg.php' : '/components/navbar-unreg.php')); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/hero.php') ?>
