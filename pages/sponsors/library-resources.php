@@ -18,12 +18,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/hero.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/conferences.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/registerModal.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsors/libraryResources/conferences.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
+    <script src="/src/<?= VERSION ?>/js/sponsors.js"></script>
 </body>
 
 </html>

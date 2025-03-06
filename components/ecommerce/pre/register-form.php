@@ -11,7 +11,7 @@
             </ul>
         </div>
         <!-- Form -->
-        <?
+        <?php
         $formTitle = '';
         $formSubTitle = '';
         $eventType = ECOMMERCE;

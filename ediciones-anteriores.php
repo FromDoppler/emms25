@@ -332,7 +332,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
         <div id="modalRegister2" class="emms__register-modal">
             <div class="emms__register-modal__window">
                 <!-- Form -->
-                <?
+                <?php
                 $formTitle = 'Revive las ediciones anteriores 🙂';
                 $formSubTitle = 'Regístrate aquí de forma gratuita para volver a ver las charlas de todas tus ediciones preferidas del EMMS, desbloquear la Biblioteca de Recursos y ¡ser parte de la próxima edición!';
                 $eventType = ECOMMERCE;
