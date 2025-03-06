@@ -47,7 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                         <li class="emms__form__field-item">
                             <div class="holder">
                             <label class="required-label" for="email">Email Empresarial*</label>
-                            <input type="email" name="email" id="email" placeholder="&iexcl;No olvides usar @!" class="email required" autocomplete="off">
+                            <input type="email" name="email" id="email" placeholder="ejemplo@miempresa.com" class="email required" autocomplete="off">
                             </div>
                         </li>
                         <li class="emms__form__field-item">
