@@ -10,7 +10,7 @@
         <p>
             Vive una experiencia completa antes, durante y después del evento capacitándote gratis con todos estos contenidos on-demand.
         </p>
-        <?php if (!$isRegistred == 1): ?>
+        <?php if (!$isRegistered == 1): ?>
             <a class="emms__cta emms__fade-in" data-target="modalRegister" data-toggle="emms__register-modal">REGÍSTRATE GRATIS</a>
         <?php endif; ?>
     </div>
