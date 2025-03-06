@@ -2,8 +2,8 @@
     <div class="emms__register-modal__window">
         <!-- Form -->
         <?
-        $formTitle = 'Regístrate aquí';
-        $formSubTitle = 'Desbloquea la Biblioteca de Recursos, accede a conferencias de años anteriores y súmate gratis a la edición 2025';
+        $formTitle = 'Regístrate aquí 🙂';
+        $formSubTitle = 'Desbloquea la Biblioteca de Recursos, accede a conferencias de años anteriores y súmate gratis a la edición 2025.';
         $eventType = DIGITALTRENDS;
         ?>
         <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/register-form-component.php'); ?>
