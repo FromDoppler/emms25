@@ -8,8 +8,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SpreadSheetGoogle.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Relay.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SubscriptionErrors.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
@@ -263,8 +263,7 @@ function saveSubscriptionSpreadSheet($user)
 function sendEmail($user, $subject)
 {
     try {
-        Relay::init(ACCOUNT_RELAY, API_KEY_RELAY);
-        Relay::sendEmailRegister($user, $subject);
+        EmailService::sendEmailRegister($user, $subject);
     } catch (Exception $e) {
         processError("sendEmail (Envia mail por Relay)", $e->getMessage(), ['user' => $user, 'subject' => $subject]);
     }
