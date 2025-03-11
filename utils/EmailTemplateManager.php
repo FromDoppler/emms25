@@ -32,10 +32,6 @@ class EmailTemplateManager
         $phase = processPhaseToShow($type)["phaseToShow"];
 
         $templateMappings = [
-            'Plan Empresa Full' => 'getWixEmpresaTemplate',
-            'Plan Empresa Basic' => 'getWixEmpresaTemplate',
-            'Plan VIP' => 'getWixVipTemplate',
-            'Plan Invitado' => 'getWixInvitadoTemplate',
             ECOMMERCE => [
                 'pre' => 'getEcommerceEmailTemplate',
                 'during' => 'getEcommerceEmailTemplateDuring',
@@ -113,40 +109,6 @@ class EmailTemplateManager
         $templateName = 'dt-oldtemplate.html';
         return self::getTemplate('dt', $templateName, $encodeEmail);
     }
-
-    //TEMPLATES DE WIX
-    public static function getWixEmpresaTemplate($encodeEmail, $user)
-    {
-        $templateName = 'wix-empresa-template.html';
-        $userData = [
-            '$encodeEmail' => $encodeEmail,
-            'type' => $user['paidplan_title'],
-            'paymentMethod' => $user['paidplan_paymentmethod'],
-            'date' => $user['paidplan_startdate'],
-            'amount' => $user['paidplan_price'],
-        ];
-        return self::getTemplate('wix', $templateName, $encodeEmail, $userData);
-    }
-
-    public static function getWixVipTemplate($encodeEmail, $user)
-    {
-        $templateName = 'wix-vip-template.html';
-        $userData = [
-            '$encodeEmail' => $encodeEmail,
-            'type' => $user['paidplan_title'],
-            'paymentMethod' => $user['paidplan_paymentmethod'],
-            'date' => $user['paidplan_startdate'],
-            'amount' => $user['paidplan_price'],
-        ];
-        return self::getTemplate('wix', $templateName, $encodeEmail, $userData);
-    }
-
-    public static function getWixInvitadoTemplate($encodeEmail)
-    {
-        $templateName = 'wix-invitado-template.html';
-        return self::getTemplate('wix', $templateName, $encodeEmail);
-    }
-
 
     public static function getEcommerceVipTemplate($encodeEmail, $user)
     {
