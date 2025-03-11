@@ -163,7 +163,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 
         <!-- Description -->
 
-        <section class="emms__sponsor-promo__media-partner emms__bg-section-5 ">
+        <section class="emms__sponsor-promo__media-partner emms__bg-section-5 " id="conviertete-en-media-partner">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
             <div class="emms__container--md emms__fade-in">
                 <div class="emms__sponsor-promo__media-partner__text">
