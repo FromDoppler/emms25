@@ -7,6 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SubscriptionErrors.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
@@ -28,7 +29,7 @@ function getFieldValue($field, $default = null)
 }
 
 
-function setSponsorDataRequest($ip, $countryGeo)
+function setUserDataRequest($ip, $countryGeo)
 {
     $firstname = getFieldValue('name');
     $email = getFieldValue('email');
@@ -107,10 +108,40 @@ function sendDobleOptin($user)
     }
 }
 
-$ip =GeoIp::getIp();
+function sendEmailSponsor($sponsor)
+{
+    try {
+        EmailService::sendEmailSponsor($sponsor);
+    } catch (Exception $e) {
+        processError("sendEmail (Envia mail por Relay)", $e->getMessage(), ['sponsor' => $sponsor]);
+    }
+}
+
+function sendEmailPartner($partner)
+{
+    try {
+        EmailService::sendEmailpartner($partner);
+    } catch (Exception $e) {
+        processError("sendEmail (Envia mail por Relay)", $e->getMessage(), ['partner' => $partner]);
+    }
+}
+
+function sendEmail($user)
+{
+        switch ($user['dataType']) {
+        case 'sponsor':
+            sendEmailSponsor($user);
+        case 'mediaPartner':
+            sendEmailPartner($user);
+    }
+}
+
+
+$ip = GeoIp::getIp();
 $countryGeo =  GeoIp::getCountryName();
 isSubmitValid($ip);
-$user = setSponsorDataRequest($ip, $countryGeo);
+$user = setUserDataRequest($ip, $countryGeo);
 $response = saveSubscriptionDoppler($user);
+sendEmail($user);
 
 echo json_encode($response);

@@ -8,8 +8,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SpreadSheetGoogle.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Relay.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SubscriptionErrors.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
@@ -49,51 +49,6 @@ function processEvents($events)
     }
 
     return ['ecommerce' => $ecommerce, 'digital_trends' => $digital_trends];
-}
-
-
-function setSponsorDataRequest($ip, $countryGeo)
-{
-    $firstname = getFieldValue('name');
-    $email = getFieldValue('email');
-    $phone     = getFieldValue('phone');
-    $privacy = getFieldValue('acceptPolicies', false);
-    $promotions = getFieldValue('acceptPromotions', false);
-    $source_utm = getFieldValue('utm_source');
-    $medium_utm = getFieldValue('utm_medium');
-    $campaign_utm = getFieldValue('utm_campaign');
-    $content_utm = getFieldValue('utm_content');
-    $term_utm = getFieldValue('utm_term');
-    $origin = getFieldValue('origin');
-    $dataType = getFieldValue('dataType');
-    $list = ($dataType === 'sponsor') ? LIST_SPONSORS : LIST_MEDIA_PARTNERS;
-    $user = array(
-        'register' => date("Y-m-d h:i:s A"),
-        'firstname' => $firstname,
-        'email' => $email,
-        'phone' =>  $phone,
-        'privacy' => $privacy,
-        'promotions' => $promotions,
-        'ip' => $ip,
-        'country_ip' => $countryGeo,
-        'source_utm' => $source_utm,
-        'medium_utm' => $medium_utm,
-        'campaign_utm' => $campaign_utm,
-        'content_utm' => $content_utm,
-        'term_utm' => $term_utm,
-        'origin' => $origin,
-        'dataType' => $dataType,
-        'list' => $list,
-    );
-    try {
-        Validator::validateEmail($email);
-        Validator::validateBool('privacy', $privacy);
-        Validator::validateBool('promotions', $promotions);
-        return $user;
-    } catch (Exception $e) {
-        processError("setDataRequest (Captura datos)", $e->getMessage(), ['user' => $user]);
-        die();
-    }
 }
 
 function setDataRequest($ip, $countryGeo)
@@ -263,8 +218,7 @@ function saveSubscriptionSpreadSheet($user)
 function sendEmail($user, $subject)
 {
     try {
-        Relay::init(ACCOUNT_RELAY, API_KEY_RELAY);
-        Relay::sendEmailRegister($user, $subject);
+        EmailService::sendEmailRegister($user, $subject);
     } catch (Exception $e) {
         processError("sendEmail (Envia mail por Relay)", $e->getMessage(), ['user' => $user, 'subject' => $subject]);
     }

@@ -75,6 +75,8 @@ if (!defined('LIST_LANDING_DIGITALT_WIX')) define('LIST_LANDING_DIGITALT_WIX', 2
 #SPONSORS LIST
 if (!defined('LIST_SPONSORS')) define('LIST_SPONSORS', 28845743);
 if (!defined('LIST_MEDIA_PARTNERS')) define('LIST_MEDIA_PARTNERS', 28876952);
+if (!defined('EMAIL_SPONSORS')) define('EMAIL_SPONSORS', 'lbsales@makingsense.com');
+if (!defined('EMAIL_PARTNERS')) define('EMAIL_PARTNERS', 'partners@fromdoppler.com');
 
 
 #API WIX
