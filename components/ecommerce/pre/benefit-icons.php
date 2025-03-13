@@ -1,7 +1,7 @@
 <section class="emms__benefits-icons">
   <div class="emms__container--lg">
     <div class="emms__benefits-icons__title emms__fade-in">
-      <h2>Más allá de la Agenda: encuentra también en el EMMS Digital Trends</h2>
+      <h2>Conoce los beneficios que encontrarás en el EMMS E-commerce</h2>
     </div>
     <ul class="emms__benefits-icons__list">
       <li class="emms__benefits-icons__list__item emms__fade-in">

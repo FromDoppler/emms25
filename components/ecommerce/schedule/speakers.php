@@ -111,9 +111,8 @@ function renderCalendarTabs($days, $digitalTrendsStates, $dayDuring = null)
 
     <?php
     $days = [
-        1 => ['date' => 'DÍA 1', 'short' => 'DÍA 1'],
-        2 => ['date' => 'DÍA 2', 'short' => 'DÍA 2'],
-        3 => ['date' => 'DÍA 3', 'short' => 'DÍA 3']
+        1 => ['date' => '28 de Abril', 'short' => '28/04'],
+        2 => ['date' => '29 de Abril', 'short' => '29/04'],
     ];
 
     // Renderizamos las pestañas del calendario
