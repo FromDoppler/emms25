@@ -21,11 +21,18 @@ const redirectToRegisteredPage = () => {
     switch (pathname) {
         case '/sponsors':
             const slug = sessionStorage.getItem('currentSlug')
-            nextPage = `/sponsors-registrado?slug=${slug}`;
-        case '/digital-trends':
+            if(slug & slug != 'null'){
+                nextPage = `/sponsors-registrado?slug=${slug}`;
+            }else{
+                nextPage = `/sponsors-registrado`;
+            }
+            break;
+        case '/ecommerce':
             nextPage = '/ecommerce-registrado';
+            break;
         case '/ediciones-anteriores':
             nextPage = '/ediciones-anteriores-registrado';
+            break;
         default:
             nextPage = '/ecommerce-registrado';
             break;
