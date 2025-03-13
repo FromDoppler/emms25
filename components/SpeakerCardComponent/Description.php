@@ -7,7 +7,7 @@ $normalizedUrl = getNormalizeUrl();
     <h3 class="title-<?= $type ?>"><?= $speaker['title'] ?></h3>
     <p><?= $speaker['description'] ?></p>
 
-    <?php if (!empty($speaker['time']) & !$digitalTrendsStates['isPost']): ?>
+    <?php if (!empty($speaker['time']) & !$ecommerceStates['isPost']): ?>
         <div class="emms__calendar__list__item__country">
             <span><img src="src/img/flags/arg.png" alt="">(ARG) <?= $speaker['time'] ?></span>
             <a href="<?= $speaker['link_time'] ?>" target="_blank">Mira el horario de tu país</a>
@@ -15,7 +15,7 @@ $normalizedUrl = getNormalizeUrl();
     <?php endif; ?>
 
     <?php
-    if (!$digitalTrendsStates['isPre'] && $normalizedUrl === '/digital-trends-registrado') {
+    if (!$ecommerceStates['isPre'] && $normalizedUrl === '/digital-trends-registrado') {
         include 'DescriptionButton.php';
     }
     ?>

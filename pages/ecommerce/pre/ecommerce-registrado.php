@@ -25,12 +25,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
-
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/hello-module.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/hello-module.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
         <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/companies-list.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>

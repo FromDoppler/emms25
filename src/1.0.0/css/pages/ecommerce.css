@@ -81,11 +81,11 @@
 }
 
 .ecommerce-logueado .emms__calendar {
-    background: none;
+    /* background: none; */
 }
 
 .ecommerce-logueado .emms__calendar__title {
-    max-width: 770px;
+    max-width: 775px;
     animation-delay: .6s;
 }
 
