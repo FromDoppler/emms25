@@ -307,7 +307,9 @@
     line-height: 28px;
     color: #fff;
     margin: 30px 0 0 0;
+    margin-bottom: 49px;
     animation-delay: .5s;
+    padding-bottom: 35px;
 }
 
 .hero-registration--registered p a {
@@ -321,9 +323,9 @@
 
 .hero-registration--registered .hero-registration__add-event {
     position: relative;
-    width: 425px;
+    width: 530px;
     padding: 0 0 0 50px;
-    margin: 30px auto 0 auto;
+    margin: 15px auto 0 auto;
     font-weight: 700;
     display: block;
     cursor: pointer;
@@ -331,13 +333,20 @@
     animation-delay: .7s;
 }
 
+.hero-registration--registered .hero-registration__add-event p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.789px;
+    line-height: 33px;
+}
+
 .hero-registration--registered .hero-registration__add-event span {
-    font-size: 16px;
+    font-size: 22px;
     line-height: 20px;
     color: #fff;
     background: linear-gradient(-140deg, #7D04F6 50%, #F604CF 120%);
-    display: block;
-    padding: 20px 0;
+    display: inline;
+    padding: 20px 49px;
     border-radius: 100px;
 }
 
@@ -348,8 +357,8 @@
 .hero-registration--registered .hero-registration__add-event::before {
     content: "";
     position: absolute;
-    top: -3px;
-    left: 0;
+    top: -14px;
+    left: 105px;
     width: 44px;
     height: 55px;
     background: url("../../../img/icons/icon-calendar.svg") no-repeat;
@@ -454,11 +463,14 @@
     }
 
     .hero-registration--registered .hero-registration__add-event::before {
-        display: none;
+        top: -1px;
+        left: -28px;
     }
 
     .hero-registration--registered .hero-registration__add-event span {
         font-size: 12px;
+        display: block;
+        margin-bottom: 20px;
     }
 
 }
