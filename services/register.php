@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/restrictOriginAccess.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/GeoIp.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SecurityHelper.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Doppler.php');
@@ -13,156 +14,151 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
-
-
-
-function isSubmitValid($ip)
+function setDataRequest($ip, $countryGeo, $db)
 {
+    $postData = getPostData();
+    $eventsData = processEvents(json_decode($postData['events'], true));
+
+    $firstname = getFirstName($postData, $db);
+    $privacy = getPrivacy($postData);
+    $promotions = $postData['acceptPromotions'];
+    $utmData = getUtmData($postData);
+    $type = $postData['type'];
+    $phase = getCurrentPhase($type, $db);
+    $list = ($type === ECOMMERCE) ? LIST_LANDING_ECOMMERCE : LIST_LANDING_DIGITALT;
+    $subject = getSubjectEmail($type, $phase);
+
+    $user = buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject);
+
     try {
-        SecurityHelper::init($ip, SECURITYHELPER_ENABLE);
-        SecurityHelper::isSubmitValid(ALLOW_IPS);
+        validateRequest($postData, $privacy, $promotions);
+        return $user;
     } catch (Exception $e) {
-        processError("isSubmitValid", $e->getMessage(), ['ip' => $ip]);
-        exit('submits');
+        processError("setDataRequest (Captura datos)", $e->getMessage(), ['user' => $user]);
     }
 }
 
-function getFieldValue($field, $default = null)
+function getPostData()
 {
-    $_POST = json_decode(file_get_contents('php://input'), true);
-    return isset($_POST[$field]) ? $_POST[$field] : $default;
-}
+    $postData = json_decode(file_get_contents('php://input'), true);
 
+    return [
+        'name' => isset($postData['name']) ? $postData['name'] : null,
+        'email' => isset($postData['email']) ? $postData['email'] : null,
+        'encodeEmail' => isset($postData['encodeEmail']) ? $postData['encodeEmail'] : null,
+        'phone' => isset($postData['phone']) ? $postData['phone'] : null,
+        'acceptPolicies' => isset($postData['acceptPolicies']) ? $postData['acceptPolicies'] : false,
+        'acceptPromotions' => isset($postData['acceptPromotions']) ? $postData['acceptPromotions'] : false,
+        'utm_source' => isset($postData['utm_source']) ? $postData['utm_source'] : null,
+        'utm_medium' => isset($postData['utm_medium']) ? $postData['utm_medium'] : null,
+        'utm_campaign' => isset($postData['utm_campaign']) ? $postData['utm_campaign'] : null,
+        'utm_content' => isset($postData['utm_content']) ? $postData['utm_content'] : null,
+        'utm_term' => isset($postData['utm_term']) ? $postData['utm_term'] : null,
+        'origin' => isset($postData['origin']) ? $postData['origin'] : null,
+        'type' => isset($postData['type']) ? $postData['type'] : null,
+        'events' => isset($postData['events']) ? $postData['events'] : '[]'
+    ];
+}
 
 function processEvents($events)
 {
-    $ecommerce = 0;
-    $digital_trends = 0;
-
-    if (is_array($events)) {
-        if (in_array(ECOMMERCE, $events)) {
-            $ecommerce = 1;
-        }
-        if (in_array(DIGITALTRENDS, $events)) {
-            $digital_trends = 1;
-        }
-    }
-
-    return ['ecommerce' => $ecommerce, 'digital_trends' => $digital_trends];
+    return [
+        'ecommerce' => in_array(ECOMMERCE, (array) $events) ? 1 : 0,
+        'digital_trends' => in_array(DIGITALTRENDS, (array) $events) ? 1 : 0
+    ];
 }
 
-function setDataRequest($ip, $countryGeo)
+function getFirstName($postData, $db)
 {
-    $requestWithoutForm = false;
-    $eventsData = processEvents(json_decode(getFieldValue('events')));
-    $ecommerce = $eventsData['ecommerce'];
-    $digital_trends = $eventsData['digital_trends'];
-    $firstname = getFieldValue('name');
+    $firstname = $postData['name'];
     if ($firstname === null) {
-        $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        $firstname = $db->getUserNameByEmail(getFieldValue('email'))[0]['firstname'];
-        $db->close();
-        $requestWithoutForm = true;
+        $firstname = $db->getUserNameByEmail($postData['email'])[0]['firstname'];
     }
-    $email = getFieldValue('email');
-    error_log($email. " \n");
-    $encode_email = getFieldValue('encodeEmail');
-    $phone     = getFieldValue('phone');
-    $privacy = getFieldValue('acceptPolicies', false);
-    if ($requestWithoutForm) {
-        $privacy = true;
-    }
-    $promotions = getFieldValue('acceptPromotions', false);
-    $source_utm = getFieldValue('utm_source');
-    $medium_utm = getFieldValue('utm_medium');
-    $campaign_utm = getFieldValue('utm_campaign');
-    $content_utm = getFieldValue('utm_content');
-    $term_utm = getFieldValue('utm_term');
-    $origin = getFieldValue('origin');
-    $type = getFieldValue('type');
-    $phase = getCurrentPhase($type);
+    return $firstname;
+}
 
-    $list = ($type === ECOMMERCE) ? LIST_LANDING_ECOMMERCE : LIST_LANDING_DIGITALT;
-    $subject = getSubjectEmail($type, $phase);
-    $user = array(
+function getPrivacy($postData)
+{
+    return $postData['acceptPolicies'] ?? false;
+}
+
+function getUtmData($postData)
+{
+    return [
+        'source' => $postData['utm_source'],
+        'medium' => $postData['utm_medium'],
+        'campaign' => $postData['utm_campaign'],
+        'content' => $postData['utm_content'],
+        'term' => $postData['utm_term']
+    ];
+}
+
+function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject)
+{
+    return [
         'register' => date("Y-m-d h:i:s A"),
         'firstname' => $firstname,
-        'email' => $email,
-        'phone' =>  $phone,
-        'ecommerce' => $ecommerce,
-        'digital_trends' => $digital_trends,
-        'encode_email' => $encode_email,
+        'email' => $postData['email'],
+        'phone' => $postData['phone'],
+        'ecommerce' => $eventsData['ecommerce'],
+        'digital_trends' => $eventsData['digital_trends'],
+        'encode_email' => $postData['encodeEmail'],
         'privacy' => $privacy,
         'promotions' => $promotions,
         'ip' => $ip,
         'country_ip' => $countryGeo,
-        'source_utm' => $source_utm,
-        'medium_utm' => $medium_utm,
-        'campaign_utm' => $campaign_utm,
-        'content_utm' => $content_utm,
-        'term_utm' => $term_utm,
-        'origin' => $origin,
+        'utm_data' => $utmData,
+        'origin' => $postData['origin'],
         'type' => $type,
         'form_id' => $phase,
         'list' => $list,
         'subject' => $subject
-    );
-
-    try {
-        Validator::validateEmail($email);
-        Validator::validateBool('privacy', $privacy);
-        Validator::validateBool('promotions', $promotions);
-        return $user;
-    } catch (Exception $e) {
-        processError("setDataRequest (Captura datos)", $e->getMessage(), ['user' => $user]);
-        die();
-    }
+    ];
 }
+
+function validateRequest($postData, $privacy, $promotions)
+{
+    Validator::validateEmail($postData['email']);
+    Validator::validateBool('privacy', $privacy);
+    Validator::validateBool('promotions', $promotions);
+}
+
 
 function getSubjectEmail($type, $phase)
 {
-    $subject = "";
-    if ($type === ECOMMERCE) {
-        if ($phase === 'pre') {
-            $subject = SUBJECT_PRE_ECOMMERCE;
-        } elseif ($phase === 'during') {
-            $subject = SUBJECT_DURING_ECOMMERCE;
-        } else {
-            $subject = SUBJECT_POST_ECOMMERCE;
-        }
-    } else {
-        if ($phase === 'pre') {
-            $subject = SUBJECT_PRE_DIGITALT;
-        } elseif ($phase === 'during') {
-            $subject = SUBJECT_DURING_DIGITALT;
-        } else {
-            $subject = SUBJECT_POST_DIGITALT;
-        }
-    }
+    $subjects = [
+        ECOMMERCE => [
+            'pre' => SUBJECT_PRE_ECOMMERCE,
+            'during' => SUBJECT_DURING_ECOMMERCE,
+            'post' => SUBJECT_POST_ECOMMERCE,
+        ],
+        DIGITALTRENDS => [
+            'pre' => SUBJECT_PRE_DIGITALT,
+            'during' => SUBJECT_DURING_DIGITALT,
+            'post' => SUBJECT_POST_DIGITALT,
+        ]
+    ];
 
-
-    return $subject;
+    return $subjects[$type][$phase] ?? '';
 }
 
-function getCurrentPhase($type)
+function getCurrentPhase($type, $db)
 {
     try {
         $mem_var = new Memcached();
         $mem_var->addServer(MEMCACHED_SERVER, 11211);
         $settings_phase = $mem_var->get("settings_phase_" . $type);
         if (!$settings_phase) {
-            $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
             $settings_phase = $db->getCurrentPhase($type)[0];
-            $db->close();
             $mem_var->set("settings_phase_" . $type, $settings_phase, CACHE_TIME);
         }
         $phaseToShow = array_search(1, $settings_phase);
         return $phaseToShow;
     } catch (Exception $e) {
-        header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-        exit();
+        processError("getCurrentPhase", $e->getMessage(), ['type' => $type]);
     }
 }
+
 function sendDobleOptin($user)
 {
     try {
@@ -176,7 +172,6 @@ function sendDobleOptin($user)
 
 function saveSubscriptionDoppler($user)
 {
-
     try {
         Doppler::init(ACCOUNT_DOPPLER, API_KEY_DOPPLER);
         Doppler::subscriber($user);
@@ -191,25 +186,21 @@ function saveSubscriptionDoppler($user)
         }
     }
 }
-function saveSubscriptionDopplerTable($user)
-{
 
+function saveSubscriptionDopplerTable($user, $db)
+{
     try {
-        $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         $db->insertSubscriptionDoppler($user);
         $db->saveRegistered($user);
-        $db->close();
     } catch (Exception $e) {
         processError("saveSubscriptionDopplerTable (Guarda en la BD subscriptions_doppler and registered)", $e->getMessage(), ['user' => $user]);
     }
 }
 
-function saveSubscriptionSpreadSheet($user)
+function saveSubscriptionSpreadSheet($user, $db)
 {
     try {
-        $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         SpreadSheetGoogle::write(ID_SPREADSHEET, $user, $db);
-        $db->close();
     } catch (Exception $e) {
         processError("saveSubscriptionSpreadSheet (Guarda en SpreadSheet)", $e->getMessage(), ['user' => $user]);
     }
@@ -244,17 +235,36 @@ function getCountryName()
     }
 }
 
+function isSubmitValid($ip)
+{
+    try {
+        SecurityHelper::init($ip, SECURITYHELPER_ENABLE);
+        SecurityHelper::isSubmitValid(ALLOW_IPS);
+    } catch (Exception $e) {
+        processError("isSubmitValid", $e->getMessage(), ['ip' => $ip]);
+    }
+}
 
-error_log("Inicio de ejecución de register.php");
+try {
+    $ip = getIp();
+    $countryGeo = getCountryName();
+    isSubmitValid($ip);
+    $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+    $user = setDataRequest($ip, $countryGeo, $db);
+    saveSubscriptionDoppler($user);
+    saveSubscriptionDopplerTable($user, $db);
+    saveSubscriptionSpreadSheet($user, $db);
+    $db->close();
+    sendEmail($user, $user['subject']);
+    echo json_encode(['status' => 'success', 'message' => 'User registered successfully.']);
+} catch (Exception $e) {
+    $errorMessage = "Error in Main Execution: " . $e->getMessage();
+    $errorContext = [
+        'ip' => $ip,
+        'countryGeo' => $countryGeo,
+        'user' => isset($user) ? $user : null
+    ];
+    error_log($errorMessage . ' | Context: ' . json_encode($errorContext));
 
-$ip = getIp();
-$countryGeo = getCountryName();
-isSubmitValid($ip);
-$user = setDataRequest($ip, $countryGeo);
-error_log("Datos del usuario: " . json_encode($user));
-saveSubscriptionDoppler($user);
-saveSubscriptionDopplerTable($user);
-saveSubscriptionSpreadSheet($user);
-sendEmail($user, $user['subject']);
-$response = ['status' => 'success', 'message' => 'User registered successfully.'];
-echo json_encode($response);
+    echo json_encode(['status' => 'error', 'message' => 'User registered error.']);
+}
