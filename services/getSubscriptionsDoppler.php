@@ -1,5 +1,4 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/services/restrictOriginAccess.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/GeoIp.php');
 require_once($_SERVER['DOCUMENT_ROOT']  . '/utils/DB.php');
