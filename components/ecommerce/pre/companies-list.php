@@ -1,3 +1,24 @@
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
+$normalizedUrl = getNormalizeUrl();
+
+function getGridBlock($url)
+{
+    $blocks = [
+        '/sponsors-promo' => [
+            'block' => 'none',
+        ],
+        '/*' => [
+            'block' => 'CtaBlock',
+        ],
+    ];
+
+    return $blocks[$url] ??  $blocks['/*'];
+}
+
+$block = getGridBlock($normalizedUrl);
+?>
+
 <section class="emms__companies ">
     <div class="emms__container--lg">
         <h2 class="emms__fade-in">Nos han acompañado en ediciones anteriores</h2>
@@ -18,9 +39,14 @@
             <li class="emms__companies__list__item"><img src="/src/img/logos/logo-doofinder.png" alt="Doofinder"></li>
             <li class="emms__companies__list__item"><img src="/src/img/logos/logo-easycommerce.png" alt="Easycommerce"></li>
         </ul>
-        <p class="emms__companies__body">Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España
-        </p>
-        <a href="/sponsors-promo" class="emms__cta emms__fade-in emms__cta--nd xl">CONVIÉRTETE EN ALIADO</a>
+
+        <?php if ($block['block'] === 'none') : ?>
+        <?php elseif ($block['block'] === 'CtaBlock') : ?>
+            <p class="emms__companies__body">Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España
+            </p>
+            <a href="/sponsors-promo" class="emms__cta emms__fade-in emms__cta--nd xl">CONVIÉRTETE EN ALIADO</a>
+        <?php endif; ?>
+
 
     </div>
 

@@ -6,13 +6,13 @@
                   <img src="src/img/pasevip.png" alt="Imagen pase VIP">
               </div>
               <div class="emms__features__item__text">
-                  <h3>Acceso Exclusivo a experiencias prácticas de Marketing Digital
-                  </h3>
-                  <p>Únete a una comunidad reducida y exclusiva de profesionales y trabaja de manera práctica con referentes de la industria.</p>
+                  <h3>Invierte en tu futuro por sólo 9,99 USD </h3>
+                  <p>Accede a:</p>
                   <ul class="emms__features__item__text__list">
-                      <li><strong>Workshops</strong> que te permitirán interactuar directamente con los expertos.</li>
-                      <li><strong>Aplicaciones Prácticas </strong>donde resolverás desafíos junto a otros Marketers.</li>
-                      <li><strong>Espacio para preguntas</strong> y feedback directo de tus proyectos.</li>
+                      <li><strong>Cuenta gratuita de Doppler durante 6 meses.</strong></li>
+                      <li>Workshops con cupos limitados para aprender, preguntar y aplicar estrategias.</li>
+                      <li>Espacio de Networking.</li>
+                      <li>Estrategias y herramientas que transformarán tu negocio.</li>
                   </ul>
                   <p class="emms__features__item__text__price emms__features__item__text__price--live">
                       <em>¡POR SOLO</em><small>USD</small>9<small>.99!</small>
