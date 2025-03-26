@@ -28,12 +28,15 @@
     font-size: 30px;
     line-height: 32px;
     font-weight: 700;
-    margin: 26px 0px;
+    margin: 26px auto;
+    max-width: 368px;
 }
 
 .emms__sponsor-promo__hero .emms__sponsor-promo__hero__content p {
     font-size: 16px;
     line-height: 24px;
+    max-width: 526px;
+    margin: 0 auto;
 }
 
 .emms__sponsor-promo__hero .emms__sponsor-promo__hero__content button {
@@ -135,14 +138,14 @@
     line-height: 24px;
     color: #333333;
     margin-bottom: 30px;
-    font-weight: bold;
 }
 
 .emms__sponsor-promo__resource__text ul img {
-    width: 16.5px;
-    height: 12px;
+    width: 28px;
+    height: 26px;
     vertical-align: bottom;
     margin-right: 5px;
+    margin-top: 5px;
 }
 
 .emms__sponsor-promo__resource__text ul li {
@@ -256,6 +259,7 @@
     height: 12px;
     vertical-align: bottom;
     margin-right: 5px;
+    margin-top: 5px;
 }
 
 .emms__sponsor-promo__media-partner__text ul li {

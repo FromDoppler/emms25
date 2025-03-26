@@ -25,7 +25,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                 <div class="emms__sponsor-promo__hero__content">
                     <span>CONVIÉRTETE EN SPONSOR</span>
                     <h1>Haz que tu marca sea protagonista del EMMS</h1>
-                    <p>¿Te gustaría que tu negocio sea parte del mayor evento hispanohablante de Marketing Digital? Ponte en contacto con nosotros y hablemos sobre cómo puedes participar del EMMS.</p>
+                    <p>¿Te gustaría que tu negocio sea parte de los máximos eventos hispanohablantes de Marketing Digital e E-commerce? Ponte en contacto con nosotros y te contamos sobre cómo sumarte al EMMS.</p>
                     <button class="emms__cta" data-target="modalRegister" data-toggle="emms__register-modal" data-type="sponsor">CONTACTANOS AHORA</button>
                 </div>
             </div>
@@ -46,8 +46,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                         </li>
                         <li class="emms__form__field-item">
                             <div class="holder">
-                            <label class="required-label" for="email">Email Empresarial*</label>
-                            <input type="email" name="email" id="email" placeholder="ejemplo@miempresa.com" class="email required" autocomplete="off">
+                                <label class="required-label" for="email">Email Empresarial*</label>
+                                <input type="email" name="email" id="email" placeholder="ejemplo@miempresa.com" class="email required" autocomplete="off">
                             </div>
                         </li>
                         <li class="emms__form__field-item">
@@ -127,85 +127,77 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
             </div>
         </div>
         <!-- Resource -->
+        <?php
+        $benefits = [
+            "Destaca tu marca en el evento líder de Marketing en LATAM y España",
+            "Brinda una conferencia main stage en el evento",
+            "Ten tu propia Landing Page en el sitio del evento y capta leads de calidad",
+            "Llega con un envío exclusivo a toda la base de registrados al EMMS",
+            "Únete a las marcas más influyentes de la industria y potencia tu networking"
+        ];
+        ?>
+
         <section class="emms__sponsor-promo__resource">
             <div class="emms__container--md emms__fade-in">
                 <div class="emms__sponsor-promo__resource__picture">
-                    <img src="/src/img/sponsor-promo.png" alt="Sponsor promo">
+                    <img src="/src/img/sponsor-promo.png" alt="Promoción para sponsors del evento">
                 </div>
                 <div class="emms__sponsor-promo__resource__text">
                     <h2>¿Por qué ser Sponsor?</h2>
-                    <p>Súmate como Sponsor al EMMS y amplifica el impacto de tu marca en el mercado del marketing digital.</p>
+                    <p>Súmate como Sponsor al EMMS y amplifica el impacto de tu marca en el mercado del Marketing Digital y E-commerce.</p>
                     <ul>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            Destaca tu marca en el evento líder de Marketing en LATAM y España</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span> Brinda una conferencia main stage en el evento</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span> Accede a una landing page personalizada para tu marca y maximiza tu impacto enviando contenido exclusivo a toda la audiencia a través de un Email</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span> Únete a las marcas más influyentes de la industria y potencia tu networking</span>
-                        </li>
+                        <?php foreach ($benefits as $benefit): ?>
+                            <li>
+                                <img src="/src/img/asset-estrella.png" alt="Ícono de beneficio">
+                                <span><?= htmlspecialchars($benefit) ?></span>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <!-- Sponsors list -->
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/companies-list.php') ?>
 
         <!-- Description -->
 
         <section class="emms__sponsor-promo__media-partner emms__bg-section-5 " id="conviertete-en-media-partner">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
+            <?php
+            $media_partner_benefits = [
+                "Conferencia on-demand de 15 minutos en el sitio",
+                "Logo de tu marca en el sitio web y menciones de tu negocio durante el EMMS",
+                "Participación en un Email que se envía a todos los registrados",
+                "Posibilidad de ofrecer beneficios a miles de potenciales clientes"
+            ];
+            ?>
+
             <div class="emms__container--md emms__fade-in">
                 <div class="emms__sponsor-promo__media-partner__text">
-                    <h2>¿Sin inversión este año?
-                        <br>
-                        ¡Conviértete en Media Partner!
-                    </h2>
+                    <h2>¿Sin inversión este año?<br>¡Conviértete en Media Partner!</h2>
                     <p>Obtén visibilidad sin coste alguno, a cambio de compartir nuestro evento con tu audiencia. ¡Otra alternativa para multiplicar el impacto de tu marca!</p>
-                    <p>Con esta alternativa, solo debes compartir el EMMS con tu comunidad y lograr registros, ayudándonos a hacer que el evento llegue a cada vez más aficionados de Marketing Digital. Logra:</p>
+                    <p>¿Qué obtendrás como Media Partner?</p>
                     <ul>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            Logo de tu marca en el sitio web y menciones de tu negocio durante el EMMS.</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span> Participación en un Email que se envía a todos los registrados.</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span> La llegada a posibles nuevos clientes brindando descuentos y regalos para los registrados.</span>
-                        </li>
-
-                        <li>
-                            <img src="/src/img/tick-success.png" alt="Succes asset">
-                            <span>Conferencia on-demand de 15 minutos en el sitio.</span>
-                        </li>
+                        <?php foreach ($media_partner_benefits as $benefit): ?>
+                            <li>
+                                <img src="/src/img/tick-success.png" alt="Beneficio asegurado">
+                                <span><?= $benefit ?></span>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
-                    <button class="emms__cta" data-target="modalRegister" data-toggle="emms__register-modal" data-type="mediaPartner">CONVIERTETE EN MEDIA PARTNER</button>
+                    <button class="emms__cta" data-target="modalRegister" data-toggle="emms__register-modal" data-type="mediaPartner">
+                        CONVIÉRTETE EN MEDIA PARTNER
+                    </button>
                 </div>
                 <div class="emms__sponsor-promo__media-partner__picture">
-                    <img src="/src/img/rompecabez-asset.png" alt="Rompecabeza emoji">
+                    <img src="/src/img/rompecabez-asset.png" alt="Ilustración de un rompecabezas">
                 </div>
-
             </div>
+
         </section>
 
-        <!-- Sponsors list -->
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+
 
     </main>
 
@@ -218,4 +210,3 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 </body>
 
 </html>
-

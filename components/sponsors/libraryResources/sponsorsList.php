@@ -7,7 +7,8 @@ if (!empty($sponsors)) {
     <section class="emms__sponsors__list">
         <div class="emms__container--lg">
             <div class="emms__sponsors__list__title">
-                <h2 class="emms__fade-in">Continúa capacitándote e inspirándote con estos recursos</h2>
+                <h2 class="emms__fade-in">Inspírate y capacítate con contenido exclusivo <br> de nuestros Media Partners:
+                </h2>
             </div>
             <ul class="emms__sponsors__list__content emms__fade-in">
                 <?php

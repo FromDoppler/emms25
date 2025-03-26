@@ -4,6 +4,10 @@
     background: linear-gradient(180deg, #13092D 0%, #25096C 109.27%);
 }
 
+.centralvideo--tickets .centralvideo {
+    background: none;
+}
+
 .centralvideo .centralvideo-title {
     font-style: normal;
     font-weight: 700;
@@ -61,6 +65,25 @@
     max-width: 850px;
 }
 
+.centralvideo--tickets .centralvideo__head h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #333333;
+    margin-top: 20px;
+}
+
+.centralvideo--tickets .centralvideo__head span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #333333;
+}
+
 .centralvideo__title {
     width: 50%;
     animation-delay: .1s;
@@ -78,6 +101,7 @@
     color: #FFFFFF;
     margin-bottom: 20px;
 }
+
 
 .emms__container--lg--column .centralvideo__title p {
     font-size: 16px;

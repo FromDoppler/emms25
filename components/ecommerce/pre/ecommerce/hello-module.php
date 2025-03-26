@@ -1,12 +1,12 @@
 <section class="hero-registration--registered">
     <div class="emms__container--md">
-        <h1 class="emms__fade-top"><em>ONLINE Y GRATUITO - 28 y 29 DE ABRIL</em>¡Ya eres parte del <br> EMMS E-commerce 2025!</h1>
-        <p class="emms__fade-in">Te damos la bienvenida al evento que llevará tu Tienda Online al siguiente nivel.
-            Guarda la fecha y no te pierdas esta oportunidad única para impulsar tu negocio.
+        <h1 class="emms__fade-top"><em>ONLINE Y GRATUITO - 28 y 29 DE ABRIL</em>Felicitaciones, ¡Ya eres parte del<br> EMMS E-commerce 2025!</h1>
+        <p class="emms__fade-in">Con tu Entrada Free accederás a todas las conferencias gratuitas de speakers internacionales. Ahora, si quieres disfrutar de una experiencia completa, que incluye acceso a Workshops, Networking y beneficios exclusivos, puedes comprar ahora tu Entrada VIP.
         </p>
-        <div class="hero-registration__add-event">
-            <span><a class=" emms__fade-in" href="https://www.addevent.com/event/nt24784790" target="_blank">AGÉNDALO EN TU CALENDARIO</a></span>
-        </div>
+        <a href="#entradas" class="emms__purple-anchor emms__fade-in">Descubre todos los beneficios</a>
+
+        <a class=" emms__fade-in emms__cta" href="./checkout" target="_blank">COMPRA TU ENTRADA VIP AHORA</a>
+
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
 </section>
