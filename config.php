@@ -96,9 +96,9 @@ if (!defined('API_KEY_RELAY')) define('API_KEY_RELAY', $API_KEY_RELAY);
 
 #EMAIL SUBJECT
 ## ECOMMERCE
-if (!defined('SUBJECT_PRE_ECOMMERCE')) define('SUBJECT_PRE_ECOMMERCE', '¡Ya eres parte del #EMMS2024!');
-if (!defined('SUBJECT_DURING_ECOMMERCE')) define('SUBJECT_DURING_ECOMMERCE', 'Te damos la bienvenida al #EMMS2024!');
-if (!defined('SUBJECT_POST_ECOMMERCE')) define('SUBJECT_POST_ECOMMERCE', 'Ya puedes ver lo que fue el #EMMS2024');
+if (!defined('SUBJECT_PRE_ECOMMERCE')) define('SUBJECT_PRE_ECOMMERCE', '¡Ya eres parte del #EMMS2025!');
+if (!defined('SUBJECT_DURING_ECOMMERCE')) define('SUBJECT_DURING_ECOMMERCE', 'Te damos la bienvenida al #EMMS2025!');
+if (!defined('SUBJECT_POST_ECOMMERCE')) define('SUBJECT_POST_ECOMMERCE', 'Ya puedes ver lo que fue el #EMMS2025');
 ## DT
 if (!defined('SUBJECT_PRE_DIGITALT')) define('SUBJECT_PRE_DIGITALT', '¡Ya eres parte del #EMMSDT!');
 if (!defined('SUBJECT_DURING_DIGITALT')) define('SUBJECT_DURING_DIGITALT', 'Te damos la bienvenida al #EMMSDT 2024!');
