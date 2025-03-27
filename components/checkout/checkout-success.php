@@ -6,20 +6,22 @@
     <!-- Form -->
     <div class="emms__checkout__container emms__checkout__card__container--form emms__fade-in">
         <div class="emms__checkout__card">
-            <img src="/src/img/logos/logo-emms--gray.png" alt="Emms eCommerce 25">
+            <img src="/src/img/logos/logo-emms-ecommerce-dark.png" alt="Emms eCommerce 25">
             <section id="success" class="hidden">
                 <div class="emms__checkout__container emms__checkout__card__container--success emms__fade-in">
                     <div class="emms__checkout__card">
                         <div class="emms__checkout__card__main">
-                            <h2>¡Felicitaciones! </h2>
-                            <h2>Ya tienes tu Entrada Vip.</h2>
+                            <h2>¡Felicitaciones!</h2>
+                            <h2>Ya eres Asistente VIP 🚀</h2>
                             <p>Mantente pendiente a tu Correo Eléctrónico porque en instantes recibirás un Email de Confirmación por la compra de tu entrada.</p>
-                            <h4>Por ser Asistente Vip al EMMS eCommerce, accedes a todos estos beneficios:</h4>
+                            <h4>Por ser Asistente Vip al EMMS E-commerce, accedes a todos estos beneficios:</h4>
                             <ul class="emms__checkout__card__main__list">
-                                <li>Cuenta gratuita de Doppler.</li>
-                                <li>Workshops prácticos.</li>
-                                <li>Sesiones de Networking.</li>
-                                <li>Certificado de asistencia.</li>
+                                <li><b>Cuenta gratuita de Doppler durante 6 meses para planes de hasta 5.000 contactos.</b> Te enviaremos por Email este beneficio.</li>
+                                <li><b>Workshops prácticos.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
+                                <li><b>Sesiones de Networking.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
+                                <li class="li--short-margin">Acceso de por vida a los Workshops.</li>
+                                <li class="li--short-margin">Certificado de asistencia a Workshops.</li>
+                                <li class="li--short-margin">Más guías con herramientas y tips exclusivos.</li>
                             </ul>
                         </div>
                         <div class="emms__checkout__card__aside">
@@ -69,11 +71,11 @@
         const spinner = document.getElementById('spinner');
         spinner.classList.toggle('visible');
     }
-    toggleSpinner();
-    (async () => {
-        await initialize();
-        toggleSpinner();
-    })();
+    // toggleSpinner();
+    // (async () => {
+    //     await initialize();
+    //     toggleSpinner();
+    // })();
 
     const updateEvents = () => {
         if (localStorage.getItem('events')) {

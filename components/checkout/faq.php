@@ -7,17 +7,17 @@ $faqItems = [
     ],
     [
         "question" => "¿Cómo recibo mi entrada VIP?",
-        "answer" => "Una vez realizado el proceso de compra, recibirás un Email de confirmación y ¡listo! Ya tendrás reservado tu cupo. Solamente deberás ingresar al evento con el email con el que te has registrado y tus datos de contacto para comenzar a vivir el EMMS Digital Trends 2024.",
+        "answer" => "Una vez realizado el proceso de compra, recibirás un Email de confirmación y ¡listo! Ya tendrás reservado tu cupo. Solamente deberás ingresar al evento con el email con el que te has registrado y tus datos de contacto para comenzar a vivir el EMMS E-commerce 2025.",
         "open" => false
     ],
     [
         "question" => "¿Cómo veré reflejado el pago de las entradas en mi cuenta?",
-        "answer" => "El cargo que se realice en tu tarjeta aparecerá en tu próximo resumen con la descripción “Entrada VIP EMMS Digital Trends 2024”. Recuerda que los montos originales están expresados en dólares estadounidenses y los impuestos dependerán del método de pago elegido y el país donde se efectúe el pago.",
+        "answer" => "El cargo que se realice en tu tarjeta aparecerá en tu próximo resumen con la descripción “Entrada VIP EMMS E-commerce 2025”. Recuerda que los montos originales están expresados en dólares estadounidenses y los impuestos dependen del método de pago elegido y el país donde se efectúe el pago.",
         "open" => false
     ],
     [
         "question" => "¿Obtendré factura por mi compra?",
-        "answer" => "Si requieres la facturación de la entrada VIP adquirida, escríbenos a <a href=\"mailto:billing@fromdoppler.com\">billing@fromdoppler.com</a> con asunto “Factura entrada VIP EMMS Digital Trends 2024” y en breve te enviaremos la factura digital correspondiente.",
+        "answer" => "Si requieres la facturación de la entrada VIP adquirida, escríbenos a <a href=\"mailto:billing@fromdoppler.com\">billing@fromdoppler.com</a> con asunto “Factura entrada VIP EMMS E-commerce 2025” y en breve te enviaremos la factura digital correspondiente.",
         "open" => false
     ],
     [
