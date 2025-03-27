@@ -34,7 +34,6 @@ function setUserDataRequest($ip, $countryGeo)
     $firstname = getFieldValue('name');
     $email = getFieldValue('email');
     $company     =  getFieldValue('company');
-    $jobPosition     = getFieldValue('jobPosition');
     $phone     = getFieldValue('phone');
     $privacy = getFieldValue('acceptPolicies', false);
     $promotions = getFieldValue('acceptPromotions', false);
@@ -51,7 +50,6 @@ function setUserDataRequest($ip, $countryGeo)
         'firstname' => $firstname,
         'email' => $email,
         'company' =>  $company,
-        'jobPosition' =>  $jobPosition,
         'phone' =>  $phone,
         'privacy' => $privacy,
         'promotions' => $promotions,
@@ -128,11 +126,15 @@ function sendEmailPartner($partner)
 
 function sendEmail($user)
 {
-        switch ($user['dataType']) {
+    switch ($user['dataType']) {
         case 'sponsor':
             sendEmailSponsor($user);
+            break;
         case 'mediaPartner':
             sendEmailPartner($user);
+            break;
+        default:
+            error_log("Tipo de usuario desconocido: " . $user['dataType']);
     }
 }
 

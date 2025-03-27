@@ -44,7 +44,6 @@ document.addEventListener('click', (e) => {
             'name': formData.get('name'),
             'email': formData.get('email'),
             'company': formData.get('company'),
-            'jobPosition': formData.get('jobPosition'),
             'phone': (formData.get('phone').trim() != '') ? dialCode + formData.get('phone') : null,
             'acceptPolicies': (formData.get('privacy') === 'true') ? true : null,
             'acceptPromotions': (formData.get('promotions') === 'true') ? true : null,
