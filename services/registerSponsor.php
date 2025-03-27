@@ -126,11 +126,15 @@ function sendEmailPartner($partner)
 
 function sendEmail($user)
 {
-        switch ($user['dataType']) {
+    switch ($user['dataType']) {
         case 'sponsor':
             sendEmailSponsor($user);
+            break;
         case 'mediaPartner':
             sendEmailPartner($user);
+            break;
+        default:
+            error_log("Tipo de usuario desconocido: " . $user['dataType']);
     }
 }
 
