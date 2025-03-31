@@ -71,11 +71,11 @@
         const spinner = document.getElementById('spinner');
         spinner.classList.toggle('visible');
     }
-    // toggleSpinner();
-    // (async () => {
-    //     await initialize();
-    //     toggleSpinner();
-    // })();
+    toggleSpinner();
+    (async () => {
+        await initialize();
+        toggleSpinner();
+    })();
 
     const updateEvents = () => {
         if (localStorage.getItem('events')) {
