@@ -42,7 +42,7 @@ class EmailTemplateManager
                 'during' => 'getDigitalTEmailTemplateDuring',
                 'post' => 'getDigitalTEmailTemplatePost',
             ],
-            'ecommerceVip' => 'getEcommerceVipEmailTemplatePost',
+            'ecommerceVipPre' => 'getEcommerceVipTemplatePre',
             'ecommerceVipDuring' => 'getEcommerceVipEmailTemplateDuring',
             'ecommerceVipPost' => 'getEcommerceVipEmailTemplatePost',
             'digitalTrendsVipPre' => 'getDTVipEmailTemplatePre',
@@ -63,8 +63,7 @@ class EmailTemplateManager
 
     public static function getEcommerceEmailTemplate($encodeEmail)
     {
-        // $templateName = 'ecommerce-pre-template.html';
-        $templateName = 'ecommerce-early-template.html';
+        $templateName = 'ecommerce-pre-template.html';
         return self::getTemplate('ecommerce', $templateName, $encodeEmail);
     }
 
@@ -110,7 +109,7 @@ class EmailTemplateManager
         return self::getTemplate('dt', $templateName, $encodeEmail);
     }
 
-    public static function getEcommerceVipTemplate($encodeEmail, $user)
+    public static function getEcommerceVipTemplatePre($encodeEmail, $user)
     {
         $templateName = 'ecommerce-vip-template.html';
         $userData = [
@@ -119,6 +118,7 @@ class EmailTemplateManager
             'paymentMethod' =>  $user['payment_status'],
             'date' => $user['register'],
             'amount' => $user['final_price'],
+            'name' => $user['firstname'],
         ];
         return self::getTemplate('ecommerce', $templateName, $encodeEmail, $userData);
     }
