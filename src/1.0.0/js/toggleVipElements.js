@@ -19,7 +19,7 @@ const toggleVipElements = () => {
 
 const toggleVipEcommerceElements = () => {
     const isEcommerceVip = isVipUser(eventsType.ECOMMERCEVIP);
-    const academyBanner = document.getElementById('speacial-flikity');
+    const academyBanner = document.getElementById('aprende-con-doppler');
 
     if (isEcommerceVip) {
         toggleVipElements();

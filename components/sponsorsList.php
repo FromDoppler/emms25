@@ -3,15 +3,15 @@
         $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if ($db->hasActiveSponsor()) {
         ?>
-         <section class="emms__companies emms__companies--categories" id="aliados">
+         <section class="companies companies--categories" id="aliados">
              <div class="emms__container--lg">
-                 <h2 class="emms__fade-in">Apoyan el EMMS E-commerce 2025</h2>
+                 <h2 class="emms__fade-in">Estos son los Aliados que nos acompañan en el EMMS E-commerce 2025</h2>
                  <h3>SPONSORS</h3>
-                 <ul class="emms__companies__list emms__companies__list--lg  emms__fade-in">
+                 <ul class="companies-list companies-list--lg  emms__fade-in">
                      <?php
                         $sponsors = $db->getSponsorsByType('SPONSOR');
                         foreach ($sponsors as $sponsor) : ?>
-                         <li class="emms__companies__list__item">
+                         <li class="companies-list__item">
                              <?php if ($sponsor['link_site']) : ?>
                                  <a href="<?= $sponsor['link_site'] ?>" target="_blank">
                                  <?php endif ?>
@@ -23,13 +23,13 @@
 
                      <?php endforeach; ?>
                  </ul>
-                 <div class="emms__companies__divisor"></div>
+                 <div class="companies__divisor"></div>
                  <h3>MEDIA PARTNERS EXCLUSIVE</h3>
-                 <ul class="emms__companies__list emms__companies__list  emms__fade-in">
+                 <ul class="companies-list companies-list  emms__fade-in">
                      <?php
                         $sponsors = $db->getSponsorsByType('PREMIUM');
                         foreach ($sponsors as $sponsor) : ?>
-                         <li class="emms__companies__list__item">
+                         <li class="companies-list__item">
                              <?php if ($sponsor['link_site']) : ?>
                                  <a href="<?= $sponsor['link_site'] ?>" target="_blank">
                                  <?php endif ?>
@@ -41,13 +41,16 @@
 
                      <?php endforeach; ?>
                  </ul>
-                 <div class="emms__companies__divisor"></div>
+                 <div class="companies__divisor"></div>
                  <h3>MEDIA PARTNERS STARTERS</h3>
-                 <ul class="emms__companies__list emms__companies__list  emms__fade-in" id="mediaPartenersStarters">
+                 <ul class="companies-list companies-list  emms__fade-in" id="mediaPartenersStarters">
                  </ul>
-                 <p><strong>Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España</strong></p>
-                 <a href="https://goemms.com/sponsors-promo" class="emms__cta">CONVIÉRTETE EN ALIADO</a>
-                 <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href="https://goemms.com/#preguntas-frecuentes"> Haz clic aquí </a> </strong>y encuentra las preguntas más frecuentes sobre el evento</small>
+                 <p class="companies__body"><strong>Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España</strong></p>
+                 <a href="./sponsors-promo" class="emms__cta">CONVIÉRTETE EN ALIADO</a>
+                 <?php
+                    $link = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
+                    ?>
+                 <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href=<?= $link ?>> Haz clic aquí </a> </strong>y encuentra las preguntas más frecuentes sobre el evento</small>
              </div>
          </section>
          <script>
@@ -88,7 +91,7 @@
                          setTimeout(() => {
                              group.forEach(partner => {
                                  const li = document.createElement('li');
-                                 li.classList.add('emms__fade-in-animation', 'emms__companies__list__item');
+                                 li.classList.add('emms__fade-in-animation', 'companies-list__item');
                                  li.innerHTML = `<img src="./adm25/server/modules/sponsors/uploads/${partner.logo_company}" alt="${partner.alt_logo_company}">`;
                                  container.appendChild(li);
                              });

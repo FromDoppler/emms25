@@ -3,7 +3,7 @@
     <div class="emms__plans  hidden--vip" id="entradas">
         <div class="emms__container--lg">
             <div class="emms__plans__title">
-                <h2>Hazte VIP y acelera el crecimiento de tu negocio</h2>
+                <h2>Hazte VIP y acelera el crecimiento <br> de tu negocio</h2>
                 <p>Compra tu pase y accede a 6 meses gratis en Doppler para planes de hasta 5.000 contactos, Conferencias, Workshops con certificado, sesiones de Networking, ¡y mucho más!</p>
             </div>
             <div class="emms__plans__cards">
