@@ -23,9 +23,8 @@ $block = getScheduleBlock($normalizedUrl);
 <section class="emms__calendar" id="agenda">
     <div class="emms__container--lg">
         <div class="emms__calendar__title emms__fade-in">
-            <h2>Agenda EMMS E-commerce 2025</h2>
-            <p>Descubre las Conferencias de speakers internacionales, los Workshops
-                y espacios de Networking diseñados para que conectes con especialistas<br>
+            <h2>AGENDA EMMS E-COMMERCE 2025</h2>
+            <p>Descubre las Conferencias de speakers internacionales, los Workshops y los espacios de Networking diseñados para que conectes con especialistas de la industria
             </p>
         </div>
         <?php include('speakers.php') ?>

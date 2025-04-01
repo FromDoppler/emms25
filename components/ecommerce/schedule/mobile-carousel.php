@@ -1,7 +1,7 @@
 <ul class="emms__calendar__list emms__calendar__list--mb main-carousel emms__fade-in" data-flickity>
     <?php
     foreach ($speakers as $speaker) :
-        $isSpeakerDT = $speaker['event'] === "digital-trends";
+        $isSpeakerEcommerce = $speaker['event'] === "ecommerce";
         $isSpeakerExposeDebate = $speaker['exposes'] === "debate";
         $allowedExposesTypes = ["conference", "workshop", "networking", "successStory", "interview"];
         $isSpeakerExposesType = in_array($speaker['exposes'], $allowedExposesTypes) || $isSpeakerExposeDebate;

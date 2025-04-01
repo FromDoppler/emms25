@@ -1,9 +1,9 @@
-.emms__companies {
+.companies {
     padding: 56px 0 70px 0;
     text-align: center;
 }
 
-.emms__companies .emms__companies__body {
+.companies .companies__body {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
@@ -12,11 +12,11 @@
     margin: 35px;
 }
 
-.emms__companies .emms__container--lg {
+.companies .emms__container--lg {
     max-width: 1260px;
 }
 
-.emms__companies h2 {
+.companies h2 {
     font-size: 20px;
     line-height: 23px;
     font-weight: 700;
@@ -25,7 +25,7 @@
     animation-delay: .1s;
 }
 
-.emms__companies h3 {
+.companies h3 {
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
@@ -33,28 +33,28 @@
     animation-delay: .2s;
 }
 
-.emms__companies .emms__companies__list {
+.companies .companies-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     animation-delay: .3s;
 }
 
-.emms__companies .emms__companies__list .emms__companies__list__item {
+.companies .companies-list .companies-list__item {
     height: 50px;
     margin: 0 13px 32px 13px;
 }
 
-.emms__companies .emms__companies__list.emms__companies__list--lg .emms__companies__list__item {
+.companies .companies-list.companies-list--lg .companies-list__item {
     height: 60px;
 }
 
-.emms__companies .emms__companies__list .emms__companies__list__item img {
+.companies .companies-list .companies-list__item img {
     height: 100%;
     display: block;
 }
 
-.emms__companies small {
+.companies small {
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -65,39 +65,39 @@
     margin-bottom: 10px;
 }
 
-.emms__companies small a {
+.companies small a {
     font-weight: 700;
     color: #33AD73;
 }
 
-.emms__companies small a:hover {
+.companies small a:hover {
     text-decoration: underline;
 }
 
-.emms__companies .emms__cta.emms__cta--nd.sm {
+.companies .emms__cta.emms__cta--nd.sm {
     margin: 50px 0 0 0;
 }
 
 /* ------ With CATEGORIES ------ */
 
-.emms__companies.emms__companies--categories {
+.companies.companies--categories {
     padding: 70px 0;
 }
 
-.emms__companies.emms__companies--categories h2,
-.emms__companies.emms__companies--categories h3 {
+.companies.companies--categories h2,
+.companies.companies--categories h3 {
     margin: 0 0 31px 0;
 }
 
-.emms__companies.emms__companies--categories .emms__companies__divisor {
+.companies.companies--categories .companies__divisor {
     height: 65px;
 }
 
-.emms__companies.emms__companies--categories small {
+.companies.companies--categories small {
     margin: 50px auto 0;
 }
 
-.emms__companies.emms__companies--categories .emms__cta {
+.companies.companies--categories .emms__cta {
     background: rgba(51, 173, 115, 0.2);
     border: 1px solid #33AD73;
     border-radius: 100px;
@@ -108,7 +108,7 @@
     margin-top: 40px;
 }
 
-.emms__companies.emms__companies--categories .emms__cta:hover {
+.companies.companies--categories .emms__cta:hover {
     background: rgba(0, 128, 70, 0.1);
     transition-duration: 0.2s;
 }
@@ -118,8 +118,8 @@
 
 @media(max-width:992px) {
 
-    .emms__companies .emms__companies__list .emms__companies__list__item,
-    .emms__companies .emms__companies__list.emms__companies__list--lg .emms__companies__list__item {
+    .companies .companies-list .companies-list__item,
+    .companies .companies-list.companies-list--lg .companies-list__item {
         height: 40px;
     }
 

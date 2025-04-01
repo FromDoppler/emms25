@@ -571,3 +571,17 @@ p {
     color: #FFFFFF;
     margin-left: 10px;
 }
+
+.text-with-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width:620px) {
+    .text-with-icon-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

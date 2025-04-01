@@ -45,14 +45,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
-        <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
-        <div class="hidden--vip centralvideo--tickets">
+        <div class="centralvideo--tickets">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
         </div>
-        <div class="show--vip">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/companies-list.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
-        </div>
+        <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
