@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 17-02-2025 a las 17:39:30
+-- Tiempo de generación: 01-04-2025 a las 16:59:13
 -- Versión del servidor: 10.5.18-MariaDB-1:10.5.18+maria~ubu2004
 -- Versión de PHP: 8.0.15
 
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `google_oauth` (
 --
 
 INSERT INTO `google_oauth` (`id`, `provider`, `provider_value`) VALUES
-(1, 'google', '{\"access_token\":\"ya29.a0AeDClZAfKrKHYjqjK2tEiKTfSET_esmT7D5UkexPR5b7ibIuXSFcZXJ-8RORqwkbxEoXdSSu-Axak1jNbI7exRNEXlLLu23UYw8bhCUz5JixIwnzwCdRUcE-ZrAPRyy16RN8Lf5LLmhZqmv3hU_X-kyW2iwaO8RUv_L6wH525joaCgYKAesSARISFQHGX2MidjKYs7y-liaZZOfDSE1OBQ0178\",\"expires_in\":3599,\"scope\":\"https://www.googleapis.com/auth/spreadsheets\",\"token_type\":\"Bearer\",\"refresh_token\":\"1//0hxOIS9W4oqXZCgYIARAAGBESNwF-L9Irgwst8lyC5Bae8RyYuX6y3U-m1_wZdZYDIPoZSIJKyl1xdEcXlke10sDSBblQAPcWMfs\"}');
+(1, 'google', '{\"access_token\":\"ya29.a0AeXRPp4gy1sqlr_S-_LNSyR78ziBvPzAaS4879qNXFI-p3clQAzLZHHjW27GBYwgq_S8sUcPdU49Vo-hiJpP2QEaOj7F8WYMXRv5WyNWrGSRIr0t08nxCXh9uRVtZObLPCtQmHlYYlK6CU7GOThXGYTDVuNazkVT5uorfNE_0B0aCgYKAbYSARISFQHGX2MiGJ4hXe3onc8CVWz-zd2Ngg0178\",\"expires_in\":3599,\"scope\":\"https://www.googleapis.com/auth/spreadsheets\",\"token_type\":\"Bearer\",\"refresh_token\":\"1//0hxOIS9W4oqXZCgYIARAAGBESNwF-L9Irgwst8lyC5Bae8RyYuX6y3U-m1_wZdZYDIPoZSIJKyl1xdEcXlke10sDSBblQAPcWMfs\"}');
+
 -- --------------------------------------------------------
 
 --
@@ -55,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `log_errors` (
   `description` text NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `registered` (
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1764 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1779 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -145,23 +146,22 @@ CREATE TABLE IF NOT EXISTS `speakers` (
   `meta_image` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `meta_twitter` text CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `speakers`
 --
 
 INSERT INTO `speakers` (`id`, `event`, `exposes`, `name`, `image`, `alt_image`, `job`, `sm_twitter`, `sm_linkedin`, `sm_instagram`, `sm_facebook`, `title`, `description`, `bio`, `image_company`, `alt_image_company`, `time`, `link_time`, `orden`, `day`, `youtube`, `slug`, `status`, `meta_title`, `meta_description`, `meta_image`, `meta_twitter`) VALUES
-(1, 'digital-trends', 'conference', 'José A. Robles', 'jose-robles-agenda.png', 'José A. Robles', 'Consultor SEO y Director del Máster SEO de DinoRank', 'https://twitter.com/joserobles_Seo ', 'https://www.linkedin.com/in/jose-antonio-robles-lozano/', '', '', 'sss', 'SEO para eCommerce: aumenta el tráfico y vende más gracias a la arquitectura web', 'Consultor SEO, experto en el análisis de palabras clave, la optimización de contenidos y la mejora de la experiencia del usuario en sitios web de comercio electrónico. Director del Máster SEO de DinoRank.', 'dinorank-agenda.png', 'Dinorank', '', '', '6', '1', '', 'dinorank', NULL, '', '', '', ''),
-(2, 'digital-trends', 'conference', 'José Ramón Padrón', 'joseramon-padron-agenda.png', 'Siteground', 'Country Manager en SiteGround', 'http://twitter.com/monchomad', 'https://www.linkedin.com/in/joseramonpadrongarcia/', '', '', 'ghfgh', 'Mejora tus ventas gracias a la experiencia de usuario', 'Country Manager en SiteGround. Co-organizador de la Meetup WordPress y la WordCamp de Las Palmas de Gran Canaria y Global Lead de WordCamp Europe Online. Experto en Hosting y Open Source.', 'siteground-agenda.png', 'Siteground', '', '', '50', '1', '', 'siteground', NULL, '', '', '', ''),
-(3, 'digital-trends', 'conference', 'Miguel Estevan', 'miguel-estevan-agenda.png', 'Miguel Estevan', 'CEO en Ecommerce Nights', 'https://mobile.twitter.com/mestevan', 'https://www.linkedin.com/in/mestevan?originalSubdomain=pa', 'https://www.instagram.com/mestevan/?hl=es', '', 'ghghgh', 'A confirmar', 'Fundador de eCommerce Nights, hotSale y Wandoo. Profesor y Coordinador del Diplomado en Comercio Electrónico en la Universidad Latina de Panamá. Head of Ecommerce en Empresa Panameña de Alimentos.', 'ecommerce-nighst-agenda.png', 'ecommerce nights', '', '', '70', '1', '', 'ecommercenights', NULL, '', '', '', ''),
-(4, 'digital-trends', 'conference', 'Federico Muñoz Villavicencio', 'federico-villavicencio-agenda.png', 'Federico Villavicencia - Meta', 'Client Solutions Manager en Meta', '', 'https://www.linkedin.com/in/federicomuvi/', '', '', 'sss', 'Campañas inteligentes y Advantage+ Shopping Campaigns para tu Ecommerce', 'Experto en marketing digital especializado en venta consultiva para anunciantes de performance con experiencia en Fintech y eCommerce (DTC/Marketplaces).', 'meta-agenda.png', 'Meta', '', '', '20', '1', '', 'meta', NULL, '', '', '', ''),
-(5, 'digital-trends', 'conference', 'Manuel García Cuerva', 'manuel-garcia-cuerva-agenda.png', 'Manuel García Cuerva - VTEX', 'Head Global VTEX Profit Pools en VTEX', '', 'https://www.linkedin.com/in/manuatbetamod/', '', '', 'sss', 'Social Selling: qué es lo que aprendimos y qué se viene', 'Manuel García Cuerva es un emprendedor y experto en tecnología con más de 20 años de experiencia en la industria del comercio electrónico. Antes de unirse a VTEX como Head of Live Shopping, fundó y dirigió varias empresas exitosas.', 'vtex-agenda.png', 'VTEX', '', '', '40', '1', '', 'manuelgarcíacuerva', NULL, '', '', '', ''),
-(6, 'digital-trends', 'conference', 'Ricardo Tayar', 'ricardo-tayar-agenda.png', 'Ricardo Tayar', 'CEO y Fundador de Flat 101', '', 'https://es.linkedin.com/in/ricardotayar', '', '', 'sss', 'CRO en E-commerce: best practices para mejorar la conversión', 'Fundador y CEO de Flat 101, agencia de marketing digital lider en estrategias de conversión y experiencia de usuario. Con más de 20 años de experiencia en la industria, es además autor de varios libros sobre marketing digital y UX.', 'flat101-agenda.png', 'Flat 101', '', '', '30', '1', '', 'ricardotayar', NULL, '', '', '', ''),
-(7, 'digital-trends', 'conference', 'Ana Ivars', 'ana-ivars-agenda.png', 'Ana Ivars', ' Founder & CEO en Dinamiza Digital ', 'https://mobile.twitter.com/AnaIvarsParcero/status/1641388231106101248', 'https://www.linkedin.com/in/anaivarsparcero/', 'https://www.instagram.com/ana.ivars/?hl=es', '', 'ssss', 'A confirmar', 'Consultora, Formadora y Speaker | CEO en Agencia Dinamiza Digital | Forbes Business Council Official Member 2023♟ Ayuda a empresas y profesionales a vender más desde la estrategia digital y publicidad online.', 'anaivars-agenda.png', 'Ana Ivars', '', '', '10', '1', '', 'anaivars', NULL, '', '', '', ''),
-(8, 'digital-trends', 'interview', 'pedrito2', 'siteground.png', 'harold', 'home office', 'dfdf', '', '', '', 'pepito', 'pedrito clavara un clavito en vivo', 'pedrito clavara un clavito en vivo', 'siteground.png', 'pedrito clavara un clavito en vivo', '', '', '', '2', 'https://www.youtube.com/watch?v=m25Kkj9M9v8&ab_channel=FromDoppler', 'pedrito clavara un clavito en vivo', NULL, '', '', '', ''),
-(9, 'digital-trends', 'conference', 'matias', 'neilpatel.png', 'harold', 'home office', 'dfdf', '', '', '', 'dsfgsdfsdf', 'dgjdjfgjgj', 'yhertyrtyertyrty', 'neilpatel.png', 'retyrtyrety', '', '', '', '2', '', 'rtyrtyrtyrtyrty', NULL, '', '', '', ''),
-(10, 'digital-trends', 'conference', 'amtias', 'woo.png', '', '', '', '', '', '', 'yhedhdfh', 'ddfghdfgdfg', '', '', '', '', '', '', '3', '', '', NULL, '', '', '', '');
+(1, 'ecommerce', 'conference', 'Michel Capuano', 'michelcapuano-agenda-old.png', 'Michel Capuano', 'Director de Marketing de FedEx', '', 'https://www.linkedin.com/in/michelcapuano', '', '', 'Logística Inteligente: Claves para optimizar la entrega en Ecommerce', 'En esta conferencia, se explorarán las principales tendencias que están redefiniendo las entregas, desde la optimización de la última milla hasta el uso de logística predictiva para anticipar la demanda y reducir demoras. También se profundirzará en estrategias para acelerar los envíos sin aumentar costos, asegurando eficiencia y competitividad. Conoce de primera mano cómo FedEx está revolucionando la entrega en E-commerce y qué estrategias puedes aplicar en tu negocio. ', 'Ejecutivo orientado a resultados con 20 años de amplia experiencia en marketing en multinacionales de bienes de consumo, retail/QSR, trabajando en transformación digital y comercio electrónico con metodologías ágiles.', 'michelcapuano-agenda-logo-old.png', 'FedEx', '11:15', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Michel+Capuano+-+EMMS+E-commerce+2025&iso=20250428T1115&p1=51&am=25', '10', '1', '', '', NULL, '', '', '', ''),
+(2, 'ecommerce', 'conference', 'Manuel Caro', 'manuelcaro-agenda-old.png', 'Manuel Caro', 'Fundador y CEO de la Agencia Digital MDE Consulting Group', 'https://x.com/manuelcaro', 'https://www.linkedin.com/in/caromanuel/ ', 'https://www.instagram.com/caromanuelr/', ' https://web.facebook.com/manuel.caro.mde', 'Los 5 Hacks de IA que aumentan las ventas de tu E-commerce  ', 'La Inteligencia Artificial está redefiniendo el e-commerce, pasando de ser una herramienta de soporte a convertirse en el motor que impulsa las ventas. En esta conferencia descubrirás cinco hacks de IA que están transformando la manera en que las marcas atraen, convierten y fidelizan clientes. Exploraremos cómo la IA puede automatizar la optimización de campañas publicitarias, personalizar experiencias en tiempo real, ajustar precios dinámicamente según cada usuario y hasta predecir qué productos comprará un cliente antes de que él mismo lo sepa.', 'Manuel Caro es un experto en Inteligencia Artificial, Marketing Digital y Transformación Digital, con más de 30 años de experiencia en el sector y 20 años liderando agencias digitales. Ha desarrollado más de 650 proyectos de innovación y crecimiento digital para marcas como Unilever, Kimberly-Clark, Pfizer, Universal Music y Reckitt, entre muchas otras. Su liderazgo en la integración de la IA en estrategias de negocio y marketing le ha valido reconocimientos internacionales, incluyendo su nombramiento como Business Fellow de Perplexity AI, programa que forma líderes en la aplicación estratégica de la inteligencia artificial en los negocios. ', 'manuelcaro-agenda-logo-old.png', 'Agencia Digital MDE Consulting Group', '11:50', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Manuel+Caro+%7C+EMMS+E-commerce&iso=20250428T1150&p1=51&am=25', '20', '1', '', '', NULL, '', '', '', ''),
+(3, 'ecommerce', 'conference', 'Stephanie Pi Herrera', 'stephanieherrera-agenda-old.png', 'Stephanie Pi Herrera', 'Woo Developer Advocate', '', '', '', '', 'Escalabilidad en eCommerce: Cómo crecer sin límites', 'En el mundo del eCommerce, el crecimiento no debería ser un obstáculo, sino una oportunidad. Sin embargo, muchas tiendas online se enfrentan a desafíos técnicos cuando su volumen de tráfico y pedidos aumenta. En esta conferencia, se desmitificarán las creencias más comunes sobre la escalabilidad, se explorará qué configuraciones permiten que un E-commerce crezca sin límites, se analizará el papel clave del hosting, se verán estrategias de rendimiento esenciales y se explorará cómo manejar altos volúmenes de pedidos con procesos en segundo plano y un checkout optimizado. ', 'Cuando no está enfocada en mejorar la experiencia de desarrollo en WooCommerce, Pi se puede encontrar escalando rocas y tomando el sol.', 'stephanieherrera-agenda-logo-old.png', 'WordPress', '12:25', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Stephanie+Pi+Herrera+%7C+EMMS+E-commerce&iso=20250428T1225&p1=51&am=25', '30', '1', '', '', NULL, '', '', '', ''),
+(4, 'ecommerce', 'conference', 'María Díaz', 'mariadiaz-agenda-old.png', 'María Díaz', 'Marketing Manager de Doppler', '', 'https://www.linkedin.com/in/mariajudithdiaz/', '', '', 'Hackea Tu eCommerce: Tácticas de Onsite Marketing que generan conversiones', 'En esta conferencia, María Díaz, de Doppler, revelará tácticas clave de Onsite Marketing para maximizar conversiones y mejorar la experiencia del usuario en tiempo real. Aprenderás cómo personalizar mensajes, captar la atención de tus visitantes en los momentos clave y utilizar estrategias basadas en datos para aumentar las ventas sin necesidad de más tráfico. Además, descubrirás cómo implementar pop-ups inteligentes, banners dinámicos y automatizaciones avanzadas que guían al usuario hacia la compra.', 'María es Marketing Manager en Doppler, con más de 10 años de experiencia en marketing digital. Máster en Marketing Estratégico, especialista en inbound marketing, estrategias de contenido, email marketing y automatizaciones. Profesora en diversas escuelas de negocio y speaker en eventos de la industria.', 'mariadiaz-agenda-logo-old.png', 'Doppler', '13:00', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Mar%C3%ADa+D%C3%ADaz+%7C+EMMS+E-commercer&iso=20250428T13&p1=51&am=25', '40', '1', '', '', NULL, '', '', '', ''),
+(5, 'ecommerce', 'conference', 'Jaime Piedraita ', 'jaimepiedraita-agenda-old.png', 'Jaime Piedraita ', 'Director General Expertos en Retail', '', 'https://www.linkedin.com/in/jaime-andr%C3%A9s-piedrahita-lopera-13949130/', '', '', 'Tendencias en Retail para Latinoamérica y España', 'En esta conferencia se explorará cómo la proximidad se ha convertido en un factor decisivo para los consumidores, impulsando formatos más accesibles, eficientes y conectados con las necesidades locales. También se abordará la creciente demanda por precios bajos, un desafío que obliga a las marcas a optimizar costos sin sacrificar la calidad ni la experiencia del cliente. A través de casos reales y estrategias innovadoras, se descubrirá cómo las grandes y pequeñas empresas están adaptando su modelo de negocio a este nuevo escenario competitivo.', 'Administrador de Negocios bilingüe, con especialización en Mercadeo y Tecnología, MBA y Maestría en Dirección Comercial y Marketing. Líder con amplia experiencia en la elaboración y ejecución de planes estratégicos de mercadeo, trade marketing y comerciales, generación de nuevos negocios e innovación de productos en compañías de consumo masivo.', 'jaimepiedraita-logo-agenda-old.png', 'Expertos en Retail', '11:15', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Jaime+Piedrahita+%7C+EMMS+E-commerce&iso=20250429T1115&p1=51&am=25', '10', '2', '', '', NULL, '', '', '', ''),
+(6, 'ecommerce', 'conference', 'Julián Ocampo', 'julianocampo-agenda-old.png', 'Julián Ocampo', 'Fundador de la Escuela de UGC', '', '', 'https://www.instagram.com/julianforfun/', '', 'Publicidad con UGC: La Estrategia Secreta para Aumentar las Ventas', 'En esta conferencia, Julián Ocampo, revelará cómo el User Generated Content (UGC) se ha convertido en la estrategia secreta de las marcas más exitosas para aumentar ventas y generar confianza. Descubrirás cómo seleccionar, incentivar y escalar el UGC para potenciar el impacto de tus estrategias de marketing sin necesidad de grandes presupuestos en producción. A través de casos reales y tácticas aplicables, conocerás por qué el contenido generado por la comunidad es la clave para conectar con tu audiencia y hacer crecer tu marca.', 'Julián Ocampo es educador digital y fundador de la Escuela de UGC, reconocida como la primera academia para creadores de contenido en el mundo. Esta institución ofrece formación integral en creación de contenido para plataformas digitales, con el objetivo de capacitar a individuos interesados en desarrollar material auténtico y efectivo para diversas marcas y audiencias.  Actualmente, la escuela cuenta con más de 800 alumnos de países como Argentina, Colombia, Chile y Estados Unidos, y colabora con reconocidas empresas como Avon, Albago, Netflix y Paramount.', 'julianocampo-agenda-logo-old-v3.png', 'Escuela de UGC', '11:50', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Juli%C3%A1n+Ocampo+%7C+EMMS+E-commerce&iso=20250429T1150&p1=51&am=25', '20', '2', '', '', NULL, '', '', '', ''),
+(7, 'ecommerce', 'conference', 'Mario Del Pozo Garrido', 'mariodelpozo-agenda-old.png', 'Mario Del Pozo Garrido', 'Content creator en Don Dominio', '', '', '', '', 'Dominio y SEO: Claves para posicionar tu Tienda Online desde el nombre', 'En esta conferencia, Mario Del Pozo, de Don Dominio, explicará cómo la elección de un dominio estratégico impacta directamente en el SEO y la visibilidad de tu tienda online. Aprenderás a seleccionar el nombre perfecto para tu negocio, optimizando palabras clave y extensiones que potencien tu posicionamiento en buscadores. ', 'Mario del Pozo Garrido es especialista en marketing digital y colaboraciones estratégicas en DonDominio, donde gestiona alianzas clave y crea contenido enfocado en dominios, SEO y presencia online. Además, es anfitrión del podcast PlanetaM, un espacio donde explora tendencias, estrategias y novedades del mundo digital con expertos de la industria.', 'mariodelpozo-agenda-logo-old-v2.png', 'Don Dominio', '12:25', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Conferencia+Mario+Del+Pozo+Garrido+%7C+EMMS+E-commerce&iso=20250429T1225&p1=51&am=25', '30', '2', '', '', NULL, '', '', '', ''),
+(8, 'ecommerce', 'workshop', 'Pablo Moratinos', 'pablomoratinos-agenda-old.png', 'Pablo Moratinos', 'Growth Data Lead en Product Hackers', '', 'https://www.linkedin.com/in/pmoratinos/', '', '', 'Análisis de E-commerce en WordPress', 'En esta sesión, se abordarán los fundamentos de la instrumentación analítica a través de la capa de datos, mostrando cómo crear un dataLayer en plataformas como WordPress, WooCommerce y Easy Digital Downloads. También se cubrirá la integración con Google Tag Manager para gestionar y activar etiquetas de manera eficiente. Finalmente, se aprenderá a configurar y analizar funnels de conversión en GA4, proporcionando herramientas prácticas para mejorar el rendimiento y la toma de decisiones en sus E-commerce.', 'Pablo Moratinos es el responsable del equipo de Data & Experimentation en Product Hackers, una agencia líder en Growth Marketing. Fundador de la agencia de marketing 3ymedia Comunicación y codirector de la academia online 3ymedia School, ha logrado consolidar una sólida carrera en el mundo del marketing digital. Además, es embajador de marca de WordPress.com y autor del exitoso libro \"Negocios online. Data Driven Marketing\", publicado en 2022 por Anaya Multimedia, que se convirtió en un top ventas en su categoría en Amazon durante su primera semana de lanzamiento.', 'stephanieherrera-agenda-logo-old (1).png', 'WordPress', '15:00', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Pablo+Moratinos+%7C+EMMS+E-commerce+2025&iso=20250428T15&p1=51&am=40', '80', '1', '', '', NULL, '', '', '', ''),
+(9, 'ecommerce', 'workshop', 'Laura Barreto ', 'laurabarreto-agenda-old.png', 'Laura Barreto ', 'Large Business & Strategic Partners Manager', '', 'https://www.linkedin.com/in/marialaurabrt/', '', '', 'Onsite Marketing: Tácticas Avanzadas para Aumentar las Ventas en tu E-commerce', 'Se explorarán técnicas avanzadas como la creación de pop-ups inteligentes y mensajes dinámicos que se activan en momentos clave del proceso de compra, así como la personalización de contenidos en tiempo real según el comportamiento del usuario. Además, se enseñará a segmentar a los visitantes para ofrecerles promociones y ofertas personalizadas, mejorar la efectividad de los formularios de captura y optimizar el checkout para reducir el abandono del carrito. ', '', 'laurabarreto-agenda-logo-old.png', 'Doppler', '15:45', 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Laura+Barreto+%7C+EMMS+E-commerce+2025&iso=20250428T1545&p1=51&am=40', '90', '1', '', '', NULL, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `sponsors` (
   `link_promo_company` varchar(255) DEFAULT NULL,
   `status` enum('0','1') DEFAULT '1',
   PRIMARY KEY (`sponsor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `sponsors`
@@ -207,60 +207,113 @@ INSERT INTO `sponsors` (`sponsor_id`, `sponsor_type`, `name_company`, `logo_comp
 (1, 'STARTER', 'China Rodriguez', '20230317T122856277Z710679.png', 'China Rodriguez', NULL, '1', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (2, 'STARTER', 'Ultravioleta', '20230317T122926188Z978476.png', 'Ultravioleta', NULL, '20', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (3, 'STARTER', 'Infonegocios', '20230317T122954107Z502796.png', 'Infonegocios', NULL, '30', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
-(4, 'SPONSOR', 'Sitgrouund', '', 'Sitegrouund', 'https://www.siteground.es/?utm_medium=link&utm_source=event&utm_campaign=EMMS23', '1', 'Estrategias de WPO y UX para tu E-commerce ', 'Cómo escoger un hosting para tu E-commerce', 'Elegir el proveedor de servicio más adecuado para tu tienda online, implica un análisis mucho más exhaustivo que el que harías para una web personal. Hay factores adicionales que deberás considerar. Descubre los aspectos que debes tener en cuenta para acertar en tu decisión. ', 'Descubre cómo elegir el hosting para tu E-commerce para asegurarte un rendimiento óptimo. ', 'siteground', 1, '1', '', 'Marketing de contenidos para tu E-commerce', 's-6M309Yl5I', '', 'Marketing de contenidos para tu E-commerce', 'eBook de Marketing de Contenidos', 'El Marketing de contenidos ha demostrado ser eficaz para aumentar visitas web, generar más clientes potenciales que la publicidad pagada, conseguir mayores tasas de conversión, mejorar el posicionamiento SEO y establecer relaciones con los clientes y aumentar la lealtad hacia la marca. Descubre cómo aplicarlo en tu estrategia digital. ', 'https://www.siteground.es/ebook-marketing-contenidos?utm_medium=link&utm_source=landing&utm_campaign=EMMS_Doppler', 'SiteGround', 'SiteGround es una empresa líder en hosting web reconocida internacionalmente por su enfoque en la tecnología. Centrándose en la velocidad web, la seguridad y un servicio al cliente sin igual, las herramientas creadas por SiteGround te protegen de posibles ataques y pueden hacer que tu web sea 100 veces más rápida.', 'pedro', '1'),
-(5, 'SPONSOR', 'DinoRANK', '20230331T142247249Z570898.png', 'DinoRANK', 'https://dinorank.com/?utm_campaign=emms-ecommerce', '2', 'SEO para E-commerce: La importancia de la intención de búsqueda en 2023', 'Estrategia SEO para eCommerce', 'No todas las personas que están buscando “zapatillas” en internet están pensando en comprar. Por eso, no tiene sentido atacar todas las keywords que se te ocurran. Muchas no van a generar ventas y, las que generan ventas, van a estar “ocupadas” por los gigantes del comercio online. Entonces, ¿qué puedes hacer tú? Te lo explicamos en este vídeo.\nDescubre todo lo que tienes que saber para controlar al máximo esta estrategia y aparecer entre las primeras posiciones cuando tus potenciales clientes utilizan un buscador. ', 'Descubre cómo controlar al máximo la estrategia de intención de búsqueda de tus potenciales clientes para aparecer entre las primeras posiciones en buscadores. ', 'dinorank', 1, '2', '20230331T142247249Z201753.png', 'Estratgias para Intención de búsqueda', 'BWN-ICTw83Q', '20230330T102247464Z357297.png', 'Estratgias para Intención de búsqueda', 'Curso gratis: Multiplica las visitas de tu eCommerce', 'Descubre paso a paso la estrategia para aparecer en las búsquedas de los usuarios que desean comprar los productos que vendes y planta cara a otros gigantes del comercio online como AliExpress, Zara o Leroy Merlín entre otros. Aunque seas un eCommerce pequeño o mediano.', 'https://dinorank.com/blog/curso-gratis-ecommerce/?utm_campaign=emms-ecommerce', 'Prueba DinoRANK con un 50% de descuento', 'Imagina que alguien te dijera cómo mejorar tus contenidos para posicionar más alto, o cómo organizar tu eCommerce para enamorar a Google. Imagina encontrar keywords que no posiciona tu competencia, o saber cómo busca tu usuario en internet. Imagina multiplicar x2 tu tráfico.', 'https://dinorank.com/registro/?utm_campaign=emms-ecommerce&codPromo=ecodino', '1'),
 (6, 'STARTER', 'Luis Maram', '20230329T111618059Z736116.png', 'Luis Maram', NULL, '40', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(7, 'STARTER', 'Mkt digital experience', '20230329T111651394Z339517.png', 'Marketing digital experience', NULL, '50', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(7, 'STARTER', 'Mkt digital experience', '20250331T213620361Z458542.png', 'Marketing digital experience', NULL, '50', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (8, 'STARTER', 'Club de las Emprndedoras', '20230329T111710257Z090204.png', 'Club de las Emprndedoras', NULL, '60', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(9, 'STARTER', 'Ignacio Santiago', '20230329T111731344Z455405.png', 'Ignacio Santiago', NULL, '70', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(10, 'STARTER', 'Epico', '20230329T111747496Z898195.png', 'Epico', NULL, '80', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(9, 'STARTER', 'Ignacio Santiago', '20230329T111731344Z455405.png', 'Ignacio Santiago', NULL, '70', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(10, 'STARTER', 'Epico', '20230329T111747496Z898195.png', 'Epico', NULL, '80', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (11, 'STARTER', 'Micaela Sabja', '20230331T084320642Z732877.png', 'Micaela Sabja', NULL, '90', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(12, 'STARTER', 'MIMEC', '20230331T084414063Z501057.png', 'MIMEC', NULL, '100', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(13, 'STARTER', 'Cámara Argentina de Fintech', '20230331T084443405Z219766.png', 'Cámara Argentina de Fintech', NULL, '110', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(12, 'STARTER', 'MIMEC', '20230331T084414063Z501057.png', 'MIMEC', NULL, '100', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(13, 'STARTER', 'Cámara Argentina de Fintech', '20230331T084443405Z219766.png', 'Cámara Argentina de Fintech', NULL, '110', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (14, 'STARTER', 'Cámara dee Comercio de Córdoba', '20230331T084514301Z535073.png', 'Cámara dee Comercio de Córdoba', NULL, '120', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(15, 'STARTER', 'Growby', '20230331T084538115Z587466.png', 'Growby', NULL, '130', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(16, 'STARTER', 'Del querer al hacer', '20230331T084559291Z231911.png', 'Del querer al hacer', NULL, '140', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(17, 'STARTER', 'IT Ahora', '20230331T084624476Z612615.png', 'IT Ahora', NULL, '150', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(15, 'STARTER', 'Growby', '20230331T084538115Z587466.png', 'Growby', NULL, '130', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(16, 'STARTER', 'Del querer al hacer', '20230331T084559291Z231911.png', 'Del querer al hacer', NULL, '140', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(17, 'STARTER', 'IT Ahora', '20230331T084624476Z612615.png', 'IT Ahora', NULL, '150', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (18, 'STARTER', 'Emprendedores News', '20230331T084738367Z487749.png', 'Emprendedores News', NULL, '160', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (19, 'STARTER', 'Grandes Pymes', '20230331T085247285Z879670.png', 'Grandes Pymes', NULL, '170', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (20, 'STARTER', 'Mundo Contact', '20230331T085308334Z486520.png', 'Mundo Contact', NULL, '195', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(21, 'STARTER', 'Marketing al Día', '20230331T085328868Z516303.png', 'Marketing al Día', NULL, '200', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(21, 'STARTER', 'Marketing al Día', '20230331T085328868Z516303.png', 'Marketing al Día', NULL, '200', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (22, 'STARTER', 'Bulb', '20230331T085352836Z665289.png', 'Bulb', NULL, '210', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(23, 'STARTER', 'Moni en la Web', '20230331T085411802Z765799.png', 'Moni en la Web', NULL, '220', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(24, 'STARTER', 'Mi Pyme no Para', '20230331T085442178Z436410.png', 'Mi Pyme no Para', NULL, '230', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(25, 'STARTER', 'Entre Emprenedores Workshop', '20230331T085507776Z867777.png', 'Entre Emprenedores Workshop', NULL, '240', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(26, 'STARTER', 'Disruptivo TV', '20230331T085528208Z709702.png', 'Disruptivo TV', NULL, '245', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(27, 'STARTER', 'Caro Siri', '20230331T085719765Z754128.png', 'Caro Siri', NULL, '250', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(28, 'STARTER', 'SED Emprendedor', '20230331T085736043Z513096.png', 'SED Emprendedor', NULL, '260', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(29, 'STARTER', 'AD Media Rock', '20230331T085811273Z535760.png', 'AD Media Rock', NULL, '270', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(23, 'STARTER', 'Moni en la Web', '20230331T085411802Z765799.png', 'Moni en la Web', NULL, '220', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(24, 'STARTER', 'Mi Pyme no Para', '20230331T085442178Z436410.png', 'Mi Pyme no Para', NULL, '230', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(25, 'STARTER', 'Entre Emprenedores Workshop', '20230331T085507776Z867777.png', 'Entre Emprenedores Workshop', NULL, '240', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(26, 'STARTER', 'Disruptivo TV', '20230331T085528208Z709702.png', 'Disruptivo TV', NULL, '245', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(27, 'STARTER', 'Caro Siri', '20230331T085719765Z754128.png', 'Caro Siri', NULL, '250', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(28, 'STARTER', 'SED Emprendedor', '20230331T085736043Z513096.png', 'SED Emprendedor', NULL, '260', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(29, 'STARTER', 'AD Media Rock', '20230331T085811273Z535760.png', 'AD Media Rock', NULL, '270', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (30, 'STARTER', 'AMDAR', '20230331T085823850Z432089.png', 'AMDAR', NULL, '280', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(31, 'STARTER', 'We Connect', '20230331T085842074Z226329.png', 'We Connect', NULL, '300', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(31, 'STARTER', 'We Connect', '20230331T085842074Z226329.png', 'We Connect', NULL, '300', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (32, 'STARTER', 'Flor Lamas', '20230331T085855731Z953447.png', 'Flor Lamas', NULL, '310', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(33, 'STARTER', 'Somos Branders OK', '20230331T085912200Z517799.png', 'Somos Branders OK', NULL, '320', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(34, 'STARTER', 'Power Hub', '20230331T090009023Z036658.png', 'Power Hub', NULL, '330', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(35, 'STARTER', 'Mamita Power', '20230331T090023070Z980079.png', 'Mamita Power', NULL, '340', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(36, 'SPONSOR', 'Raiola Networks', '20230414T131238131Z129591.png', 'Raiola Networks', 'https://raiolanetworks.es/', '0', '', '', '', '', '', 0, '', NULL, '', '', NULL, '', '', '', '', '', '', '', '1'),
-(37, 'SPONSOR', 'Ecommerce Nights', '20230414T135912974Z369843.jpg', 'Ecommerce Nights', 'https://ecommercenights.com.pa/', '55', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '1'),
-(38, 'PREMIUM', 'China Rodriguez', '20230331T132012607Z101734.png', 'China Rodriguez', 'https://www.chinarodriguez.com/?v=5b61a1b298a0', '10', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(39, 'PREMIUM', 'Infonegocios', '20230331T132712231Z130779.png', 'Infonegocios', 'https://infonegocios.info/', '20', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(40, 'PREMIUM', 'Luis Maram', '20230403T081656888Z509960.png', 'Luis Maram', 'https://www.luismaram.com/', '30', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(41, 'PREMIUM', 'Mkt Digital Experience', '20230403T081812354Z569059.png', 'Marketing Digital Experience', 'https://marketingdigitalexperience.com/', '40', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(42, 'PREMIUM', 'El Club de las Emprendedoras', '20230403T081843858Z572614.png', 'El Club de las Emprendedoras', 'https://elclubdeemprendedoras.com/', '50', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(43, 'PREMIUM', 'Epico', '20230403T081913937Z583841.png', 'Epico', 'https://epico.gob.ec/', '60', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(44, 'PREMIUM', 'Angie Sanmartino', '20230403T081937841Z076140.png', 'Angie Sanmartino', 'https://angiesammartino.com.ar/', '70', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(45, 'PREMIUM', 'Consejo de la Comunicación', '20230403T082006630Z161594.png', 'Consejo de la Comunicación', 'https://cc.org.mx/', '80', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(46, 'PREMIUM', 'Sofia Alicio', '20230403T082033302Z221098.png', 'Sofia Alicio', 'https://sofiaalicio.com/', '90', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(47, 'PREMIUM', 'Mujeres que Emprenden', '20230403T082056564Z318990.png', 'Mujeres que Emprenden', 'https://aula.mujeresqueemprenden.com/', '100', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(48, 'PREMIUM', 'Digitalizadas', '20230403T082119139Z851342.png', 'Digitalizadas', 'https://digitalizadas.com.ar/', '110', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(49, 'PREMIUM', 'Entrer Emprendedores Workshop', '20230403T082142988Z265154.png', 'Entrer Emprendedores Workshop', 'https://www.entreemprendedores.com.ar/', '120', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(50, 'PREMIUM', 'Mai Pistiner', '20230403T082208468Z719956.png', 'Academia Mai Pistiner', 'https://www.maipistiner.com/', '140', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(51, 'PREMIUM', 'Interlat', '20230403T082234666Z839299.png', 'Interlat', 'https://interlat.co/', '150', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(33, 'STARTER', 'Somos Branders OK', '20230331T085912200Z517799.png', 'Somos Branders OK', NULL, '320', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(34, 'STARTER', 'Power Hub', '20230331T090009023Z036658.png', 'Power Hub', NULL, '330', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(35, 'STARTER', 'Mamita Power', '20230331T090023070Z980079.png', 'Mamita Power', NULL, '340', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (52, 'STARTER', 'EUDE', '20230403T082307950Z115064.png', 'EUDE', NULL, '150', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (53, 'STARTER', 'Círculo Empresarial', '20230403T082454058Z907380.png', 'Círculo Empresarial', NULL, '160', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(54, 'STARTER', 'CEVEC', '20230403T082528464Z053843.png', 'CEVEC', NULL, '170', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(55, 'STARTER', 'El PUblicista', '20230403T082602950Z164011.png', 'El PUblicista', NULL, '170', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(54, 'STARTER', 'CEVEC', '20230403T082528464Z053843.png', 'CEVEC', NULL, '170', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(55, 'STARTER', 'El PUblicista', '20230403T082602950Z164011.png', 'El PUblicista', NULL, '170', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
 (56, 'STARTER', 'Soy Emprendedora', '20230403T082639158Z504938.png', 'Soy Emprendedora', NULL, '180', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
-(57, 'STARTER', 'Mujeres en Tecnología', '20230403T082713061Z595231.png', 'Mujeres en Tecnología', NULL, '190', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
+(57, 'STARTER', 'Mujeres en Tecnología', '20230403T082713061Z595231.png', 'Mujeres en Tecnología', NULL, '190', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(58, 'STARTER', 'el sponsor de Mati', '20250331T164442405Z214672.png', 'Convierte Agency', NULL, '12', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(59, 'SPONSOR', 'el sponsor de Mati', '20250331T164556452Z727892.png', 'Convierte Agency', '223', '23', 'Las 4 fases para aumentar tus ventas', '23', '232323', '23', 'Convierte Agency', 1, '23232', '20250331T164556452Z848988.png', 'Don Dominio ', 'dfgdfgdfgdfg', '20250331T164556452Z735187.png', 'Cómo crear un nombre de marca memorable', '23232', '2323', 'https://convierte.agency/checklist-emms/', 'Don Dominio', '232323', 'https://www.eude.com.ar/', '0'),
+(60, 'SPONSOR', 'Don Dominio', '20250331T211648760Z590241.png', 'Don Dominio', 'https://www.dondominio.com/es', '3', '', '', '', '', '', 0, '', NULL, '', '', NULL, '', '', '', '', '', '', '', '1'),
+(61, 'SPONSOR', 'Easycommerce', '20250331T211801349Z463399.png', 'Easycommerce', 'https://www.easycommerce.tech/', '2', '', '', '', '', '', 0, '', NULL, '', '', NULL, '', '', '', '', '', '', '', '1'),
+(62, 'SPONSOR', 'Wordpress', '20250331T212431774Z724635.png', 'Wordpress', ' https://wordpress.com/es/wordcamp/', '1', '', '', '', '', '', 0, '', NULL, '', '', NULL, '', '', '', '', '', '', '', '1'),
+(63, 'STARTER', 'Educacion IT', '20250331T213339027Z708225.png', 'Educacion IT', NULL, '1', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(64, 'STARTER', 'China Rodríguez', '20250331T213427509Z521841.png', 'China Rodríguez', NULL, '2', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(65, 'STARTER', 'Info Negocios', '20250331T213532671Z424921.png', 'Info Negocios', NULL, '4', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(66, 'STARTER', 'Consejo de la comunicación', '20250331T213812721Z494559.png', 'Consejo de la comunicación', NULL, '6', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(67, 'STARTER', 'Sofi Alicio', '20250331T213914571Z053848.png', 'Sofia Alicio', NULL, '8', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(68, 'STARTER', 'Mujeres que emprenden', '20250331T214100447Z863493.png', 'Mujeres que emprenden', NULL, '10', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(69, 'STARTER', 'Digitalizadas ', '20250331T214158863Z960496.png', 'Digitalizadas ', NULL, '12', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(70, 'STARTER', 'Rampa Publicidad', '20250331T214246716Z250601.png', 'Rampa Publicidad', NULL, '13', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(71, 'STARTER', 'Interlat', '20250331T214348921Z710356.png', 'Interlat', NULL, '14', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(72, 'STARTER', 'Envio Pack', '20250331T214446432Z325562.png', 'Envio Pack', NULL, '15', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(73, 'STARTER', 'Capacitate EC', '20250331T214526182Z506457.png', 'Capacitate EC', NULL, '16', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(74, 'STARTER', 'Ecodiem', '20250331T214607057Z392553.png', 'Ecodiem', NULL, '18', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(75, 'STARTER', 'Publicitarias', '20250331T214659461Z562888.png', 'Publicitarias', NULL, '20', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(76, 'STARTER', 'Fecoba', '20250331T214738653Z817580.png', 'Fecoba', NULL, '22', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(77, 'STARTER', 'Voces Vitales', '20250331T214826130Z265128.png', 'Voces Vitales', NULL, '23', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(78, 'STARTER', 'Tanita Miguel ', '20250331T214911635Z887720.png', 'Tanita Miguel ', NULL, '24', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(79, 'STARTER', 'Zeke', '20250331T214951497Z776945.png', 'Zeke', NULL, '25', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(80, 'STARTER', 'Ladies Brunch', '20250331T215033073Z876383.png', 'Ladies Brunch', NULL, '26', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(81, 'STARTER', 'Mompreneurs', '20250331T215216495Z832963.png', 'Mompreneurs', NULL, '28', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(82, 'STARTER', 'Marketnews Perú', '20250331T215247943Z697448.png', 'Marketnews Perú', NULL, '30', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(83, 'STARTER', 'Partners Academy', '20250331T215327043Z669635.png', 'Partners Academy', NULL, '32', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(84, 'STARTER', 'Pymenoticias', '20250331T215417750Z300202.png', 'Pymenoticias', NULL, '34', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(85, 'STARTER', 'Esmadi ', '20250331T215449414Z042692.png', 'Esmadi ', NULL, '36', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(86, 'STARTER', 'Impulsate', '20250331T215550346Z916029.png', 'Impulsate', NULL, '38', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(87, 'STARTER', 'Circulo Empresarial', '20250331T215615755Z238628.png', 'Circulo Empresarial', NULL, '40', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(88, 'STARTER', 'Emprende con Juanma', '20250331T215644006Z003161.png', 'Emprende con Juanma', NULL, '42', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(89, 'STARTER', 'Rucula', '20250331T215711817Z622863.png', 'Rucula', NULL, '42', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(90, 'STARTER', 'Materia Biz', '20250331T215739316Z613303.png', 'Materia Biz', NULL, '46', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(91, 'STARTER', 'Micaela Sabja ', '20250331T215920302Z404787.png', 'Micaela Sabja ', NULL, '48', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(92, 'PREMIUM', 'Angie Sammartino', '20250401T150337585Z495097.png', 'Angie Sammartino', 'https://angiesammartino.com.ar/', '10', '', '', '', '', '', 0, '', NULL, '', '', NULL, '', '', '', '', '', '', '', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sponsorsdt24`
+--
+
+CREATE TABLE IF NOT EXISTS `sponsorsdt24` (
+  `sponsor_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sponsor_type` enum('SPONSOR','PREMIUM','STARTER') DEFAULT NULL,
+  `name_company` varchar(255) NOT NULL,
+  `logo_company` varchar(255) DEFAULT NULL,
+  `alt_logo_company` varchar(255) NOT NULL,
+  `link_site` varchar(255) DEFAULT NULL,
+  `priority_home` varchar(255) DEFAULT NULL,
+  `conference_name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `description_card` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `visible_card` tinyint(1) NOT NULL DEFAULT 0,
+  `priority_card` varchar(255) DEFAULT NULL,
+  `image_landing` varchar(255) DEFAULT NULL,
+  `alt_image_landing` varchar(255) DEFAULT NULL,
+  `youtube` varchar(255) DEFAULT NULL,
+  `image_youtube` varchar(255) DEFAULT NULL,
+  `alt_image_youtube` varchar(255) DEFAULT NULL,
+  `title_magnet` text DEFAULT NULL,
+  `description_magnet` text DEFAULT NULL,
+  `link_magnet` varchar(255) DEFAULT NULL,
+  `title_promo_company` text DEFAULT NULL,
+  `description_promo_company` text DEFAULT NULL,
+  `link_promo_company` varchar(255) DEFAULT NULL,
+  `status` enum('0','1') DEFAULT '1',
+  PRIMARY KEY (`sponsor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -288,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `stripe_customers` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -320,7 +373,7 @@ CREATE TABLE IF NOT EXISTS `subscriptions_doppler` (
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1933 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1951 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -336,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `subscription_doppler_list_errors` (
   `error_code` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
