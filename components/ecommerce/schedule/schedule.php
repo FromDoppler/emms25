@@ -30,8 +30,11 @@ $block = getScheduleBlock($normalizedUrl);
         <?php include('speakers.php') ?>
 
         <?php if ($block['block'] === 'dt') : ?>
-            <div class="emms__calendar__bottom emms__fade-in  eventHiddenElements hidden--vip">
+            <div class="emms__calendar__bottom emms__fade-in  eventHiddenElements">
                 <a href="#registro" class="emms__cta">REGÍSTRATE GRATIS</a>
+            </div>
+            <div class="emms__calendar__bottom  eventShowElements">
+                <a href="#registro" class="emms__cta alreadyRegisterForm"><span class="button__text">REGÍSTRATE GRATIS</span></a>
             </div>
         <?php elseif ($block['block'] === 'dt-registrado') : ?>
             <div class="emms__calendar__bottom emms__fade-in hidden--vip">
