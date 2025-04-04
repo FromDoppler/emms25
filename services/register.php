@@ -70,9 +70,16 @@ function processEvents($events)
 function getFirstName($postData, $db)
 {
     $firstname = $postData['name'];
+
     if ($firstname === null) {
-        $firstname = $db->getUserNameByEmail($postData['email'])[0]['firstname'];
+        $results = $db->getUserNameByEmail($postData['email']);
+        if (is_array($results) && isset($results[0]['firstname'])) {
+            $firstname = $results[0]['firstname'];
+        } else {
+            $firstname = 'Asistente';
+        }
     }
+
     return $firstname;
 }
 
@@ -106,7 +113,11 @@ function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotion
         'promotions' => $promotions,
         'ip' => $ip,
         'country_ip' => $countryGeo,
-        'utm_data' => $utmData,
+        'source_utm' => $utmData['source'] ?? null,
+        'medium_utm' => $utmData['medium'] ?? null,
+        'campaign_utm' => $utmData['campaign'] ?? null,
+        'content_utm' => $utmData['content'] ?? null,
+        'term_utm' => $utmData['term'] ?? null,
         'origin' => $postData['origin'],
         'type' => $type,
         'form_id' => $phase,
@@ -250,12 +261,13 @@ try {
     isSubmitValid($ip);
     $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $user = setDataRequest($ip, $countryGeo, $db);
+
     saveSubscriptionDoppler($user);
     saveSubscriptionDopplerTable($user, $db);
     saveSubscriptionSpreadSheet($user, $db);
     $db->close();
     sendEmail($user, $user['subject']);
-    echo json_encode(['status' => 'success', 'message' => 'User registered successfully.']);
+    echo json_encode(['status' => 'success', 'message' => 'User registered successfully.','user' => print_r($user, true)]);
 } catch (Exception $e) {
     $errorMessage = "Error in Main Execution: " . $e->getMessage();
     $errorContext = [
