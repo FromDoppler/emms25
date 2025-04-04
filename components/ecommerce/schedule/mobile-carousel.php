@@ -6,7 +6,7 @@
         $allowedExposesTypes = ["conference", "workshop", "networking", "successStory", "interview"];
         $isSpeakerExposesType = in_array($speaker['exposes'], $allowedExposesTypes) || $isSpeakerExposeDebate;
     ?>
-        <?php if (($isSpeakerExposesType) && $isSpeakerDT) : ?>
+        <?php if (($isSpeakerExposesType) && $isSpeakerEcommerce) : ?>
             <li class="emms__calendar__list__item">
                 <?php
                 $type = $speaker['exposes'] ?? 'default';
