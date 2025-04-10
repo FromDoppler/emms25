@@ -12,13 +12,14 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    // This is your test publishable API key.
     const toggleSpinner = () => {
         const spinner = document.getElementById('spinner');
         spinner.classList.toggle('visible');
-    }
+    };
+
     toggleSpinner();
     const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
+
     (async () => {
         await initialize();
         toggleSpinner();
@@ -29,28 +30,28 @@
             const getCustomerEmail = () => {
                 if (localStorage.getItem('dplrid')) {
                     const encodedEmailHex = localStorage.getItem('dplrid');
-                    const decodedEmail = hexToString(encodedEmailHex);
-                    return decodedEmail;
-                } else {
-                    return null;
+                    return hexToString(encodedEmailHex);
                 }
+                return null;
             };
 
             const urlParams = new URLSearchParams(window.location.search);
             const promotionCode = urlParams.get('promotionCode');
 
-            const customerEmail = getCustomerEmail();
+            const utmParams = {};
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'origin'].forEach(param => {
+                const value = urlParams.get(param);
+                if (value) utmParams[param] = value;
+            });
 
+            const customerEmail = getCustomerEmail();
             const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/create-checkout-session`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    customerEmail: customerEmail,
-                    ...(promotionCode && {
-                        promotionCode
-                    })
+                    customerEmail,
+                    ...(promotionCode && { promotionCode }),
+                    ...utmParams
                 })
             });
 
@@ -58,13 +59,9 @@
                 throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
             }
 
-            const {
-                clientSecret
-            } = await response.json();
+            const { clientSecret } = await response.json();
 
-            const checkout = await stripe.initEmbeddedCheckout({
-                clientSecret,
-            });
+            const checkout = await stripe.initEmbeddedCheckout({ clientSecret });
             checkout.mount('#checkout');
         } catch (error) {
             console.error("Error al inicializar el checkout:", error);
@@ -72,8 +69,6 @@
         }
     }
 
-
-    // Función para convertir hexadecimal a string ASCII
     function hexToString(hex) {
         let string = '';
         for (let i = 0; i < hex.length; i += 2) {
