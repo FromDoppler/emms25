@@ -58,11 +58,11 @@
                             </table>
                         </div>
                     </div>
-                    <a href="./ecommerce-registrado.php" class="emms__checkout__back">← Volver al sitio</a>
+                    <a href="./ecommerce-registrado" class="emms__checkout__back">← Volver al sitio</a>
                 </div>
             </section>
         </div>
-        <a href="./ecommerce-registrado.php" class="emms__checkout__back">← Volver al sitio</a>
+        <a href="./ecommerce-registrado" class="emms__checkout__back">← Volver al sitio</a>
     </div>
 </div>
 
@@ -90,19 +90,29 @@
     };
 
     async function initialize() {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get('session_id');
-        const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/session-status?session_id=${sessionId}`);
-        const session = await response.json();
 
-        if (session.status == 'complete') {
-            document.getElementById('customerName').innerHTML = session.customer_details.customer_name;
-            document.getElementById('date').innerHTML = session.customer_details.date;
-            document.getElementById('amount').innerHTML = `${session.customer_details.currency} ${session.customer_details.final_price}`;
-            document.getElementById('ticketName').innerHTML = session.customer_details.ticket_name;
-            document.getElementById('success').classList.remove('hidden');
-            updateEvents();
+        if (!sessionId) {
+            window.location.href = "/";
+            return;
+        }
+
+        try {
+            const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/session-status?${urlParams.toString()}`);
+            const session = await response.json();
+
+            if (session.status === 'complete') {
+                document.getElementById('customerName').textContent = session.customer_details.customer_name;
+                document.getElementById('date').textContent = session.customer_details.date;
+                document.getElementById('amount').textContent = `${session.customer_details.currency} ${session.customer_details.final_price}`;
+                document.getElementById('ticketName').textContent = session.customer_details.ticket_name;
+                document.getElementById('success').classList.remove('hidden');
+                updateEvents();
+            }
+        } catch (error) {
+            console.error("Error al obtener el estado de la sesión:", error);
+            window.location.href = "/checkout";
         }
     }
 </script>
