@@ -5,7 +5,8 @@ import {
     buildUserData,
     setEventInLocalStorage,
     extractFormData,
-    toggleButtonLoading
+    toggleButtonLoading,
+    trackMetaPixelRegistration
 } from './submitHelpers.js';
 
 const sendUserData = async (userData) => {
@@ -17,6 +18,10 @@ const sendUserData = async (userData) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
         });
+
+        if (fetchResp.ok) {
+            trackMetaPixelRegistration();
+        }
 
         return { fetchResp, encodeEmail: userData.encodeEmail };
     } catch (error) {
