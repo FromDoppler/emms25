@@ -1,7 +1,7 @@
 import { eventsType } from "../enums/eventsType.enum.js";
 import { toHex } from "./decodeEmail.js";
 import { validateSimpleForm } from "./formsValidators.js";
-import { setEventInLocalStorage } from "./submitForm.js";
+import { setEventInLocalStorage } from "./submitHelpers.js";
 import { getUrlWithParams } from "./utm.js";
 
 const ecommerceAlreadyAccountForm = document.getElementById('alreadyAccountForm');
