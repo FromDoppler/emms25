@@ -1,0 +1,35 @@
+.schedule__tabs {
+    display: flex;
+    border-bottom: solid 2px #fff;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.schedule__tab {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    width: 100%;
+    background: transparent;
+    padding: 15px 0 15px 0;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    line-height: 30px;
+    margin-right: 6px;
+    margin-left: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.schedule__tabs .schedule__tab[aria-selected="true"] {
+    color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+    background-color: #BD7AFF;
+}
+
+.schedule__tabs .schedule__tab[aria-selected="false"] {
+    color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+    background-color: #D9D9D980;
+}
+

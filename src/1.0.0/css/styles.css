@@ -33,6 +33,7 @@
 @import 'components/basic-section.css';
 @import 'components/benefits-icons.css';
 @import 'components/benefits-carousel.css';
+@import 'components/schedule/scheduleIndex.css';
 
 /* Pages */
 @import 'pages/ecommerce.css';

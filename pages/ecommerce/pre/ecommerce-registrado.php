@@ -30,6 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
         <div class="show--vip">
+            <!--  vip -->
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/hello-vip-module.php') ?>
         </div>
         <!-- No vip -->
@@ -39,8 +40,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/vip-features.php') ?>
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/entry-plans.php') ?>
         </div>
-        <!-- No vip -->
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
+
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
