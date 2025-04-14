@@ -1,0 +1,53 @@
+.speaker-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 5px 0px;
+    max-width: 600px;
+    background-color: #fff;
+    background: linear-gradient(180deg, rgba(57, 5, 85, 0) 8%, rgba(57, 5, 85, 0.34) 51%, rgba(72, 1, 111, 0.8) 75%, #000000 100%);
+    border-radius: 30px;
+    border: 5px solid #fff;
+    position: relative;
+    min-height: 394px;
+    transform: none;
+}
+
+.speaker-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.speaker-card.speaker-card--conference {
+    border: 5px solid #7D04F6;
+    background: linear-gradient(180deg, rgba(57, 5, 85, 0) 8%, rgba(57, 5, 85, 0.34) 51%, rgba(72, 1, 111, 0.8) 75%, #000000 100%);
+}
+
+.speaker-card.speaker-card--successStory {
+    background: linear-gradient(180deg, rgba(57, 5, 85, 0) 8%, rgba(57, 5, 85, 0.34) 51%, rgba(72, 1, 111, 0.8) 75%, #000000 100%);
+    border: 5px solid #1DFFDD;
+}
+
+.speaker-card.speaker-card--networking,
+.speaker-card.speaker-card--workshop {
+    border: 5px solid #B1821A;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8%, rgba(200, 160, 66, 0.1) 30.9%, rgba(177, 130, 26, 0.6) 75%, #000000 100%);
+}
+
+
+@media (max-width: 768px) {
+    .speaker-card {
+        align-content: center;
+        justify-content: center;
+        padding: 16px;
+        padding-bottom: 25px;
+        flex-direction: column;
+    }
+}
