@@ -45,8 +45,8 @@
 }
 
 .modal {
-    max-width: 900px;
-    min-width: 795px;
+    max-width: 794px;
+    min-width: 794px;
     border-radius: 25px;
     overflow: hidden;
     color: white;
@@ -70,6 +70,7 @@
 .modal__image img {
     max-width: 360px;
     border-radius: 20px;
+    min-width: 360px;
 }
 
 .modal__content {

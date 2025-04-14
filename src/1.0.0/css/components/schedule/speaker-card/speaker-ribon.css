@@ -17,4 +17,5 @@
     transform: translate(calc((cos(-1deg) - 1) * 100%), -100%) rotate(48deg);
     transform-origin: 100% 100%;
     background-color: #FFC131;
+    z-index: 2;
 }
