@@ -10,6 +10,7 @@ if (!function_exists('isSpeakerWithRibbon')) {
 ?>
 
 <?php if (isSpeakerWithRibbon($speaker)): ?>
-    <div class="speaker-card__ribbon">EXCLUSIVO ASISTENTE VIP</div>
+    <?php $text = ($isMobile ? 'VIP' : 'EXCLUSIVO ASISTENTE VIP');
+    ?>
+    <div class="speaker-card__ribbon"><?= $text ?> </div>
 <?php endif; ?>
-
