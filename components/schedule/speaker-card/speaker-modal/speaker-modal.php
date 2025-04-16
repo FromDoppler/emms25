@@ -1,4 +1,7 @@
-<div class="modal-overlay" id="modal-<?= $speaker['id'] ?>">
+<?php
+$modalId = 'modal-' . $speaker['id'] . ($isMobile ? '-mobile' : '');
+?>
+<div class="modal-overlay" id="<?= $modalId ?>">
     <div class="modal <?= 'modal--' . $speaker['exposes'] ?>">
         <div class="modal__image">
             <?php if ($speaker['exposes'] === 'networking'): ?>

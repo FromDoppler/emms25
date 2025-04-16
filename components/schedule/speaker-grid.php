@@ -1,6 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule-tabs/schedule-tabs-helper.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-card-helper.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-modal/speaker-modal-helper.php');
 ?>
 
 <div class="emms__calendar__tabs">
@@ -24,12 +25,27 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
         $speakers = $db->getSpeakersByDay($dayIndex);
     ?>
         <div class="emms__container--lg" role="tabpanel" aria-labelledby="day<?= $dayIndex ?>">
-            <div class="speaker-grid">
+            <div class="dk">
+                <div class="speaker-grid ">
+                    <?php foreach ($speakers as $speaker): ?>
+                        <div class="speaker-grid__item">
+                            <?php render_speaker_card($speaker, $isRegistered, false); ?>
+                        </div>
+                        <?php render_speaker_modal($speaker, false) ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="mb">
+                <div class="speaker-grid speaker-carousel">
+                    <?php foreach ($speakers as $speaker): ?>
+                        <div class="speaker-grid__item carousel-cell">
+                            <?php render_speaker_card($speaker, $isRegistered, true); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
                 <?php foreach ($speakers as $speaker): ?>
-                    <div class="speaker-grid__item">
-                        <?php render_speaker_card($speaker, $isRegistered); ?>
-                    </div>
-                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-modal/speaker-modal.php'); ?>
+                    <?php render_speaker_modal($speaker, true) ?>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -39,9 +55,10 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
         document.addEventListener('DOMContentLoaded', function() {
 
             // Abrir el modal
-            document.querySelectorAll('.speaker-card__info').forEach(card => {
+            document.querySelectorAll('.speaker-card__more-info').forEach(card => {
                 card.addEventListener('click', function() {
-                    const targetId = this.parentNode.getAttribute('data-target-speaker');
+                    const speakerCard = this.closest('.speaker-card');
+                    const targetId = speakerCard?.getAttribute('data-target-speaker');
                     const modal = document.getElementById(targetId);
 
                     if (modal) {
@@ -51,6 +68,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
                     }
                 });
             });
+
 
             // Función reutilizable para cerrar el modal con fadeOut
             function closeModal(modal) {
@@ -78,4 +96,5 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
             });
         });
     </script>
+
 </div>

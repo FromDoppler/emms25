@@ -1,4 +1,6 @@
-<div class="speaker-card <?= 'speaker-card--' . $speaker['exposes'] ?>" data-target-speaker="modal-<?= $speaker['id'] ?>">
+<?php $speakerId = $speaker['id'] . ($isMobile ? '-mobile' : '');
+?>
+<div class="speaker-card <?= 'speaker-card--' . $speaker['exposes'] ?>" data-target-speaker="modal-<?= $speakerId ?>">
 
     <!-- Ribbon del speaker vip -->
     <?php include('speaker-ribon.php'); ?>
