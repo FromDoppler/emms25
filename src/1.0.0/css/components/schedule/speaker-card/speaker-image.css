@@ -75,6 +75,11 @@
     justify-content: center;
 }
 
+.name__container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 @media (max-width: 768px) {
 
@@ -85,7 +90,9 @@
     }
 
     .speaker-card__image .speaker-card__image-name {
-        top: 228px;
+        font-size: 20px;
+        bottom: -200px;
+        top: unset;
     }
 
 

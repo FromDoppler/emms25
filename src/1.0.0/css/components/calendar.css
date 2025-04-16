@@ -989,3 +989,9 @@
 .emms__calendar__bottom .emms__cta {
     padding: 20px 100px;
 }
+
+@media(max-width:620px) {
+    .emms__calendar__bottom .emms__cta {
+        padding: 20px 25px;
+    }
+}
