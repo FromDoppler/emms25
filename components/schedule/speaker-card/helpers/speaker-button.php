@@ -1,29 +1,31 @@
 <?php
+define('REGISTERFORM_URL', '#registro');
+define('CHECKOUT_URL', '/checkout');
 
 function getExposeButtonData($exposes)
 {
     $buttons = [
         'conference' => [
             'text' => 'REGISTRATE GRATIS',
-            'href' => '#registro'
+            'href' => REGISTERFORM_URL
         ],
         'workshop' => [
             'text' => 'REGISTRATE Y HAZTE VIP',
-            'href' => '#registro'
+            'href' => REGISTERFORM_URL
         ],
         'networking' => [
             'text' => 'REGISTRATE Y HAZTE VIP',
-            'href' => '#registro'
+            'href' => REGISTERFORM_URL
         ],
         'successStory' => [
             'text' => 'REGISTRATE GRATIS',
-            'href' => '#registro'
+            'href' => REGISTERFORM_URL
         ]
     ];
 
     return $buttons[$exposes] ?? [
         'text' => 'REGISTRATE GRATIS',
-        'href' => '#registro'
+        'href' => REGISTERFORM_URL
     ];
 }
 
@@ -39,11 +41,11 @@ function getExposeButtonDataRegistered($exposes)
     $buttons = [
         'workshop' => [
             'text' => 'HAZTE VIP',
-            'href' => '/checkout'
+            'href' => CHECKOUT_URL
         ],
         'networking' => [
             'text' => 'HAZTE VIP',
-            'href' => '/checkout'
+            'href' => CHECKOUT_URL
         ]
     ];
 
