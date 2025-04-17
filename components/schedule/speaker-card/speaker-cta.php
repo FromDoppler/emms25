@@ -40,11 +40,11 @@ if (!function_exists('getExposeButtonDataRegistered')) {
         $buttons = [
             'workshop' => [
                 'text' => 'HAZTE VIP',
-                'href' => '#workshop'
+                'href' => '/checkout'
             ],
             'networking' => [
                 'text' => 'HAZTE VIP',
-                'href' => '#networking'
+                'href' => '/checkout'
             ]
         ];
 
