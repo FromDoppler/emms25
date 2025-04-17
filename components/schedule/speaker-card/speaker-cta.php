@@ -1,58 +1,5 @@
 <?php
-if (!function_exists('getExposeButtonData')) {
-    function getExposeButtonData($exposes)
-    {
-        $buttons = [
-            'conference' => [
-                'text' => 'REGISTRATE GRATIS',
-                'href' => '#registro'
-            ],
-            'workshop' => [
-                'text' => 'REGISTRATE Y HAZTE VIP',
-                'href' => '#registro'
-            ],
-            'networking' => [
-                'text' => 'REGISTRATE Y HAZTE VIP',
-                'href' => '#registro'
-            ],
-            'successStory' => [
-                'text' => 'REGISTRATE GRATIS',
-                'href' => '#registro'
-            ]
-        ];
-
-        return $buttons[$exposes] ?? [
-            'text' => 'REGISTRATE GRATIS',
-            'href' => '#registro'
-        ];
-    }
-}
-
-if (!function_exists('getExposeButtonDataRegistered')) {
-    function getExposeButtonDataRegistered($exposes)
-    {
-        $noButton = ['successStory', 'conference'];
-
-        if (in_array($exposes, $noButton)) {
-            return null;
-        }
-
-        $buttons = [
-            'workshop' => [
-                'text' => 'HAZTE VIP',
-                'href' => '/checkout'
-            ],
-            'networking' => [
-                'text' => 'HAZTE VIP',
-                'href' => '/checkout'
-            ]
-        ];
-
-        return $buttons[$exposes] ?? null;
-
-    }
-
-}
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-card-helper.php');
 $button = $isRegistered
     ? getExposeButtonDataRegistered($speaker['exposes'])
     : getExposeButtonData($speaker['exposes']);

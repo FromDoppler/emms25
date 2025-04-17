@@ -1,12 +1,5 @@
 <?php
-if (!function_exists('isSpeakerWithRibbon')) {
-    function isSpeakerWithRibbon($speaker)
-    {
-        $speakersTypeWithRibbon = ['workshop', 'networking'];
-        return in_array($speaker['exposes'], $speakersTypeWithRibbon);
-    }
-}
-
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-card-helper.php');
 ?>
 
 <?php if (isSpeakerWithRibbon($speaker)): ?>
