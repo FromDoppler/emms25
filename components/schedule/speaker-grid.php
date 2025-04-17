@@ -1,6 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule-tabs/schedule-tabs-helper.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-card-helper.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/helpers/index.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-grid/grid-days.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/speaker-modal/speaker-modal-helper.php');
 ?>
 
@@ -25,6 +26,9 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
         $speakers = $db->getSpeakersByDay($dayIndex);
     ?>
         <div class="emms__container--lg" role="tabpanel" aria-labelledby="day<?= $dayIndex ?>">
+            <?php
+            render_event_day($dayIndex, $ecommerceStates);
+            ?>
             <div class="dk">
                 <div class="speaker-grid ">
                     <?php foreach ($speakers as $speaker): ?>

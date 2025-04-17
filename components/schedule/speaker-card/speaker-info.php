@@ -1,18 +1,5 @@
 <?php
-if (!function_exists('translateExposes')) {
-    function translateExposes($exposes)
-    {
-        $mapa = [
-            'conference'    => 'Conferencia',
-            'workshop'      => 'workshop',
-            'networking'    => 'NETWORKING',
-            'successStory'  => 'CASO DE EXITO'
-        ];
-
-        return $mapa[$exposes] ?? $exposes;
-    }
-}
-
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/helpers/index.php');
 ?>
 
 <div class="speaker-card__info">
@@ -20,5 +7,5 @@ if (!function_exists('translateExposes')) {
     <p class="speaker-card__title"><?= $speaker['title'] ?></p>
     <p class="speaker-card__more-info">VER MAS INFO</p>
     <!-- CTA -->
-    <?php include('speaker-cta.php'); ?>
+    <?php render_speaker_button($speaker,  $isRegistered); ?>
 </div>

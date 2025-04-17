@@ -37,7 +37,7 @@ echo '</div>';
         function tabClickHandler(e) {
             //Hide All Tabpanel
             tabPanels.forEach(panel => {
-                panel.hidden = 'true';
+                panel.hidden = true;
             });
 
             //Deselect Tab Button
@@ -52,7 +52,6 @@ echo '</div>';
             const {
                 id
             } = e.currentTarget;
-            console.log(tabPanels)
             const currentTab = tabPanels.find(
                 panel => panel.getAttribute('aria-labelledby') === id
             );
