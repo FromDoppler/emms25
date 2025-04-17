@@ -52,7 +52,6 @@ echo '</div>';
             const {
                 id
             } = e.currentTarget;
-            console.log(tabPanels)
             const currentTab = tabPanels.find(
                 panel => panel.getAttribute('aria-labelledby') === id
             );
