@@ -37,7 +37,7 @@ echo '</div>';
         function tabClickHandler(e) {
             //Hide All Tabpanel
             tabPanels.forEach(panel => {
-                panel.hidden = 'true';
+                panel.hidden = true;
             });
 
             //Deselect Tab Button
