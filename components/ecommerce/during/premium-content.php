@@ -5,11 +5,15 @@ function getContentForUrl($url)
     $contentMap = [
         'default' => [
             'heading' => 'Potencia tu negocio con la Biblioteca de Recursos Gratuita',
-            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.',
+            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.
+Accede a la Biblioteca de Recursos ¡gratis!
+',
         ],
         'group1' => [
             'heading' => 'Potencia tu negocio con la Biblioteca de Recursos Gratuita',
-            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.',
+            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.
+Accede a la Biblioteca de Recursos ¡gratis!
+',
         ],
         'group2' => [
             'heading' => 'Capacítate con la Biblioteca de Recursos ¡gratis!',
@@ -41,8 +45,8 @@ $content = getContentForUrl($normalizedUrl);
         </div>
         <div class="emms__premium-content__text emms__fade-in">
             <h2><?php echo ($content['heading']); ?></h2>
-            <p><strong><?php echo ($content['body']); ?></strong></p>
-            <a href="./sponsors" class="emms__cta sm emms__cta--nd emms__fade-in">ACCEDE AHORA</a>
+            <p><?php echo ($content['body']); ?></p>
+            <a href="./sponsors" class="emms__cta sm emms__cta--nd emms__fade-in">INGRESA AHORA</a>
         </div>
     </div>
 </section>

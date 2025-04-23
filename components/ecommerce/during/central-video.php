@@ -2,16 +2,16 @@
 
 $contents = [
     '/' => [
-        'heading' => 'Súmate al EMMS Digital Trends 2024 y entérate las últimas innovaciones en Marketing Digital',
-        'body' => 'Descubre en este video por qué miles de profesionales y referentes en la industria eligen este evento para capacitarse.',
-        'button' => 'RESERVA TU CUPO GRATIS',
+        'heading' => 'Súmate ahora al EMMS E-commerce',
+        'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
+        'button' => 'ACCEDE AL VIVO',
         'link' => 'ecommerce#registro',
         'youtubeCode' => 'ZGS-lmiXHFE',
     ],
     '/ecommerce' => [
         'heading' => 'Inspírate en el evento más grande de E-commerce',
         'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
-        'button' => 'REGÍSTRATE GRATIS',
+        'button' => 'REGÍSTRATE AHORA',
         'link' => '#registro',
         'youtubeCode' => 'T8Crntnfgak',
     ],
@@ -21,9 +21,9 @@ $contents = [
         'youtubeCode' => 'T8Crntnfgak',
     ],
     '/*' => [
-        'heading' => 'Súmate al EMMS Digital Trends 2024 y entérate las últimas innovaciones en Marketing Digital',
-        'body' => 'Descubre en este video por qué miles de profesionales y referentes en la industria eligen este evento para capacitarse.',
-        'button' => 'RESERVA TU CUPO GRATIS',
+        'heading' => 'Súmate ahora al EMMS E-commerce',
+        'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
+        'button' => 'ACCEDE AL VIVO',
         'link' => 'ecommerce#registro',
         'youtubeCode' => 'ZGS-lmiXHFE',
     ],

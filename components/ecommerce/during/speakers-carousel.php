@@ -94,8 +94,8 @@ $speakersHome = [
         'name' => 'Diego Dagnino',
         'title' => 'Country Community Manager',
         'photo' => '/src/img/people--gradient/diego-dagnino.png',
-        'logo' => '/src/img/logos--white/logo-canvas.png',
-        'company' => 'Canvas'
+        'logo' => '/src/img/logos--white/logo-canva.png',
+        'company' => 'Canva'
     ],
     [
         'name' => 'Diana Ramirez',
@@ -199,14 +199,22 @@ $speakersEcommerce = [
         endif; ?>
 
         <?php if ($block['block'] === 'home') : ?>
-            <p class="emms__fade-in">Regístrate a la próxima edición y descubre la agenda antes que nadie.
+            <p class="emms__fade-in speakers__sub-title">¡Súmate ahora a la transmisión en directo del <br>
+                EMMS E-commerce y no te pierdas nada!
             </p>
-            <a href="/ecommerce" class="emms__cta emms__fade-in">REGÍSTRATE GRATIS</a>
+            <p class="speakers__body ">Las mentes más brillantes del E-commerce están esperando por ti…  <br>
+                Regístrate gratis ahora para descubrir tendencias y estrategias para aumentar tus ventas.  
+            </p>
+            <a href="/ecommerce" class="emms__cta emms__fade-in">SUMATE GRATIS</a>
         <?php elseif ($block['block'] === 'registerHome') : ?>
-            <p> <strong>¡No te duermas! Pronto llega el EMMS E-commerce 2025</strong></p>
-            <p>En breve descubrirás la agenda de Speakers, Workshops y todas las novedades de esta nueva edición.</p>
+            <p class="emms__fade-in speakers__title">Los máximos referentes del comercio electrónico
+                    están esperando por ti… 
+          </p>
+            <p class="emms__fade-in  speakers__body">Descubre las mejores tendencias y estrategias en la transmisión  <br class="dk">
+                en directo del EMMS E-commerce 2025.
+            </p>
         <?php elseif ($block['block'] === 'ecommerce') : ?>
-            <p class="emms__fade-in">✨ ¡Pronto revelaremos los speakers 2025! Regístrate gratis y descúbrelos antes que nadie.
+            <p class="emms__fade-in speakers__sub-title">✨ ¡Pronto revelaremos los speakers 2025! Regístrate gratis y descúbrelos antes que nadie.
             </p>
             <a href="#registro" class="emms__cta emms__fade-in">REGÍSTRATE GRATIS</a>
         <?php endif; ?>

@@ -26,7 +26,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 
 <body class="ecommerce ecommerce-logueado">
     <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar-vip.php');   ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
@@ -41,15 +41,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
         </div>
         <div class="hidden--vip centralvideo--tickets">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/video-ticketing.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/vip-features.php') ?>
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/entry-plans.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/video-ticketing.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/vip-features.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/entry-plans.php') ?>
         </div>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/benefit-icons.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/premium-content.php') ?>
         <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/doppler-academy-banner.php'); ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faq-banner.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
     <script src="src/<?= VERSION ?>/js/newDate.js" type="module"></script>

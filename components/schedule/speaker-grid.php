@@ -13,9 +13,9 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
         2 => ['date' => '29 de Abril', 'short' => '29/04'],
     ];
 
-
+    $dayDuring = DAY_DURING;
     // Tabs de la agenda
-    render_schedule_tabs($ecommerceStates, $days);
+    render_schedule_tabs($ecommerceStates, $days, $dayDuring);
     ?>
 
 

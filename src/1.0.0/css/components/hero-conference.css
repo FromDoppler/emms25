@@ -159,9 +159,10 @@
 
 .live--certificate--container {
     display: flex;
-    width: 70%;
     margin-top: 20px;
 }
+
+
 
 .live--certificate--container .certificate--modal-info {
     flex: 2;
@@ -226,7 +227,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    color: #fff;
+    color: #FFFFFF;
     max-width: 310px;
 }
 
@@ -275,6 +276,25 @@
     color: #FFFFFF;
 }
 
+.live--certificate--container .live--info-container .bubble__live_info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #BD7AFF;
+    border-radius: 13px;
+    max-width: 215px;
+    width: 100%;
+    padding: 6px 12px;
+    margin-top: 8px;
+}
+
+.live--certificate--container .live--info-container .bubble__live_info span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
 
 .emms__hero-conference__certificate a {
     font-weight: 700;

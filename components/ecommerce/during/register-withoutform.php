@@ -1,9 +1,8 @@
 <section class="hero-registration--registered hero-registration--withoutform">
     <div class="emms__container--md">
-        <h1 class="emms__fade-in"><em>EVENTO ONLINE Y GRATUITO - 28 y 29 DE ABRIL
-            </em>EMMS E-commerce 2025</h1>
-        <p class="emms__fade-in">Domina el Marketing de tu Tienda Online. Capacítate con los mayores referentes
-            del mundo. ¡Regístrate gratis ahora y asegura tu acceso!</p>
+        <h1 class="emms__fade-in"><em> <small> ESTAMOS EN VIVO </small>- ONLINE Y GRATUITO
+            </em>¡Ya empezó el EMMS E-commerce 2025!</h1>
+        <p class="emms__fade-in">Domina el Marketing de tu Tienda Online con los mejores referentes del mundo. ¡Regístrate gratis ahora y asegura tu acceso!</p>
         <div class="text-with-icon-container">
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check icon">

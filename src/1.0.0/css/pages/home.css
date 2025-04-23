@@ -48,6 +48,15 @@
     margin: 0 0 20px 0;
 }
 
+.emms__home__hero__title h1 em span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #FF07D4;
+}
+
 .emms__home__hero__title h1 em.xl {
     font-style: normal;
     display: block;
