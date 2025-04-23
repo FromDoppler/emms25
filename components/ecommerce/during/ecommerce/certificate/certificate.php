@@ -1,19 +1,22 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/certificate/certificate-modal.php') ?>
 
 <div class="live--certificate--container" id="certificate-container">
-    <div class="certificate--modal-info certificate--modal-info--live-off">
+    <div class="certificate--modal-info">
         <img src="src/img/certificate-ribbon.png" alt="Emoji liston" class="dk">
-        <div>
-            <p>DESCARGA<a data-target="certificateModal" data-toggle="emms__certificate-modal"> AQUÍ </a>TU CERTIFICADO DE ASISTENCIA</p><br>
-            <span> Compártelo en Redes Sociales utilizando el Hashtag </span>
-            <br>
-            <p><b>#EMMSBYDOPPLER</b> :)</p>
+        <p><a data-target="certificateModal" data-toggle="emms__certificate-modal"> Descarga aquí </a>tu Certificado de Asistencia y compártelo en Redes Sociales utilizando el Hashtag #EMMSBYDOPPLER</p>
+    </div>
+    <div class="live--info-container">
+        <h6>IMPORTANTE :</h6>
+        <div class="bubble__live_info">
+            <img src="src/img/sound-icon.png" alt="Ícono sonido">
+            <span>Recuerda activar el sonido</span>
         </div>
     </div>
 </div>
+
 <script>
     const certificateContainer = document.getElementById('certificate-container');
-    certificateContainer.addEventListener('click', function (e) {
+    certificateContainer.addEventListener('click', function(e) {
         e = e || window.event;
         var target = e.target || e.srcElement;
 

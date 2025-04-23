@@ -34,6 +34,7 @@
 @import 'components/benefits-icons.css';
 @import 'components/benefits-carousel.css';
 @import 'components/schedule/scheduleIndex.css';
+@import 'components/info-banner/info-banner.css';
 
 /* Pages */
 @import 'pages/ecommerce.css';

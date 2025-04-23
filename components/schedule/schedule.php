@@ -35,7 +35,7 @@ $block = getScheduleBlock($normalizedUrl);
         render_speaker_grid($ecommerceStates, $isRegistered); ?>
         <?php if ($block['block'] === 'dt') : ?>
             <div class="emms__calendar__bottom emms__fade-in  eventHiddenElements">
-                <a href="#registro" class="emms__cta">REGÍSTRATE GRATIS</a>
+                <a href="#registro" class="emms__cta">SÚMATE AHORA</a>
             </div>
             <div class="emms__calendar__bottom  eventShowElements">
                 <a href="#registro" class="emms__cta alreadyRegisterForm"><span class="button__text">REGÍSTRATE GRATIS</span></a>

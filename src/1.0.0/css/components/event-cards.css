@@ -9,7 +9,7 @@
 }
 
 .emms__eventCards__list__item {
-    width: 30%;
+    width: 37%;
     position: relative;
     background: #fff;
     border-radius: 20px;
@@ -183,21 +183,22 @@
 }
 
 .ribbon__end {
-    width: 180px;
-    height: 40px;
-    line-height: 40px;
+    width: 130px;
+    height: 32px;
+    line-height: 35px;
     padding-left: 15px;
     position: absolute;
     left: -16px;
-    bottom: 53px;
+    bottom: 10px;
     background: #79F66E;
     color: #000000;
     font-weight: 900;
     z-index: 9;
+    font-size: 13px;
 }
 
-.ribbon__end.ribbon--short{
-    width: 130px;
+.ribbon__end.ribbon--short {
+    width: 85px;
     padding-left: 30px;
 }
 
@@ -219,13 +220,15 @@
 .ribbon__end:after {
     height: 0;
     width: 0;
-    right: -13.5px;
-    border-top: 16px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 14px solid #79F66E;
+    right: -12.5px;
+    border-top: 11px solid transparent;
+    border-bottom: 21px solid transparent;
+    border-left: 12px solid #79F66E;
 }
 
-
+.ribbon__end.ribbon--short:after {
+    right: -11.5px;
+}
 
 .ribbon__live img {
     width: 21px;
@@ -295,7 +298,7 @@
 }
 
 
-.emms__eventCards__list__item__text h3 span {
+/* .emms__eventCards__list__item__text h3 span {
 
     background: #79F66E;
 
@@ -310,7 +313,7 @@
     height: 13px;
     background: url("../../../img/icons/icon-live.svg") no-repeat;
     background-size: contain;
-}
+} */
 
 .emms__eventCards__list__item__text h3+p {
     min-height: 90px;

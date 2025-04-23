@@ -12,7 +12,8 @@
     text-align: center;
     letter-spacing: -1px;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 .speakers .speakers__sub-title {
@@ -46,7 +47,7 @@
     color: #fff;
 }
 
-.speakers p {
+.speakers .speakers__sub-title {
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -55,6 +56,16 @@
     color: #FFFFFF;
     margin-bottom: 20px;
 }
+
+.speakers .speakers__body {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 
 .speakers small {
     font-size: 18px;

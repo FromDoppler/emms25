@@ -94,8 +94,8 @@ $speakersHome = [
         'name' => 'Diego Dagnino',
         'title' => 'Country Community Manager',
         'photo' => '/src/img/people--gradient/diego-dagnino.png',
-        'logo' => '/src/img/logos--white/logo-canvas.png',
-        'company' => 'Canvas'
+        'logo' => '/src/img/logos--white/logo-canva.png',
+        'company' => 'Canva'
     ],
     [
         'name' => 'Diana Ramirez',

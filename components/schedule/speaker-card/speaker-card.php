@@ -5,7 +5,7 @@ $speakerId = $speaker['id'] . ($isMobile ? '-mobile' : '');
 <div class="speaker-card <?= 'speaker-card--' . $speaker['exposes'] ?>" data-target-speaker="modal-<?= $speakerId ?>">
 
     <!-- Ribon del speaker vip -->
-    <?php render_speaker_ribon($speaker, false); ?>
+    <?php render_speaker_ribon($speaker, $isMobile); ?>
 
     <!-- Imagen del speaker -->
     <?php render_speaker_image($speaker); ?>

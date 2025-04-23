@@ -5,7 +5,7 @@
         ?>
          <section class="companies companies--categories" id="aliados">
              <div class="emms__container--lg">
-                 <h2 class="emms__fade-in">Estos son los Aliados que nos acompañan en el EMMS E-commerce 2025</h2>
+                 <h2 class="emms__fade-in">Estos son los Aliados que nos acompañan <br> en el EMMS E-commerce 2025</h2>
                  <h3>SPONSORS</h3>
                  <ul class="companies-list companies-list--lg  emms__fade-in">
                      <?php
@@ -45,12 +45,11 @@
                  <h3>MEDIA PARTNERS STARTERS</h3>
                  <ul class="companies-list companies-list  emms__fade-in" id="mediaPartenersStarters">
                  </ul>
-                 <p class="companies__body"><strong>Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España</strong></p>
+                 <p class="companies__body">Haz que tu marca también alcance a miles de profesionales del Marketing en todo Latinoamérica y España</p>
                  <a href="./sponsors-promo" class="emms__cta">CONVIÉRTETE EN ALIADO</a>
                  <?php
                     $link = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
                     ?>
-                 <small class="emms__fade-in"><strong>¿Tienes dudas sobre el EMMS? <a href=<?= $link ?>> Haz clic aquí </a> </strong>y encuentra las preguntas más frecuentes sobre el evento</small>
              </div>
          </section>
          <script>

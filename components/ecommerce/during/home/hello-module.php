@@ -4,16 +4,26 @@
 
 $contents = [
     '/' => [
-        'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'REGÍSTRATE GRATIS'
+        'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
+        'heading' => '¡Únete al EMMS E-commerce 2025!',
+        'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
+        'DTCardButton' => 'REGÍSTRATE GRATIS',
+        'ecommerceUrl' => '/ecommerce',
     ],
     '/registrado' => [
-        'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'INGRESA AHORA'
+        'subheading' => 'ONLINE Y GRATUITO | <span>¡COMENZÓ LA TRANSMISIÓN!</span>',
+        'heading' => '¡SÚMATE AL EMMS E-COMMERCE 2025!',
+        'body' => 'Domina el Marketing de tu Tienda Online. Capacítate con los mayores referentes del mundo. <a href="/ecommerce">¡Estamos en vivo! </a> Disfruta ahora de una nueva
+edición con Conferencias, Workshops, sorteos y ¡mucho más!.',
+        'DTCardButton' => 'INGRESA AHORA',
+        'ecommerceUrl' => '/ecommerce-registrado',
     ],
     '/*' => [
-        'heading' => 'DESCUBRE LA EXPERIENCIA <br> EMMS 2025',
-        'DTCardButton' => 'REGÍSTRATE GRATIS'
+        'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
+        'heading' => '¡Únete al EMMS E-commerce 2025!',
+        'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
+        'DTCardButton' => 'REGÍSTRATE GRATIS',
+        'ecommerceUrl' => '/ecommerce',
     ],
 ];
 
@@ -21,15 +31,47 @@ $contents = [
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
 $normalizedUrl = getNormalizeUrl();
 $content = $contents[$normalizedUrl] ?? $contents['/*'];
+
+// TODO: Se podria hacer un helper para generar los contenidos y las cards en un solo lugar y que este componente sea dummy solo para UX
+$cards = [];
+
+$cards[] = renderEventCard([
+    'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
+    'imageAlt' => 'Ecommerce image',
+    'title' => 'EMMS E-commerce',
+    'description' => 'Referentes internacionales de la industria te revelan las <b>tendencias y estrategias que emplean en sus Tiendas Online</b> para captar nuevos clientes y aumentar sus ingresos. ¡No te lo pierdas!',
+    'buttonText' => $isRegistered ? 'ACCEDE' : 'REGÍSTRATE',
+    'buttonLink' => $isRegistered ? '/ecommerce-registrado' : '/ecommerce',
+    'ribbonText' => 'EN VIVO',
+    'isShortRibbon' => true,
+    'isRegistered' => $isRegistered,
+    'spanText' => 'ONLINE Y GRATUITO',
+    'isSecondaryButton' => false,
+], $ecommerceStates);
+
+$cards[] = renderEventCard([
+    'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
+    'imageAlt' => 'Image Digital Trends',
+    'title' => 'EMMS Digital Trends',
+    'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Revive la última edición para nutrirte de ideas para tu negocio.',
+    'buttonText' => 'REVÍVELE LA EDICIÓN 2024',
+    'buttonLink' => $isRegistered ? '/ediciones-anteriores-registrado#ediciones-anteriores' : '/ediciones-anteriores#ediciones-anteriores',
+    'ribbonText' => 'PRÓXIMAMENTE',
+    'isShortRibbon' => false,
+    'isRegistered' => false,
+    'spanText' => $isRegistered ? 'ONLINE Y GRATUITO' : '',
+    'isSecondaryButton' => true,
+], $digitalTrendsStates);
 ?>
 
 <!-- Hero -->
 <section class="emms__home__hero">
     <div class="emms__home__hero__title emms__fade-top">
-        <h1><em>TODAS LAS TENDENCIAS EN MARKETING DIGITAL, EN UN SOLO LUGAR</em> <?php echo ($content['heading']); ?>
+        <h1><em> <?php echo ($content['subheading']); ?></em> <?php echo ($content['heading']); ?>
         </h1>
-        <h2>EVENTOS ONLINE Y GRATUITOS</h2>
-        <p>Revoluciona tu forma de hacer negocios y potencia tus resultados con el mayor evento de Latam y España. Disfruta de <span>2 ediciones exclusivas </span> al año para capacitarte e inspirarte con los líderes de tu industria.
+        <h2>ONLINE Y GRATUITO</h2>
+        <p>
+            <?php echo ($content['body']); ?>
         </p>
     </div>
     <div id="eventos"></div>
@@ -37,92 +79,10 @@ $content = $contents[$normalizedUrl] ?? $contents['/*'];
     <div class="emms__eventCards">
         <div class="emms__container--lg">
             <ul class="emms__eventCards__list emms__eventCards__list--dk emms__fade-in">
-                <?php
-                if ($isRegistered) {
-                    echo renderEventCard(array(
-                        'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
-                        'imageAlt' => 'Ecommerce image',
-                        'title' => 'EMMS E-commerce',
-                        'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
-y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
-                        'buttonText' => 'ACCEDE',
-                        'buttonLink' => '/ecommerce-registrado',
-                        'ribbonText' => '',
-                        'isRegistered' => true,
-                        'isSecondaryButton' => false
-                    ), $ecommerceStates);
-
-
-                    echo renderEventCard(array(
-                        'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
-                        'imageAlt' => 'Image Digital Trends',
-                        'title' => 'EMMS Digital Trends',
-                        'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
-                        'buttonText' => 'REVÍVELO AHORA',
-                        'buttonLink' => '/ediciones-anteriores-registrado#ediciones-anteriores',
-                        'ribbonText' => '',
-                        'isRegistered' => false,
-                        'isSecondaryButton' => true
-                    ), $digitalTrendsStates);
-                } else {
-
-                    echo renderEventCard(array(
-                        'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
-                        'imageAlt' => 'Ecommerce image',
-                        'title' => 'EMMS E-commerce',
-                        'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
-y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
-                        'buttonText' => 'REGÍSTRATE GRATIS',
-                        'buttonLink' => '/ecommerce',
-                        'ribbonText' => '',
-                        'isRegistered' => false,
-                        'isSecondaryButton' => false
-                    ), $ecommerceStates);
-
-
-                    echo renderEventCard(array(
-                        'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
-                        'imageAlt' => 'Image Digital Trends',
-                        'title' => 'EMMS Digital Trends',
-                        'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
-                        'buttonText' => 'REVÍVELO AHORA',
-                        'buttonLink' => '/ediciones-anteriores#ediciones-anteriores',
-                        'ribbonText' => '',
-                        'isRegistered' => false,
-                        'isSecondaryButton' => true
-                    ), $digitalTrendsStates);
-                }
-
-                ?>
+                <?php echo implode('', $cards); ?>
             </ul>
             <ul class="emms__eventCards__list emms__eventCards__list--mb emms__fade-in main-carousel" data-flickity>
-                <?php
-                echo renderEventCard(array(
-                    'imageSrc' => '/src/img/home/card-image-ecommerce-early.png',
-                    'imageAlt' => 'Ecommerce image',
-                    'title' => 'EMMS E-commerce',
-                    'description' => 'Referentes internacionales de la industria te contarán qué <b>tendencias y estrategias emplean en sus Tiendas Online</b> para captar nuevos clientes
-y aumentar sus ingresos. Regístrate ahora y asegura tu lugar.',
-                    'buttonText' => 'REGÍSTRATE GRATIS',
-                    'buttonLink' => '/ecommerce',
-                    'ribbonText' => '',
-                    'isRegistered' => $content['isRegistered'] ?? null,
-                    'isSecondaryButton' => false
-                ), $ecommerceStates);
-
-
-                echo renderEventCard(array(
-                    'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
-                    'imageAlt' => 'Image Digital Trends',
-                    'title' => 'EMMS Digital Trends',
-                    'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de éxito, Workshops, Networking ¡y mucho más! Revive la última edición',
-                    'buttonText' => 'REVÍVELO AHORA',
-                    'buttonLink' => '/ediciones-anteriores',
-                    'ribbonText' => '',
-                    'isRegistered' => false,
-                    'isSecondaryButton' => true
-                ), $digitalTrendsStates);
-                ?>
+                <?php echo implode('', $cards); ?>
             </ul>
         </div>
     </div>

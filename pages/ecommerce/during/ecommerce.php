@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <html lang="en">
 
 <head>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/head.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
     <script type="module">
         import {
@@ -16,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         import {
             eventsType
         } from '/src/<?= VERSION ?>/js/enums/eventsType.enum.js';
-        hiddenOrShowUserUI(eventsType.ECOMMERCE);
+        hiddenOrShowUserUI(eventsType.DIGITALTRENDS);
     </script>
     <script type="module">
         import {
@@ -28,23 +28,23 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 
 <body class="ecommerce">
     <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
 
     <main>
         <div class="register-form__container eventHiddenElements">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/register-form.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/register-form.php') ?>
         </div>
         <div class="register-noform__container  eventShowElements">
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/register-withoutform.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/register-withoutform.php') ?>
         </div>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/event-numbers.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/central-video.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/benefit-icons.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/central-video.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faq-banner.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>

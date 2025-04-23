@@ -1,4 +1,5 @@
-<?php if (($settings_phase_DT['event'] === ECOMMERCE) && ($settings_phase_DT['during'] === 1) && ($settings_phase_DT['transition'] === "live-on") && ($settings_phase_DT['transmission'] === "youtube")) : ?>
+
+<?php if (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "youtube")) : ?>
     <p class="live-advice">EN VIVO </p>
     <h1 class="emms__fade-in">Estamos en vivo en el #EMMSBYDOPPLER</h1>
     <div class="emms__hero-conference__video emms__fade-in">
@@ -13,7 +14,7 @@
     <div class="emms__hero-conference__aside emms__fade-in emms__hero-conference__video--chat">
         <iframe src="https://www.youtube.com/live_chat?v=<?= $duringDaysArray[$dayDuring]['youtube'] ?>&embed_domain=<?= $_SERVER['HTTP_HOST'] ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-<?php elseif (($settings_phase_DT['event'] === ECOMMERCE) && ($settings_phase_DT['during'] === 1) && ($settings_phase_DT['transition'] === "live-on") && ($settings_phase_DT['transmission'] === "twitch")) : ?>
+<?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "twitch")) : ?>
     <h1 class="emms__fade-in">Estamos en vivo en el #EMMSBYDOPPLER</h1>
     <div class="emms__hero-conference__video emms__fade-in">
         <div class="emms__cropper-cont-16-9">
@@ -24,11 +25,11 @@
             </div>
         </div>
     </div>
-<?php elseif (($settings_phase_DT['event'] === ECOMMERCE) && ($settings_phase_DT['during'] === 1) && ($settings_phase_DT['transition'] === "live-on") && ($settings_phase_DT['transmission'] === "twitch-migrate")) : ?>
+<?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "twitch-migrate")) : ?>
     <img src="src/img/placas/migrate-twitch.png" alt="Se migró a Twitch" class="banner">
-<?php elseif (($settings_phase_DT['event'] === ECOMMERCE) && ($settings_phase_DT['during'] === 1) && ($settings_phase_DT['transition'] === "live-on") && ($settings_phase_DT['transmission'] === "technical-problems")) : ?>
+<?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "technical-problems")) : ?>
     <img src="src/img/placas/technical-error.png" alt="Errores técnicos" class="banner">
-<?php elseif (($settings_phase_DT['event'] === ECOMMERCE) && ($settings_phase_DT['during'] === 1) && ($settings_phase_DT['transition'] === "live-off")) : ?>
+<?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-off")) : ?>
     <h2>PREPÁRATE PARA EL DÍA <?= $dayDuring + 1 ?></h2>
     <h1 class="emms__fade-in">¡Pronto seguimos con más EMMS Digital Trends!</h1>
     <div class="emms__hero-conference__video emms__hero-conference__video--transition emms__fade-in">
