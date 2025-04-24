@@ -130,6 +130,62 @@ p {
     background-color: #ffffff;
 }
 
+/* TODO: Unificar el estilo con el del boton que usan las cards de la agenda */
+.emms__cta.emms__cta--golden {
+    color: #0E0A03;
+    background: linear-gradient(242.55deg, #CD930D 8.54%, #DCC958 42.26%, #D59501 123.98%);
+    border-radius: 28px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17px;
+    text-align: center;
+    border: unset;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 17px;
+    width: 100%;
+    max-width: 261px;
+}
+
+.emms__cta.emms__cta--golden:hover {
+    background: linear-gradient(242.55deg, #DCC958 8.54%, #CD930D 42.26%, #F0D678 123.98%);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.emms__cta.emms__cta--golden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    animation: shine 2s infinite;
+    border-radius: 28px;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+
+
 .emms__cta.emms_cta--secondary:hover {
     background-color: #ffffff;
     opacity: 0.5;

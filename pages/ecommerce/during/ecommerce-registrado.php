@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <html lang="en">
 
 <head>
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
     <script type="module">
         import {
@@ -33,7 +33,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         <section class="emms__hero-conference emms__hero-conference--live emms__hero-conference--chat">
             <div class="emms__container--lg">
                 <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/event-live.php') ?>
-                <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/certificate/certificate.php') ?>
+                <?php if (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] !== "live-off")) : ?>
+                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/certificate/certificate.php') ?>
+                <?php endif ?>
                 <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
             </div>
         </section>

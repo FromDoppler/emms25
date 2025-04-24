@@ -1,3 +1,4 @@
+<!-- TODO: Abstraer placas a componentes dummy y mejorar las logicas compartidas -->
 
 <?php if (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "youtube")) : ?>
     <p class="live-advice">EN VIVO </p>
@@ -30,28 +31,65 @@
 <?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-on") && ($settings_phase['transmission'] === "technical-problems")) : ?>
     <img src="src/img/placas/technical-error.png" alt="Errores técnicos" class="banner">
 <?php elseif (($settings_phase['event'] === ECOMMERCE) && ($settings_phase['during'] === 1) && ($settings_phase['transition'] === "live-off")) : ?>
-    <h2>PREPÁRATE PARA EL DÍA <?= $dayDuring + 1 ?></h2>
-    <h1 class="emms__fade-in">¡Pronto seguimos con más EMMS Digital Trends!</h1>
-    <div class="emms__hero-conference__video emms__hero-conference__video--transition emms__fade-in">
-        <img src="src/img/placas/transition-<?= $dayDuring ?>.png" alt="Preparate para el día <?= $dayDuring + 1 ?>!">
+    <p class="live-advice show--vip">PREPÁRATE PARA LOS WORKSHOPS</p>
+    <h1 class="emms__fade-in">Seguimos con más EMMS E-commerce</h1>
+    <div class="emms__hero-conference__video emms__hero-conference__video--transition emms__fade-in hidden--vip">
+        <div class="broadcast-free__container emms__container--md">
+            <div class="broadcast-free__content">
+                <h3 class="broadcast-free__title">¡Prepárate para los Workshops!</h3>
+                <p class="broadcast-free__text">
+                    Después de las conferencias gratuitas, llegan los workshops con especialistas en la industria, ¡una actividad exclusiva para asistentes VIP!<br><br>
+                    Con tu pase premium, podrás acceder a talleres interactivos, una cuenta gratuita en Doppler por seis meses, una guía exclusiva de Prompts de Inteligencia Artificial y ¡muchos beneficios más!
+                </p>
+                <a href="/vip" class="emms__cta emms__cta--golden">HAZTE VIP</a>
+            </div>
+
+            <!-- Imágenes decorativas -->
+            <img src="src/img/placas/ticket.png" alt="VIP Ticket" class="broadcast-free__image broadcast-free__image--ticket" />
+            <img src="src/img/placas/carrito.png" alt="Carrito de compras" class="broadcast-free__image broadcast-free__image--cart" />
+        </div>
     </div>
-    <div class="emms__hero-conference__aside emms__hero-conference__aside--transition emms__fade-in hidden--vip">
-        <p>Recuerda que puedes adquirir <a href="#entradas">por
-                sólo 9<small class="small-number">99</small> USD tu Entrada VIP</a> para acceder a todos los Workshops y a
-            sus grabaciones, una vez finalizado
-            el evento.
-        </p>
-        <a class="emms__cta" href="#entradas">HAZTE VIP</a>
+    <div class="emms__hero-conference__video emms__hero-conference__video--transition emms__fade-in  show--vip emms__vip">
+        <div class="speaker-card__ribbon dk">EXCLUSIVO ASISTENTE VIP </div>
+        <div class="speaker-card__ribbon mb">VIP </div>
+        <div class="broadcast-vip__container emms__container--md">
+            <div class="broadcast-vip__content">
+                <h3 class="broadcast-vip__title">Accede a los links para <br> ingresar a los Workshops 🤩</h3>
+                <?php
+                $workshops = [
+                    'DÍA 1' => [
+                        ['title' => 'Onsite Marketing: Tácticas avanzadas para aumentar las ventas en tu E-commerce', 'url' => 'https://us06web.zoom.us/j/89262240122?pwd=tlLX7xiHkIECL0Y5dqpjIes2cfOwXJ.1#success'],
+                        ['title' => 'Checklist de Sitios Web efectivos para E-commerce', 'url' => 'https://us06web.zoom.us/j/85636727334?pwd=taaVFRqXTY2i63EX4R5S63aqjvWhjZ.1#success'],
+                        ['title' => 'Growth Hacks & Quick Wins para E-commerce en 2025', 'url' => 'https://us06web.zoom.us/j/83403721158?pwd=yPErawFdtnXl9eombeUzmon1MEbxs1.1#success'],
+                    ],
+                    'DÍA 2' => [
+                        ['title' => 'Antes de vender online: dominios, hosting y seguridad', 'url' => 'https://us06web.zoom.us/j/85498048337?pwd=aFD3DxapKTLXMbpRJKDr1fAh0GOIy0.1#success'],
+                        ['title' => 'Análisis de E-commerce en WordPress', 'url' => 'https://us06web.zoom.us/j/88598752825?pwd=G7bTVCSdbM6D9eDC45r469ZGq45zqK.1#success'],
+                        ['title' => 'Tendencias 2025 de IA para tener más impacto en Marketing', 'url' => 'https://us06web.zoom.us/j/87981563138?pwd=ZxLu5rUr5UGVPxQezgzPWnbP8gR5bF.1#success'],
+                    ]
+                ];
+                ?>
+
+                <div class="workshops-links__columns">
+                    <?php foreach ($workshops as $day => $sessions): ?>
+                        <div class="workshops-links__day">
+                            <h4><?= $day ?></h4>
+                            <hr>
+                            <ul>
+                                <?php foreach ($sessions as $session): ?>
+                                    <li>
+                                        <a href="<?= $session['url'] ?>" target="_blank"><?= $session['title'] ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="emms__hero-conference__aside emms__hero-conference__aside--transition emms__fade-in show--vip">
-        <p>Si ya tienes tu Entrada VIP, aquí tienes los enlaces para acceder a los Workshops de hoy, a partir de las 15hs Arg. <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshops+EMMS+Digital+Trends+2024&iso=20241127T15&p1=51&ah=1&am=30" target="_blank">Mira la hora en tu país</a></p>
-        <ul>
-            <li>
-                Cómo aprovechar herramientas de IA en tu Estrategia de Contenido.<a href="https://us06web.zoom.us/j/88244335008?pwd=4jr0iVgX7L3SL0Hs9RbtTzs2b7w9z3.1#success" target="_blank"> Accede aquí.</a>
-            </li>
-            <li>
-                El método definitivo para escalar anuncios después de 1,3 millones invertidos. <a href="https://us06web.zoom.us/j/88989681901#success" target="_blank"> Accede aquí.</a>
-            </li>
-        </ul>
+    <div class="emms__hero-conference__aside emms__hero-conference__aside--transition emms__fade-in">
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/certificate/certificate.php') ?>
     </div>
 <?php endif; ?>
