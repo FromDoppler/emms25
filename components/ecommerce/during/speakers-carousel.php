@@ -199,7 +199,7 @@ $speakersEcommerce = [
         endif; ?>
 
         <?php if ($block['block'] === 'home') : ?>
-            <p class="emms__fade-in speakers__sub-title">¡Súmate ahora a la transmisión en directo del <br>
+            <p class="emms__fade-in speakers__title">¡Súmate ahora a la transmisión en directo del <br>
                 EMMS E-commerce y no te pierdas nada!
             </p>
             <p class="speakers__body ">Las mentes más brillantes del E-commerce están esperando por ti…  <br>

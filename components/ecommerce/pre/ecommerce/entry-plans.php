@@ -21,14 +21,12 @@
                     <div class="emms__plans__card__main">
                         <h5>Beneficios</h5>
                         <ul>
-                            <li>Cuenta gratuita de Doppler durante 6 meses para planes de hasta
-                                5.000 contactos.</li>
+                            <li>Cuenta gratuita en Doppler durante 6 meses en planes de hasta 5.000 contactos, solo para nuevos usuarios.</li>
                             <li> Workshops prácticos </li>
                             <li>Sesiones de Networking</li>
                             <li>Acceso de por vida a los Workshops</li>
                             <li>Certificado de asistencia a Workshops</li>
-                            <li>Más guías con herramientas
-                                y tips exclusivos</li>
+                            <li>Guía con los Prompts que necesitas para escalar tu E-commerce con IA.</li>
                             <li>Sesiones de preguntas y respuestas
                                 con tus referentes del Marketing</li>
                             <li>Acceso a todas las conferencias con speakers internacionales </li>
@@ -56,14 +54,12 @@
                     <div class="emms__plans__card__main">
                         <h5>Beneficios</h5>
                         <ul>
-                            <li class="exclude">Cuenta gratuita de Doppler durante 6 meses para planes de hasta
-                                5.000 contactos.</li>
+                            <li class="exclude">Cuenta gratuita en Doppler durante 6 meses en planes de hasta 5.000 contactos, solo para nuevos usuarios.</li>
                             <li class="exclude"> Workshops prácticos </li>
                             <li class="exclude">Sesiones de Networking</li>
                             <li class="exclude">Acceso de por vida a los Workshops</li>
                             <li class="exclude">Certificado de asistencia a Workshops</li>
-                            <li class="exclude">Más guías con herramientas
-                                y tips exclusivos</li>
+                            <li class="exclude">Guía con los Prompts que necesitas para escalar tu E-commerce con IA.</li>
                             <li class="exclude">Sesiones de preguntas y respuestas
                                 con tus referentes del Marketing</li>
                             <li>Acceso a todas las conferencias con speakers internacionales </li>

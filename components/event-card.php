@@ -16,11 +16,11 @@ function renderButton($buttonData, $eventState)
     if ($eventState['isPre']) {
         $buttonHtml = "<a class=\"emms__cta\" href=\"$buttonLink\">$buttonText</a>";
     } elseif ($eventState['isLive']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">ÚNETE AL VIVO</a>";
+        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
     } elseif ($eventState['isDuring']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">SÚMATE AHORA</a>";
+        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
     } elseif ($eventState['isPost']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">REVIVE EL EVENTO</a>";
+        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
     }
 
     if ($isSecondaryButton) {
@@ -43,6 +43,7 @@ function renderEventCard($eventData, $eventState)
         'isShortRibbon' => '',
         'isRegistered' => '',
         'spanText' => '',
+        'spanExtraClass' => '',
         'isSecondaryButton' => false
     );
 
@@ -53,7 +54,7 @@ function renderEventCard($eventData, $eventState)
     $postEventHtml = $eventState['isPost'] ? '<p class="top hide">EVENTO FINALIZADO</p>' : '';
     $liveEventHtml = $eventState['isLive'] ? '<span>EN VIVO</span>' : '';
     $isShortRibbonClass = $isShortRibbon ? "ribbon--short" : '';
-    $ribbonHtml = $ribbonText ? "<div class=\"ribbon__end $isShortRibbonClass\"> $ribbonText</div>" : '';
+    $ribbonHtml = $ribbonText ? "<div class=\"ribbon__end $isShortRibbonClass $spanExtraClass\"> $ribbonText</div>" : '';
 
     $spanRegistered = $isRegistered ? "<small class=\"success-register\">🗹 YA TE HAS REGISTRADO</small>" : '';
 

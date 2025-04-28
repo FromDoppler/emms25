@@ -16,8 +16,9 @@ Accede a la Biblioteca de Recursos ¡gratis!
 ',
         ],
         'group2' => [
-            'heading' => 'Capacítate con la Biblioteca de Recursos ¡gratis!',
-            'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas capacitarte de manera gratuita.',
+            'heading' => 'Potencia tu negocio con la Biblioteca de Recursos Gratuita',
+            'body' => 'Accede a descuentos, materiales de consulta y herramientas que traen nuestros aliados para potenciar al máximo tu negocio.
+Accede a la Biblioteca de Recursos ¡gratis!'
         ],
     ];
 

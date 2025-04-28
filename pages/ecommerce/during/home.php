@@ -6,19 +6,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <html lang="en">
 
 <head>
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/head.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/head.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 </head>
 
 <body class="emms__home">
-<?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
+    <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php');
     ?>
 
     <main>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/hello-module.php');   ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/hello-module.php');   ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/central-video.php'); ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/event-numbers.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/speakers-carousel.php') ?>
