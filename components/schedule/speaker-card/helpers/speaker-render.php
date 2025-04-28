@@ -25,3 +25,8 @@ function render_speaker_button($speaker,  $isRegistered)
 {
     include COMPONENTS_PATH . '/speaker-button.php';
 }
+
+function render_speaker_hour($speaker)
+{
+    include COMPONENTS_PATH . '/speaker-hour.php';
+}

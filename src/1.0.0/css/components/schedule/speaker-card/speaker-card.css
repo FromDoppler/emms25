@@ -1,7 +1,7 @@
 .speaker-card {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 20px 5px 0px;
+    padding: 20px 20px 35px 0px;
     max-width: 600px;
     background-color: #fff;
     background: linear-gradient(180deg, rgba(57, 5, 85, 0) 8%, rgba(57, 5, 85, 0.34) 51%, rgba(72, 1, 111, 0.8) 75%, #000000 100%);
@@ -10,6 +10,7 @@
     position: relative;
     min-height: 394px;
     transform: none;
+    max-height: 400px;
 }
 
 .speaker-card {
