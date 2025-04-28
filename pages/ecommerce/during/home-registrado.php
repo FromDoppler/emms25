@@ -12,12 +12,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 
 <body class="emms__home">
     <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/hello-module.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/hello-module.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/event-numbers.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/speakers-carousel.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/premium-content.php') ?>

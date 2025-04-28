@@ -1,5 +1,5 @@
 .hero-registration {
-    padding: 190px 0 88px 0;
+    padding: 145px 0 88px 0;
     background: #000;
     position: relative;
 }
@@ -117,6 +117,17 @@
 .hero-registration .hero-registration__text h1 span {
     display: block;
 }
+
+.hero-registration .hero-registration__text h1 span.green {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #79F66E;
+}
+
 
 .hero-registration .hero-registration__text h1 span.top {
     font-size: 106px;

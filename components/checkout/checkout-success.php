@@ -16,7 +16,7 @@
                             <p>Mantente pendiente a tu Correo Eléctrónico porque en instantes recibirás un Email de Confirmación por la compra de tu entrada.</p>
                             <h4>Por ser Asistente Vip al EMMS E-commerce, accedes a todos estos beneficios:</h4>
                             <ul class="emms__checkout__card__main__list">
-                                <li><b>Cuenta gratuita de Doppler durante 6 meses para planes de hasta 5.000 contactos.</b> Te enviaremos por Email este beneficio.</li>
+                                <li><b>Cuenta gratuita en Doppler durante 6 meses en planes de hasta 5.000 contactos, solo para nuevos usuarios. </b> Te enviaremos por Email este beneficio.</li>
                                 <li><b>Workshops prácticos.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
                                 <li><b>Sesiones de Networking.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
                                 <li class="li--short-margin">Acceso de por vida a los Workshops.</li>

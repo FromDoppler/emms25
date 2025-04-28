@@ -2,27 +2,46 @@
 
 <?php
 
-$contents = [
+$contentsDuring = [
     '/' => [
         'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
         'heading' => '¡Únete al EMMS E-commerce 2025!',
         'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
-        'DTCardButton' => 'REGÍSTRATE GRATIS',
         'ecommerceUrl' => '/ecommerce',
     ],
     '/registrado' => [
         'subheading' => 'ONLINE Y GRATUITO | <span>¡COMENZÓ LA TRANSMISIÓN!</span>',
         'heading' => '¡SÚMATE AL EMMS E-COMMERCE 2025!',
-        'body' => 'Domina el Marketing de tu Tienda Online. Capacítate con los mayores referentes del mundo. <a href="/ecommerce">¡Estamos en vivo! </a> Disfruta ahora de una nueva
+        'body' => 'Domina el Marketing de tu Tienda Online. Capacítate con los mayores referentes del mundo. <a href="/ecommerce-registrado">¡Estamos en vivo! </a> Disfruta ahora de una nueva
 edición con Conferencias, Workshops, sorteos y ¡mucho más!.',
-        'DTCardButton' => 'INGRESA AHORA',
         'ecommerceUrl' => '/ecommerce-registrado',
     ],
     '/*' => [
         'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
         'heading' => '¡Únete al EMMS E-commerce 2025!',
         'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
-        'DTCardButton' => 'REGÍSTRATE GRATIS',
+        'ecommerceUrl' => '/ecommerce',
+    ],
+];
+
+
+$contentsTransition = [
+    '/' => [
+        'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
+        'heading' => '¡Únete al EMMS E-commerce 2025!',
+        'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
+        'ecommerceUrl' => '/ecommerce',
+    ],
+    '/registrado' => [
+        'subheading' => 'ONLINE Y GRATUITO | <span>¡COMENZÓ LA TRANSMISIÓN!</span>',
+        'heading' => '¡SÚMATE AL EMMS E-COMMERCE 2025!',
+        'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce-registrado">¡Ya comenzó! </a>',
+        'ecommerceUrl' => '/ecommerce-registrado',
+    ],
+    '/*' => [
+        'subheading' => 'COMENZÓ EL EVENTO MÁS GRANDE EN LATAM Y ESPAÑA',
+        'heading' => '¡Únete al EMMS E-commerce 2025!',
+        'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Ya comenzó! </a>',
         'ecommerceUrl' => '/ecommerce',
     ],
 ];
@@ -30,7 +49,13 @@ edición con Conferencias, Workshops, sorteos y ¡mucho más!.',
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
 $normalizedUrl = getNormalizeUrl();
-$content = $contents[$normalizedUrl] ?? $contents['/*'];
+
+if ($ecommerceStates['isTransition']) {
+    $content = $contentsTransition[$normalizedUrl] ?? $contentsTransition['/*'];
+} else {
+    $content = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
+}
+
 
 // TODO: Se podria hacer un helper para generar los contenidos y las cards en un solo lugar y que este componente sea dummy solo para UX
 $cards = [];
@@ -40,12 +65,13 @@ $cards[] = renderEventCard([
     'imageAlt' => 'Ecommerce image',
     'title' => 'EMMS E-commerce',
     'description' => 'Referentes internacionales de la industria te revelan las <b>tendencias y estrategias que emplean en sus Tiendas Online</b> para captar nuevos clientes y aumentar sus ingresos. ¡No te lo pierdas!',
-    'buttonText' => $isRegistered ? 'ACCEDE' : 'REGÍSTRATE',
+    'buttonText' => $isRegistered ? 'ÚNETE AL VIVO' : 'ÚNETE AL VIVO',
     'buttonLink' => $isRegistered ? '/ecommerce-registrado' : '/ecommerce',
     'ribbonText' => 'EN VIVO',
     'isShortRibbon' => true,
     'isRegistered' => $isRegistered,
     'spanText' => 'ONLINE Y GRATUITO',
+    'spanExtraClass' => '',
     'isSecondaryButton' => false,
 ], $ecommerceStates);
 
@@ -60,6 +86,7 @@ $cards[] = renderEventCard([
     'isShortRibbon' => false,
     'isRegistered' => false,
     'spanText' => $isRegistered ? 'ONLINE Y GRATUITO' : '',
+    'spanExtraClass' => 'ribbon--coming-soon',
     'isSecondaryButton' => true,
 ], $digitalTrendsStates);
 ?>

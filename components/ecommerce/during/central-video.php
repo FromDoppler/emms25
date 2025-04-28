@@ -9,7 +9,7 @@ $contents = [
         'youtubeCode' => 'ZGS-lmiXHFE',
     ],
     '/ecommerce' => [
-        'heading' => 'Inspírate en el evento más grande de E-commerce',
+        'heading' => 'Súmate ahora al EMMS E-commerce',
         'body' => 'Descubre en este video por qué el EMMS E-commerce es el evento clave para aprender a escalar tu tienda, de la mano de los líderes del sector.',
         'button' => 'REGÍSTRATE AHORA',
         'link' => '#registro',

@@ -536,8 +536,8 @@
 .broadcast-vip__title {
     font-style: normal;
     font-weight: 900;
-    font-size: 35px;
-    line-height: 37px;
+    font-size: 24px;
+    line-height: 32px;
     color: #2B0C01;
 }
 
@@ -567,23 +567,23 @@
 }
 
 .broadcast-vip__image--tool {
-    bottom: -106px;
-    max-width: 300px;
-    left: 91%;
+    bottom: -48px;
+    max-width: 250px;
+    left: 95%;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .broadcast-free__image--ticket {
     bottom: -88px;
-    max-width: 200px;
+    max-width: 250px;
     left: 72%;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .broadcast-free__image--cart {
-    max-width: 250px;
+    max-width: 300px;
     bottom: -117px;
     right: -4rem;
 }
@@ -634,7 +634,6 @@
 }
 
 .workshops-links__day a {
-    font-weight: 500;
     transition: color 0.3s ease;
     font-style: normal;
     font-weight: 400;
@@ -643,6 +642,23 @@
     color: #1E0501;
     text-decoration: none;
     position: relative;
+}
+
+
+.workshops-links__day span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: #1E0501;
+}
+
+.workshops-links__day a.hour {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #008046;
 }
 
 .workshops-links__day a::after {
