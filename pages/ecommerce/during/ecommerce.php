@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <html lang="en">
 
 <head>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/head.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/seo-unreg.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
     <script type="module">
         import {
