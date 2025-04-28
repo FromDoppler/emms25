@@ -6,29 +6,25 @@ const isQADomain = () => {
 }
 
 const WORKSHOPS = [
-    "luisperez-56WWP",
-    "anadiazdelrio-10FAS",
-    "arturoyepez-38TBU",
-    "norbertocerasale-60IYW",
-    "joserobles-38BUU",
-    "andreabozzo-17LQW",
-    "luismaram-28IMB",
-    "jmgareli-56DVQ",
+    "laurabarreto-AZC173",
+    "luisbetancourt-XYZ436",
+    "joseanmuñoz-QWE799",
+    "xavieridevik-JKL391",
+    "pablomoratinos-MNO644",
+    "matiascarrera-ZPH295",
 ];
 
 const getUrlWorkshop = () => WORKSHOPS.find(workshop => window.location.href.includes(workshop)) || false;
 
 
 const forceDownload = async (fullname, type) => {
-    console.log('heere3')
-
     const workshopType = getUrlWorkshop();
     if(type==='workshop' && !workshopType)return;
     const encodeFullname = encodeURI(fullname);
-    const domainUrl = (isQADomain()) ? `certificate-emms2024qa.php` : `certificate-emms2024.php`;
+    const domainUrl = (isQADomain()) ? `certificate-emms2025qa.php` : `certificate-emms2025.php`;
     const commonUrl = `https://textify.fromdoppler.com/${domainUrl}?fullname=${encodeFullname}&type=${type}`;
     const url = workshopType ? `${commonUrl}&workshoptype=${encodeURI(workshopType)}` : commonUrl;
-    const fileName = `certificacion-emms2024-${type}.png`;
+    const fileName = `certificacion-emms2025-${type}.png`;
 
     try {
         const response = await fetch(url);
@@ -86,14 +82,11 @@ const submitCertificate = async (e, type, submitButton) => {
     const fullname = formData.get('fullname');
     const isDisabled = submitButton.getAttribute('data-disabled') === 'true';
     if (isDisabled) {
-        console.log('heere')
         return false;
     }
     handleButtonState(submitButton, true, false);
 
     if (fullname.length < 2) {
-        console.log('heere2')
-
         handleButtonState(submitButton, false, true);
         return false;
     }
