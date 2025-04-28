@@ -86,14 +86,14 @@
                         [
                             'title' => 'Análisis de E-commerce en WordPress',
                             'url' => 'https://us06web.zoom.us/j/88598752825?pwd=G7bTVCSdbM6D9eDC45r469ZGq45zqK.1#success',
-                            'hour' => '(ARG) 15:45 p.m',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Pablo+Moratinos+%7C+EMMS+E-commerce+2025&iso=20250429T1545&p1=51&am=40'
+                            'hour' => 'Horario: Próximo a confirmar.',
+                            'alert' => 'REPROGRAMADO'
                         ],
                         [
                             'title' => 'Tendencias 2025 de IA para tener más impacto en Marketing',
                             'url' => 'https://us06web.zoom.us/j/87981563138?pwd=ZxLu5rUr5UGVPxQezgzPWnbP8gR5bF.1#success',
-                            'hour' => '(ARG) 16:30 p.m',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Matias+Carrera+%7C+EMMS+E-commerce+2025&iso=20250429T1630&p1=51&am=40'
+                            'hour' => 'Horario: Próximo a confirmar.',
+                            'alert' => 'REPROGRAMADO'
                         ],
                     ]
                 ];
@@ -108,10 +108,17 @@
                                 <?php foreach ($sessions as $session): ?>
                                     <li>
                                         <a href="<?= $session['url'] ?>" target="_blank"><?= $session['title'] ?></a>
+                                        <?php if (isset($session['alert']) && !empty($session['alert'])): ?>
+                                            <br>
+                                            <span class="alert"><?= $session['alert'] ?></span>
+                                        <?php endif; ?>
                                         <br>
                                         <span><?= $session['hour'] ?></span>
-                                        <br>
-                                        <a class="hour" href="<?= $session['hourLink'] ?>">Mira el horario en tu país</a>
+                                        <?php if (isset($session['hourLink']) && !empty($session['hourLink'])): ?>
+                                            <br>
+                                            <a class="hour" href="<?= $session['hourLink'] ?>">Mira el horario en tu país</a>
+                                        <?php endif; ?>
+
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
