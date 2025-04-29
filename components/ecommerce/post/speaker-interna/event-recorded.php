@@ -5,7 +5,7 @@
         <div class="emms__cropper-cont ">
             <div class="emms__cropper-cont-interno">
                 <iframe
-                    src="<?= $speaker['youtube'] ?>"
+                    src="https://www.youtube.com/embed/<?= $speaker['youtube'] ?>"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>

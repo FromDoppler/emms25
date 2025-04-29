@@ -24,18 +24,6 @@ $speaker = $speakers[0];
 <head>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/ecommerce/seo-reg.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
-    <script type="module">
-        import {
-            hiddenOrShowUserUI
-        } from '/src/<?= VERSION ?>/js/user.js';
-        hiddenOrShowUserUI('digital-trends24');
-    </script>
-    <script type="module">
-        import {
-            toggleVipDigitalTrendsElements
-        } from '/src/<?= VERSION ?>/js/toggleVipElements.js';
-            toggleVipDigitalTrendsElements();
-    </script>
 </head>
 
 <body class="emms__ecommerce emms__ecommerce-logueado emms__ecommerce-logueado--during">
@@ -55,7 +43,7 @@ $speaker = $speakers[0];
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/speaker-interna/promo-vip.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
         <!-- Doppler Banner -->
-        <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/doppler-academy-banner.php'); ?>
+        <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
 
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
