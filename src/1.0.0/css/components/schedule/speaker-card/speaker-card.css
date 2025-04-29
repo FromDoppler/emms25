@@ -51,5 +51,6 @@
         padding-bottom: 25px;
         flex-direction: column;
         margin-top: 30px;
+        max-height: unset;
     }
 }
