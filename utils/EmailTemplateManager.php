@@ -138,7 +138,7 @@ class EmailTemplateManager
 
     public static function getEcommerceVipEmailTemplatePost($encodeEmail, $user)
     {
-        $templateName = 'ecommerce-during-vip-template.html';
+        $templateName = 'ecommerce-post-vip-template.html';
         $userData = [
             '$encodeEmail' => $encodeEmail,
             'type' => $user['tiketType'],
