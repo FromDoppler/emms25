@@ -5,7 +5,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/help
 <div class="speaker-card__info">
     <p class="speaker-card__type"><?= translateExposes($speaker['exposes']) ?></p>
     <p class="speaker-card__title"><?= $speaker['title'] ?></p>
-    <!-- CTA -->
-    <?php render_speaker_hour($speaker); ?>
-    <?php render_speaker_button($speaker,  $isRegistered); ?>
+
+
 </div>

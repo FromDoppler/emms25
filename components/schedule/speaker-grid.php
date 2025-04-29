@@ -9,8 +9,8 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
     <?php
     // TODO: Mover days a const .env??
     $days = [
-        1 => ['date' => '28 de Abril', 'short' => '28/04'],
-        2 => ['date' => '29 de Abril', 'short' => '29/04'],
+        1 => ['date' => 'DÍA 1', 'short' => 'DÍA 1'],
+        2 => ['date' => 'DÍA 2', 'short' => 'DÍA 2'],
     ];
 
     $dayDuring = DAY_DURING;
@@ -33,7 +33,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
                 <div class="speaker-grid ">
                     <?php foreach ($speakers as $speaker): ?>
                         <div class="speaker-grid__item">
-                            <?php render_speaker_card($speaker, $isRegistered, false); ?>
+                            <?php render_speaker_card($speaker, $isRegistered, false, $ecommerceStates); ?>
                         </div>
                         <?php render_speaker_modal($speaker, false) ?>
                     <?php endforeach; ?>
@@ -43,7 +43,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
                 <div class="speaker-grid speaker-carousel">
                     <?php foreach ($speakers as $speaker): ?>
                         <div class="speaker-grid__item carousel-cell">
-                            <?php render_speaker_card($speaker, $isRegistered, true); ?>
+                            <?php render_speaker_card($speaker, $isRegistered, true, $ecommerceStates); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>

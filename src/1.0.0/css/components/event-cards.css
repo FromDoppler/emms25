@@ -183,7 +183,7 @@
 }
 
 .ribbon__end {
-    width: 130px;
+    width: 140px;
     height: 32px;
     line-height: 35px;
     padding-left: 15px;
@@ -228,7 +228,7 @@
 .ribbon__end:after {
     height: 0;
     width: 0;
-    right: -12.5px;
+    right: -11.5px;
     border-top: 11px solid transparent;
     border-bottom: 21px solid transparent;
     border-left: 12px solid #79F66E;

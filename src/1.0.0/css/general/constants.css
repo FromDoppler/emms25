@@ -191,9 +191,11 @@ p {
     opacity: 0.5;
 }
 
-.emms__cta.inactive {
+.emms__cta.inactive,
+.emms__cta.emms_cta--inactive {
     background: #CCCCCC;
     pointer-events: none;
+    color: #FFFFFF;
 }
 
 /* La diferancia con inactive se que permite interactuar con los titles */

@@ -37,7 +37,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/ecommerce/hello-vip-module.php') ?>
         </div>
         <div class="emms__bg-dark-gradient">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
         </div>
         <div class="hidden--vip">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/ecommerce/vip-features.php') ?>

@@ -4,31 +4,31 @@ function renderButton($buttonData, $eventState)
     $defaults = array(
         'buttonText' => '',
         'buttonLink' => '',
-        'isSecondaryButton' => false
+        'buttonType' => 'primary' // emms__cta, emms__cta--secondary, emms__cta--inactive
     );
 
     $buttonData = array_merge($defaults, $buttonData);
-
     extract($buttonData);
 
-    $buttonHtml = '';
+    $class = 'emms__cta'; // default
 
-    if ($eventState['isPre']) {
-        $buttonHtml = "<a class=\"emms__cta\" href=\"$buttonLink\">$buttonText</a>";
-    } elseif ($eventState['isLive']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
-    } elseif ($eventState['isDuring']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
-    } elseif ($eventState['isPost']) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta\">$buttonText</a>";
+    switch ($buttonType) {
+        case 'secondary':
+            $class .= ' emms__cta--secondary';
+            break;
+        case 'disabled':
+            $class .= ' emms_cta--inactive';
+            break;
     }
 
-    if ($isSecondaryButton) {
-        $buttonHtml = "<a href=\"$buttonLink\" class=\"emms__cta emms_cta--secondary\">$buttonText</a>";
-    }
+    // Si el botón es 'disabled', no debería tener link
+    $html = $buttonType === 'disabled'
+        ? "<span class=\"$class\">$buttonText</span>"
+        : "<a href=\"$buttonLink\" class=\"$class\">$buttonText</a>";
 
-    return $buttonHtml;
+    return $html;
 }
+
 
 function renderEventCard($eventData, $eventState)
 {
@@ -44,7 +44,7 @@ function renderEventCard($eventData, $eventState)
         'isRegistered' => '',
         'spanText' => '',
         'spanExtraClass' => '',
-        'isSecondaryButton' => false
+        'buttonType' => 'primary',
     );
 
     $eventData = array_merge($defaults, $eventData);
@@ -61,7 +61,7 @@ function renderEventCard($eventData, $eventState)
     $buttonHtml = renderButton(array(
         'buttonText' => $buttonText,
         'buttonLink' => $buttonLink,
-        'isSecondaryButton' => $isSecondaryButton
+        'buttonType' => $buttonType
     ), $eventState);
 
     return <<<HTML
