@@ -40,9 +40,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/register-withoutform.php') ?>
         </div>
 
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/schedule/schedule.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/benefit-icons.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/benefit-icons.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/premium-content.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/central-video.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     </main>

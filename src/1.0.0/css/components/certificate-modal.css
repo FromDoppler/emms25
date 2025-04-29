@@ -1,4 +1,4 @@
-.emms__certificate-modal {
+#certificateModal.emms__certificate-modal {
     position: fixed;
     align-items: center;
     top: 0;
@@ -10,11 +10,11 @@
     display: none;
 }
 
-.emms__certificate-modal.open {
+#certificateModal.emms__certificate-modal.open {
     display: flex;
 }
 
-.emms__certificate-modal__window {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window {
     text-align: center;
     background: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
     animation: show-modal-certificate .4s;
 }
 
-.emms__certificate-modal__window img {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window img {
     width: 178px;
     height: 166px;
     margin: 0 auto;
@@ -45,7 +45,7 @@
     }
 }
 
-.emms__certificate-modal__window h3 {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window h3 {
     font-size: 30px;
     line-height: 32px;
     font-weight: 700;
@@ -54,13 +54,14 @@
     max-width: 560px;
 }
 
-.emms__certificate-modal__window p {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window p {
     font-size: 18px;
     line-height: 22px;
+    margin: 0 auto;
     color: #333333;
 }
 
-.emms__certificate-modal__window input {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window input {
     font-family: "Proxima-Nova", "helvetica", "sans-serif";
     font-size: 14px;
     color: #333333;
@@ -75,13 +76,13 @@
     border-radius: 3px;
 }
 
-.emms__certificate-modal__window input::placeholder {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window input::placeholder {
     font-size: 14px;
     font-style: italic;
     color: #838370;
 }
 
-.emms__certificate-modal__window span:not(.button__text) {
+.emms__certificate-modal .emms__certificate-modal__window span:not(.button__text) {
     font-size: 13px;
     color: #ff1010;
     font-style: italic;
@@ -92,14 +93,14 @@
     margin: 5px auto 0 auto;
 }
 
-.emms__certificate-modal__window .emms__cta {
-    margin: 59px auto 0 auto;
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window .emms__cta {
+    margin: 30px auto 0 auto;
     max-width: 280px;
     display: block;
     box-sizing: border-box;
 }
 
-.emms__certificate-modal__window__close {
+#certificateModal.emms__certificate-modal .emms__certificate-modal__window__close {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -116,26 +117,26 @@
 
 
 @media(max-width:620px) {
-    .emms__certificate-modal__window {
+    #certificateModal.emms__certificate-modal .emms__certificate-modal__window {
         padding: 66px 20px 57px 20px;
     }
 
-    .emms__certificate-modal__window h3 {
+    #certificateModal.emms__certificate-modal .emms__certificate-modal__window h3 {
         font-size: 22px;
         line-height: 24px;
         margin: 0 auto 10px auto;
         max-width: 330px;
     }
 
-    .emms__certificate-modal__window p {
+    #certificateModal.emms__certificate-modal .emms__certificate-modal__window p {
         font-size: 16px;
     }
 
-    .emms__certificate-modal__window input {
+    #certificateModal.emms__certificate-modal .emms__certificate-modal__window input {
         margin: 25px auto 0 auto;
     }
 
-    .emms__certificate-modal__window .emms__cta {
+    #certificateModal.emms__certificate-modal .emms__certificate-modal__window .emms__cta {
         font-size: 13px;
         font-weight: 600;
         padding: 12px 25px;

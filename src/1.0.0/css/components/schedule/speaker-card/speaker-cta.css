@@ -74,3 +74,12 @@
         left: 125%;
     }
 }
+
+.speaker-card__cta .speaker-card__button.speaker-card__button--inactive {
+    background: linear-gradient(240.27deg, rgba(246, 245, 247, 0.5) -9.75%, rgba(76, 74, 75, 0.5) 155.76%);
+    color: #FFFFFF;
+    pointer-events: none;
+    cursor: default;
+    opacity: 1;
+    transition: none;
+}

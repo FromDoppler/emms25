@@ -12,6 +12,19 @@
     margin: 35px;
 }
 
+.companies .companies__body a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #33AD73;
+}
+.companies .companies__body a:hover {
+    opacity: 0.5;
+}
+
+
 .companies .emms__container--lg {
     max-width: 1260px;
 }

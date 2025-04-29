@@ -45,8 +45,10 @@
             </li>
         </ul>
         <div class="emms__form__btn">
-            <?php if (!$ecommerceStates['isTransition']) { ?>
+            <?php if ($ecommerceStates['isDuring']) { ?>
                 <button class="emms__cta emms__cta--during " id="register-button" type="button"><span class="button__text">SÚMATE GRATIS</span></button>
+            <?php } else  if($ecommerceStates['isPost']){ ?>
+                <button class="emms__cta emms__cta--during " id="register-button" type="button"><span class="button__text">REGÍSTRATE GRATIS</span></button>
             <?php } else { ?>
                 <button class="emms__cta emms__cta--during " id="register-button" type="button"><span class="button__text">ACCEDE AL VIVO</span></button>
             <?php } ?>

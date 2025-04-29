@@ -2,8 +2,9 @@
 define('REGISTERFORM_URL', '#registro');
 define('CHECKOUT_URL', '/checkout');
 
-function getExposeButtonData($exposes)
+function getExposeButtonData($speaker)
 {
+    $exposes = $speaker['exposes'];
     $buttons = [
         'conference' => [
             'text' => 'REGISTRATE GRATIS',
@@ -30,22 +31,30 @@ function getExposeButtonData($exposes)
 }
 
 
-function getExposeButtonDataRegistered($exposes)
+function getExposeButtonDataRegistered($speaker)
 {
-    $noButton = ['successStory', 'conference'];
+    $exposes = $speaker['exposes'];
 
-    if (in_array($exposes, $noButton)) {
-        return null;
+
+    if (empty($speaker['youtube']) && $exposes !== 'workshop') {
+        return [
+            'text' => 'VIDEO PRONTO DISPONIBLE',
+            'href' => '#',
+        ];
     }
 
     $buttons = [
-        'workshop' => [
-            'text' => 'HAZTE VIP',
-            'href' => CHECKOUT_URL
+        'conference' => [
+            'text' => 'ACCEDE AHORA',
+            'href' => 'speaker-interna?slug=' . $speaker['slug']
         ],
-        'networking' => [
-            'text' => 'HAZTE VIP',
-            'href' => CHECKOUT_URL
+        'workshop' => [
+            'text' => 'REGISTRATE Y HAZTE VIP',
+            'href' => $speaker['youtube']
+        ],
+        'successStory' => [
+            'text' => 'ACCEDE AHORA',
+            'href' => 'speaker-interna?slug=' . $speaker['slug']
         ]
     ];
 

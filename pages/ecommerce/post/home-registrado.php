@@ -18,12 +18,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/home/hello-module.php');   ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/central-video.php'); ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/event-numbers.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/event-numbers.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/speakers-carousel.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/users-comments.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faqs.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/companies-list.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/users-comments.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/faqs.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/companies-list.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>

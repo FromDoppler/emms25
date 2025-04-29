@@ -42,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding: 60px 0px 80px 60px;
+    padding: 60px 0px 30px 60px;
 }
 
 .emms__checkout__card__container--error .emms__checkout__card {
@@ -112,11 +112,11 @@
 
 .emms__checkout__card__main__list li {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 17px;
     font-weight: 500;
     position: relative;
     padding: 0 0 0 35px;
-    margin: 0 0 30px 0;
+    margin: 0 0 31px 0;
     height: 24px;
     color: #333333;
 }
