@@ -661,6 +661,14 @@
     color: #008046;
 }
 
+.workshops-links__day span.alert {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #e80000;
+}
+
 .workshops-links__day a::after {
     content: '';
     position: absolute;
