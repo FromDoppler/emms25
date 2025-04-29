@@ -42,8 +42,8 @@
                         <div class="academy-banner__carousel__item__text">
                             <h3>Podcasts</h3>
                             <ul>
-                                <li>Conversaciones con los líderes del Marketing</li>
-                                <li>Contenido flexible y sin horarios fijos</li>
+                                <li>Conversaciones reveladoras</li>
+                                <li>Speakers de marcas destacadas</li>
                                 <li>Reflexiones sobre las últimas tendencias</li>
                             </ul>
                         </div>
@@ -66,11 +66,12 @@
                     </a>
                     <a class="academy-banner__carousel__item">
                         <div class="academy-banner__carousel__item__text">
-                            <h3>Doppler Demo</h3>
+                            <h3>CERTIFICACIONES</h3>
                             <ul>
-                                <li>Tutoriales sobre Doppler</li>
-                                <li>Dos niveles: inicial y avanzado</li>
-                                <li>Técnicas para potenciar tu negocio</li>
+                                <li>Descubre las tendencias
+                                    en Marketing Digital</li>
+                                <li>Aprende a tu ritmo</li>
+                                <li>Valida tus conocimientos</li>
                             </ul>
                         </div>
                         <div class="academy-banner__carousel__item__image">

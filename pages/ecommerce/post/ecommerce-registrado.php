@@ -39,12 +39,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         <div class="emms__bg-dark-gradient">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
         </div>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/doppler-academy-banner.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/doppler-academy-banner.php'); ?>
         <div class="hidden--vip">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/ecommerce/entry-plans.php') ?>
         </div>
 
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/premium-content.php') ?>
         <!-- Academy Banner === show--vip, This class is not used to prevent interfering with flickity -->
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     </main>

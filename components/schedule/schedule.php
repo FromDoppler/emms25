@@ -32,8 +32,12 @@ $block = getScheduleBlock2($normalizedUrl);
                     Speakers internacionales y las marcas con más trayectoria de Latam y España compartieron las últimas tendencias en Comercio Electrónico. ¡Descúbrelos aquí!
                 </p>
             <?php elseif ($block['block'] === 'ecommerce-registrado') : ?>
-                <p>
+                <p class="hidden--vip">
                     Inspírate y aprende a través de Conferencias, Casos de Éxito y Entrevistas. ¡Descúbrelos aquí!
+                </p>
+                <p class="show--vip">
+                    Los mayores referentes de la industria compartieron las últimas tendencias en Comercio Electrónico.
+                    Inspírate y aprende a través de Conferencias y Workshops. ¡Descúbrelos aquí!
                 </p>
             <?php endif; ?>
         </div>
