@@ -1,13 +1,14 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/helpers/index.php');
 
+
+
 $button = $isRegistered
     ? getExposeButtonDataRegistered($speaker)
     : getExposeButtonData($speaker);
 
-
 $buttonClasses = 'speaker-card__button';
-if (empty($speaker['yotube']) && $isRegistered) {
+if (empty($speaker['youtube']) && $isRegistered) {
     $buttonClasses .= ' speaker-card__button--inactive';
     $text = 'VIDEO PRONTO DISPONIBLE';
 } else {
