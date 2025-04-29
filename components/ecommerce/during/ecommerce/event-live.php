@@ -55,49 +55,44 @@
             <div class="broadcast-vip__content">
                 <h3 class="broadcast-vip__title">Accede a los links para ingresar a los Workshops 🤩</h3>
                 <?php
-                $workshops = [
-                    '28 DE ABRIL' => [
-                        [
-                            'title' => 'Onsite Marketing: Tácticas avanzadas para aumentar las ventas en tu E-commerce',
-                            'url' => 'https://us06web.zoom.us/j/89262240122?pwd=tlLX7xiHkIECL0Y5dqpjIes2cfOwXJ.1#success',
-                            'hour' => 'ARG) 15:00 p.m.',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Laura+Barreto+%7C+EMMS+E-commerce+2025&iso=20250428T15&p1=51&am=40'
+                    $workshops = [
+                        '29 DE ABRIL' => [
+                            [
+                                'title' => 'Antes de vender online: dominios, hosting y seguridad',
+                                'url' => 'https://us06web.zoom.us/j/85498048337?pwd=aFD3DxapKTLXMbpRJKDr1fAh0GOIy0.1',
+                                'hour' => '(ARG) 15:00 p.m.',
+                                'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Xavier+Idevik+%7C+Workshop+EMMS+E-commerce+&iso=20250429T15&p1=51&am=40'
+                            ],
+                            [
+                                'title' => 'Análisis de E-commerce en WordPress',
+                                'url' => 'https://us06web.zoom.us/j/88598752825?pwd=G7bTVCSdbM6D9eDC45r469ZGq45zqK.1',
+                                'hour' => '(ARG) 15:45 p.m.',
+                                'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Pablo+Moratinos+%7C+EMMS+E-commerce+2025&iso=20250429T1545&p1=51&am=40'
+                            ],
+                            [
+                                'title' => 'Tendencias 2025 de IA para tener más impacto en Marketing',
+                                'url' => 'https://us06web.zoom.us/j/87981563138?pwd=ZxLu5rUr5UGVPxQezgzPWnbP8gR5bF.1',
+                                'hour' => '(ARG) 16:30 p.m.',
+                                'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Matias+Carrera+%7C+EMMS+E-commerce+2025&iso=20250429T1630&p1=51&am=40'
+                            ]
                         ],
-                        [
-                            'title' => 'Checklist de Sitios Web efectivos para E-commerce',
-                            'url' => 'https://us06web.zoom.us/j/85636727334?pwd=taaVFRqXTY2i63EX4R5S63aqjvWhjZ.1#success',
-                            'hour' => '(ARG) 15:45 p.m.',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Luis+Betancourt+%7C+Workshop+EMMS+E-commerce+&iso=20250428T1545&p1=51&am=40'
-                        ],
-                        [
-                            'title' => 'Growth Hacks & Quick Wins para E-commerce en 2025',
-                            'url' => 'https://us06web.zoom.us/j/83403721158?pwd=yPErawFdtnXl9eombeUzmon1MEbxs1.1#success',
-                            'hour' => '(ARG) 16:30 p.m.',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Josean+Mu%C3%B1oz+%7C+EMMS+E-commerce+2025&iso=20250428T1630&p1=51&am=40'
+                        '&nbsp;' => [
+                            [
+                                'title' => 'Growth Hacks & Quick Wins para E-commerce en 2025',
+                                'url' => 'https://us06web.zoom.us/j/86387365095?pwd=Zt0VAXkfN5Ms6bAiqrZTk1iHcfVIbi.1',
+                                'hour' => '(ARG) 15:00 p.m.',
+                                'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Josean+Mu%C3%B1oz+%7C+EMMS+E-commerce+2025&iso=20250429T15&p1=51&am=40'
+                            ],
+                            [
+                                'title' => 'Checklist de Sitios Web efectivos para E-commerce',
+                                'url' => 'https://us06web.zoom.us/j/85344715275?pwd=sFtaN4ZRmEVa4fcaPnboEXV9IulGVu.1',
+                                'hour' => '(ARG) 15:45 p.m.',
+                                'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Luis+Betancourt+%7C+Workshop+EMMS+E-commerce+&iso=20250429T1545&p1=51&am=40'
+                            ]
                         ]
-                    ],
-                    '29 DE ABRIL' => [
-                        [
-                            'title' => 'Antes de vender online: dominios, hosting y seguridad',
-                            'url' => 'https://us06web.zoom.us/j/85498048337?pwd=aFD3DxapKTLXMbpRJKDr1fAh0GOIy0.1#success',
-                            'hour' => '(ARG) 15:00 p.m',
-                            'hourLink' => 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=Workshop+Xavier+Idevik+%7C+Workshop+EMMS+E-commerce+&iso=20250429T15&p1=51&am=40'
-                        ],
-                        [
-                            'title' => 'Análisis de E-commerce en WordPress',
-                            'url' => 'https://us06web.zoom.us/j/88598752825?pwd=G7bTVCSdbM6D9eDC45r469ZGq45zqK.1#success',
-                            'hour' => 'Horario: Próximo a confirmar.',
-                            'alert' => 'REPROGRAMADO'
-                        ],
-                        [
-                            'title' => 'Tendencias 2025 de IA para tener más impacto en Marketing',
-                            'url' => 'https://us06web.zoom.us/j/87981563138?pwd=ZxLu5rUr5UGVPxQezgzPWnbP8gR5bF.1#success',
-                            'hour' => 'Horario: Próximo a confirmar.',
-                            'alert' => 'REPROGRAMADO'
-                        ],
-                    ]
-                ];
+                    ];
                 ?>
+
 
                 <div class="workshops-links__columns">
                     <?php foreach ($workshops as $day => $sessions): ?>
