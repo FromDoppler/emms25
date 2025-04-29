@@ -7,8 +7,8 @@
             </p>
             <ul class="hero-registration__text__checklist dk">
                 <li>SPEAKERS INTERNACIONALES</li>
-                <li>WORKSHOPS Y NETWORKING</li>
-                <li>REGALOS Y PREMIOS</li>
+                <li>HERRAMIENTAS Y RECURSOS</li>
+                <li>CONFERENCIAS ON-DEMAND</li>
             </ul>
         </div>
         <!-- Form -->
@@ -23,12 +23,11 @@
         <div class="hero-registration__text emms__fade-in mb">
             <ul class="hero-registration__text__checklist">
                 <li>SPEAKERS INTERNACIONALES</li>
-                <li>WORKSHOPS Y NETWORKING</li>
-                <li>REGALOS Y PREMIOS</li>
+                <li>HERRAMIENTAS Y RECURSOS</li>
+                <li>CONFERENCIAS ON-DEMAND</li>
             </ul>
         </div>
     </div>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
 </section>
-

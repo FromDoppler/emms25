@@ -11,4 +11,4 @@
         </form>
     </div>
 </div>
-<script type="module" src="components/ecommerce/during/ecommerce/certificate/certificateModal.js"></script>
+<script type="module" src="components/ecommerce/during/ecommerce/certificate/certificateModal.js?version=<?= VERSION ?>"></script>

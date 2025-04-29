@@ -12,6 +12,5 @@ $speakerId = $speaker['id'] . ($isMobile ? '-mobile' : '');
 
     <!-- Información del speaker -->
     <?php render_speaker_info($speaker,  $isRegistered); ?>
-    <!-- CTA -->
-    <?php render_speaker_button($speaker,  $isRegistered); ?>
+
 </div>

@@ -36,7 +36,7 @@ function getExposeButtonDataRegistered($speaker)
     $exposes = $speaker['exposes'];
 
 
-    if (empty($speaker['youtube'])) {
+    if (empty($speaker['youtube']) && $exposes !== 'workshop') {
         return [
             'text' => 'VIDEO PRONTO DISPONIBLE',
             'href' => '#',
