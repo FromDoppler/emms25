@@ -1,6 +1,20 @@
 <?php
 $videos = [
     [
+        "title" => "Internacionalización vía Marketplaces: de local a global, sin complicaciones",
+        "img" => "/src/img/conferences25/portada-eude.png",
+        "link" => "https://youtu.be/6F-Csb3nuIA",
+        "logo" => "/src/img/conferences25/logos/eude-logo.png",
+        "altLogo" => "EUDE Logo"
+    ],
+    [
+        "title" => "Claves para posicionar tu marca en Mercado Libre y vender más",
+        "img" => "/src/img/conferences25/portada-impulsate.png",
+        "link" => "https://youtu.be/O4RGSiO68jI",
+        "logo" => "/src/img/conferences25/logos/impulsate-logo.png",
+        "altLogo" => "Impulsate Logo"
+    ],
+    [
         "title" => "Logística de Ecommerce
 el eslabón clave de la recompra orgánica",
         "img" => "/src/img/conferences24/portada-capsula-quintino-min.png",
