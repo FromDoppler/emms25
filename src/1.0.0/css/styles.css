@@ -35,6 +35,7 @@
 @import 'components/benefits-carousel.css';
 @import 'components/schedule/scheduleIndex.css';
 @import 'components/info-banner/info-banner.css';
+@import 'components/ecommerce/speaker-interna/event-recorded.css';
 
 /* Pages */
 @import 'pages/ecommerce.css';
