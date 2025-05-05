@@ -19,9 +19,9 @@
                                 <li><b>Cuenta gratuita en Doppler durante 6 meses en planes de hasta 5.000 contactos, solo para nuevos usuarios. </b> Te enviaremos por Email este beneficio.</li>
                                 <li><b>Workshops prácticos.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
                                 <li><b>Sesiones de Networking.</b> Se desarrollarán en vivo el 28 y 29 de abril, después de las conferencias gratuitas.</li>
-                                <li class="li--short-margin">Acceso de por vida a los Workshops.</li>
-                                <li class="li--short-margin">Certificado de asistencia a Workshops.</li>
-                                <li class="li--short-margin">Más guías con herramientas y tips exclusivos.</li>
+                                <li>Acceso de por vida a los Workshops.</li>
+                                <li>Certificado de asistencia a Workshops.</li>
+                                <li>Más guías con herramientas y tips exclusivos.</li>
                             </ul>
                         </div>
                         <div class="emms__checkout__card__aside">

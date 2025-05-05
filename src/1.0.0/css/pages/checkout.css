@@ -112,18 +112,12 @@
 
 .emms__checkout__card__main__list li {
     font-size: 16px;
-    line-height: 17px;
+    line-height: 24px;
     font-weight: 500;
     position: relative;
-    padding: 0 0 0 35px;
-    margin: 0 0 31px 0;
-    height: 24px;
+    padding-left: 35px;
+    margin-bottom: 20px;
     color: #333333;
-}
-
-
-.emms__checkout__card__main__list li.li--short-margin {
-    margin-bottom: 5px;
 }
 
 .emms__checkout__card__main__list li::before {
@@ -136,6 +130,7 @@
     background: url("../../../img/icons/icon-check--purple.svg") no-repeat;
     background-size: contain;
 }
+
 
 .emms__checkout__card__aside {
     border: solid 1px #808080;
@@ -226,11 +221,7 @@
     }
 
     .emms__checkout__card__main__list li {
-        margin: 0 0 135px 0;
-    }
-
-    .emms__checkout__card__main__list li.li--short-margin {
-        margin-bottom: 54px;
+        margin-bottom: 24px;
     }
 
     .emms__checkout__card__aside table {
