@@ -1,6 +1,13 @@
 <?php
 $videos = [
     [
+        "title" => "Inteligencia Artificial aplicada a E-commerce: todo lo que necesitas saber en 2025",
+        "img" => "/src/img/conferences25/portada-partnersacademy.png",
+        "link" => "https://youtu.be/q7c1NopFjko",
+        "logo" => "/src/img/conferences25/logos/partnersacademy-logo.png",
+        "altLogo" => "Partners Academy Logo"
+    ],
+    [
         "title" => "Internacionalización vía Marketplaces: de local a global, sin complicaciones",
         "img" => "/src/img/conferences25/portada-eude.png",
         "link" => "https://youtu.be/6F-Csb3nuIA",
@@ -8,7 +15,7 @@ $videos = [
         "altLogo" => "EUDE Logo"
     ],
     [
-        "title" => "Claves para posicionar tu marca en Mercado Libre y vender más",
+        "title" => "Conoce las claves para posicionar tu marca en Mercado Libre y vender más",
         "img" => "/src/img/conferences25/portada-impulsate.png",
         "link" => "https://youtu.be/O4RGSiO68jI",
         "logo" => "/src/img/conferences25/logos/impulsate-logo.png",
