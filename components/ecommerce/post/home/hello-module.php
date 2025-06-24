@@ -5,7 +5,7 @@
 $contents = [
     '/' => [
         'subheading' => '¡MÁS DE 20.000 PERSONAS ELIGIERON ESTE EVENTO!',
-        'heading' => '¡Capacítate gratis con <br> el EMMS E-commerce 2025!',
+        'heading' => '&iexcl;Capacítate gratis con <br> el EMMS E-commerce 2025!',
         'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Regístrate gratis para acceder a las conferencias! </a> ',
         'ecommerceUrl' => '/ecommerce',
     ],
@@ -19,12 +19,11 @@ a miles de personas en Latinoamérica y España. Capacítate sin costo sobre las
     ],
     '/*' => [
         'subheading' => '¡MÁS DE 20.000 PERSONAS ELIGIERON ESTE EVENTO!',
-        'heading' => '¡Capacítate gratis con <br> el EMMS E-commerce 2025!',
+        'heading' => '&iexcl;Capacítate gratis con <br> el EMMS E-commerce 2025!',
         'body' => 'Te damos la bienvenida al evento de comercio electrónico que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y con los mejores speakers internacionales. <a href="/ecommerce">¡Regístrate gratis para acceder a las conferencias! </a> ',
         'ecommerceUrl' => '/ecommerce',
     ],
 ];
-
 
 
 
