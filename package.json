@@ -7,12 +7,11 @@
         "fix-format": "npm run prettier-fix && npm run eclint-fix",
         "eclint-fix": "eclint fix",
         "eclint-check": "eclint check",
-        "prettier-fix": "prettier --write \"**/*.{js,html,css,json,md,php}\"",
-        "prettier-check": "prettier --check \"**/*.{js,html,css,json,md,php}\""
+        "prettier-fix": "prettier --write \"**/*.{html,css,scss,less,js,ts,md,yml,yaml,json}\"",
+        "prettier-check": "prettier --check \"**/*.{html,css,scss,less,js,ts,md,yml,yaml,json}\""
     },
     "devDependencies": {
         "prettier": "^3.3.3",
-        "@prettier/plugin-php": "^0.22.2",
         "eclint": "^2.8.1"
     }
 }
