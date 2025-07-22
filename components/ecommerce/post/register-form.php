@@ -3,7 +3,7 @@
 
         <div class="hero-registration__text emms__fade-in">
             <h1><em>REVIVE EL EVENTO GRATUITO</em> !Capacítate gratis</span> con el EMMS <br> E-commerce 2025!</h1>
-            <p>Disfruta del evento más importante que reúne speakers internacionales de las empresas más importantes de Latam y España. ¡Inspírate y capacítate gratis junto a líderes de la industria!
+            <p>Disfruta del evento que reúne speakers internacionales de las empresas más importantes de Latam y España. ¡Inspírate y capacítate gratis junto a líderes de la industria!
             </p>
             <ul class="hero-registration__text__checklist dk">
                 <li>SPEAKERS INTERNACIONALES</li>
