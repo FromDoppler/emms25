@@ -18,12 +18,11 @@
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: #33AD73;
+    color: #33ad73;
 }
 .companies .companies__body a:hover {
     opacity: 0.5;
 }
-
 
 .companies .emms__container--lg {
     max-width: 1260px;
@@ -35,7 +34,7 @@
     font-weight: 700;
     color: #333333;
     margin: 0 0 52px 0;
-    animation-delay: .1s;
+    animation-delay: 0.1s;
 }
 
 .companies h3 {
@@ -43,14 +42,14 @@
     line-height: 26px;
     font-weight: 700;
     color: #333333;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .companies .companies-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
 
 .companies .companies-list .companies-list__item {
@@ -74,13 +73,13 @@
     color: #333333;
     margin: 40px 0 0 0;
     display: block;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
     margin-bottom: 10px;
 }
 
 .companies small a {
     font-weight: 700;
-    color: #33AD73;
+    color: #33ad73;
 }
 
 .companies small a:hover {
@@ -112,11 +111,11 @@
 
 .companies.companies--categories .emms__cta {
     background: rgba(51, 173, 115, 0.2);
-    border: 1px solid #33AD73;
+    border: 1px solid #33ad73;
     border-radius: 100px;
     font-size: 16px;
     line-height: 20px;
-    color: #33AD73;
+    color: #33ad73;
     font-weight: bold;
     margin-top: 40px;
 }
@@ -128,12 +127,9 @@
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .companies .companies-list .companies-list__item,
     .companies .companies-list.companies-list--lg .companies-list__item {
         height: 40px;
     }
-
 }

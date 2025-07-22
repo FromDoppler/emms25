@@ -2,12 +2,11 @@
     padding: 80px 0 120px 0;
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__plans {
         padding: 40px 0 80px 0;
     }
 }
-
 
 /* Title */
 
@@ -20,7 +19,7 @@
     text-align: center;
     max-width: 840px;
     width: 100%;
-    margin: 0 auto 60px
+    margin: 0 auto 60px;
 }
 
 .emms__plans__title h2 {
@@ -43,7 +42,6 @@
 .emms__plans__title.emms__plans__title--live p {
     max-width: 701px;
 }
-
 
 /* Cards */
 
@@ -81,11 +79,11 @@
 }
 
 .emms__plans__card--free .emms__plans__card__head__top {
-    background: #7D04F6;
+    background: #7d04f6;
 }
 
 .emms__plans__card--vip .emms__plans__card__head__top {
-    background: linear-gradient(90deg, #9b6612, #D29E4A, #9b6612);
+    background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
 }
 
 .emms__plans__card__head__price {
@@ -110,12 +108,14 @@
     font-size: 20px;
     line-height: 1;
     font-weight: 700;
-    color: #7D04F6;
+    color: #7d04f6;
     max-width: 200px;
     margin: 0 auto 20px;
 }
 
-.emms__plans__card__head__price p.emms__plans__card__head__price__discount span {
+.emms__plans__card__head__price
+    p.emms__plans__card__head__price__discount
+    span {
     font-size: 12px;
     line-height: 14px;
     font-weight: 400;
@@ -204,7 +204,6 @@
     background: url("../../../img/icons/icon-exclude.svg") no-repeat;
 }
 
-
 .emms__plans__card__main ul li a {
     font-weight: 700;
     color: #008046;
@@ -215,8 +214,7 @@
     text-decoration: underline;
 }
 
-
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__plans__card__main ul {
         width: 100%;
     }

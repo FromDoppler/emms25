@@ -20,14 +20,12 @@
     }
 }
 
-
 /* ========== Carousel Layout ========== */
 
 .speaker-carousel .carousel-cell {
     width: 85%;
     margin: 0 35px;
 }
-
 
 /* ========== Carousel Arrows ========== */
 
@@ -42,7 +40,6 @@
         display: block;
     }
 }
-
 
 /* Estilo flecha izquierda */
 .speaker-carousel .flickity-prev-next-button.previous {

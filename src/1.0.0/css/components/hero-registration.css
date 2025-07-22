@@ -16,7 +16,7 @@
 .hero-registration .hero-registration__text {
     width: 48%;
     color: #fff;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .hero-registration .hero-registration__text a {
@@ -24,7 +24,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 25px;
-    color: #BD7AFF;
+    color: #bd7aff;
     transition: all 0.2s ease-in-out;
 }
 
@@ -53,9 +53,11 @@
     letter-spacing: -1px;
 }
 
-
 .hero-registration .hero-registration__text h1 em,
-.hero-registration .hero-registration__text.hero-registration__text--live h2 em {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h2
+    em {
     font-size: 14px;
     line-height: 20px;
     font-style: normal;
@@ -72,7 +74,7 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.5px;
-    color: #79F66E;
+    color: #79f66e;
 }
 
 @media screen and (max-width: 768px) {
@@ -82,44 +84,63 @@
     }
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h1 span {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h1
+    span {
     margin-bottom: 40px;
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h1 span:nth-child(1) {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h1
+    span:nth-child(1) {
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
     line-height: 32px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h1 span:nth-child(2) {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h1
+    span:nth-child(2) {
     font-style: normal;
     font-weight: 800;
     font-size: 72px;
     line-height: 32px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h1 span:nth-child(3) {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h1
+    span:nth-child(3) {
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
     line-height: 32px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h1 span:nth-child(4) {
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h1
+    span:nth-child(4) {
     font-style: normal;
     font-weight: 300;
     font-size: 129px;
     line-height: 101px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.hero-registration .hero-registration__text.hero-registration__text--live h2 em span {
-    color: #79F66E;
+.hero-registration
+    .hero-registration__text.hero-registration__text--live
+    h2
+    em
+    span {
+    color: #79f66e;
     display: inline-block;
 }
 
@@ -134,9 +155,8 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.5px;
-    color: #79F66E;
+    color: #79f66e;
 }
-
 
 .hero-registration .hero-registration__text h1 span.top {
     font-size: 106px;
@@ -156,12 +176,17 @@
     max-width: 330px;
 }
 
-.hero-registration .hero-registration__text .hero-registration__text__checklist {
+.hero-registration
+    .hero-registration__text
+    .hero-registration__text__checklist {
     max-width: 380px;
     margin: 30px 0 0 0;
 }
 
-.hero-registration .hero-registration__text .hero-registration__text__checklist li {
+.hero-registration
+    .hero-registration__text
+    .hero-registration__text__checklist
+    li {
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 10px 0;
@@ -169,11 +194,17 @@
     position: relative;
 }
 
-.hero-registration .hero-registration__text .hero-registration__text__checklist li:last-child {
+.hero-registration
+    .hero-registration__text
+    .hero-registration__text__checklist
+    li:last-child {
     margin: 0;
 }
 
-.hero-registration .hero-registration__text .hero-registration__text__checklist li::before {
+.hero-registration
+    .hero-registration__text
+    .hero-registration__text__checklist
+    li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -188,7 +219,9 @@
     margin: 32px 0 0 0;
 }
 
-.hero-registration .hero-registration__text .hero-registration__text__strong__icon {
+.hero-registration
+    .hero-registration__text
+    .hero-registration__text__strong__icon {
     width: 48px;
     height: 48px;
     background: url("../../../img/icons/icon-arrow--white.svg") no-repeat;
@@ -213,17 +246,25 @@
 
 /* Center checklist in desktop */
 
-@media(min-width:992px) {
-    .hero-registration .hero-registration__text .hero-registration__text__checklist.checklist--center {
+@media (min-width: 992px) {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist.checklist--center {
         display: flex;
         justify-content: space-between;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist.checklist--center li {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist.checklist--center
+        li {
         padding: 48px 0 0 0px;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist.checklist--center li::before {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist.checklist--center
+        li::before {
         left: 50%;
         transform: translateX(-50%);
         width: 30px;
@@ -231,11 +272,10 @@
     }
 }
 
-
 .hero-registration .hero-registration__form {
     max-width: 530px;
     width: 50%;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
 .hero-registration__bottom {
@@ -245,14 +285,14 @@
     overflow: hidden;
     width: 100%;
     padding: 10px 0;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
 .hero-registration__bottom p {
     font-size: 22px;
     line-height: 20px;
     font-weight: 700;
-    color: #EF2AAC;
+    color: #ef2aac;
     white-space: nowrap;
     margin: 0 5px 0 0;
     animation: text-bottom 20s;
@@ -262,11 +302,11 @@
 
 @keyframes text-bottom {
     0% {
-        transform: translateX(0%)
+        transform: translateX(0%);
     }
 
     100% {
-        transform: translateX(-100%)
+        transform: translateX(-100%);
     }
 }
 
@@ -285,18 +325,18 @@
     height: 20px;
 }
 
-
 /* Registered */
 
 .hero-registration--registered {
     text-align: center;
-    background: #310E44;
+    background: #310e44;
     padding: 190px 0 200px 0;
     position: relative;
 }
 
 .hero-registration--registered.hero-registration--registered-post {
-    background: url("../../../img/backgrounds/bg-ecommerce.png") #0B0627 no-repeat;
+    background: url("../../../img/backgrounds/bg-ecommerce.png") #0b0627
+        no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -315,8 +355,8 @@
     font-size: 56px;
     line-height: 63px;
     font-weight: 700;
-    color: #FFFFFF;
-    animation-delay: .1s;
+    color: #ffffff;
+    animation-delay: 0.1s;
     max-width: 856px;
     margin: 0 auto;
 }
@@ -330,7 +370,7 @@
     font-size: 21px;
     line-height: 23px;
     text-align: center;
-    color: #79F66E;
+    color: #79f66e;
 }
 
 .hero-registration--registered.hero-registration--withoutform h1 em {
@@ -338,7 +378,7 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.5px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .hero-registration--registered p {
@@ -346,12 +386,12 @@
     line-height: 28px;
     color: #fff;
     margin: 30px 0 0 0;
-    animation-delay: .5s;
+    animation-delay: 0.5s;
 }
 
 .hero-registration--registered p a {
     font-weight: 700;
-    color: #33AD73;
+    color: #33ad73;
 }
 
 .hero-registration--registered p a:hover {
@@ -366,15 +406,15 @@
     font-weight: 700;
     display: block;
     cursor: pointer;
-    transition-duration: .2s;
-    animation-delay: .7s;
+    transition-duration: 0.2s;
+    animation-delay: 0.7s;
 }
 
 .hero-registration--registered .hero-registration__add-event span {
     font-size: 16px;
     line-height: 20px;
     color: #fff;
-    background: linear-gradient(-140deg, #7D04F6 50%, #F604CF 120%);
+    background: linear-gradient(-140deg, #7d04f6 50%, #f604cf 120%);
     display: block;
     padding: 20px 0;
     border-radius: 100px;
@@ -397,19 +437,16 @@
 
 .hero-registration--registered .emms__cta {
     margin: 40px 0 0 0;
-    animation-delay: .6s;
+    animation-delay: 0.6s;
 }
 
 .hero-registration--registered #emmsCounter {
-    animation-delay: .8s;
+    animation-delay: 0.8s;
 }
-
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .hero-registration {
         padding: 82px 0 88px 0;
     }
@@ -438,21 +475,32 @@
         margin: 16px auto 0 auto;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist {
         margin: 30px auto 0 auto;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist li {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist
+        li {
         margin: 0;
         padding: 10px 0;
-        border-bottom: solid 1px #BD7AFF;
+        border-bottom: solid 1px #bd7aff;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist li:last-child {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist
+        li:last-child {
         border-bottom: none;
     }
 
-    .hero-registration .hero-registration__text .hero-registration__text__checklist li::before {
+    .hero-registration
+        .hero-registration__text
+        .hero-registration__text__checklist
+        li::before {
         display: none;
     }
 
@@ -460,11 +508,9 @@
         max-width: initial;
         width: 100%;
     }
-
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .hero-registration .hero-registration__text h1 {
         font-size: 34px;
         line-height: 0.9;
@@ -499,14 +545,11 @@
     .hero-registration--registered .hero-registration__add-event span {
         font-size: 12px;
     }
-
 }
-
 
 /* ------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- WITHOUT FORM ------------------------------------- */
 /* ------------------------------------------------------------------------------------------- */
-
 
 .hero-registration.hero-registration--noform {
     padding: 220px 0 158px 0;
@@ -521,17 +564,21 @@
 
 .hero-registration.hero-registration--noform .hero-registration__text p a {
     font-weight: 700;
-    color: #33AD73;
+    color: #33ad73;
 }
 
-.hero-registration.hero-registration--noform .hero-registration__text p a:hover {
+.hero-registration.hero-registration--noform
+    .hero-registration__text
+    p
+    a:hover {
     text-decoration: underline;
 }
 
-.hero-registration.hero-registration--noform .hero-registration__text .emms__cta {
+.hero-registration.hero-registration--noform
+    .hero-registration__text
+    .emms__cta {
     margin: 45px 0 0 0;
 }
-
 
 /* ------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- BACK VIDEO ------------------------------------- */
@@ -566,10 +613,16 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 2.95%, rgba(0, 0, 0, 0.70) 41.28%, rgba(0, 0, 0, 0.70) 65.59%, rgba(0, 0, 0, 0.00) 99.93%);
+    background: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0) 2.95%,
+        rgba(0, 0, 0, 0.7) 41.28%,
+        rgba(0, 0, 0, 0.7) 65.59%,
+        rgba(0, 0, 0, 0) 99.93%
+    );
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .hero-registration.hero-registration--video {
         padding: 100px 0 88px 0;
     }
@@ -580,16 +633,15 @@
     }
 }
 
-
 /* ------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- POST ------------------------------------- */
 /* ------------------------------------------------------------------------------------------- */
 
-
 .hero-registration--registered.hero-registration--registered--post {
-    background: #1C0329;
+    background: #1c0329;
 }
 
-.hero-registration--registered.hero-registration--registered--post .emms__calendar__list {
+.hero-registration--registered.hero-registration--registered--post
+    .emms__calendar__list {
     margin: 80px auto 0 auto;
 }

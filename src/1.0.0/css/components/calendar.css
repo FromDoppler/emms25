@@ -1,6 +1,6 @@
 .emms__calendar {
     padding: 90px 0 120px 0;
-    background: linear-gradient(#0b0c23, #1B245B);
+    background: linear-gradient(#0b0c23, #1b245b);
 }
 
 .emms__calendar .emms__calendar-title {
@@ -9,12 +9,16 @@
     font-size: 16px;
     line-height: 18px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-
 .ecommerce-logueado--during .emms__calendar.emms__calendar--live {
-    background: linear-gradient(1deg, #0C0E25 0%, #0D102A 54.45%, #1B245B 94.04%);
+    background: linear-gradient(
+        1deg,
+        #0c0e25 0%,
+        #0d102a 54.45%,
+        #1b245b 94.04%
+    );
 }
 
 .ecommerce-logueado--post .emms__calendar.emms__calendar--post .emms__cta {
@@ -23,12 +27,16 @@
 
 .ecommerce-logueado--post .emms__calendar.emms__calendar--post,
 .emms__calendar.emms__calendar--post {
-    background: linear-gradient(1deg, #0C0E25 0%, #0D102A 54.45%, #1B245B 94.04%);
+    background: linear-gradient(
+        1deg,
+        #0c0e25 0%,
+        #0d102a 54.45%,
+        #1b245b 94.04%
+    );
     text-align: center;
-
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__calendar {
         padding: 54px 0 100px 0;
     }
@@ -39,28 +47,26 @@
     width: 95%;
 }
 
-
-
 /* Title */
 
 .emms__calendar__title {
     max-width: 883px;
     margin: 0 auto 60px;
     text-align: center;
-    animation-delay: .1s;
+    animation-delay: 0.1s;
 }
 
 .emms__calendar__title a {
     font-size: 16px;
     font-weight: 600;
     font-style: italic;
-    color: #BD7AFF;
+    color: #bd7aff;
     display: inline-block;
 }
 
 .emms__calendar__title a:hover {
     text-decoration: underline;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__title h2 {
@@ -83,10 +89,10 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    color: #BD7AFF;
+    color: #bd7aff;
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__calendar__title h2 {
         font-size: 25px;
         line-height: 29px;
@@ -96,9 +102,7 @@
         font-size: 16px;
         line-height: 20px;
     }
-
 }
-
 
 /* Tabs */
 
@@ -106,7 +110,6 @@
     display: flex;
     border-bottom: solid 2px #fff;
 }
-
 
 .emms__calendar__tab {
     font-size: 30px;
@@ -127,15 +130,13 @@
 .emms__calendar__tab[aria-selected="true"] {
     color: #ffffff;
     border-radius: 8px 8px 0px 0px;
-    background-color: #BD7AFF;
+    background-color: #bd7aff;
 }
-
 
 .emms__calendar__tab[aria-selected="false"] {
     color: #ffffff;
     border-radius: 8px 8px 0px 0px;
     background-color: rgba(217, 217, 217, 0.5);
-    ;
 }
 
 .emms__calendar__tab[aria-selected="true"]::after {
@@ -146,10 +147,10 @@
     width: 100%;
     height: 6px;
     border-radius: 100px;
-    background: #BD7AFF;
+    background: #bd7aff;
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__calendar__tab {
         font-size: 16px;
         padding: 8px 0 8px 0;
@@ -158,15 +159,13 @@
     }
 }
 
-
-
 /* Date */
 
 .emms__calendar__date {
     width: 100%;
     position: relative;
     margin: 50px 0 0 0;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__calendar__date__country {
@@ -179,9 +178,11 @@
     line-height: 44px;
     text-align: center;
     letter-spacing: -1px;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0;
-    animation: fadeIn 2s ease-in forwards, pulse 2s ease-in-out 2s infinite;
+    animation:
+        fadeIn 2s ease-in forwards,
+        pulse 2s ease-in-out 2s infinite;
 }
 
 @keyframes fadeIn {
@@ -219,11 +220,25 @@
 
 @keyframes glow {
     0% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7D04F6, 0 0 40px #7D04F6, 0 0 50px #7D04F6, 0 0 60px #7D04F6, 0 0 70px #7D04F6;
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #7d04f6,
+            0 0 40px #7d04f6,
+            0 0 50px #7d04f6,
+            0 0 60px #7d04f6,
+            0 0 70px #7d04f6;
     }
 
     100% {
-        text-shadow: 0 0 20px #fff, 0 0 30px #7D04F6, 0 0 40px #7D04F6, 0 0 50px #7D04F6, 0 0 60px #7D04F6, 0 0 70px #7D04F6, 0 0 80px #7D04F6;
+        text-shadow:
+            0 0 20px #fff,
+            0 0 30px #7d04f6,
+            0 0 40px #7d04f6,
+            0 0 50px #7d04f6,
+            0 0 60px #7d04f6,
+            0 0 70px #7d04f6,
+            0 0 80px #7d04f6;
     }
 }
 
@@ -235,7 +250,7 @@
     text-align: center;
     letter-spacing: -1px;
     margin: 0 auto;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -245,7 +260,7 @@
     font-size: 20px;
     line-height: 22px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -275,24 +290,23 @@
     font-size: 16px;
     font-weight: 600;
     font-style: italic;
-    color: #BD7AFF;
+    color: #bd7aff;
     display: inline-block;
 }
 
 .emms__calendar__date__country a:hover {
     text-decoration: underline;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__date__conferences-add p {
     font-size: 16px;
     font-weight: 700;
-    color: #BD7AFF;
+    color: #bd7aff;
     margin: 0;
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__calendar__date {
         display: block;
         padding: 0;
@@ -320,14 +334,13 @@
     }
 }
 
-
 /* List */
 
 .emms__calendar__list {
     display: flex;
     flex-wrap: wrap;
     margin: 45px auto 0 auto;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__calendar__list--mb {
@@ -360,20 +373,20 @@
 }
 
 .emms__calendar__list__item__card__label--free {
-    background: #7D04F6;
+    background: #7d04f6;
 }
 
 .emms__calendar__list__item__card__label--success-story {
-    background: #DF24C1;
+    background: #df24c1;
     color: #fff;
 }
 
 .emms__calendar__list__item__card__label--vip {
-    background: linear-gradient(90deg, #9b6612, #D29E4A, #9b6612);
+    background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
 }
 
 .emms__calendar__list__item__card__label--successful-case {
-    background: #54C4EC;
+    background: #54c4ec;
 }
 
 .emms__calendar__list__item__card__label p {
@@ -420,7 +433,6 @@
     max-height: 85px;
 }
 
-
 .emms__calendar__list__item__card__speaker__image img {
     width: 100%;
     height: 100%;
@@ -464,13 +476,16 @@
     display: block;
 }
 
-.emms__calendar__list__item__card__speaker__text ul li a:not(.emms__calendar__list__item__card__btn-bio-hide) {
+.emms__calendar__list__item__card__speaker__text
+    ul
+    li
+    a:not(.emms__calendar__list__item__card__btn-bio-hide) {
     height: 100%;
 }
 
 .emms__calendar__list__item__card__speaker__text ul li a:hover {
-    opacity: .7;
-    transition-duration: .2s;
+    opacity: 0.7;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__card__speaker__text ul li a img {
@@ -486,7 +501,6 @@
     position: relative;
 }
 
-
 .emms__calendar__list__item__card__description .emms__cta.speaker-button,
 .emms__calendar__list__item__card__description .emms__cta.hidden--vip {
     margin-top: 15px;
@@ -497,8 +511,7 @@
     left: 19px;
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__calendar__list__item__card__description .emms__cta.speaker-button,
     .emms__calendar__list__item__card__description .emms__cta.hidden--vip {
         max-width: unset;
@@ -543,7 +556,6 @@
     background-size: contain;
 }
 
-
 .emms__calendar__list__item__card__description h3.title-workshop::before {
     background: url("../../../img/icons/icon-pencil.svg") no-repeat;
     background-size: contain;
@@ -568,8 +580,7 @@
     margin: 0;
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__calendar__list__item__card__description {
         max-height: 700px;
     }
@@ -580,7 +591,6 @@
         bottom: unset;
     }
 }
-
 
 .emms__calendar__list__item__card__business {
     height: 60px;
@@ -632,7 +642,7 @@
 }
 
 .emms__calendar__list__item__card__business.vip {
-    background: linear-gradient(90deg, #9b6612, #D29E4A, #9b6612);
+    background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
 }
 
 .emms__calendar__list__item__card__business img {
@@ -648,26 +658,26 @@
     color: #008046;
     text-transform: uppercase;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__card__btn-bio:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__card__btn-conference {
     font-size: 13px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #33AD73;
+    color: #33ad73;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__card__btn-conference:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__card__bio {
@@ -701,15 +711,19 @@
     }
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label--free {
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label--free {
     background: #fff;
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label--vip {
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label--vip {
     background: #fff;
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label p {
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label
+    p {
     font-size: 20px;
     line-height: 37px;
     font-weight: 700;
@@ -717,16 +731,21 @@
     text-transform: uppercase;
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label--free p {
-    color: #7D04F6;
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label--free
+    p {
+    color: #7d04f6;
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label--success-story {
-    color: #DF24C1;
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label--success-story {
+    color: #df24c1;
 }
 
-.emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label--vip p {
-    color: #D29E4A;
+.emms__calendar__list__item__card__bio
+    .emms__calendar__list__item__card__label--vip
+    p {
+    color: #d29e4a;
 }
 
 .emms__calendar__list__item__card__bio__content {
@@ -738,19 +757,19 @@
 }
 
 .emms__calendar__list__item__card__bio__content--free {
-    background: #7D04F6;
+    background: #7d04f6;
 }
 
 .emms__calendar__list__item__card__bio__content--success-story {
-    color: #DF24C1;
+    color: #df24c1;
 }
-
 
 .emms__calendar__list__item__card__bio__content--vip {
-    background: #D29E4A;
+    background: #d29e4a;
 }
 
-.emms__calendar__list__item__card__bio__content .emms__calendar__list__item__card__speaker__image {
+.emms__calendar__list__item__card__bio__content
+    .emms__calendar__list__item__card__speaker__image {
     margin: 0 auto;
     box-shadow: 0px 0px 0 3px #fff;
 }
@@ -784,14 +803,14 @@
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     position: absolute;
     bottom: 22px;
     right: 20px;
 }
 
 .emms__calendar__list__item__card__bio a:hover {
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__calendar__list__item__country {
@@ -816,51 +835,60 @@
     font-size: 15px;
     font-weight: 500;
     font-style: italic;
-    color: #33AD73;
+    color: #33ad73;
 }
 
 .emms__calendar__list__item__country a:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
-
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__calendar__list__item__card__speaker__image--debate img {
         max-height: 59px;
         margin-top: 26px;
     }
-
 }
 
 /* Special Card */
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__speaker__image {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__speaker__image {
     width: 100%;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__business {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__business {
     justify-content: right;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__description h4 {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__description
+    h4 {
     font-size: 16px;
     font-weight: 700;
     color: #333333;
     margin: 0 0 10px 0;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__bio ul {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__bio
+    ul {
     padding: 5px 0 0 16px;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__bio ul li {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__bio
+    ul
+    li {
     position: relative;
     margin: 0 0 2px 0;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__bio ul li::before {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__bio
+    ul
+    li::before {
     content: "";
     position: absolute;
     left: -12px;
@@ -871,7 +899,11 @@
     background: #333333;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__bio ul li p {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__bio
+    ul
+    li
+    p {
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -879,13 +911,16 @@
     margin: 0 0 20px 0;
 }
 
-.emms__calendar__list__item.emms__calendar__list__item--special .emms__calendar__list__item__card__bio ul li p span {
+.emms__calendar__list__item.emms__calendar__list__item--special
+    .emms__calendar__list__item__card__bio
+    ul
+    li
+    p
+    span {
     font-weight: 400;
 }
 
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .emms__calendar__list--dk .emms__calendar__list__item {
         width: 50%;
     }
@@ -927,8 +962,7 @@
     }
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__calendar__list--dk .emms__calendar__list__item {
         max-width: 308px;
         width: 100%;
@@ -951,7 +985,9 @@
         margin: 0 0 16px 0;
     }
 
-    .emms__calendar__list__item__card__bio .emms__calendar__list__item__card__label p {
+    .emms__calendar__list__item__card__bio
+        .emms__calendar__list__item__card__label
+        p {
         font-size: 14px;
         line-height: 30px;
     }
@@ -973,7 +1009,6 @@
 
 /* Bottom */
 
-
 .emms__calendar__bottom {
     text-align: center;
     margin: 80px auto 0 auto;
@@ -990,7 +1025,7 @@
     padding: 20px 100px;
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__calendar__bottom .emms__cta {
         padding: 20px 25px;
     }

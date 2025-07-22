@@ -5,7 +5,7 @@ export const errorsRows = async () => {
     const errorsList = document.getElementById("errorsList");
     filteredErrors && filteredErrors.length
         ? filteredErrors.map(
-              (el, index) => (
+              (el, index) =>
                   (errorsList.querySelector("tbody").innerHTML += `
                 <tr key=${index}>
                     <td>
@@ -27,7 +27,6 @@ export const errorsRows = async () => {
                         <span> ${el.created_at} </span>
                     </td>
                 </tr> `)
-              )
           )
         : (errorsList.querySelector("tbody").innerHTML = `
             <tr>

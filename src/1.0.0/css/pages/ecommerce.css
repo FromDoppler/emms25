@@ -15,8 +15,7 @@
     background-position-x: center;
 }
 
-
-@media(max-width: 620px) {
+@media (max-width: 620px) {
     .ecommerce .hero-registration {
         background-size: cover;
     }
@@ -34,12 +33,11 @@
     height: 40px;
 }
 
-@media(max-width: 620px) {
+@media (max-width: 620px) {
     .ecommerce .emms__hellobar--counter .emms__counter {
         margin: 10px 0 0 0;
     }
 }
-
 
 /* Calendar */
 
@@ -50,7 +48,6 @@
 .ecommerce .emms__bg-dark-gradient {
     padding: 60px 0;
 }
-
 
 /* Logueado */
 
@@ -86,11 +83,11 @@
 
 .ecommerce-logueado .emms__calendar__title {
     max-width: 775px;
-    animation-delay: .6s;
+    animation-delay: 0.6s;
 }
 
 .ecommerce-logueado .emms__calendar__list {
-    animation-delay: .7s;
+    animation-delay: 0.7s;
 }
 
 .ecommerce-logueado .emms__calendar__bottom {
@@ -98,39 +95,35 @@
 }
 
 .ecommerce-logueado .emms__grid {
-    background: #0C0E25;
+    background: #0c0e25;
 }
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-@media(max-width:1480px) {
+@media (max-width: 1480px) {
     .ecommerce .emms__calendar .emms__background-c {
         display: none;
     }
 }
 
-
-@media(max-width:1100px) {
-
+@media (max-width: 1100px) {
     .ecommerce .emms__centralvideo .emms__background-b,
     .ecommerce .emms__centralvideo .emms__background-a {
         display: none;
     }
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .ecommerce .emms__calendar .emms__background-b {
         display: none;
     }
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .ecommerce .hero-registration--registered {
         background-position-x: right;
     }
 }
-
 
 /* ------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- DURING ------------------------------------------- */
@@ -149,14 +142,16 @@
 .ecommerce--during .hero-registration__text p.hero-registration__text__live {
     font-size: 16px;
     font-weight: 700;
-    color: #ED1E79;
+    color: #ed1e79;
     position: relative;
     padding: 0 0 0 28px;
     margin: 0 0 30px 0;
     display: none;
 }
 
-.ecommerce--during .hero-registration__text p.hero-registration__text__live::before {
+.ecommerce--during
+    .hero-registration__text
+    p.hero-registration__text__live::before {
     content: "";
     position: absolute;
     left: 0;
@@ -171,12 +166,13 @@
     padding: 220px 0 158px 0;
 }
 
-@media(max-width:992px) {
-    .ecommerce--during .hero-registration__text p.hero-registration__text__live {
+@media (max-width: 992px) {
+    .ecommerce--during
+        .hero-registration__text
+        p.hero-registration__text__live {
         display: inline-block;
     }
 }
-
 
 /* Logueado */
 
@@ -189,13 +185,11 @@
     transform: translate(-65%, 0%) rotate(180deg);
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .ecommerce-logueado--during .emms__premium-content .emms__background-a {
         display: none;
     }
 }
-
-
 
 /* ------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- POST ------------------------------------------- */
@@ -210,14 +204,16 @@
 .ecommerce--post .hero-registration__text p.hero-registration__text__live {
     font-size: 16px;
     font-weight: 700;
-    color: #ED1E79;
+    color: #ed1e79;
     position: relative;
     padding: 0 0 0 28px;
     margin: 0 0 30px 0;
     display: none;
 }
 
-.ecommerce--post .hero-registration__text p.hero-registration__text__live::before {
+.ecommerce--post
+    .hero-registration__text
+    p.hero-registration__text__live::before {
     content: "";
     position: absolute;
     left: 0;
@@ -232,17 +228,18 @@
     padding: 220px 0 158px 0;
 }
 
-.ecommerce--post .hero-registration.hero-registration--noform .hero-registration__text {
+.ecommerce--post
+    .hero-registration.hero-registration--noform
+    .hero-registration__text {
     max-width: 460px;
     width: 90%;
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .ecommerce--post .hero-registration__text p.hero-registration__text__live {
         display: inline-block;
     }
 }
-
 
 /* Logueado */
 
@@ -264,11 +261,17 @@
     line-height: 1;
 }
 
-.ecommerce-logueado--post .hero-registration--registered .emms__container--md h1 {
+.ecommerce-logueado--post
+    .hero-registration--registered
+    .emms__container--md
+    h1 {
     margin: 0 auto;
 }
 
-.ecommerce-logueado--post .hero-registration--registered .emms__container--md p {
+.ecommerce-logueado--post
+    .hero-registration--registered
+    .emms__container--md
+    p {
     margin: 30px auto 0 auto;
     line-height: 24px;
     max-width: 590px;
@@ -276,10 +279,10 @@
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .ecommerce-logueado--post .emms__premium-content .emms__background-a {
         display: none;
     }

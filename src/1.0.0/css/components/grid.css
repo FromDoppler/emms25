@@ -1,6 +1,6 @@
 .emms__grid {
     padding: 90px 0;
-    background: linear-gradient(180deg, #14092F 0%, #230966 94.04%);
+    background: linear-gradient(180deg, #14092f 0%, #230966 94.04%);
 }
 
 .emms__grid__title h2 {
@@ -22,7 +22,7 @@
 }
 
 .emms__grid .grid__footer strong {
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 700;
     font-size: 20px;
     line-height: 22px;
@@ -81,7 +81,7 @@
     font-size: 27px;
     line-height: 44px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 950px;
     margin: 0 auto;
 }
@@ -100,23 +100,21 @@
     padding: 20px 100px;
 }
 
-
 .emms__grid .footer__block p {
     font-weight: 700;
     font-size: 27px;
     line-height: 44px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .emms__grid.emms__grid--3 .emms__grid__content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__grid {
         padding: 60px 0;
     }

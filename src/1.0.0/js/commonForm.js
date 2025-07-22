@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import {
     customError,
@@ -6,71 +6,80 @@ import {
     submitFormFetch,
     submitWithoutForm,
     validateForm,
-} from './common/index.js';
-import { alreadyAccountListener, swichFormListener } from './common/switchForm.js';
-import { eventsType } from './enums/eventsType.enum.js';
+} from "./common/index.js";
+import {
+    alreadyAccountListener,
+    swichFormListener,
+} from "./common/switchForm.js";
+import { eventsType } from "./enums/eventsType.enum.js";
 
 const currentEvent = eventsType.ECOMMERCE;
-const form = document.getElementById('commonForm');
-const alreadyRegisterForm = document.querySelectorAll('.alreadyRegisterForm');
+const form = document.getElementById("commonForm");
+const alreadyRegisterForm = document.querySelectorAll(".alreadyRegisterForm");
 // const digitalTrendsBtns = document.querySelectorAll('.digitalTrendsBtn');
 
 const redirectToRegisteredPage = () => {
     const pathname = window.location.pathname;
-    let nextPage = '';
+    let nextPage = "";
     switch (pathname) {
-        case '/sponsors':
-            const slug = sessionStorage.getItem('currentSlug')
-            if(slug & slug != 'null'){
+        case "/sponsors":
+            const slug = sessionStorage.getItem("currentSlug");
+            if (slug & (slug != "null")) {
                 nextPage = `/sponsors-registrado?slug=${slug}`;
-            }else{
+            } else {
                 nextPage = `/sponsors-registrado`;
             }
             break;
-        case '/ecommerce':
-            nextPage = '/ecommerce-registrado';
+        case "/ecommerce":
+            nextPage = "/ecommerce-registrado";
             break;
-        case '/ediciones-anteriores':
-            nextPage = '/ediciones-anteriores-registrado';
+        case "/ediciones-anteriores":
+            nextPage = "/ediciones-anteriores-registrado";
             break;
         default:
-            nextPage = '/ecommerce-registrado';
+            nextPage = "/ecommerce-registrado";
             break;
     }
 
     window.location.href = getUrlWithParams(nextPage);
 };
 
-const handleSubmitForm = async (e) => {
+const handleSubmitForm = async e => {
     e.preventDefault();
 
     if (validateForm(form)) {
         try {
-            const { fetchResp: resp } = await submitFormFetch(form, currentEvent);
+            const { fetchResp: resp } = await submitFormFetch(
+                form,
+                currentEvent
+            );
             if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
             redirectToRegisteredPage();
         } catch (error) {
-            customError('Digital post error', error);
+            customError("Digital post error", error);
         }
     }
 };
 
-const handleSubmitWithoutForm = async (button) => {
-    button.classList.add('button--loading');
+const handleSubmitWithoutForm = async button => {
+    button.classList.add("button--loading");
     try {
-        const { fetchResp: resp} = await submitWithoutForm(currentEvent);
+        const { fetchResp: resp } = await submitWithoutForm(currentEvent);
         if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
         redirectToRegisteredPage();
     } catch (error) {
-        customError('Digital post error', error);
+        customError("Digital post error", error);
     } finally {
-        button.classList.remove('button--loading');
+        button.classList.remove("button--loading");
     }
 };
 
 const initializeEventListeners = () => {
     if (form) {
-        form.querySelector('button').addEventListener('click', handleSubmitForm);
+        form.querySelector("button").addEventListener(
+            "click",
+            handleSubmitForm
+        );
         swichFormListener(form);
     }
 
@@ -78,12 +87,11 @@ const initializeEventListeners = () => {
     //     btn.addEventListener('click', () => handleSubmitWithoutForm(btn))
     // );
 
-    alreadyRegisterForm.forEach((form) =>
-        form.addEventListener('click', () => handleSubmitWithoutForm(form))
+    alreadyRegisterForm.forEach(form =>
+        form.addEventListener("click", () => handleSubmitWithoutForm(form))
     );
 
     alreadyAccountListener();
 };
 
-document.addEventListener('DOMContentLoaded', initializeEventListeners);
-
+document.addEventListener("DOMContentLoaded", initializeEventListeners);

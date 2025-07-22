@@ -53,9 +53,8 @@
     border-radius: 20px;
 }
 
-
 .emms_switch__container__switch input:checked {
-    background: #BD7AFF;
+    background: #bd7aff;
 }
 
 .emms_switch__container__switch input:checked::before {
@@ -68,16 +67,18 @@
     transition: color 0.5s;
 }
 
-.emms_switch__container__switch input:checked+label {
+.emms_switch__container__switch input:checked + label {
     left: 10px;
     right: 172px;
     color: black;
     background: white;
-    transition: left 0.5s, right 0.4s 0.2s;
+    transition:
+        left 0.5s,
+        right 0.4s 0.2s;
 }
 
 .emms_switch__container__switch input:not(:checked) {
-    background: #BD7AFF;
+    background: #bd7aff;
     transition: background 0.5s -0.1s;
 }
 
@@ -91,11 +92,14 @@
     transition: color 0.5s 0.2s;
 }
 
-.emms_switch__container__switch input:not(:checked)+label {
+.emms_switch__container__switch input:not(:checked) + label {
     left: 130px;
     right: 10px;
     background: #fff;
-    transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+    transition:
+        left 0.4s 0.2s,
+        right 0.5s,
+        background 0.35s -0.1s;
 }
 
 .alreadyAccountForm h2 {
@@ -164,8 +168,8 @@ select {
     height: 33px;
     width: 100%;
     box-sizing: border-box;
-    border: solid 1px #B4B4B4;
-    background: #F5F2F2;
+    border: solid 1px #b4b4b4;
+    background: #f5f2f2;
     padding: 0 9px;
     font-size: 14px;
     color: #000;
@@ -173,11 +177,11 @@ select {
 }
 
 .emms__form__field-item input:focus {
-    border: solid 2px #FAB221;
+    border: solid 2px #fab221;
 }
 
 .emms__form__field-item input::placeholder {
-    color: #AFAFAF;
+    color: #afafaf;
 }
 
 .emms__form__field-group {
@@ -192,7 +196,7 @@ select {
     position: relative;
 }
 
-.emms__form__field-item__checkbox input[type=checkbox] {
+.emms__form__field-item__checkbox input[type="checkbox"] {
     cursor: pointer;
     position: absolute;
     width: 14px;
@@ -206,14 +210,14 @@ select {
     top: -3px;
     height: 16px;
     width: 16px;
-    border: 1px solid #B4B1A5;
+    border: 1px solid #b4b1a5;
     border-radius: 3px;
     background-color: #fff;
     pointer-events: none;
 }
 
 .emms__form__field-item__checkbox .checkmark::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 5px;
     top: 0;
@@ -226,12 +230,14 @@ select {
     transform: rotate(45deg);
 }
 
-.emms__form__field-item__checkbox input[type=checkbox]:checked~.checkmark {
+.emms__form__field-item__checkbox input[type="checkbox"]:checked ~ .checkmark {
     border-color: #33ad73;
     background-color: #33ad73;
 }
 
-.emms__form__field-item__checkbox input[type=checkbox]:checked~.checkmark::after {
+.emms__form__field-item__checkbox
+    input[type="checkbox"]:checked
+    ~ .checkmark::after {
     display: block;
     border-color: #fff;
 }
@@ -256,12 +262,12 @@ select {
     position: relative;
     padding: 0 0 0 10px;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__form__legal .emms__form__legal__btn:hover {
     color: #727272;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .emms__form__legal .emms__form__legal__btn::before {
@@ -301,11 +307,9 @@ select {
     transform: rotate(90deg);
 }
 
-
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__form {
         padding: 37px 28px;
         min-height: 418px;

@@ -11,7 +11,7 @@
     line-height: 42px;
     text-align: center;
     letter-spacing: -1px;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 700px;
     margin: 20px auto;
 }
@@ -21,7 +21,7 @@
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 580px;
     margin: 0 auto;
 }
@@ -32,7 +32,7 @@
     font-weight: 700;
     color: #fff;
     margin: 0 0 57px 0;
-    animation-delay: .1s;
+    animation-delay: 0.1s;
 }
 
 .speakers h4 {
@@ -53,7 +53,7 @@
     font-size: 20px;
     line-height: 22px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -63,9 +63,8 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
-
 
 .speakers small {
     font-size: 18px;
@@ -88,9 +87,8 @@
     line-height: 42px;
     text-align: center;
     letter-spacing: -1px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
-
 
 .speakers small a {
     color: #026c3c;
@@ -104,11 +102,10 @@
     margin: 36px 0 0 0;
 }
 
-
 /* List */
 
 .speakerslist {
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .speakerslist ul {
@@ -135,7 +132,7 @@
 .speakerslist__item {
     width: 20%;
     display: inline-block;
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .speakerslist__item__content {
@@ -196,7 +193,7 @@
     width: calc(100% + 10px);
     height: calc(100% + 10px);
     /* inset: -10px; */
-    background: linear-gradient(220deg, #7D04F6, #DF24C1, #79F66E);
+    background: linear-gradient(220deg, #7d04f6, #df24c1, #79f66e);
     border-radius: 20px;
     z-index: -1;
 }
@@ -205,18 +202,16 @@
     margin: -20px 0 14px 0;
 }
 
-
 /* --------------------------------------------------- Responsive --------------------------------------------------- */
 
-
-@media(max-width:1200px) {
+@media (max-width: 1200px) {
     .speakerslist {
         max-width: 970px;
         margin: 0 auto;
     }
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .speakerslist__item {
         width: 33%;
     }
@@ -226,9 +221,7 @@
     } */
 }
 
-@media(max-width:620px) {
-
-
+@media (max-width: 620px) {
     .speakers {
         text-align: center;
         padding: 80px 0;

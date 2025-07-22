@@ -1,11 +1,11 @@
-.emms__calendar__vip{
+.emms__calendar__vip {
     margin: 0 0 60px 0;
     padding: 55px 0 0 0;
-    background: #FDECFB;
+    background: #fdecfb;
     position: relative;
 }
 
-.emms__calendar__vip::before{
+.emms__calendar__vip::before {
     content: "";
     position: absolute;
     left: 0;
@@ -16,24 +16,25 @@
     background-size: contain;
 }
 
-.emms__calendar__vip::after{
+.emms__calendar__vip::after {
     content: "";
     position: absolute;
     right: 0;
     top: 200px;
     width: 164px;
     height: 164px;
-    background: url("../../../img/icons/icon-star-gradient--mirrored.png") no-repeat;
+    background: url("../../../img/icons/icon-star-gradient--mirrored.png")
+        no-repeat;
     background-size: contain;
 }
 
-.emms__calendar__vip__title{
+.emms__calendar__vip__title {
     margin: 0 auto 40px auto;
     max-width: 960px;
     width: 90%;
 }
 
-.emms__calendar__vip__title h4{
+.emms__calendar__vip__title h4 {
     font-size: 17px;
     line-height: 22px;
     font-weight: 700;
@@ -44,22 +45,22 @@
     justify-content: center;
 }
 
-.emms__calendar__vip__title h4 strong{
+.emms__calendar__vip__title h4 strong {
     font-weight: 800;
     margin: 0 0 0 5px;
 }
 
-.emms__calendar__vip__title h4 a{
+.emms__calendar__vip__title h4 a {
     color: #008046;
     margin: 0 0 0 5px;
     cursor: pointer;
 }
 
-.emms__calendar__vip__title h4 a:hover{
+.emms__calendar__vip__title h4 a:hover {
     text-decoration: underline;
 }
 
-.emms__calendar__vip__title p{
+.emms__calendar__vip__title p {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -68,15 +69,15 @@
     margin: 0 auto;
 }
 
-@media(max-width:1400px){
+@media (max-width: 1400px) {
     .emms__calendar__vip::before,
-    .emms__calendar__vip::after{
+    .emms__calendar__vip::after {
         display: none;
     }
 }
 
-@media(max-width:992px){
-    .emms__calendar__vip__title h4{
+@media (max-width: 992px) {
+    .emms__calendar__vip__title h4 {
         line-height: 28px;
         text-align: center;
         display: block;
@@ -85,22 +86,22 @@
 
 /* Full title */
 
-.emms__calendar__vip__title.full{
+.emms__calendar__vip__title.full {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.emms__calendar__vip__title.full h4{
+.emms__calendar__vip__title.full h4 {
     display: block;
 }
 
-.emms__calendar__vip__title.full h4 strong{
+.emms__calendar__vip__title.full h4 strong {
     display: block;
     margin: 0;
 }
 
-.emms__calendar__vip__title.full p{
+.emms__calendar__vip__title.full p {
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -108,16 +109,16 @@
     margin: 0;
 }
 
-.emms__calendar__vip__title.full p a{
+.emms__calendar__vip__title.full p a {
     color: #008046;
 }
 
-.emms__calendar__vip__title.full p a:hover{
+.emms__calendar__vip__title.full p a:hover {
     text-decoration: underline;
 }
 
-@media(max-width:992px){
-    .emms__calendar__vip__title.full{
+@media (max-width: 992px) {
+    .emms__calendar__vip__title.full {
         text-align: center;
         display: block;
     }
@@ -127,10 +128,9 @@
     }
 }
 
-
 /* ---------------------------------------- Cards -------------------------------------------------- */
 
-.emms__calendar__vip__card{
+.emms__calendar__vip__card {
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -144,12 +144,12 @@
     margin: 0 auto;
 }
 
-.emms__calendar__vip__card.emms__calendar__vip__card--large{
-    background: #E5CFE3;
+.emms__calendar__vip__card.emms__calendar__vip__card--large {
+    background: #e5cfe3;
     padding: 18px 0 18px 12px;
 }
 
-.emms__calendar__vip__card::before{
+.emms__calendar__vip__card::before {
     content: "";
     position: absolute;
     left: 0;
@@ -159,7 +159,7 @@
     background: #550871;
 }
 
-.emms__calendar__vip__card.emms__calendar__vip__card--large::before{
+.emms__calendar__vip__card.emms__calendar__vip__card--large::before {
     content: "";
     position: absolute;
     left: 0;
@@ -169,23 +169,23 @@
     background: #550871;
 }
 
-.emms__calendar__vip__card.emms__calendar__vip__card--large div{
+.emms__calendar__vip__card.emms__calendar__vip__card--large div {
     flex-basis: 33.3%;
     padding: 0 30px;
     box-sizing: border-box;
 }
 
-div.emms__calendar__vip__card__title{
+div.emms__calendar__vip__card__title {
     position: relative;
     padding: 0 0 0 62px;
 }
 
-.emms__calendar__vip__card--large div.emms__calendar__vip__card__title{
+.emms__calendar__vip__card--large div.emms__calendar__vip__card__title {
     position: relative;
     padding: 0 0 0 90px;
 }
 
-.emms__calendar__vip__card__title::before{
+.emms__calendar__vip__card__title::before {
     content: "";
     position: absolute;
     left: -10px;
@@ -197,18 +197,18 @@ div.emms__calendar__vip__card__title{
     background-size: contain;
 }
 
-.emms__calendar__vip__card--large .emms__calendar__vip__card__title::before{
+.emms__calendar__vip__card--large .emms__calendar__vip__card__title::before {
     left: 10px;
 }
 
-.emms__calendar__vip__card__title h5{
+.emms__calendar__vip__card__title h5 {
     font-size: 22px;
     font-weight: 700;
     line-height: 24px;
     color: #333;
 }
 
-.emms__calendar__vip__card__title h5 span{
+.emms__calendar__vip__card__title h5 span {
     font-size: 10px;
     font-weight: 500;
     line-height: 10px;
@@ -232,34 +232,35 @@ div.emms__calendar__vip__card__title{
     margin: 0;
 }
 
-.emms__calendar__vip__card__description p{
+.emms__calendar__vip__card__description p {
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
     color: #333;
 }
 
-.emms__calendar__vip__card div.emms__calendar__date__country{
+.emms__calendar__vip__card div.emms__calendar__date__country {
     text-align: left;
     padding: 0 0 0 25px;
 }
 
-.emms__calendar__vip__card div.emms__calendar__date__country a{
+.emms__calendar__vip__card div.emms__calendar__date__country a {
     font-size: 13px;
 }
 
-.emms__calendar__vip__card.emms__calendar__vip__card--large div.emms__calendar__date__country{
+.emms__calendar__vip__card.emms__calendar__vip__card--large
+    div.emms__calendar__date__country {
     text-align: left;
     padding: 0 30px 0 60px;
 }
 
-.emms__calendar__vip__card .emms__calendar__date__country span{
+.emms__calendar__vip__card .emms__calendar__date__country span {
     font-size: 15px;
     display: block;
     position: relative;
 }
 
-.emms__calendar__vip__card .emms__calendar__date__country span img{
+.emms__calendar__vip__card .emms__calendar__date__country span img {
     position: absolute;
     right: 100%;
     top: -1px;
@@ -267,29 +268,31 @@ div.emms__calendar__vip__card__title{
     height: 15px;
 }
 
-@media(max-width:992px){
-    .emms__calendar__vip__card.emms__calendar__vip__card--large{
+@media (max-width: 992px) {
+    .emms__calendar__vip__card.emms__calendar__vip__card--large {
         display: block;
         padding: 30px 18px 18px 18px;
         max-width: 260px;
     }
 
-    .emms__calendar__vip__card.emms__calendar__vip__card--large::before{
+    .emms__calendar__vip__card.emms__calendar__vip__card--large::before {
         width: 100%;
         height: 12px;
     }
 
-    .emms__calendar__vip__card--large div.emms__calendar__vip__card__title{
+    .emms__calendar__vip__card--large div.emms__calendar__vip__card__title {
         padding: 0 0 0 60px;
     }
 
-    .emms__calendar__vip__card--large .emms__calendar__vip__card__title::before{
+    .emms__calendar__vip__card--large
+        .emms__calendar__vip__card__title::before {
         width: 57px;
         height: 57px;
         left: -8px;
     }
 
-    .emms__calendar__vip__card--large div.emms__calendar__vip__card__description {
+    .emms__calendar__vip__card--large
+        div.emms__calendar__vip__card__description {
         border-right: none;
         border-left: none;
         border-top: solid 1px #838370;
@@ -298,29 +301,26 @@ div.emms__calendar__vip__card__title{
         padding: 15px 0;
     }
 
-    .emms__calendar__vip__card.emms__calendar__vip__card--large div.emms__calendar__date__country{
+    .emms__calendar__vip__card.emms__calendar__vip__card--large
+        div.emms__calendar__date__country {
         padding: 0 0 0 25px;
     }
 }
 
-
-
-
-
 /* ---------------------------------------- List -------------------------------------------------- */
 
-.emms__calendar__vip__list{
+.emms__calendar__vip__list {
     display: flex;
     max-width: 980px;
     margin: 40px auto 0;
 }
 
-.emms__calendar__vip__list--mb{
+.emms__calendar__vip__list--mb {
     max-width: 300px;
     display: none;
 }
 
-.emms__calendar__vip__list--mb .flickity-viewport{
+.emms__calendar__vip__list--mb .flickity-viewport {
     padding-bottom: 5px;
 }
 
@@ -328,39 +328,42 @@ div.emms__calendar__vip__card__title{
     margin: 0 10px;
 }
 
-.emms__calendar__vip__list--mb .flickity-page-dots{
+.emms__calendar__vip__list--mb .flickity-page-dots {
     display: none;
 }
 
-@media(max-width:992px){
-    .emms__calendar__vip__list{
+@media (max-width: 992px) {
+    .emms__calendar__vip__list {
         margin: 20px auto 0;
     }
-    .emms__calendar__vip__list--mb{
+    .emms__calendar__vip__list--mb {
         display: block;
     }
-    .emms__calendar__vip__list--dk{
+    .emms__calendar__vip__list--dk {
         display: none;
     }
 
-    .emms__calendar__vip__list .emms__calendar__vip__card{
+    .emms__calendar__vip__list .emms__calendar__vip__card {
         margin: 0 20px;
     }
 }
 
-
 /* ---------------------------------------- Speakers List -------------------------------------------------- */
 
-
-.emms__calendar__vip .emms__calendar__list .emms__calendar__list__item{
+.emms__calendar__vip .emms__calendar__list .emms__calendar__list__item {
     position: relative;
 }
 
-.emms__calendar__vip .emms__calendar__list .emms__calendar__list__item__card__label{
+.emms__calendar__vip
+    .emms__calendar__list
+    .emms__calendar__list__item__card__label {
     background: #550871;
 }
 
-.emms__calendar__vip .emms__calendar__list .emms__calendar__list__item__card__label p{
+.emms__calendar__vip
+    .emms__calendar__list
+    .emms__calendar__list__item__card__label
+    p {
     font-size: 14px;
     line-height: 1;
     text-align: right;
@@ -372,16 +375,13 @@ div.emms__calendar__vip__card__title{
     padding: 7px 16px 6px 16px;
 }
 
-
-
 /* ---------------------------------------- Bottom -------------------------------------------------- */
 
-
-.emms__calendar__vip .emms__calendar__bottom{
+.emms__calendar__vip .emms__calendar__bottom {
     margin: 60px auto;
 }
 
-@media(max-width:992px){
+@media (max-width: 992px) {
     .emms__calendar__vip .emms__calendar__bottom {
         margin: 30px auto 60px auto;
     }

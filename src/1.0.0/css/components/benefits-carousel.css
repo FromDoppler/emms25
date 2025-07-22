@@ -10,7 +10,7 @@
     color: #fff;
     text-align: center;
     margin: 0 0 40px 0;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__benefits-carousel__title h2 {
@@ -33,7 +33,7 @@
 }
 
 .emms__benefits-carousel__container {
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
 
 .emms__benefits-carousel__container .flickity-page-dots {
@@ -86,7 +86,7 @@
     margin: 60px 0 0 0;
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .emms__benefits-carousel__container {
         max-width: 400px;
         width: 80%;
@@ -98,7 +98,7 @@
     }
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__benefits-carousel {
         padding: 70px 0;
     }

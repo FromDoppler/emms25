@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 45px auto 0 auto;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .calendar-list--mb {
@@ -35,20 +35,20 @@
 }
 
 .calendar-card__label--free {
-    background: #7D04F6;
+    background: #7d04f6;
 }
 
 .calendar-card__label--success-story {
-    background: #DF24C1;
+    background: #df24c1;
     color: #fff;
 }
 
 .calendar-card__label--vip {
-    background: linear-gradient(90deg, #9b6612, #D29E4A, #9b6612);
+    background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
 }
 
 .calendar-card__label--successful-case {
-    background: #54C4EC;
+    background: #54c4ec;
 }
 
 .calendar-card__label p {
@@ -94,7 +94,6 @@
 .calendar-card__speaker-image--debate img {
     max-height: 85px;
 }
-
 
 .calendar-card__speaker-image img {
     width: 100%;
@@ -144,8 +143,8 @@
 }
 
 .calendar-card__speaker-text ul li a:hover {
-    opacity: .7;
-    transition-duration: .2s;
+    opacity: 0.7;
+    transition-duration: 0.2s;
 }
 
 .calendar-card__speaker-text ul li a img {
@@ -159,7 +158,7 @@
 }
 
 .calendar-card__description .cta.show--vip {
-    margin-top: 15px
+    margin-top: 15px;
 }
 
 .calendar-card__description h3 {
@@ -268,7 +267,7 @@
 }
 
 .calendar-card__business.vip {
-    background: linear-gradient(90deg, #9b6612, #D29E4A, #9b6612);
+    background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
 }
 
 .calendar-card__business img {
@@ -284,26 +283,26 @@
     color: #008046;
     text-transform: uppercase;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .calendar-card__btn-bio:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .calendar-card__btn-conference {
     font-size: 13px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #33AD73;
+    color: #33ad73;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .calendar-card__btn-conference:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .calendar-card__bio {
@@ -354,15 +353,15 @@
 }
 
 .calendar-card__bio .calendar-card__label--free p {
-    color: #7D04F6;
+    color: #7d04f6;
 }
 
 .calendar-card__bio .calendar-card__label--success-story {
-    color: #DF24C1;
+    color: #df24c1;
 }
 
 .calendar-card__bio .calendar-card__label--vip p {
-    color: #D29E4A;
+    color: #d29e4a;
 }
 
 .calendar-card__bio__content {
@@ -374,16 +373,15 @@
 }
 
 .calendar-card__bio__content--free {
-    background: #7D04F6;
+    background: #7d04f6;
 }
 
 .calendar-card__bio__content--success-story {
-    color: #DF24C1;
+    color: #df24c1;
 }
 
-
 .calendar-card__bio__content--vip {
-    background: #D29E4A;
+    background: #d29e4a;
 }
 
 .calendar-card__bio__content .calendar-card__speaker-image {
@@ -420,14 +418,14 @@
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     position: absolute;
     bottom: 22px;
     right: 20px;
 }
 
 .calendar-card__bio a:hover {
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
 .calendar__list__item-country {
@@ -452,27 +450,25 @@
     font-size: 15px;
     font-weight: 500;
     font-style: italic;
-    color: #33AD73;
+    color: #33ad73;
 }
 
 .calendar__list__item-country a:hover {
     color: #008046;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 }
 
-
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .calendar-card__speaker-image--debate img {
         max-height: 59px;
         margin-top: 26px;
     }
-
 }
 
 /* Special Card */
 
-.calendar__list__item.calendar__list__item--special .calendar-card__speaker-image {
+.calendar__list__item.calendar__list__item--special
+    .calendar-card__speaker-image {
     width: 100%;
 }
 
@@ -480,7 +476,9 @@
     justify-content: right;
 }
 
-.calendar__list__item.calendar__list__item--special .calendar-card__description h4 {
+.calendar__list__item.calendar__list__item--special
+    .calendar-card__description
+    h4 {
     font-size: 16px;
     font-weight: 700;
     color: #333333;
@@ -496,7 +494,10 @@
     margin: 0 0 2px 0;
 }
 
-.calendar__list__item.calendar__list__item--special .calendar-card__bio ul li::before {
+.calendar__list__item.calendar__list__item--special
+    .calendar-card__bio
+    ul
+    li::before {
     content: "";
     position: absolute;
     left: -12px;
@@ -507,7 +508,11 @@
     background: #333333;
 }
 
-.calendar__list__item.calendar__list__item--special .calendar-card__bio ul li p {
+.calendar__list__item.calendar__list__item--special
+    .calendar-card__bio
+    ul
+    li
+    p {
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -515,13 +520,16 @@
     margin: 0 0 20px 0;
 }
 
-.calendar__list__item.calendar__list__item--special .calendar-card__bio ul li p span {
+.calendar__list__item.calendar__list__item--special
+    .calendar-card__bio
+    ul
+    li
+    p
+    span {
     font-weight: 400;
 }
 
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .calendar__list--dk .calendar__list__item {
         width: 50%;
     }
@@ -563,8 +571,7 @@
     }
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .calendar__list--dk .calendar__list__item {
         max-width: 308px;
         width: 100%;

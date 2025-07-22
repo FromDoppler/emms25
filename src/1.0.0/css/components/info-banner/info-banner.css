@@ -1,5 +1,5 @@
 .faq-banner {
-    background-image: url('../../../../img/backgrounds/bg-section-4.png');
+    background-image: url("../../../../img/backgrounds/bg-section-4.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
     font-size: 32px;
     line-height: 50px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .faq-banner__link {
@@ -29,9 +29,11 @@
     font-size: 32px;
     line-height: 50px;
     text-align: center;
-    color: #65C192;
+    color: #65c192;
     text-decoration: none;
-    transition: color 300ms ease, text-decoration 300ms ease;
+    transition:
+        color 300ms ease,
+        text-decoration 300ms ease;
 }
 
 .faq-banner__link:hover {

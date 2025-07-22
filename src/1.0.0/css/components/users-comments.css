@@ -1,10 +1,10 @@
-.emms__userscomments{
+.emms__userscomments {
     position: relative;
     padding: 260px 0 0 0;
     margin: 70px 0;
 }
 
-.emms__userscomments::before{
+.emms__userscomments::before {
     content: "";
     position: absolute;
     top: 0;
@@ -23,25 +23,29 @@
     color: #333333;
     text-align: center;
     margin: 0 0 40px 0;
-    animation-delay: .1s;
+    animation-delay: 0.1s;
 }
 
 .emms__userscomments .emms__userscomments__list {
     display: flex;
     justify-content: space-between;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__userscomments .emms__userscomments__list--mb {
     display: none;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item {
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item {
     width: 32%;
     position: relative;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__content{
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__content {
     height: 100%;
     padding: 60px 40px 120px 40px;
     box-sizing: border-box;
@@ -50,14 +54,18 @@
     background: #fff;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__text {
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__text {
     font-size: 16px;
     line-height: 28px;
     font-weight: 700;
     color: #333333;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__author{
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__author {
     position: absolute;
     bottom: 40px;
     display: flex;
@@ -65,46 +73,51 @@
     gap: 10px;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__author--photo{
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__author--photo {
     width: 45px;
     height: 45px;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__author--name p{
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__author--name
+    p {
     font-size: 18px;
     font-weight: 700;
     color: #333;
 }
 
-.emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__author--name img{
+.emms__userscomments
+    .emms__userscomments__list
+    .emms__userscomments__list__item__author--name
+    img {
     width: 15px;
     height: 15px;
 }
 
-
-.emms__userscomments .emms__userscomments__cta{
+.emms__userscomments .emms__userscomments__cta {
     margin: 110px 0 0 0;
 }
 
 /* Dark Version */
 
-.emms__userscomments.emms__userscomments--dark{
-    background: #310E44;
+.emms__userscomments.emms__userscomments--dark {
+    background: #310e44;
     padding: 77px 0 107px 0;
 }
 
 .emms__userscomments.emms__userscomments--dark h2,
-.emms__userscomments.emms__userscomments--dark .emms__userscomments__list .emms__userscomments__list__item__text{
+.emms__userscomments.emms__userscomments--dark
+    .emms__userscomments__list
+    .emms__userscomments__list__item__text {
     color: #fff;
 }
 
-
-
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .emms__userscomments {
         margin: 70px 0 110px 0;
     }
@@ -119,32 +132,40 @@
         display: none;
     }
 
-    .emms__userscomments .emms__userscomments__list .emms__userscomments__list__item {
+    .emms__userscomments
+        .emms__userscomments__list
+        .emms__userscomments__list__item {
         width: 100%;
     }
 
-    .emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__content{
+    .emms__userscomments
+        .emms__userscomments__list
+        .emms__userscomments__list__item__content {
         height: 250px;
         margin: 0 10px 10px 10px;
     }
 
-    .emms__userscomments .emms__userscomments__list--mb.main-carousel .flickity-button.flickity-prev-next-button {
+    .emms__userscomments
+        .emms__userscomments__list--mb.main-carousel
+        .flickity-button.flickity-prev-next-button {
         display: none;
     }
 
-    .emms__userscomments .emms__userscomments__list--mb.main-carousel .flickity-page-dots .dot {
+    .emms__userscomments
+        .emms__userscomments__list--mb.main-carousel
+        .flickity-page-dots
+        .dot {
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     }
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__userscomments {
         padding: 0 0 0 0;
         margin: 70px 0 100px 0;
     }
 
-    .emms__userscomments::before{
+    .emms__userscomments::before {
         display: none;
     }
 
@@ -158,21 +179,27 @@
         margin: 0 0 30px 0;
     }
 
-    .emms__userscomments.emms__userscomments--dark{
+    .emms__userscomments.emms__userscomments--dark {
         padding: 55px 0 137px 0;
     }
 
-    .emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__content {
+    .emms__userscomments
+        .emms__userscomments__list
+        .emms__userscomments__list__item__content {
         height: 250px;
         margin: 0 10px 10px 10px;
         padding: 30px 20px 80px 20px;
     }
 
-    .emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__text{
+    .emms__userscomments
+        .emms__userscomments__list
+        .emms__userscomments__list__item__text {
         line-height: 23px;
     }
 
-    .emms__userscomments .emms__userscomments__list .emms__userscomments__list__item__author{
+    .emms__userscomments
+        .emms__userscomments__list
+        .emms__userscomments__list__item__author {
         bottom: 23px;
     }
 }

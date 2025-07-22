@@ -22,7 +22,7 @@
     font-weight: 800;
     font-size: 26px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 290px;
 }
 
@@ -31,7 +31,7 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 18px;
-    color: #79F66E;
+    color: #79f66e;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
@@ -44,16 +44,16 @@
 
 /* Type color */
 .speaker-card.speaker-card--conference .speaker-card__type {
-    color: #BD7BFF;
+    color: #bd7bff;
 }
 
 .speaker-card.speaker-card--successStory .speaker-card__type {
-    color: #1DFFDD;
+    color: #1dffdd;
 }
 
 .speaker-card.speaker-card--networking .speaker-card__type,
 .speaker-card.speaker-card--workshop .speaker-card__type {
-    color: #EFBF04;
+    color: #efbf04;
 }
 
 /* MoreInfo color */
@@ -62,7 +62,6 @@
 .speaker-card.speaker-card--workshop .speaker-card__more-info {
     color: #ffffff;
 }
-
 
 @media (max-width: 768px) {
     .speaker-card__info {
