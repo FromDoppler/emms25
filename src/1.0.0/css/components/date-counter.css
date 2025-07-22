@@ -1,5 +1,5 @@
 .emms-counter {
-    background: linear-gradient(#DF24C1, #7D04F6);
+    background: linear-gradient(#df24c1, #7d04f6);
     padding: 15px 0px 25px 0;
     display: flex;
     flex-direction: row;
@@ -50,7 +50,6 @@
     display: none;
 }
 
-
 .emms-counter__digit {
     display: inline-block;
     font-size: 20px;
@@ -79,7 +78,6 @@
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
 @media (max-width: 620px) {
-
     .emms-counter {
         flex-direction: column;
     }
@@ -100,5 +98,4 @@
         height: 20px;
         font-size: 14px;
     }
-
 }

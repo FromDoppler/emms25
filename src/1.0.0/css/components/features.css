@@ -31,7 +31,7 @@
 
 .emms__features__item {
     padding: 90px 0;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__features__item .emms__container--md,
@@ -41,16 +41,14 @@
     align-items: center;
 }
 
-@media(min-width:992px) {
-
+@media (min-width: 992px) {
     .emms__features__item--reverse .emms__container--md,
     .emms__features__item .emms__container--lg {
         flex-direction: row-reverse;
     }
-
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .emms__features__item .emms__container--lg {
         flex-direction: column;
     }
@@ -69,7 +67,8 @@
     width: 50%;
 }
 
-.emms__features__item .emms__features__item__text.emms__features__item__text--speaker-interna {
+.emms__features__item
+    .emms__features__item__text.emms__features__item__text--speaker-interna {
     width: 60%;
 }
 
@@ -82,7 +81,9 @@
     max-width: 332px;
 }
 
-.emms__features__item .emms__features__item__text.emms__features__item__text--speaker-interna h3 {
+.emms__features__item
+    .emms__features__item__text.emms__features__item__text--speaker-interna
+    h3 {
     max-width: 530px;
 }
 
@@ -105,7 +106,9 @@
     max-width: 435px;
 }
 
-.emms__features__item .emms__features__item__text.emms__features__item__text--speaker-interna p {
+.emms__features__item
+    .emms__features__item__text.emms__features__item__text--speaker-interna
+    p {
     max-width: 440px;
 }
 
@@ -131,7 +134,9 @@
     background-size: contain;
 }
 
-.emms__features__item .emms__features__item__text .emms__features__item__text__footer {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__footer {
     font-style: normal;
     font-weight: 700;
     font-size: 21px;
@@ -141,16 +146,20 @@
     max-width: 450px;
 }
 
-
-.emms__features__item .emms__features__item__text .emms__features__item__text__price {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__price {
     font-size: 47px;
     line-height: 1;
     font-weight: 900;
-    color: #7D04F6;
+    color: #7d04f6;
     margin: 40px 0 30px 0;
 }
 
-.emms__features__item .emms__features__item__text .emms__features__item__text__price em {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__price
+    em {
     font-size: 21px;
     font-weight: 700;
     font-style: normal;
@@ -160,32 +169,39 @@
     color: #242424;
 }
 
-.emms__features__item .emms__features__item__text .emms__features__item__text__price.emms__features__item__text__price--live {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__price.emms__features__item__text__price--live {
     font-style: normal;
     font-weight: 700;
     font-size: 47px;
     line-height: 47px;
-    color: #7D04F6;
+    color: #7d04f6;
     margin-top: 10px;
 }
 
-.emms__features__item .emms__features__item__text .emms__features__item__text__price.emms__features__item__text__price--live small {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__price.emms__features__item__text__price--live
+    small {
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
     line-height: 47px;
-    color: #7D04F6;
+    color: #7d04f6;
 }
 
-.emms__features__item .emms__features__item__text .emms__features__item__text__price span {
+.emms__features__item
+    .emms__features__item__text
+    .emms__features__item__text__price
+    span {
     font-size: 20px;
     line-height: 1;
     font-weight: 400;
     display: block;
 }
 
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .emms__features__title {
         padding: 36px 0;
     }
@@ -218,13 +234,14 @@
         text-align: center;
     }
 
-    .emms__features__item .emms__features__item__text .emms__features__item__text__price {
+    .emms__features__item
+        .emms__features__item__text
+        .emms__features__item__text__price {
         text-align: center;
     }
 }
 
-
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__features__item .emms__features__item__text h3 {
         font-size: 28px;
         line-height: 30px;

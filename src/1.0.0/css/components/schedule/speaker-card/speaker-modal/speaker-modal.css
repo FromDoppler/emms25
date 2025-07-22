@@ -54,9 +54,14 @@
     position: relative;
     display: flex;
     padding: 40px;
-    background: linear-gradient(105.6deg, #3C1740 -3.01%, #211040 35.99%, #271240 62.56%, #3C1740 110.1%);
+    background: linear-gradient(
+        105.6deg,
+        #3c1740 -3.01%,
+        #211040 35.99%,
+        #271240 62.56%,
+        #3c1740 110.1%
+    );
 }
-
 
 .modal__image {
     background: linear-gradient(to bottom, #c084fc, #9333ea);
@@ -90,7 +95,7 @@
     line-height: 15px;
     text-align: left;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .modal__name {
@@ -99,7 +104,7 @@
     font-size: 21px;
     line-height: 15px;
     text-transform: uppercase;
-    color: #BD7BFF;
+    color: #bd7bff;
 }
 
 .modal__description {
@@ -108,7 +113,7 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 270px;
     text-align: left;
 }
@@ -139,21 +144,37 @@
     color: white;
 }
 
-
 /* Custom styles for types */
 
 /* Modal background */
 .modal.modal--conference {
-    background: linear-gradient(105.6deg, #3C1740 -3.01%, #211040 35.99%, #271240 62.56%, #3C1740 110.1%);
+    background: linear-gradient(
+        105.6deg,
+        #3c1740 -3.01%,
+        #211040 35.99%,
+        #271240 62.56%,
+        #3c1740 110.1%
+    );
 }
 
 .modal.modal--successStory {
-    background: linear-gradient(105.6deg, #09333B -3.01%, #000000 35.99%, #132A4A 62.56%, #0C2E3B 110.1%);
+    background: linear-gradient(
+        105.6deg,
+        #09333b -3.01%,
+        #000000 35.99%,
+        #132a4a 62.56%,
+        #0c2e3b 110.1%
+    );
 }
 
 .modal.modal--networking,
 .modal.modal--workshop {
-    background: linear-gradient(105.22deg, #8E6608 -3.51%, #DEBC54 51.26%, #5F4407 90.96%);
+    background: linear-gradient(
+        105.22deg,
+        #8e6608 -3.51%,
+        #debc54 51.26%,
+        #5f4407 90.96%
+    );
 }
 
 /* Modal image background */
@@ -162,7 +183,7 @@
 }
 
 .modal.modal--successStory .modal__image {
-    background: linear-gradient(180deg, #132B4B 34.5%, #02031B 100%);
+    background: linear-gradient(180deg, #132b4b 34.5%, #02031b 100%);
 }
 
 .modal.modal--networking .modal__image,
@@ -173,13 +194,12 @@
 /* Modal title name color */
 
 .modal.modal--conference .modal__name {
-    color: #BD7BFF;
+    color: #bd7bff;
 }
 
 .modal.modal--successStory .modal__name {
-    color: #1DFFDD;
+    color: #1dffdd;
 }
-
 
 /* Modal vip texts */
 .modal.modal--networking .modal__name,

@@ -1,7 +1,7 @@
 .emms__eventCards__list {
     display: flex;
     justify-content: center;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__eventCards__list--mb {
@@ -25,7 +25,7 @@
     bottom: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    background: linear-gradient(220deg, #7D04F6, #DF24C1, #79F66E);
+    background: linear-gradient(220deg, #7d04f6, #df24c1, #79f66e);
     border-radius: 22px;
     z-index: -1;
 }
@@ -86,7 +86,7 @@
     font-weight: 800;
     font-size: 13px;
     line-height: 20px;
-    color: #7D04F6;
+    color: #7d04f6;
     display: block;
 }
 
@@ -118,7 +118,6 @@
     right: -8px;
     padding: 0 0 0 31px;
 } */
-
 
 .ribbon {
     width: 48%;
@@ -190,7 +189,7 @@
     position: absolute;
     left: -16px;
     bottom: 10px;
-    background: #79F66E;
+    background: #79f66e;
     color: #000000;
     font-weight: 900;
     z-index: 9;
@@ -231,7 +230,7 @@
     right: -11.5px;
     border-top: 12px solid transparent;
     border-bottom: 21px solid transparent;
-    border-left: 12px solid #79F66E;
+    border-left: 12px solid #79f66e;
 }
 
 .ribbon__live img {
@@ -253,7 +252,7 @@
     position: absolute;
     right: -16px;
     top: 56px;
-    background: #79F66E;
+    background: #79f66e;
     color: #000000;
     font-weight: 900;
     z-index: 9;
@@ -266,7 +265,6 @@
 }
 
 @keyframes pulse {
-
     0%,
     100% {
         transform: scale(1);
@@ -298,9 +296,8 @@
     left: -13.5px;
     border-top: 18px solid transparent;
     border-bottom: 22px solid transparent;
-    border-right: 14px solid #79F66E;
+    border-right: 14px solid #79f66e;
 }
-
 
 /* .emms__eventCards__list__item__text h3 span {
 
@@ -319,7 +316,7 @@
     background-size: contain;
 } */
 
-.emms__eventCards__list__item__text h3+p {
+.emms__eventCards__list__item__text h3 + p {
     min-height: 90px;
     margin-bottom: 20px;
 }
@@ -360,28 +357,26 @@
 }
 
 .emms__eventCards__list__item__text--bottom .emms__cta.inactive {
-    background: #CCCCCC;
+    background: #cccccc;
     pointer-events: none;
 }
 
-
-
 /* ------------------------------------------ Responsive ------------------------------------------ */
 
-@media(max-width:1280px) and (min-width:992px) {
+@media (max-width: 1280px) and (min-width: 992px) {
     p.emms__eventCards__list__item__tag {
         font-size: 11px;
     }
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .emms__eventCards__list__item__text h3 {
         font-size: 20px;
         line-height: 20px;
     }
 }
 
-@media(max-width:1100px) {
+@media (max-width: 1100px) {
     .emms__eventCards__list__item__text h3 span {
         font-size: 12px;
         right: -12px;
@@ -396,12 +391,9 @@
         width: 105px;
         top: 56px;
     }
-
 }
 
-@media(max-width:992px) {
-
-
+@media (max-width: 992px) {
     .ribbon__live {
         width: 124px;
         top: 24px;
@@ -439,11 +431,10 @@
         bottom: -5px;
         width: calc(100% + 10px);
         height: calc(100% + 10px);
-        background: linear-gradient(220deg, #7D04F6, #DF24C1, #79F66E);
+        background: linear-gradient(220deg, #7d04f6, #df24c1, #79f66e);
         border-radius: 22px;
         z-index: -1;
     }
-
 
     .emms__eventCards__list__item::before {
         display: none;
@@ -476,5 +467,4 @@
         width: 100%;
         text-align: center;
     }
-
 }

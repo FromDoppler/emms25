@@ -9,7 +9,7 @@
 .loader-page--new {
     position: fixed;
     z-index: 25000;
-     background: rgb(255 255 255 / 80%);
+    background: rgb(255 255 255 / 80%);
     left: 0px;
     top: 0px;
     height: 100%;
@@ -32,7 +32,6 @@
     opacity: 1;
     visibility: visible;
 }
-
 
 @-moz-keyframes spin {
     100% {

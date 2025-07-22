@@ -3,7 +3,7 @@
 # top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
+# Default settings for all files
 [*]
 indent_style = space
 charset = utf-8
@@ -13,5 +13,34 @@ end_of_line = lf
 indent_size = 4
 max_line_length = 110
 
+# JavaScript files
 [*.js]
+block_comment_start = /*
+block_comment_end = */
+
+# PHP files
+[*.php]
+block_comment_start = /*
+block_comment_end = */
+
+# Configuration and documentation files with longer lines
+[{package.json,composer.json,*.md,.editorconfig}]
 max_line_length = 220
+
+# Markdown files - don't trim trailing whitespace (needed for line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# Shell scripts
+[*.sh]
+indent_size = 2
+
+# Unset for binary and generated files
+[{**.svg,**.png,**.jpg,**.jpeg,**.gif,**.ico,**.pdf,node_modules/**,vendor/**,logs/**,.docker/**,admin/speakers/uploads/**,*Zone.Identifier}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+max_line_length = unset

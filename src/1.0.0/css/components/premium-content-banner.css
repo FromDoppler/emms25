@@ -18,7 +18,7 @@
     color: #333333;
     padding-left: 3%;
     box-sizing: border-box;
-    animation-delay: .1s;
+    animation-delay: 0.1s;
 }
 
 .emms__premium-content__text h2 {
@@ -42,7 +42,7 @@
 
 .emms__premium-content__picture {
     width: 40%;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__premium-content__picture img {
@@ -52,7 +52,7 @@
 /* Dark version */
 
 .emms__premium-content.emms__premium-content--dark {
-    background: #310E44;
+    background: #310e44;
 }
 
 .emms__premium-content.emms__premium-content--dark .emms__container--lg {
@@ -60,24 +60,21 @@
     justify-content: space-between;
 }
 
-.emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
-    color: #FFFFFF;
+.emms__premium-content.emms__premium-content--dark
+    .emms__premium-content__text {
+    color: #ffffff;
     padding: 40px 0 0 0;
     width: 55%;
 }
 
-.emms__premium-content.emms__premium-content--dark .emms__premium-content__picture {
+.emms__premium-content.emms__premium-content--dark
+    .emms__premium-content__picture {
     width: 40%;
 }
 
-
-
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
-
-
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .emms__premium-content__text h2 {
         font-size: 28px;
         line-height: 30px;
@@ -85,13 +82,13 @@
 
     /* Dark version */
 
-    .emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
+    .emms__premium-content.emms__premium-content--dark
+        .emms__premium-content__text {
         padding: 0;
     }
 }
 
-@media(max-width:620px) {
-
+@media (max-width: 620px) {
     .emms__premium-content {
         padding: 60px 0px 50px 0;
     }
@@ -114,11 +111,13 @@
         padding: 53px 0 113px 0;
     }
 
-    .emms__premium-content.emms__premium-content--dark .emms__premium-content__text {
+    .emms__premium-content.emms__premium-content--dark
+        .emms__premium-content__text {
         width: 100%;
     }
 
-    .emms__premium-content.emms__premium-content--dark .emms__premium-content__picture {
+    .emms__premium-content.emms__premium-content--dark
+        .emms__premium-content__picture {
         width: 100%;
     }
 }

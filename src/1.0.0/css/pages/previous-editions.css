@@ -1,5 +1,5 @@
 .emms__previous-editions {
-    background: #0B0627;
+    background: #0b0627;
 }
 
 /* ---- Hero ---- */
@@ -27,7 +27,7 @@
     bottom: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(transparent, #0B0627);
+    background: linear-gradient(transparent, #0b0627);
 }
 
 .emms__previous-editions__hero .emms__container--md {
@@ -38,8 +38,8 @@
     font-size: 30px;
     line-height: 32px;
     font-weight: 700;
-    color: #FFFFFF;
-    animation-delay: .1s;
+    color: #ffffff;
+    animation-delay: 0.1s;
 }
 
 .emms__previous-editions__hero p {
@@ -47,7 +47,7 @@
     line-height: 24px;
     color: #fff;
     margin: 30px 0 0 0;
-    animation-delay: .5s;
+    animation-delay: 0.5s;
 }
 
 .emms__previous-editions__hero p strong {
@@ -56,7 +56,7 @@
 
 .emms__previous-editions__hero p a {
     font-weight: 800;
-    color: #33AD73;
+    color: #33ad73;
 }
 
 .emms__previous-editions__hero p a:hover {
@@ -65,8 +65,8 @@
 
 .emms__previous-editions__hero__bottom {
     margin: 90px 0 -85px 0;
-    border-top: solid 1px #EF2AAC;
-    border-bottom: solid 1px #EF2AAC;
+    border-top: solid 1px #ef2aac;
+    border-bottom: solid 1px #ef2aac;
     height: 80px;
     position: relative;
 }
@@ -78,7 +78,7 @@
     overflow: hidden;
     width: 100%;
     display: flex;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
 .emms__previous-editions__hero__bottom__container p {
@@ -113,20 +113,26 @@
     z-index: 1;
 }
 
-.emms__previous-editions__hero .emms__previous-editions__hero__row .emms__previous-editions__hero__column-text {
+.emms__previous-editions__hero
+    .emms__previous-editions__hero__row
+    .emms__previous-editions__hero__column-text {
     text-align: left;
     width: 40%;
 }
 
-.emms__previous-editions__hero .emms__previous-editions__hero__row .emms__previous-editions__hero__column-img {
+.emms__previous-editions__hero
+    .emms__previous-editions__hero__row
+    .emms__previous-editions__hero__column-img {
     width: 60%;
 }
 
-.emms__previous-editions__hero .emms__previous-editions__hero__row .emms__previous-editions__hero__column-img img {
+.emms__previous-editions__hero
+    .emms__previous-editions__hero__row
+    .emms__previous-editions__hero__column-img
+    img {
     width: 100%;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
-
 
 /* ---- Editions list ----  */
 
@@ -156,7 +162,7 @@
 .emms__previous-editions__list .emms__previous-editions__list__item {
     width: 31%;
     margin: 0 0 80px 0;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .emms__previous-editions__list .emms__previous-editions__list__item a {
@@ -176,83 +182,101 @@
     display: block;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item__description {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item__description {
     padding: 30px 0 40px 0;
     pointer-events: none;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item__description h3 {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item__description
+    h3 {
     font-size: 17px;
     line-height: 22px;
     font-weight: 700;
     margin: 0 0 10px 0;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item__description p {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item__description
+    p {
     font-size: 15px;
     line-height: 22px;
     font-weight: 400;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item__description span {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item__description
+    span {
     font-size: 17px;
     line-height: 22px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #33AD73;
+    color: #33ad73;
     margin: 15px 0 0 0;
     display: block;
     position: absolute;
     bottom: 0;
-    animation-duration: .2s;
+    animation-duration: 0.2s;
 }
 
-.emms__previous-editions__list a:hover .emms__previous-editions__list__item__description span {
+.emms__previous-editions__list
+    a:hover
+    .emms__previous-editions__list__item__description
+    span {
     text-decoration: underline;
-    animation-duration: .2s;
+    animation-duration: 0.2s;
 }
 
 /* Item lg */
 
 .emms__previous-editions__list__container.emms__previous-editions__list__container--lg {
     justify-content: space-between;
-    margin: 0 10px
+    margin: 0 10px;
 }
 
 .emms__previous-editions__list .emms__previous-editions__list__container--xl {
     padding: 30px 12px;
 }
 
-
 .emms__previous-editions__list .emms__previous-editions__list__item--xl {
     width: 100%;
     position: relative;
     max-height: 488px;
-    background: #302B47;
+    background: #302b47;
     border-radius: 20px;
     padding-bottom: 40px;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__description {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__description {
     padding: 40px;
     margin: 25px 0px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__description h4 {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__description
+    h4 {
     font-size: 24px;
     line-height: 22px;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__description p {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__description
+    p {
     font-size: 21px;
     line-height: 26px;
     margin-top: 10px;
     max-width: 832px;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--xl::before {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl::before {
     content: "";
     position: absolute;
     left: -5px;
@@ -261,7 +285,7 @@
     bottom: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    background: linear-gradient(90deg, #7D04F6, #DF24C1, #79F66E, #7D04F6);
+    background: linear-gradient(90deg, #7d04f6, #df24c1, #79f66e, #7d04f6);
     border-radius: 22px;
     z-index: -1;
     background-size: 400% 400%;
@@ -277,15 +301,18 @@
     }
 }
 
-
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__image {
-    background: #421E5E;
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__image {
+    background: #421e5e;
     width: 100%;
     border-radius: 20px;
 }
 
-
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__image img {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__image
+    img {
     width: 100%;
     margin: 0 auto;
 }
@@ -295,9 +322,8 @@
     position: relative;
 }
 
-
-
-.emms__previous-editions__list .emms__previous-editions__list__item--lg::before {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--lg::before {
     content: "";
     position: absolute;
     left: -5px;
@@ -306,13 +332,13 @@
     bottom: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    background: linear-gradient(220deg, #7D04F6, #DF24C1, #79F66E);
+    background: linear-gradient(220deg, #7d04f6, #df24c1, #79f66e);
     border-radius: 22px;
     z-index: -1;
 }
 
 .emms__previous-editions__list .emms__previous-editions__list__item--lg a {
-    background: #302B47;
+    background: #302b47;
     display: block;
     height: 100%;
     border-radius: 20px;
@@ -321,31 +347,43 @@
     box-sizing: border-box;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--lg .emms__previous-editions__list__item__description {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--lg
+    .emms__previous-editions__list__item__description {
     padding: 40px;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--lg .emms__previous-editions__list__item__description h3 {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--lg
+    .emms__previous-editions__list__item__description
+    h3 {
     margin: 0 0 15px 0;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--lg .emms__previous-editions__list__item__description span {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--lg
+    .emms__previous-editions__list__item__description
+    span {
     margin: 25px 0 0 0;
     bottom: 50px;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item__image img.mobile {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item__image
+    img.mobile {
     display: none;
 }
 
-.emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__image img.desktop {
+.emms__previous-editions__list
+    .emms__previous-editions__list__item--xl
+    .emms__previous-editions__list__item__image
+    img.desktop {
     display: block;
 }
 
 /* ----- Responsive ----- */
 
-@media(max-width:992px) {
-
+@media (max-width: 992px) {
     .emms__previous-editions__list .emms__container--md {
         max-width: 500px;
     }
@@ -358,7 +396,9 @@
         width: 100%;
     }
 
-    .emms__previous-editions__list .emms__previous-editions__list__item__description p {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item__description
+        p {
         min-height: auto;
     }
 
@@ -374,23 +414,25 @@
         display: block;
     }
 
-    .emms__previous-editions__hero .emms__previous-editions__hero__row .emms__previous-editions__hero__column-text {
+    .emms__previous-editions__hero
+        .emms__previous-editions__hero__row
+        .emms__previous-editions__hero__column-text {
         text-align: center;
         width: 100%;
         margin: 0 auto 50px auto;
         max-width: 600px;
     }
 
-    .emms__previous-editions__hero .emms__previous-editions__hero__row .emms__previous-editions__hero__column-img {
+    .emms__previous-editions__hero
+        .emms__previous-editions__hero__row
+        .emms__previous-editions__hero__column-img {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
     }
-
-
 }
 
-@media(max-width:620px) {
+@media (max-width: 620px) {
     .emms__previous-editions__hero {
         padding: 130px 0 60px 0;
     }
@@ -414,15 +456,23 @@
 
     /* Item lg */
 
-    .emms__previous-editions__list .emms__previous-editions__list__item--lg .emms__previous-editions__list__item__description {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item--lg
+        .emms__previous-editions__list__item__description {
         padding: 25px;
     }
 
-    .emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__image img.mobile {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item--xl
+        .emms__previous-editions__list__item__image
+        img.mobile {
         display: block;
     }
 
-    .emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__image img.desktop {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item--xl
+        .emms__previous-editions__list__item__image
+        img.desktop {
         display: none;
     }
 
@@ -430,11 +480,17 @@
         max-height: unset;
     }
 
-    .emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__description h4 {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item--xl
+        .emms__previous-editions__list__item__description
+        h4 {
         font-size: 21px;
     }
 
-    .emms__previous-editions__list .emms__previous-editions__list__item--xl .emms__previous-editions__list__item__description p {
+    .emms__previous-editions__list
+        .emms__previous-editions__list__item--xl
+        .emms__previous-editions__list__item__description
+        p {
         font-size: 16px;
     }
 }

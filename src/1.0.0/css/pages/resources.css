@@ -65,7 +65,7 @@
     position: absolute;
     top: -9px;
     left: -0.5em;
-    background: #7D04F6;
+    background: #7d04f6;
     padding: 6px 40px 6px 35px;
     clip-path: polygon(0% 0%, 90% 0%, 95% 50%, 90% 100%, 0% 100%);
 }
@@ -91,7 +91,7 @@
 .resource-card__link {
     font-size: 16px;
     font-weight: 700;
-    color: #33AD73;
+    color: #33ad73;
     text-transform: uppercase;
     display: inline-block;
     margin-top: auto;
@@ -99,7 +99,7 @@
 }
 
 .resource-card__link:hover {
-    color: #026C3C;
+    color: #026c3c;
 }
 
 .resource-card__link--inactive {

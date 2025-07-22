@@ -1,18 +1,28 @@
 // Number counter animation
 
-const boxNumber = document.querySelector('#boxNumber');
+const boxNumber = document.querySelector("#boxNumber");
 
-const observerBoxNumber = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+const observerBoxNumber = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
             // Counter animation
-            const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
+            const counterAnim = (
+                qSelector,
+                start = 0,
+                end,
+                duration = 1000
+            ) => {
                 const target = document.querySelector(qSelector);
                 let startTimestamp = null;
-                const step = (timestamp) => {
+                const step = timestamp => {
                     if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    target.innerText = Math.floor(progress * (end - start) + start);
+                    const progress = Math.min(
+                        (timestamp - startTimestamp) / duration,
+                        1
+                    );
+                    target.innerText = Math.floor(
+                        progress * (end - start) + start
+                    );
                     if (progress < 1) {
                         window.requestAnimationFrame(step);
                     }
@@ -25,7 +35,7 @@ const observerBoxNumber = new IntersectionObserver((entries) => {
             counterAnim("#count4", 0, 150, 1600);
             // End number counter animation
         } else {
-            false
+            false;
         }
     });
 });
@@ -33,22 +43,31 @@ if (boxNumber) {
     observerBoxNumber.observe(boxNumber);
 }
 
-
 // Number counter animation LARGE
 
-const boxNumberLarge = document.querySelector('#boxNumberLarge');
+const boxNumberLarge = document.querySelector("#boxNumberLarge");
 
-const observerBoxNumberLarge = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+const observerBoxNumberLarge = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
             // Counter animation
-            const counterAnimL = (qSelector, start = 0, end, duration = 1000) => {
+            const counterAnimL = (
+                qSelector,
+                start = 0,
+                end,
+                duration = 1000
+            ) => {
                 const target = document.querySelector(qSelector);
                 let startTimestamp = null;
-                const step = (timestamp) => {
+                const step = timestamp => {
                     if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    target.innerText = Math.floor(progress * (end - start) + start);
+                    const progress = Math.min(
+                        (timestamp - startTimestamp) / duration,
+                        1
+                    );
+                    target.innerText = Math.floor(
+                        progress * (end - start) + start
+                    );
                     if (progress < 1) {
                         window.requestAnimationFrame(step);
                     }
@@ -61,11 +80,10 @@ const observerBoxNumberLarge = new IntersectionObserver((entries) => {
             counterAnimL("#count4L", 0, 240, 1600);
             // End number counter animation
         } else {
-            false
+            false;
         }
     });
 });
-if(boxNumberLarge){
+if (boxNumberLarge) {
     observerBoxNumberLarge.observe(boxNumberLarge);
 }
-

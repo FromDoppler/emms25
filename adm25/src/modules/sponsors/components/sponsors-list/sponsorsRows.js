@@ -13,9 +13,9 @@ const removeSponsor = async (sponsorId, currentSponsorType) => {
     await showSponsorsPage(currentSponsorType);
 };
 
-const btnRemoveSponsorListener = (currentSponsorType) => {
+const btnRemoveSponsorListener = currentSponsorType => {
     const removeBtn = document.getElementsByName("removeSponsor");
-    removeBtn.forEach((el) => {
+    removeBtn.forEach(el => {
         el.addEventListener("click", async () => {
             const removeId = el.dataset.removeid;
             await removeSponsor(removeId, currentSponsorType);
@@ -23,9 +23,9 @@ const btnRemoveSponsorListener = (currentSponsorType) => {
     });
 };
 
-const btnEditSponsorListener = (currentSponsorType) => {
+const btnEditSponsorListener = currentSponsorType => {
     const editBtn = document.getElementsByName("editSponsor");
-    editBtn.forEach((el) => {
+    editBtn.forEach(el => {
         el.addEventListener("click", async () => {
             const objSponsor = JSON.parse(el.dataset.editid);
             await showSponsorForm(currentSponsorType, objSponsor);
@@ -33,7 +33,7 @@ const btnEditSponsorListener = (currentSponsorType) => {
     });
 };
 
-export const sponsorsRows = async (currentSponsorType) => {
+export const sponsorsRows = async currentSponsorType => {
     const filteredSponsors = await getSponsors(currentSponsorType);
     const sponsorsList = document.getElementById("sponsorsList");
     filteredSponsors && filteredSponsors.length

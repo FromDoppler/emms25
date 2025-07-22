@@ -1,0 +1,18 @@
+{
+    "name": "emms25",
+    "version": "1.0.0",
+    "description": "EMMS25 - Matis Team Develop",
+    "scripts": {
+        "verify-format": "npm run prettier-check && npm run eclint-check",
+        "fix-format": "npm run prettier-fix && npm run eclint-fix",
+        "eclint-fix": "eclint fix",
+        "eclint-check": "eclint check",
+        "prettier-fix": "prettier --write \"**/*.{js,html,css,json,md,php}\"",
+        "prettier-check": "prettier --check \"**/*.{js,html,css,json,md,php}\""
+    },
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "@prettier/plugin-php": "^0.22.2",
+        "eclint": "^2.8.1"
+    }
+}

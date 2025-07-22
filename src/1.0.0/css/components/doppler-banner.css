@@ -1,67 +1,67 @@
-.emms__dopplerbanner{
-    background: #FDE577;
+.emms__dopplerbanner {
+    background: #fde577;
     padding: 89px 0 45px 0;
 }
 
-.emms__dopplerbanner__title{
+.emms__dopplerbanner__title {
     text-align: center;
     max-width: 714px;
     margin: 0 auto 48px;
 }
 
-.emms__dopplerbanner__title h2{
+.emms__dopplerbanner__title h2 {
     font-size: 40px;
     font-weight: 700;
     color: #333333;
     margin: 0 0 37px 0;
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
-.emms__dopplerbanner__title h2 img{
+.emms__dopplerbanner__title h2 img {
     width: 230px;
     margin: 0 0 0 6px;
 }
 
-.emms__dopplerbanner__title h3{
+.emms__dopplerbanner__title h3 {
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
     color: #333333;
     margin: 0 0 25px 0;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
 
-.emms__dopplerbanner__title p{
+.emms__dopplerbanner__title p {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
     color: #333333;
     margin: 0;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
-.emms__dopplerbanner__description{
+.emms__dopplerbanner__description {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-.emms__dopplerbanner__description__image{
+.emms__dopplerbanner__description__image {
     width: 46%;
-    animation-delay: .3s;
+    animation-delay: 0.3s;
 }
 
-.emms__dopplerbanner__description__image img{
+.emms__dopplerbanner__description__image img {
     width: 100%;
 }
 
-.emms__dopplerbanner__description__text{
+.emms__dopplerbanner__description__text {
     width: 46%;
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }
 
-.emms__dopplerbanner__description__text h4{
+.emms__dopplerbanner__description__text h4 {
     font-size: 26px;
     line-height: 34px;
     font-weight: 400;
@@ -69,12 +69,12 @@
     margin: 0 0 20px 0;
 }
 
-.emms__dopplerbanner__description__text h4 strong{
+.emms__dopplerbanner__description__text h4 strong {
     font-weight: 700;
     display: block;
 }
 
-.emms__dopplerbanner__description__text p{
+.emms__dopplerbanner__description__text p {
     font-size: 16px;
     line-height: 24px;
     color: #333333;
@@ -82,13 +82,13 @@
     max-width: 400px;
 }
 
-.emms__dopplerbanner__description__text ul{
+.emms__dopplerbanner__description__text ul {
     margin: 30px 0 25px 0;
     display: flex;
     flex-wrap: wrap;
 }
 
-.emms__dopplerbanner__description__text ul li{
+.emms__dopplerbanner__description__text ul li {
     font-size: 16px;
     line-height: 24px;
     color: #333333;
@@ -99,7 +99,7 @@
     position: relative;
 }
 
-.emms__dopplerbanner__description__text ul li::before{
+.emms__dopplerbanner__description__text ul li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -110,69 +110,68 @@
     background-size: contain;
 }
 
-.emms__dopplerbanner__description__text .emms22__button{
+.emms__dopplerbanner__description__text .emms22__button {
     max-width: 347px;
     width: 100%;
 }
 
-@media(max-width:1100px){
-    .emms__dopplerbanner__description__text ul li{
+@media (max-width: 1100px) {
+    .emms__dopplerbanner__description__text ul li {
         width: 100%;
     }
 }
 
-@media(max-width:992px){
-
-    .emms__dopplerbanner__description{
+@media (max-width: 992px) {
+    .emms__dopplerbanner__description {
         max-width: 400px;
         margin: 0 auto;
     }
-    .emms__dopplerbanner__description__image{
+    .emms__dopplerbanner__description__image {
         width: 100%;
-        margin: 0 0 20px ;
+        margin: 0 0 20px;
     }
 
-    .emms__dopplerbanner__description__text{
+    .emms__dopplerbanner__description__text {
         width: 100%;
     }
 }
 
-@media(max-width:620px){
-    .emms__dopplerbanner{
+@media (max-width: 620px) {
+    .emms__dopplerbanner {
         padding: 45px 0 76px 0;
     }
 
-    .emms__dopplerbanner__title{
+    .emms__dopplerbanner__title {
         text-align: left;
     }
 
-    .emms__dopplerbanner__title h2{
+    .emms__dopplerbanner__title h2 {
         font-size: 20px;
         margin: 0 0 34px 0;
     }
 
-    .emms__dopplerbanner__title h2 img{
+    .emms__dopplerbanner__title h2 img {
         width: 114px;
         margin: 0 0 0 2px;
     }
 
-    .emms__dopplerbanner__title h3{
+    .emms__dopplerbanner__title h3 {
         font-size: 16px;
         margin: 0 0 20px 0;
     }
 
-    .emms__dopplerbanner__description__text h4{
+    .emms__dopplerbanner__description__text h4 {
         font-size: 20px;
         line-height: 25px;
         text-align: center;
         margin: 0 0 16px 0;
     }
 
-    .emms__dopplerbanner__description__text p{
+    .emms__dopplerbanner__description__text p {
         text-align: center;
     }
 
-    .emms__dopplerbanner__description__text ul{
+    .emms__dopplerbanner__description__text ul {
         margin: 25px 0 16px 0;
     }
 

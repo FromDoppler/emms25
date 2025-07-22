@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 
-import { validateForm, toHex, fromHex } from './index.js';
+import { validateForm, toHex, fromHex } from "./index.js";
 import {
     buildUserData,
     setEventInLocalStorage,
     extractFormData,
     toggleButtonLoading,
-    trackMetaPixelRegistration
-} from './submitHelpers.js';
+    trackMetaPixelRegistration,
+} from "./submitHelpers.js";
 
-const sendUserData = async (userData) => {
-    const endPoint = './services/register.php';
+const sendUserData = async userData => {
+    const endPoint = "./services/register.php";
 
     try {
         const fetchResp = await fetch(endPoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(userData)
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
         });
 
         if (fetchResp.ok) {
@@ -25,7 +25,7 @@ const sendUserData = async (userData) => {
 
         return { fetchResp, encodeEmail: userData.encodeEmail };
     } catch (error) {
-        console.log('Fetch error', error);
+        console.log("Fetch error", error);
         return null;
     }
 };
@@ -33,7 +33,8 @@ const sendUserData = async (userData) => {
 const submitFormFetch = async (form, fetchType) => {
     if (!validateForm(form)) return;
 
-    const { name, email, phone, acceptPolicies, acceptPromotions } = extractFormData(form);
+    const { name, email, phone, acceptPolicies, acceptPromotions } =
+        extractFormData(form);
     const events = setEventInLocalStorage(fetchType, toHex(email));
 
     const userData = buildUserData({
@@ -43,7 +44,7 @@ const submitFormFetch = async (form, fetchType) => {
         acceptPolicies,
         acceptPromotions,
         type: fetchType,
-        events
+        events,
     });
 
     toggleButtonLoading(form, true);
@@ -53,8 +54,8 @@ const submitFormFetch = async (form, fetchType) => {
     return result;
 };
 
-const submitWithoutForm = async (fetchType) => {
-    const userEmail = localStorage.getItem('dplrid');
+const submitWithoutForm = async fetchType => {
+    const userEmail = localStorage.getItem("dplrid");
     if (!userEmail) return;
 
     const events = setEventInLocalStorage(fetchType, userEmail);
@@ -62,13 +63,10 @@ const submitWithoutForm = async (fetchType) => {
     const userData = buildUserData({
         email: fromHex(userEmail),
         type: fetchType,
-        events
+        events,
     });
 
     return await sendUserData(userData);
 };
 
-export {
-    submitFormFetch,
-    submitWithoutForm
-};
+export { submitFormFetch, submitWithoutForm };

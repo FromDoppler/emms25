@@ -1,12 +1,13 @@
 // Header Animation
 
 let scrollpos = window.scrollY;
-const header = document.querySelector('.emms__header');
+const header = document.querySelector(".emms__header");
 const header_height = header.offsetHeight;
-const add_class_on_scroll = () => header.classList.add('emms__header-scroll');
-const remove_class_on_scroll = () => header.classList.remove('emms__header-scroll');
+const add_class_on_scroll = () => header.classList.add("emms__header-scroll");
+const remove_class_on_scroll = () =>
+    header.classList.remove("emms__header-scroll");
 
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
     scrollpos = window.scrollY;
     if (scrollpos >= 40) {
         add_class_on_scroll();
@@ -14,7 +15,6 @@ window.addEventListener('scroll', function () {
         remove_class_on_scroll();
     }
 });
-
 
 // Animation viewport scroll
 
@@ -24,8 +24,8 @@ window.addEventListener('scroll', function () {
     var windowHeight;
 
     function init() {
-        elements = document.querySelectorAll('.emms__fade-in');
-        elements2 = document.querySelectorAll('.emms__fade-top');
+        elements = document.querySelectorAll(".emms__fade-in");
+        elements2 = document.querySelectorAll(".emms__fade-top");
         windowHeight = window.innerHeight;
     }
 
@@ -34,17 +34,15 @@ window.addEventListener('scroll', function () {
             var element = elements[i];
             var positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if ( window.scrollY==0){
-                element.classList.add('emms__fade-in-animation');
-                element.classList.remove('emms__fade-in');
-            }else if (positionFromTop - windowHeight <= 0) {
-                element.classList.add('emms__fade-in-animation');
-                element.classList.remove('emms__fade-in');
-
-            }
-            else {
-                element.classList.remove('emms__fade-in-animation');
-                element.classList.add('emms__fade-in');
+            if (window.scrollY == 0) {
+                element.classList.add("emms__fade-in-animation");
+                element.classList.remove("emms__fade-in");
+            } else if (positionFromTop - windowHeight <= 0) {
+                element.classList.add("emms__fade-in-animation");
+                element.classList.remove("emms__fade-in");
+            } else {
+                element.classList.remove("emms__fade-in-animation");
+                element.classList.add("emms__fade-in");
             }
         }
     }
@@ -55,18 +53,17 @@ window.addEventListener('scroll', function () {
             var positionFromTop = elements2[i].getBoundingClientRect().top;
 
             if (positionFromTop - windowHeight <= 0) {
-                element2.classList.add('emms__fade-top-animation');
-                element2.classList.remove('emms__fade-top');
-            }
-            else {
-                element2.classList.remove('emms__fade-top-animation');
-                element2.classList.add('emms__fade-top');
+                element2.classList.add("emms__fade-top-animation");
+                element2.classList.remove("emms__fade-top");
+            } else {
+                element2.classList.remove("emms__fade-top-animation");
+                element2.classList.add("emms__fade-top");
             }
         }
     }
 
-    window.addEventListener('scroll', checkPosition, checkPosition2);
-    window.addEventListener('resize', init);
+    window.addEventListener("scroll", checkPosition, checkPosition2);
+    window.addEventListener("resize", init);
 
     init();
     checkPosition();
@@ -74,52 +71,49 @@ window.addEventListener('scroll', function () {
 })();
 
 // Flickity Carousel Home
-const homeCarousel = document.querySelector('.main-carousel');
+const homeCarousel = document.querySelector(".main-carousel");
 if (homeCarousel) {
     const flktyHome = new Flickity(homeCarousel, {
-        cellAlign: 'left',
+        cellAlign: "left",
         contain: true,
         prevNextButtons: false,
         fade: true,
-        wrapAround: true
+        wrapAround: true,
     });
 }
 
 // Flickity Carousel Academy Banner
-const academyCarousel = document.querySelector('.academy-carousel');
+const academyCarousel = document.querySelector(".academy-carousel");
 if (academyCarousel) {
     const flktyAcademy = new Flickity(academyCarousel, {
         groupCells: 1,
-        cellAlign: 'left',
+        cellAlign: "left",
         contain: true,
         prevNextButtons: true,
         fade: true,
         wrapAround: true,
-        pageDots: false
+        pageDots: false,
     });
 }
 
 // Mobile nav
 
-const heading = document.getElementById('nav-mb');
-const btn = document.getElementById('btn-burger');
+const heading = document.getElementById("nav-mb");
+const btn = document.getElementById("btn-burger");
 if (btn != undefined && btn != null) {
-    btn.addEventListener('click', (e) => {
-        heading.classList.toggle('emms__header__nav--hidden');
-        btn.classList.toggle('emms__header__nav--mb--active');
+    btn.addEventListener("click", e => {
+        heading.classList.toggle("emms__header__nav--hidden");
+        btn.classList.toggle("emms__header__nav--mb--active");
     });
 }
-
-
 
 // Share social network
 
-const shareList = document.getElementById('list-share');
-const share = document.getElementById('btn-share');
+const shareList = document.getElementById("list-share");
+const share = document.getElementById("btn-share");
 if (share != undefined && share != null) {
-    share.addEventListener('click', (e) => {
-        shareList.classList.toggle('emms__share__list--active');
-        share.classList.toggle('emms__share--active');
+    share.addEventListener("click", e => {
+        shareList.classList.toggle("emms__share__list--active");
+        share.classList.toggle("emms__share--active");
     });
 }
-

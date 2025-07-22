@@ -13,7 +13,7 @@
     width: 100%;
     height: auto;
     margin-top: -46px;
-    border-bottom: 2px solid #7D04F6;
+    border-bottom: 2px solid #7d04f6;
 }
 
 .speaker-card__image .speaker-card__image-name {
@@ -22,7 +22,7 @@
     font-size: 15px;
     text-align: center;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     text-shadow: 0px 1px 3.7px rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 185px;
@@ -37,7 +37,7 @@
     font-size: 14px;
     line-height: 19px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 10px 16px;
 }
 
@@ -51,14 +51,13 @@
     object-fit: contain;
 }
 
-
 /* Image border color */
 .speaker-card.speaker-card--conference .speaker-card__photo {
-    border-bottom: 2px solid #7D04F6;
+    border-bottom: 2px solid #7d04f6;
 }
 
 .speaker-card.speaker-card--successStory .speaker-card__photo {
-    border-bottom: 2px solid #1DFFDD;
+    border-bottom: 2px solid #1dffdd;
 }
 
 .speaker-card.speaker-card--networking .speaker-card__photo {
@@ -66,9 +65,8 @@
 }
 
 .speaker-card.speaker-card--workshop .speaker-card__photo {
-    border-bottom: 2px solid #EFBF04;
+    border-bottom: 2px solid #efbf04;
 }
-
 
 .speaker-card.speaker-card--networking .speaker-card__image {
     display: flex;
@@ -83,7 +81,6 @@
 }
 
 @media (max-width: 768px) {
-
     /* Móviles */
     .speaker-card__image {
         margin-right: 0;
@@ -95,6 +92,4 @@
         bottom: -200px;
         top: unset;
     }
-
-
 }
