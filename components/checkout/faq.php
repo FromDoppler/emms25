@@ -41,6 +41,26 @@ $faqItems = [
         "open" => false
     ],
 ];
+$faqStructuredData = [
+    "@context" => "https://schema.org",
+    "@type" => "FAQPage",
+    "mainEntity" => []
+];
+
+foreach ($faqItems as $item) {
+    $questionText = strip_tags($item['question']);
+    $answerText = strip_tags($item['answer']);
+
+    $faqStructuredData['mainEntity'][] = [
+        "@type" => "Question",
+        "name" => $questionText,
+        "acceptedAnswer" => [
+            "@type" => "Answer",
+            "text" => $answerText
+        ]
+    ];
+}
+
 ?>
 <section class="emms__frequentquestions frequentquestions--checkout" id="preguntas-frecuentes">
     <div class="emms__background-a"></div>
@@ -48,7 +68,7 @@ $faqItems = [
         <h2 class="emms__fade-in">Preguntas frecuentes</h2>
         <ul class="emms__frequentquestions__list emms__fade-in">
             <?php foreach ($faqItems as $item): ?>
-                <li class="emms__frequentquestions__list__item <?php echo $item['open'] ? 'open' : 'close'; ?>">
+                <li class="emms__frequentquestions__list__item <?= !empty($item['open']) ? 'open' : 'close' ?>">
                     <button class="emms__frequentquestions__list__item__head"><?php echo $item['question']; ?></button>
                     <p class="emms__frequentquestions__list__item__content"><?php echo $item['answer']; ?></p>
                 </li>
@@ -57,3 +77,6 @@ $faqItems = [
     </div>
 </section>
 <script src="src/<?= VERSION ?>/js/collapsibles.js"></script>
+<script type="application/ld+json">
+    <?= json_encode($faqStructuredData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
