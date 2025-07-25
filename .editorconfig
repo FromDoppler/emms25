@@ -10,8 +10,8 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 end_of_line = lf
-indent_size = 4
-max_line_length = 110
+indent_size = 2
+max_line_length = 220
 
 # JavaScript files
 [*.js]
@@ -24,9 +24,7 @@ max_line_length = 220
 [*.php]
 max_line_length = 9999
 
-# Templates with long lines
-[{utils/relay-templates/**}]
-max_line_length = 600
+
 
 # PHP files
 [*.php]
@@ -42,7 +40,7 @@ trim_trailing_whitespace = false
 indent_size = 2
 
 # Unset for binary and generated files
-[{**.svg,**.png,**.jpg,**.jpeg,**.gif,**.ico,**.pdf,node_modules/**,vendor/**,**/vendor/**,logs/**,.docker/**,admin/speakers/uploads/**,*Zone.Identifier,firebase-messaging-sw.js}]
+[{**.svg,**.png,**.jpg,**.jpeg,**.gif,**.ico,**.pdf,node_modules/**,vendor/**,**/vendor/**,logs/**,.docker/**,admin/speakers/uploads/**,*Zone.Identifier,firebase-messaging-sw.js,utils/relay-templates/**}]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset

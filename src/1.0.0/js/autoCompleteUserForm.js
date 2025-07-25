@@ -16,72 +16,72 @@
  */
 
 function decodeHtmlEntitiesInUrl(url) {
-    const entityMap = {
-        "&iacute;": "í",
-        "&eacute;": "é",
-        "&oacute;": "ó",
-        "&aacute;": "á",
-        "&uacute;": "ú",
-        "&ntilde;": "ñ",
-        "&egrave;": "è",
-        "&nbsp;": " ",
-    };
+  const entityMap = {
+    "&iacute;": "í",
+    "&eacute;": "é",
+    "&oacute;": "ó",
+    "&aacute;": "á",
+    "&uacute;": "ú",
+    "&ntilde;": "ñ",
+    "&egrave;": "è",
+    "&nbsp;": " ",
+  };
 
-    for (let entity in entityMap) {
-        const regex = new RegExp(entity, "g");
-        url = url.replace(regex, entityMap[entity]);
-    }
-    return url;
+  for (let entity in entityMap) {
+    const regex = new RegExp(entity, "g");
+    url = url.replace(regex, entityMap[entity]);
+  }
+  return url;
 }
 
 function searchUrlParam(param) {
-    const url = window.location.href;
-    const decodedUrl = decodeHtmlEntitiesInUrl(url);
+  const url = window.location.href;
+  const decodedUrl = decodeHtmlEntitiesInUrl(url);
 
-    const urlParams = new URLSearchParams(decodedUrl.split("?")[1]);
-    const value = urlParams.get(param);
+  const urlParams = new URLSearchParams(decodedUrl.split("?")[1]);
+  const value = urlParams.get(param);
 
-    return value ? decodeURIComponent(value.replace(/\+/g, " ")) : null;
+  return value ? decodeURIComponent(value.replace(/\+/g, " ")) : null;
 }
 
 const FormAutoComplete = {
-    getUserValues() {
-        return {
-            email: searchUrlParam("email"),
-            name: searchUrlParam("name"),
-            phone: searchUrlParam("phone"),
-        };
-    },
+  getUserValues() {
+    return {
+      email: searchUrlParam("email"),
+      name: searchUrlParam("name"),
+      phone: searchUrlParam("phone"),
+    };
+  },
 
-    completeForm() {
-        const { email, phone, name } = this.getUserValues();
-        const form = document.querySelector("form");
+  completeForm() {
+    const { email, phone, name } = this.getUserValues();
+    const form = document.querySelector("form");
 
-        if (!form) {
-            console.error("No form found on the page.");
-            return;
-        }
+    if (!form) {
+      console.error("No form found on the page.");
+      return;
+    }
 
-        form.querySelectorAll("input").forEach(input => {
-            switch (input.name) {
-                case "email":
-                    input.value = email || "";
-                    break;
-                case "name":
-                    input.value = name || "";
-                    break;
-                case "phone":
-                    input.value = phone || "";
-                    break;
-            }
-        });
-    },
+    form.querySelectorAll("input").forEach((input) => {
+      switch (input.name) {
+        case "email":
+          input.value = email || "";
+          break;
+        case "name":
+          input.value = name || "";
+          break;
+        case "phone":
+          input.value = phone || "";
+          break;
+      }
+    });
+  },
 
-    init() {
-        window.addEventListener("load", () => {
-            this.completeForm();
-        });
-    },
+  init() {
+    window.addEventListener("load", () => {
+      this.completeForm();
+    });
+  },
 };
 
 FormAutoComplete.init();

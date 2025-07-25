@@ -47,16 +47,14 @@ if (PRODUCTION) {
     w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
 
     Object.values(ids).forEach((id) => {
-      const dl = l !== 'dataLayer' ? '&l=' + l : '';
-      const j = d.createElement(s);
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id + dl;
-      const f = d.getElementsByTagName(s)[0];
-      f.parentNode.insertBefore(j, f);
+    const dl = l !== 'dataLayer' ? '&l=' + l : '';
+    const j = d.createElement(s);
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id + dl;
+    const f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(j, f);
     });
   })(window, document, 'script', 'dataLayer', <?php echo json_encode(GTM_IDS); ?>);
 </script>
 <?php } ?>
 <!-- End Google Tag Manager -->
-
-

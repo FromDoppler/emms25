@@ -1,5 +1,5 @@
 export const sponsorType = {
-    SPONSOR: "SPONSOR",
-    STARTER: "STARTER",
-    PREMIUM: "PREMIUM",
+  SPONSOR: "SPONSOR",
+  STARTER: "STARTER",
+  PREMIUM: "PREMIUM",
 };

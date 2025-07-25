@@ -168,5 +168,4 @@ $duringDaysArray = array(
         "twitch" => "fromdoppler"
     )
 );
-*/
-
+ */

@@ -1,12 +1,12 @@
 import { getErrors } from "./getErrors.js";
 
 export const errorsRows = async () => {
-    const filteredErrors = await getErrors();
-    const errorsList = document.getElementById("errorsList");
-    filteredErrors && filteredErrors.length
-        ? filteredErrors.map(
-              (el, index) =>
-                  (errorsList.querySelector("tbody").innerHTML += `
+  const filteredErrors = await getErrors();
+  const errorsList = document.getElementById("errorsList");
+  filteredErrors && filteredErrors.length
+    ? filteredErrors.map(
+        (el, index) =>
+          (errorsList.querySelector("tbody").innerHTML += `
                 <tr key=${index}>
                     <td>
                         <span> ${index} </span>
@@ -26,9 +26,9 @@ export const errorsRows = async () => {
                     <td>
                         <span> ${el.created_at} </span>
                     </td>
-                </tr> `)
-          )
-        : (errorsList.querySelector("tbody").innerHTML = `
+                </tr> `),
+      )
+    : (errorsList.querySelector("tbody").innerHTML = `
             <tr>
             <td colspan="6">
                 No Data.

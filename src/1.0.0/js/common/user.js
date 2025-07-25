@@ -3,17 +3,14 @@
 import { getEncodeURLEmail } from "./index.js";
 
 const isUserLogged = () => {
-    const loggedLocalStorage =
-        getUserLoggedFromLocalStorage() === false ? false : true;
-    const loggedInUrl = getEncodeURLEmail() === false ? false : true;
+  const loggedLocalStorage = getUserLoggedFromLocalStorage() === false ? false : true;
+  const loggedInUrl = getEncodeURLEmail() === false ? false : true;
 
-    return loggedLocalStorage || loggedInUrl;
+  return loggedLocalStorage || loggedInUrl;
 };
 
 const getUserLoggedFromLocalStorage = () => {
-    return localStorage.getItem("dplrid") === null
-        ? false
-        : localStorage.getItem("dplrid");
+  return localStorage.getItem("dplrid") === null ? false : localStorage.getItem("dplrid");
 };
 
 export { isUserLogged };
