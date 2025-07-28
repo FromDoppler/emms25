@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/register-withoutform.php') ?>
         </div>
 
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/schedule/schedule.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
         <div class="emms__bg-dark-gradient">
