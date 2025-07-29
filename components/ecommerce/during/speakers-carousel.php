@@ -209,7 +209,7 @@ $speakersEcommerce = [
         <?php elseif ($block['block'] === 'registerHome') : ?>
             <p class="emms__fade-in speakers__title">Los máximos referentes del comercio electrónico
                     están esperando por ti… 
-          </p>
+        </p>
             <p class="emms__fade-in  speakers__body">Descubre las mejores tendencias y estrategias en la transmisión  <br class="dk">
                 en directo del EMMS E-commerce 2025.
             </p>

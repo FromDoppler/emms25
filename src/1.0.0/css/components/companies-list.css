@@ -1,135 +1,135 @@
 .companies {
-    padding: 56px 0 70px 0;
-    text-align: center;
+  padding: 56px 0 70px 0;
+  text-align: center;
 }
 
 .companies .companies__body {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: #333333;
-    margin: 35px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #333333;
+  margin: 35px;
 }
 
 .companies .companies__body a {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: #33ad73;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #33ad73;
 }
 .companies .companies__body a:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .companies .emms__container--lg {
-    max-width: 1260px;
+  max-width: 1260px;
 }
 
 .companies h2 {
-    font-size: 32px;
-    line-height: 41px;
-    font-weight: 700;
-    color: #333333;
-    margin: 0 0 52px 0;
-    animation-delay: 0.1s;
+  font-size: 32px;
+  line-height: 41px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 52px 0;
+  animation-delay: 0.1s;
 }
 
 .companies h3 {
-    font-size: 20px;
-    line-height: 26px;
-    font-weight: 700;
-    color: #333333;
-    animation-delay: 0.2s;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #333333;
+  animation-delay: 0.2s;
 }
 
 .companies .companies-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation-delay: 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation-delay: 0.3s;
 }
 
 .companies .companies-list .companies-list__item {
-    height: 50px;
-    margin: 0 13px 32px 13px;
+  height: 50px;
+  margin: 0 13px 32px 13px;
 }
 
 .companies .companies-list.companies-list--lg .companies-list__item {
-    height: 60px;
+  height: 60px;
 }
 
 .companies .companies-list .companies-list__item img {
-    height: 100%;
-    display: block;
+  height: 100%;
+  display: block;
 }
 
 .companies small {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
-    color: #333333;
-    margin: 40px 0 0 0;
-    display: block;
-    animation-delay: 0.3s;
-    margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #333333;
+  margin: 40px 0 0 0;
+  display: block;
+  animation-delay: 0.3s;
+  margin-bottom: 10px;
 }
 
 .companies small a {
-    font-weight: 700;
-    color: #33ad73;
+  font-weight: 700;
+  color: #33ad73;
 }
 
 .companies small a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .companies .emms__cta.emms__cta--nd.sm {
-    margin: 50px 0 0 0;
+  margin: 50px 0 0 0;
 }
 
 /* ------ With CATEGORIES ------ */
 
 .companies.companies--categories {
-    padding: 70px 0;
+  padding: 70px 0;
 }
 
 .companies.companies--categories h2,
 .companies.companies--categories h3 {
-    margin: 0 0 31px 0;
+  margin: 0 0 31px 0;
 }
 
 .companies.companies--categories .companies__divisor {
-    height: 65px;
+  height: 65px;
 }
 
 .companies.companies--categories small {
-    margin: 50px auto 0;
+  margin: 50px auto 0;
 }
 
 .companies.companies--categories .emms__cta {
-    background: rgba(51, 173, 115, 0.2);
-    border: 1px solid #33ad73;
-    border-radius: 100px;
-    font-size: 16px;
-    line-height: 20px;
-    color: #33ad73;
-    font-weight: bold;
-    margin-top: 40px;
+  background: rgba(51, 173, 115, 0.2);
+  border: 1px solid #33ad73;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #33ad73;
+  font-weight: bold;
+  margin-top: 40px;
 }
 
 .companies.companies--categories .emms__cta:hover {
-    background: rgba(0, 128, 70, 0.1);
-    transition-duration: 0.2s;
+  background: rgba(0, 128, 70, 0.1);
+  transition-duration: 0.2s;
 }
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
 @media (max-width: 992px) {
-    .companies .companies-list .companies-list__item,
-    .companies .companies-list.companies-list--lg .companies-list__item {
-        height: 40px;
-    }
+  .companies .companies-list .companies-list__item,
+  .companies .companies-list.companies-list--lg .companies-list__item {
+    height: 40px;
+  }
 }

@@ -2,44 +2,44 @@ import { getSponsors } from "./getSponsors.js";
 import { showSponsorsPage } from "./sponsorsList.js";
 import { showSponsorForm } from "../sponsor-form/sponsorForm.js";
 const removeSponsor = async (sponsorId, currentSponsorType) => {
-    const removeSponsorUrl = "/adm25/server/modules/sponsors/removeSponsor.php";
-    const formData = new FormData();
-    formData.append("sponsorId", sponsorId);
+  const removeSponsorUrl = "/adm25/server/modules/sponsors/removeSponsor.php";
+  const formData = new FormData();
+  formData.append("sponsorId", sponsorId);
 
-    await fetch(removeSponsorUrl, {
-        method: "post",
-        body: formData,
-    });
-    await showSponsorsPage(currentSponsorType);
+  await fetch(removeSponsorUrl, {
+    method: "post",
+    body: formData,
+  });
+  await showSponsorsPage(currentSponsorType);
 };
 
-const btnRemoveSponsorListener = currentSponsorType => {
-    const removeBtn = document.getElementsByName("removeSponsor");
-    removeBtn.forEach(el => {
-        el.addEventListener("click", async () => {
-            const removeId = el.dataset.removeid;
-            await removeSponsor(removeId, currentSponsorType);
-        });
+const btnRemoveSponsorListener = (currentSponsorType) => {
+  const removeBtn = document.getElementsByName("removeSponsor");
+  removeBtn.forEach((el) => {
+    el.addEventListener("click", async () => {
+      const removeId = el.dataset.removeid;
+      await removeSponsor(removeId, currentSponsorType);
     });
+  });
 };
 
-const btnEditSponsorListener = currentSponsorType => {
-    const editBtn = document.getElementsByName("editSponsor");
-    editBtn.forEach(el => {
-        el.addEventListener("click", async () => {
-            const objSponsor = JSON.parse(el.dataset.editid);
-            await showSponsorForm(currentSponsorType, objSponsor);
-        });
+const btnEditSponsorListener = (currentSponsorType) => {
+  const editBtn = document.getElementsByName("editSponsor");
+  editBtn.forEach((el) => {
+    el.addEventListener("click", async () => {
+      const objSponsor = JSON.parse(el.dataset.editid);
+      await showSponsorForm(currentSponsorType, objSponsor);
     });
+  });
 };
 
-export const sponsorsRows = async currentSponsorType => {
-    const filteredSponsors = await getSponsors(currentSponsorType);
-    const sponsorsList = document.getElementById("sponsorsList");
-    filteredSponsors && filteredSponsors.length
-        ? filteredSponsors.map(
-              (el, index) => (
-                  (sponsorsList.querySelector("tbody").innerHTML += `
+export const sponsorsRows = async (currentSponsorType) => {
+  const filteredSponsors = await getSponsors(currentSponsorType);
+  const sponsorsList = document.getElementById("sponsorsList");
+  filteredSponsors && filteredSponsors.length
+    ? filteredSponsors.map(
+        (el, index) => (
+          (sponsorsList.querySelector("tbody").innerHTML += `
                 <tr key=${index}>
                     <td>
                         <span> ${index} </span>
@@ -74,11 +74,11 @@ export const sponsorsRows = async currentSponsorType => {
                         </button>
                     </td>
                 </tr> `),
-                  btnRemoveSponsorListener(currentSponsorType),
-                  btnEditSponsorListener(currentSponsorType)
-              )
-          )
-        : (sponsorsList.querySelector("tbody").innerHTML = `
+          btnRemoveSponsorListener(currentSponsorType),
+          btnEditSponsorListener(currentSponsorType)
+        ),
+      )
+    : (sponsorsList.querySelector("tbody").innerHTML = `
             <tr>
             <td colspan="6">
                 No Data.

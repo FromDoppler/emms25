@@ -41,3 +41,9 @@ firebase-messaging-sw.js
 
 # PHP files (GitHub Actions doesn't support PHP plugin)
 *.php
+
+# Minified files and vendor libraries
+*.min.js
+*.min.css
+src/1.0.0/js/vendors/
+src/1.0.0/flickity/

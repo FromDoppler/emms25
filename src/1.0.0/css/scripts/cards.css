@@ -1,19 +1,19 @@
 .ecommerceCard .not--loged.display--card,
 .digitalTCard .not--loged.display--card {
-    display: block;
+  display: block;
 }
 
 .ecommerceCard .not--loged.nodisplay--card,
 .digitalTCard .not--loged.nodisplay--card {
-    display: none;
+  display: none;
 }
 
 .ecommerceCard .loged,
 .digitalTCard .loged {
-    display: none;
+  display: none;
 }
 
 .ecommerceCard .loged.display--card,
 .digitalTCard .loged.display--card {
-    display: block;
+  display: block;
 }

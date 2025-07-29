@@ -18,7 +18,7 @@ $resourcesJson = '[
         "downloadText" : "DESCARGAR INFOGRAFÍA →",
         "downloadUrl": "https://www.fromdoppler.com/wp-content/uploads/2024/04/EMMS-Buenas-practicas-de-IA-que-tu-E-commerce-necesita.pdf"
     },
-     {
+    {
         "image": "/src/img/resources/resource-email-mkt.png",
         "tag": "RECURSO EXCLUSIVO",
         "title": "Email Marketing para fechas de alto volumen de ventas",
@@ -26,7 +26,7 @@ $resourcesJson = '[
         "downloadText" : "DESCARGAR EL E-BOOK →",
         "downloadUrl": "https://www.fromdoppler.com/wp-content/uploads/2024/03/ebook-altovolumen-ventas.pdf"
     },
-     {
+    {
         "image": "/src/img/resources/resource-guia.png",
         "tag": "RECURSO EXCLUSIVO",
         "title": "Guía de Email y Automation Marketing",

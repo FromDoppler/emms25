@@ -3,7 +3,7 @@
 
  Copyright The Closure Library Authors.
  SPDX-License-Identifier: Apache-2.0
-*/
+     */
     var aa = this || self;
     function k(a, b) {
         a = a.split(".");
@@ -172,8 +172,8 @@
                 ? a.g[b].length
                 : 0
             : null != a.g[b]
-              ? 1
-              : 0;
+            ? 1
+            : 0;
     }
     function q(a, b, c) {
         a.g[b] = c;
@@ -19001,8 +19001,8 @@
                 ? 3 == c
                     ? ";ext=" + p(b, 3)
                     : null != a.g[13]
-                      ? p(a, 13) + v(b, 3)
-                      : " ext. " + v(b, 3)
+                    ? p(a, 13) + v(b, 3)
+                    : " ext. " + v(b, 3)
                 : "";
         a: {
             a = 0 == t(a, 20).length || 2 == c ? t(a, 19) : t(a, 20);
@@ -19097,26 +19097,26 @@
             ? V(a, p(b, 5))
                 ? 4
                 : V(a, p(b, 4))
-                  ? 3
-                  : V(a, p(b, 6))
+                ? 3
+                : V(a, p(b, 6))
                     ? 5
                     : V(a, p(b, 8))
-                      ? 6
-                      : V(a, p(b, 7))
+                    ? 6
+                    : V(a, p(b, 7))
                         ? 7
                         : V(a, p(b, 21))
-                          ? 8
-                          : V(a, p(b, 25))
+                        ? 8
+                        : V(a, p(b, 25))
                             ? 9
                             : V(a, p(b, 28))
-                              ? 10
-                              : V(a, p(b, 2))
+                            ? 10
+                            : V(a, p(b, 2))
                                 ? p(b, 18) || V(a, p(b, 3))
                                     ? 2
                                     : 0
                                 : !p(b, 18) && V(a, p(b, 3))
-                                  ? 1
-                                  : -1
+                                ? 1
+                                : -1
             : -1;
     }
     function S(a, b) {
@@ -19186,12 +19186,12 @@
         return c == b
             ? 0
             : c > b
-              ? 2
-              : e[e.length - 1] < b
+            ? 2
+            : e[e.length - 1] < b
                 ? 3
                 : -1 < e.indexOf(b, 1)
-                  ? 0
-                  : 5;
+                ? 0
+                : 5;
     }
     function X(a, b) {
         var c = P(b);
@@ -19308,8 +19308,8 @@
         null == h
             ? (g = !0)
             : 0 === h.length
-              ? (g = !1)
-              : ((g = Ca.exec(h)),
+            ? (g = !1)
+            : ((g = Ca.exec(h)),
                 (h = Da.exec(h)),
                 (g = null !== g || null !== h));
         if (!g)
@@ -19318,20 +19318,20 @@
             );
         null != e
             ? ("+" === e.charAt(0) && f.g(e),
-              (e = b.indexOf("tel:")),
-              f.g(
-                  b.substring(0 <= e ? e + 4 : 0, b.indexOf(";phone-context="))
-              ))
+            (e = b.indexOf("tel:")),
+            f.g(
+                b.substring(0 <= e ? e + 4 : 0, b.indexOf(";phone-context="))
+            ))
             : ((e = f.g),
-              (g = b ?? ""),
-              (h = g.search(ya)),
-              0 <= h
-                  ? ((g = g.substring(h)),
+            (g = b ?? ""),
+            (h = g.search(ya)),
+            0 <= h
+                ? ((g = g.substring(h)),
                     (g = g.replace(Aa, "")),
                     (h = g.search(za)),
                     0 <= h && (g = g.substring(0, h)))
-                  : (g = ""),
-              e.call(f, g));
+                : (g = ""),
+            e.call(f, g));
         e = f.toString();
         g = e.indexOf(";isub=");
         0 < g && ((f.i = ""), f.g(e.substring(0, g)));
@@ -19377,10 +19377,10 @@
         0 != h
             ? ((f = R(h)), f != c && (g = Q(a, h, f)))
             : (Ka(f),
-              b.g(f.toString()),
-              null != c
-                  ? ((h = v(g, 10)), q(e, 1, h))
-                  : d && (delete e.g[6], e.i && delete e.i[6]));
+            b.g(f.toString()),
+            null != c
+                ? ((h = v(g, 10)), q(e, 1, h))
+                : d && (delete e.g[6], e.i && delete e.i[6]));
         if (2 > b.i.length)
             throw Error(
                 "The string supplied is too short to be a phone number"
@@ -19488,9 +19488,9 @@
                 : "Phone number too short after IDD" === c.message ||
                     "The string supplied is too short to be a phone number" ===
                         c.message
-                  ? 2
-                  : "The string supplied is too long to be a phone number" ===
-                      c.message
+                ? 2
+                : "The string supplied is too long to be a phone number" ===
+                    c.message
                     ? 3
                     : -99;
         }

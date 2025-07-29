@@ -101,4 +101,3 @@ $contentDuring = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
         </div>
     </div>
 <?php endif; ?>
-

@@ -1,95 +1,95 @@
 .speaker-card__image {
-    flex: 1.3;
-    margin-right: 16px;
-    position: relative;
-    min-height: 296px;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+  flex: 1.3;
+  margin-right: 16px;
+  position: relative;
+  min-height: 296px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .speaker-card__image .speaker-card__photo {
-    width: 100%;
-    height: auto;
-    margin-top: -46px;
-    border-bottom: 2px solid #7d04f6;
+  width: 100%;
+  height: auto;
+  margin-top: -46px;
+  border-bottom: 2px solid #7d04f6;
 }
 
 .speaker-card__image .speaker-card__image-name {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 0px 1px 3.7px rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 185px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0px 1px 3.7px rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 185px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
 }
 
 .speaker-card__image .speaker-card__image-title {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 19px;
-    text-align: center;
-    color: #ffffff;
-    margin: 10px 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px 16px;
 }
 
 .speaker-card__image .speaker-card__logo {
-    height: 60px;
-    width: auto;
-    max-width: 80%;
-    margin: 10px auto;
-    margin-top: 0px;
-    display: block;
-    object-fit: contain;
+  height: 60px;
+  width: auto;
+  max-width: 80%;
+  margin: 10px auto;
+  margin-top: 0px;
+  display: block;
+  object-fit: contain;
 }
 
 /* Image border color */
 .speaker-card.speaker-card--conference .speaker-card__photo {
-    border-bottom: 2px solid #7d04f6;
+  border-bottom: 2px solid #7d04f6;
 }
 
 .speaker-card.speaker-card--successStory .speaker-card__photo {
-    border-bottom: 2px solid #1dffdd;
+  border-bottom: 2px solid #1dffdd;
 }
 
 .speaker-card.speaker-card--networking .speaker-card__photo {
-    border-bottom: unset;
+  border-bottom: unset;
 }
 
 .speaker-card.speaker-card--workshop .speaker-card__photo {
-    border-bottom: 2px solid #efbf04;
+  border-bottom: 2px solid #efbf04;
 }
 
 .speaker-card.speaker-card--networking .speaker-card__image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .name__container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 768px) {
-    /* Móviles */
-    .speaker-card__image {
-        margin-right: 0;
-        gap: 6px;
-    }
+  /* Móviles */
+  .speaker-card__image {
+    margin-right: 0;
+    gap: 6px;
+  }
 
-    .speaker-card__image .speaker-card__image-name {
-        font-size: 20px;
-        bottom: -200px;
-        top: unset;
-    }
+  .speaker-card__image .speaker-card__image-name {
+    font-size: 20px;
+    bottom: -200px;
+    top: unset;
+  }
 }
