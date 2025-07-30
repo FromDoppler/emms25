@@ -1,23 +1,22 @@
 :root {
   /*  Colores principales */
-  --color-primary: #3E00A8;
+  --color-primary: #3e00a8;
   --color-primary-hover: #4e0cc2;
 
-  --color-secondary: #18FF8C;
-  --color-secondary-hover: #00CB66;
+  --color-secondary: #18ff8c;
+  --color-secondary-hover: #00cb66;
 
-  --gradient-main: linear-gradient(180deg, #6716F3 0%, #D922C4 50%, #18FF8C 100%);
-  --gradient-secondary: linear-gradient(90deg, #BD38EA 0%, #6716F3 100%);
-  --gradient-terciary: linear-gradient(360deg, #230966 0%, #14092F 100%);
-
+  --gradient-main: linear-gradient(180deg, #6716f3 0%, #d922c4 50%, #18ff8c 100%);
+  --gradient-secondary: linear-gradient(90deg, #bd38ea 0%, #6716f3 100%);
+  --gradient-terciary: linear-gradient(360deg, #230966 0%, #14092f 100%);
 
   /*  Colores de fondo y texto */
   --color-bg: #ffffff;
   --color-text: #1e1e1e;
   --color-muted: #777777;
-  --color-error: #FF4D4D;
-  --color-warning: #FFC107;
-  --color-success: #18FF8C;
+  --color-error: #ff4d4d;
+  --color-warning: #ffc107;
+  --color-success: #18ff8c;
 
   /* Tipografía */
   --font-family-base: "Proxima-Nova", "helvetica", "sans-serif";
