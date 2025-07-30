@@ -44,13 +44,74 @@ if (!defined('CACHE_TIME')) define('CACHE_TIME', 60); // En segundos(60) (1 minu
 if (!defined('CACHE_TIME_ID')) define('CACHE_TIME_ID', 1800); // En segundos(1800) (30 minutos)
 if (!defined('CACHE_BACKUP_TIME')) define('CACHE_BACKUP_TIME', 3600); // En segundos (1 Hora)
 
-#EVENTS NAMES
+#EVENTS CONFIGURATION
 
-$ecommerce = 'ecommerce25';
-$digitalTrends = 'digital-trends25';
+$sharedRoutes = [
+    // Home routes
+    'homeRegisteredUrl' => 'registrado',
+    'homeRegisteredPage' => 'home-registrado.php',
+    'homeUnregisteredUrl' => '/',
+    'homeUnregisteredPage' => 'home.php',
 
-if (!defined('ECOMMERCE')) define('ECOMMERCE', $ecommerce);
-if (!defined('DIGITALTRENDS')) define('DIGITALTRENDS', $digitalTrends);
+    // Sponsors routes
+    'sponsorsFolderPage' => 'sponsors',
+    'sponsorsPage' => 'library-resources.php',
+    'sponsorsUnregisteredUrl' => 'sponsors',
+    'sponsorsRegisteredUrl' => 'sponsors-registrado',
+
+    // Checkout routes
+    'checkoutFolderPage' => 'checkout',
+    'checkoutPage' => 'checkout.php',
+    'checkoutSuccessPage' => 'checkout-success.php',
+    'checkoutUrl' => 'checkout',
+    'checkoutSuccessUrl' => 'checkout-success',
+
+    // Speaker routes
+    'speakerInternaPage' => 'speaker-interna.php',
+];
+
+$events = [
+    'ECOMMERCE' => [
+        'freeId' => 'ecommerce25',
+        'vipId' => 'ecommerce25-vip',
+        'name' => 'E-commerce',
+        'eventFolderPage' => 'ecommerce',
+        'routes' => array_merge([
+            'eventUnregisteredUrl' => 'ecommerce',
+            'eventUnregisteredPage' => 'ecommerce.php',
+            'eventRegisteredUrl' => 'ecommerce-registrado',
+            'eventRegisteredPage' => 'ecommerce-registrado.php',
+        ], $sharedRoutes),
+    ],
+    'DIGITALTRENDS' => [
+        'freeId' => 'digital-trends25',
+        'vipId' => 'digital-trends25-vip',
+        'name' => 'Digital Trends',
+        'eventFolderPage' => 'digital-trends',
+        'routes' => array_merge([
+            'eventUnregisteredUrl' => 'digital-trends',
+            'eventUnregisteredPage' => 'digital-trends.php',
+            'eventRegisteredUrl' => 'digital-trends-registrado',
+            'eventRegisteredPage' => 'digital-trends-registrado.php',
+        ], $sharedRoutes),
+    ],
+];
+
+// Evento actual
+$currentEventKey = 'DIGITALTRENDS';
+
+if (!array_key_exists($currentEventKey, $events)) {
+    throw new Exception("Evento '$currentEventKey' no definido.");
+}
+
+$currentEventData = $events[$currentEventKey];
+
+// Definiciones para compatibilidad
+if (!defined('ECOMMERCE')) define('ECOMMERCE', $events['ECOMMERCE']['freeId']);
+if (!defined('DIGITALTRENDS')) define('DIGITALTRENDS', $events['DIGITALTRENDS']['freeId']);
+// Variable global para el servicio
+$GLOBALS['CURRENT_EVENT_DATA'] = $currentEventData;
+
 
 #GTM (Google Tag Manager) Containers
 if (!defined('GTM_IDS')) define('GTM_IDS', [
