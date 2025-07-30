@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 ?>
 
 <!DOCTYPE html>

@@ -23,12 +23,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
         checkEncodeUrl
     } from '/src/<?= VERSION ?>/js/user.js';
     checkEncodeUrl();
-    if (!userRegisteredInEvent(eventsType.ECOMMERCE)) {
+    if (!userRegisteredInEvent(eventsType.DIGITALTRENDS)) {
         window.location.href = getUrlWithParams('/');
     }
 </script>
 <?php
-$response = processPhaseToShow(ECOMMERCE);
+$response = processPhaseToShow(DIGITALTRENDS);
 $isRegistered=1;
-require_once($_SERVER['DOCUMENT_ROOT'] . "/pages/ecommerce/$response[phaseToShow]/home-registrado.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/pages/digital-trends/$response[phaseToShow]/home-registrado.php");
 ?>
