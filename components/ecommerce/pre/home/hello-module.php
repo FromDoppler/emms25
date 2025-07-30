@@ -24,8 +24,8 @@ $content = $contents[$normalizedUrl] ?? $contents['/*'];
 ?>
 
 <!-- Hero -->
-<section class="emms__home__hero">
-    <div class="emms__home__hero__title emms__fade-top">
+<section class="home-hero">
+    <div class="home-hero__title emms__fade-top">
         <h1><em>TODAS LAS TENDENCIAS EN MARKETING DIGITAL, EN UN SOLO LUGAR</em> <?php echo ($content['heading']); ?>
         </h1>
         <h2>EVENTOS ONLINE Y GRATUITOS</h2>

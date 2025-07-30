@@ -1,11 +1,15 @@
 /* Hero */
 
-.emms__home__hero {
+.home-hero {
   background: #000 url("../../../img/back-hero--dk-24.png") no-repeat;
   background-size: 100%;
   background-position: bottom;
   padding: 178px 0 108px 0;
   animation: hero-back 3s;
+}
+
+.home-hero.home-hero--digitaltrends {
+  background: #000 url("../../../img/backgrounds/bg-digitaltrends.png") no-repeat;
 }
 
 @keyframes hero-back {
@@ -18,26 +22,26 @@
   }
 }
 
-.emms__home__hero__title {
+.home-hero__title {
   max-width: 978px;
   width: 90%;
   margin: 0 auto 89px auto;
   text-align: center;
 }
 
-.emms__home__hero__title a {
+.home-hero__title a {
   color: #bd7aff;
   font-weight: bold;
 }
 
-.emms__home__hero__title h1 {
+.home-hero__title h1 {
   font-size: 50px;
   line-height: 52px;
   font-weight: 700;
   color: #fff;
 }
 
-.emms__home__hero__title h1 em {
+.home-hero__title h1 em {
   font-size: 14px;
   line-height: 20px;
   font-style: normal;
@@ -45,7 +49,7 @@
   margin: 0 0 20px 0;
 }
 
-.emms__home__hero__title h1 em span {
+.home-hero__title h1 em span {
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
@@ -54,7 +58,7 @@
   color: #ff07d4;
 }
 
-.emms__home__hero__title h1 em.xl {
+.home-hero__title h1 em.xl {
   font-style: normal;
   display: block;
   margin: 0 0 20px 0;
@@ -65,7 +69,7 @@
   color: #ffffff;
 }
 
-.emms__home__hero__title h2 {
+.home-hero__title h2 {
   font-size: 19px;
   line-height: 24px;
   font-weight: 400;
@@ -77,7 +81,7 @@
   max-width: 590px;
 }
 
-.emms__home__hero__title p {
+.home-hero__title p {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
@@ -86,17 +90,8 @@
   font-weight: bold;
 }
 
-.emms__home__hero__title p span {
+.home-hero__title p span {
   color: #ec6cff;
-}
-
-.emms__home__hero__title.emms__home__hero__title__during p strong a {
-  color: #79f66e;
-  font-weight: bold;
-}
-
-.emms__home__hero__title.emms__home__hero__title__during p strong a:hover {
-  color: #61db56;
 }
 
 /* Event Numbers */
@@ -162,24 +157,24 @@
 }
 
 @media (max-width: 620px) {
-  .emms__home__hero {
+  .home-hero {
     padding: 100px 0 165px 0;
   }
 
-  .emms__home__hero__title {
+  .home-hero__title {
     margin: 0 auto 50px auto;
   }
 
-  .emms__home__hero__title h1 {
+  .home-hero__title h1 {
     font-size: 30px;
     line-height: 28px;
   }
 
-  .emms__home__hero__title h2 {
+  .home-hero__title h2 {
     font-size: 16px;
   }
 
-  .emms__home__hero__title p span {
+  .home-hero__title p span {
     display: none;
   }
 
