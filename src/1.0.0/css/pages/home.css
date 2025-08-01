@@ -49,6 +49,17 @@
   margin: 0 0 20px 0;
 }
 
+.home-hero__title h1 span {
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: bold;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .home-hero__title h1 em span {
   font-weight: 700;
   font-size: 13px;
@@ -97,7 +108,7 @@
 /* Event Numbers */
 
 .emms__home .emms__eventnumbers {
-  background: #230966;
+  background: #210b63;
 }
 
 /* Central Video */

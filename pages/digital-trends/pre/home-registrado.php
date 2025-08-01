@@ -12,7 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 
 <body class="emms__home">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/date-counter.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
     <main>
@@ -20,7 +20,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/event-numbers.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/speakers-carousel.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/doppler-academy-banner.php'); ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/faqs.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/companies-list.php') ?>
     </main>

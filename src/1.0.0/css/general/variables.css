@@ -1,12 +1,12 @@
 :root {
   /*  Colores principales */
-  --color-primary: #3e00a8;
-  --color-primary-hover: #4e0cc2;
+  --color-primary: #6716f3;
+  --color-primary-hover: #3e00a8;
 
   --color-secondary: #18ff8c;
   --color-secondary-hover: #00cb66;
 
-  --gradient-main: linear-gradient(180deg, #6716f3 0%, #d922c4 50%, #18ff8c 100%);
+  --gradient-main: linear-gradient(200.04deg, #6716f3 20.32%, #d922c4 64.29%, #18ff8c 116.68%);
   --gradient-secondary: linear-gradient(90deg, #bd38ea 0%, #6716f3 100%);
   --gradient-terciary: linear-gradient(360deg, #230966 0%, #14092f 100%);
 

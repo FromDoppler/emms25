@@ -64,8 +64,8 @@ if ($ecommerceStates['isTransition']) {
 ?>
 
 
-<div class="emms__hellobar emms__hellobar--counter">
-    <div class="emms__hellobar__container emms__hellobar__container--during emms__fade-in">
+<div class="hellobar hellobar--counter">
+    <div class="hellobar__container hellobar__container--during emms__fade-in">
         <p><strong><?= $content['content'] ?></strong><a href="<?= $content['buttonLink'] ?>"><?= $content['buttonText'] ?></a></p>
     </div>
 </div>

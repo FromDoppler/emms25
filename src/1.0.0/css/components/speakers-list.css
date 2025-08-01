@@ -17,13 +17,12 @@
 }
 
 .speakers .speakers__sub-title {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  color: #fff;
   text-align: center;
-  color: #ffffff;
-  max-width: 580px;
-  margin: 0 auto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
 }
 
 .speakers h2 {
@@ -47,23 +46,15 @@
   color: #fff;
 }
 
-.speakers .speakers__sub-title {
+.speakers .speakers__body {
+  color: var(--color-bg);
+  text-align: center;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 22px;
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.speakers .speakers__body {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #ffffff;
+  line-height: 24px;
+  max-width: 664px;
+  margin: 0 auto;
 }
 
 .speakers small {

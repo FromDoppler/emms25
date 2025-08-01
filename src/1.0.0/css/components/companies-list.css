@@ -5,7 +5,7 @@
 
 .companies .companies__body {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #333333;
@@ -29,8 +29,8 @@
 }
 
 .companies h2 {
-  font-size: 32px;
-  line-height: 41px;
+  font-size: 22px;
+  line-height: 24px;
   font-weight: 700;
   color: #333333;
   margin: 0 0 52px 0;
