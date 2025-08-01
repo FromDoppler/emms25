@@ -1,16 +1,11 @@
 <?php
-//session_start();
+// Evento actual
+$currentEventKey = 'DIGITALTRENDS';
+
 $ALLOW_IPS = array('::1', '200.5.229.58', '200.5.253.210', '127.0.0.1', '172.18.0.1', '172.22.0.1');
 $ACCOUNT_DOPPLER = getenv("ACCOUNT_DOPPLER");
 $API_KEY_DOPPLER = getenv("API_KEY_DOPPLER");
-$API_KEY_WIX = getenv("API_KEY_WIX");
-$WIX_ACCOUNT_ID = getenv("WIX_ACCOUNT_ID");
-$WIX_SITE_ID = getenv("WIX_SITE_ID");
-$WIX_PLAN_INDIVIDUAL_ID = getenv("WIX_PLAN_INDIVIDUAL_ID");
-$WIX_PLAN_INVITADO_ID = getenv("WIX_PLAN_INVITADO_ID");
-$WIX_PLAN_PACK_EMPRESA_BASIC_ID = getenv("WIX_PLAN_PACK_EMPRESA_BASIC_ID");
-$WIX_PLAN_PACK_EMPRESA_FULL_ID = getenv("WIX_PLAN_PACK_EMPRESA_FULL_ID");
-$WIX_CLIENT_ID = getenv("WIX_CLIENT_ID");
+
 $ACCOUNT_RELAY = getenv("ACCOUNT_RELAY");
 $API_KEY_RELAY = getenv("API_KEY_RELAY");
 $GOOGLE_CLIENT_ID = getenv("GOOGLE_CLIENT_ID");
@@ -44,67 +39,18 @@ if (!defined('CACHE_TIME')) define('CACHE_TIME', 60); // En segundos(60) (1 minu
 if (!defined('CACHE_TIME_ID')) define('CACHE_TIME_ID', 1800); // En segundos(1800) (30 minutos)
 if (!defined('CACHE_BACKUP_TIME')) define('CACHE_BACKUP_TIME', 3600); // En segundos (1 Hora)
 
-#EVENTS CONFIGURATION
-
-$sharedRoutes = [
-    // Home routes
-    'homeRegisteredUrl' => 'registrado',
-    'homeRegisteredPage' => 'home-registrado.php',
-    'homeUnregisteredUrl' => '/',
-    'homeUnregisteredPage' => 'home.php',
-
-    // Sponsors routes
-    'sponsorsFolderPage' => 'sponsors',
-    'sponsorsPage' => 'library-resources.php',
-    'sponsorsUnregisteredUrl' => 'sponsors',
-    'sponsorsRegisteredUrl' => 'sponsors-registrado',
-
-    // Checkout routes
-    'checkoutFolderPage' => 'checkout',
-    'checkoutPage' => 'checkout.php',
-    'checkoutSuccessPage' => 'checkout-success.php',
-    'checkoutUrl' => 'checkout',
-    'checkoutSuccessUrl' => 'checkout-success',
-
-    // Speaker routes
-    'speakerInternaPage' => 'speaker-interna.php',
-];
-
-$events = [
-    'ECOMMERCE' => [
-        'freeId' => 'ecommerce25',
-        'vipId' => 'ecommerce25-vip',
-        'name' => 'E-commerce',
-        'eventFolderPage' => 'ecommerce',
-        'routes' => array_merge([
-            'eventUnregisteredUrl' => 'ecommerce',
-            'eventUnregisteredPage' => 'ecommerce.php',
-            'eventRegisteredUrl' => 'ecommerce-registrado',
-            'eventRegisteredPage' => 'ecommerce-registrado.php',
-        ], $sharedRoutes),
-    ],
-    'DIGITALTRENDS' => [
-        'freeId' => 'digital-trends25',
-        'vipId' => 'digital-trends25-vip',
-        'name' => 'Digital Trends',
-        'eventFolderPage' => 'digital-trends',
-        'routes' => array_merge([
-            'eventUnregisteredUrl' => 'digital-trends',
-            'eventUnregisteredPage' => 'digital-trends.php',
-            'eventRegisteredUrl' => 'digital-trends-registrado',
-            'eventRegisteredPage' => 'digital-trends-registrado.php',
-        ], $sharedRoutes),
-    ],
-];
-
-// Evento actual
-$currentEventKey = 'DIGITALTRENDS';
+# LOAD EVENT ROUTES CONFIGURATION
+$routesConfig = require_once(__DIR__ . '/config/event-routes.php');
+$events = $routesConfig['events'];
+$sharedPages = $routesConfig['sharedPages'];
 
 if (!array_key_exists($currentEventKey, $events)) {
     throw new Exception("Evento '$currentEventKey' no definido.");
 }
 
 $currentEventData = $events[$currentEventKey];
+$currentEventData['redirects'] = getRedirectsForEvent($currentEventData, $sharedPages);
+$currentEventData['sharedPages'] = $sharedPages;
 
 // Definiciones para compatibilidad
 if (!defined('ECOMMERCE')) define('ECOMMERCE', $events['ECOMMERCE']['freeId']);
@@ -138,17 +84,6 @@ if (!defined('LIST_SPONSORS')) define('LIST_SPONSORS', 28845743);
 if (!defined('LIST_MEDIA_PARTNERS')) define('LIST_MEDIA_PARTNERS', 28876952);
 if (!defined('EMAIL_SPONSORS')) define('EMAIL_SPONSORS', 'lbsales@makingsense.com');
 if (!defined('EMAIL_PARTNERS')) define('EMAIL_PARTNERS', 'partners@fromdoppler.com');
-
-
-#API WIX
-if (!defined('API_KEY_WIX')) define('API_KEY_WIX', $API_KEY_WIX);
-if (!defined('WIX_PLAN_INDIVIDUAL_ID')) define('WIX_PLAN_INDIVIDUAL_ID', $WIX_PLAN_INDIVIDUAL_ID);
-if (!defined('WIX_PLAN_INVITADO_ID')) define('WIX_PLAN_INVITADO_ID', $WIX_PLAN_INVITADO_ID);
-if (!defined('WIX_PLAN_PACK_EMPRESA_BASIC_ID')) define('WIX_PLAN_PACK_EMPRESA_BASIC_ID', $WIX_PLAN_PACK_EMPRESA_BASIC_ID);
-if (!defined('WIX_PLAN_PACK_EMPRESA_FULL_ID')) define('WIX_PLAN_PACK_EMPRESA_FULL_ID', $WIX_PLAN_PACK_EMPRESA_FULL_ID);
-if (!defined('WIX_CLIENT_ID')) define('WIX_CLIENT_ID', $WIX_CLIENT_ID);
-if (!defined('WIX_ACCOUNT_ID')) define('WIX_ACCOUNT_ID', $WIX_ACCOUNT_ID);
-if (!defined('WIX_SITE_ID')) define('WIX_SITE_ID', $WIX_SITE_ID);
 
 #API RELAY
 
@@ -212,21 +147,3 @@ $duringDaysArray = array(
         "twitch" => "fromdoppler"
     )
 );
-
-//plan B
-/*
-$duringDaysArray = array(
-    "1" => array(
-        "youtube" => "Ng15Os_ojXg",
-        "twitch" => "fromdoppler"
-    ),
-    "2" => array(
-        "youtube" => "0rlts4I6pg4",
-        "twitch" => "fromdoppler"
-    ),
-    "3" => array(
-        "youtube" => "x-hGQmaZpq8",
-        "twitch" => "fromdoppler"
-    )
-);
- */
