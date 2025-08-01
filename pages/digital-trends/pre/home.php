@@ -12,7 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 
 <body class="emms__home">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/date-counter.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php');
     ?>
@@ -20,9 +20,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <main>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/home/hello-module.php');   ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/central-video.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/event-numbers.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/speakers-carousel.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/users-comments.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/faqs.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/companies-list.php') ?>

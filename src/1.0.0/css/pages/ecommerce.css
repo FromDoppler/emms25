@@ -28,13 +28,13 @@
   height: 110px;
 }
 
-.ecommerce .emms__hellobar--counter .emms__counter {
+.ecommerce .hellobar--counter .emms__counter {
   margin: 0;
   height: 40px;
 }
 
 @media (max-width: 620px) {
-  .ecommerce .emms__hellobar--counter .emms__counter {
+  .ecommerce .hellobar--counter .emms__counter {
     margin: 10px 0 0 0;
   }
 }

@@ -1,5 +1,5 @@
-.emms__hellobar {
-  background: #ff4fb6;
+.hellobar {
+  background: var(--color-primary);
   height: 50px;
   animation: hellobar 0.5s;
 }
@@ -14,14 +14,14 @@
   }
 }
 
-.emms__hellobar.fixed {
+.hellobar.fixed {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 3;
 }
 
-.emms__hellobar__container {
+.hellobar__container {
   max-width: 780px;
   width: 90%;
   margin: 0 auto;
@@ -32,73 +32,86 @@
   animation-delay: 0.2s;
 }
 
-.emms__hellobar__container p {
+.hellobar__container p {
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   color: #212121;
 }
 
-.emms__hellobar__container a {
+.hellobar__container a {
+  color: #ffffff;
   font-size: 12px;
   line-height: 14px;
   font-weight: 700;
-  color: #212121;
   text-align: center;
   white-space: nowrap;
-  border: solid 1px #212121;
+  border: solid 1px #ffffff;
   border-radius: 100px;
   margin: 0 0 0 20px;
-  padding: 8px 20px;
+  padding: 10px 60px;
   transition-duration: 0.2s;
 }
 
-.emms__hellobar__container.emms__hellobar__container--during {
+.hellobar__container a:hover {
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hellobar--pre p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.hellobar__container.hellobar__container--during {
   width: 100%;
   max-width: 920px;
 }
 
-.emms__hellobar--counter .emms__hellobar__container.emms__hellobar__container--during a {
+.hellobar--counter .hellobar__container.hellobar__container--during a {
   background-color: #79f66e;
   color: #000000;
   padding: 10px 36px;
 }
 
-.emms__hellobar--counter .emms__hellobar__container.emms__hellobar__container--during a.small {
+.hellobar--counter .hellobar__container.hellobar__container--during a.small {
   padding: 10px 38px;
 }
 
-.emms__hellobar--counter .emms__hellobar__container.emms__hellobar__container--during a:hover {
+.hellobar--counter .hellobar__container.hellobar__container--during a:hover {
   background-color: #61db56;
 }
 
-.emms__hellobar__container a:hover {
+.hellobar__container a:hover {
   box-shadow: 0px 0px 7px rgba(85, 85, 85, 0.5);
   transition-duration: 0.2s;
 }
 
 @media (max-width: 992px) {
-  .emms__hellobar__container {
+  .hellobar__container {
     max-width: 500px;
   }
 
-  .emms__hellobar__container a {
+  .hellobar__container a {
     margin: 0 0 0 10px;
   }
 
-  .emms__hellobar {
+  .hellobar {
     height: auto;
     padding: 10px 0;
   }
 
-  .emms__hellobar__container {
+  .hellobar__container {
     text-align: center;
     max-width: 328px;
     display: block;
     height: auto;
   }
 
-  .emms__hellobar__container a {
+  .hellobar__container a {
     margin: 8px auto 0 auto;
     display: block;
     width: fit-content;
@@ -107,50 +120,50 @@
 
 /* TODO: Create abstract hellobar for counter and live properties */
 
-.emms__hellobar.emms__hellobar--live {
+.hellobar.hellobar--live {
   background: linear-gradient(180deg, #df24c1 0%, #8e18d7 57.9%, #7d04f6 100%);
 }
 
 /* Hellobar with counter */
 
-.emms__hellobar--counter {
+.hellobar--counter {
   background: linear-gradient(#df24c1, #7d04f6);
 }
 
-.emms__hellobar--counter .emms__hellobar__container {
+.hellobar--counter .hellobar__container {
   gap: 30px;
 }
 
-.emms__hellobar--counter .emms__hellobar__container p {
+.hellobar--counter .hellobar__container p {
   color: #fff;
 }
 
-.emms__hellobar--counter .emms__hellobar__container a {
+.hellobar--counter .hellobar__container a {
   color: #fff;
   border: solid 1px #fff;
 }
 
-.emms__hellobar--counter .emms__hellobar__container a:hover {
+.hellobar--counter .hellobar__container a:hover {
   box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.8);
   transition-duration: 0.2s;
 }
 
-.emms__hellobar--counter .emms__counter {
+.hellobar--counter .emms__counter {
   margin: 0;
   height: 40px;
 }
 
-.emms__hellobar--counter .emms__counter li {
+.hellobar--counter .emms__counter li {
   margin-right: 12px;
 }
 
-.emms__hellobar--counter .emms__counter li::after {
+.hellobar--counter .emms__counter li::after {
   left: calc(100% + 6px);
   width: 4px;
   height: 11px;
 }
 
-.emms__hellobar--counter .emms__counter li div {
+.hellobar--counter .emms__counter li div {
   width: 38px;
   height: 28px;
   border-radius: 3px;
@@ -158,7 +171,7 @@
   box-shadow: inset 0px 0px 0 1px #fff;
 }
 
-.emms__hellobar--counter .emms__counter li div span {
+.hellobar--counter .emms__counter li div span {
   font-size: 20px;
   text-align: center;
   display: block;
@@ -170,7 +183,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.emms__hellobar--counter .emms__counter li .emms__counter__number--data {
+.hellobar--counter .emms__counter li .emms__counter__number--data {
   font-size: 9px;
   font-weight: 500;
   position: absolute;
@@ -180,13 +193,13 @@
 }
 
 @media (max-width: 992px) {
-  .emms__hellobar--counter .emms__hellobar__container {
+  .hellobar--counter .hellobar__container {
     max-width: initial;
   }
 }
 
 @media (max-width: 620px) {
-  .emms__hellobar--counter .emms__counter li:nth-child(1) {
+  .hellobar--counter .emms__counter li:nth-child(1) {
     display: inline-block;
     margin: 0 5px 0 0;
   }
