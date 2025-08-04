@@ -78,7 +78,7 @@
     const updateEvents = () => {
         if (localStorage.getItem('events')) {
             const existingEvents = JSON.parse(localStorage.getItem('events'));
-            existingEvents.push("digital-trends24-vip");
+            existingEvents.push(window.APP.EVENTS.CURRENT.vipId);
             localStorage.setItem('events', JSON.stringify(existingEvents));
         } else {
             localStorage.clear();

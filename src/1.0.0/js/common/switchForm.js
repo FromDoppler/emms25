@@ -1,4 +1,3 @@
-import { eventsType } from "../enums/eventsType.enum.js";
 import { toHex } from "./decodeEmail.js";
 import { validateSimpleForm } from "./formsValidators.js";
 import { setEventInLocalStorage } from "./submitHelpers.js";
@@ -41,10 +40,10 @@ const redirectToRegisteredPage = () => {
 };
 
 const localEventsMap = {
-  ecommerce: eventsType.ECOMMERCE,
-  "ecommerce-vip": eventsType.ECOMMERCEVIP,
-  "digital-trends": eventsType.DIGITALTRENDS,
-  "digital-trends-vip": eventsType.DIGITALTRENDSVIP,
+  ecommerce: window.APP.EVENTS.EVENTCODES.ECOMMERCE,
+  "ecommerce-vip": window.APP.EVENTS.EVENTCODES.ECOMMERCEVIP,
+  "digital-trends": window.APP.EVENTS.EVENTCODES.DIGITALTRENDS,
+  "digital-trends-vip": window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP,
 };
 
 const filterEvents = (events) => {

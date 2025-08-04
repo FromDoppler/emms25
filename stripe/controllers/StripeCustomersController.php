@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/getCurrentEvent.php');
 require_once $_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php';
 require_once 'models/StripeCustomersDatabase.php';
 require_once 'models/RegisteredDatabase.php';
@@ -125,9 +126,10 @@ class StripeCustomersController
 
     private function CreateUserObj($UserData, $listId = LIST_LANDING_DIGITALT_VIP)
     {
+        $currentEvent = getCurrentEvent();
         $encode_email = toHex(json_encode([
             'userEmail' => $UserData['customer_email'],
-            'userEvents' => json_encode(['ecommerce25', 'ecommerce25-vip'])
+            'userEvents' => json_encode([$currentEvent['freeId'], $currentEvent['vipId']])
         ]));
         return [
             'register' => date("Y-m-d h:i:s A"),
@@ -149,7 +151,7 @@ class StripeCustomersController
             'content_utm' => $UserData['utm_content'] ?? '',
             'term_utm' => $UserData['utm_term'] ?? '',
             'origin' => $UserData['origin'] ?? '',
-            'type' => "ecommerce25",
+            'type' => $currentEvent['freeId'],
             'tiketType' => $this->resolveTiketType(ECOMMERCE),
             'form_id' => "pre",
             'list' => $listId,

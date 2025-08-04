@@ -1,7 +1,6 @@
 "use strict";
 
 import { customError, searchUrlParam, validateForm } from "./common/index.js";
-import { eventsType } from "./enums/eventsType.enum.js";
 
 document.addEventListener("click", (e) => {
   e = e || window.event;

@@ -80,8 +80,8 @@
     const updateEvents = () => {
         if (localStorage.getItem('events')) {
             const existingEvents = JSON.parse(localStorage.getItem('events'));
-            if (!existingEvents.includes("ecommerce25-vip")) {
-                existingEvents.push("ecommerce25-vip");
+            if (!existingEvents.includes(window.APP.EVENTS.CURRENT.vipId)) {
+                existingEvents.push(window.APP.EVENTS.CURRENT.vipId);
                 localStorage.setItem('events', JSON.stringify(existingEvents));
             }
         } else {
