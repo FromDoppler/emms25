@@ -1,5 +1,3 @@
-import { eventsType } from "./enums/eventsType.enum.js";
-
 const getLocalStorageEvents = () => {
   let localStorageEvents = localStorage.getItem("events");
   return localStorageEvents ? JSON.parse(localStorageEvents) : [];
@@ -18,7 +16,7 @@ const toggleVipElements = () => {
 };
 
 const toggleVipEcommerceElements = () => {
-  const isEcommerceVip = isVipUser(eventsType.ECOMMERCEVIP);
+  const isEcommerceVip = isVipUser(window.APP.EVENTS.EVENTCODES.ECOMMERCEVIP);
   const academyBanner = document.getElementById("aprende-con-doppler");
 
   if (isEcommerceVip) {
@@ -29,7 +27,7 @@ const toggleVipEcommerceElements = () => {
 };
 
 const toggleVipDigitalTrendsElements = () => {
-  const isDTVip = isVipUser(eventsType.DIGITALTRENDSVIP);
+  const isDTVip = isVipUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP);
   const academyBanner = document.getElementById("aprende-con-doppler");
   if (isDTVip) {
     toggleVipElements();

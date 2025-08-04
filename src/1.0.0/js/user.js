@@ -1,6 +1,5 @@
 "use strict";
 import { toHex, getEncodeURLEmail } from "./common/index.js";
-import { eventsType } from "./enums/eventsType.enum.js";
 
 const encodeUser = getEncodeURLEmail();
 
@@ -85,8 +84,8 @@ const processEventCards = (cards, eventName) => {
 const registerEventsCardsCheck = () => {
   const ecommerceCards = document.querySelectorAll(".ecommerceCard");
   const digitalTCards = document.querySelectorAll(".digitalTCard");
-  processEventCards(ecommerceCards, eventsType.ECOMMERCE);
-  processEventCards(digitalTCards, eventsType.DIGITALTRENDS);
+  processEventCards(ecommerceCards, window.APP.EVENTS.EVENTCODES.ECOMMERCE);
+  processEventCards(digitalTCards, window.APP.EVENTS.EVENTCODES.DIGITALTRENDS);
 };
 
 export { checkEncodeUrl, userRegisteredInEvent, hiddenOrShowUserUI, registerEventsCardsCheck };

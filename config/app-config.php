@@ -23,6 +23,12 @@ $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
   window.APP = {
     EVENTS: {
       CURRENT: <?= json_encode($currentEvent) ?>,
+      EVENTCODES: {
+        ECOMMERCE: "<?= ECOMMERCE ?>",
+        ECOMMERCEVIP: "<?= ECOMMERCEVIP ?>",
+        DIGITALTRENDS: "<?= DIGITALTRENDS ?>",
+        DIGITALTRENDSVIP: "<?= DIGITALTRENDSVIP ?>"
+      }
     },
     VERSION: "<?= VERSION ?>",
     LOCALE: "<?= $locale ?? 'es' ?>",

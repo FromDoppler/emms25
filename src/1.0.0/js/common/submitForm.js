@@ -1,6 +1,7 @@
 "use strict";
 
-import { validateForm, toHex, fromHex } from "./index.js";
+import { validateForm } from "./formsValidators.js";
+import { toHex, fromHex } from "./decodeEmail.js";
 import { buildUserData, setEventInLocalStorage, extractFormData, toggleButtonLoading, trackMetaPixelRegistration } from "./submitHelpers.js";
 
 const sendUserData = async (userData) => {

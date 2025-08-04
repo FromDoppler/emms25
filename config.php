@@ -40,7 +40,7 @@ if (!defined('CACHE_TIME_ID')) define('CACHE_TIME_ID', 1800); // En segundos(180
 if (!defined('CACHE_BACKUP_TIME')) define('CACHE_BACKUP_TIME', 3600); // En segundos (1 Hora)
 
 # LOAD EVENT ROUTES CONFIGURATION
-$routesConfig = require_once(__DIR__ . '/config/event-routes.php');
+$routesConfig = include_once($_SERVER['DOCUMENT_ROOT'] . '/config/event-routes.php');
 $events = $routesConfig['events'];
 $sharedPages = $routesConfig['sharedPages'];
 
@@ -55,6 +55,8 @@ $currentEventData['sharedPages'] = $sharedPages;
 // Definiciones para compatibilidad
 if (!defined('ECOMMERCE')) define('ECOMMERCE', $events['ECOMMERCE']['freeId']);
 if (!defined('DIGITALTRENDS')) define('DIGITALTRENDS', $events['DIGITALTRENDS']['freeId']);
+if (!defined('ECOMMERCEVIP')) define('ECOMMERCEVIP', $events['ECOMMERCE']['vipId']);
+if (!defined('DIGITALTRENDSVIP')) define('DIGITALTRENDSVIP', $events['DIGITALTRENDS']['vipId']);
 // Variable global para el servicio
 $GLOBALS['CURRENT_EVENT_DATA'] = $currentEventData;
 
