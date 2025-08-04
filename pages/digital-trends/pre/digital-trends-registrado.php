@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/cacheSettings.php');
         import {
             hiddenOrShowUserUI
         } from '/src/<?= VERSION ?>/js/user.js';
-        hiddenOrShowUserUI('digital-trends24');
+        hiddenOrShowUserUI(window.APP.EVENTS.CURRENT.freeId);
     </script>
     <script type="module">
         import {
