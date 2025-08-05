@@ -1,5 +1,5 @@
         <!-- Doppler Academy Banner -->
-        <section class="academy-banner emms__bg-section-6 emms__sponsors__hero--blue-bg" id="aprende-con-doppler">
+        <section class="academy-banner emms__bg-section-6 sponsors__hero--blue-bg" id="aprende-con-doppler">
             <div class="emms__container--sm">
                 <div class="academy-banner__description">
                     <h2>Lleva tu conocimiento a otro nivel con Doppler Academy</h2>

@@ -59,7 +59,7 @@ el eslabón clave de la recompra orgánica",
         <div class="emms__conferences__wrapper">
             <div class="emms__conferences__title emms__fade-in">
                 <h2>Conferencias exclusivas</h2>
-                <p>Accede a Conferencias on-demand de referentes del Comercio Digital y Casos de Éxito para accede a las mejores estrategias para hacer crecer tu negocio.</p>
+                <p>Tus mayores referentes comparten las mejores estrategias para hacer crecer tu negocio en breves videos.  ¡Capacítate e inspírate con el EMMS!</p>
             </div>
             <div class="emms__conferences__cards__container">
                 <?php foreach ($videos as $video): ?>

@@ -1,6 +1,6 @@
 /* Hero */
 
-.emms__sponsors__hero {
+.sponsors__hero {
   background: #000 url("../../../img/backgrounds/bg-section-2.png") no-repeat;
   background-size: cover;
   background-position: 70%;
@@ -10,21 +10,21 @@
   justify-content: center;
 }
 
-.emms__sponsors__hero.emms__sponsors__hero--new-bg {
+.sponsors__hero.sponsors__hero--new-bg {
   background: #000 url("../../../img/blue-section-5.png") no-repeat;
 }
 
-.emms__sponsors__hero > div {
+.sponsors__hero > div {
   flex: 1;
   max-width: 560px;
   min-height: 355px;
 }
 
-.emms__sponsors__hero .emms__sponsors__hero__image__container {
+.sponsors__hero .sponsors__hero__image__container {
   position: relative;
 }
 
-.emms__sponsors__hero .emms__sponsors__hero__image__container img {
+.sponsors__hero .sponsors__hero__image__container img {
   position: absolute;
   right: 0;
   bottom: -40px;
@@ -32,7 +32,7 @@
 }
 
 @media (max-width: 600px) {
-  .emms__sponsors__hero > div:last-child {
+  .sponsors__hero > div:last-child {
     display: none;
   }
 }
@@ -47,19 +47,19 @@
   }
 }
 
-.emms__sponsors__hero__title {
+.sponsors__hero__title {
   text-align: left;
   animation-delay: 0.1s;
 }
 
-.emms__sponsors__hero__title h1 {
+.sponsors__hero__title h1 {
   font-size: 38px;
   line-height: 44px;
   font-weight: 700;
   color: #fff;
 }
 
-.emms__sponsors__hero__title h1 em {
+.sponsors__hero__title h1 em {
   font-size: 14px;
   line-height: 20px;
   font-style: normal;
@@ -67,7 +67,7 @@
   margin: 0 0 20px 0;
 }
 
-.emms__sponsors__hero__title p {
+.sponsors__hero__title p {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
@@ -75,30 +75,30 @@
   max-width: 556px;
 }
 
-.emms__sponsors__hero__title .emms__cta {
+.sponsors__hero__title .emms__cta {
   margin: 50px 0 0 0;
   animation-delay: 0.3s;
 }
 
 @media (max-width: 620px) {
-  .emms__sponsors__hero > div {
+  .sponsors__hero > div {
     padding: 0px 40px;
   }
 
-  .emms__sponsors__hero {
+  .sponsors__hero {
     padding: 120px 0 45px 0;
   }
 
-  .emms__sponsors__hero__title h1 {
+  .sponsors__hero__title h1 {
     font-size: 22px;
     line-height: 28px;
   }
 
-  .emms__sponsors__hero__title p {
+  .sponsors__hero__title p {
     margin: 20px 0 0 0;
   }
 
-  .emms__sponsors__hero__title .emms__cta {
+  .sponsors__hero__title .emms__cta {
     margin: 30px 0 0 0;
   }
 }

@@ -107,16 +107,7 @@
   object-fit: cover;
 }
 
-.academy-banner__description--button .emms__cta {
-  background: rgba(51, 173, 115, 0.2);
-  border: 1px solid #ffffff;
-  border-radius: 100px;
-}
 
-.academy-banner__description--button .emms__cta:hover {
-  opacity: 0.5;
-  color: #bd7aff;
-}
 
 @media (min-width: 620px) {
   .academy-banner__carousel__item:hover .academy-banner__carousel__item__image {
