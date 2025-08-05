@@ -5,15 +5,15 @@ function getContentForUrl($url)
   $contentMap = [
     'default' => [
       'heading' => 'Accede a la Biblioteca de Recursos… ¡Es gratis y súper completa!',
-      'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas potenciar al máximo tu negocio.',
+      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
     ],
     'group1' => [
       'heading' => 'Accede a la Biblioteca de Recursos… ¡Es gratis y súper completa!',
-      'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas potenciar al máximo tu negocio.',
+      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
     ],
     'group2' => [
       'heading' => 'Capacítate con la Biblioteca de Recursos ¡gratis!',
-      'body' => 'Descubre contenidos descargables, herramientas y conferencias on-demand que te traen nuestros aliados para que puedas capacitarte de manera gratuita.',
+      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
     ],
   ];
 
@@ -33,6 +33,10 @@ function getContentForUrl($url)
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
 $normalizedUrl = getNormalizeUrl();
 $content = getContentForUrl($normalizedUrl);
+$isDigitalTrends = in_array($normalizedUrl, [
+  '/digital-trends',
+  '/digital-trends-registrado'
+]);
 ?>
 <section class="premium-content">
   <div class="emms__container--lg">
@@ -41,12 +45,16 @@ $content = getContentForUrl($normalizedUrl);
     </div>
     <div class="premium-content__text emms__fade-in">
       <h2><?php echo ($content['heading']); ?></h2>
-      <ul class="premium-content__list emms__fade-in">
-        <li>Contenidos descargables</li>
-        <li>Conferencias on-demand</li>
-        <li>Herramientas que potencian tu negocio</li>
-      </ul>
-      <!-- LISTA DE 3 BULLETS -->
+
+      <?php if (!$isDigitalTrends): ?>
+        <ul class="premium-content__list emms__fade-in">
+          <li>Contenidos descargables</li>
+          <li>Conferencias on-demand</li>
+          <li>Herramientas que potencian tu negocio</li>
+        </ul>
+      <?php else: ?>
+        <p><?php echo ($content['body']); ?></p>
+      <?php endif; ?>
       <a href="./sponsors" class="emms__cta sm emms__cta--secondary emms__fade-in">ACCEDE AHORA</a>
     </div>
   </div>

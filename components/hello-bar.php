@@ -12,7 +12,7 @@ $contentsPre = [
   ],
   '/digital-trends' => [
     'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP gratis',
-    'helloBarCtaTxt' => 'ÚNETE AHORA',
+    'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],
   '/digital-trends-registrado' => [
@@ -22,7 +22,7 @@ $contentsPre = [
   ],
   '/sponsors' => [
     'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP gratis',
-    'helloBarCtaTxt' => 'ÚNETE AHORA',
+    'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],
   '/*' => [

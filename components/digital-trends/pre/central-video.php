@@ -10,10 +10,9 @@ $contents = [
     'youtubeCode' => 'ZGS-lmiXHFE',
   ],
   '/digital-trends' => [
-    'heading' => '¡Vuelve el EMMS Digital Trends!',
-    'body' => 'Conoce en este video por qué miles de profesionales de habla hispana eligen capacitarse con la experiencia EMMS E-commerce.
-<br> Regístrate y accede a las conferencias del evento más importante de Latam y España.',
-    'button' => 'REGÍSTRATE AHORA',
+    'heading' => '¿Qué esperas para inscribirte?',
+    'body' => 'Mira este video y descubre por qué el EMMS Digital Trends es el evento clave para transformar tus Estrategias de Marketing Digital, de la mano de especialistas del sector.',
+    'button' => 'INSCRÍBETE AHORA',
     'link' => '#registro',
     'youtubeCode' => 'ZGS-lmiXHFE',
   ],

@@ -10,8 +10,8 @@ function getBlock($url)
     '/registrado' => [
       'block' => 'registerHome',
     ],
-    '/ecommerce' => [
-      'block' => 'ecommerce',
+    '/digital-trends' => [
+      'block' => 'digital-trends',
     ],
     '/*' => [
       'block' => 'home',
@@ -24,11 +24,39 @@ $block = getBlock($normalizedUrl);
 
 function renderSpeakersList($speakers, $carouselId = "carousel-default")
 {
+  $primarySpeaker = 'Federico Muñoz Villavicencio';
+  $secondarySpeaker = 'Vedant Misra';
+
+  $initialIndexClass = ''; // class selector for Flickity
+  foreach ($speakers as $speaker) {
+    if ($speaker['name'] === $primarySpeaker) {
+      $initialIndexClass = $primarySpeaker;
+      break;
+    }
+  }
+
+  if (!$initialIndexClass) {
+    foreach ($speakers as $speaker) {
+      if ($speaker['name'] === $secondarySpeaker) {
+        $initialIndexClass = $secondarySpeaker;
+        break;
+      }
+    }
+  }
+
 ?>
-  <div class="speakerslist emms__fade-in">
-    <ul class="main-carousel" id="<?= htmlspecialchars($carouselId) ?>" data-flickity='{ "initialIndex": ".is-initial-select", "wrapAround": "true" }'>
-      <?php foreach ($speakers as $index => $speaker): ?>
-        <li class="speakerslist__item <?= $index === 0 ? 'is-initial-select' : '' ?>">
+  <div class="speakerslist emms__fade-in ">
+    <ul
+      class="main-carousel"
+      id="<?= htmlspecialchars($carouselId) ?>"
+     >
+      <?php foreach ($speakers as $speaker): ?>
+        <?php
+        $isInitial =
+          $speaker['name'] === $primarySpeaker ||
+          ($initialIndexClass === $secondarySpeaker && $speaker['name'] === $secondarySpeaker);
+        ?>
+        <li class="speakerslist__item <?= $isInitial ? 'is-initial-select' : '' ?>">
           <div class="speakerslist__item__content">
             <img src="<?= htmlspecialchars($speaker['photo']) ?>" alt="<?= htmlspecialchars($speaker['name']) ?>" class="speakerslist__item__photo">
             <p><?= htmlspecialchars($speaker['name']) ?><span><?= htmlspecialchars($speaker['title']) ?></span></p>
@@ -40,6 +68,7 @@ function renderSpeakersList($speakers, $carouselId = "carousel-default")
   </div>
 <?php
 }
+
 $speakersHome = [
   [
     'name' => 'Neil Patel',
@@ -181,20 +210,19 @@ $speakersEcommerce = [
 ?>
 
 
-<section class="speakers emms__bg-section-3">
+<section class="speakers emms__bg-section-10">
   <div class="emms__container--lg">
     <?php if ($block['block'] === 'home') : ?>
       <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
     <?php elseif ($block['block'] === 'registerHome') : ?>
       <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
-    <?php elseif ($block['block'] === 'ecommerce') : ?>
-      <h2 class="emms__fade-in speakers__title">Speakers destacados en ediciones anteriores</h2>
-      <P class="emms__fade-in speakers__sub-title">Aprende de referentes globales que han marcado la diferencia en empresas líderes como Google, Meta, Unilever y más.</P>
+    <?php elseif ($block['block'] === 'digital-trends') : ?>
+      <h2 class="emms__fade-in speakers__title">Speakers que brillaron en el EMMS</h2>
     <?php endif; ?>
 
     <?php if ($block['block'] === 'home' || $block['block'] === 'registerHome') :
       renderSpeakersList($speakersHome, "carousel-1");
-    elseif ($block['block'] === 'ecommerce') :
+    elseif ($block['block'] === 'digital-trends') :
       renderSpeakersList($speakersEcommerce, "carousel-2");
     endif; ?>
 
@@ -210,9 +238,9 @@ $speakersEcommerce = [
       <p class="emms__fade-in  speakers__body">Pronto conocerás la agenda de speakers, workshops y todas las novedades de esta nueva edición.
       </p>
     <?php elseif ($block['block'] === 'digital-trends') : ?>
-      <p class="emms__fade-in speakers__sub-title">✨ ¡Pronto revelaremos los speakers 2025! Regístrate gratis y descúbrelos antes que nadie.
+      <p class="emms__fade-in speakers__sub-title">¡Muy pronto conocerás la agenda 2025! Regístrate gratis y descúbrela antes que nadie.
       </p>
-      <a href="#registro" class="emms__cta emms__fade-in">REGÍSTRATE GRATIS</a>
+      <a href="#registro" class="emms__cta emms__cta--md emms__fade-in">REGÍSTRATE GRATIS</a>
     <?php endif; ?>
 
   </div>
