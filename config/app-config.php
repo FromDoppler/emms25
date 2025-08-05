@@ -55,7 +55,7 @@ $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
         socket.on("state", () => location.reload());
       };
 
-      const { getUrlWithParams } = await import(`/src/${window.APP.VERSION}/js/common/index.js`);
+      const { getUrlWithParams } = await import(`/src/${window.APP.VERSION}/js/common/utm.js`);
       const { userRegisteredInEvent, checkEncodeUrl } = await import(`/src/${window.APP.VERSION}/js/user.js`);
 
       checkEncodeUrl();
