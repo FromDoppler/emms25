@@ -26,7 +26,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                     <span>CONVIÉRTETE EN SPONSOR</span>
                     <h1>Haz que tu marca sea protagonista del EMMS</h1>
                     <p>¿Te gustaría que tu negocio sea parte de los máximos eventos hispanohablantes de Marketing Digital e E-commerce? Ponte en contacto con nosotros y te contamos sobre cómo sumarte al EMMS.</p>
-                    <button class="emms__cta" data-target="modalRegister" data-toggle="emms__register-modal" data-type="sponsor">CONTACTANOS AHORA</button>
+                    <button class="emms__cta emms__cta--terciary" data-target="modalRegister" data-toggle="emms__register-modal" data-type="sponsor">CONTACTANOS AHORA</button>
                 </div>
             </div>
         </section>
@@ -127,7 +127,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
                     <ul>
                         <?php foreach ($benefits as $benefit): ?>
                             <li>
-                                <img src="/src/img/asset-estrella.png" alt="Ícono de beneficio">
+                                <img src="/src/img/icons/icon-check--purple-simple.svg" alt="Ícono de check">
                                 <span><?= htmlspecialchars($benefit) ?></span>
                             </li>
                         <?php endforeach; ?>
