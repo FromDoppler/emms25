@@ -3,6 +3,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/config/app-config.php');
 
 function getSponsorBySlug($slug) {
     $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -23,22 +24,8 @@ if (!$sponsor) {
 <html lang="en">
 
 <head>
-<script type="module">
-    import {
-        getUrlWithParams
-    } from '/src/<?= VERSION ?>/js/common/index.js';
-    import {
-        eventsType
-    } from '/src/<?= VERSION ?>/js/enums/eventsType.enum.js';
-    import {
-        userRegisteredInEvent,
-        checkEncodeUrl
-    } from '/src/<?= VERSION ?>/js/user.js';
-    checkEncodeUrl();
-    if (!userRegisteredInEvent(eventsType.ECOMMERCE)) {
-        window.location.href = getUrlWithParams('/sponsors');
-    }
-</script>
+
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 </head>
