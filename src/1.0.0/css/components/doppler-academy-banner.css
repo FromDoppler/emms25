@@ -107,8 +107,6 @@
   object-fit: cover;
 }
 
-
-
 @media (min-width: 620px) {
   .academy-banner__carousel__item:hover .academy-banner__carousel__item__image {
     right: 0;
