@@ -101,3 +101,9 @@
     font-size: 24px;
   }
 }
+
+@media (max-width: 620px) {
+  .referral__image-people {
+    display: none;
+  }
+}
