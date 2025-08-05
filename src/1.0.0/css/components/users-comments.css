@@ -7,7 +7,7 @@
 .userscomments.userscomments--digitaltrends {
   background: url("../../../img/backgrounds/bg-section-9.png") no-repeat;
   background-size: cover;
-  padding: 360px 0 80px 0
+  padding: 360px 0 80px 0;
 }
 
 .userscomments.userscomments--digitaltrends::before {
@@ -20,7 +20,7 @@
   font-size: 30px;
   line-height: 32px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .userscomments.userscomments--digitaltrends .userscomments__list .userscomments__list-item__text {
@@ -30,7 +30,6 @@
   line-height: 24px;
   color: #333333;
 }
-
 
 .userscomments::before {
   content: "";
@@ -200,8 +199,6 @@
   }
 
   .userscomments.userscomments--digitaltrends {
-    padding: 45 0 70px 0
+    padding: 45 0 70px 0;
   }
-
-
 }

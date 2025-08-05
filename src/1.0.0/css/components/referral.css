@@ -1,6 +1,6 @@
 .referral {
   position: relative;
-  background: url('/src/img/backgrounds/referral-bg.png') no-repeat center center;
+  background: url("/src/img/backgrounds/referral-bg.png") no-repeat center center;
   background-size: cover;
   padding: 100px 20px;
   color: #fff;
@@ -9,7 +9,7 @@
 
 .referral .emms__cta {
   background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   color: #ece9e9;
   transition: opacity 0.3s ease;
 }
@@ -55,7 +55,7 @@
   font-weight: 700;
   font-size: var(--font-h3-size);
   line-height: var(--font-h3-line);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .referral__description,
@@ -64,7 +64,7 @@
   font-weight: 400;
   font-size: var(--font-p-size);
   line-height: var(--font-p-line);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .referral__subtitle {
@@ -73,7 +73,6 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {

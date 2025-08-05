@@ -141,7 +141,7 @@
   font-size: 56px;
   line-height: 37px;
   letter-spacing: 9px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .hero-registration .hero-registration__text h1 span.bottom {
@@ -157,7 +157,6 @@
   color: transparent;
 }
 
-
 .hero-registration .hero-registration__text h1 span.main {
   letter-spacing: 4px;
   font-style: normal;
@@ -171,7 +170,6 @@
   background-clip: text;
   color: transparent;
 }
-
 
 .hero-registration .hero-registration__text p {
   font-size: 16px;
@@ -337,7 +335,7 @@
   line-height: 52px;
   text-align: center;
   letter-spacing: -1px;
-  color: #FFFFFF;
+  color: #ffffff;
   max-width: 930px;
   margin: 0 auto;
 }
@@ -375,7 +373,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .hero-registration--registered p a {
@@ -446,7 +444,7 @@
   line-height: 23px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -477,7 +475,6 @@
     max-width: 260px;
   }
 }
-
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 
