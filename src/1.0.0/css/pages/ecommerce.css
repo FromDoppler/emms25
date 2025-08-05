@@ -67,12 +67,6 @@
   max-width: 990px;
 }
 
-.hero-registration--registered .emms__container--md p {
-  max-width: 766px;
-  margin: 20px auto;
-  font-weight: 600;
-}
-
 .hero-registration--registered .emms__container--md p.emms__paragraph--short {
   max-width: 516px;
 }

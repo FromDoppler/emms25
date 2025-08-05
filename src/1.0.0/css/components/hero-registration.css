@@ -2,6 +2,7 @@
   padding: 145px 0 88px 0;
   background: #000;
   position: relative;
+  background: url("../../../img/backgrounds/bg-section-8.png") center/cover no-repeat;
 }
 
 .hero-registration__columns {
@@ -133,25 +134,51 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  color: #79f66e;
 }
 
 .hero-registration .hero-registration__text h1 span.top {
-  font-size: 106px;
-  font-weight: 900;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 37px;
+  letter-spacing: 9px;
+  color: #FFFFFF;
 }
 
 .hero-registration .hero-registration__text h1 span.bottom {
-  font-size: 129px;
-  font-weight: 300;
+  letter-spacing: 4px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 53px;
+  line-height: 58px;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
+
+
+.hero-registration .hero-registration__text h1 span.main {
+  letter-spacing: 4px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 123px;
+  line-height: 37px;
+  line-height: 110px;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 
 .hero-registration .hero-registration__text p {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
   margin: 24px 0 0 0;
-  max-width: 300px;
+  max-width: 335px;
 }
 
 .hero-registration .hero-registration__text .hero-registration__text__checklist {
@@ -178,7 +205,7 @@
   top: 1px;
   width: 20px;
   height: 20px;
-  background: url("../../../img/icons/icon-check--blue.svg") no-repeat;
+  background: url("../../../img/icons/icon-check--soft-green.svg") no-repeat;
   background-size: contain;
 }
 
@@ -286,15 +313,11 @@
 
 .hero-registration--registered {
   text-align: center;
-  background: #310e44;
-  padding: 190px 0 200px 0;
-  position: relative;
-}
-
-.hero-registration--registered.hero-registration--registered-post {
-  background: url("../../../img/backgrounds/bg-ecommerce.png") #0b0627 no-repeat;
+  background: url("../../../img/backgrounds/bg-section-8.png") #0b0627 no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 190px 0 200px 0;
+  position: relative;
 }
 
 .hero-registration--registered .text-with-icon-container {
@@ -308,12 +331,14 @@
 }
 
 .hero-registration--registered h1 {
-  font-size: 56px;
-  line-height: 63px;
+  font-style: normal;
   font-weight: 700;
-  color: #ffffff;
-  animation-delay: 0.1s;
-  max-width: 856px;
+  font-size: 50px;
+  line-height: 52px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  max-width: 930px;
   margin: 0 auto;
 }
 
@@ -326,7 +351,6 @@
   font-size: 21px;
   line-height: 23px;
   text-align: center;
-  color: #79f66e;
 }
 
 .hero-registration--registered.hero-registration--withoutform h1 em {
@@ -337,12 +361,21 @@
   color: #ffffff;
 }
 
+.hero-registration--registered h1 span {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
 .hero-registration--registered p {
-  font-size: 18px;
-  line-height: 28px;
-  color: #fff;
   margin: 30px 0 0 0;
   animation-delay: 0.5s;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .hero-registration--registered p a {
@@ -392,13 +425,59 @@
 }
 
 .hero-registration--registered .emms__cta {
-  margin: 40px 0 0 0;
   animation-delay: 0.6s;
 }
 
 .hero-registration--registered #emmsCounter {
   animation-delay: 0.8s;
 }
+
+.hero-registration__icon {
+  width: 84px;
+  height: 84px;
+  vertical-align: middle;
+  margin-right: -13px;
+}
+
+.hero-registration__buttons p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 23px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.hero-registration__buttons a {
+  display: inline-block;
+  margin: 10px 8px;
+}
+
+@media (max-width: 768px) {
+  .hero-registration__icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 4px;
+  }
+
+  .hero-registration__buttons p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .hero-registration__buttons {
+    text-align: center;
+  }
+
+  .hero-registration__buttons a {
+    margin: 10px auto;
+    display: block;
+    max-width: 260px;
+  }
+}
+
 
 /* ---------------------------------------------- Responsive ---------------------------------------------- */
 

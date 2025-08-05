@@ -46,6 +46,7 @@
   cursor: pointer;
   transition-duration: 0.2s;
   position: relative;
+  text-transform: uppercase;
 }
 
 .emms__cta:hover {
@@ -64,6 +65,31 @@
   text-transform: uppercase;
   color: var(--color-primary);
   background-color: #ffffff;
+}
+
+.emms__cta.emms__cta--terciary {
+  border: 1px solid var(--color-secondary);
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+}
+
+.emms__cta.emms__cta--terciary span {
+  color: var(--color-text);
+}
+
+.emms__cta.emms__cta--terciary:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.emms__cta.emms__cta--terciary:hover span {
+  color: var(--color-muted);
 }
 
 /* TODO: Unificar el estilo con el del boton que usan las cards de la agenda */

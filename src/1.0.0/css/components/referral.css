@@ -1,0 +1,104 @@
+.referral {
+  position: relative;
+  background: url('/src/img/backgrounds/referral-bg.png') no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.referral .emms__cta {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #FFFFFF;
+  color: #ece9e9;
+  transition: opacity 0.3s ease;
+}
+
+.referral .emms__cta:hover {
+  opacity: 0.8;
+}
+
+.referral__image-people {
+  position: absolute;
+  left: 0;
+  width: 55%;
+  pointer-events: none;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.referral__image-people img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.referral__container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.referral__content {
+  max-width: 540px;
+}
+
+.referral__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--font-h3-size);
+  line-height: var(--font-h3-line);
+  color: #FFFFFF;
+}
+
+.referral__description,
+.referral__instructions {
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
+  color: #FFFFFF;
+}
+
+.referral__subtitle {
+  font-size: var(--font-h4-size);
+  line-height: var(--font-h4-line);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .referral {
+    padding: 80px 20px;
+  }
+
+  .referral__container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .referral__image-people {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    bottom: 0;
+  }
+
+  .referral__content {
+    max-width: 100%;
+  }
+
+  .referral__title {
+    font-size: 24px;
+  }
+}

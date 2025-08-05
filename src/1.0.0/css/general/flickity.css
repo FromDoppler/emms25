@@ -5,23 +5,23 @@
 }
 
 .flickity-prev-next-button.previous {
-  background: url("../../../img/icons/icon-carousel-arrow-left.svg") no-repeat;
+  background: url("../../../img/icons/icon-carousel-arrow-left--white.svg") no-repeat;
   background-size: contain;
   background-position: center;
   top: 32%;
   left: -30px;
-  width: 14px;
-  height: 29px;
+  width: 44px;
+  height: 44px;
 }
 
 .flickity-prev-next-button.next {
-  background: url("../../../img/icons/icon-carousel-arrow-right.svg") no-repeat;
+  background: url("../../../img/icons/icon-carousel-arrow-right--white.svg") no-repeat;
   background-size: contain;
   background-position: center;
   top: 32%;
   right: -30px;
-  width: 14px;
-  height: 29px;
+  width: 44px;
+  height: 44px;
 }
 
 .flickity-page-dots {

@@ -18,11 +18,12 @@
 
 .speakers .speakers__sub-title {
   color: #fff;
-  text-align: center;
-  font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .speakers h2 {

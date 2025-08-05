@@ -73,9 +73,9 @@ window.addEventListener("scroll", function () {
 const homeCarousel = document.querySelector(".main-carousel");
 if (homeCarousel) {
   const flktyHome = new Flickity(homeCarousel, {
-    cellAlign: "left",
+    cellAlign: "center",
     contain: true,
-    prevNextButtons: false,
+    prevNextButtons: true,
     fade: true,
     wrapAround: true,
   });

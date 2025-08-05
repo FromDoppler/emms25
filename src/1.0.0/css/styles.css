@@ -14,6 +14,7 @@
 @import "components/speakers-list.css";
 @import "components/speakers-vip.css";
 @import "components/users-comments.css";
+@import "components/vip-offer.css";
 @import "components/footer.css";
 @import "components/form.css";
 @import "components/calendar.css";
@@ -34,7 +35,9 @@
 @import "components/benefits-carousel.css";
 @import "components/schedule/scheduleIndex.css";
 @import "components/info-banner/info-banner.css";
+@import "components/referral.css";
 @import "components/ecommerce/speaker-interna/event-recorded.css";
+
 
 /* Pages */
 @import "pages/ecommerce.css";
