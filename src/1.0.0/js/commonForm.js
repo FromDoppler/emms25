@@ -1,78 +1,70 @@
 "use strict";
 
-import { customError, getUrlWithParams, submitFormFetch, submitWithoutForm, validateForm } from "./common/index.js";
+import { customError } from "./common/customsError.js";
+import { submitFormFetch, submitWithoutForm } from "./common/submitForm.js";
+import { validateForm } from "./common/formsValidators.js";
 import { alreadyAccountListener, swichFormListener } from "./common/switchForm.js";
-import { eventsType } from "./enums/eventsType.enum.js";
-
-const currentEvent = eventsType.ECOMMERCE;
-const form = document.getElementById("commonForm");
-const alreadyRegisterForm = document.querySelectorAll(".alreadyRegisterForm");
-// const digitalTrendsBtns = document.querySelectorAll('.digitalTrendsBtn');
 
 const redirectToRegisteredPage = () => {
-  const pathname = window.location.pathname;
-  let nextPage = "";
-  switch (pathname) {
-    case "/sponsors":
-      const slug = sessionStorage.getItem("currentSlug");
-      if (slug & (slug != "null")) {
-        nextPage = `/sponsors-registrado?slug=${slug}`;
-      } else {
-        nextPage = `/sponsors-registrado`;
-      }
-      break;
-    case "/ecommerce":
-      nextPage = "/ecommerce-registrado";
-      break;
-    case "/ediciones-anteriores":
-      nextPage = "/ediciones-anteriores-registrado";
-      break;
-    default:
-      nextPage = "/ecommerce-registrado";
-      break;
-  }
+  const currentPath = window.location.pathname.replace(/^\//, "");
 
-  window.location.href = getUrlWithParams(nextPage);
+  // Special case for sponsors (preserve slug)
+  if (currentPath === "sponsors") {
+    const slug = sessionStorage.getItem("currentSlug");
+    const baseUrl = window.APP.EVENTS.CURRENT.sharedPages.sponsors.registered.url;
+    window.location.href = slug && slug !== "null" ? `/${baseUrl}?slug=${slug}` : `/${baseUrl}`;
+  } else {
+    // Default: go to event's registered page
+    window.location.href = `/${window.APP.EVENTS.CURRENT.pages.registered.url}`;
+  }
 };
 
-const handleSubmitForm = async (e) => {
+// Form submit handler
+const submitFormHandler = async (e) => {
   e.preventDefault();
+  const form = document.getElementById("commonForm");
+  if (!form) return;
 
-  if (validateForm(form)) {
-    try {
-      const { fetchResp: resp } = await submitFormFetch(form, currentEvent);
-      if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
-      redirectToRegisteredPage();
-    } catch (error) {
-      customError("Digital post error", error);
-    }
-  }
-};
+  if (!validateForm(form)) return;
 
-const handleSubmitWithoutForm = async (button) => {
-  button.classList.add("button--loading");
   try {
-    const { fetchResp: resp } = await submitWithoutForm(currentEvent);
+    const { fetchResp: resp } = await submitFormFetch(form, window.APP.EVENTS.CURRENT.freeId);
     if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
     redirectToRegisteredPage();
   } catch (error) {
-    customError("Digital post error", error);
-  } finally {
-    button.classList.remove("button--loading");
+    customError("Error en formulario", error);
   }
 };
 
+// Button-only submit handler (sin formulario)
+const quickSubmitHandler = async (button) => {
+  button.classList.add("button--loading");
+  button.disabled = true;
+
+  try {
+    const { fetchResp: resp } = await submitWithoutForm(window.APP.EVENTS.CURRENT.freeId);
+    if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
+    redirectToRegisteredPage();
+  } catch (error) {
+    customError("Error sin formulario", error);
+  } finally {
+    button.classList.remove("button--loading");
+    button.disabled = false;
+  }
+};
+
+// Initialization
 const initializeEventListeners = () => {
+  const form = document.getElementById("commonForm");
+  const alreadyRegisterButtons = document.querySelectorAll(".alreadyRegisterForm");
+
   if (form) {
-    form.querySelector("button").addEventListener("click", handleSubmitForm);
-    swichFormListener(form);
+    const submitBtn = form.querySelector("button");
+    if (submitBtn) submitBtn.addEventListener("click", submitFormHandler);
+    swichFormListener(form); // usando nombre original con typo
   }
 
-  // digitalTrendsBtns.forEach((btn) =>
-  //     btn.addEventListener('click', () => handleSubmitWithoutForm(btn))
-  // );
-
-  alreadyRegisterForm.forEach((form) => form.addEventListener("click", () => handleSubmitWithoutForm(form)));
+  alreadyRegisterButtons.forEach((btn) => btn.addEventListener("click", () => quickSubmitHandler(btn)));
 
   alreadyAccountListener();
 };

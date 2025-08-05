@@ -13,10 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
         import {
             hiddenOrShowUserUI
         } from '/src/<?= VERSION ?>/js/user.js';
-        import {
-            eventsType
-        } from '/src/<?= VERSION ?>/js/enums/eventsType.enum.js';
-        hiddenOrShowUserUI(eventsType.ECOMMERCE);
+        hiddenOrShowUserUI(window.APP.EVENTS.EVENTCODES.ECOMMERCE);
     </script>
     <script type="module">
         import {
