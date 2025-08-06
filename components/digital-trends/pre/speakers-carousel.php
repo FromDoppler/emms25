@@ -48,6 +48,7 @@ function renderSpeakersList($speakers, $carouselId = "carousel-default")
   <div class="speakerslist emms__fade-in ">
     <ul
       class="main-carousel"
+      data-flickity='{ "initialIndex": ".is-initial-select", "wrapAround": "true" }'
       id="<?= htmlspecialchars($carouselId) ?>"
      >
       <?php foreach ($speakers as $speaker): ?>

@@ -13,7 +13,7 @@
         <li class="vip-offer__benefit">Networking, recursos descargables y más</li>
       </ul>
       <p class="vip-offer__cta-note">¡Apúrate! Los lugares se agotan rápido.</p>
-      <a href="#" class="emms__cta emms__cta--md ">Inscríbete ahora</a>
+      <a href="#registro" class="emms__cta emms__cta--md ">Inscríbete ahora</a>
     </div>
   </div>
   <div class="vip-offer__image">

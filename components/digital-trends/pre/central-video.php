@@ -6,7 +6,7 @@ $contents = [
     'body' => '¿Buscas inspiración real, aprendizajes concretos y un espacio para potenciar tu Estrategia? Este evento reúne a las empresas y figuras que están transformando el presente y futuro del Marketing Digital. ¡No te lo pierdas!
 ',
     'button' => 'ASEGURA TU LUGAR GRATIS',
-    'link' => 'ecommerce#registro',
+    'link' => 'digital-trends#registro',
     'youtubeCode' => 'ZGS-lmiXHFE',
   ],
   '/digital-trends' => [
@@ -26,7 +26,7 @@ $contents = [
     'body' => '¿Buscas inspiración real, aprendizajes concretos y un espacio para potenciar tu Estrategia? Este evento reúne a las empresas y figuras que están transformando el presente y futuro del Marketing Digital. ¡No te lo pierdas!
 ',
     'button' => 'ASEGURA TU LUGAR GRATIS',
-    'link' => 'ecommerce#registro',
+    'link' => 'digital-trends#registro',
     'youtubeCode' => 'ZGS-lmiXHFE',
   ],
 ];
