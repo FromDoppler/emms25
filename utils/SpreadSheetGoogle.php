@@ -34,7 +34,10 @@ class SpreadSheetGoogle
         if ($stripeValues) {
             $values[0] = array_merge($values[0], $stripeValues);
         }
-        write_to_sheet($idSpreadSheet, self::RANGE, $values, $db);
+
+        // Pass Google credentials from global constants
+        global $GOOGLE_CLIENT_ID, $GOOGLE_CLIENT_SECRET;
+        write_to_sheet($idSpreadSheet, self::RANGE, $values, $db, $GOOGLE_CLIENT_ID, $GOOGLE_CLIENT_SECRET);
     }
     private static function getStripeValues($user)
     {
