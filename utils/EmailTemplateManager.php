@@ -87,7 +87,7 @@ class EmailTemplateManager
 
     public static function getDigitalTEmailTemplatePRE($encodeEmail)
     {
-        $templateName = 'dt-pre-template.html';
+        $templateName = 'dt-pre-template.htm';
         return self::getTemplate('dt', $templateName, $encodeEmail);
     }
 
