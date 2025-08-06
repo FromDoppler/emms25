@@ -52,7 +52,7 @@ $normalizedUrl = getNormalizeUrl();
 
 $usersCommentsConfig = [
   '/digital-trends' => [
-    'title' => 'Esto opinan quienes ya fueron parte del EMMS:',
+    'title' => 'Esto opinan quienes <br> ya fueron parte del EMMS:',
     'class' => 'userscomments',
     'quotes' => $quotes,
   ],
@@ -67,7 +67,7 @@ $usersCommentsConfig = [
     'quotes' => $quotesDT,
   ],
   '/*' => [
-    'title' => 'Esto opinan quienes ya fueron parte del EMMS:',
+    'title' => 'Esto opinan quienes <br> ya fueron parte del EMMS:',
     'class' => 'userscomments',
     'quotes' => $quotes,
   ]

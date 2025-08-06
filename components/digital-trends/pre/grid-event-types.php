@@ -24,7 +24,7 @@ $gridItems = [
   [
     'image' => '/src/img/grid-event-types/casosdeexito.png',
     'title' => 'Casos de Éxito',
-    'description' => 'Conoce a las empresas que están cambiando las reglas del juego y aprende sus tácticas para replicar en tu negocio.'
+    'description' => 'Conoce a las empresas que están cambiando las reglas del juego y replica sus tácticas en tu negocio.'
   ],
   [
     'image' => '/src/img/grid-event-types/regalos.png',

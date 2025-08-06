@@ -5,6 +5,10 @@
   z-index: 1;
 }
 
+.speakers .spealers__header {
+  margin-bottom: 50px;
+}
+
 .speakers .speakers__title {
   font-weight: 700;
   font-size: 32px;
@@ -26,12 +30,21 @@
   color: #ffffff;
 }
 
+.speakers .speakers__sub-title.speakers__sub-title--home {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 32px;
+  text-align: center;
+  color: #18FF8C;
+}
+
 .speakers h2 {
   font-size: 32px;
   line-height: 33px;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 57px 0;
+  margin: 0px;
   animation-delay: 0.1s;
 }
 

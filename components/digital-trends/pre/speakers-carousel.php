@@ -49,8 +49,7 @@ function renderSpeakersList($speakers, $carouselId = "carousel-default")
     <ul
       class="main-carousel"
       data-flickity='{ "initialIndex": ".is-initial-select", "wrapAround": "true" }'
-      id="<?= htmlspecialchars($carouselId) ?>"
-     >
+      id="<?= htmlspecialchars($carouselId) ?>">
       <?php foreach ($speakers as $speaker): ?>
         <?php
         $isInitial =
@@ -213,13 +212,16 @@ $speakersEcommerce = [
 
 <section class="speakers emms__bg-section-10">
   <div class="emms__container--lg">
-    <?php if ($block['block'] === 'home') : ?>
-      <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
-    <?php elseif ($block['block'] === 'registerHome') : ?>
-      <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
-    <?php elseif ($block['block'] === 'digital-trends') : ?>
-      <h2 class="emms__fade-in speakers__title">Speakers que brillaron en el EMMS</h2>
-    <?php endif; ?>
+    <div class="spealers__header">
+      <?php if ($block['block'] === 'home') : ?>
+        <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
+      <?php elseif ($block['block'] === 'registerHome') : ?>
+        <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
+        <p class="emms__fade-in">Pronto conocerás la agenda de la nueva edición, workshops y todas las novedades de esta nueva edición.</p>
+      <?php elseif ($block['block'] === 'digital-trends') : ?>
+        <h2 class="emms__fade-in speakers__title">Speakers que brillaron en el EMMS</h2>
+      <?php endif; ?>
+    </div>
 
     <?php if ($block['block'] === 'home' || $block['block'] === 'registerHome') :
       renderSpeakersList($speakersHome, "carousel-1");
@@ -228,16 +230,11 @@ $speakersEcommerce = [
     endif; ?>
 
     <?php if ($block['block'] === 'home') : ?>
-      <p class="emms__fade-in speakers__sub-title">Muy pronto conocerás la agenda completa del EMMS Digital Trends 2025
+      <p class="emms__fade-in speakers__sub-title speakers__sub-title--home">Muy pronto conocerás la agenda completa del EMMS Digital Trends 2025
       </p>
       <p class="speakers__body ">Prepárate para escuchar a referentes globales del Marketing Digital. Si te registras ahora, serás de las primeras personas en conocer a nuestros próximos speakers estrella.  
       </p>
       <a href="/digital-trends" class="emms__cta emms__cta--md  emms__fade-in">REGÍSTRATE GRATIS</a>
-    <?php elseif ($block['block'] === 'registerHome') : ?>
-      <p class="emms__fade-in  speakers__sub-title">¡Falta muy poco! Se viene el EMMS Digital Trends 2025
-      </p>
-      <p class="emms__fade-in  speakers__body">Pronto conocerás la agenda de speakers, workshops y todas las novedades de esta nueva edición.
-      </p>
     <?php elseif ($block['block'] === 'digital-trends') : ?>
       <p class="emms__fade-in speakers__sub-title">¡Muy pronto conocerás la agenda 2025! Regístrate gratis y descúbrela antes que nadie.
       </p>

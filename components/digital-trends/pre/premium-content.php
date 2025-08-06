@@ -4,11 +4,11 @@ function getContentForUrl($url)
 
   $contentMap = [
     'default' => [
-      'heading' => 'Accede a la Biblioteca de Recursos… ¡Es gratis y súper completa!',
+      'heading' => 'Accede a la Biblioteca de Recursos ¡Es gratis y súper completa!',
       'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
     ],
     'group1' => [
-      'heading' => 'Accede a la Biblioteca de Recursos… ¡Es gratis y súper completa!',
+      'heading' => 'Accede a la Biblioteca de Recursos ¡Es gratis y súper completa!',
       'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
     ],
     'group2' => [

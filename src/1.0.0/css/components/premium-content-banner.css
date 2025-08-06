@@ -132,6 +132,11 @@
     margin: 0 auto 30px auto;
   }
 
+  .premium-content__text p {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
   /* Dark version */
 
   .premium-content.premium-content--dark {
