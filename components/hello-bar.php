@@ -7,7 +7,7 @@ $contentsPre = [
   ],
   '/registrado' => [
     'helloBarText' => '¡Vuelve el EMMS Digital Trends! 28, 29 y 30 de octubre de 2025',
-    'helloBarCtaTxt' => ' MIRA LA TRANSMISIÓN',
+    'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
   '/digital-trends' => [

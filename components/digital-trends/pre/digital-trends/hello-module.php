@@ -9,8 +9,8 @@
         <img src="/src/img/hello-module/calendar-icon.svg" alt="Calendario" class="hero-registration__icon">
         Agéndalo en tu calendario:
       </p>
-      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="#" target="_blank">DÍA 1</a>
-      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="#" target="_blank">DÍA 2</a>
+      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="https://www.addevent.com/event/Bw26192014" target="_blank">DÍA 1</a>
+      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="https://www.addevent.com/event/mN26192020" target="_blank">DÍA 2</a>
     </div>
 
   </div>

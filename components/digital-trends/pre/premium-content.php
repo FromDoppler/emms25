@@ -37,6 +37,7 @@ $isDigitalTrends = in_array($normalizedUrl, [
   '/digital-trends',
   '/digital-trends-registrado'
 ]);
+
 ?>
 <section class="premium-content">
   <div class="emms__container--lg">
@@ -55,7 +56,7 @@ $isDigitalTrends = in_array($normalizedUrl, [
       <?php else: ?>
         <p><?php echo ($content['body']); ?></p>
       <?php endif; ?>
-      <a href="./sponsors" class="emms__cta sm emms__cta--secondary emms__fade-in">ACCEDE AHORA</a>
+      <a href="<?= $isRegistered ?  '/sponsors-registrado' : '/sponsors' ?>" class="emms__cta sm emms__cta--secondary emms__fade-in">ACCEDE AHORA</a>
     </div>
   </div>
 </section>
