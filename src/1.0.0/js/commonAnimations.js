@@ -99,8 +99,10 @@ if (academyCarousel) {
 
 const heading = document.getElementById("nav-mb");
 const btn = document.getElementById("btn-burger");
+const hellobar = document.querySelector('.hellobar');
 if (btn != undefined && btn != null) {
   btn.addEventListener("click", (e) => {
+    hellobar.classList.toggle("hide");
     heading.classList.toggle("emms__header__nav--hidden");
     btn.classList.toggle("emms__header__nav--mb--active");
   });
