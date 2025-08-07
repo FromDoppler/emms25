@@ -7,14 +7,14 @@ $contents = [
 ',
     'button' => 'ASEGURA TU LUGAR GRATIS',
     'link' => 'digital-trends#registro',
-    'youtubeCode' => 'ZGS-lmiXHFE',
+    'youtubeCode' => 'rTImzuky-LE',
   ],
   '/digital-trends' => [
     'heading' => '¿Qué esperas para inscribirte?',
     'body' => 'Mira este video y descubre por qué el EMMS Digital Trends es el evento clave para transformar tus Estrategias de Marketing Digital, de la mano de especialistas del sector.',
     'button' => 'INSCRÍBETE AHORA',
     'link' => '#registro',
-    'youtubeCode' => 'ZGS-lmiXHFE',
+    'youtubeCode' => 'rTImzuky-LE',
   ],
   '/registrado' => [
     'heading' => '¡Vuelve el EMMS Digital Trends!',
@@ -27,7 +27,7 @@ $contents = [
 ',
     'button' => 'ASEGURA TU LUGAR GRATIS',
     'link' => 'digital-trends#registro',
-    'youtubeCode' => 'ZGS-lmiXHFE',
+    'youtubeCode' => 'rTImzuky-LE',
   ],
 ];
 
