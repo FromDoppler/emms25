@@ -99,7 +99,7 @@ if (academyCarousel) {
 
 const heading = document.getElementById("nav-mb");
 const btn = document.getElementById("btn-burger");
-const hellobar = document.querySelector('.hellobar');
+const hellobar = document.querySelector(".hellobar");
 if (btn != undefined && btn != null) {
   btn.addEventListener("click", (e) => {
     hellobar.classList.toggle("hide");
