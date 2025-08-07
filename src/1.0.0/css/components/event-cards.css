@@ -12,7 +12,7 @@
   width: 33%;
   position: relative;
   background: #fff;
-  border-radius: 35px;
+  border-radius: 20px;
   margin: 0 20px;
 }
 
@@ -32,6 +32,7 @@
 
 .emms__eventCards__list__item__picture {
   position: relative;
+  top: -1px;
 }
 
 .emms__eventCards__list__item__picture::after {

@@ -45,7 +45,9 @@
           <h3>MEDIA PARTNERS STARTERS</h3>
           <ul class="companies-list companies-list  emms__fade-in" id="mediaPartenersStarters">
           </ul>
-          <p class="companies__body">¿Tienes dudas sobre el EMMS? <a href="/registrado#preguntas-frecuentes">Haz clic aquí</a> y encuentra las <br>
+          <? $link = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';   ?>
+
+          <p class="companies__body">¿Tienes dudas sobre el EMMS? <a href=<?= $link ?>>Haz clic aquí</a> y encuentra las <br>
             preguntas más frecuentes sobre el evento.
           </p>
           <?php

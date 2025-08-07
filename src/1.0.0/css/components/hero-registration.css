@@ -531,6 +531,11 @@
 }
 
 @media (max-width: 620px) {
+  .hero-registration--registered h1 em {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+
   .hero-registration .hero-registration__text h1 {
     font-size: 34px;
     line-height: 0.9;
@@ -541,16 +546,32 @@
   }
 
   .hero-registration--registered h1 {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .hero-registration--registered p {
+    margin: 18px 0 0 0;
+  }
+
+  .hero-registration .hero-registration__text h1 em {
+    max-width: 199px;
+    margin: 0 auto;
   }
 
   .hero-registration .hero-registration__text h1 span.top {
-    font-size: 76px;
+    font-size: 38px;
+    line-height: 37px;
+  }
+
+  .hero-registration .hero-registration__text h1 span.main {
+    font-size: 94px;
+    line-height: 78px;
   }
 
   .hero-registration .hero-registration__text h1 span.bottom {
-    font-size: 99px;
+    font-size: 79px;
+    line-height: 65px;
   }
 
   .hero-registration--registered .hero-registration__add-event {

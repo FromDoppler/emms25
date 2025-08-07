@@ -20,7 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
       toggleVipDigitalTrendsElements
     } from '/src/<?= VERSION ?>/js/toggleVipElements.js';
 
-    toggleVipDigitalTrendsElements();
+    // toggleVipDigitalTrendsElements();
   </script>
 </head>
 
@@ -35,6 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     // include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php')
     ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/grid-event-types.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>

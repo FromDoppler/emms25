@@ -19,22 +19,22 @@
 }
 
 .vip-offer__content {
-  max-width: 430px;
+  max-width: 540px;
 }
 
 .vip-offer__title {
   font-weight: 700;
-  font-size: 30px;
-  line-height: 32px;
-  color: #ffffff;
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  color: var(--color-muted);
 }
 
 .vip-offer__description {
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
+  font-weight: 500;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
+  color: var(--color-muted);
   margin-bottom: 20px;
 }
 
@@ -43,18 +43,18 @@
   padding: 0;
   margin: 0 0 20px 0;
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: 400;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-muted);
 }
 
 .vip-offer__benefit {
   position: relative;
   padding-left: 30px;
   margin-bottom: 12px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .vip-offer__benefit::before {
@@ -64,17 +64,17 @@
   top: 3px;
   width: 20px;
   height: 20px;
-  background-image: url("../../../img/icons/icon-check--white.svg");
+  background-image: url("../../../img/icons/icon-check--soft-green-simple.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .vip-offer__cta-note {
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
+  font-weight: 400;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
+  color: var(--color-muted);
   margin-bottom: 20px;
 }
 
@@ -109,7 +109,12 @@
     display: none;
   }
 
+  .vip-offer__benefits {
+    text-align: left;
+  }
+
   .vip-offer__title {
     font-size: 24px;
+    line-height: 30px;
   }
 }

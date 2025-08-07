@@ -86,7 +86,7 @@ const academyCarousel = document.querySelector(".academy-carousel");
 if (academyCarousel) {
   const flktyAcademy = new Flickity(academyCarousel, {
     groupCells: 1,
-    cellAlign: "center",
+    cellAlign: "left",
     contain: true,
     prevNextButtons: true,
     fade: true,
