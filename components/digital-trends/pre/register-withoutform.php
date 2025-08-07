@@ -14,7 +14,7 @@
             </div>
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--soft-green.svg" alt="Check icon">
-                <span>Regalos y beneficios exclusivos.</span>
+                <span>Regalos y beneficios exclusivos</span>
             </div>
         </div>
     </div>

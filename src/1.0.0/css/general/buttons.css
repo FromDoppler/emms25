@@ -228,4 +228,12 @@
     padding: 20px 25px;
     box-sizing: border-box;
   }
+
+  .emms__cta.emms__cta--md {
+    padding: 14px 30px;
+  }
+
+  .emms__cta.emms__cta--xl {
+    padding: 16px 36px;
+  }
 }

@@ -150,4 +150,8 @@
   .academy-banner__carousel__item__image img {
     display: none;
   }
+
+  .academy-banner__description p {
+    max-width: 278px;
+  }
 }

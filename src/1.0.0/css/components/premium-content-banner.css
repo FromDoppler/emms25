@@ -120,6 +120,10 @@
     padding: 60px 0px 50px 0;
   }
 
+  .premium-content__list li {
+    text-align: left;
+  }
+
   .premium-content__text {
     text-align: center;
     width: 100%;
