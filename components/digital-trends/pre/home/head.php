@@ -7,8 +7,8 @@
   <meta property="og:url" content="https://goemms.com/">
   <meta property="og:title" content="Llega el EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
   <meta property="og:description" content="¡Cuenta regresiva para el evento de Marketing Digital más esperado del año! Prepárate para capacitarte e inspirarte con referentes de la industria">
-  <meta property="og:image" content="https://goemms.com/share-2024.png">
-  <meta name="twitter:image" content="https://goemms.com/share-2024.png">
+  <meta property="og:image" content="https://goemms.com/share-2025-dt.png">
+  <meta name="twitter:image" content="https://goemms.com/share-2025-dt.png">
 
   <meta property="og:site_name" content="Llega el EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
   <meta name="twitter:image:alt" content="Llega el EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
@@ -25,8 +25,8 @@
   <meta property="og:url" content="https://goemms.com/">
   <meta property="og:title" content="Regístrate gratis al EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
   <meta property="og:description" content="Inscríbete gratis ahora y aprende en un solo lugar todas las tendencias del Marketing Digital">
-  <meta property="og:image" content="https://goemms.com/share-2024.png">
-  <meta name="twitter:image" content="https://goemms.com/share-2024.png">
+  <meta property="og:image" content="https://goemms.com/share-2025-dt.png">
+  <meta name="twitter:image" content="https://goemms.com/share-2025-dt.png">
 
   <meta property="og:site_name" content="Regístrate gratis al EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
   <meta name="twitter:image:alt" content="Regístrate gratis al EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
