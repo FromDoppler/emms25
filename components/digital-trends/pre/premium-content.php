@@ -49,9 +49,18 @@ $isDigitalTrends = in_array($normalizedUrl, [
 
       <?php if (!$isDigitalTrends): ?>
         <ul class="premium-content__list emms__fade-in">
-          <li>Contenidos descargables</li>
-          <li>Conferencias on-demand</li>
-          <li>Herramientas que potencian tu negocio</li>
+          <li>
+            <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check">
+            <span>Contenidos descargables</span>
+          </li>
+          <li>
+            <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check">
+            <span>Conferencias on-demand</span>
+          </li>
+          <li>
+            <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check">
+            <span>Herramientas que potencian tu negocio</span>
+          </li>
         </ul>
       <?php else: ?>
         <p><?php echo ($content['body']); ?></p>
