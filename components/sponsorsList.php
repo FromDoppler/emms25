@@ -1,113 +1,87 @@
-    <!-- Companies list -->
-    <?php
-    $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-    if ($db->hasActiveSponsor()) {
-    ?>
-      <section class="companies companies--categories" id="aliados">
-        <div class="emms__container--lg">
-          <h2 class="emms__fade-in">Apoyan el EMMS Digital Trends</h2>
-          <h3>SPONSORS</h3>
-          <ul class="companies-list companies-list--lg  emms__fade-in">
-            <?php
-            $sponsors = $db->getSponsorsByType('SPONSOR');
-            foreach ($sponsors as $sponsor) : ?>
-              <li class="companies-list__item">
-                <?php if ($sponsor['link_site']) : ?>
-                  <a href="<?= $sponsor['link_site'] ?>" target="_blank">
-                  <?php endif ?>
-                  <img src="./adm25/server/modules/sponsors/uploads/<?= $sponsor['logo_company'] ?>" alt="<?= $sponsor['alt_logo_company'] ?>">
-                  <?php if ($sponsor['link_site']) : ?>
-                  </a>
-                <?php endif ?>
-              </li>
+<!-- Companies list -->
+<?php
+$db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-            <?php endforeach; ?>
-          </ul>
-          <div class="companies__divisor"></div>
-          <h3>MEDIA PARTNERS EXCLUSIVE</h3>
-          <ul class="companies-list companies-list  emms__fade-in">
-            <?php
-            $sponsors = $db->getSponsorsByType('PREMIUM');
-            foreach ($sponsors as $sponsor) : ?>
-              <li class="companies-list__item">
-                <?php if ($sponsor['link_site']) : ?>
-                  <a href="<?= $sponsor['link_site'] ?>" target="_blank">
-                  <?php endif ?>
-                  <img src="./adm25/server/modules/sponsors/uploads/<?= $sponsor['logo_company'] ?>" alt="<?= $sponsor['alt_logo_company'] ?>">
-                  <?php if ($sponsor['link_site']) : ?>
-                  </a>
-                <?php endif ?>
-              </li>
-
-            <?php endforeach; ?>
-          </ul>
-          <div class="companies__divisor"></div>
-          <h3>MEDIA PARTNERS STARTERS</h3>
-          <ul class="companies-list companies-list  emms__fade-in" id="mediaPartenersStarters">
-          </ul>
-          <? $link = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';   ?>
-
-          <p class="companies__body">¿Tienes dudas sobre el EMMS? <a href=<?= $link ?>>Haz clic aquí</a> y encuentra las <br>
-            preguntas más frecuentes sobre el evento.
-          </p>
-          <?php
-          $link = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
-          ?>
-        </div>
-      </section>
-      <script>
-        'use strict';
-
-        document.addEventListener('DOMContentLoaded', () => {
-          const endPoint = '/services/getMediaPartners.php';
-
-          // Función para obtener los media partners desde el servidor
-          const getMediaPartners = async (partnerType) => {
-            const response = await fetch(endPoint, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
-                type: partnerType
-              })
-            });
-            return response.json();
-          };
-
-          // Función para renderizar los media partners divididos en grupos
-          const printMediaPartners = (mediaPartners, container) => {
-            const groupLength = Math.ceil(mediaPartners.length / (mediaPartners.length % 2 === 0 ? 6 : 5));
-            let groups = [],
-              currentGroup = [];
-
-            mediaPartners.forEach((partner, index) => {
-              currentGroup.push(partner);
-              if (currentGroup.length === groupLength || index === mediaPartners.length - 1) {
-                groups.push(currentGroup);
-                currentGroup = [];
-              }
-            });
-
-            groups.forEach((group, index) => {
-              setTimeout(() => {
-                group.forEach(partner => {
-                  const li = document.createElement('li');
-                  li.classList.add('emms__fade-in-animation', 'companies-list__item');
-                  li.innerHTML = `<img src="./adm25/server/modules/sponsors/uploads/${partner.logo_company}" alt="${partner.alt_logo_company}">`;
-                  container.appendChild(li);
-                });
-              }, 800 * index);
-            });
-          };
-
-          // Inicializar y renderizar media partners
-          const partnersContainer = document.getElementById('mediaPartenersStarters');
-          if (partnersContainer) {
-            getMediaPartners('starters').then(data => printMediaPartners(data, partnersContainer));
-          }
-        });
-      </script>
-    <?php }
+if (!$db->hasActiveSponsor()) {
     $db->close();
-    ?>
+    return;
+}
+
+$uploadsPath = './adm25/server/modules/sponsors/uploads/';
+$faqLink = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
+
+$sponsorTypes = [
+    'SPONSOR' => ['title' => 'SPONSORS', 'class' => 'companies-list companies-list--lg'],
+    'PREMIUM' => ['title' => 'MEDIA PARTNERS EXCLUSIVE', 'class' => 'companies-list'],
+    'STARTER' => ['title' => 'MEDIA PARTNERS STARTERS', 'class' => 'companies-list']
+];
+
+$sponsorsByType = [];
+foreach ($sponsorTypes as $type => $config) {
+    $sponsorsByType[$type] = $db->getSponsorsByType($type);
+}
+?>
+
+<section class="companies companies--categories" id="aliados">
+    <div class="emms__container--lg">
+        <h2 class="emms__fade-in">Apoyan el EMMS Digital Trends</h2>
+        
+        <?php foreach ($sponsorTypes as $type => $config): ?>
+            <?php if (!empty($sponsorsByType[$type])): ?>
+                <h3><?= htmlspecialchars($config['title']) ?></h3>
+                <ul class="<?= htmlspecialchars($config['class']) ?> emms__fade-in">
+                    <?php foreach ($sponsorsByType[$type] as $sponsor): ?>
+                        <li class="companies-list__item companies-list__item--animated">
+                            <?php if (!empty($sponsor['link_site'])): ?>
+                                <a href="<?= htmlspecialchars($sponsor['link_site']) ?>" target="_blank" rel="noopener noreferrer">
+                            <?php endif; ?>
+                            <img src="<?= htmlspecialchars($uploadsPath . $sponsor['logo_company']) ?>"
+                                 alt="<?= htmlspecialchars($sponsor['alt_logo_company']) ?>"
+                                 loading="lazy">
+                            <?php if (!empty($sponsor['link_site'])): ?>
+                                </a>
+                            <?php endif; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="companies__divisor"></div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <!-- FAQ Link -->
+        <p class="companies__body">
+            ¿Tienes dudas sobre el EMMS?
+            <a href="<?= htmlspecialchars($faqLink) ?>">Haz clic aquí</a> y encuentra las <br>
+            preguntas más frecuentes sobre el evento.
+        </p>
+    </div>
+</section>
+
+<script>
+  const sponsorObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const section = entry.target;
+        const items = section.querySelectorAll('.companies-list__item--animated');
+
+        items.forEach((item, index) => {
+          item.style.transitionDelay = `${index * 80}ms`;
+          item.classList.add('visible');
+        });
+
+        sponsorObserver.unobserve(section);
+      }
+    });
+  }, {
+    rootMargin: '100px 0px -20px 0px',
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.companies-list').forEach(list => {
+    sponsorObserver.observe(list);
+  });
+</script>
+
+<?php
+$db->close();
+?>
