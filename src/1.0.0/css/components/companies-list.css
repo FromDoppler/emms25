@@ -133,3 +133,17 @@
     height: 40px;
   }
 }
+
+.companies-list__item--animated {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition:
+    opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  transition-delay: 0ms;
+}
+
+.companies-list__item--animated.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
