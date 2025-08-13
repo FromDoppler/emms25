@@ -22,12 +22,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
   </script>
   <script type="module">
     import {
-      isUserLogged,
-      getUrlWithParams
+      isUserLogged
     } from '/src/<?= VERSION ?>/js/common/index.js';
 
     if (isUserLogged()) {
-      window.location.href = getUrlWithParams('/ediciones-anteriores-registrado');
+      window.location.href = window.APP.utils.addParams('/ediciones-anteriores-registrado');
     }
   </script>
 </head>

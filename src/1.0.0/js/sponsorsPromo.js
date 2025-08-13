@@ -1,6 +1,6 @@
 "use strict";
 
-import { customError, searchUrlParam, validateForm } from "./common/index.js";
+import { customError, validateForm } from "./common/index.js";
 
 document.addEventListener("click", (e) => {
   e = e || window.event;
@@ -29,25 +29,29 @@ document.addEventListener("click", (e) => {
 
   const submitForm = async (e, dataType) => {
     e.preventDefault();
-
     const endPoint = "./services/registerSponsor.php";
     const formData = new FormData(sponsorsPromoForm);
     const dialCode = document.querySelector(".iti__selected-dial-code").innerHTML;
+
+    const urlParams = new URLSearchParams(window.location.search);
+
     const sponsorData = {
       name: formData.get("name"),
       email: formData.get("email"),
       company: formData.get("company"),
-      phone: formData.get("phone").trim() != "" ? dialCode + formData.get("phone") : null,
+      phone: formData.get("phone").trim() !== "" ? dialCode + formData.get("phone") : null,
       acceptPolicies: formData.get("privacy") === "true" ? true : null,
       acceptPromotions: formData.get("promotions") === "true" ? true : null,
-      utm_source: searchUrlParam("utm_source") === "" ? "direct" : searchUrlParam("utm_source"),
-      utm_campaign: searchUrlParam("utm_campaign"),
-      utm_content: searchUrlParam("utm_content"),
-      utm_term: searchUrlParam("utm_term"),
-      utm_medium: searchUrlParam("utm_medium"),
-      origin: searchUrlParam("origin"),
+      utm_source: urlParams.get("utm_source") || "direct",
+      utm_campaign: urlParams.get("utm_campaign"),
+      utm_content: urlParams.get("utm_content"),
+      utm_term: urlParams.get("utm_term"),
+      utm_medium: urlParams.get("utm_medium"),
+      origin: urlParams.get("origin"),
+      emms_ref: urlParams.get("emms_ref"),
       dataType: dataType,
     };
+
     const isValidForm = validateForm(sponsorsPromoForm);
     if (isValidForm) {
       sponsorsPromoForm.querySelector("button").classList.add("button--loading");

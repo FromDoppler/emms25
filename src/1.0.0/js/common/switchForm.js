@@ -1,7 +1,6 @@
 import { toHex } from "./decodeEmail.js";
 import { validateSimpleForm } from "./formsValidators.js";
 import { setEventInLocalStorage } from "./submitHelpers.js";
-import { getUrlWithParams } from "./utm.js";
 
 const ecommerceAlreadyAccountForm = document.getElementById("alreadyAccountForm");
 
@@ -30,13 +29,21 @@ const getUserByEmail = async () => {
 };
 
 const redirectToRegisteredPage = () => {
-  if (window.location.pathname === "/sponsors") {
-    window.location.href = getUrlWithParams("/sponsors-registrado");
-  } else if (window.location.pathname === "/digital-trends") {
-    window.location.href = getUrlWithParams("/digital-trends-registrado");
-  } else {
-    window.location.href = getUrlWithParams("/ecommerce-registrado");
+  let targetUrl;
+
+  switch (window.location.pathname) {
+    case "/sponsors":
+      targetUrl = "/sponsors-registrado";
+      break;
+    case "/digital-trends":
+      targetUrl = "/digital-trends-registrado";
+      break;
+    default:
+      targetUrl = "/ecommerce-registrado";
+      break;
   }
+
+  window.location.href = window.APP.utils.addParams(targetUrl);
 };
 
 const localEventsMap = {
