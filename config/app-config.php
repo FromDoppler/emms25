@@ -35,6 +35,18 @@ $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
     URLS: {
       REFRESH: "<?= URL_REFRESH ?>",
       PATH_REFRESH: "<?= PATH_REFRESH ?>"
+    },
+    utils: {
+        addParams: (baseUrl) => {
+          const currentParams = new URLSearchParams(window.location.search);
+          const url = new URL(baseUrl, window.location.origin);
+
+          currentParams.forEach((value, key) => {
+            url.searchParams.set(key, value);
+          });
+
+          return url.toString();
+        }
     }
   };
 
@@ -55,7 +67,6 @@ $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
         socket.on("state", () => location.reload());
       };
 
-      const { getUrlWithParams } = await import(`/src/${window.APP.VERSION}/js/common/utm.js`);
       const { userRegisteredInEvent, checkEncodeUrl } = await import(`/src/${window.APP.VERSION}/js/user.js`);
 
       checkEncodeUrl();
@@ -77,7 +88,7 @@ $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
       if (target !== undefined) {
         // Handle empty target (root redirect)
         const redirectUrl = target === '' ? '/' : '/' + target;
-        window.location.href = getUrlWithParams(redirectUrl);
+        window.location.href = window.APP.utils.addParams(redirectUrl);
       }
     } catch (err) {
       console.error('Redirection error:', err);

@@ -1,4 +1,4 @@
-import { toHex, searchUrlParam } from "./index.js";
+import { toHex } from "./index.js";
 
 export const buildUserObject = (email, events) => ({
   userEmail: email,
@@ -8,13 +8,16 @@ export const buildUserObject = (email, events) => ({
 export const buildUserData = ({ name = null, email, phone = null, acceptPolicies = null, acceptPromotions = null, type, events }) => {
   const encodeEmail = toHex(JSON.stringify(buildUserObject(email, events)));
 
+  const urlParams = new URLSearchParams(window.location.search);
+
   const utms = {
-    utm_source: searchUrlParam("utm_source") || "direct",
-    utm_campaign: searchUrlParam("utm_campaign"),
-    utm_content: searchUrlParam("utm_content"),
-    utm_term: searchUrlParam("utm_term"),
-    utm_medium: searchUrlParam("utm_medium"),
-    origin: searchUrlParam("origin"),
+    utm_source: urlParams.get("utm_source") || "direct",
+    utm_campaign: urlParams.get("utm_campaign"),
+    utm_content: urlParams.get("utm_content"),
+    utm_term: urlParams.get("utm_term"),
+    utm_medium: urlParams.get("utm_medium"),
+    origin: urlParams.get("origin"),
+    emms_ref: urlParams.get("emms_ref"),
   };
 
   return {
