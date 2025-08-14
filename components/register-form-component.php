@@ -79,6 +79,5 @@
 </div>
 <script src="/src/<?= VERSION ?>/js/commonForm.js" type="module"></script>
 <script src="/src/<?= VERSION ?>/js/collapsibles.js" type="module"></script>
-<script src="/src/<?= VERSION ?>/js/vendors/intlTelInput.min.js"></script>
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/src/components/intellInput.php'); ?>
+<script src="/src/<?= VERSION ?>/js/intell-input/intell-input.js" type="module"></script>
 <script src="/src/<?= VERSION ?>/js/autoCompleteUserForm.js" type="module"></script>
