@@ -13,19 +13,35 @@ $sharedPages = [
         'registered'   => ['url' => 'sponsors-registrado', 'page' => 'library-resources.php'],
         'folder'       => 'sponsors',
     ],
+    'ediciones-anteriores' => [
+        'unregistered' => ['url' => 'ediciones-anteriores', 'page' => 'ediciones-anteriores.php'],
+        'registered'   => ['url' => 'ediciones-anteriores-registrado', 'page' => 'ediciones-anteriores.php'],
+        'folder'       => 'ediciones-anteriores',
+    ],
+    'sponsors-promo' => [
+        'url' => 'sponsors-promo',
+        'page' => 'sponsors-promo.php',
+        'folder' => 'sponsors-promo',
+    ],
+    'sponsors-interna' => [
+        'url' => 'sponsors-interna',
+        'page' => 'sponsors-interna.php',
+        'folder' => 'sponsors-interna',
+    ],
     'checkout' => [
-        'main' => [
-            'url'  => 'checkout',
-            'page' => 'checkout.php',
-        ],
-        'success' => [
-            'url'  => 'checkout-success',
-            'page' => 'checkout-success.php',
-        ],
+        'url'  => 'checkout',
+        'page' => 'checkout.php',
+        'folder' => 'checkout',
+    ],
+    'checkout-success' => [
+        'url'  => 'checkout-success',
+        'page' => 'checkout-success.php',
         'folder' => 'checkout',
     ],
     'speaker' => [
-        'internal' => ['page' => 'speaker-interna.php'],
+        'url' => 'speaker-interna',
+        'page' => 'speaker-interna.php',
+        'folder' => 'speaker-interna',
     ],
 ];
 
@@ -60,15 +76,17 @@ function getRedirectsForEvent($event, $sharedPages) {
             '' => 'registrado', // Home redirect for registered users
             'digital-trends' => $event['pages']['registered']['url'],
             'sponsors' => $sharedPages['sponsors']['registered']['url'],
+            'ediciones-anteriores' => $sharedPages['ediciones-anteriores']['registered']['url'],
         ],
         'unregistered' => [
             'registrado' => '', // Home redirect for unregistered users (root)
             'digital-trends-registrado' => $event['pages']['unregistered']['url'],
             'sponsors-registrado' => $sharedPages['sponsors']['unregistered']['url'],
+            'ediciones-anteriores-registrado' => $sharedPages['ediciones-anteriores']['unregistered']['url'],
             'checkout' => $event['pages']['unregistered']['url'],
             'checkout-success' => $event['pages']['unregistered']['url'],
             'speaker-interna' => $event['pages']['unregistered']['url'],
-            'sponsors-interna' => $sharedPages['sponsors']['unregistered']['url'],
+            'sponsors-interna' => $sharedPages['sponsors-interna']['url'],
         ],
     ];
 }
