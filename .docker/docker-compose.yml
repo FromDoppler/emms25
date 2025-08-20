@@ -77,9 +77,10 @@ services:
       - ${REPO}:/var/www/html
       - ${NGINX_LOG_DIR}:/var/log/nginx
       - ${CERTS_DIR}:/etc/letsencrypt
-    networks:
-      - emmsnetwork
-
+    networks:  
+      emmsnetwork:
+        aliases:
+          - nginx
   memcached:
     container_name: memcached
     image: memcached:latest
