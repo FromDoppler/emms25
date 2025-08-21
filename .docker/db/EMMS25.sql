@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `registered` (
   `campaign_utm` text DEFAULT NULL,
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
+  `emms_ref` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1779 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -372,6 +373,7 @@ CREATE TABLE IF NOT EXISTS `subscriptions_doppler` (
   `campaign_utm` text DEFAULT NULL,
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
+  `emms_ref` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1951 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

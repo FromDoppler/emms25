@@ -26,7 +26,7 @@ class SpreadSheetGoogle
                 $user['ecommerce'] . " ",
                 $user['digital_trends'] . " ",
                 $user['phone'] . " ",
-
+                $user['emms_ref'] . " ",
             )
         );
 
