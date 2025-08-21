@@ -43,7 +43,6 @@ export const openModal = (id) => {
     // ABRIR
     overlay.setAttribute("aria-hidden", "false");
     body.classList.add("modal-open");
-    console.log("body classes:", [...body.classList]);
 
     // Listeners
     overlay.addEventListener("click", onOverlayClick);
