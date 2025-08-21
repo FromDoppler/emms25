@@ -1,5 +1,4 @@
 export const openModal = (id) => {
-
   return new Promise((resolve) => {
     const overlay = document.getElementById(id);
 

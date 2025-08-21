@@ -9,7 +9,7 @@ body.modal-open {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 9999;
 }
 
@@ -24,14 +24,14 @@ body.modal-open {
   max-height: 665px;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
-  animation: popupModalIn .18s ease-out;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  animation: popupModalIn 0.18s ease-out;
 }
 
 @keyframes popupModalIn {
   from {
     transform: translateY(-8px);
-    opacity: .9;
+    opacity: 0.9;
   }
 
   to {
@@ -40,7 +40,8 @@ body.modal-open {
   }
 }
 
-.popup-modal__dialog.popup-modal__dialog--modalVip{}
+.popup-modal__dialog.popup-modal__dialog--modalVip {
+}
 
 .popup-modal__body {
   padding: 20px 22px;
@@ -56,7 +57,7 @@ body.modal-open {
   border: 0;
   background: transparent;
   cursor: pointer;
-  opacity: .7;
+  opacity: 0.7;
   z-index: 2;
   color: #ffffff;
 }
@@ -67,13 +68,17 @@ body.modal-open {
 
 .popup-modal__title {
   margin: 0 0 10px;
-  font: 700 32px/42px system-ui, sans-serif;
+  font:
+    700 32px/42px system-ui,
+    sans-serif;
   color: #fff;
 }
 
 .popup-modal__text {
   margin: 0 0 12px;
-  font: 700 16px/24px system-ui, sans-serif;
+  font:
+    700 16px/24px system-ui,
+    sans-serif;
   color: #fff;
 }
 
@@ -83,7 +88,7 @@ body.modal-open {
   padding: 0;
   color: #fff;
   background: #0b0b0b;
-  --popup-vip-bg: url('/src/img/backgrounds/bg-moda-vip.png');
+  --popup-vip-bg: url("/src/img/backgrounds/bg-moda-vip.png");
 }
 
 .popup-modal__dialog--vip::before {
@@ -101,8 +106,7 @@ body.modal-open {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(120% 120% at 10% 10%, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, .55) 60%, rgba(0, 0, 0, .7) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, .65) 0%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .1) 100%);
+    radial-gradient(120% 120% at 10% 10%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.7) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .popup-modal__vip-inner {
@@ -125,7 +129,6 @@ body.modal-open {
   user-select: none;
 }
 
-
 @media (max-width: 720px) {
   .popup-modal__vip-inner {
     padding: 28px 20px;
@@ -142,7 +145,7 @@ body.modal-open {
   position: relative;
   padding: 0;
   color: #fff;
-  --popup-form-bg: url('/src/img/backgrounds/form-modal-bg.png');
+  --popup-form-bg: url("/src/img/backgrounds/form-modal-bg.png");
 }
 
 .popup-modal__dialog--form::before {
@@ -177,7 +180,7 @@ body.modal-open {
   display: block;
   margin: 0 0 6px;
   font-size: 14px;
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .popup-modal__input,
@@ -189,10 +192,14 @@ body.modal-open {
   outline: 0;
   background: #fff;
   padding: 10px 12px;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, .12), 0 0 0 2px rgba(255, 255, 255, .12) inset;
-  font: 700 16px/24px system-ui, sans-serif;
-  letter-spacing: .15px;
-  color: #5D0B6A;
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.12),
+    0 0 0 2px rgba(255, 255, 255, 0.12) inset;
+  font:
+    700 16px/24px system-ui,
+    sans-serif;
+  letter-spacing: 0.15px;
+  color: #5d0b6a;
 }
 
 .popup-modal__input::placeholder {
@@ -240,7 +247,6 @@ body.modal-open {
   font-weight: 700;
   cursor: pointer;
 }
-
 
 @media (max-width: 900px) {
   .popup-modal__form-inner {
