@@ -1,10 +1,9 @@
-<div class="loader-page--new" id="spinner">
+<div class="loader-page--new visible" id="spinner">
     <img src="/src/img/logoemms-nobg.png" class="loader-goemms" alt="Loader goemms">
 </div>
-<div class="emms__checkout">
 
-    <!-- Form -->
-    <div class="emms__checkout__container emms__checkout__card__container--form emms__fade-in">
+<div class="emms__checkout">
+    <div class="emms__checkout__container emms__checkout__card__container--form emms__fade-in" id="checkout-container" style="display:none;">
         <div class="emms__checkout__card">
             <img src="/src/img/logos/logo-emms-ecommerce-dark.png" alt="Emms eCommerce 25">
             <section id="success" class="hidden">
@@ -29,15 +28,11 @@
                             <table>
                                 <tr>
                                     <td>Titular:</td>
-                                    <td>
-                                        <div id="customerName"></div>
-                                    </td>
+                                    <td><div id="customerName"></div></td>
                                 </tr>
                                 <tr>
                                     <td>Categoría:</td>
-                                    <td>
-                                        <div id="ticketName"></div>
-                                    </td>
+                                    <td><div id="ticketName"></div></td>
                                 </tr>
                                 <tr>
                                     <td>Medio de pago:</td>
@@ -45,15 +40,11 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de compra:</td>
-                                    <td>
-                                        <div id="date"></div>
-                                    </td>
+                                    <td><div id="date"></div></td>
                                 </tr>
                                 <tr>
                                     <td>Monto:</td>
-                                    <td>
-                                        <div id="amount"></div>
-                                    </td>
+                                    <td><div id="amount"></div></td>
                                 </tr>
                             </table>
                         </div>
@@ -67,52 +58,62 @@
 </div>
 
 <script>
-    const toggleSpinner = () => {
-        const spinner = document.getElementById('spinner');
-        spinner.classList.toggle('visible');
-    }
-    toggleSpinner();
-    (async () => {
-        await initialize();
-        toggleSpinner();
-    })();
+const toggleSpinner = (show) => {
+    const spinner = document.getElementById('spinner');
+    if (show) spinner.classList.add('visible');
+    else spinner.classList.remove('visible');
+};
 
-    const updateEvents = () => {
-        if (localStorage.getItem('events')) {
-            const existingEvents = JSON.parse(localStorage.getItem('events'));
-            if (!existingEvents.includes(window.APP.EVENTS.CURRENT.vipId)) {
-                existingEvents.push(window.APP.EVENTS.CURRENT.vipId);
-                localStorage.setItem('events', JSON.stringify(existingEvents));
-            }
+const showCheckoutContainer = (show) => {
+    document.getElementById('checkout-container').style.display = show ? 'block' : 'none';
+};
+
+const updateEvents = () => {
+    try {
+        const vipId = window.APP.EVENTS.CURRENT.vipId;
+        const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
+        if (!existingEvents.includes(vipId)) {
+            existingEvents.push(vipId);
+            localStorage.setItem('events', JSON.stringify(existingEvents));
+        }
+    } catch {
+        localStorage.clear();
+    }
+};
+
+(async function initSuccess() {
+    toggleSpinner(true);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+
+    if (!sessionId) {
+        window.location.href = "/";
+        return;
+    }
+
+    try {
+        const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/session-status?${urlParams.toString()}`);
+        if (!response.ok) throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
+        const session = await response.json();
+
+        if (session.status === 'complete') {
+            document.getElementById('customerName').textContent = session.customer_details.customer_name;
+            document.getElementById('date').textContent = session.customer_details.date;
+            document.getElementById('amount').textContent = `${session.customer_details.currency} ${session.customer_details.final_price}`;
+            document.getElementById('ticketName').textContent = session.customer_details.ticket_name;
+
+            document.getElementById('success').classList.remove('hidden');
+            updateEvents();
+            showCheckoutContainer(true);
         } else {
-            localStorage.clear();
+            throw new Error('Sesión incompleta');
         }
-    };
-
-    async function initialize() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const sessionId = urlParams.get('session_id');
-
-        if (!sessionId) {
-            window.location.href = "/";
-            return;
-        }
-
-        try {
-            const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/session-status?${urlParams.toString()}`);
-            const session = await response.json();
-
-            if (session.status === 'complete') {
-                document.getElementById('customerName').textContent = session.customer_details.customer_name;
-                document.getElementById('date').textContent = session.customer_details.date;
-                document.getElementById('amount').textContent = `${session.customer_details.currency} ${session.customer_details.final_price}`;
-                document.getElementById('ticketName').textContent = session.customer_details.ticket_name;
-                document.getElementById('success').classList.remove('hidden');
-                updateEvents();
-            }
-        } catch (error) {
-            console.error("Error al obtener el estado de la sesión:", error);
-            window.location.href = "/checkout";
-        }
+    } catch (error) {
+        console.error("Error al obtener el estado de la sesión:", error);
+        window.location.href = "/";
+    } finally {
+        toggleSpinner(false);
     }
+})();
 </script>
