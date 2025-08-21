@@ -54,6 +54,7 @@ function getPostData()
         'utm_content' => isset($postData['utm_content']) ? $postData['utm_content'] : null,
         'utm_term' => isset($postData['utm_term']) ? $postData['utm_term'] : null,
         'origin' => isset($postData['origin']) ? $postData['origin'] : null,
+        'emms_ref' => isset($postData['emms_ref']) ? hex2bin($postData['emms_ref']) : null,
         'type' => isset($postData['type']) ? $postData['type'] : null,
         'events' => isset($postData['events']) ? $postData['events'] : '[]'
     ];
@@ -95,7 +96,8 @@ function getUtmData($postData)
         'medium' => $postData['utm_medium'],
         'campaign' => $postData['utm_campaign'],
         'content' => $postData['utm_content'],
-        'term' => $postData['utm_term']
+        'term' => $postData['utm_term'],
+        'emms_ref' => $postData['emms_ref']
     ];
 }
 
@@ -118,6 +120,7 @@ function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotion
         'campaign_utm' => $utmData['campaign'] ?? null,
         'content_utm' => $utmData['content'] ?? null,
         'term_utm' => $utmData['term'] ?? null,
+        'emms_ref' => $utmData['emms_ref'] ?? null,
         'origin' => $postData['origin'],
         'type' => $type,
         'form_id' => $phase,
