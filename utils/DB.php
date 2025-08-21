@@ -142,7 +142,7 @@ class DB
     {
 
         $fields = "(email, list, form_id, register, firstname, phone, ecommerce, `digital-trends`,";
-        $fields .= "ip, country_ip, privacy, promotions, source_utm, medium_utm, campaign_utm, content_utm, term_utm)";
+        $fields .= "ip, country_ip, privacy, promotions, source_utm, medium_utm, campaign_utm, content_utm, term_utm, emms_ref)";
         date_default_timezone_set('America/Argentina/Buenos_Aires');
         $values = array(
             $subscription['email'],
@@ -161,9 +161,10 @@ class DB
             $subscription['medium_utm'],
             $subscription['campaign_utm'],
             $subscription['content_utm'],
-            $subscription['term_utm']
+            $subscription['term_utm'],
+            $subscription['emms_ref']
         );
-        $this->query("INSERT INTO subscriptions_doppler $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
+        $this->query("INSERT INTO subscriptions_doppler $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
     }
 
     public function insertSubscriptionErrors($email, $list, $reason, $errorCode)
@@ -208,6 +209,7 @@ class DB
                 'campaign_utm',
                 'content_utm',
                 'term_utm',
+                'emms_ref',
             ];
 
             foreach ($dbFields as $field) {
@@ -234,7 +236,7 @@ class DB
             }
         } else {
             $fields = "(`email`, `phase`, `register`, `firstname`, `phone`, `ecommerce`, `digital-trends`, ";
-            $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`)";
+            $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`)";
 
             $values = [
                 $email,
@@ -248,10 +250,11 @@ class DB
                 $this->connection->real_escape_string($subscription['medium_utm']),
                 $this->connection->real_escape_string($subscription['campaign_utm']),
                 $this->connection->real_escape_string($subscription['content_utm']),
-                $this->connection->real_escape_string($subscription['term_utm'])
+                $this->connection->real_escape_string($subscription['term_utm']),
+                $this->connection->real_escape_string($subscription['emms_ref'])
             ];
 
-            $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
+            $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
         }
     }
 
