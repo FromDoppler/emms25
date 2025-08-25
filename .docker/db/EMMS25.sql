@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 01-04-2025 a las 16:59:13
+-- Tiempo de generación: 25-08-2025 a las 14:33:22
 -- Versión del servidor: 10.5.18-MariaDB-1:10.5.18+maria~ubu2004
 -- Versión de PHP: 8.0.15
 
@@ -36,13 +36,6 @@ CREATE TABLE IF NOT EXISTS `google_oauth` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Volcado de datos para la tabla `google_oauth`
---
-
-INSERT INTO `google_oauth` (`id`, `provider`, `provider_value`) VALUES
-(1, 'google', '{\"access_token\":\"ya29.a0AeXRPp4gy1sqlr_S-_LNSyR78ziBvPzAaS4879qNXFI-p3clQAzLZHHjW27GBYwgq_S8sUcPdU49Vo-hiJpP2QEaOj7F8WYMXRv5WyNWrGSRIr0t08nxCXh9uRVtZObLPCtQmHlYYlK6CU7GOThXGYTDVuNazkVT5uorfNE_0B0aCgYKAbYSARISFQHGX2MiGJ4hXe3onc8CVWz-zd2Ngg0178\",\"expires_in\":3599,\"scope\":\"https://www.googleapis.com/auth/spreadsheets\",\"token_type\":\"Bearer\",\"refresh_token\":\"1//0hxOIS9W4oqXZCgYIARAAGBESNwF-L9Irgwst8lyC5Bae8RyYuX6y3U-m1_wZdZYDIPoZSIJKyl1xdEcXlke10sDSBblQAPcWMfs\"}');
-
 -- --------------------------------------------------------
 
 --
@@ -56,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `log_errors` (
   `description` text NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,8 +78,10 @@ CREATE TABLE IF NOT EXISTS `registered` (
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
   `emms_ref` text DEFAULT NULL,
+  `website` varchar(150) DEFAULT NULL,
+  `emailPlatform` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1779 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1783 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -109,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `settings_phase` (
 --
 
 INSERT INTO `settings_phase` (`event`, `pre`, `during`, `post`, `transition`, `transmission`) VALUES
-('digital-trends25', 0, 0, 1, 'live-off', 'youtube'),
+('digital-trends25', 1, 0, 0, 'live-off', 'youtube'),
 ('ecommerce25', 1, 0, 0, 'live-off', 'youtube');
 
 -- --------------------------------------------------------
@@ -374,8 +369,10 @@ CREATE TABLE IF NOT EXISTS `subscriptions_doppler` (
   `content_utm` text DEFAULT NULL,
   `term_utm` text DEFAULT NULL,
   `emms_ref` text DEFAULT NULL,
+  `website` varchar(150) DEFAULT NULL,
+  `emailPlatform` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1951 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1972 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
