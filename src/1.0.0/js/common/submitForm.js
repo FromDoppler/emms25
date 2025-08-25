@@ -65,10 +65,15 @@ const submitWithoutForm = async (fetchType) => {
 
 const submitModalForm = async (form, fetchType) => {
   const formData = new FormData(form);
-  const jobPosition = (formData.get("jobPosition") || "").toString().trim();
-  const company = (formData.get("company") || "").toString().trim();
-  const website = (formData.get("website") || "").toString().trim();
-  const emailPlatform = (formData.get("emailPlatform") || "").toString().trim();
+  const toNullIfEmpty = (val) => {
+    const stringValue = (val ?? "").toString().trim();
+    return stringValue === "" ? null : stringValue;
+  };
+
+  const jobPosition = toNullIfEmpty(formData.get("jobPosition"));
+  const company = toNullIfEmpty(formData.get("company"));
+  const website = toNullIfEmpty(formData.get("website"));
+  const emailPlatform = toNullIfEmpty(formData.get("emailPlatform"));
 
   const encodedEmail = localStorage.getItem("dplrid");
   if (!encodedEmail) {
