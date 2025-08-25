@@ -64,7 +64,6 @@ const submitWithoutForm = async (fetchType) => {
 };
 
 const submitModalForm = async (form, fetchType) => {
-
   const formData = new FormData(form);
   const jobPosition = (formData.get("jobPosition") || "").toString().trim();
   const company = (formData.get("company") || "").toString().trim();
@@ -76,7 +75,6 @@ const submitModalForm = async (form, fetchType) => {
     console.warn("No hay dplrid en localStorage: no puedo actualizar el registro");
     return null;
   }
-
 
   const userData = buildUserData({
     email: fromHex(encodedEmail),
