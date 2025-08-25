@@ -141,7 +141,7 @@ class DB
     public function insertSubscriptionDoppler($subscription)
     {
 
-        $fields = "(email, list, form_id, register, firstname, phone, ecommerce, `digital-trends`,";
+        $fields = "(email, list, form_id, register, firstname, phone, company, jobPosition, website, emailPlatform, ecommerce, `digital-trends`,";
         $fields .= "ip, country_ip, privacy, promotions, source_utm, medium_utm, campaign_utm, content_utm, term_utm, emms_ref)";
         date_default_timezone_set('America/Argentina/Buenos_Aires');
         $values = array(
@@ -151,6 +151,10 @@ class DB
             date("Y-m-d h:i:s A"),
             $subscription['firstname'],
             $subscription['phone'],
+            $subscription['company'],
+            $subscription['jobPosition'],
+            $subscription['website'],
+            $subscription['emailPlatform'],
             $subscription['ecommerce'],
             $subscription['digital_trends'],
             $subscription['ip'],
@@ -164,7 +168,7 @@ class DB
             $subscription['term_utm'],
             $subscription['emms_ref']
         );
-        $this->query("INSERT INTO subscriptions_doppler $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
+        $this->query("INSERT INTO subscriptions_doppler $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
     }
 
     public function insertSubscriptionErrors($email, $list, $reason, $errorCode)
@@ -202,6 +206,10 @@ class DB
                 'register',
                 'firstname',
                 'phone',
+                'company',
+                'jobPosition',
+                'website',
+                'emailPlatform',
                 'ecommerce',
                 'digital-trends',
                 'source_utm',
@@ -236,7 +244,8 @@ class DB
             }
         } else {
             $fields = "(`email`, `phase`, `register`, `firstname`, `phone`, `ecommerce`, `digital-trends`, ";
-            $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`)";
+            $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`,";
+            $fields .= "`company`, `jobPosition`,`website`, `emailPlatform`)";
 
             $values = [
                 $email,
@@ -251,10 +260,14 @@ class DB
                 $this->connection->real_escape_string($subscription['campaign_utm']),
                 $this->connection->real_escape_string($subscription['content_utm']),
                 $this->connection->real_escape_string($subscription['term_utm']),
-                $this->connection->real_escape_string($subscription['emms_ref'])
+                $this->connection->real_escape_string($subscription['emms_ref']),
+                $this->connection->real_escape_string($subscription['company']),
+                $this->connection->real_escape_string($subscription['jobPosition']),
+                $this->connection->real_escape_string($subscription['website']),
+                $this->connection->real_escape_string($subscription['emailPlatform']),
             ];
 
-            $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
+            $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
         }
     }
 

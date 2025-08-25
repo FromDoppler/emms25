@@ -5,7 +5,8 @@ export const buildUserObject = (email, events) => ({
   userEvents: events,
 });
 
-export const buildUserData = ({ name = null, email, phone = null, acceptPolicies = null, acceptPromotions = null, type, events }) => {
+export const buildUserData = (payload = {}) => {
+  const { name = null, email, phone = null, acceptPolicies = null, acceptPromotions = null, type, events, ...extra } = payload;
   const encodeEmail = toHex(JSON.stringify(buildUserObject(email, events)));
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -30,6 +31,7 @@ export const buildUserData = ({ name = null, email, phone = null, acceptPolicies
     ...utms,
     type,
     events,
+    ...extra,
   };
 };
 
