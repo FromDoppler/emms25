@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +25,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 </head>
 
 <body>
+
+  <?php
+  // Form extradata
+  render_modal('modalForm', 'extradata',  'form');
+  ?>
+  <?php
+  // Form captador
+  //   render_modal('modalVip', 'form',  'vip');
+  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>

@@ -1,9 +1,10 @@
 "use strict";
 
 import { customError } from "./common/customsError.js";
-import { submitFormFetch, submitWithoutForm } from "./common/submitForm.js";
+import { submitFormFetch, submitModalForm, submitWithoutForm } from "./common/submitForm.js";
 import { validateForm } from "./common/formsValidators.js";
 import { alreadyAccountListener, swichFormListener } from "./common/switchForm.js";
+import { closeModal, openModal } from "../../../components/modal/openModal.js";
 
 const redirectToRegisteredPage = () => {
   const currentPath = window.location.pathname.replace(/^\//, "");
@@ -30,6 +31,7 @@ const submitFormHandler = async (e) => {
   try {
     const { fetchResp: resp } = await submitFormFetch(form, window.APP.EVENTS.CURRENT.freeId);
     if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
+    await openModal("modalForm");
     redirectToRegisteredPage();
   } catch (error) {
     customError("Error en formulario", error);
@@ -53,15 +55,36 @@ const quickSubmitHandler = async (button) => {
   }
 };
 
+const modalFormSubmitHandler = async (e) => {
+  e.preventDefault();
+  const modalForm = document.getElementById("formModalForm");
+  if (!modalForm) return;
+
+  try {
+    const { fetchResp: resp } = await submitModalForm(modalForm, window.APP.EVENTS.CURRENT.freeId);
+    if (!resp?.ok) {
+      throw new Error(`Server error: ${resp?.status}`);
+    }
+    closeModal("modalForm");
+  } catch (error) {
+    customError("Error en formulario adicional", error);
+  }
+};
+
 // Initialization
 const initializeEventListeners = () => {
   const form = document.getElementById("commonForm");
   const alreadyRegisterButtons = document.querySelectorAll(".alreadyRegisterForm");
+  const modalForm = document.getElementById("formModalForm");
 
   if (form) {
     const submitBtn = form.querySelector("button");
     if (submitBtn) submitBtn.addEventListener("click", submitFormHandler);
     swichFormListener(form); // usando nombre original con typo
+  }
+
+  if (modalForm) {
+    modalForm.addEventListener("submit", modalFormSubmitHandler);
   }
 
   alreadyRegisterButtons.forEach((btn) => btn.addEventListener("click", () => quickSubmitHandler(btn)));

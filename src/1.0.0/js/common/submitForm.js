@@ -63,4 +63,34 @@ const submitWithoutForm = async (fetchType) => {
   return await sendUserData(userData);
 };
 
-export { submitFormFetch, submitWithoutForm };
+const submitModalForm = async (form, fetchType) => {
+
+  const formData = new FormData(form);
+  const jobPosition = (formData.get("jobPosition") || "").toString().trim();
+  const company = (formData.get("company") || "").toString().trim();
+  const website = (formData.get("website") || "").toString().trim();
+  const emailPlatform = (formData.get("emailPlatform") || "").toString().trim();
+
+  const encodedEmail = localStorage.getItem("dplrid");
+  if (!encodedEmail) {
+    console.warn("No hay dplrid en localStorage: no puedo actualizar el registro");
+    return null;
+  }
+
+
+  const userData = buildUserData({
+    email: fromHex(encodedEmail),
+    type: fetchType,
+    jobPosition,
+    company,
+    website,
+    emailPlatform,
+  });
+  toggleButtonLoading(form, true);
+  const result = await sendUserData(userData);
+  toggleButtonLoading(form, false);
+
+  return result;
+};
+
+export { submitFormFetch, submitWithoutForm, submitModalForm };

@@ -9,13 +9,13 @@
   <form class="popup-modal__form-fields" method="post" action="/api/form-modal" id="formModalForm">
     <label class="popup-modal__f-group">
       <span class="popup-modal__f-label">Rol</span>
-      <input class="popup-modal__input" type="text" name="role" placeholder="Escribe aquí" required />
+      <input class="popup-modal__input" type="text" name="jobPosition" placeholder="Escribe aquí" required />
     </label>
 
     <label class="popup-modal__f-group">
       <span class="popup-modal__f-label">Industria</span>
       <div class="popup-modal__select-wrap">
-        <select class="popup-modal__select" name="industry" required>
+        <select class="popup-modal__select" name="company" required>
           <option value="" hidden>Selecciona</option>
           <option>Educación</option>
           <option>Tecnología</option>
@@ -34,7 +34,7 @@
     <label class="popup-modal__f-group">
       <span class="popup-modal__f-label">¿Utilizas alguna de estas plataformas de Email Marketing?</span>
       <div class="popup-modal__select-wrap">
-        <select class="popup-modal__select" name="email_platform">
+        <select class="popup-modal__select" name="emailPlatform">
           <option value="" hidden>Selecciona</option>
           <option>Doppler</option>
           <option>Mailchimp</option>
@@ -46,7 +46,7 @@
     </label>
 
     <div class="popup-modal__form-actions">
-      <button class="emms__cta emms__cta--terciary emms__cta--xl" type="submit">ENVIAR</button>
+      <button class="emms__cta emms__cta--terciary emms__cta--xl" type="submit"><span class="button__text">ENVIAR</span></button>
       <button class="popup-modal__btn-link" type="button" data-modal-close>OMITIR ESTE PASO</button>
     </div>
   </form>
