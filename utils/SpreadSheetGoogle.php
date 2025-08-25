@@ -26,6 +26,10 @@ class SpreadSheetGoogle
                 $user['ecommerce'] . " ",
                 $user['digital_trends'] . " ",
                 $user['phone'] . " ",
+                $user['company'] . " ",
+                $user['emailPlatform'] . " ",
+                $user['jobPosition'] . " ",
+                $user['website'] . " ",
                 $user['emms_ref'] . " ",
             )
         );
