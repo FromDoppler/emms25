@@ -26,6 +26,15 @@ body.modal-open {
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   animation: popupModalIn 0.18s ease-out;
+  margin: 20px;
+}
+
+.popup-modal__dialog a {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 10px;
+  color: #18ff8c;
 }
 
 @keyframes popupModalIn {
@@ -45,7 +54,6 @@ body.modal-open {
 
 .popup-modal__body {
   padding: 20px 22px;
-  overflow: auto;
 }
 
 .popup-modal__close {
@@ -68,17 +76,12 @@ body.modal-open {
 
 .popup-modal__title {
   margin: 0 0 10px;
-  font:
-    700 32px/42px system-ui,
-    sans-serif;
   color: #fff;
 }
 
 .popup-modal__text {
   margin: 0 0 12px;
-  font:
-    700 16px/24px system-ui,
-    sans-serif;
+  max-width: 505px;
   color: #fff;
 }
 
@@ -140,11 +143,11 @@ body.modal-open {
   }
 }
 
-/* ===== Variante FORM (background imagen) ===== */
+/* ===== Variante FORM ) ===== */
 .popup-modal__dialog--form {
   position: relative;
   padding: 0;
-  color: #fff;
+  color: #5d0b6a;
   --popup-form-bg: url("/src/img/backgrounds/form-modal-bg.png");
 }
 
@@ -159,12 +162,12 @@ body.modal-open {
 .popup-modal__form-inner {
   position: relative;
   z-index: 1;
-  padding: 40px 40% 36px 40px;
+  padding: 40px 36% 36px 40px;
   min-height: 460px;
 }
 
 .popup-modal__form-head {
-  max-width: 560px;
+  max-width: 590px;
 }
 
 .popup-modal__form-fields {
@@ -179,15 +182,18 @@ body.modal-open {
 .popup-modal__f-label {
   display: block;
   margin: 0 0 6px;
+  font-style: normal;
+  font-weight: 700;
   font-size: 14px;
-  opacity: 0.95;
+  line-height: 16px;
+  color: #ffffff;
 }
 
 .popup-modal__input,
 .popup-modal__select {
   width: 100%;
   height: 44px;
-  border-radius: 8px;
+  border-radius: 3px;
   border: 0;
   outline: 0;
   background: #fff;
@@ -199,11 +205,15 @@ body.modal-open {
     700 16px/24px system-ui,
     sans-serif;
   letter-spacing: 0.15px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
   color: #5d0b6a;
 }
 
 .popup-modal__input::placeholder {
-  color: #9aa3ad;
+  color: #5d0b6a;
 }
 
 .popup-modal__select-wrap {
@@ -258,5 +268,135 @@ body.modal-open {
   .popup-modal__form-inner {
     padding: 28px 20px;
     min-height: unset;
+  }
+}
+
+.popup-modal__dialog--form {
+  position: relative;
+  padding: 0;
+  color: #5d0b6a;
+  --popup-form-bg: url("/src/img/backgrounds/form-modal-bg-1.png");
+}
+
+.popup-modal__dialog--form .popup-modal__body {
+  padding: 0;
+}
+
+.popup-modal__form-hero {
+  position: absolute;
+  right: -44px;
+  bottom: -163px;
+  z-index: 1;
+  width: min(52%, 520px);
+  max-height: 126%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.popup-modal__phone {
+  display: block;
+  gap: 10px;
+}
+
+.popup-modal__phone-country {
+  min-width: 88px;
+  flex: 0 0 auto;
+}
+
+.popup-modal__phone-number {
+  flex: 1 1 auto;
+}
+
+.popup-modal__check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 10px;
+  flex-wrap: wrap;
+  color: #ffffff;
+}
+
+.popup-modal__check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  vertical-align: -2px;
+}
+
+/* Tilde */
+.popup-modal__check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid #00e38c;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 720px) {
+  .popup-modal__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .popup-modal__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .popup-modal__input,
+  .popup-modal__select {
+    height: 42px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .popup-modal__form-actions .emms__cta {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #333333;
+  }
+
+  .popup-modal__form-inner {
+    padding: 32px 25px;
+    min-height: unset;
+  }
+
+  .popup-modal__form-hero {
+    margin: 16px auto 0;
+    width: 100%;
+    max-width: 378px;
+    opacity: 0.2;
+    right: -80px;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .popup-modal__phone {
+    flex-direction: column;
+  }
+
+  .popup-modal__phone-country {
+    min-width: unset;
   }
 }
