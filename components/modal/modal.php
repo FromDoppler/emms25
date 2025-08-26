@@ -20,11 +20,13 @@ function render_modal(string $id, string $type, string $variant, bool $captor = 
     </div>
   </div>
 
-  <link rel="stylesheet" href="/components/modal/modal.css?v=<?= VERSION ?>">
-  <?php
-  $captorScriptIncluded = false;
-  if ($captor && !$captorScriptIncluded) {
-    $captorScriptIncluded = true; ?>
+  <?php if (!defined('EMMS_MODAL_CSS_INCLUDED')) {
+    define('EMMS_MODAL_CSS_INCLUDED', true); ?>
+    <link rel="stylesheet" href="/components/modal/modal.css?v=<?= VERSION ?>">
+  <?php } ?>
+
+  <?php if ($captor && !defined('EMMS_CAPTOR_JS_INCLUDED')) {
+    define('EMMS_CAPTOR_JS_INCLUDED', true); ?>
     <script type="module" src="/components/modal/captor.js?v=<?= VERSION ?>"></script>
   <?php } ?>
 <?php
