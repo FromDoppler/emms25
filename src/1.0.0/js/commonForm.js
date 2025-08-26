@@ -21,9 +21,8 @@ const redirectToRegisteredPage = () => {
 };
 
 // Form submit handler
-const submitFormHandler = async (e) => {
+const submitFormHandler = async (e, form) => {
   e.preventDefault();
-  const form = document.getElementById("commonForm");
   if (!form) return;
 
   if (!validateForm(form)) return;
@@ -31,7 +30,6 @@ const submitFormHandler = async (e) => {
   try {
     const { fetchResp: resp } = await submitFormFetch(form, window.APP.EVENTS.CURRENT.freeId);
     if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
-    await openModal("modalForm");
     redirectToRegisteredPage();
   } catch (error) {
     customError("Error en formulario", error);
@@ -74,16 +72,22 @@ const modalFormSubmitHandler = async (e) => {
 // Initialization
 const initializeEventListeners = () => {
   const form = document.getElementById("commonForm");
+  const modalForm = document.getElementById("modalForm");
   const alreadyRegisterButtons = document.querySelectorAll(".alreadyRegisterForm");
-  const modalForm = document.getElementById("formModalForm");
+  const extraData = document.getElementById("formModalForm");
 
   if (form) {
     const submitBtn = form.querySelector("button");
-    if (submitBtn) submitBtn.addEventListener("click", submitFormHandler);
+    if (submitBtn) submitBtn.addEventListener("click", (e) => submitFormHandler(e, form));
     swichFormListener(form); // usando nombre original con typo
   }
 
   if (modalForm) {
+    const submitBtn = modalForm.querySelector("button");
+    if (submitBtn) submitBtn.addEventListener("click", (e) => submitFormHandler(e, modalForm));
+  }
+
+  if (extraData) {
     modalForm.addEventListener("submit", modalFormSubmitHandler);
   }
 

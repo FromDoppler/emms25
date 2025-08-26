@@ -77,7 +77,20 @@
   </form>
   <!-- End form -->
 </div>
-<script src="/src/<?= VERSION ?>/js/commonForm.js" type="module"></script>
-<script src="/src/<?= VERSION ?>/js/collapsibles.js" type="module"></script>
-<script src="/src/<?= VERSION ?>/js/intell-input/intell-input.js" type="module"></script>
+
 <script src="/src/<?= VERSION ?>/js/autoCompleteUserForm.js" type="module"></script>
+
+<?php if (!defined('EMMS_COMMONFORM_JS_INCLUDED')) {
+  define('EMMS_COMMONFORM_JS_INCLUDED', true); ?>
+  <script type="module" src="/src/<?= VERSION ?>/js/commonForm.js"></script>
+<?php } ?>
+
+<?php if (!defined('EMMS_COLLAPSIBLES_JS_INCLUDED')) {
+  define('EMMS_COLLAPSIBLES_JS_INCLUDED', true); ?>
+  <script type="module" src="/src/<?= VERSION ?>/js/collapsibles.js"></script>
+<?php } ?>
+
+<?php if (!defined('EMMS_INTELL_INPUT_JS_INCLUDED')) {
+  define('EMMS_INTELL_INPUT_JS_INCLUDED', true); ?>
+  <script type="module" src="/src/<?= VERSION ?>/js/intell-input/intell-input.js"></script>
+<?php } ?>

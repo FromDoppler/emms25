@@ -27,12 +27,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 <body>
 
   <?php
-  // Form extradata
-  render_modal('modalForm', 'extradata',  'form');
-  ?>
-  <?php
   // Form captador
-  //   render_modal('modalVip', 'form',  'vip');
+  render_modal('form-modal', 'form',  'form', true);
   ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
