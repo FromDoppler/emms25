@@ -237,7 +237,7 @@ body.modal-open {
 }
 
 .popup-modal__form-actions {
-  margin-top: 18px;
+  margin-top: 34px;
   max-width: 331px;
   display: flex;
   flex-direction: column;
@@ -388,7 +388,7 @@ body.modal-open {
     max-width: 378px;
     opacity: 0.2;
     right: -80px;
-    bottom: 0;
+    bottom: -24px;
     z-index: -2;
   }
 
