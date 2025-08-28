@@ -5,8 +5,8 @@
       Aprende con Speakers internacionales, participa en Workshops prácticos y conecta con referentes que marcan tendencia en Marketing Digital.
       Vive el EMMS desde adentro con beneficios exclusivos solo para asistentes VIP.
     </p>
-    <a href="/vip" class="emms__cta emms__cta--terciary emms__cta--sm">ADQUIERE TU ENTRADA</a>
+    <a href="/checkout" class="emms__cta emms__cta--terciary emms__cta--sm">ADQUIERE TU ENTRADA</a>
   </div>
 
-  <img class="popup-modal__vip-hero" src="/src/img/modals/persona-corona.png" alt="" aria-hidden="true" />
+  <img class="popup-modal__vip-img" src="/src/img/modals/persona-corona.png" alt="Mujer feliz" aria-hidden="true" />
 </div>
