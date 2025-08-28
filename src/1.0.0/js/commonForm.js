@@ -55,7 +55,7 @@ const quickSubmitHandler = async (button) => {
 
 const modalFormSubmitHandler = async (e) => {
   e.preventDefault();
-  const modalForm = document.getElementById("formModalForm");
+  const modalForm = document.getElementById("formExtraData");
   if (!modalForm) return;
 
   try {
@@ -74,7 +74,7 @@ const initializeEventListeners = () => {
   const form = document.getElementById("commonForm");
   const modalForm = document.getElementById("modalForm");
   const alreadyRegisterButtons = document.querySelectorAll(".alreadyRegisterForm");
-  const extraData = document.getElementById("formModalForm");
+  const extraData = document.getElementById("formExtraData");
 
   if (form) {
     const submitBtn = form.querySelector("button");

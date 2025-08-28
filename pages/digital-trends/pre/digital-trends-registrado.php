@@ -20,13 +20,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     import {
       toggleVipDigitalTrendsElements
     } from '/src/<?= VERSION ?>/js/toggleVipElements.js';
-
     // toggleVipDigitalTrendsElements();
   </script>
 </head>
 
 <body>
   <?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/extraDataCaptor.php');
   render_modal('modalVip', 'vipmodal',  'vip', true);
   ?>
 

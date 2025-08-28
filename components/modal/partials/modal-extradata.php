@@ -1,53 +1,47 @@
 <div class="popup-modal__form-inner">
-  <header class="popup-modal__form-head">
-    <h3 id="<?= $titleId ?>" class="popup-modal__title">¡Ya sos parte del Evento! 🚀</h3>
-    <p class="popup-modal__text">
-      Queremos que vivas una experiencia 100% personalizada. Completá los siguientes datos para que podamos ofrecerte contenidos pensados para ti.
-    </p>
-  </header>
+  <img
+    class="popup-modal__form-image"
+    src="/src/img/modals/jump-women.png"
+    alt="Mujer saltando"
+    aria-hidden="true" />
+  <div class="popup-modal__form-content">
 
-  <form class="popup-modal__form-fields" method="post" action="/api/form-modal" id="formModalForm">
-    <label class="popup-modal__f-group">
-      <span class="popup-modal__f-label">Rol</span>
-      <input class="popup-modal__input" type="text" name="jobPosition" placeholder="Escribe aquí" required />
-    </label>
+    <header class="popup-modal__form-head">
+      <h3 id="<?= $titleId ?>" class="popup-modal__title">¡Ya sos parte del Evento! 🚀</h3>
+      <p class="popup-modal__text">
+        Queremos que vivas una experiencia 100% personalizada. Completá los siguientes datos para que podamos ofrecerte contenidos pensados para ti.
+      </p>
+    </header>
 
-    <label class="popup-modal__f-group">
-      <span class="popup-modal__f-label">Industria</span>
-      <div class="popup-modal__select-wrap">
-        <select class="popup-modal__select" name="company" required>
-          <option value="" hidden>Selecciona</option>
-          <option>Educación</option>
-          <option>Tecnología</option>
-          <option>Retail</option>
-          <option>Salud</option>
-        </select>
-        <span class="popup-modal__chev" aria-hidden="true">▾</span>
+    <form class="popup-modal__form-fields" id="formExtraData">
+      <label class="popup-modal__f-group">
+        <span class="popup-modal__f-label">Rol</span>
+        <input class="popup-modal__input" type="text" name="jobPosition" placeholder="Escribe aquí" required />
+      </label>
+
+      <label class="popup-modal__f-group">
+        <span class="popup-modal__f-label">Industria</span>
+        <input class="popup-modal__input" type="text" name="company" placeholder="Escribe aquí" />
+      </label>
+
+      <label class="popup-modal__f-group">
+        <span class="popup-modal__f-label">Sitio Web</span>
+        <input class="popup-modal__input" type="url" name="website" placeholder="Escribe aquí" />
+      </label>
+
+      <label class="popup-modal__f-group">
+        <span class="popup-modal__f-label">¿Utilizas alguna de estas plataformas de Email Marketing?</span>
+        <input class="popup-modal__input" type="text" name="emailPlatform" placeholder="Escribe aquí" />
+      </label>
+
+      <div class="popup-modal__form-actions">
+        <button class="emms__cta emms__cta--terciary emms__cta--xl"><span class="button__text">ENVIAR</span></button>
+        <button class="popup-modal__btn-link" type="button" data-modal-close>OMITIR ESTE PASO</button>
       </div>
-    </label>
-
-    <label class="popup-modal__f-group">
-      <span class="popup-modal__f-label">Sitio Web</span>
-      <input class="popup-modal__input" type="url" name="website" placeholder="Escribe aquí" />
-    </label>
-
-    <label class="popup-modal__f-group">
-      <span class="popup-modal__f-label">¿Utilizas alguna de estas plataformas de Email Marketing?</span>
-      <div class="popup-modal__select-wrap">
-        <select class="popup-modal__select" name="emailPlatform">
-          <option value="" hidden>Selecciona</option>
-          <option>Doppler</option>
-          <option>Mailchimp</option>
-          <option>HubSpot</option>
-          <option>Otra</option>
-        </select>
-        <span class="popup-modal__chev" aria-hidden="true">▾</span>
-      </div>
-    </label>
-
-    <div class="popup-modal__form-actions">
-      <button class="emms__cta emms__cta--terciary emms__cta--xl" type="submit"><span class="button__text">ENVIAR</span></button>
-      <button class="popup-modal__btn-link" type="button" data-modal-close>OMITIR ESTE PASO</button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
+<?php if (!defined('EMMS_COMMONFORM_JS_INCLUDED')) {
+  define('EMMS_COMMONFORM_JS_INCLUDED', true); ?>
+  <script type="module" src="/src/<?= VERSION ?>/js/commonForm.js"></script>
+<?php } ?>

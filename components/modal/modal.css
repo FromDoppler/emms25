@@ -49,9 +49,6 @@ body.modal-open {
   }
 }
 
-.popup-modal__dialog.popup-modal__dialog--modalVip {
-}
-
 .popup-modal__body {
   padding: 20px 22px;
 }
@@ -164,6 +161,41 @@ body.modal-open {
   z-index: 1;
   padding: 40px 36% 36px 40px;
   min-height: 460px;
+}
+
+.popup-modal__form-content {
+  position: relative;
+  z-index: 1;
+}
+
+.popup-modal__form-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(45%, 520px);
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@media (max-width: 720px) {
+  .popup-modal__form-inner {
+    padding: 28px 20px;
+    min-height: unset;
+  }
+
+  .popup-modal__form-image {
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 420px;
+    opacity: 0.2;
+  }
 }
 
 .popup-modal__form-head {
