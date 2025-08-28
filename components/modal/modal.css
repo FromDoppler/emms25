@@ -51,6 +51,7 @@ body.modal-open {
 
 .popup-modal__body {
   padding: 20px 22px;
+  min-height: 336px;
 }
 
 .popup-modal__close {
@@ -88,7 +89,11 @@ body.modal-open {
   padding: 0;
   color: #fff;
   background: #0b0b0b;
-  --popup-vip-bg: url("/src/img/backgrounds/bg-moda-vip.png");
+  --popup-vip-bg: url("/src/img/backgrounds/form-modal-bg-1.png");
+}
+
+.popup-modal__dialog--vip.popup-modal__text {
+  max-width: 385px;
 }
 
 .popup-modal__dialog--vip::before {
@@ -100,27 +105,18 @@ body.modal-open {
   filter: saturate(1.05);
 }
 
-.popup-modal__dialog--vip::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(120% 120% at 10% 10%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.7) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
-}
-
 .popup-modal__vip-inner {
   position: relative;
   z-index: 1;
-  padding: 48px 44% 44px 40px;
+  padding: 48px 38% 44px 40px;
   min-height: 420px;
   border-radius: 14px;
 }
 
-.popup-modal__vip-hero {
+.popup-modal__vip-img {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -20px;
   z-index: 1;
   width: min(45%, 520px);
   max-height: 100%;
@@ -135,8 +131,36 @@ body.modal-open {
     min-height: unset;
   }
 
-  .popup-modal__vip-hero {
-    display: none;
+  .popup-modal__vip-img {
+    z-index: -1;
+    opacity: 0.2;
+    right: -70px;
+    bottom: -126px;
+    width: 100%;
+    max-height: 100%;
+    transform: scale(2);
+  }
+
+  .popup-modal__dialog--vip .popup-modal__title {
+    max-width: 220px;
+  }
+
+  .popup-modal__dialog--vip .popup-modal__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+    margin: 20px auto;
+  }
+
+  .popup-modal__dialog--vip .emms__cta {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #333333;
   }
 }
 
