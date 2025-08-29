@@ -12,42 +12,39 @@
   border: 2px solid #ffffff;
   color: #ece9e9;
   transition: opacity 0.3s ease;
+  padding: 12px 58px;
 }
 
 .referral .emms__cta:hover {
   opacity: 0.8;
 }
 
-.referral__image-people {
-  position: absolute;
-  left: 0;
-  width: 55%;
-  pointer-events: none;
-  z-index: 1;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  object-fit: cover;
-}
-
-.referral__image-people img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.referral__container {
-  position: relative;
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 2;
-}
-
 .referral__content {
   max-width: 540px;
+  color: #fff;
+}
+
+.referral__description {
+  margin-bottom: 20px;
+}
+
+.referral__prizes {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.referral__prizes li {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
+  margin-bottom: 10px;
+}
+
+.referral__prizes .prize-icon {
+  font-size: 22px;
+  margin-right: 8px;
 }
 
 .referral__title {
@@ -67,6 +64,10 @@
   color: #ffffff;
 }
 
+.referral__instructions {
+  max-width: 448px;
+}
+
 .referral__subtitle {
   font-size: var(--font-h4-size);
   line-height: var(--font-h4-line);
@@ -74,23 +75,60 @@
   margin-bottom: 10px;
 }
 
-/* Responsive */
+.referral__image-people {
+  position: absolute;
+  top: -3px;
+  bottom: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.referral__image-people img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.referral__container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  padding-left: 55%;
+}
+
+/* 🧱 Responsive breakpoints */
+@media (max-width: 1200px) {
+  .referral__image-people {
+    width: 45%;
+  }
+
+  .referral__container {
+    padding-left: 45%;
+  }
+}
+
 @media (max-width: 768px) {
   .referral {
     padding: 80px 20px;
   }
 
-  .referral__container {
-    justify-content: center;
-    text-align: center;
+  .referral__image-people {
+    display: none;
   }
 
-  .referral__image-people {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 300px;
-    bottom: 0;
+  .referral__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    text-align: center;
   }
 
   .referral__content {
@@ -100,10 +138,12 @@
   .referral__title {
     font-size: 24px;
   }
-}
 
-@media (max-width: 620px) {
-  .referral__image-people {
-    display: none;
+  .referral__prizes li {
+    justify-content: center;
+  }
+
+  .referral__instructions {
+    margin: 10 auto;
   }
 }

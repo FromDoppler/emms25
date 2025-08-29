@@ -5,62 +5,72 @@
 
   <div class="referral__container">
     <div class="referral__content">
-      <h2 class="referral__title">¡Recomienda el evento <br>y recibe recompensas!</h2>
+      <h2 class="referral__title">¡Recomienda el evento y gana!</h2>
+
       <p class="referral__description">
-        <strong>Súmate al Programa de Referidos</strong> y participa por premios exclusivos pensados para disfrutar al máximo la experiencia EMMS.
+        Súmate al Programa de Referidos: por cada persona que invites,
+        acumulas chances de ganar gift cards y elegir tu premio.
       </p>
+
+      <ul class="referral__prizes">
+        <li><span class="prize-icon" aria-hidden="true">🥇</span> Primer premio: <strong>&nbsp; $150 USD en gift card Bigbox.</strong></li>
+        <li><span class="prize-icon" aria-hidden="true">🥈</span> Segundo premio: <strong>&nbsp; $100 USD en gift card Bigbox.</strong></li>
+        <li><span class="prize-icon" aria-hidden="true">🥉</span> Tercer premio: <strong>&nbsp; $50 USD en gift card Bigbox.</strong></li>
+      </ul>
+
       <p class="referral__subtitle"><strong>¿Cómo participar?</strong></p>
       <p class="referral__instructions">
-        Solo tienes que compartir tu link en Redes Sociales para invitar a tu comunidad a que se registre gratis al evento.
-        <br><br>
-        ¡Empieza a compartir ahora y suma chances de ganar!
+        Comparte tu link único en Redes Sociales invitando a tu comunidad a que se registre gratis al evento.
+        <br>
+        ¡Empieza ahora y suma chances de ganar!
       </p>
+
       <button class="emms__cta" id="copy-referral-btn">COPIAR LINK</button>
     </div>
   </div>
+
 </section>
 
 <script type="module">
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyBtn = document.getElementById('copy-referral-btn');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const copyBtn = document.getElementById('copy-referral-btn');
-
-  function getEncodedEmail() {
-    return localStorage.getItem('dplrid');
-  }
-
-  function generateReferralUrl() {
-    const encodedEmail = getEncodedEmail();
-    if (!encodedEmail) {
-      return null;
-    }
-    const currentEvent = window.APP.EVENTS.CURRENT;
-    const baseUrl = window.location.origin;
-    const registrationPath = currentEvent.pages.unregistered.url;
-    return `${baseUrl}/${registrationPath}?emms_ref=${encodedEmail}`;
-  }
-
-  async function copyToClipboard() {
-    const referralUrl = generateReferralUrl();
-    if (!referralUrl) {
-      return;
+    function getEncodedEmail() {
+      return localStorage.getItem('dplrid');
     }
 
-    try {
-      await navigator.clipboard.writeText(referralUrl);
-
-      const originalText = copyBtn.textContent;
-      copyBtn.textContent = '¡COPIADO!';
-
-      setTimeout(() => {
-        copyBtn.textContent = originalText;
-      }, 2000);
-
-    } catch (err) {
-      return;
+    function generateReferralUrl() {
+      const encodedEmail = getEncodedEmail();
+      if (!encodedEmail) {
+        return null;
+      }
+      const currentEvent = window.APP.EVENTS.CURRENT;
+      const baseUrl = window.location.origin;
+      const registrationPath = currentEvent.pages.unregistered.url;
+      return `${baseUrl}/${registrationPath}?emms_ref=${encodedEmail}`;
     }
-  }
 
-  copyBtn.addEventListener('click', copyToClipboard);
-});
+    async function copyToClipboard() {
+      const referralUrl = generateReferralUrl();
+      if (!referralUrl) {
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(referralUrl);
+
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = '¡COPIADO!';
+
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+        }, 2000);
+
+      } catch (err) {
+        return;
+      }
+    }
+
+    copyBtn.addEventListener('click', copyToClipboard);
+  });
 </script>
