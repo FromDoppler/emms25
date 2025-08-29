@@ -13,7 +13,7 @@
       </p>
 
       <ul class="referral__prizes">
-        <li><span class="prize-icon" aria-hidden="true">🥇</span> Primer premio: <strong>&nbsp; USD en gift card Bigbox.</strong></li>
+        <li><span class="prize-icon" aria-hidden="true">🥇</span> Primer premio: <strong>&nbsp; $150 USD en gift card Bigbox.</strong></li>
         <li><span class="prize-icon" aria-hidden="true">🥈</span> Segundo premio: <strong>&nbsp; $100 USD en gift card Bigbox.</strong></li>
         <li><span class="prize-icon" aria-hidden="true">🥉</span> Tercer premio: <strong>&nbsp; $50 USD en gift card Bigbox.</strong></li>
       </ul>
