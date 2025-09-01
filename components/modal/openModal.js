@@ -1,10 +1,30 @@
+const modalQueue = [];
+let processing = false;
+
 export const openModal = (id) => {
   return new Promise((resolve) => {
-    const overlay = document.getElementById(id);
+    modalQueue.push({ id, resolve });
+    processQueue();
+  });
+};
 
-    if (!overlay) {
-      return resolve({ reason: "missing" });
-    }
+const processQueue = () => {
+  if (processing || modalQueue.length === 0) return;
+
+  const { id, resolve } = modalQueue.shift();
+  processing = true;
+
+  _internalOpenModal(id).then((res) => {
+    resolve(res);
+    processing = false;
+    processQueue();
+  });
+};
+
+const _internalOpenModal = (id) => {
+  return new Promise((resolve) => {
+    const overlay = document.getElementById(id);
+    if (!overlay) return resolve({ reason: "missing" });
 
     const body = document.body;
     let done = false;
