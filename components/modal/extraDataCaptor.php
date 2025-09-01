@@ -6,7 +6,7 @@ render_modal($formExtradataId, 'extradata',  'form');
 <script type="module">
   import {
     openModal
-  } from '/components/modal/openModal.js';
+  } from '/components/modal/openModal.js<?= VERSION ?>';
   const formExtradataId = <?= json_encode($formExtradataId) ?>;
   const KEY = `modalShown:${formExtradataId}`;
   if (!sessionStorage.getItem(KEY)) {
