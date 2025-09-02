@@ -217,7 +217,7 @@ $speakersEcommerce = [
         <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
       <?php elseif ($block['block'] === 'registerHome') : ?>
         <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
-        <p class="emms__fade-in">Pronto conocerás la agenda de la nueva edición, workshops y todas las novedades de esta nueva edición.</p>
+        <p class="emms__fade-in">Pronto conocerás la agenda de Speakers, Workshops y todas las novedades de este año.</p>
       <?php elseif ($block['block'] === 'digital-trends') : ?>
         <h2 class="emms__fade-in speakers__title">Speakers que brillaron en el EMMS</h2>
       <?php endif; ?>
