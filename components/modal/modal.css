@@ -92,8 +92,14 @@ body.modal-open {
   --popup-vip-bg: url("/src/img/backgrounds/form-modal-bg-1.png");
 }
 
-.popup-modal__dialog--vip.popup-modal__text {
+.popup-modal__dialog--vip .popup-modal__title {
+  margin: 30px 0px;
+}
+
+.popup-modal__dialog--vip .popup-modal__text {
   max-width: 385px;
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .popup-modal__dialog--vip::before {
@@ -115,14 +121,15 @@ body.modal-open {
 
 .popup-modal__vip-img {
   position: absolute;
-  right: 0;
-  bottom: -20px;
+  right: 46px;
+  bottom: -44px;
   z-index: 1;
-  width: min(45%, 520px);
+  width: min(38%, 520px);
   max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   pointer-events: none;
   user-select: none;
+  transform: scale(1.2);
 }
 
 @media (max-width: 720px) {
@@ -257,12 +264,9 @@ body.modal-open {
   box-shadow:
     0 2px 0 rgba(0, 0, 0, 0.12),
     0 0 0 2px rgba(255, 255, 255, 0.12) inset;
-  font:
-    700 16px/24px system-ui,
-    sans-serif;
   letter-spacing: 0.15px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: #5d0b6a;
@@ -370,7 +374,7 @@ body.modal-open {
   gap: 4px;
   width: 100%;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 10px;
   flex-wrap: wrap;
   color: #ffffff;
@@ -408,6 +412,7 @@ body.modal-open {
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
+    margin-top: 6px;
   }
 
   .popup-modal__text {
