@@ -1,5 +1,4 @@
-const modalQueue = [];
-let processing = false;
+import { modalQueue, processing, setProcessing } from "./scripts/modalQueueStore.js";
 
 export const openModal = (id) => {
   return new Promise((resolve) => {
@@ -12,11 +11,11 @@ const processQueue = () => {
   if (processing || modalQueue.length === 0) return;
 
   const { id, resolve } = modalQueue.shift();
-  processing = true;
+  setProcessing(true);
 
   _internalOpenModal(id).then((res) => {
     resolve(res);
-    processing = false;
+    setProcessing(false);
     processQueue();
   });
 };
@@ -40,8 +39,6 @@ const _internalOpenModal = (id) => {
       if (done) return;
       done = true;
       cleanup();
-      // Si el cierre fue “externo” (alguien seteó aria-hidden="true" desde afuera),
-      // no volvemos a tocar el atributo para evitar bucles.
       if (reason !== "external") overlay.setAttribute("aria-hidden", "true");
       resolve({ reason });
     };
@@ -60,11 +57,9 @@ const _internalOpenModal = (id) => {
       if (overlay.getAttribute("aria-hidden") === "true") finish("external");
     });
 
-    // ABRIR
     overlay.setAttribute("aria-hidden", "false");
     body.classList.add("modal-open");
 
-    // Listeners
     overlay.addEventListener("click", onOverlayClick);
     document.addEventListener("keydown", onEsc);
     observer.observe(overlay, { attributes: true, attributeFilter: ["aria-hidden"] });
