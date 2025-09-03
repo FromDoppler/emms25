@@ -1,33 +1,35 @@
 <?php
-function getContentForUrl($url)
-{
+if (!function_exists('getContentForUrl')) {
+  function getContentForUrl($url)
+  {
 
-  $contentMap = [
-    'default' => [
-      'heading' => 'Accede a la Biblioteca de Recursos ¡Es gratis y súper completa!',
-      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
-    ],
-    'group1' => [
-      'heading' => 'Accede a la Biblioteca de Recursos ¡Es gratis y súper completa!',
-      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
-    ],
-    'group2' => [
-      'heading' => 'Capacítate con la Biblioteca de Recursos ¡gratis!',
-      'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
-    ],
-  ];
+    $contentMap = [
+      'default' => [
+        'heading' => 'Accede a la Biblioteca de Recursos ¡Es gratis y súper completa!',
+        'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
+      ],
+      'group1' => [
+        'heading' => 'Accede a la Biblioteca de Recursos <br> ¡Es gratis y súper completa!',
+        'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
+      ],
+      'group2' => [
+        'heading' => 'Accede a la Biblioteca de Recursos <br> ¡Es gratis y súper completa!',
+        'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
+      ],
+    ];
 
-  $urlToGroupMap = [
-    '/' => 'group1',
-    '/registrado' => 'group1',
-    '/digital-trends' => 'group2',
-    '/digital-trends-registrado' => 'group2',
-  ];
+    $urlToGroupMap = [
+      '/' => 'group1',
+      '/registrado' => 'group1',
+      '/digital-trends' => 'group2',
+      '/digital-trends-registrado' => 'group2',
+    ];
 
 
-  $group = $urlToGroupMap[$url] ?? 'default';
+    $group = $urlToGroupMap[$url] ?? 'default';
 
-  return $contentMap[$group];
+    return $contentMap[$group];
+  }
 }
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
@@ -47,7 +49,7 @@ $isDigitalTrends = in_array($normalizedUrl, [
     <div class="premium-content__text emms__fade-in">
       <h2><?php echo ($content['heading']); ?></h2>
 
-      <?php if (!$isDigitalTrends): ?>
+      <?php if ($isDigitalTrends): ?>
         <ul class="premium-content__list emms__fade-in">
           <li>
             <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check">

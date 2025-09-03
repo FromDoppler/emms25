@@ -10,11 +10,10 @@
 
 .centralvideo .centralvideo-title {
   font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 46px;
-  color: #333333;
-  margin-bottom: 20px;
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  text-align: center;
+  color: var(--color-muted);
 }
 
 .centralvideo.centralvideo--live {
@@ -46,20 +45,20 @@
 
 .centralvideo__head h2 {
   font-weight: 700;
-  font-size: 22px;
-  line-height: 24px;
+  font-size: var(--color-muted);
+  line-height: var(--color-muted);
   text-align: center;
-  color: #333333;
+  color: var(--color-muted);
+  margin-bottom: 15px;
 }
 
 .centralvideo__head span {
+  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
   text-align: center;
-  color: #ffffff;
-  margin: 0 auto;
-  max-width: 850px;
+  color: var(--color-muted);
 }
 
 .centralvideo--tickets .centralvideo__head span {

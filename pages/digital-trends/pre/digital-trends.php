@@ -41,17 +41,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     </div>
     <div class="register-noform__container  eventShowElements">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/register-withoutform.php') ?>
-    </div>
-    <div class="register-form__container eventHiddenElements">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/vip-offer.php') ?>
     </div>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/grid-event-types.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/event-numbers.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/speakers-carousel.php') ?>
-    <div class="register-noform__container  eventShowElements">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
-    </div>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/central-video.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/event-numbers.php') ?>
+    <div class="register-noform__container  eventShowElements">
+    </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/users-comments.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>

@@ -4,14 +4,7 @@
     <p class="emms__fade-in">Te damos la bienvenida al evento que marcará las tendencias del presente y futuro del Marketing Digital. <br>
       Guarda la fecha y no te pierdas esta oportunidad de aprender, conectar y transformar tus Estrategias de negocio.
     </p>
-    <div class="hero-registration__buttons">
-      <p>
-        <img src="/src/img/hello-module/calendar-icon.svg" alt="Calendario" class="hero-registration__icon">
-        Agéndalo en tu calendario:
-      </p>
-      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="https://www.addevent.com/event/Bw26192014" target="_blank">DÍA 1</a>
-      <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="https://www.addevent.com/event/mN26192020" target="_blank">DÍA 2</a>
-    </div>
+    <a class=" emms__fade-in emms__cta  emms__cta--xl emms__cta--terciary" href="/checkout.php" target="_blank">COMPRA TU ENTRADA VIP AHORA</a>
 
   </div>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>

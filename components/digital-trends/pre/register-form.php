@@ -8,7 +8,7 @@
       <ul class="hero-registration__text__checklist dk">
         <li>SPEAKERS INTERNACIONALES</li>
         <li>WORKSHOPS Y NETWORKING</li>
-        <li>REGALOS Y PREMIOS</li>
+        <li>SORTEOS Y BENEFICIOS</li>
       </ul>
     </div>
     <!-- Form -->

@@ -9,13 +9,14 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
     <?php
     // TODO: Mover days a const .env??
     $days = [
-        1 => ['date' => 'DÍA 1', 'short' => 'DÍA 1'],
-        2 => ['date' => 'DÍA 2', 'short' => 'DÍA 2'],
+        1 => ['date' => '28 DE OCTUBRE', 'short' => 'DÍA 1'],
+        2 => ['date' => '29 DE OCTUBRE', 'short' => 'DÍA 2'],
+        3 => ['date' => '30 DE OCTUBRE', 'short' => 'DÍA 3'],
     ];
 
     $dayDuring = DAY_DURING;
     // Tabs de la agenda
-    render_schedule_tabs($ecommerceStates, $days, $dayDuring);
+    render_schedule_tabs($digitalTrendsStates, $days, $dayDuring);
     ?>
 
 
@@ -27,13 +28,13 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
     ?>
         <div class="emms__container--lg" role="tabpanel" aria-labelledby="day<?= $dayIndex ?>">
             <?php
-            render_event_day($dayIndex, $ecommerceStates);
+            render_event_day($dayIndex, $digitalTrendsStates);
             ?>
             <div class="dk">
                 <div class="speaker-grid ">
                     <?php foreach ($speakers as $speaker): ?>
                         <div class="speaker-grid__item">
-                            <?php render_speaker_card($speaker, $isRegistered, false, $ecommerceStates); ?>
+                            <?php render_speaker_card($speaker, $isRegistered, false, $digitalTrendsStates); ?>
                         </div>
                         <?php render_speaker_modal($speaker, false) ?>
                     <?php endforeach; ?>
@@ -43,7 +44,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
                 <div class="speaker-grid speaker-carousel">
                     <?php foreach ($speakers as $speaker): ?>
                         <div class="speaker-grid__item carousel-cell">
-                            <?php render_speaker_card($speaker, $isRegistered, true, $ecommerceStates); ?>
+                            <?php render_speaker_card($speaker, $isRegistered, true, $digitalTrendsStates); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
