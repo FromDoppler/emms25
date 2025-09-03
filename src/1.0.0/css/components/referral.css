@@ -30,7 +30,6 @@
   margin-bottom: 20px;
 }
 
-
 .referral__title {
   font-style: normal;
   font-weight: 700;
@@ -50,9 +49,8 @@
 
 .referral__description strong {
   font-weight: 700;
-  color: #18FF8C;
+  color: #18ff8c;
 }
-
 
 .referral__subtitle {
   font-size: var(--font-h4-size);

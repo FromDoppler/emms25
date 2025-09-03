@@ -82,12 +82,7 @@
 }
 
 .emms__plans__card--vip .emms__plans__card__head__top {
-  background: linear-gradient(90deg,
-      #a67c00 0%,
-      #d4af37 15%,
-      #ffd700 50%,
-      #d4af37 85%,
-      #a67c00 100%);
+  background: linear-gradient(90deg, #a67c00 0%, #d4af37 15%, #ffd700 50%, #d4af37 85%, #a67c00 100%);
 }
 
 .emms__plans__card__head__price {

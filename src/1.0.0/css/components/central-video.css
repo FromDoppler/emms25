@@ -45,8 +45,8 @@
 
 .centralvideo__head h2 {
   font-weight: 700;
-  font-size: var(--color-muted);;
-  line-height: var(--color-muted);;
+  font-size: var(--color-muted);
+  line-height: var(--color-muted);
   text-align: center;
   color: var(--color-muted);
   margin-bottom: 15px;
@@ -55,8 +55,8 @@
 .centralvideo__head span {
   font-style: normal;
   font-weight: 400;
-  font-size: var(--font-p-size);;
-  line-height: var(--font-p-line);;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
   text-align: center;
   color: var(--color-muted);
 }
@@ -206,7 +206,6 @@ ul.centralvideo__list.centralvideo__list--live li::before {
 }
 
 @media screen and (max-width: 768px) {
-
   .centralvideo__video iframe,
   .centralvideo__video video {
     box-shadow: -11px 9px 0 #310e44;
