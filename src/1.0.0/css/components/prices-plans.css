@@ -17,7 +17,7 @@
 .emms__plans__title {
   color: #fff;
   text-align: center;
-  max-width: 840px;
+  max-width: 915px;
   width: 100%;
   margin: 0 auto 60px;
 }
@@ -33,7 +33,6 @@
   font-size: 20px;
   line-height: 22px;
   color: #fff;
-  max-width: 660px;
   margin: 0 auto;
   margin-bottom: 24px;
   font-weight: 700;
@@ -83,7 +82,12 @@
 }
 
 .emms__plans__card--vip .emms__plans__card__head__top {
-  background: linear-gradient(90deg, #9b6612, #d29e4a, #9b6612);
+  background: linear-gradient(90deg,
+      #a67c00 0%,
+      #d4af37 15%,
+      #ffd700 50%,
+      #d4af37 85%,
+      #a67c00 100%);
 }
 
 .emms__plans__card__head__price {
@@ -122,7 +126,7 @@
 }
 
 .emms__plans__card__head__price h4 {
-  font-size: 47px;
+  font-size: 40px;
   line-height: 1;
   font-weight: 700;
   color: #333333;

@@ -2,65 +2,78 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
 $normalizedUrl = getNormalizeUrl();
 
-function getGridBlock2($url)
-{
-  $blocks = [
-    '/digital-trends' => ['block' => 'CtaBlock'],
-    '/digital-trends-registrado' => ['block' => 'TextBlock'],
-    '/*' => ['block' => 'CtaBlock'],
-  ];
-
-  return $blocks[$url] ?? $blocks['/*'];
+if (!isset($gridVariant)) {
+  $gridVariant = 'short';
+}
+if (!function_exists('getGridBlock')) {
+  function getGridBlock($url)
+  {
+    $blocks = [
+      '/digital-trends' => ['block' => 'CtaBlock'],
+      '/digital-trends-registrado' => ['block' => 'TextBlock'],
+      '/*' => ['block' => 'CtaBlock'],
+    ];
+    return $blocks[$url] ?? $blocks['/*'];
+  }
 }
 
-$block = getGridBlock2($normalizedUrl);
+$block = getGridBlock($normalizedUrl);
+if (!function_exists('renderGridItems')) {
 
-$gridItems = [
-  [
-    'image' => '/src/img/grid-event-types/ia.png',
-    'title' => 'Inteligencia Artificial',
-    'description' => 'Descubre herramientas de Inteligencia Artificial para optimizar tus Campañas y tomar decisiones con más impacto.'
-  ],
-  [
-    'image' => '/src/img/grid-event-types/casosdeexito.png',
-    'title' => 'Casos de Éxito',
-    'description' => 'Conoce a las empresas que están cambiando las reglas del juego y replica sus tácticas en tu negocio.'
-  ],
-  [
-    'image' => '/src/img/grid-event-types/regalos.png',
-    'title' => 'Sorpresas y regalos',
-    'description' => 'Aprovecha descuentos en cursos y herramientas que potenciarán tus Estrategias de Marketing Digital.'
-  ]
-];
+  function renderGridItems($gridVariant = 'long')
+  {
+    $items = [
+      ["img" => "/src/img/conferencias.png", "title" => "Conferencias", "text" => "Escucha a referentes internacionales y conoce las últimas tendencias digitales."],
+      ["img" => "/src/img/entrevistas.png", "title" => "Entrevistas", "text" => "Aprende de influencers y creadores que marcan el rumbo de la industria."],
+      ["img" => "/src/img/casos-de-exito.png", "title" => "Casos de Éxito", "text" => "Descubre cómo las marcas más reconocidas están transformando el sector."],
+      ["img" => "/src/img/networking.png", "title" => "Networking", "text" => "Conecta con profesionales, haz nuevos contactos y amplía tu red."],
+      ["img" => "/src/img/workshop.png", "title" => "Workshops", "text" => "Participa en talleres prácticos y aplica lo aprendido al instante."],
+      ["img" => "/src/img/recursos.png", "title" => "Recursos", "text" => "Accede a materiales exclusivos: guías, plantillas, e-books, ¡y mucho más!"],
+    ];
+
+    if ($gridVariant === 'short') {
+      $items = array_slice($items, 0, 3);
+    }
+
+    foreach ($items as $item) {
+      echo '<li class="emms__grid__item">
+                <div class="emms__grid__item__image">
+                    <img src="' . $item['img'] . '" alt="Image">
+                </div>
+                <div class="emms__grid__item__text">
+                    <h3>' . $item['title'] . '</h3>
+                    <p>' . $item['text'] . '</p>
+                </div>
+              </li>';
+    }
+  }
+}
+
 ?>
 
 <section class="emms__grid emms__grid--3">
   <div class="emms__container--md">
     <div class="emms__grid__title emms__fade-in">
-      <h2>EMMS Digital Trends 2025: <br> anticípate al futuro del Marketing, hoy</h2>
+      <h2>DESCUBRE LA EXPERIENCIA COMPLETA CON TU ENTRADA VIP</h2>
     </div>
-
     <ul class="emms__grid__content emms__fade-in">
-      <?php foreach ($gridItems as $item): ?>
-        <li class="emms__grid__item">
-          <div class="emms__grid__item__image">
-            <img src="<?= $item['image'] ?>" alt="<?= htmlspecialchars($item['title']) ?>">
-          </div>
-          <div class="emms__grid__item__text">
-            <h3><?= $item['title'] ?></h3>
-            <p><?= $item['description'] ?></p>
-          </div>
-        </li>
-      <?php endforeach; ?>
+      <?php renderGridItems($gridVariant); ?>
     </ul>
-
     <div class="grid__footer">
-      <?php if ($block['block'] === 'CtaBlock'): ?>
-        <a href="#registro" class="emms__cta emms__cta--md emms__fade-in-animation eventHiddenElements">RESERVA TU LUGAR</a>
-        <button class="emms__cta emms__cta--md emms__fade-in-animation eventShowElements alreadyRegisterForm">
-          <span class="button__text">RESERVA TU LUGAR</span>
+      <?php if ($block['block'] === 'CtaBlock') : ?>
+        <a href="#registro" class="emms__cta emms__fade-in-animation eventHiddenElements">REGÍSTRATE GRATIS</a>
+        <button class="emms__cta emms__fade-in-animation eventShowElements alreadyRegisterForm">
+          <span class="button__text">Regístrate gratis</span>
         </button>
+      <?php elseif ($block['block'] === 'TextBlock') : ?>
+        <div class="hidden--vip">
+          <p><strong>¡No te lo pierdas! Vive la experiencia EMMS completa con tu pase VIP.</strong></p>
+          <a href="/checkout" class="emms__cta emms__fade-in-animation emms__cta--xl">COMPRA TU ENTRADA</a>
+        </div>
       <?php endif; ?>
     </div>
+    <?php if ($block['block'] === 'TextBlock') : ?>
+      <div class="emms__separator emms__separator--white"></div>
+    <?php endif; ?>
   </div>
 </section>

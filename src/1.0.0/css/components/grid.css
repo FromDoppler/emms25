@@ -4,21 +4,29 @@
 }
 
 .emms__grid__title h2 {
-  font-size: 40px;
+  font-size: var(--font-h2-size);
   font-weight: 700;
-  line-height: 44px;
+  line-height: var(--font-h2-line);
   letter-spacing: -1px;
   text-align: center;
   color: #fff;
+  max-width: 800px;
   margin: 20px auto;
 }
 
 .emms__grid .grid__footer {
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   max-width: 730px;
-  margin: 55px auto;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+.emms__grid .grid__footer .emms__cta {
+  max-width: 210px;
+  margin: 20px auto;
+  padding: 24px 88px;
 }
 
 .emms__grid .grid__footer strong {
@@ -65,9 +73,8 @@
 .emms__grid__item .emms__grid__item__text p {
   margin: 12px 0 0 0;
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
   color: #ffffff;
 }
 

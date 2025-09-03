@@ -366,7 +366,7 @@
 }
 
 .hero-registration--registered p {
-  margin: 30px 0 0 0;
+  margin: 30px 0;
   animation-delay: 0.5s;
   font-style: normal;
   font-size: 16px;

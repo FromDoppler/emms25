@@ -2,18 +2,18 @@
 
 echo '<div class="schedule__tabs">';
 
-if ($ecommerceStates['isPre']) {
+if ($digitalTrendsStates['isPre']) {
     $state = 'pre';
     include __DIR__ . '/schedule-buttons.php';
 }
 
-if ($ecommerceStates['isLive'] || $ecommerceStates['isDuring']) {
+if ($digitalTrendsStates['isLive'] || $digitalTrendsStates['isDuring']) {
     $state = 'live';
     $currentDay = $dayDuring;
     include __DIR__ . '/schedule-buttons.php';
 }
 
-if ($ecommerceStates['isPost']) {
+if ($digitalTrendsStates['isPost']) {
     $state = 'post';
     include __DIR__ . '/schedule-buttons.php';
 }

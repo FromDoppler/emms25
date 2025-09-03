@@ -1,10 +1,12 @@
 .referral {
   position: relative;
-  background: url("/src/img/backgrounds/referral-bg.png") no-repeat center center;
+  background: url(/src/img/backgrounds/referral-bg.png) no-repeat center center;
   background-size: cover;
-  padding: 100px 20px;
+  padding: 35px 20px;
   color: #fff;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
 .referral .emms__cta {
@@ -28,24 +30,6 @@
   margin-bottom: 20px;
 }
 
-.referral__prizes {
-  list-style: none;
-  margin: 20px 0;
-  padding: 0;
-}
-
-.referral__prizes li {
-  display: flex;
-  align-items: center;
-  font-size: var(--font-p-size);
-  line-height: var(--font-p-line);
-  margin-bottom: 10px;
-}
-
-.referral__prizes .prize-icon {
-  font-size: 22px;
-  margin-right: 8px;
-}
 
 .referral__title {
   font-style: normal;
@@ -64,9 +48,11 @@
   color: #ffffff;
 }
 
-.referral__instructions {
-  max-width: 448px;
+.referral__description strong {
+  font-weight: 700;
+  color: #18FF8C;
 }
+
 
 .referral__subtitle {
   font-size: var(--font-h4-size);
@@ -76,20 +62,19 @@
 }
 
 .referral__image-people {
-  position: absolute;
-  top: -3px;
-  bottom: 0;
-  left: 0;
-  width: 55%;
-  height: 100%;
   pointer-events: none;
   z-index: 1;
+  position: relative;
+  width: 50%;
 }
 
 .referral__image-people img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-width: 550px;
+  position: absolute;
+  right: 50px;
+  bottom: -36px;
 }
 
 .referral__container {
@@ -101,17 +86,18 @@
   z-index: 2;
 }
 
-/* 🧱 Responsive breakpoints */
-@media (max-width: 1200px) {
-  .referral__image-people {
-    width: 45%;
-  }
-
-  .referral__container {
-    padding-left: 45%;
-  }
+.premios-desktop {
+  display: block;
+  max-height: 190px;
 }
 
+.premios-mobile {
+  max-height: 300px;
+  margin: 0 auto;
+  display: none;
+}
+
+/* Responsive breakpoints */
 @media (max-width: 768px) {
   .referral {
     padding: 80px 20px;
@@ -138,14 +124,15 @@
     font-size: 24px;
   }
 
-  .referral__prizes li {
-    justify-content: center;
-  }
-
   .referral__instructions {
     margin: 10 auto;
   }
-  .referral__prizes {
-    text-align: left;
+
+  .premios-desktop {
+    display: none;
+  }
+
+  .premios-mobile {
+    display: block;
   }
 }

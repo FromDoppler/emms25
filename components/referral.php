@@ -1,6 +1,6 @@
 <section class="referral">
   <div class="referral__image-people">
-    <img src="/src/img/referral/referral-people.png" alt="Personas compartiendo el evento" />
+    <img src="/src/img/referral/referral.png" alt="Persona promocionando su premio" />
   </div>
 
   <div class="referral__container">
@@ -8,23 +8,15 @@
       <h2 class="referral__title">¡Recomienda el evento y gana!</h2>
 
       <p class="referral__description">
-        Súmate al Programa de Referidos: por cada persona que invites,
-        acumulas chances de ganar gift cards y elegir tu premio.
+        Súmate al <strong>PROGRAMA DE REFERIDOS</strong> : por cada persona que invites, acumulas chances de ganar gift cards y elegir tu premio.
       </p>
-
-      <ul class="referral__prizes">
-        <li><span class="prize-icon" aria-hidden="true">🥇</span> Primer premio: <strong>&nbsp; $150 USD en gift card Bigbox.</strong></li>
-        <li><span class="prize-icon" aria-hidden="true">🥈</span> Segundo premio: <strong>&nbsp; $100 USD en gift card Bigbox.</strong></li>
-        <li><span class="prize-icon" aria-hidden="true">🥉</span> Tercer premio: <strong>&nbsp; $50 USD en gift card Bigbox.</strong></li>
-      </ul>
+      <img src="/src/img/referral/premios.png" alt="Increibles premios" class="premios-desktop">
+      <img src="/src/img/referral/premios-mobile.png" alt="Increibles premios" class="premios-mobile">
 
       <p class="referral__subtitle"><strong>¿Cómo participar?</strong></p>
       <p class="referral__instructions">
-        Comparte tu link único en Redes Sociales invitando a tu comunidad a que se registre gratis al evento.
-        <br>
-        ¡Empieza ahora y suma chances de ganar!
+        Comparte tu link único en Redes Sociales invitando a tu comunidad a que se registre gratis al evento. ¡Empieza ahora y suma chances de ganar!
       </p>
-
       <button class="emms__cta" id="copy-referral-btn">COPIAR LINK</button>
     </div>
   </div>
