@@ -10,7 +10,7 @@
             </div>
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--soft-green.svg" alt="Check icon">
-                <span>WORKSHOP Y NETWORKING</span>
+                <span>WORKSHOPS Y NETWORKING</span>
             </div>
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--soft-green.svg" alt="Check icon">

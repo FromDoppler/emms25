@@ -1,60 +1,81 @@
 <!-- Companies list -->
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
+$normalizedUrl = getNormalizeUrl();
+
+function getSponsorsContent($url)
+{
+  $blocks = [
+    '/digital-trends' => [
+      'title' => 'Nos acompañan en esta edición',
+    ],
+    '/digital-trends-registrado' => [
+      'title' => 'Apoyan el EMMS Digital Trends',
+    ],
+    '/*' => [
+      'title' => 'Nos acompañan en esta edición',
+    ],
+  ];
+
+  return $blocks[$url] ??  $blocks['/*'];
+}
+
+$content = getSponsorsContent($normalizedUrl);
 $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 if (!$db->hasActiveSponsor()) {
-    $db->close();
-    return;
+$db->close();
+return;
 }
 
 $uploadsPath = './adm25/server/modules/sponsors/uploads/';
 $faqLink = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
 
 $sponsorTypes = [
-    'SPONSOR' => ['title' => 'SPONSORS', 'class' => 'companies-list companies-list--lg'],
-    'PREMIUM' => ['title' => 'MEDIA PARTNERS EXCLUSIVE', 'class' => 'companies-list'],
-    'STARTER' => ['title' => 'MEDIA PARTNERS STARTERS', 'class' => 'companies-list']
+'SPONSOR' => ['title' => 'SPONSORS', 'class' => 'companies-list companies-list--lg'],
+'PREMIUM' => ['title' => 'MEDIA PARTNERS EXCLUSIVE', 'class' => 'companies-list'],
+'STARTER' => ['title' => 'MEDIA PARTNERS STARTERS', 'class' => 'companies-list']
 ];
 
 $sponsorsByType = [];
 foreach ($sponsorTypes as $type => $config) {
-    $sponsorsByType[$type] = $db->getSponsorsByType($type);
+$sponsorsByType[$type] = $db->getSponsorsByType($type);
 }
 ?>
 
 <section class="companies companies--categories" id="aliados">
-    <div class="emms__container--lg">
-        <h2 class="emms__fade-in">Apoyan el EMMS Digital Trends</h2>
-        
-        <?php foreach ($sponsorTypes as $type => $config): ?>
-            <?php if (!empty($sponsorsByType[$type])): ?>
-                <h3><?= htmlspecialchars($config['title']) ?></h3>
-                <ul class="<?= htmlspecialchars($config['class']) ?> emms__fade-in">
-                    <?php foreach ($sponsorsByType[$type] as $sponsor): ?>
-                        <li class="companies-list__item companies-list__item--animated">
-                            <?php if (!empty($sponsor['link_site'])): ?>
-                                <a href="<?= htmlspecialchars($sponsor['link_site']) ?>" target="_blank" rel="noopener noreferrer">
-                            <?php endif; ?>
-                            <img src="<?= htmlspecialchars($uploadsPath . $sponsor['logo_company']) ?>"
-                                 alt="<?= htmlspecialchars($sponsor['alt_logo_company']) ?>"
-                                 loading="lazy">
-                            <?php if (!empty($sponsor['link_site'])): ?>
-                                </a>
-                            <?php endif; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-                <div class="companies__divisor"></div>
-            <?php endif; ?>
-        <?php endforeach; ?>
+  <div class="emms__container--lg">
+    <h2 class="emms__fade-in"><?= $content['title'] ?></h2>
 
-        <!-- FAQ Link -->
-        <p class="companies__body">
-            ¿Tienes dudas sobre el EMMS?
-            <a href="<?= htmlspecialchars($faqLink) ?>">Haz clic aquí</a> y encuentra las <br>
-            preguntas más frecuentes sobre el evento.
-        </p>
-    </div>
+    <?php foreach ($sponsorTypes as $type => $config): ?>
+      <?php if (!empty($sponsorsByType[$type])): ?>
+        <h3><?= htmlspecialchars($config['title']) ?></h3>
+        <ul class="<?= htmlspecialchars($config['class']) ?> emms__fade-in">
+          <?php foreach ($sponsorsByType[$type] as $sponsor): ?>
+            <li class="companies-list__item companies-list__item--animated">
+              <?php if (!empty($sponsor['link_site'])): ?>
+                <a href="<?= htmlspecialchars($sponsor['link_site']) ?>" target="_blank" rel="noopener noreferrer">
+                <?php endif; ?>
+                <img src="<?= htmlspecialchars($uploadsPath . $sponsor['logo_company']) ?>"
+                  alt="<?= htmlspecialchars($sponsor['alt_logo_company']) ?>"
+                  loading="lazy">
+                <?php if (!empty($sponsor['link_site'])): ?>
+                </a>
+              <?php endif; ?>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+        <div class="companies__divisor"></div>
+      <?php endif; ?>
+    <?php endforeach; ?>
+
+    <!-- FAQ Link -->
+    <p class="companies__body">
+      ¿Tienes dudas sobre el EMMS?
+      <a href="<?= htmlspecialchars($faqLink) ?>">Haz clic aquí</a> y encuentra las <br>
+      preguntas más frecuentes sobre el evento.
+    </p>
+  </div>
 </section>
 
 <script>

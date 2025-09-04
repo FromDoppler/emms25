@@ -31,7 +31,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
   render_modal('form-modal', 'form',  'form', true);
   ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
+  <div class="register-form__container eventHiddenElements">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
+  </div>
+
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
 

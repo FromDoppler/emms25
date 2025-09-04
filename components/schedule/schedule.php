@@ -46,10 +46,10 @@ $block = getScheduleBlock2($normalizedUrl);
     render_speaker_grid($digitalTrendsStates, $isRegistered); ?>
     <?php if ($block['block'] === 'digital-trends') : ?>
       <div class="emms__calendar__bottom emms__fade-in  eventHiddenElements">
-        <a href="#registro" class="emms__cta">SUMATE AHORA</a>
+        <a href="#registro" class="emms__cta">SÚMATE AHORA</a>
       </div>
       <div class="emms__calendar__bottom  eventShowElements">
-        <a href="#registro" class="emms__cta alreadyRegisterForm"><span class="button__text">SUMATE GRATIS</span></a>
+        <a href="#registro" class="emms__cta alreadyRegisterForm"><span class="button__text">SÚMATE GRATIS</span></a>
       </div>
     <?php endif; ?>
   </div>

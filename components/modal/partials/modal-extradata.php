@@ -7,9 +7,9 @@
   <div class="popup-modal__form-content">
 
     <header class="popup-modal__form-head">
-      <h3 id="<?= $titleId ?>" class="popup-modal__title">¡Ya sos parte del Evento! 🚀</h3>
+      <h3 id="<?= $titleId ?>" class="popup-modal__title">¡Ya eres parte del Evento! 🚀</h3>
       <p class="popup-modal__text">
-        Queremos que vivas una experiencia 100% personalizada. Completá los siguientes datos para que podamos ofrecerte contenidos pensados para ti.
+        Queremos que vivas una experiencia 100% personalizada. Completa los siguientes datos para que podamos ofrecerte contenidos pensados para ti.
       </p>
     </header>
 
