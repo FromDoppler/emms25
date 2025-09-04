@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SpreadSheetGoogle.php');
 
-function saveSubscriptionSpreadSheet($idSpread = ID_SPREADSHEET, $user)
+function saveSubscriptionSpreadSheet($user, $idSpread = ID_SPREADSHEET)
 {
     try {
         $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

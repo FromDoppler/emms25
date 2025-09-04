@@ -13,7 +13,18 @@ class EmailTemplateManager
         $templatePath = self::TEMPLATE_DIR . $templateType . '/' . $templateName;
 
         if (!file_exists($templatePath)) {
-            die('Error: The template file could not be found.');
+            // Log detallado para debugging
+            $errorDetails = [
+                'template_path' => $templatePath,
+                'template_type' => $templateType,
+                'template_name' => $templateName,
+                'template_dir' => self::TEMPLATE_DIR,
+                'file_exists' => file_exists($templatePath),
+                'dir_exists' => is_dir(self::TEMPLATE_DIR . $templateType),
+                'available_files' => is_dir(self::TEMPLATE_DIR . $templateType) ? scandir(self::TEMPLATE_DIR . $templateType) : 'Directory not found'
+            ];
+            error_log("Template not found: " . json_encode($errorDetails));
+            throw new Exception("Template file not found: {$templatePath}. Type: {$templateType}, Name: {$templateName}");
         }
 
         $html = file_get_contents($templatePath);
@@ -57,7 +68,15 @@ class EmailTemplateManager
             $templateFunction = $templateMappings[$type][$phase];
             return self::$templateFunction($user['encode_email']);
         } else {
-            die('Error: Template not found.');
+            $errorDetails = [
+                'user_type' => $type ?? 'undefined',
+                'user_phase' => $phase ?? 'undefined',
+                'user_tiketType' => $user['tiketType'] ?? 'undefined',
+                'available_mappings' => array_keys($templateMappings),
+                'user_data_keys' => array_keys($user)
+            ];
+            error_log("Template mapping not found: " . json_encode($errorDetails));
+            throw new Exception("Template mapping not found for type: {$type}, phase: {$phase}, tiketType: " . ($user['tiketType'] ?? 'undefined'));
         }
     }
 
