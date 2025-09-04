@@ -16,7 +16,7 @@ class SubscriberDopplerList
                 return $this->dobleOptin($user);
             } else {
             $errorMessage = json_encode(["saveSubscriptionDoppler", $e->getMessage(), ['user' => $user]]);
-            echo $errorMessage;
+            error_log("Doppler subscription error: " . $errorMessage);
             $subscriptionErrors = new SubscriptionErrors();
             $subscriptionErrors->saveSubscriptionErrors($user['email'], $user['list'], $errorMessage);
             return 'fail';

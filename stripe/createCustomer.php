@@ -19,7 +19,23 @@ try {
     $response['data'] = $result;
     echo json_encode($response);
 } catch (Exception $e) {
-    http_response_code(500); // Error interno del servidor
-    $response['message'] = $e->getMessage();
+    $errorDetails = [
+        'timestamp' => date('Y-m-d H:i:s'),
+        'error_message' => $e->getMessage(),
+        'error_file' => $e->getFile(),
+        'error_line' => $e->getLine(),
+        'stack_trace' => $e->getTraceAsString(),
+        'request_data' => file_get_contents('php://input'),
+        'server_info' => [
+            'REQUEST_METHOD' => $_SERVER['REQUEST_METHOD'] ?? 'unknown',
+            'HTTP_HOST' => $_SERVER['HTTP_HOST'] ?? 'unknown',
+            'REQUEST_URI' => $_SERVER['REQUEST_URI'] ?? 'unknown'
+        ]
+    ];
+    error_log("Stripe Integration Error: " . json_encode($errorDetails));
+
+    http_response_code(500);
+    $response['message'] = 'Internal server error: ' . $e->getMessage();
+    $response['error_details'] = $errorDetails;
     echo json_encode($response);
 }

@@ -51,7 +51,7 @@ class StripeCustomersController
     {
         $RegisteredModel = new RegisteredDatabase($db);
         if ($RegisteredModel->getRegisteredByEmail($UserData['customer_email'])) {
-            $RegisteredModel->updateEcommerceVIPByEmail($UserData['customer_email']);
+            $RegisteredModel->updateDTVIPByEmail($UserData['customer_email']);
         } else {
             return $RegisteredModel->insertAutomatedRegistered($UserData);
         }
@@ -75,7 +75,7 @@ class StripeCustomersController
         // crea o actualiza usuario en tabla registered
         $this->updateRegisteredUser($db, $UserData);
 
-        $user = $this->CreateUserObj($UserData, LIST_LANDING_ECOMMERCE_VIP);
+        $user = $this->CreateUserObj($UserData, LIST_LANDING_DIGITALT_VIP);
 
         // Enviar email de compra exitosa
         $user['final_price'] = $UserData['final_price'];
@@ -83,7 +83,7 @@ class StripeCustomersController
         sendEmail($user, $user['subject']);
         $user['stripe'] = $UserData;
         // Guardar la suscripcion en SpreadSheet de usuarios VIP
-        saveSubscriptionSpreadSheet(ID_SPREADSHEET_VIP, $user);
+        saveSubscriptionSpreadSheet($user, ID_SPREADSHEET_DT_VIP);
 
         // carga el usuario en lista de doppler de usuarios vip
         $dopplerHandler = new SubscriberDopplerList();
@@ -138,8 +138,8 @@ class StripeCustomersController
             'company' => '',
             'jobPosition' => '',
             'phone' => '',
-            'ecommerce' => 1,
-            'digital_trends' => 0,
+            'ecommerce' => 0,
+            'digital_trends' => 1,
             'encode_email' => $encode_email,
             'privacy' => true,
             'promotions' => false,
@@ -152,7 +152,7 @@ class StripeCustomersController
             'term_utm' => $UserData['utm_term'] ?? '',
             'origin' => $UserData['origin'] ?? '',
             'type' => $currentEvent['freeId'],
-            'tiketType' => $this->resolveTiketType(ECOMMERCE),
+            'tiketType' => $this->resolveTiketType(DIGITALTRENDS),
             'form_id' => "pre",
             'list' => $listId,
             'subject' => "#EMMS2025 - Compraste tu entrada vip!"
