@@ -42,7 +42,7 @@ function render_event_day($day, $eventState)
     <div class="emms__calendar__date emms__fade-in">
       <div class="emms__calendar__date__country">
         <p> La transmisión comienza a las</p>
-        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>.
+        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>Hs.
         <p>Si estás en otro país o zona horaria, consulta tu horario,</p> <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=EMMS+Digital+Trends+2025+-+D%C3%ADa+1&iso=20251028T11&p1=51&ah=6" target="_blank">aquí</a>
       </div>
     </div>
@@ -52,8 +52,8 @@ function render_event_day($day, $eventState)
     <div class="emms__calendar__date emms__fade-in">
       <div class="emms__calendar__date__country">
         <p> La transmisión comienza a las</p>
-        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>.
-        <p>Si estás en otro país o zona horaria, consulta tu horario,</p> <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=EMMS+E-commerce+D%C3%8DA+2&iso=20250429T11&p1=51&ah=6" target="_blank">aquí</a>
+        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>Hs.
+        <p>Si estás en otro país o zona horaria, consulta tu horario,</p> <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=EMMS+Digital+Trends+2025+-+D%C3%ADa+2&iso=20251029T11&p1=51&ah=6" target="_blank">aquí</a>
       </div>
     </div>
   <?php
@@ -62,8 +62,8 @@ function render_event_day($day, $eventState)
     <div class="emms__calendar__date emms__fade-in">
       <div class="emms__calendar__date__country">
         <p> La transmisión comienza a las</p>
-        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>.
-        <p>Si estás en otro país o zona horaria, consulta tu horario,</p> <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=EMMS+E-commerce+D%C3%8DA+2&iso=20250429T11&p1=51&ah=6" target="_blank">aquí</a>
+        <span><img src="/src/img/flag-argentina.png" alt="Argentina">(ARG) 11:00</span>Hs.
+        <p>Si estás en otro país o zona horaria, consulta tu horario,</p> <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=EMMS+Digital+Trends+2025+-+D%C3%ADa+3&iso=20251030T11&p1=51&ah=6" target="_blank">aquí</a>
       </div>
     </div>
 <?php

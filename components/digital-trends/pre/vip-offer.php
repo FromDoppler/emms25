@@ -10,7 +10,7 @@
       <ul class="vip-offer__benefits">
         <li class="vip-offer__benefit">Workshops con referentes internacionales</li>
         <li class="vip-offer__benefit">Cuenta en Doppler gratis por 6 meses<br><small>(válido para cuentas nuevas)</small></li>
-        <li class="vip-offer__benefit">Networking, recursos descargables y más</li>
+        <li class="vip-offer__benefit">Recursos descargables y más</li>
       </ul>
       <p class="vip-offer__cta-note">¡Apúrate! Los lugares se agotan rápido.</p>
       <a href="#registro" class="emms__cta emms__cta--md ">Inscríbete ahora</a>

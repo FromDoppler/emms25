@@ -217,7 +217,6 @@ $speakersEcommerce = [
         <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
       <?php elseif ($block['block'] === 'registerHome') : ?>
         <h2 class="emms__fade-in">Speakers de primer nivel que marcaron tendencia en ediciones anteriores:</h2>
-        <p class="emms__fade-in">Pronto conocerás la agenda de Speakers, Workshops y todas las novedades de este año.</p>
       <?php elseif ($block['block'] === 'digital-trends') : ?>
         <h2 class="emms__fade-in speakers__title">Speakers que brillaron en el EMMS</h2>
       <?php endif; ?>
@@ -230,10 +229,6 @@ $speakersEcommerce = [
     endif; ?>
 
     <?php if ($block['block'] === 'home') : ?>
-      <p class="emms__fade-in speakers__sub-title speakers__sub-title--home">Muy pronto conocerás la agenda completa del EMMS Digital Trends 2025
-      </p>
-      <p class="speakers__body ">Prepárate para escuchar a referentes globales del Marketing Digital. Si te registras ahora, serás de las primeras personas en conocer a nuestros próximos speakers estrella.  
-      </p>
       <a href="/digital-trends" class="emms__cta emms__cta--md  emms__fade-in">REGÍSTRATE GRATIS</a>
     <?php elseif ($block['block'] === 'digital-trends') : ?>
       <p class="emms__fade-in speakers__sub-title">¡Muy pronto conocerás la agenda 2025! Regístrate gratis y descúbrela antes que nadie.

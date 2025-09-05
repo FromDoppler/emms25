@@ -4,22 +4,22 @@
 
 $contents = [
   '/' => [
-    'subheading' => 'LAS TENDENCIAS QUE ESTÁN TRANSFORMANDO EL PRESENTE  Y DEFINIENDO EL FUTURO DEL MARKETING DIGITAL',
-    'heading' => '<span>INSPÍRATE, CONECTA Y ACCIONA: </span><br> VIVE LA EXPERIENCIA EMMS 2025',
+    'subheading' => 'TODAS LAS TENDENCIAS DE MARKETING DIGITAL EN UN SOLO LUGAR',
+    'heading' => '<span> Digital Trends 2025: ¡Está llegando!</span>',
     'body' => 'Revoluciona tu forma de hacer negocios y potencia tus resultados con el mayor evento
 de Latam y España. Disfruta de dos ediciones exclusivas al año para capacitarte e inspirarte con referentes de tu industria.</a> ',
     'ecommerceUrl' => '/ecommerce',
   ],
   '/registrado' => [
-    'subheading' => 'LAS TENDENCIAS QUE ESTÁN TRANSFORMANDO EL PRESENTE  Y DEFINIENDO EL FUTURO DEL MARKETING DIGITAL',
+    'subheading' => 'TODAS LAS TENDENCIAS DE MARKETING DIGITAL EN UN SOLO LUGAR',
     'heading' => '<span>¡YA ERES PARTE DEL EMMS 2025!</span>',
     'body' => 'Revoluciona tu forma de hacer negocios y potencia tus resultados con el mayor evento
 de Latam y España. Disfruta de dos ediciones exclusivas al año para capacitarte e inspirarte con referentes de tu industria.',
     'ecommerceUrl' => '/ecommerce-registrado',
   ],
   '/*' => [
-    'subheading' => 'LAS TENDENCIAS QUE ESTÁN TRANSFORMANDO EL PRESENTE  Y DEFINIENDO EL FUTURO DEL MARKETING DIGITAL',
-    'heading' => '<span>INSPÍRATE, CONECTA Y ACCIONA: </span><br> VIVE LA EXPERIENCIA EMMS 2025',
+    'subheading' => 'TODAS LAS TENDENCIAS DE MARKETING DIGITAL EN UN SOLO LUGAR',
+    'heading' => '<span> Digital Trends 2025: ¡Está llegando!</span>',
     'body' => 'Revoluciona tu forma de hacer negocios y potencia tus resultados con el mayor evento
 de Latam y España. Disfruta de dos ediciones exclusivas al año para capacitarte e inspirarte con referentes de tu industria.</a> ',
     'ecommerceUrl' => '/ecommerce',
@@ -40,13 +40,13 @@ $cards[] = renderEventCard([
   'imageSrc' => '/src/img/home/card-image-digitaltrends-post.png',
   'imageAlt' => 'Image Digital Trends',
   'title' => 'EMMS Digital Trends',
-  'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, entrevistas, Casos de Éxito, Workshops, Networking y mucho más. ¡Reserva tu lugar ahora!',
+  'description' => 'Descubre las últimas innovaciones en Marketing Digital aplicadas por las empresas que marcan tendencia en la industria. Conferencias, Entrevistas, Casos de Éxito, Workshops, Networking y mucho más. ¡Reserva tu lugar ahora!',
   'buttonText' => $isRegistered ?  'ACCEDE AL EVENTO' : 'REGÍSTRATE GRATIS',
   'buttonLink' => $isRegistered ? '/digital-trends-registrado' : '/digital-trends',
   'ribbonText' => '',
   'isShortRibbon' => false,
   'isRegistered' => $isRegistered,
-  'spanText' => $isRegistered ? 'ONLINE Y GRATUITO' : '',
+  'spanText' =>  'ONLINE Y GRATUITO',
   'spanExtraClass' => '',
   'buttonType' => 'primary',
 ], $digitalTrendsStates);
@@ -58,7 +58,7 @@ $cards[] = renderEventCard([
   'description' => 'Referentes internacionales de la industria
 te contarán las tendencias y Estrategias que emplean en sus Tiendas Online para captar nuevos clientes y aumentar sus ingresos. ¡Revive la última edición!',
   'buttonText' => $isRegistered ? 'REVÍVELO AHORA' : 'REVÍVELO AHORA',
-  'buttonLink' => $isRegistered ? '/ediciones-anteriores-registrado' : '/ediciones-anteriores',
+  'buttonLink' => $isRegistered ? '/ediciones-anteriores-registrado#ediciones-anteriores' : '/ediciones-anteriores#ediciones-anteriores',
   'ribbonText' => '',
   'isShortRibbon' => false,
   'isRegistered' => false,
@@ -74,7 +74,7 @@ te contarán las tendencias y Estrategias que emplean en sus Tiendas Online para
   <div class="home-hero__title emms__fade-top">
     <h1><em> <?php echo ($content['subheading']); ?></em> <?php echo ($content['heading']); ?>
     </h1>
-    <h2>EVENTOS 100% ONLINE Y GRATUITOS</h2>
+    <h2>ONLINE Y GRATUITO</h2>
     <p>
       <?php echo ($content['body']); ?>
     </p>

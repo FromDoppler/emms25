@@ -49,7 +49,6 @@ $isDigitalTrends = in_array($normalizedUrl, [
     <div class="premium-content__text emms__fade-in">
       <h2><?php echo ($content['heading']); ?></h2>
 
-      <?php if ($isDigitalTrends): ?>
         <ul class="premium-content__list emms__fade-in">
           <li>
             <img src="/src/img/icons/icon-check--strong-purple.svg" alt="Check">
@@ -64,9 +63,7 @@ $isDigitalTrends = in_array($normalizedUrl, [
             <span>Herramientas que potencian tu negocio</span>
           </li>
         </ul>
-      <?php else: ?>
-        <p><?php echo ($content['body']); ?></p>
-      <?php endif; ?>
+
       <a href="<?= $isRegistered ?  '/sponsors-registrado' : '/sponsors' ?>" class="emms__cta sm emms__cta--secondary emms__fade-in">ACCEDE AHORA</a>
     </div>
   </div>
