@@ -60,7 +60,7 @@ const _internalOpenModal = (id, props = {}) => {
     currentModalId = id;
 
     if (typeof props.onOpened === "function") {
-        props.onOpened();
+      props.onOpened();
     }
 
     overlay.addEventListener("click", onOverlayClick);
