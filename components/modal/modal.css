@@ -54,6 +54,10 @@ body.modal-open {
   min-height: 336px;
 }
 
+.popup-modal__body .error:after {
+  color: #ffffff;
+}
+
 .popup-modal__close {
   position: absolute;
   top: 8px;

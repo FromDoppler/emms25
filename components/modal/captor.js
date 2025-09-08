@@ -1,6 +1,7 @@
 import { openModal } from "./openModal.js";
+import { canShowModal } from "./scripts/modalConditions.js";
 
-const EXIT_TOP_THRESHOLD_PX = 8; // px desde el top para considerar "salida"
+const EXIT_TOP_THRESHOLD_PX = 8;
 const SHOW_ONCE_PER_SESSION = true;
 
 const initExitIntentCapture = () => {
@@ -12,10 +13,10 @@ const setupExitIntentForModal = (modalEl) => {
   if (!modalId) return;
 
   const sessionKey = `exitIntentShown:${modalId}`;
-  if (SHOW_ONCE_PER_SESSION && sessionStorage.getItem(sessionKey)) return;
+  if (SHOW_ONCE_PER_SESSION && localStorage.getItem(sessionKey)) return;
 
   const markShownThisSession = () => {
-    sessionStorage.setItem(sessionKey, "1");
+    localStorage.setItem(sessionKey, "1");
   };
 
   const removeExitIntentListeners = () => {
@@ -25,9 +26,14 @@ const setupExitIntentForModal = (modalEl) => {
   };
 
   const triggerModalOnce = () => {
-    markShownThisSession();
-    removeExitIntentListeners();
-    openModal(modalId);
+    if (!canShowModal(modalId)) return;
+    openModal(modalId, {
+      delay: 250,
+      onOpened: () => {
+        markShownThisSession();
+        removeExitIntentListeners();
+      },
+    });
   };
 
   const handleMouseOut = (e) => {
