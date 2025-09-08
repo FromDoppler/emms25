@@ -9,8 +9,11 @@ render_modal($formExtradataId, 'extradata',  'form');
   } from '/components/modal/openModal.js';
   const formExtradataId = <?= json_encode($formExtradataId) ?>;
   const KEY = `modalShown:${formExtradataId}`;
-  if (!sessionStorage.getItem(KEY)) {
-    sessionStorage.setItem(KEY, '1');
-    openModal(formExtradataId)
+  if (!localStorage.getItem(KEY)) {
+    localStorage.setItem(KEY, '1');
+
+    openModal(formExtradataId, {
+      delay: 400
+    });
   }
 </script>

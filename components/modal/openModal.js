@@ -1,26 +1,23 @@
-import { modalQueue, processing, setProcessing } from "./scripts/modalQueueStore.js";
+let currentModalId = null;
 
-export const openModal = (id) => {
+export const openModal = (id, props = {}) => {
   return new Promise((resolve) => {
-    modalQueue.push({ id, resolve });
-    processQueue();
+    if (currentModalId) {
+      return resolve({ reason: "ignored" });
+    }
+
+    const delay = props.delay || 0;
+
+    setTimeout(() => {
+      _internalOpenModal(id, props).then((res) => {
+        currentModalId = null;
+        resolve(res);
+      });
+    }, delay);
   });
 };
 
-const processQueue = () => {
-  if (processing || modalQueue.length === 0) return;
-
-  const { id, resolve } = modalQueue.shift();
-  setProcessing(true);
-
-  _internalOpenModal(id).then((res) => {
-    resolve(res);
-    setProcessing(false);
-    processQueue();
-  });
-};
-
-const _internalOpenModal = (id) => {
+const _internalOpenModal = (id, props = {}) => {
   return new Promise((resolve) => {
     const overlay = document.getElementById(id);
     if (!overlay) return resolve({ reason: "missing" });
@@ -33,6 +30,7 @@ const _internalOpenModal = (id) => {
       document.removeEventListener("keydown", onEsc);
       observer.disconnect();
       body.classList.remove("modal-open");
+      currentModalId = null;
     };
 
     const finish = (reason) => {
@@ -59,6 +57,11 @@ const _internalOpenModal = (id) => {
 
     overlay.setAttribute("aria-hidden", "false");
     body.classList.add("modal-open");
+    currentModalId = id;
+
+    if (typeof props.onOpened === "function") {
+      props.onOpened();
+    }
 
     overlay.addEventListener("click", onOverlayClick);
     document.addEventListener("keydown", onEsc);
