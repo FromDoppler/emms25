@@ -12,7 +12,6 @@
           <ul class="features__item__text__list">
             <li>Workshops con referentes internacionales.</li>
             <li>Cuenta gratuita en Doppler por 6 meses (válido para cuentas nuevas).</li>
-            <li>Espacio de Networking.</li>
             <li>Estrategias y herramientas que transformarán tu negocio.</li>
           </ul>
           <p class="features__item__text__price features__item__text__price--live">

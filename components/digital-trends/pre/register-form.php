@@ -23,7 +23,7 @@
     <div class="hero-registration__text emms__fade-in mb">
       <ul class="hero-registration__text__checklist">
         <li>SPEAKERS INTERNACIONALES</li>
-        <li>WORKSHOPS Y NETWORKING</li>
+        <li>WORKSHOPS PRÁCTICOS</li>
         <li>SORTEOS Y BENEFICIOS</li>
       </ul>
     </div>

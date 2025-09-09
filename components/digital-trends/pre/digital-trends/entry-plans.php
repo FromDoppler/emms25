@@ -4,7 +4,7 @@
     <div class="emms__container--lg">
       <div class="emms__plans__title">
         <h2>Hazte VIP y acelera el crecimiento de tu negocio</h2>
-        <p>Compra tu entrada y accede a: Conferencias, Workshops con certificado, sesiones de Networking, ¡y mucho más! También te regalamos una cuenta en Doppler por 6 meses (válido para cuentas nuevas).</p>
+        <p>Compra tu entrada y accede a: Conferencias, Workshops con certificado, Recursos descargables, ¡y mucho más! También te regalamos una cuenta en Doppler por 6 meses (válido para cuentas nuevas).</p>
       </div>
       <div class="emms__plans__cards">
         <div class="emms__plans__card emms__plans__card--vip">
@@ -24,7 +24,6 @@
               <li>Cuenta gratuita en Doppler durante
                 6 meses (válido para cuentas nuevas).</li>
               <li> Workshops prácticos </li>
-              <li>Sesiones de Networking</li>
               <li>Acceso de por vida a los Workshops</li>
               <li>Certificado de asistencia a Workshops</li>
               <li>Más guías con herramientas
@@ -58,7 +57,6 @@
             <ul>
               <li class="exclude">Cuenta gratuita en Doppler durante 6 meses (válido para cuentas nuevas).</li>
               <li class="exclude"> Workshops prácticos </li>
-              <li class="exclude">Sesiones de Networking</li>
               <li class="exclude">Acceso de por vida a los Workshops</li>
               <li class="exclude">Certificado de asistencia a Workshops</li>
               <li class="exclude">Más guías con herramientas

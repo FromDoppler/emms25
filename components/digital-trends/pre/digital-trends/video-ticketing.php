@@ -11,7 +11,7 @@
             <li>Sientes que el crecimiento de tu negocio se ha estancado.</li>
             <li>Necesitas aumentar tu visibilidad de marca.</li>
             <li>Buscas implementar Inteligencia Artificial para optimizar tus Campañas.</li>
-            <a href="./checkout" class="emms__cta emms__cta--terciary">HAZTE VIP AHORA</a>
+            <a href="./checkout" class="emms__cta emms__cta--terciary centralvideo__cta">HAZTE VIP AHORA</a>
         </ul>
         <div class="centralvideo__video lg emms__fade-in">
             <div id="player"></div>

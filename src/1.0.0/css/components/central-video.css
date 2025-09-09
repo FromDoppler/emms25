@@ -125,6 +125,10 @@ ul.centralvideo__list li::before {
   background-size: contain;
 }
 
+.centralvideo__list .centralvideo__cta {
+  margin-top: 20px;
+}
+
 ul.centralvideo__list.centralvideo__list--live li::before {
   background: url("../../../img/icons/icon-check--black--rounded.svg") no-repeat;
 }

@@ -10,11 +10,11 @@
             </div>
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--soft-green.svg" alt="Check icon">
-                <span>WORKSHOPS Y NETWORKING</span>
+                <span>WORKSHOPS PRÁCTICOS</span>
             </div>
             <div class="text-with-icon">
                 <img src="/src/img/icons/icon-check--soft-green.svg" alt="Check icon">
-                <span>Regalos y beneficios exclusivos</span>
+                <span>SORTEOS y beneficios</span>
             </div>
         </div>
     </div>

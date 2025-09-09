@@ -26,7 +26,7 @@ if (!function_exists('renderGridItems')) {
       ["img" => "/src/img/conferencias.png", "title" => "Conferencias", "text" => "Escucha a referentes internacionales y conoce las últimas tendencias digitales."],
       ["img" => "/src/img/entrevistas.png", "title" => "Entrevistas", "text" => "Aprende de influencers y creadores que marcan el rumbo de la industria."],
       ["img" => "/src/img/casos-de-exito.png", "title" => "Casos de Éxito", "text" => "Descubre cómo las marcas más reconocidas están transformando el sector."],
-      ["img" => "/src/img/networking.png", "title" => "Networking", "text" => "Conecta con profesionales, haz nuevos contactos y amplía tu red."],
+      ["img" => "/src/img/gifs.png", "title" => "Regalos y beneficios", "text" => "Accede a descuentos especiales y premios exclusivos para asistentes VIP."],
       ["img" => "/src/img/workshop.png", "title" => "Workshops", "text" => "Participa en talleres prácticos y aplica lo aprendido al instante."],
       ["img" => "/src/img/recursos.png", "title" => "Recursos", "text" => "Accede a materiales exclusivos: guías, plantillas, e-books, ¡y mucho más!"],
     ];

@@ -54,6 +54,27 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.emms__cta.emms__cta--primary-light {
+  border: 1px solid var(--color-secondary);
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.emms__cta.emms__cta--primary-light:hover {
+  background-color: var(--color-secondary);
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .emms__cta.emms__cta--secondary {
   border: 1px solid var(--color-primary);
   border-radius: 100px;
