@@ -12,7 +12,7 @@ if (empty($speaker['youtube']) && $isRegistered) {
     $buttonClasses .= ' speaker-card__button--inactive';
     $text = 'VIDEO PRONTO DISPONIBLE';
 } else {
-    $text = ' ACCEDE AHORA';
+    $text = 'REGÍSTRATE GRATIS';
 }
 ?>
 <?php if ($button): ?>

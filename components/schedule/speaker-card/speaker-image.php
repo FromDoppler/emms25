@@ -14,6 +14,6 @@
         </p>
         <img src="./admin/speakers/uploads/<?= $speaker['image_company'] ?>" alt="<?= $speaker['alt_image_company'] ?>" class="speaker-card__logo">
     <?php endif; ?>
-    <p class="speaker-card__more-info">VER MAS INFO</p>
+    <p class="speaker-card__more-info">VER MÁS INFO</p>
 
 </div>

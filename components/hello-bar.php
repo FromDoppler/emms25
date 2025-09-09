@@ -11,17 +11,17 @@ $contentsPre = [
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
   '/digital-trends' => [
-    'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP gratis',
+    'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP  de regalo',
     'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],
   '/digital-trends-registrado' => [
-    'helloBarText' => '🎫 ¡Quedan pocas! Consigue tu entrada VIP para sumarte a las actividades exclusivas',
-    'helloBarCtaTxt' => 'HAZTE VIP',
+    'helloBarText' => '¡Accede a tu entrada VIP por solo 9.99 USD! Conferencias, Workshops y beneficios especiales.',
+    'helloBarCtaTxt' => 'COMPRA TU ENTRADA',
     'helloBarCtaLink' => '#entradas',
   ],
   '/sponsors' => [
-    'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP gratis',
+    'helloBarText' => 'Regístrate ahora y obtén tu entrada VIP  de regalo',
     'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],

@@ -40,7 +40,7 @@
       <li class="emms__form__field-item emms__form__field-item__checkbox">
         <div class="holder">
           <input name="promotions" type="checkbox" id="acepto-promociones" value="true"><span class="checkmark"></span><label for="acepto-promociones">
-            Acepto recibir promociones de Doppler</label>
+            Acepto recibir promociones de Doppler y sus aliados</label>
         </div>
       </li>
     </ul>
@@ -62,7 +62,7 @@
     </div>
   </form>
   <form class="emms__form  emms__fade-in dp--none alreadyAccountForm" novalidate autocomplete="off" id="alreadyAccountForm">
-    <h2>Ingresa tu email</h2>
+    <h2>Ingresa tu Email</h2>
     <ul class="emms__form__field-group">
       <li class="emms__form__field-item">
         <div class="holder">

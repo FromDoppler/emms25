@@ -7,25 +7,25 @@ function getExposeButtonData($speaker)
     $exposes = $speaker['exposes'];
     $buttons = [
         'conference' => [
-            'text' => 'REGISTRATE GRATIS',
+            'text' => 'REGÍSTRATE GRATIS',
             'href' => REGISTERFORM_URL
         ],
         'workshop' => [
-            'text' => 'REGISTRATE Y HAZTE VIP',
+            'text' => 'REGÍSTRATE Y HAZTE VIP',
             'href' => REGISTERFORM_URL
         ],
         'networking' => [
-            'text' => 'REGISTRATE Y HAZTE VIP',
+            'text' => 'REGÍSTRATE Y HAZTE VIP',
             'href' => REGISTERFORM_URL
         ],
         'successStory' => [
-            'text' => 'REGISTRATE GRATIS',
+            'text' => 'REGÍSTRATE GRATIS',
             'href' => REGISTERFORM_URL
         ]
     ];
 
     return $buttons[$exposes] ?? [
-        'text' => 'REGISTRATE GRATIS',
+        'text' => 'REGÍSTRATE GRATIS',
         'href' => REGISTERFORM_URL
     ];
 }
@@ -49,7 +49,7 @@ function getExposeButtonDataRegistered($speaker)
             'href' => 'speaker-interna?slug=' . $speaker['slug']
         ],
         'workshop' => [
-            'text' => 'REGISTRATE Y HAZTE VIP',
+            'text' => 'REGÍSTRATE Y HAZTE VIP',
             'href' => $speaker['youtube']
         ],
         'successStory' => [

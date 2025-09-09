@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/head.php'); ?>
@@ -29,6 +29,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
   require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/extraDataCaptor.php');
   render_modal('modalVip', 'vipmodal',  'vip', true);
   ?>
+  <div class="register-form__container hidden--vip">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
+  </div>
 
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
@@ -39,9 +42,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     </div>
     <div class="hidden--vip">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/hello-module.php') ?>
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/entry-plans.php') ?>
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/video-ticketing.php') ?>
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/vip-features.php') ?>
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/entry-plans.php') ?>
+    </div>
+    <div class="hidden--vip">
+      <?php
+      $gridVariant = 'long';
+      include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/grid-event-types.php')
+      ?>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
@@ -55,10 +64,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     </div>
     <div class="hidden--vip">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
-      <?php
-      $gridVariant = 'long';
-      include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/grid-event-types.php')
-      ?>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>

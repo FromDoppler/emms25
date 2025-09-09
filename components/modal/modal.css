@@ -106,6 +106,33 @@ body.modal-open {
   margin-top: 15px;
 }
 
+.popup-modal__dialog--vip ul {
+  margin-bottom: 40px;
+}
+
+.popup-modal__dialog--vip li {
+  font-size: var(--font-p-size);
+  line-height: var(--font-p-line);
+  font-weight: 600;
+  text-align: left;
+  padding: 0 0 0 30px;
+  margin: 0 0 12px 0;
+  position: relative;
+  max-width: 407px;
+  text-transform: uppercase;
+}
+
+.popup-modal__dialog--vip li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background: url("../../src/img/icons/icon-check--soft-green-simple.svg") no-repeat;
+  background-size: contain;
+}
+
 .popup-modal__dialog--vip::before {
   content: "";
   position: absolute;
@@ -126,14 +153,14 @@ body.modal-open {
 .popup-modal__vip-img {
   position: absolute;
   right: 46px;
-  bottom: -44px;
+  bottom: 25px;
   z-index: 1;
   width: min(38%, 520px);
   max-height: 100%;
   object-fit: cover;
   pointer-events: none;
   user-select: none;
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 @media (max-width: 720px) {
