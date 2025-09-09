@@ -75,6 +75,7 @@ const initializeEventListeners = () => {
   const modalForm = document.getElementById("modalForm");
   const alreadyRegisterButtons = document.querySelectorAll(".alreadyRegisterForm");
   const extraData = document.getElementById("formExtraData");
+  const alreadyAccountForm = document.getElementById("alreadyAccountForm");
 
   if (form) {
     const submitBtn = form.querySelector("button");
@@ -92,8 +93,9 @@ const initializeEventListeners = () => {
   }
 
   alreadyRegisterButtons.forEach((btn) => btn.addEventListener("click", () => quickSubmitHandler(btn)));
-
-  alreadyAccountListener();
+  if (alreadyAccountForm) {
+    alreadyAccountListener();
+  }
 };
 
 document.addEventListener("DOMContentLoaded", initializeEventListeners);
