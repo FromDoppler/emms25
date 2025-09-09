@@ -33,8 +33,8 @@
 }
 
 .emms__checkout__card img {
-  width: 384px;
-  height: 64px;
+  width: auto;
+  height: 56px;
   padding: 20px 0px 0px 60px;
 }
 
@@ -100,6 +100,10 @@
 
 .emms__checkout__card__main .emms__cta {
   margin: 40px 0 0 0;
+  border: 3px solid #7d04f6;
+  background: transparent;
+  color: #7d04f6;
+  padding: 14px 58px;
 }
 
 .emms__checkout__card__main__list {
