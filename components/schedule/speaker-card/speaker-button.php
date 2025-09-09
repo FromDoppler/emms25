@@ -12,11 +12,6 @@ $buttonClasses = 'speaker-card__button';
 <?php if ($button): ?>
   <?php if ($isRegistered && $speaker['exposes'] === 'workshop'): ?>
     <!-- TODO: Ajustar este boton que cambia en during y post -->
-    <!-- <div class="speaker-card__cta show--vip">
-      <a class="speaker-card__button <?= $buttonClasses ?>" href="<?= $speaker['youtube'] ?>" target="_blank">
-        <?= $text ?>
-      </a>
-    </div> -->
     <div class="speaker-card__cta hidden--vip">
       <a class="speaker-card__button " href="#entradas">
         HAZTE VIP
