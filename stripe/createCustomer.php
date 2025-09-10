@@ -3,7 +3,14 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header('Content-Type: application/json');
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
 require_once 'controllers/StripeCustomersController.php';
+
+Logger::newRequest(); // Initialize new request correlation
+Logger::info("webhook_received", [
+    'method' => $_SERVER['REQUEST_METHOD'] ?? 'unknown',
+    'ip' => $_SERVER['REMOTE_ADDR'] ?? 'unknown'
+], 'STRIPE');
 
 $response = [
     'success' => false,
@@ -12,11 +19,16 @@ $response = [
 ];
 
 try {
+    Logger::debug("controller_created", [], 'STRIPE');
     $StripeCustomersController = new StripeCustomersController();
+
     $result = $StripeCustomersController->handleRequest();
+
     $response['success'] = true;
     $response['message'] = 'Subscription processed successfully';
     $response['data'] = $result;
+
+    Logger::info("webhook_completed", [], 'STRIPE');
     echo json_encode($response);
 } catch (Exception $e) {
     $errorDetails = [
@@ -32,10 +44,21 @@ try {
             'REQUEST_URI' => $_SERVER['REQUEST_URI'] ?? 'unknown'
         ]
     ];
-    error_log("Stripe Integration Error: " . json_encode($errorDetails));
+
+    Logger::error("webhook_failed", [
+        'error' => $e->getMessage(),
+        'file' => $e->getFile(),
+        'line' => $e->getLine()
+    ], 'STRIPE');
 
     http_response_code(500);
-    $response['message'] = 'Internal server error: ' . $e->getMessage();
-    $response['error_details'] = $errorDetails;
+    // Don't expose internal error details to client in production
+    if (defined('PRODUCTION') && PRODUCTION) {
+        $response['message'] = 'Internal server error occurred';
+    } else {
+        $response['message'] = 'Internal server error: ' . $e->getMessage();
+        $response['error_details'] = $errorDetails;
+    }
+
     echo json_encode($response);
 }
