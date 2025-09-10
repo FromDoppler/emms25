@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Doppler.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/SubscriptionErrors.php');
 
@@ -6,20 +7,30 @@ class SubscriberDopplerList
 {
     public function saveSubscription($user)
     {
+        $email = $user['email'] ?? 'unknown';
+        Logger::debug("doppler_subscription_started", ['email' => $email, 'list' => $user['list'] ?? 'unknown'], 'STRIPE');
+
         try {
             Doppler::init(ACCOUNT_DOPPLER, API_KEY_DOPPLER);
             Doppler::subscriber($user);
+
+            Logger::debug("doppler_subscription_completed", ['email' => $email], 'STRIPE');
             return 'success';
         } catch (Exception $e) {
             $errorMessage = $e->getMessage();
             if (stripos($errorMessage, "Unsubscribed") !== false) {
+                Logger::info("doppler_user_unsubscribed", ['email' => $email], 'STRIPE');
                 return $this->dobleOptin($user);
             } else {
-            $errorMessage = json_encode(["saveSubscriptionDoppler", $e->getMessage(), ['user' => $user]]);
-            error_log("Doppler subscription error: " . $errorMessage);
-            $subscriptionErrors = new SubscriptionErrors();
-            $subscriptionErrors->saveSubscriptionErrors($user['email'], $user['list'], $errorMessage);
-            return 'fail';
+                Logger::error("doppler_subscription_failed", [
+                    'email' => $email,
+                    'list' => $user['list'] ?? 'unknown',
+                    'error' => $e->getMessage()
+                ], 'STRIPE');
+
+                $subscriptionErrors = new SubscriptionErrors();
+                $subscriptionErrors->saveSubscriptionErrors($user['email'], $user['list'], $errorMessage);
+                return 'fail';
             }
         }
     }
