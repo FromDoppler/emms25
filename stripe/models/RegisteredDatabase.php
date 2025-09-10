@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
 
 class RegisteredDatabase
 {
@@ -11,123 +12,122 @@ class RegisteredDatabase
 
     public function insertRegistered($registeredData)
     {
-        try {
-            $query = "INSERT INTO registered (register, phase, email, firstname, lastname, country, phone, company, jobPosition, ecommerce, `ecommerce-vip`, `digital-trends`, `digital-trends-vip`, source_utm, medium_utm, campaign_utm, content_utm, term_utm)
-                VALUES (
-                    '{$registeredData['register']}',
-                    '{$registeredData['phase']}',
-                    '{$registeredData['email']}',
-                    '{$registeredData['firstname']}',
-                    '{$registeredData['lastname']}',
-                    '{$registeredData['country']}',
-                    '{$registeredData['phone']}',
-                    '{$registeredData['company']}',
-                    '{$registeredData['jobPosition']}',
-                    '{$registeredData['ecommerce']}',
-                    '{$registeredData['ecommerce-vip']}',
-                    '{$registeredData['digital-trends']}',
-                    '{$registeredData['digital-trends-vip']}',
-                    '{$registeredData['source_utm']}',
-                    '{$registeredData['medium_utm']}',
-                    '{$registeredData['campaign_utm']}',
-                    '{$registeredData['content_utm']}',
-                    '{$registeredData['term_utm']}'
-                )";
+        $email = $registeredData['email'] ?? 'unknown';
 
-            if ($this->db->query($query)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception $e) {
-            $errorMessage = json_encode(["insertRegistered", $e->getMessage()]);
-            http_response_code(500);
-            throw new Exception($errorMessage);
-        }
+        $query = "INSERT INTO registered (register, phase, email, firstname, lastname, country, phone, company, jobPosition, ecommerce, `ecommerce-vip`, `digital-trends`, `digital-trends-vip`, source_utm, medium_utm, campaign_utm, content_utm, term_utm)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $params = [
+            $registeredData['register'],
+            $registeredData['phase'],
+            $registeredData['email'],
+            $registeredData['firstname'],
+            $registeredData['lastname'],
+            $registeredData['country'],
+            $registeredData['phone'],
+            $registeredData['company'],
+            $registeredData['jobPosition'],
+            $registeredData['ecommerce'],
+            $registeredData['ecommerce-vip'],
+            $registeredData['digital-trends'],
+            $registeredData['digital-trends-vip'],
+            $registeredData['source_utm'],
+            $registeredData['medium_utm'],
+            $registeredData['campaign_utm'],
+            $registeredData['content_utm'],
+            $registeredData['term_utm']
+        ];
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $params) {
+            $db->query($query, $params);
+            return true; // If no exception, insertion was successful
+        }, [
+            'email' => $email,
+            'table' => 'registered',
+            'action' => 'insert_registered'
+        ], 'REGISTER');
     }
 
     public function updateEcommerceVIPByEmail($email)
     {
-        try {
-            $query = "UPDATE registered SET `ecommerce-vip` = 1 WHERE email = '{$email}'";
-            if ($this->db->query($query)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception $e) {
-            $errorMessage = json_encode(["updateEcommerceVIPByEmail", $e->getMessage()]);
-            http_response_code(500);
-            throw new Exception($errorMessage);
-        }
+        $query = "UPDATE registered SET `ecommerce-vip` = 1 WHERE email = ?";
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $email) {
+            $db->query($query, [$email]);
+            return true; // If no exception, update was successful
+        }, [
+            'email' => $email,
+            'table' => 'registered',
+            'action' => 'update_ecommerce_vip'
+        ], 'STRIPE');
     }
 
     public function updateDTVIPByEmail($email)
     {
-        try {
-            $query = "UPDATE registered SET `digital-trends-vip` = 1 WHERE email = '{$email}'";
-            if ($this->db->query($query)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception $e) {
-            $errorMessage = json_encode(["updateDTVIPByEmail", $e->getMessage()]);
-            http_response_code(500);
-            throw new Exception($errorMessage);
-        }
+        $query = "UPDATE registered SET `digital-trends-vip` = 1 WHERE email = ?";
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $email) {
+            $db->query($query, [$email]);
+            return true; // If no exception, update was successful
+        }, [
+            'email' => $email,
+            'table' => 'registered',
+            'action' => 'update_dt_vip'
+        ], 'STRIPE');
     }
 
     public function getRegisteredByEmail($email)
     {
-        try {
-            $query = "SELECT * FROM registered WHERE email = '{$email}'";
-            $result = $this->db->query($query);
+        $query = "SELECT * FROM registered WHERE email = ?";
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $email) {
+            $result = $db->query($query, [$email]);
             return $result->fetchAll();
-        } catch (Exception $e) {
-            $errorMessage = json_encode(["getRegisteredByEmail", $e->getMessage()]);
-            http_response_code(500);
-            throw new Exception($errorMessage);
-        }
+        }, [
+            'email' => $email,
+            'table' => 'registered',
+            'action' => 'get_registered_by_email'
+        ], 'STRIPE');
     }
 
     public function insertAutomatedRegistered($registeredData)
     {
-        try {
-            $currentDate = date('Y-m-d h:i:s A');
-            $ecommerceValue = ($registeredData['event_name'] === 'ecommerce') ? 1 : 0;
-            $DTValue = ($registeredData['event_name'] === 'digital-trends') ? 1 : 0;
-            $query = "INSERT INTO registered (register, phase, email, firstname, lastname, country, phone, company, jobPosition, ecommerce, `ecommerce-vip`, `digital-trends`, `digital-trends-vip`, source_utm, medium_utm, campaign_utm, content_utm, term_utm)
-                VALUES (
-                    '{$currentDate}',
-                    '{$registeredData['event_phase']}',
-                    '{$registeredData['customer_email']}',
-                    '{$registeredData['customer_name']}',
-                    '',
-                    '{$registeredData['customer_country']}',
-                    '',
-                    '',
-                    '',
-                    '{$ecommerceValue}',
-                    '{$ecommerceValue}',
-                    '{$DTValue}',
-                    '{$DTValue}',
-                    'automated_stripe',
-                    'automated_stripe',
-                    'automated_stripe',
-                    'automated_stripe',
-                    'automated_stripe'
-                )";
+        $email = $registeredData['customer_email'] ?? 'unknown';
+        $ecommerceValue = ($registeredData['event_name'] === 'ecommerce') ? 1 : 0;
+        $DTValue = ($registeredData['event_name'] === 'digital-trends') ? 1 : 0;
+        $currentDate = date('Y-m-d h:i:s A');
 
-            if ($this->db->query($query)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception $e) {
-            $errorMessage = json_encode(["insertRegistered", $e->getMessage()]);
-            http_response_code(500);
-            throw new Exception($errorMessage);
-        }
+        $query = "INSERT INTO registered (register, phase, email, firstname, lastname, country, phone, company, jobPosition, ecommerce, `ecommerce-vip`, `digital-trends`, `digital-trends-vip`, source_utm, medium_utm, campaign_utm, content_utm, term_utm)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $params = [
+            $currentDate,
+            $registeredData['event_phase'] ?? '',
+            $registeredData['customer_email'] ?? '',
+            $registeredData['customer_name'] ?? '',
+            '', // lastname
+            $registeredData['customer_country'] ?? '',
+            '', // phone
+            '', // company
+            '', // jobPosition
+            $ecommerceValue,
+            $ecommerceValue, // ecommerce-vip
+            $DTValue,
+            $DTValue, // digital-trends-vip
+            'automated_stripe', // source_utm
+            'automated_stripe', // medium_utm
+            'automated_stripe', // campaign_utm
+            'automated_stripe', // content_utm
+            'automated_stripe'  // term_utm
+        ];
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $params) {
+            $db->query($query, $params);
+            return true; // If no exception, insertion was successful
+        }, [
+            'email' => $email,
+            'table' => 'registered',
+            'action' => 'insert_automated_registered'
+        ], 'STRIPE');
     }
 }
