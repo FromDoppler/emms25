@@ -213,7 +213,7 @@ class StripeCustomersController
             'ticketType' => $ticketType,
             'form_id' => "pre",
             'list' => $listId,
-            'subject' => "Tu entrada VIP al EMMS Digital Trends"
+            'subject' => "🎟️ Tu entrada VIP al EMMS Digital Trends"
         ];
 
         Logger::debug("User object created", ['email' => $userObj['email'], 'ticket_type' => $userObj['ticketType']], 'STRIPE');
