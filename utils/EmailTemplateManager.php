@@ -1,4 +1,6 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
+
 class EmailTemplateManager
 {
   private const TEMPLATE_DIR = __DIR__ . '/relay-templates/';
@@ -13,8 +15,7 @@ class EmailTemplateManager
     $templatePath = self::TEMPLATE_DIR . $templateType . '/' . $templateName;
 
     if (!file_exists($templatePath)) {
-      // Log detallado para debugging
-      $errorDetails = [
+      Logger::error("Template file not found", [
         'template_path' => $templatePath,
         'template_type' => $templateType,
         'template_name' => $templateName,
@@ -22,8 +23,7 @@ class EmailTemplateManager
         'file_exists' => file_exists($templatePath),
         'dir_exists' => is_dir(self::TEMPLATE_DIR . $templateType),
         'available_files' => is_dir(self::TEMPLATE_DIR . $templateType) ? scandir(self::TEMPLATE_DIR . $templateType) : 'Directory not found'
-      ];
-      error_log("Template not found: " . json_encode($errorDetails));
+      ], 'EMAIL_TEMPLATE');
       throw new Exception("Template file not found: {$templatePath}. Type: {$templateType}, Name: {$templateName}");
     }
 
@@ -40,7 +40,8 @@ class EmailTemplateManager
   public static function getTemplateForUser($user)
   {
     $type = $user['type'];
-    $phase = processPhaseToShow($type)["phaseToShow"];
+    $phase = processPhaseToShow($type)["phaseToShow"] ?? 'unknown';
+    $ticketType = $user['ticketType'] ?? 'undefined';
 
     $templateMappings = [
       ECOMMERCE => [
@@ -61,23 +62,22 @@ class EmailTemplateManager
       'digitalTrendsVipPost' => 'getDigitalTrendsVipEmailTemplatePost',
     ];
 
-    if (isset($user['tiketType']) && isset($templateMappings[$user['tiketType']])) {
-      $templateFunction = $templateMappings[$user['tiketType']];
-      return self::$templateFunction($user['encode_email'], $user);
+    if (isset($templateMappings[$ticketType])) {
+      $templateFunction = $templateMappings[$ticketType];
+      $html = self::$templateFunction($user['encode_email'], $user);
     } elseif (isset($templateMappings[$type][$phase])) {
       $templateFunction = $templateMappings[$type][$phase];
-      return self::$templateFunction($user['encode_email']);
+      $html = self::$templateFunction($user['encode_email']);
     } else {
-      $errorDetails = [
-        'user_type' => $type ?? 'undefined',
-        'user_phase' => $phase ?? 'undefined',
-        'user_tiketType' => $user['tiketType'] ?? 'undefined',
-        'available_mappings' => array_keys($templateMappings),
-        'user_data_keys' => array_keys($user)
-      ];
-      error_log("Template mapping not found: " . json_encode($errorDetails));
-      throw new Exception("Template mapping not found for type: {$type}, phase: {$phase}, tiketType: " . ($user['tiketType'] ?? 'undefined'));
+      Logger::error("Template mapping not found", [
+        'user_type' => $type,
+        'user_phase' => $phase,
+        'ticketType' => $ticketType
+      ], 'EMAIL_TEMPLATE');
+      throw new Exception("Template mapping not found for type: $type, phase: $phase, ticketType: $ticketType");
     }
+
+    return $html;
   }
 
   public static function getEcommerceEmailTemplate($encodeEmail)
@@ -137,7 +137,7 @@ class EmailTemplateManager
     $templateName = 'ecommerce-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
       'amount' => $user['final_price'],
@@ -151,7 +151,7 @@ class EmailTemplateManager
     $templateName = 'ecommerce-during-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
       'amount' => $user['final_price'],
@@ -164,7 +164,7 @@ class EmailTemplateManager
     $templateName = 'ecommerce-post-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
       'amount' => $user['final_price'],
@@ -178,7 +178,7 @@ class EmailTemplateManager
     $userData = [
       '$encodeEmail' => $encodeEmail,
       'name' => $user['firstname'],
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' => 'Tarjeta de Crédito',
       'date' => $user['register'],
       'amount' => $user['final_price'],
@@ -191,7 +191,7 @@ class EmailTemplateManager
     $templateName = 'dt-during-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
       'amount' => $user['final_price'],
@@ -204,7 +204,7 @@ class EmailTemplateManager
     $templateName = 'dt-post-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
-      'type' => $user['tiketType'],
+      'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
       'amount' => $user['final_price'],
