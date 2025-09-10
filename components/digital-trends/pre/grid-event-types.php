@@ -68,7 +68,7 @@ if (!function_exists('renderGridItems')) {
       <?php elseif ($block['block'] === 'TextBlock') : ?>
         <div class="hidden--vip">
           <p><strong>¡No te lo pierdas! Vive la experiencia EMMS completa con tu pase VIP.</strong></p>
-          <a href="/checkout" class="emms__cta emms__fade-in-animation emms__cta--xl">COMPRA TU ENTRADA</a>
+          <a href="#entradas" class="emms__cta emms__fade-in-animation emms__cta--xl">COMPRA TU ENTRADA</a>
         </div>
       <?php endif; ?>
     </div>

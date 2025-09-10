@@ -24,22 +24,22 @@ $content = getSponsorsContent($normalizedUrl);
 $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 if (!$db->hasActiveSponsor()) {
-$db->close();
-return;
+  $db->close();
+  return;
 }
 
 $uploadsPath = './adm25/server/modules/sponsors/uploads/';
 $faqLink = $isRegistered ? '/registrado#preguntas-frecuentes' : './#preguntas-frecuentes';
 
 $sponsorTypes = [
-'SPONSOR' => ['title' => 'SPONSORS', 'class' => 'companies-list companies-list--lg'],
-'PREMIUM' => ['title' => 'MEDIA PARTNERS EXCLUSIVE', 'class' => 'companies-list'],
-'STARTER' => ['title' => 'MEDIA PARTNERS STARTERS', 'class' => 'companies-list']
+  'SPONSOR' => ['title' => 'SPONSORS', 'class' => 'companies-list companies-list--lg'],
+  'PREMIUM' => ['title' => 'MEDIA PARTNERS EXCLUSIVE', 'class' => 'companies-list'],
+  'STARTER' => ['title' => 'MEDIA PARTNERS STARTERS', 'class' => 'companies-list']
 ];
 
 $sponsorsByType = [];
 foreach ($sponsorTypes as $type => $config) {
-$sponsorsByType[$type] = $db->getSponsorsByType($type);
+  $sponsorsByType[$type] = $db->getSponsorsByType($type);
 }
 ?>
 
@@ -71,9 +71,9 @@ $sponsorsByType[$type] = $db->getSponsorsByType($type);
 
     <!-- FAQ Link -->
     <p class="companies__body">
-      ¿Tienes dudas sobre el EMMS?
-      <a href="<?= htmlspecialchars($faqLink) ?>">Haz clic aquí</a> y encuentra las <br>
-      preguntas más frecuentes sobre el evento.
+      ¿Quieres ser aliado del EMMS 2025? ¡Hablemos! <br>
+      Escríbenos a <a href="mailto:partners@fromdoppler.com" class="companies__body-link">partners@fromdoppler.com </a> y te contamos cómo sumarte al evento
+      <a href="/sponsors-promo" class="emms__cta emms__cta--secondary">QUIERO SER SPONSOR</a>
     </p>
   </div>
 </section>
