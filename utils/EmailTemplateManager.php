@@ -108,7 +108,7 @@ class EmailTemplateManager
   {
     $userData = self::decodeHexToUserData($encodeEmail);
     $hexEmail = self::encodeToHex($userData['userEmail']);
-    $templateName = 'dt-pre-template.htm';
+    $templateName = 'dt-pre-template.html';
     return self::getTemplate('dt', $templateName, $encodeEmail, [
       'userEmail' => $hexEmail
     ]);
