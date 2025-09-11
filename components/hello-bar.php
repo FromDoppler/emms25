@@ -1,12 +1,12 @@
 <?php
 $contentsPre = [
   '/' => [
-    'helloBarText' => '¡Vuelve el EMMS Digital Trends! 28, 29 y 30 de octubre de 2025',
+    'helloBarText' => '⏳ ¡Cuenta regresiva para el EMMS Digital Trends! Del 28 al 30 de octubre: conferencias, workshops y beneficios especiales.',
     'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
     'helloBarCtaLink' => '/digital-trends',
   ],
   '/registrado' => [
-    'helloBarText' => '¡Vuelve el EMMS Digital Trends! 28, 29 y 30 de octubre de 2025',
+    'helloBarText' => '⏳ ¡Cuenta regresiva para el EMMS Digital Trends! Del 28 al 30 de octubre: conferencias, workshops y beneficios especiales.',
     'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
@@ -26,7 +26,7 @@ $contentsPre = [
     'helloBarCtaLink' => '#registro',
   ],
   '/*' => [
-    'helloBarText' => '¡Vuelve el EMMS Digital Trends! 28, 29 y 30 de octubre de 2025',
+    'helloBarText' => '⏳ ¡Cuenta regresiva para el EMMS Digital Trends! Del 28 al 30 de octubre: conferencias, workshops y beneficios especiales.',
     'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
     'helloBarCtaLink' => '/digital-trends',
   ],

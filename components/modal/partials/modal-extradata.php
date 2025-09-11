@@ -148,6 +148,7 @@
         <div class="popup-modal__select-wrap">
           <select class="popup-modal__select" name="emailPlatform">
             <option value="" hidden>Selecciona</option>
+            <option value="doppler">Doppler</option>
             <option value="brevo">Brevo</option>
             <option value="active_campaign">Active Campaign</option>
             <option value="mailchimp">Mailchimp</option>

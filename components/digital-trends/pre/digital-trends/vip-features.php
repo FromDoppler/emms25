@@ -17,7 +17,7 @@
           <p class="features__item__text__price features__item__text__price--live">
             <em>¡POR SOLO</em><small>USD</small>9<small>.99!</small>
           </p>
-          <a href="./checkout" class="emms__cta emms__cta--terciary"> COMPRA TU ENTRADA AHORA
+          <a href="#entradas" class="emms__cta emms__cta--terciary"> COMPRA TU ENTRADA AHORA
           </a>
         </div>
       </div>
