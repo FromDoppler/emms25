@@ -31,9 +31,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
   render_modal('form-modal', 'form',  'form', true);
   ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
-  <div class="register-form__container">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
-  </div>
+
 
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
@@ -44,7 +42,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     </div>
     <div class="register-noform__container  eventShowElements">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/register-withoutform.php') ?>
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/vip-offer.php') ?>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/central-video.php') ?>
