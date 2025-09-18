@@ -1,4 +1,4 @@
-<? if ($isRegistered) { ?>
+<?php if ($isRegistered) { ?>
   <title>Llega el EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital</title>
 
   <meta name="title" content="Llega el EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
@@ -16,7 +16,7 @@
   <link rel="canonical" href="https://goemms.com/" />
   <link hreflang="x-default" href="https://goemms.com/" rel="alternate" />
   <link hreflang="es-ar" href="https://goemms.com/" rel="alternate" />
-<? } else { ?>
+<?php } else { ?>
   <title>Regístrate gratis al EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital</title>
 
   <meta name="title" content="Regístrate gratis al EMMS Digital Trends 2025: Conferencias online y gratuitas sobre Marketing Digital">
@@ -34,4 +34,4 @@
   <link rel="canonical" href="https://goemms.com/" />
   <link hreflang="x-default" href="https://goemms.com/" rel="alternate" />
   <link hreflang="es-ar" href="https://goemms.com/" rel="alternate" />
-<? } ?>
+<?php } ?>
