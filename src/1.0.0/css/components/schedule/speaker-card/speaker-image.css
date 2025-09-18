@@ -3,7 +3,7 @@
   margin-right: 16px;
   position: relative;
   min-height: 296px;
-  gap: 10px;
+  gap: 3px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -24,11 +24,9 @@
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0px 1px 3.7px rgba(0, 0, 0, 0.9);
-  position: absolute;
-  top: 170px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .speaker-card__image .speaker-card__image-title {
@@ -38,15 +36,15 @@
   line-height: 19px;
   text-align: center;
   color: #ffffff;
-  margin: 10px 16px;
+  margin: 0px 16px;
 }
 
 .speaker-card__image .speaker-card__logo {
-  height: 60px;
+  height: 45px;
   width: auto;
   max-width: 80%;
   margin: 10px auto;
-  margin-top: 0px;
+  margin-top: 20px;
   display: block;
   object-fit: contain;
 }
