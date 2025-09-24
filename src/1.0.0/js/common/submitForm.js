@@ -88,7 +88,7 @@ const submitModalForm = async (form, fetchType, formOrigin = null) => {
     company,
     website,
     emailPlatform,
-    formOrigin
+    formOrigin,
   });
   toggleButtonLoading(form, true);
   const result = await sendUserData(userData);

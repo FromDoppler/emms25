@@ -59,7 +59,7 @@ const modalFormSubmitHandler = async (e) => {
   if (!modalForm) return;
 
   try {
-    const { fetchResp: resp } = await submitModalForm(modalForm, window.APP.EVENTS.CURRENT.freeId, 'extraDataModal');
+    const { fetchResp: resp } = await submitModalForm(modalForm, window.APP.EVENTS.CURRENT.freeId, "extraDataModal");
     if (!resp?.ok) {
       throw new Error(`Server error: ${resp?.status}`);
     }
