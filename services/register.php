@@ -26,8 +26,9 @@ function setDataRequest($ip, $countryGeo, $db)
     $phase = getCurrentPhase($type, $db);
     $list = ($type === ECOMMERCE) ? LIST_LANDING_ECOMMERCE : LIST_LANDING_DIGITALT;
     $subject = getSubjectEmail($type, $phase);
+    $formOrigin = $postData['formOrigin'];
 
-    $user = buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject);
+    $user = buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject, $formOrigin);
 
     try {
         validateRequest($postData, $privacy, $promotions);
@@ -60,7 +61,8 @@ function getPostData()
         'origin' => isset($postData['origin']) ? $postData['origin'] : null,
         'emms_ref' => isset($postData['emms_ref']) ? hex2bin($postData['emms_ref']) : null,
         'type' => isset($postData['type']) ? $postData['type'] : null,
-        'events' => isset($postData['events']) ? $postData['events'] : '[]'
+        'events' => isset($postData['events']) ? $postData['events'] : '[]',
+        'formOrigin' => isset($postData['formOrigin']) ? $postData['formOrigin'] : null,
     ];
 }
 
@@ -105,7 +107,7 @@ function getUtmData($postData)
     ];
 }
 
-function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject)
+function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject, $formOrigin)
 {
     return [
         'register' => date("Y-m-d h:i:s A"),
@@ -133,7 +135,8 @@ function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotion
         'type' => $type,
         'form_id' => $phase,
         'list' => $list,
-        'subject' => $subject
+        'subject' => $subject,
+        'formOrigin' => $formOrigin
     ];
 }
 
@@ -266,6 +269,17 @@ function isSubmitValid($ip)
     }
 }
 
+function processUserRegistration($user, $db) {
+    saveSubscriptionDoppler($user);
+    saveSubscriptionDopplerTable($user, $db);
+    saveSubscriptionSpreadSheet($user, $db);
+
+    if ($user['formOrigin'] !== 'extraDataModal') {
+        sendEmail($user, $user['subject']);
+    }
+}
+
+
 try {
     $ip = getIp();
     $countryGeo = getCountryName();
@@ -273,11 +287,9 @@ try {
     $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $user = setDataRequest($ip, $countryGeo, $db);
 
-    saveSubscriptionDoppler($user);
-    saveSubscriptionDopplerTable($user, $db);
-    saveSubscriptionSpreadSheet($user, $db);
+    processUserRegistration($user, $db);
+
     $db->close();
-    sendEmail($user, $user['subject']);
     echo json_encode(['status' => 'success', 'message' => 'User registered successfully.','user' => print_r($user, true)]);
 } catch (Exception $e) {
     $errorMessage = "Error in Main Execution: " . $e->getMessage();

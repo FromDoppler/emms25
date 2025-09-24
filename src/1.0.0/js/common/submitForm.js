@@ -63,7 +63,7 @@ const submitWithoutForm = async (fetchType) => {
   return await sendUserData(userData);
 };
 
-const submitModalForm = async (form, fetchType) => {
+const submitModalForm = async (form, fetchType, formOrigin = null) => {
   const formData = new FormData(form);
   const toNullIfEmpty = (val) => {
     const stringValue = (val ?? "").toString().trim();
@@ -88,6 +88,7 @@ const submitModalForm = async (form, fetchType) => {
     company,
     website,
     emailPlatform,
+    formOrigin
   });
   toggleButtonLoading(form, true);
   const result = await sendUserData(userData);
