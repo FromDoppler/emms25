@@ -25,10 +25,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 </head>
 
 <body>
-  <?php
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/extraDataCaptor.php');
-  render_modal('modalVip', 'vipmodal',  'vip', true);
-  ?>
   <div class="register-form__container hidden--vip">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
   </div>
@@ -68,6 +64,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>
+  <?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/extraDataCaptor.php');
+  render_modal('modalVip', 'vipmodal',  'vip', true);
+  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
   <script src="src/<?= VERSION ?>/js/newDate.js" type="module"></script>
 
