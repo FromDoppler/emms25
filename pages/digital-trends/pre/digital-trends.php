@@ -25,11 +25,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 </head>
 
 <body>
-
-  <?php
-  // Form captador
-  render_modal('form-modal', 'form',  'form', true);
-  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'); ?>
 
 
@@ -52,6 +47,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/users-comments.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>
+  <?php
+  // Form captador
+  render_modal('form-modal', 'form',  'form', true);
+  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
 
