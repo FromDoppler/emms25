@@ -12,6 +12,10 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
+const events = JSON.parse(localStorage.getItem("events") || "[]");
+if (events.includes(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP)) {
+  window.location.href = "/";
+}
 const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
 const spinner = document.getElementById('spinner');
 
@@ -56,7 +60,7 @@ async function initialize() {
         const customerEmail = getCustomerEmail();
         const { promotionCode, utmParams } = getUtmParams();
 
-        const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/create-checkout-session`, {
+        const response = await fetch(`/services/create-checkout-session`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
