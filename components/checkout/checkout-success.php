@@ -93,7 +93,7 @@
 
 
     try {
-      const response = await fetch(`<?= STRIPE_URL_SERVER; ?>/session-status?${urlParams.toString()}`);
+      const response = await fetch(`/services/fetch-session-status.php?${urlParams.toString()}`);
       if (!response.ok) throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
       const session = await response.json();
 
