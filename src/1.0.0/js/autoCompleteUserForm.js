@@ -80,7 +80,7 @@ const FormAutoComplete = {
   },
 
   init() {
-    window.addEventListener("load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       this.completeForms();
     });
   },
