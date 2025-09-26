@@ -36,10 +36,17 @@ function hexToString(hex) {
 }
 
 function getCustomerEmail() {
-    const hex = localStorage.getItem('dplrid');
-    if (!hex) return null;
-    return hexToString(hex);
+    const urlParams = new URLSearchParams(window.location.search);
+    const hex = localStorage.getItem('dplrid') || urlParams.get('dplrid');
+    const decoded = hexToString(hex);
+    if (!decoded) return null;
+    try {
+        return JSON.parse(decoded)?.userEmail || decoded;
+    } catch {
+        return decoded;
+    }
 }
+
 
 function getUtmParams() {
     const urlParams = new URLSearchParams(window.location.search);
