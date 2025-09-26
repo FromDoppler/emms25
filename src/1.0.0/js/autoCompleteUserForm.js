@@ -53,33 +53,35 @@ const FormAutoComplete = {
     };
   },
 
-  completeForm() {
+  completeForms() {
     const { email, phone, name } = this.getUserValues();
-    const form = document.querySelector("form");
+    const forms = document.querySelectorAll("form");
 
-    if (!form) {
-      console.error("No form found on the page.");
+    if (!forms.length) {
+      console.warn("No se encontraron formularios en la página.");
       return;
     }
 
-    form.querySelectorAll("input").forEach((input) => {
-      switch (input.name) {
-        case "email":
-          input.value = email || "";
-          break;
-        case "name":
-          input.value = name || "";
-          break;
-        case "phone":
-          input.value = phone || "";
-          break;
-      }
+    forms.forEach((form) => {
+      form.querySelectorAll("input").forEach((input) => {
+        switch (input.name) {
+          case "email":
+            input.value = email || "";
+            break;
+          case "name":
+            input.value = name || "";
+            break;
+          case "phone":
+            input.value = phone || "";
+            break;
+        }
+      });
     });
   },
 
   init() {
-    window.addEventListener("load", () => {
-      this.completeForm();
+    document.addEventListener("DOMContentLoaded", () => {
+      this.completeForms();
     });
   },
 };
