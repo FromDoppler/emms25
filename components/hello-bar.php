@@ -33,7 +33,7 @@ $contentsPre = [
 ];
 $contentsLive = [
   '/' => [
-    'helloBarText' => '🚨EMMS Digital Trends: ¡ya estamos en vivo! 🚨 Conferencias gratuitas, Workshops, Networking y mucho más.',
+    'helloBarText' => '🚨EMMS Digital Trends: ¡ya estamos en vivo! 🚨 Conferencias gratuitas, Workshops, Entrevistas, ¡y mucho más!',
     'helloBarCtaTxt' => 'SÚMATE GRATIS',
     'helloBarCtaLink' => '/digital-trends',
   ],
@@ -53,7 +53,7 @@ $contentsLive = [
     'helloBarCtaLink' => '#entradas',
   ],
   '/*' => [
-    'helloBarText' => '🚨EMMS Digital Trends: ¡ya estamos en vivo! 🚨 Conferencias gratuitas, Workshops, Networking y mucho más.',
+    'helloBarText' => '🚨EMMS Digital Trends: ¡ya estamos en vivo! 🚨 Conferencias gratuitas, Workshops, Entrevistas, ¡y mucho más!',
     'helloBarCtaTxt' => 'SÚMATE GRATIS',
     'helloBarCtaLink' => '/digital-trends',
   ],
@@ -111,14 +111,14 @@ $contentDuring = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
   </div>
 <?php elseif ($digitalTrendsStates['isLive']) : ?>
   <div class="hidden--vip">
-    <div class="hellobar hellobar--counter hellobar--live">
+    <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
         <p><strong><?= $contentLive['helloBarText'] ?></strong><a href="<?= $contentLive['helloBarCtaLink'] ?>"><?= $contentLive['helloBarCtaTxt'] ?></a></p>
       </div>
     </div>
   </div>
   <div class="show--vip">
-    <div class="hellobar hellobar--counter hellobar--live">
+    <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
         <p><strong>⭐ ¡No te pierdas las actividades VIP! Encuentra los links en la agenda para unirte a las salas.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
       </div>
@@ -126,14 +126,14 @@ $contentDuring = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
   </div>
 <?php elseif ($digitalTrendsStates['isDuring']) : ?>
   <div class="hidden--vip">
-    <div class="hellobar hellobar--counter hellobar--live">
+    <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
         <p><strong><?= $contentDuring['helloBarText'] ?></strong><a href="<?= $contentDuring['helloBarCtaLink'] ?>"><?= $contentDuring['helloBarCtaTxt'] ?></a></p>
       </div>
     </div>
   </div>
   <div class="show--vip">
-    <div class="hellobar hellobar--counter hellobar--live">
+    <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
         <p><strong>⭐ ¡No te pierdas las actividades VIP! Encuentra los links en la agenda para unirte a los Workshops del EMMS Digital Trends.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
       </div>

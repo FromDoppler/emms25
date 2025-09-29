@@ -1,34 +1,39 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+$isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
+$isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/seo-unreg.php'); ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/home/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 </head>
 
 <body class="emms__home">
-    <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php');
-    ?>
+  <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php') ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php');
+  ?>
 
-    <main>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/home/hello-module.php');   ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/central-video.php'); ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/event-numbers.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/speakers-carousel.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/premium-content.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/users-comments.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faqs.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faq-banner.php') ?>
-    </main>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
+  <main>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/home/hello-module.php');   ?>
+    <?php
+    if ($isTransition && !$isLive) {
+      include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php');
+    }
+    ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/event-numbers.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/speakers-carousel.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/users-comments.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faqs.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+  </main>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 
 </body>
 
