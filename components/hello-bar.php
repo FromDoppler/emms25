@@ -43,12 +43,12 @@ $contentsLive = [
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
   '/digital-trends' => [
-    'helloBarText' => '📢 ¡Ya estamos en vivo! 📢 ¿Todavía no te has registrado? Súmate gratis.',
+    'helloBarText' => '📢 ¡Ya estamos en vivo! 📢 ¿Aún no te has registrado? Súmate gratis.',
     'helloBarCtaTxt' => 'ÚNETE AHORA',
     'helloBarCtaLink' => '#registro',
   ],
   '/digital-trends-registrado' => [
-    'helloBarText' => '🎫 ¡Quedan pocas! Consigue tu entrada VIP para sumarte a las actividades exclusivas',
+    'helloBarText' => '🎫¡Quedan pocas! Compra tu entrada VIP y accede a beneficios exclusivos.',
     'helloBarCtaTxt' => 'HAZTE VIP',
     'helloBarCtaLink' => '#entradas',
   ],
@@ -70,8 +70,8 @@ $contentsDuring = [
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
   '/digital-trends' => [
-    'helloBarText' => '¡Queda más EMMS Digital Trends! ¿Aún no te has registrado? Súmate gratis para unirte a una nueva jornada.',
-    'helloBarCtaTxt' => 'ÚNETE AHORA',
+    'helloBarText' => '¡Queda más EMMS Digital Trends! ¿Aún no te has registrado?',
+    'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],
   '/digital-trends-registrado' => [
@@ -80,8 +80,8 @@ $contentsDuring = [
     'helloBarCtaLink' => '#entradas',
   ],
   '/sponsors' => [
-    'helloBarText' => '¡Queda más EMMS Digital Trends! ¿Aún no te has registrado? Súmate gratis para unirte a una nueva jornada.',
-    'helloBarCtaTxt' => 'ÚNETE AHORA',
+    'helloBarText' => '¡Queda más EMMS Digital Trends! ¿Aún no te has registrado?',
+    'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
   ],
   '/*' => [

@@ -4,6 +4,15 @@
   background: var(--color-bg);
 }
 
+.centralvideo.centralvideo--background {
+  background: linear-gradient(180deg, #13092d 0%, #25096c 109.27%);
+}
+
+.centralvideo.centralvideo--background .centralvideo__title h2,
+.centralvideo.centralvideo--background .centralvideo__title p {
+  color: #ffffff;
+}
+
 .centralvideo--tickets .centralvideo {
   background: none;
 }

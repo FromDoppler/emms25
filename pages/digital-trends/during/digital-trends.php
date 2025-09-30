@@ -1,13 +1,14 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+$isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
+$isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/seo-unreg.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
     <script type="module">
         import {
@@ -26,25 +27,25 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     </script>
 </head>
 
-<body class="ecommerce">
+<body>
     <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/hellobar.php');   ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
 
     <main>
         <div class="register-form__container eventHiddenElements">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/register-form.php') ?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/register-form.php') ?>
         </div>
         <div class="register-noform__container  eventShowElements">
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/register-withoutform.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/register-withoutform.php') ?>
         </div>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/benefit-icons.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/premium-content.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/central-video.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/benefit-icons.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/faq-banner.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faq-banner.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
