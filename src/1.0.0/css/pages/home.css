@@ -30,8 +30,13 @@
 }
 
 .home-hero__title a {
-  color: #bd7aff;
+  color: var(--color-secondary);
   font-weight: bold;
+}
+
+.home-hero__title a:hover {
+  color: var(--color-secondary-hover);
+  text-decoration: none;
 }
 
 .home-hero__title h1 {
@@ -53,6 +58,9 @@
   font-size: var(--font-h1-size);
   line-height: var(--font-h1-line);
   font-weight: bold;
+}
+
+.home-hero__title h1 span.text--transparent {
   background: var(--gradient-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -66,7 +74,7 @@
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #ff07d4;
+  color: var(--color-secondary);
 }
 
 .home-hero__title h1 em.xl {
@@ -96,7 +104,7 @@
   font-size: 16px;
   line-height: 24px;
   color: #fff;
-  max-width: 580px;
+  max-width: 685px;
   margin: 0 auto;
   font-weight: bold;
 }

@@ -39,13 +39,25 @@
   color: #18ff8c;
 }
 
-.speakers h2 {
+.speakers .speakers__title {
   font-size: 32px;
   line-height: 33px;
   font-weight: 700;
   color: #fff;
-  margin: 0px;
+  margin: 0 auto;
   animation-delay: 0.1s;
+}
+
+.speakers .speakers__title--lg {
+  max-width: 865px;
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+}
+
+.speakers .speakers__title--md {
+  font-size: var(--font-h3-size);
+  line-height: var(--font-h3-line);
+  max-width: unset;
 }
 
 .speakers h4 {

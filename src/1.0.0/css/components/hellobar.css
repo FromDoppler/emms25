@@ -32,15 +32,15 @@
 }
 
 .hellobar__container p {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 16px;
   font-weight: 400;
-  color: #212121;
+  color: #ffffff;
 }
 
 .hellobar__container a {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 14px;
   font-weight: 700;
   text-align: center;
@@ -63,25 +63,6 @@
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
-}
-
-.hellobar__container.hellobar__container--during {
-  width: 100%;
-  max-width: 920px;
-}
-
-.hellobar--counter .hellobar__container.hellobar__container--during a {
-  background-color: #79f66e;
-  color: #000000;
-  padding: 10px 36px;
-}
-
-.hellobar--counter .hellobar__container.hellobar__container--during a.small {
-  padding: 10px 38px;
-}
-
-.hellobar--counter .hellobar__container.hellobar__container--during a:hover {
-  background-color: #61db56;
 }
 
 .hellobar__container a:hover {
@@ -115,12 +96,6 @@
     display: block;
     width: fit-content;
   }
-}
-
-/* TODO: Create abstract hellobar for counter and live properties */
-
-.hellobar.hellobar--live {
-  background: linear-gradient(180deg, #df24c1 0%, #8e18d7 57.9%, #7d04f6 100%);
 }
 
 /* Hellobar with counter */
