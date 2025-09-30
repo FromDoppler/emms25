@@ -9,19 +9,22 @@ Estrategias de negocio, de la mano de líderes del sector.
     'button' => 'ACCEDE AL VIVO',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',
+    'class' => ''
   ],
   '/digital-trends' => [
     'heading' => '¿Qué esperas para inscribirte?',
     'body' => 'Mira este video y descubre por qué el EMMS Digital Trends es el evento clave para transformar tus Estrategias de Marketing Digital, de la mano de especialistas del sector.',
-    'button' => 'INSCRÍBETE AHORA',
+    'button' => 'ASEGURA TU LUGAR',
     'link' => '#registro',
     'youtubeCode' => 'rTImzuky-LE',
+    'class' => 'centralvideo--background'
   ],
   '/registrado' => [
     'heading' => 'Súmate al EMMS Digital Trends 2025',
     'body' => 'Descubre en este video por qué el EMMS Digital Trends es el evento clave para potenciar tus
 Estrategias de negocio, de la mano de líderes del sector.',
     'youtubeCode' => 'isDPHOi2mAs',
+    'class' => ''
   ],
   '/*' => [
     'heading' => 'Súmate al EMMS Digital Trends 2025',
@@ -31,6 +34,7 @@ Estrategias de negocio, de la mano de líderes del sector.
     'button' => 'ACCEDE AL VIVO',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',
+    'class' => ''
   ],
 ];
 
@@ -44,10 +48,11 @@ if ($normalizedUrl === '/' || $normalizedUrl === '' && $isTransition) {
 $youtubeBaseUrl = "https://www.youtube.com/embed/";
 $youtubeParams = "?controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&autoplay=0&loop=1";
 $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
+$sectionClass = 'centralvideo ' . ($content['class'] ?? '');
 
 ?>
 
-<section class="centralvideo">
+<section class="<?php echo $sectionClass; ?>">
   <div class="emms__container--lg emms__container--lg--column">
     <?php if (!empty($content['heading']) || !empty($content['body'])): ?>
       <div class="centralvideo__title emms__fade-in">

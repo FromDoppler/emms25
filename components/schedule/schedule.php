@@ -29,14 +29,11 @@ $block = getScheduleBlock2($normalizedUrl);
 
       <?php if ($block['block'] === 'digital-trends') : ?>
         <p>
-          Conoce a las figuras internacionales que ya confirmaron su presencia en el evento de Marketing Digital más esperado del año. ¡Y prepárate! Porque muy pronto anunciaremos el resto de la agenda.
+          Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
         </p>
       <?php elseif ($block['block'] === 'digital-trends-registrado') : ?>
-        <p class="hidden--vip">
-          Conoce a las figuras internacionales que ya confirmaron su presencia en el evento de Marketing Digital más esperado del año. ¡Y prepárate! Porque muy pronto anunciaremos el resto de la agenda.
-        </p>
-        <p class="show--vip">
-          Conoce a las figuras internacionales que ya confirmaron su presencia en el evento de Marketing Digital más esperado del año. ¡Y prepárate! Porque muy pronto anunciaremos el resto de la agenda.
+        <p>
+          Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
         </p>
       <?php endif; ?>
     </div>
