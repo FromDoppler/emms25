@@ -1,4 +1,10 @@
 <?php
+
+// Fix for CLI/worker contexts where DOCUMENT_ROOT is not defined
+if (empty($_SERVER['DOCUMENT_ROOT'])) {
+    $_SERVER['DOCUMENT_ROOT'] = __DIR__;
+}
+
 // Evento actual
 $currentEventKey = 'DIGITALTRENDS';
 
@@ -149,3 +155,5 @@ $duringDaysArray = array(
         "twitch" => "fromdoppler"
     )
 );
+
+require_once (__DIR__ . '/config/redis.php');

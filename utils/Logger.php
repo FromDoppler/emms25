@@ -4,6 +4,7 @@ class Logger
 {
     const ERROR = 'ERROR';
     const INFO = 'INFO';
+    const WARNING = 'WARNING';
     const DEBUG = 'DEBUG';
     const SUCCESS = 'SUCCESS';
     const DUPLICATE = 'DUPLICATE';
@@ -38,7 +39,7 @@ class Logger
     private static function shouldLog($level)
     {
         if (defined('PRODUCTION') && PRODUCTION) {
-            return in_array($level, [self::ERROR, self::INFO, self::SUCCESS, self::DUPLICATE]);
+            return in_array($level, [self::ERROR, self::WARNING, self::INFO, self::SUCCESS, self::DUPLICATE]);
         }
         return true;
     }
@@ -70,6 +71,11 @@ class Logger
     public static function info($message, $context = [], $service = 'APP')
     {
         self::log(self::INFO, $message, $context, $service);
+    }
+
+    public static function warning($message, $context = [], $service = 'APP')
+    {
+        self::log(self::WARNING, $message, $context, $service);
     }
 
     public static function debug($message, $context = [], $service = 'APP')
