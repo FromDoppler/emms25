@@ -1,13 +1,29 @@
+<?php
+$state = $isTransition ? 'EVENTO ONLINE Y GRATUITO - 28, 29 y 30 DE OCTUBRE' : '<span class="green">EN VIVO</span> | ¡COMENZÓ LA TRANSMISIÓN!';
+$headerTopText = $isTransition ? '¡Ya empezó el' : '¡Súmate al';
+$headerTopClass = $isTransition ? 'top top--transition' : 'top';
+?>
 <section class="hero-registration">
   <div class="hero-registration__columns">
 
     <div class="hero-registration__text emms__fade-in">
-      <h1><em><small>EN VIVO</small> | ¡COMENZÓ LA TRANSMISIÓN!</em><span class="top">¡Súmate al </span> <span class="main">EMMS </span> <span class="bottom">Digital Trends!</span></h1>
-      <p>Inspírate y aprende en un solo lugar todas las tendencias del Marketing Digital. <br>
-      </p>
-      <p>
-        <strong class="text--highlighted">¡Estamos en vivo!</strong> Disfruta ahora de una nueva edición con Conferencias, Workshops, Entrevistas, sorteos, ¡y mucho más!
-      </p>
+      <h1>
+        <em><?= $state; ?></em>
+        <span class="<?= $headerTopClass; ?>"><?= $headerTopText; ?> </span>
+        <span class="main">EMMS </span>
+        <span class="bottom">Digital Trends!</span>
+      </h1>
+      <?php if ($isTransition) { ?>
+        <p>Inspírate y aprende en un solo lugar todas las tendencias del Marketing Digital. ¡Regístrate ahora y asegura tu lugar!
+        </p>
+      <?php } else { ?>
+        <p>Inspírate y aprende en un solo lugar todas las tendencias del Marketing Digital. <br>
+        </p>
+        <p>
+          <strong class="text--highlighted">¡Estamos en vivo!</strong> Disfruta ahora de una nueva edición con Conferencias, Workshops, Entrevistas, sorteos, ¡y mucho más!
+        </p>
+      <?php } ?>
+
       <ul class="hero-registration__text__checklist dk">
         <li>SPEAKERS INTERNACIONALES</li>
         <li>WORKSHOPS Y NETWORKING</li>

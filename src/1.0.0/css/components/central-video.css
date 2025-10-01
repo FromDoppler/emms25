@@ -13,6 +13,11 @@
   color: #ffffff;
 }
 
+.centralvideo.centralvideo--background .centralvideo__video iframe,
+.centralvideo.centralvideo--background .centralvideo__video video {
+  box-shadow: -20px 15px 0 #550871;
+}
+
 .centralvideo--tickets .centralvideo {
   background: none;
 }

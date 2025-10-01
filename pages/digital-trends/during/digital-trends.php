@@ -38,14 +38,12 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/register-form.php') ?>
         </div>
         <div class="register-noform__container  eventShowElements">
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/register-withoutform.php') ?>
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/register-withoutform.php') ?>
         </div>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/benefit-icons.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faq-banner.php') ?>
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>

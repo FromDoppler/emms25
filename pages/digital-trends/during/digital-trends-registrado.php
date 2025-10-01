@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+$isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
+$isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 ?>
 
 <!DOCTYPE html>
@@ -27,29 +29,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/hellobar-vip.php');   ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
-  <main>
-    <section class="emms__hero-conference emms__hero-conference--live emms__hero-conference--chat">
-      <div class="emms__container--lg">
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/event-live.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/certificate/certificate.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
-      </div>
-    </section>
-    <div class="show--vip">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php') ?>
-    </div>
-    <div class="emms__bg-dark-gradient">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
-    </div>
-    <div class="hidden--vip centralvideo--tickets">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/entry-plans.php') ?>
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/video-ticketing.php') ?>
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/vip-features.php') ?>
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php') ?>
-    </div>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
-  </main>
+  <?php
+  if ($isLive) {
+    include($_SERVER['DOCUMENT_ROOT'] . '/pages/digital-trends/during/combinations/dtr-during.php');
+  } else {
+    include($_SERVER['DOCUMENT_ROOT'] . '/pages/digital-trends/during/combinations/dtr-transition.php');
+  }
+  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
   <script src="src/<?= VERSION ?>/js/newDate.js" type="module"></script>
 
