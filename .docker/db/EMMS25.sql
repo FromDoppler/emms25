@@ -54,6 +54,32 @@ CREATE TABLE IF NOT EXISTS `log_errors` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `stripe_customers_jobs`
+--
+
+CREATE TABLE IF NOT EXISTS `stripe_customers_jobs` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `registered_id` bigint(20) DEFAULT NULL,
+  `stripe_customer_id` int(11) DEFAULT NULL,
+  `user_snapshot` JSON NOT NULL,
+  `email_sent` tinyint(1) NOT NULL DEFAULT 0,
+  `spreadsheet_saved` tinyint(1) NOT NULL DEFAULT 0,
+  `list_added` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `idx_registered_id` (`registered_id`),
+  KEY `idx_stripe_customer_id` (`stripe_customer_id`),
+  KEY `idx_email_sent` (`email_sent`),
+  KEY `idx_spreadsheet_saved` (`spreadsheet_saved`),
+  KEY `idx_list_added` (`list_added`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `registered`
 --
 
