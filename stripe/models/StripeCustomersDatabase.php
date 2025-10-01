@@ -19,9 +19,9 @@ class StripeCustomersDatabase
 
         $params = [
             $customerData['session_id'] ?? '',
-            $customerData['price'] ?? '',
-            $customerData['discount'] ?? '',
-            $customerData['final_price'] ?? '',
+            (float)($customerData['price'] ?? $customerData['final_price'] ?? 0),
+            (float)($customerData['discount'] ?? 0),
+            (float)($customerData['final_price'] ?? 0),
             $customerData['customer_name'] ?? '',
             $customerData['customer_email'] ?? '',
             $customerData['customer_country'] ?? '',

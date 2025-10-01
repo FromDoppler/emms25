@@ -82,13 +82,15 @@ class RegisteredDatabase
 
         return Logger::withDatabase($this->db, function($db) use ($query, $email) {
             $result = $db->query($query, [$email]);
-            return $result->fetchAll();
+            $users = $result->fetchAll();
+            return !empty($users) ? $users[0] : null;
         }, [
             'email' => $email,
             'table' => 'registered',
             'action' => 'get_registered_by_email'
         ], 'STRIPE');
     }
+
 
     public function insertAutomatedRegistered($registeredData)
     {
@@ -123,7 +125,7 @@ class RegisteredDatabase
 
         return Logger::withDatabase($this->db, function($db) use ($query, $params) {
             $db->query($query, $params);
-            return true; // If no exception, insertion was successful
+            return $db->lastInsertID(); // Return the inserted ID
         }, [
             'email' => $email,
             'table' => 'registered',

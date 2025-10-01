@@ -19,7 +19,6 @@ $response = [
 ];
 
 try {
-    Logger::debug("controller_created", [], 'STRIPE');
     $StripeCustomersController = new StripeCustomersController();
 
     $result = $StripeCustomersController->handleRequest();
