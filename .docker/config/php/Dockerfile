@@ -9,6 +9,10 @@ RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
     && pecl install memcached-3.1.4 \
     && docker-php-ext-enable memcached
 
+# Install Redis extension
+RUN pecl install redis \
+    && docker-php-ext-enable redis
+
 RUN \
     docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
