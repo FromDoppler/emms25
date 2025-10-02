@@ -26,7 +26,7 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 
 <body>
   <?php if (PRODUCTION) include $_SERVER['DOCUMENT_ROOT'] . '/components/gtm.php'; ?>
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/hellobar-vip.php');   ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/hello-bar.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-reg.php') ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
   <?php
