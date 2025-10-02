@@ -49,6 +49,7 @@
   border-radius: 100px;
   margin: 0 0 0 20px;
   padding: 10px 60px;
+  text-transform: capitalize;
   transition-duration: 0.2s;
 }
 

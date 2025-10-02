@@ -144,6 +144,11 @@
   color: #ffffff;
 }
 
+.hero-registration .hero-registration__text h1 span.top.top--transition {
+  letter-spacing: 1px;
+  line-height: 46px;
+}
+
 .hero-registration .hero-registration__text h1 span.bottom {
   letter-spacing: 4px;
   font-style: normal;

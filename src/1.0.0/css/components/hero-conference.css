@@ -12,6 +12,12 @@
   position: relative;
 }
 
+.emms__hero-conference.emms__hero-conference--live.emms__hero-conference--live--digital-trends {
+  background: #000 url(../../../img/backgrounds/bg-section-8.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .emms__hero-conference .emms__container--lg {
   display: flex;
   flex-wrap: wrap;
@@ -533,6 +539,16 @@
   color: #2b0c01;
 }
 
+.broadcast-vip__subtitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  color: #1e0501;
+  border-bottom: 2px solid #ab6100;
+  padding-bottom: 7px;
+}
+
 .broadcast-free__title {
   font-style: normal;
   font-weight: 900;
@@ -549,7 +565,7 @@
   line-height: 18px;
   color: #ffffff;
   margin-bottom: 20px;
-  max-width: 400px;
+  max-width: 260px;
 }
 
 .broadcast-free__image,
@@ -559,9 +575,9 @@
 }
 
 .broadcast-vip__image--tool {
-  bottom: -48px;
+  bottom: -77px;
   max-width: 250px;
-  left: 95%;
+  left: 90%;
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -575,9 +591,9 @@
 }
 
 .broadcast-free__image--cart {
-  max-width: 300px;
-  bottom: -117px;
-  right: -4rem;
+  max-width: 700px;
+  bottom: -169px;
+  right: -14rem;
 }
 
 .workshops-links__columns {
@@ -683,9 +699,13 @@
   position: relative;
   padding: 3rem 1.5rem;
   color: white;
-  overflow: hidden;
   margin: 2rem 0;
   min-height: 448px;
+  border: 6px solid #7d04f6;
+}
+
+.emms__hero-conference__video.emms__hero-conference__video--transition .emms__cta--golden {
+  max-width: 220px;
 }
 
 .emms__hero-conference__video.emms__hero-conference__video--transition.emms__vip {
@@ -699,11 +719,12 @@
   overflow: visible;
   margin: 2rem 0;
   min-height: 448px;
+  border: 6px solid #b08119;
 }
 
 .emms__hero-conference__video.emms__hero-conference__video--transition .speaker-card__ribbon {
-  top: 181px;
-  right: -1px;
+  top: 175px;
+  right: -6px;
 }
 
 .emms__hero-conference__video.emms__hero-conference__video--transition .speaker-card__ribbon.mb {
