@@ -38,6 +38,23 @@ $sharedPages = [
         'page' => 'checkout-success.php',
         'folder' => 'checkout',
     ],
+    'checkout-lp' => [
+        'url'  => 'checkout-lp',
+        'page' => 'checkout.php',
+        'folder' => 'checkout-lp',
+    ],
+    'checkout-lp-success' => [
+        'url'  => 'checkout-lp-success',
+        'page' => 'checkout-success.php',
+        'folder' => 'checkout-lp',
+    ],
+    'checkout-lp-landing' => [
+        'url'  => 'checkout-lp-landing',
+        'page' => 'landing.php',
+        'folder' => 'checkout-lp',
+    ],
+
+
     'speaker' => [
         'url' => 'speaker-interna',
         'page' => 'speaker-interna.php',
