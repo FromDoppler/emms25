@@ -135,7 +135,7 @@ $contentDuring = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
   <div class="show--vip">
     <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
-        <p><strong>⭐ ¡No te pierdas las actividades VIP! Encuentra los links en la agenda para unirte a los Workshops del EMMS Digital Trends.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
+        <p><strong>⭐ ¡No te pierdas los workshops! Busca los links en la agenda para unirte a las salas.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
       </div>
     </div>
   </div>
