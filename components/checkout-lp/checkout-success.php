@@ -8,12 +8,14 @@
             <div class="emms__checkout__card__main">
               <h2>¡Felicitaciones!</h2>
               <h2>Ya eres Asistente VIP 🚀</h2>
-              <p>Mantente pendiente a tu Correo Eléctrónico porque en instantes recibirás un Email de Confirmación por la compra de tu entrada.</p>
-              <h4>Antes de irte… ¡Súmate al Programa de Referidos!</h4>
-              <p>Por cada persona que invites al EMMS, acumulas chances de ganar gift cards y elegir tu premio.
-                Comparte tu link único en Redes Sociales y empieza ahora a invitar a tu comunidad a que se registre gratis al evento.
-              </p>
-              <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral-button.php') ?>
+              <p>En instantes recibirás un Email de Confirmación con los detalles de tu compra.</p>
+              <h4>Con tu pase premium accedes </h4>
+              <ul class="emms__checkout__card__main__list">
+                <li>Cuenta gratuita de Doppler.</li>
+                <li>Workshops prácticos.</li>
+                <li>Sesiones de Networking.</li>
+                <li>Certificado de asistencia.</li>
+              </ul>
             </div>
             <div class="emms__checkout__card__aside">
               <h3>Detalle de tu compra</h3>

@@ -2,7 +2,8 @@
 
 $isPost = $state === 'post';
 $selected = $isSelected ? 'true' : 'false';
-$finalized = ($isFinalized && !$isPost) ? ' - finalizado' : '';
+$shouldShowFinalized = ($isFinalized ?? false) && !$isPost && empty($suppressFinalizedLabels) === true;
+$finalized = $shouldShowFinalized ? ' - finalizado' : '';
 $id = "day{$day}";
 ?>
 

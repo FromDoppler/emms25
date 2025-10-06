@@ -6,100 +6,111 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
 ?>
 
 <div class="emms__calendar__tabs">
-    <?php
-    // TODO: Mover days a const .env??
-    $days = [
-        1 => ['date' => '28 DE OCTUBRE', 'short' => 'DÍA 1'],
-        2 => ['date' => '29 DE OCTUBRE', 'short' => 'DÍA 2'],
-        3 => ['date' => '30 DE OCTUBRE', 'short' => 'DÍA 3'],
-    ];
+  <?php
+  // TODO: Mover days a const .env??
+  $days = [
+    1 => ['date' => '28 DE OCTUBRE', 'short' => 'DÍA 1'],
+    2 => ['date' => '29 DE OCTUBRE', 'short' => 'DÍA 2'],
+    3 => ['date' => '30 DE OCTUBRE', 'short' => 'DÍA 3'],
+  ];
 
-    $dayDuring = DAY_DURING;
-    // Tabs de la agenda
-    render_schedule_tabs($digitalTrendsStates, $days, $dayDuring);
-    ?>
+  $dayDuring = DAY_DURING;
+
+  // Suprimimos el comportamiento de los labels de finalizado para la landing del checkout
+  $isCheckoutLanding = (strpos($_SERVER['REQUEST_URI'] ?? '', 'checkout-lp-landing') !== false);
+  $suppressFinalizedLabels = false;
+  if ($isCheckoutLanding) {
+    if ($dayDuring !== 3) {
+      $dayDuring = 3;
+      $suppressFinalizedLabels = true;
+    }
+  }
+
+  // Tabs de la agenda
+  render_schedule_tabs($digitalTrendsStates, $days, $dayDuring, $suppressFinalizedLabels);
+  ?>
 
 
-    <?php
-    $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+  <?php
+  $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-    foreach ($days as $dayIndex => $dayInfo):
-        $speakers = $db->getSpeakersByDay($dayIndex);
-    ?>
-        <div class="emms__container--lg" role="tabpanel" aria-labelledby="day<?= $dayIndex ?>">
-            <?php
-            render_event_day($dayIndex, $digitalTrendsStates);
-            ?>
-            <div class="dk">
-                <div class="speaker-grid ">
-                    <?php foreach ($speakers as $speaker): ?>
-                        <div class="speaker-grid__item">
-                            <?php render_speaker_card($speaker, $isRegistered, false, $digitalTrendsStates); ?>
-                        </div>
-                        <?php render_speaker_modal($speaker, false) ?>
-                    <?php endforeach; ?>
-                </div>
+  foreach ($days as $dayIndex => $dayInfo):
+    $speakers = $db->getSpeakersByDay($dayIndex);
+  ?>
+    <div class="emms__container--lg" role="tabpanel" aria-labelledby="day<?= $dayIndex ?>">
+      <?php
+      render_event_day($dayIndex, $digitalTrendsStates);
+      ?>
+      <div class="dk">
+        <div class="speaker-grid ">
+          <?php foreach ($speakers as $speaker): ?>
+            <div class="speaker-grid__item">
+              <?php render_speaker_card($speaker, $isRegistered, false, $digitalTrendsStates); ?>
             </div>
-            <div class="mb">
-                <div class="speaker-grid speaker-carousel">
-                    <?php foreach ($speakers as $speaker): ?>
-                        <div class="speaker-grid__item carousel-cell">
-                            <?php render_speaker_card($speaker, $isRegistered, true, $digitalTrendsStates); ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-
-                <?php foreach ($speakers as $speaker): ?>
-                    <?php render_speaker_modal($speaker, true) ?>
-                <?php endforeach; ?>
-            </div>
+            <?php render_speaker_modal($speaker, false) ?>
+          <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
+      </div>
+      <div class="mb">
+        <div class="speaker-grid speaker-carousel">
+          <?php foreach ($speakers as $speaker): ?>
+            <div class="speaker-grid__item carousel-cell">
+              <?php render_speaker_card($speaker, $isRegistered, true, $digitalTrendsStates); ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        <?php foreach ($speakers as $speaker): ?>
+          <?php render_speaker_modal($speaker, true) ?>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  <?php endforeach; ?>
 
-            // Abrir el modal
-            document.querySelectorAll('.speaker-card__more-info').forEach(card => {
-                card.addEventListener('click', function() {
-                    const speakerCard = this.closest('.speaker-card');
-                    const targetId = speakerCard?.getAttribute('data-target-speaker');
-                    const modal = document.getElementById(targetId);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
 
-                    if (modal) {
-                        modal.classList.remove('modal-overlay--hide');
-                        modal.classList.add('modal-overlay--show');
-                        modal.style.display = 'flex';
-                    }
-                });
-            });
+      // Abrir el modal
+      document.querySelectorAll('.speaker-card__more-info').forEach(card => {
+        card.addEventListener('click', function() {
+          const speakerCard = this.closest('.speaker-card');
+          const targetId = speakerCard?.getAttribute('data-target-speaker');
+          const modal = document.getElementById(targetId);
 
-
-            // Función reutilizable para cerrar el modal con fadeOut
-            function closeModal(modal) {
-                modal.classList.remove('modal-overlay--show');
-                modal.classList.add('modal-overlay--hide');
-
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300); // tiempo de la animación CSS
-            }
-
-            // Cerrar el modal
-            document.querySelectorAll('.modal .modal__close-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const modal = btn.closest('.modal-overlay');
-                    if (modal) closeModal(modal);
-                });
-            });
-
-            // Cerrar el modal al hacer clic fuera del contenido
-            window.addEventListener('click', function(e) {
-                if (e.target.classList.contains('modal-overlay')) {
-                    closeModal(e.target);
-                }
-            });
+          if (modal) {
+            modal.classList.remove('modal-overlay--hide');
+            modal.classList.add('modal-overlay--show');
+            modal.style.display = 'flex';
+          }
         });
-    </script>
+      });
+
+
+      // Función reutilizable para cerrar el modal con fadeOut
+      function closeModal(modal) {
+        modal.classList.remove('modal-overlay--show');
+        modal.classList.add('modal-overlay--hide');
+
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300); // tiempo de la animación CSS
+      }
+
+      // Cerrar el modal
+      document.querySelectorAll('.modal .modal__close-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const modal = btn.closest('.modal-overlay');
+          if (modal) closeModal(modal);
+        });
+      });
+
+      // Cerrar el modal al hacer clic fuera del contenido
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal-overlay')) {
+          closeModal(e.target);
+        }
+      });
+    });
+  </script>
 
 </div>

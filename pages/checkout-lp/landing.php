@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 ?>
 
 <!DOCTYPE html>
@@ -28,12 +29,21 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/navbar-unreg.php') ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
   <main>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/event-numbers.php') ?>  
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/checkout-lp/buy-button.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/premium-content.php') ?>
-    
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/hello-module.php') ?>
+    <div class="landing-checkout-schedule">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+    </div>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/entry-plans.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/video-ticketing.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/vip-features.php') ?>
+    <?php
+    $gridVariant = 'long';
+    include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/grid-event-types.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faqs.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+    <?php
+    render_modal('modalVip', 'vipmodal',  'vip', true);
+    ?>
   </main>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
