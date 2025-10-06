@@ -26,16 +26,10 @@ $block = getScheduleBlock2($normalizedUrl);
   <div class="emms__container--lg">
     <div class="emms__calendar__title emms__fade-in">
       <h2>AGENDA EMMS DIGITAL TRENDS 2025</h2>
+      <p>
+        Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
+      </p>
 
-      <?php if ($block['block'] === 'digital-trends') : ?>
-        <p>
-          Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
-        </p>
-      <?php elseif ($block['block'] === 'digital-trends-registrado') : ?>
-        <p>
-          Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
-        </p>
-      <?php endif; ?>
     </div>
 
     <?php

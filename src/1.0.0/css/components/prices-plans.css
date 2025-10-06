@@ -51,6 +51,14 @@
   justify-content: center;
 }
 
+.emms__plans__card.emms__plans__card-landing {
+  max-width: 584px;
+}
+
+.emms__plans__card-landing .emms__plans__card__head__price__content {
+  margin: 0 auto;
+}
+
 .emms__plans__card {
   background: #fff;
   max-width: 375px;
