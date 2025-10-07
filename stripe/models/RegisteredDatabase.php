@@ -112,15 +112,15 @@ class RegisteredDatabase
             '', // phone
             '', // company
             '', // jobPosition
-            $ecommerceValue,
-            $ecommerceValue, // ecommerce-vip
-            $DTValue,
-            $DTValue, // digital-trends-vip
-            'automated_stripe', // source_utm
-            'automated_stripe', // medium_utm
-            'automated_stripe', // campaign_utm
-            'automated_stripe', // content_utm
-            'automated_stripe'  // term_utm
+            $ecommerceValue,         // ecommerce
+            $ecommerceValue,         // ecommerce-vip
+            $DTValue,                // digital-trends
+            $DTValue,                // digital-trends-vip
+            $registeredData['utm_source'] ?? '',
+            $registeredData['utm_medium'] ?? '',
+            $registeredData['utm_campaign'] ?? '',
+            $registeredData['utm_content'] ?? '',
+            $registeredData['utm_term'] ?? ''
         ];
 
         return Logger::withDatabase($this->db, function($db) use ($query, $params) {

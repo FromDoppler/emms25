@@ -76,10 +76,11 @@ class StripeCustomersController
 
         if ($existingUser) {
             $registeredModel->updateDTVIPByEmail($email);
-            return $existingUser['id'];
+            return ['id' => $existingUser['id'], 'isNew' => false];
         }
 
-        return $registeredModel->insertAutomatedRegistered($UserData);
+        $newId = $registeredModel->insertAutomatedRegistered($UserData);
+        return ['id' => $newId, 'isNew' => true];
     }
 
     private function processAndSaveSubscription($UserData)
@@ -105,27 +106,34 @@ class StripeCustomersController
         $email = $UserData['customer_email'] ?? 'unknown';
         $stripeModel = new StripeCustomersDatabase($this->db);
 
-        if ($stripeModel->getCustomerByEmail($email)) {
-            Logger::duplicate("customer_duplicate", ['email' => $email], 'STRIPE');
-            return null;
+        $existingCustomer = $stripeModel->getCustomerBySessionId($UserData['session_id']);
+        if ($existingCustomer) {
+            Logger::duplicate("customer_duplicate", ['email' => $email, 'session_id' => $UserData['session_id'] ?? null], 'STRIPE');
+            return false;
         }
 
         $stripeModel->insertCustomer($UserData);
         $stripeCustomerId = $this->db->lastInsertID();
 
-        $registeredId = $this->updateRegisteredUser($UserData);
+        $registeredResult = $this->updateRegisteredUser($UserData);
+        $registeredId = $registeredResult['id'];
+        $isNew = $registeredResult['isNew'];
 
         Logger::info("customer_upserted", [
             'registered_id' => $registeredId,
             'stripe_customer_id' => $stripeCustomerId,
-            'email' => $email
+            'email' => $email,
+            'is_new_user' => $isNew
         ], 'STRIPE');
 
-        $user = $this->CreateUserObj($UserData, LIST_LANDING_DIGITALT_VIP);
-        $user['final_price'] = $UserData['final_price'] ?? 0;
-        $user['payment_status'] = $UserData['payment_status'] ?? '';
-        $user['stripe'] = $UserData;
+        if ($isNew) {
+            // FREE → procesar secuencial
+            $user = $this->prepareUserDataFree($UserData, LIST_LANDING_DIGITALT);
+            $this->processAutomatedFreeUser($user, $email, ID_SPREADSHEET);
+        }
 
+        // VIP → devolver datos para encolado
+        $user = $this->prepareUserDataVip($UserData, LIST_LANDING_DIGITALT_VIP);
         return compact('registeredId', 'stripeCustomerId', 'user');
     }
 
@@ -209,6 +217,37 @@ class StripeCustomersController
         return $ok;
     }
 
+    private function processAutomatedFreeUser($user, $email, $spreadsheetId)
+    {
+        require_once 'models/SubscriberDopplerList.php';
+        $ok = true;
+
+        try {
+            saveSubscriptionSpreadSheet($user, $spreadsheetId);
+            Logger::info("spreadsheet_saved", ['email' => $email], 'AUTOMATED_FREE_USER');
+        } catch (Exception $e) {
+            Logger::error("spreadsheet_failed_direct", ['email' => $email, 'error' => $e->getMessage()], 'AUTOMATED_FREE_USER');
+            $ok = false;
+        }
+
+        try {
+            $doppler = new SubscriberDopplerList();
+            $result = $doppler->saveSubscription($user);
+            Logger::info("doppler_added", ['email' => $email, 'result' => $result], 'AUTOMATED_FREE_USER');
+        } catch (Exception $e) {
+            Logger::error("doppler_failed_direct", ['email' => $email, 'error' => $e->getMessage()], 'AUTOMATED_FREE_USER');
+            $ok = false;
+        }
+
+        if ($ok) {
+            Logger::success("subscription_completed_direct", ['email' => $email], 'AUTOMATED_FREE_USER');
+        } else {
+            Logger::warning("subscription_partial_direct", ['email' => $email], 'AUTOMATED_FREE_USER');
+        }
+
+        return $ok;
+    }
+
     private function publishJobToStreams($jobId, $email)
     {
         if (!class_exists('Redis')) return [];
@@ -261,22 +300,41 @@ class StripeCustomersController
         return $tiketTypeMap[$phaseToShow];
     }
 
-    private function CreateUserObj($UserData, $listId = LIST_LANDING_DIGITALT_VIP)
+    private function prepareUserDataVip($UserData, $listId)
+    {
+        $user = $this->CreateUserObj($UserData);
+        $user['list'] = $listId;
+        $user['subject'] = "=?UTF-8?B?" . base64_encode("🎟️ Tu entrada VIP al EMMS Digital Trends") . "?=";
+        $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
+        $user['final_price'] = $UserData['final_price'] ?? 0;
+        $user['payment_status'] = $UserData['payment_status'] ?? '';
+        $user['stripe'] = $UserData;
+        return $user;
+    }
+
+       private function prepareUserDataFree($UserData, $listId)
+    {
+        $user = $this->CreateUserObj($UserData);
+        $user['list'] = $listId;
+        $user['subject'] = "Bienvenido al EMMS Digital Trends";
+        $user['emms_ref'] = "AUTOMATED_FREE_USER";
+        return $user;
+    }
+
+    private function CreateUserObj($UserData)
     {
         $email = $UserData['customer_email'] ?? 'unknown';
         $currentEvent = getCurrentEvent();
 
         $encode_email = toHex(json_encode([
-            'userEmail' => $UserData['customer_email'],
+            'userEmail' => $email,
             'userEvents' => json_encode([$currentEvent['freeId'], $currentEvent['vipId']])
         ]));
-
-        $ticketType = $this->resolveTicketType(DIGITALTRENDS);
 
         $userObj = [
             'register' => date("Y-m-d h:i:s A"),
             'firstname' => $UserData['customer_name'],
-            'email' => $UserData['customer_email'],
+            'email' => $email,
             'company' => '',
             'jobPosition' => '',
             'phone' => '',
@@ -294,10 +352,8 @@ class StripeCustomersController
             'term_utm' => $UserData['utm_term'] ?? '',
             'origin' => $UserData['origin'] ?? '',
             'type' => $currentEvent['freeId'],
-            'ticketType' => $ticketType,
             'form_id' => "pre",
-            'list' => $listId,
-            'subject' => "=?UTF-8?B?" . base64_encode("🎟️ Tu entrada VIP al EMMS Digital Trends") . "?="
+            
         ];
 
         return $userObj;

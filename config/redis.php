@@ -1,5 +1,5 @@
 <?php
-if (!defined('USE_JOB_QUEUE')) define('USE_JOB_QUEUE', true);
+if (!defined('USE_JOB_QUEUE')) define('USE_JOB_QUEUE', false);
 #REDIS
 $REDIS_HOST = getenv("REDIS_HOST") ?: "redis";
 $REDIS_PORT = getenv("REDIS_PORT") ?: 6379;

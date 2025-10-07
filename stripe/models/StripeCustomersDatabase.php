@@ -60,4 +60,20 @@ class StripeCustomersDatabase
             'action' => 'get_customer_by_email'
         ], 'STRIPE');
     }
+
+    public function getCustomerBySessionId($sessionId)
+    {
+        $query = "SELECT * FROM stripe_customers WHERE session_id = ? LIMIT 1";
+
+        return Logger::withDatabase($this->db, function($db) use ($query, $sessionId) {
+            $result = $db->query($query, [$sessionId]);
+            $customers = $result->fetchAll();
+
+            return !empty($customers) ? $customers[0] : null;
+        }, [
+            'session_id' => $sessionId,
+            'table' => 'stripe_customers',
+            'action' => 'get_customer_by_session_id'
+        ], 'STRIPE');
+    }
 }
