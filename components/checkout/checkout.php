@@ -6,7 +6,7 @@
         <div class="emms__checkout__card">
             <div id="checkout"></div>
         </div>
-        <a href="./ecommerce-registrado.php" class="emms__checkout__back">← Volver al sitio</a>
+        <a href="./digital-trends-registrado.php" class="emms__checkout__back">← Volver al sitio</a>
     </div>
 </div>
 

@@ -58,3 +58,90 @@
     <a href="./digital-trends-registrado" class="emms__checkout__back">← Volver al sitio</a>
   </div>
 </div>
+
+<script>
+  const toggleSpinner = (show) => {
+    const spinner = document.getElementById('spinner');
+    if (show) spinner.classList.add('visible');
+    else spinner.classList.remove('visible');
+  };
+
+  const showCheckoutContainer = (show) => {
+    document.getElementById('checkout-container').style.display = show ? 'block' : 'none';
+  };
+
+const updateEvents = () => {
+  try {
+    const { vipId, freeId } = window.APP.EVENTS.CURRENT;
+    const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
+
+    // Usamos un Set para evitar duplicados
+    const updatedEvents = new Set(existingEvents);
+
+    if (vipId) updatedEvents.add(vipId);
+    if (freeId) updatedEvents.add(freeId);
+
+    localStorage.setItem('events', JSON.stringify([...updatedEvents]));
+  } catch (error) {
+    console.error('Error updating events:', error);
+    localStorage.clear();
+  }
+};
+
+
+// Genera dplrid en localStorage si no existe, basado en email y eventos actuales
+function toHex(str) {
+  return Array.from(new TextEncoder().encode(str))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+function getCustomerEmailFromSession(session) {
+  return session.customer_details.customer_email;
+}
+
+function createDplrIdIfNeeded(email) {
+  try {
+    if (!email) return;
+    if (localStorage.getItem('dplrid')) return;
+    const encodeEmail = toHex(email);
+    localStorage.setItem('dplrid', encodeEmail);
+  } catch (e) {
+    console.error('Error creating dplrid:', e);
+  }
+}
+  (async function initSuccess() {
+    toggleSpinner(true);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+
+
+    try {
+      const response = await fetch(`/services/fetch-session-status.php?${urlParams.toString()}`);
+      if (!response.ok) throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
+      const session = await response.json();
+
+      if (session.status === 'complete') {
+        document.getElementById('customerName').textContent = session.customer_details.customer_name;
+        document.getElementById('date').textContent = session.customer_details.date;
+        document.getElementById('amount').textContent = `${session.customer_details.currency} ${session.customer_details.final_price}`;
+        document.getElementById('ticketName').textContent = session.customer_details.ticket_name;
+
+        document.getElementById('success').classList.remove('hidden');
+        updateEvents();
+        const customerEmail = getCustomerEmailFromSession(session);
+        createDplrIdIfNeeded(customerEmail);
+
+        showCheckoutContainer(true);
+      } else {
+        throw new Error('Sesión incompleta');
+      }
+    } catch (error) {
+      console.error('Error en la inicialización del checkout:', error);
+      showCheckoutContainer(false);
+    } finally {
+      toggleSpinner(false);
+    }
+  })();
+</script>
