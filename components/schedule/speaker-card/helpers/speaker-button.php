@@ -30,6 +30,12 @@ function getExposeButtonData($speaker)
   ];
 }
 
+function shouldHideButton(array $speaker, bool $isRegistered, string $currentPath, string $targetPath = '/checkout-lp-landing'): bool
+{
+    $isVipButton =  ($speaker['exposes'] === 'workshop');
+    return $currentPath === $targetPath && !$isVipButton;
+}
+
 
 function getExposeButtonDataRegistered($speaker, $eventFase = 'pre')
 {
