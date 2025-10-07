@@ -1,13 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 
-// Leer body JSON
-$input = json_decode(file_get_contents('php://input'), true);
-if (!$input || !isset($input['customerEmail'])) {
-    http_response_code(400);
-    echo json_encode(['error' => 'customerEmail requerido']);
-    exit;
-}
+// Leer body JSON (email opcional)
+$input = json_decode(file_get_contents('php://input'), true) ?: [];
 
 // URL interna al Node
 $node_url = STRIPE_URL_SERVER . "/create-checkout-session";
