@@ -1,8 +1,12 @@
+<div class="loader-page--new visible" id="spinner">
+  <img src="/src/img/logoemms-nobg.png" class="loader-goemms" alt="Loader goemms">
+</div>
+
 <div class="emms__checkout">
-  <div class="emms__checkout__container emms__checkout__card__container--form emms__fade-in" id="checkout-container">
+  <div class="emms__checkout__container emms__checkout__card__container--form emms__fade-in" id="checkout-container" style="display:none;">
     <div class="emms__checkout__card">
       <img src="/src/img/logos/logo-emms-gray.png" alt="Emms Digital Trends 25">
-      <section id="success">
+      <section id="success" class="hidden">
         <div class="emms__checkout__container emms__checkout__card__container--success emms__fade-in">
           <div class="emms__checkout__card">
             <div class="emms__checkout__card__main">
