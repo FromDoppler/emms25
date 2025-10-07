@@ -13,16 +13,22 @@ $type = $_GET['type'];
 $imgName =  'certificadoemms2025-' . $type . '.png';
 
 if ($type === 'workshop') {
-    $workshopType = $_GET['workshoptype'];
-    $workshopMap = [
-        'laurabarreto-AZC173' => 'laurabarreto',
-        'luisbetancourt-XYZ436' => 'luisbetancourt',
-        'joseanmuñoz-QWE799' => 'joseanmuñoz',
-        'xavieridevik-JKL391' => 'xavieridevik',
-        'pablomoratinos-MNO644' => 'pablomoratinos',
-        'matiascarrera-ZPH295' => 'matiascarrera',
-    ];
-    $imgName = 'certificadoemms2025-' . $workshopMap[$workshopType] . '.png';
+  $workshopType = $_GET['workshoptype'];
+  $workshopMap = [
+    'anacirujano-KPL482' => 'anacirujano',
+    'pablorodriguez-XZM930' => 'pablorodriguez',
+    'alvarolopezherrera-QTN547' => 'alvarolopezherrera',
+    'fernandotellado-RGW825' => 'fernandotellado',
+    'natzirturrado-JHV621' => 'natzirturrado',
+    'marianokhatcherian-DFY308' => 'marianokhatcherian',
+    'mariamarques-WER916' => 'mariamarques',
+    'xiscolopez-BTP764' => 'xiscolopez',
+    'amandabozza-LQN582' => 'amandabozza',
+    'doppler-SCV409' => 'doppler',
+    'getlinko-ZHX273' => 'getlinko',
+  ];
+
+  $imgName = 'certificadoemms2025-' . $workshopMap[$workshopType] . '.png';
 }
 
 // Crear la imagen
