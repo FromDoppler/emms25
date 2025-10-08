@@ -27,7 +27,7 @@ if (shouldHideButton($speaker, $currentPath)) {
   <?php else: ?>
     <div class="speaker-card__cta">
       <a class="<?= $buttonClasses ?>" href="<?= $button['href'] ?>">
-        <?= $button['text'] ?> + <?= $currentPath ?>
+        <?= $button['text'] ?>
       </a>
     </div>
   <?php endif; ?>

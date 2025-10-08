@@ -80,7 +80,7 @@ function devMode() {
 }
 
 (async () => {
-    return devMode();
+    // return devMode();
     if (!verifyUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP)) return;
     const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
     const spinner = document.getElementById('spinner');

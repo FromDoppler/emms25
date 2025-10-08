@@ -138,7 +138,7 @@
   }
 
   (async function initSuccess() {
-    return devMode();
+    // return devMode();
     toggleSpinner(true);
 
     const urlParams = new URLSearchParams(window.location.search);
