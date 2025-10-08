@@ -9,6 +9,30 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 <head>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/head.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+  <script type="module">
+    const getLocalStorageEvents = () => {
+      let localStorageEvents = localStorage.getItem("events");
+      return localStorageEvents ? JSON.parse(localStorageEvents) : [];
+    };
+
+    const isVipUser = (eventType) => {
+      const events = getLocalStorageEvents();
+      return events.some((event) => event === eventType);
+    };
+    const toggleVipElements = () => {
+      const vipElements = document.querySelectorAll(".hidden--vip, .show--vip");
+      vipElements.forEach((element) => {
+        element.classList.add("toogle");
+      });
+    };
+    const toggleVipDigitalTrendsElements = () => {
+      const isDTVip = isVipUser('digital-trends25-vip');
+      if (isDTVip) {
+        toggleVipElements();
+      }
+    };
+    toggleVipDigitalTrendsElements();
+  </script>
 </head>
 
 <body class="emms__ecommerce emms__ecommerce-logueado">
@@ -17,7 +41,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
   <main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/checkout-lp/checkout-success.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+    <div class="landing-checkout-schedule">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+    </div>
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
   </main>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>

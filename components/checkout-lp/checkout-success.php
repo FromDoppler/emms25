@@ -12,15 +12,18 @@
             <div class="emms__checkout__card__main">
               <h2>¡Felicitaciones!</h2>
               <h2>Ya eres Asistente VIP 🚀</h2>
-              <p>En instantes recibirás un Email de Confirmación con los detalles de tu compra.</p>
-              <h4>Con tu pase premium accedes </h4>
+              <p>En instantes recibirás un Email de Confirmación con los <br> detalles de tu compra.</p>
+              <h4>Con tu pase premium accedes <br>
+                a estos beneficios:</h4>
               <ul class="emms__checkout__card__main__list">
-                <li>Cuenta gratuita de Doppler.</li>
-                <li>Workshops prácticos.</li>
-                <li>Sesiones de Networking.</li>
-                <li>Certificado de asistencia.</li>
+                <li>Workshops en vivo con referentes internacionales.</li>
+                <li>Talleres prácticos on-demand de EMMS anteriores.</li>
+                <li>Cuenta gratuita en Doppler por 6 meses (válido para <br> cuentas nuevas).</li>
+                <li>Recursos y materiales exclusivos para tu negocio.</li>
               </ul>
+              <small>¡Y mucho más!</small>
             </div>
+
             <div class="emms__checkout__card__aside">
               <h3>Detalle de tu compra</h3>
               <table>
@@ -64,7 +67,6 @@
 </div>
 
 <script>
-
   const toggleSpinner = (show) => {
     const spinner = document.getElementById('spinner');
     if (show) spinner.classList.add('visible');
@@ -75,48 +77,51 @@
     document.getElementById('checkout-container').style.display = show ? 'block' : 'none';
   };
 
-const updateEvents = () => {
-  try {
-    const { vipId, freeId } = window.APP.EVENTS.CURRENT;
-    const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
+  const updateEvents = () => {
+    try {
+      const {
+        vipId,
+        freeId
+      } = window.APP.EVENTS.CURRENT;
+      const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
 
-    // Usamos un Set para evitar duplicados
-    const updatedEvents = new Set(existingEvents);
+      // Usamos un Set para evitar duplicados
+      const updatedEvents = new Set(existingEvents);
 
-    if (vipId) updatedEvents.add(vipId);
-    if (freeId) updatedEvents.add(freeId);
+      if (vipId) updatedEvents.add(vipId);
+      if (freeId) updatedEvents.add(freeId);
 
-    localStorage.setItem('events', JSON.stringify([...updatedEvents]));
-  } catch (error) {
-    console.error('Error updating events:', error);
-    localStorage.clear();
+      localStorage.setItem('events', JSON.stringify([...updatedEvents]));
+    } catch (error) {
+      console.error('Error updating events:', error);
+      localStorage.clear();
+    }
+  };
+
+
+  // Genera dplrid en localStorage si no existe, basado en email y eventos actuales
+  function toHex(str) {
+    return Array.from(new TextEncoder().encode(str))
+      .map(b => b.toString(16).padStart(2, '0'))
+      .join('');
   }
-};
 
-
-// Genera dplrid en localStorage si no existe, basado en email y eventos actuales
-function toHex(str) {
-  return Array.from(new TextEncoder().encode(str))
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
-}
-
-function getCustomerEmailFromSession(session) {
-  return session.customer_details.customer_email;
-}
-
-function createDplrIdIfNeeded(email) {
-  try {
-    if (!email) return;
-    if (localStorage.getItem('dplrid')) return;
-    const encodeEmail = toHex(email);
-    localStorage.setItem('dplrid', encodeEmail);
-  } catch (e) {
-    console.error('Error creating dplrid:', e);
+  function getCustomerEmailFromSession(session) {
+    return session.customer_details.customer_email;
   }
-}
 
-const devMode = () => {
+  function createDplrIdIfNeeded(email) {
+    try {
+      if (!email) return;
+      if (localStorage.getItem('dplrid')) return;
+      const encodeEmail = toHex(email);
+      localStorage.setItem('dplrid', encodeEmail);
+    } catch (e) {
+      console.error('Error creating dplrid:', e);
+    }
+  }
+
+  const devMode = () => {
     const urlParams = new URLSearchParams(window.location.search);
     document.getElementById('customerName').textContent = 'Usuario de Prueba';
     document.getElementById('date').textContent = new Date().toLocaleDateString('es-AR');
@@ -133,7 +138,7 @@ const devMode = () => {
   }
 
   (async function initSuccess() {
-    //return devMode();
+    return devMode();
     toggleSpinner(true);
 
     const urlParams = new URLSearchParams(window.location.search);

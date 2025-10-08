@@ -12,7 +12,7 @@ $buttonClasses = 'speaker-card__button';
 
 
 // Parche para ocultar el boton en la landing de checkout si no es VIP
-if (shouldHideButton($speaker, $isRegistered, $currentPath)) {
+if (shouldHideButton($speaker, $currentPath)) {
   $button = null;
 }
 ?>
@@ -27,7 +27,7 @@ if (shouldHideButton($speaker, $isRegistered, $currentPath)) {
   <?php else: ?>
     <div class="speaker-card__cta">
       <a class="<?= $buttonClasses ?>" href="<?= $button['href'] ?>">
-        <?= $button['text'] ?>
+        <?= $button['text'] ?> + <?= $currentPath ?>
       </a>
     </div>
   <?php endif; ?>

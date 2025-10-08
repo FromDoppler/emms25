@@ -6,7 +6,7 @@
         <div class="emms__checkout__card">
             <div id="checkout"></div>
         </div>
-        <a href="./digital-trends-registrado.php" class="emms__checkout__back">← Volver al sitio</a>
+        <a href="./checkout-lp-landing" class="emms__checkout__back">← Volver al sitio</a>
     </div>
 </div>
 
@@ -80,7 +80,7 @@ function devMode() {
 }
 
 (async () => {
-    //return devMode();
+    return devMode();
     if (!verifyUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP)) return;
     const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
     const spinner = document.getElementById('spinner');

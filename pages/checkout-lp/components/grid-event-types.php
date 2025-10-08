@@ -48,7 +48,7 @@ if (!function_exists('renderGridItems')) {
       <?php renderGridItems($gridVariant); ?>
     </ul>
     <div class="grid__footer">
-        <a href="#registro" class="emms__cta emms__fade-in-animation eventHiddenElements">COMPRA TU ENTRADA</a>
+        <a href="/checkout-lp" class="emms__cta emms__fade-in-animation eventHiddenElements">COMPRA TU ENTRADA</a>
     </div>
   </div>
 </section>

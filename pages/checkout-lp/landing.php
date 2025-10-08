@@ -42,7 +42,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faqs.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     <?php
-    render_modal('modalVip', 'vipmodal',  'vip', true);
+    render_modal('modalVipLanding', 'vipmodal',  'vip', true);
     ?>
   </main>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>

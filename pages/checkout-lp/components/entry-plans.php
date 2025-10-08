@@ -1,12 +1,12 @@
 <div class="emms__bg-dark-gradient--2 ">
   <!-- Prices plans -->
-  <div class="emms__plans" id="entradas">
+  <div class="emms__plans emms__plans--landing" id="entradas">
     <div class="emms__container--lg">
       <div class="emms__plans__title">
         <h2>EMMS VIP: Workshops y Conferencias para impulsar tu negocio</h2>
         <p>Compra tu entrada y accede a: Conferencias, Workshops en vivo y on-demand de ediciones anteriores, <br>
-           Recursos descargables, ¡y mucho más! También te regalamos una cuenta <br>
-            en Doppler por 6 meses (válido para cuentas nuevas).</p>
+          Recursos descargables, ¡y mucho más! También te regalamos una cuenta <br>
+          en Doppler por 6 meses (válido para cuentas nuevas).</p>
       </div>
       <div class="emms__plans__cards">
         <div class="emms__plans__card emms__plans__card--vip emms__plans__card-landing">
@@ -25,8 +25,10 @@
             <ul>
               <li>Cuenta gratuita en Doppler durante
                 6 meses (válido para cuentas nuevas).</li>
-              <li> Workshops prácticos </li>
+              <li> Workshops prácticos en vivo con referentes
+                de la industria.</li>
               <li>Acceso de por vida a los Workshops</li>
+              <li>Acceso a todos los Workshops de ediciones anteriores del EMMS.</li>
               <li>Certificado de asistencia a Workshops</li>
               <li>Más guías con herramientas
                 y tips exclusivos</li>
