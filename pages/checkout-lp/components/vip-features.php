@@ -1,5 +1,5 @@
   <!-- Features -->
-  <div class="features">
+  <div class="features features--landing">
     <div class="features__item emms__fade-in features__item--reverse">
       <div class="emms__container--lg">
         <div class="features__item__image">
@@ -10,14 +10,11 @@
           </h3>
           <p>Accede a:</p>
           <ul class="features__item__text__list">
-            <li>Workshops con referentes internacionales.</li>
-            <li>Cuenta gratuita en Doppler por 6 meses (válido para cuentas nuevas).</li>
+            <li>Workshops en vivo y on-demand con referentes internacionales.</li>
+            <li>Cuenta gratuita en Doppler por 6 meses (válido para <br> cuentas nuevas).</li>
             <li>Estrategias y herramientas que transformarán tu negocio.</li>
           </ul>
-          <p class="features__item__text__price features__item__text__price--live">
-            <em>¡POR SOLO</em><small>USD</small>9<small>.99!</small>
-          </p>
-          <a href="#entradas" class="emms__cta emms__cta--terciary"> COMPRA TU ENTRADA AHORA
+          <a href="/checkout-lp" class="emms__cta emms__cta--terciary"> COMPRA TU ENTRADA
           </a>
         </div>
       </div>

@@ -22,6 +22,10 @@
   margin: 0 auto 60px;
 }
 
+.emms__plans--landing .emms__plans__title {
+  max-width: unset;
+}
+
 .emms__plans__title h2 {
   font-size: 40px;
   line-height: 44px;

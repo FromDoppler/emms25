@@ -107,6 +107,10 @@
   max-width: 440px;
 }
 
+.features--landing .features__item__text__list li {
+  max-width: 460px;
+}
+
 .features__item__text__list li {
   font-size: 16px;
   line-height: 18px;

@@ -32,6 +32,14 @@
   box-sizing: border-box;
 }
 
+.emms__checkout__card small {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+}
+
 .emms__checkout__card img {
   width: auto;
   height: 56px;
@@ -48,6 +56,14 @@
 .emms__checkout__card__container--error .emms__checkout__card {
   text-align: center;
   padding: 80px 60px;
+}
+
+.emms__checkout__card__main span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
 }
 
 .emms__checkout__card__container--success .emms__checkout__card__main {
@@ -109,16 +125,16 @@
 .emms__checkout__card__main__list {
   max-width: 500px;
   width: 100%;
-  margin: 40px 0 0 0;
+  margin: 15px 0 0 0;
 }
 
 .emms__checkout__card__main__list li {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   color: #333333;
 }
 
