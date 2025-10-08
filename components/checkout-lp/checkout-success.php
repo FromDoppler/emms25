@@ -64,6 +64,7 @@
 </div>
 
 <script>
+
   const toggleSpinner = (show) => {
     const spinner = document.getElementById('spinner');
     if (show) spinner.classList.add('visible');
@@ -114,12 +115,29 @@ function createDplrIdIfNeeded(email) {
     console.error('Error creating dplrid:', e);
   }
 }
+
+const devMode = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('customerName').textContent = 'Usuario de Prueba';
+    document.getElementById('date').textContent = new Date().toLocaleDateString('es-AR');
+    document.getElementById('amount').textContent = 'USD 99';
+    document.getElementById('ticketName').textContent = 'VIP Pass';
+
+    document.getElementById('success').classList.remove('hidden');
+    updateEvents();
+    createDplrIdIfNeeded('test@example.com');
+
+    showCheckoutContainer(true);
+    toggleSpinner(false);
+    return;
+  }
+
   (async function initSuccess() {
+    //return devMode();
     toggleSpinner(true);
 
     const urlParams = new URLSearchParams(window.location.search);
     const sessionId = urlParams.get('session_id');
-
 
     try {
       const response = await fetch(`/services/fetch-session-status.php?${urlParams.toString()}`);
