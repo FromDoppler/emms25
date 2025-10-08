@@ -12,13 +12,10 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
-const spinner = document.getElementById('spinner');
 
 function showSpinner(show) {
     spinner.classList.toggle('visible', show);
 }
-
 
 function getUtmParams() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -62,7 +59,31 @@ async function initialize() {
     }
 }
 
+function verifyUser(event) {
+  const events = JSON.parse(localStorage.getItem("events") || "[]");
+  if (events.includes(event)) {
+    window.location.href = "/";
+    return false;
+  }
+  return true;
+}
+
+function devMode() {
+  document.getElementById('checkout').innerHTML = `
+    <div style="padding:40px;text-align:center;">
+      <h2 style="color:#666;margin-bottom:20px;">Checkout temporalmente no disponible</h2>
+      <p style="color:#999;margin-bottom:30px;">Somos el evento mas grande de LATAM.</p>
+      <a href="/checkout-lp-success" style="display:inline-block;padding:12px 24px;background:#5469d4;color:white;text-decoration:none;border-radius:4px;margin:10px;">Ver página de éxito</a>
+    </div>
+  `;
+  return true;
+}
+
 (async () => {
+    //return devMode();
+    if (!verifyUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP)) return;
+    const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
+    const spinner = document.getElementById('spinner');
     showSpinner(true);
     await initialize();
     showSpinner(false);
