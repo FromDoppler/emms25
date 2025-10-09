@@ -1,7 +1,6 @@
 "use strict";
 
-export const isQADomain = () =>
-  window.location.host === "qa.goemms.com" || window.location.host === "localhost";
+export const isQADomain = () => window.location.host === "qa.goemms.com" || window.location.host === "localhost";
 
 export const createDownloadLink = (blob, fileName) => {
   const urlCreator = window.URL || window.webkitURL;
