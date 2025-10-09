@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
+
 $isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
 $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 ?>
@@ -45,6 +47,10 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php') ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     </main>
+    <?php
+    // Form captador
+    render_modal('form-modal', 'form',  'form', true);
+    ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
 
