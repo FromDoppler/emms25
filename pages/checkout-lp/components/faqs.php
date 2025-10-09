@@ -21,17 +21,17 @@ $faqItems = [
     [
       "question" => "💵 ¿Tengo que pagar inscripción?",
       "answer" => "
-    Si. El EMMS Digital Trends tiene un pase VIP a un precio de 9.99 USD, válido para acceder a los Workshops en vivo con referentes internacionales del 30 de octubre.
-    <br><br>
-    Además incluye:
-    <ul>
-      <li>Acceso a todos los Workshops de ediciones anteriores del EMMS.</li>
-      <li>Una cuenta gratuita en Doppler por 6 meses.</li>
-      <li>Biblioteca de Recursos.</li>
-      <li>Descuentos y premios exclusivos.</li>
-    </ul>
-    Con tu entrada VIP también podrás disfrutar las Conferencias gratuitas del line up principal del evento, los días 28 y 29 de octubre.
-  "
+                  Si. El EMMS Digital Trends tiene un pase VIP a un precio de 9.99 USD, válido para acceder a los Workshops en vivo con referentes internacionales del 30 de octubre.
+                  <br><br>
+                  Además incluye:
+                  <ul>
+                    <li>Acceso a todos los Workshops de ediciones anteriores del EMMS.</li>
+                    <li>Una cuenta gratuita en Doppler por 6 meses.</li>
+                    <li>Biblioteca de Recursos.</li>
+                    <li>Descuentos y premios exclusivos.</li>
+                  </ul>
+                  Con tu entrada VIP también podrás disfrutar las Conferencias gratuitas del line up principal del evento, los días 28 y 29 de octubre.
+      "
     ],
   ],
   [
