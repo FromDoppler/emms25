@@ -1,21 +1,6 @@
 "use strict";
 
-import { downloadWorkshopCertificate, getUrlWorkshop } from "./workshop.js";
-
-const isQADomain = () => {
-  return window.location.host === "qa.goemms.com" || window.location.host === "localhost";
-};
-
-const createDownloadLink = (blob, fileName) => {
-  const urlCreator = window.URL || window.webkitURL;
-  const imageUrl = urlCreator.createObjectURL(blob);
-  const tag = document.createElement("a");
-  tag.href = imageUrl;
-  tag.download = fileName;
-  document.body.appendChild(tag);
-  tag.click();
-  document.body.removeChild(tag);
-};
+import { createDownloadLink, isQADomain } from "./utils/certificateUtils.js";
 
 const buildCertificateUrl = (fullname, type) => {
   const encodeFullname = encodeURI(fullname);

@@ -1,3 +1,5 @@
+import { createDownloadLink, isQADomain } from "./utils/certificateUtils.js";
+
 const WORKSHOPS = [
   "anacirujano-KPL482",
   "pablorodriguez-XZM930",
