@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/during/ecommerce/certificate/certificate-modal.php') ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/digital-trends/certificate/certificate-modal.php') ?>
 
 <div class="live--certificate--container" id="certificate-container">
     <div class="certificate--modal-info">
