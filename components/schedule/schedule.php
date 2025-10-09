@@ -27,7 +27,12 @@ $block = getScheduleBlock2($normalizedUrl);
     <div class="emms__calendar__title emms__fade-in">
       <h2>AGENDA EMMS DIGITAL TRENDS 2025</h2>
       <p>
-        Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
+        <?php if ($normalizedUrl === '/checkout-lp-landing'): ?>
+          Conoce a las figuras internacionales que se sumarán a los Workshops privados del 30 de octubre <br>
+          y todas las Conferencias gratuitas que podrás disfrutar los días 28 y 29 por ser VIP.
+        <?php else: ?>
+          Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
+        <?php  endif; ?>
       </p>
 
     </div>
