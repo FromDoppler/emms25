@@ -39,7 +39,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     <?php
     $gridVariant = 'long';
     include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/grid-event-types.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faqs.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/faqs.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
     <?php
     render_modal('modalVipLanding', 'vipmodal',  'vip', true);

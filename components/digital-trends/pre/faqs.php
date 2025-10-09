@@ -26,7 +26,7 @@ $faqItems = [
   ],
   [
     "question" => "💻 ¿Cómo accedo a la transmisión del EMMS si ya me registré?",
-    "answer" => "Podrás seguir la transmisión del EMMS directamente desde el Sitio Web en la fecha del evento, accediendo a EMMS E-commerce."
+    "answer" => "Podrás seguir la transmisión del EMMS directamente desde el Sitio Web en la fecha del evento, accediendo a EMMS Digital Trends."
   ],
   [
     "question" => "🎥 ¿Están disponibles las grabaciones después del evento?",

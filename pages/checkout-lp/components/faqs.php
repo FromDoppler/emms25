@@ -18,25 +18,29 @@ $faqItems = [
   ],
   [
     "question" => "💵 ¿Tengo que pagar inscripción?",
-    "answer" => "Si. El EMMS Digital Trends tiene un pase VIP a un precio de 9.99 USD, válido para acceder a los Workshops en vivo con referentes internacionales del 30 de octubre.
-
-Además incluye:
-
-Acceso a todos los Workshops de ediciones anteriores del EMMS.
-Una cuenta gratuita en Doppler por 6 meses.
-Biblioteca de Recursos.
-Descuentos y premios exclusivos.
-
-Con tu entrada VIP también podrás disfrutar las Conferencias gratuitas del line up principal del evento, los días 28 y 29 de octubre.
-"
+    [
+      "question" => "💵 ¿Tengo que pagar inscripción?",
+      "answer" => "
+    Si. El EMMS Digital Trends tiene un pase VIP a un precio de 9.99 USD, válido para acceder a los Workshops en vivo con referentes internacionales del 30 de octubre.
+    <br><br>
+    Además incluye:
+    <ul>
+      <li>Acceso a todos los Workshops de ediciones anteriores del EMMS.</li>
+      <li>Una cuenta gratuita en Doppler por 6 meses.</li>
+      <li>Biblioteca de Recursos.</li>
+      <li>Descuentos y premios exclusivos.</li>
+    </ul>
+    Con tu entrada VIP también podrás disfrutar las Conferencias gratuitas del line up principal del evento, los días 28 y 29 de octubre.
+  "
+    ],
   ],
   [
     "question" => "✍ ¿Puedo apuntarme a más de una edición?",
-    "answer" => "Por ahora, puedes registrarte de forma gratuita en el EMMS Digital Trends, que tendrá lugar en octubre de 2025. Cuando se acerque la fecha del EMMS E-commerce 2026, te avisaremos por Email para que no te pierdas nada :)"
+    "answer" => "Por ahora, puedes registrarte en el EMMS Digital Trends, que tendrá lugar en octubre de 2025. Cuando se acerque la fecha del EMMS E-commerce 2026, te avisaremos por Email para que no te pierdas nada :)"
   ],
   [
     "question" => "💻 ¿Cómo accedo a la transmisión del EMMS si ya me registré?",
-    "answer" => "Podrás seguir la transmisión del EMMS directamente desde el Sitio Web en la fecha del evento, accediendo a EMMS E-commerce."
+    "answer" => "Podrás seguir la transmisión del EMMS directamente desde el Sitio Web en la fecha del evento, accediendo a EMMS Digital Trends."
   ],
   [
     "question" => "🎥 ¿Están disponibles las grabaciones después del evento?",
