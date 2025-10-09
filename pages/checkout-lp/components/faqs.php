@@ -18,9 +18,7 @@ $faqItems = [
   ],
   [
     "question" => "💵 ¿Tengo que pagar inscripción?",
-    [
-      "question" => "💵 ¿Tengo que pagar inscripción?",
-      "answer" => "
+    "answer" => "
                   Si. El EMMS Digital Trends tiene un pase VIP a un precio de 9.99 USD, válido para acceder a los Workshops en vivo con referentes internacionales del 30 de octubre.
                   <br><br>
                   Además incluye:
@@ -32,7 +30,6 @@ $faqItems = [
                   </ul>
                   Con tu entrada VIP también podrás disfrutar las Conferencias gratuitas del line up principal del evento, los días 28 y 29 de octubre.
       "
-    ],
   ],
   [
     "question" => "✍ ¿Puedo apuntarme a más de una edición?",
