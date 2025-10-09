@@ -1,28 +1,36 @@
-import { eventsType } from "../../../src/1.0.0/js/enums/eventsType.enum.js";
-import { modalIds } from "./modalIds.enum.js";
+export const createCanShowModal = async () => {
+  const version = window.VERSION || "1.0.0";
+  const eventsModule = await import(`/src/${version}/js/enums/eventsType.enum.js`);
+  const { eventsType } = eventsModule;
 
-const getUserEvents = () => {
-  try {
-    const raw = localStorage.getItem("events");
-    return raw ? JSON.parse(raw) : [];
-  } catch {
-    return [];
-  }
-};
-export const canShowModal = (modalId) => {
-  const events = getUserEvents();
+  const { modalIds } = await import("./modalIds.enum.js");
 
-  switch (modalId) {
-    case modalIds.VIP:
-      return !events.includes(eventsType.DIGITALTRENDSVIP);
+  const getUserEvents = () => {
+    try {
+      const raw = localStorage.getItem("events");
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  };
 
-    case modalIds.FORM:
-      return events.includes(eventsType.ECOMMERCE) && !events.includes(eventsType.DIGITALTRENDS);
+  const canShowModal = (modalId) => {
+    const events = getUserEvents();
 
-    case modalIds.EXTRA_DATA:
-      return true;
+    switch (modalId) {
+      case modalIds.VIP:
+        return !events.includes(eventsType.DIGITALTRENDSVIP);
 
-    default:
-      return true;
-  }
+      case modalIds.FORM:
+        return events.includes(eventsType.ECOMMERCE) && !events.includes(eventsType.DIGITALTRENDS);
+
+      case modalIds.EXTRA_DATA:
+        return true;
+
+      default:
+        return true;
+    }
+  };
+
+  return canShowModal;
 };

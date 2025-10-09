@@ -1,14 +1,16 @@
 import { openModal } from "./openModal.js";
-import { canShowModal } from "./scripts/modalConditions.js";
+import { createCanShowModal } from "./scripts/modalConditions.js";
 
 const EXIT_TOP_THRESHOLD_PX = 8;
 const SHOW_ONCE_PER_SESSION = true;
 
-const initExitIntentCapture = () => {
-  document.querySelectorAll('.popup-modal[data-captor="1"]').forEach(setupExitIntentForModal);
+const initExitIntentCapture = async () => {
+  const canShowModal = await createCanShowModal();
+
+  document.querySelectorAll('.popup-modal[data-captor="1"]').forEach((modalEl) => setupExitIntentForModal(modalEl, canShowModal));
 };
 
-const setupExitIntentForModal = (modalEl) => {
+const setupExitIntentForModal = (modalEl, canShowModal) => {
   const modalId = modalEl.id;
   if (!modalId) return;
 
@@ -60,5 +62,5 @@ const setupExitIntentForModal = (modalEl) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  initExitIntentCapture();
+  initExitIntentCapture().catch((err) => console.error("Exit intent init error:", err));
 });

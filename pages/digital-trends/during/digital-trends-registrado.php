@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
+
 $isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
 $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 ?>
@@ -35,6 +37,10 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
   } else {
     include($_SERVER['DOCUMENT_ROOT'] . '/pages/digital-trends/during/combinations/dtr-transition.php');
   }
+  ?>
+  <?php
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/extraDataCaptor.php');
+  render_modal('modalVip', 'vipmodal',  'vip', true);
   ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
   <script src="src/<?= VERSION ?>/js/newDate.js" type="module"></script>
