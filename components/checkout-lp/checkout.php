@@ -12,7 +12,7 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-
+(async () => {
 function showSpinner(show) {
     spinner.classList.toggle('visible', show);
 }
@@ -79,7 +79,7 @@ function devMode() {
   return true;
 }
 
-(async () => {
+
     // return devMode();
     if (!verifyUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP)) return;
     const stripe = Stripe(`<?= STRIPE_PUBLIC_KEY; ?>`);
