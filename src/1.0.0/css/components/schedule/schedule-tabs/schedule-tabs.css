@@ -31,7 +31,7 @@
 }
 
 .landing-checkout-schedule .schedule__tabs .schedule__tab[aria-selected="true"] {
-  background: linear-gradient(90deg, #D59501 0%, #DCC958 100%);
+  background: linear-gradient(90deg, #d59501 0%, #dcc958 100%);
 }
 
 .schedule__tabs .schedule__tab[aria-selected="false"] {
