@@ -30,6 +30,10 @@
   background: linear-gradient(240.27deg, #5f08b5 -9.75%, #bd7aff 155.76%);
 }
 
+.landing-checkout-schedule .schedule__tabs .schedule__tab[aria-selected="true"] {
+  background: linear-gradient(90deg, #d59501 0%, #dcc958 100%);
+}
+
 .schedule__tabs .schedule__tab[aria-selected="false"] {
   color: #ffffff;
   border-radius: 8px 8px 0px 0px;

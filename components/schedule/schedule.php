@@ -29,10 +29,10 @@ $block = getScheduleBlock2($normalizedUrl);
       <p>
         <?php if ($normalizedUrl === '/checkout-lp-landing'): ?>
           Conoce a las figuras internacionales que se sumarán a los Workshops privados del 30 de octubre <br>
-          y todas las Conferencias gratuitas que podrás disfrutar los días 28 y 29 por ser VIP.
+          y el line up de todas las Conferencias gratuitas que también podrás disfrutar los días 28 y 29 de octubre.
         <?php else: ?>
           Conoce a las figuras internacionales que participan del evento de Marketing Digital más esperado del año.
-        <?php  endif; ?>
+        <?php endif; ?>
       </p>
 
     </div>
