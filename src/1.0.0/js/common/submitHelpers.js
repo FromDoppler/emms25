@@ -76,8 +76,8 @@ export const toggleButtonLoading = (form, isLoading) => {
   if (button) button.classList.toggle("button--loading", isLoading);
 };
 
-export const trackMetaPixelRegistration = () => {
+export const trackMetaPixel = (event) => {
   if (typeof fbq === "function") {
-    fbq("track", "CompleteRegistration");
+    fbq("track", event);
   }
 };

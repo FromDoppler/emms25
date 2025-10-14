@@ -16,7 +16,7 @@ const redirectToRegisteredPage = () => {
     window.location.href = slug && slug !== "null" ? `/${baseUrl}?slug=${slug}` : `/${baseUrl}`;
   } else {
     // Default: go to event's registered page
-    window.location.href = `/${window.APP.EVENTS.CURRENT.pages.registered.url}`;
+    window.location.href = window.APP.utils.addParams(`/${window.APP.EVENTS.CURRENT.pages.registered.url}`);
   }
 };
 
