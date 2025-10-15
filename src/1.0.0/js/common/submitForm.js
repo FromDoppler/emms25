@@ -2,7 +2,7 @@
 
 import { validateForm } from "./formsValidators.js";
 import { toHex, fromHex } from "./decodeEmail.js";
-import { buildUserData, setEventInLocalStorage, extractFormData, toggleButtonLoading, trackMetaPixelRegistration } from "./submitHelpers.js";
+import { buildUserData, setEventInLocalStorage, extractFormData, toggleButtonLoading, trackMetaPixel } from "./submitHelpers.js";
 
 const sendUserData = async (userData) => {
   const endPoint = "./services/register.php";
@@ -15,7 +15,7 @@ const sendUserData = async (userData) => {
     });
 
     if (fetchResp.ok) {
-      trackMetaPixelRegistration();
+      trackMetaPixel("CompleteRegistration");
     }
 
     return { fetchResp, encodeEmail: userData.encodeEmail };

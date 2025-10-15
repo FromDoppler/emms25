@@ -90,7 +90,7 @@ class StripeCustomersController
         $userContext = $this->saveCustomerAndPrepareUser($UserData);
 
         if (!$userContext) {
-            return false;
+            return 'readonly';
         }
 
         return $this->enqueueOrFallback(
@@ -353,7 +353,6 @@ class StripeCustomersController
             'origin' => $UserData['origin'] ?? '',
             'type' => $currentEvent['freeId'],
             'form_id' => "pre",
-            
         ];
 
         return $userObj;

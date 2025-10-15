@@ -66,7 +66,9 @@
   </div>
 </div>
 
-<script>
+<script type="module">
+  import { trackMetaPixel } from '/src/<?= VERSION ?>/js/common/submitHelpers.js';
+
   const toggleSpinner = (show) => {
     const spinner = document.getElementById('spinner');
     if (show) spinner.classList.add('visible');
@@ -159,6 +161,10 @@
         updateEvents();
         const customerEmail = getCustomerEmailFromSession(session);
         createDplrIdIfNeeded(customerEmail);
+
+        if (session.is_first_time) {
+          trackMetaPixel("EMMS_VIP");
+        }
 
         showCheckoutContainer(true);
       } else {
