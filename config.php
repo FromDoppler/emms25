@@ -155,5 +155,4 @@ $duringDaysArray = array(
         "twitch" => "fromdoppler"
     )
 );
-
 require_once (__DIR__ . '/config/redis.php');
