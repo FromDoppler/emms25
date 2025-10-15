@@ -328,7 +328,7 @@ class StripeCustomersController
     {
         $user = $this->CreateUserObj($UserData);
         $user['list'] = $listId;
-        $user['subject'] = $this->resolveDynamicSubject('vip');;
+        $user['subject'] = $this->resolveDynamicSubject('vip');
         $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
         $user['final_price'] = $UserData['final_price'] ?? 0;
         $user['payment_status'] = $UserData['payment_status'] ?? '';
