@@ -106,7 +106,7 @@ if (!defined('SUBJECT_POST_ECOMMERCE')) define('SUBJECT_POST_ECOMMERCE', 'Ya pue
 ## DT
 if (!defined('SUBJECT_PRE_DIGITALT')) define('SUBJECT_PRE_DIGITALT', '🎉 Tienes tu lugar en el EMMS Digital Trends 2025');
 if (!defined('SUBJECT_DURING_DIGITALT')) define('SUBJECT_DURING_DIGITALT', 'Ya eres parte del EMMS Digital Trends 2025');
-if (!defined('SUBJECT_POST_DIGITALT')) define('SUBJECT_POST_DIGITALT', 'Ya puedes ver lo que fue el EMMSDT 2024');
+if (!defined('SUBJECT_POST_DIGITALT')) define('SUBJECT_POST_DIGITALT', 'Ya puedes ver lo que fue el EMMS Digital Trends 2025');
 
 #GOOGLE SPREADSHEET
 //https://docs.google.com/spreadsheets/d/1irsIKBdRzGlmeGpUlJjFcSJFaYZLN9ujvY-cTYpyeM8/edit#gid=0
