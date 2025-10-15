@@ -302,47 +302,47 @@ class StripeCustomersController
 
     private function resolveDynamicSubject(string $type): string
     {
-      $phaseData = processPhaseToShow(DIGITALTRENDS);
-      $phaseToShow = $phaseData['phaseToShow'] ?? 'pre';
+        $phaseData = processPhaseToShow(DIGITALTRENDS);
+        $phaseToShow = $phaseData['phaseToShow'] ?? 'pre';
 
-      $subjects = [
-        'free' => [
-          'pre' => "🎉 Tienes tu lugar en el EMMS Digital Trends 2025",
-          'during' => "🎉 Ya eres parte del EMMS Digital Trends 2025",
-          'post' => "Revive lo mejor del EMMS Digital Trends 2025 💡",
-        ],
-        'vip' => [
-          'pre' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
-          'during' => "🎟️ Ya eres VIP en el EMMS Digital Trends 2025",
-          'post' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
-        ],
-      ];
+        $subjects = [
+          'free' => [
+            'pre' => "🎉 Tienes tu lugar en el EMMS Digital Trends 2025",
+            'during' => "🎉 Ya eres parte del EMMS Digital Trends 2025",
+            'post' => "Revive lo mejor del EMMS Digital Trends 2025 💡",
+          ],
+          'vip' => [
+            'pre' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
+            'during' => "🎟️ Ya eres VIP en el EMMS Digital Trends 2025",
+            'post' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
+          ],
+        ];
 
-      $selected = $subjects[$type][$phaseToShow] ?? $subjects[$type]['pre'];
+        $selected = $subjects[$type][$phaseToShow] ?? $subjects[$type]['pre'];
 
-      return "=?UTF-8?B?" . base64_encode($selected) . "?=";
+        return "=?UTF-8?B?" . base64_encode($selected) . "?=";
     }
 
 
     private function prepareUserDataVip($UserData, $listId)
     {
-      $user = $this->CreateUserObj($UserData);
-      $user['list'] = $listId;
-      $user['subject'] = $this->resolveDynamicSubject('vip');
-      $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
-      $user['final_price'] = $UserData['final_price'] ?? 0;
-      $user['payment_status'] = $UserData['payment_status'] ?? '';
-      $user['stripe'] = $UserData;
-      return $user;
+        $user = $this->CreateUserObj($UserData);
+        $user['list'] = $listId;
+        $user['subject'] = $this->resolveDynamicSubject('vip');
+        $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
+        $user['final_price'] = $UserData['final_price'] ?? 0;
+        $user['payment_status'] = $UserData['payment_status'] ?? '';
+        $user['stripe'] = $UserData;
+        return $user;
     }
 
     private function prepareUserDataFree($UserData, $listId)
     {
-      $user = $this->CreateUserObj($UserData);
-      $user['list'] = $listId;
-      $user['subject'] = $this->resolveDynamicSubject('free');
-      $user['emms_ref'] = "AUTOMATED_FREE_USER";
-      return $user;
+        $user = $this->CreateUserObj($UserData);
+        $user['list'] = $listId;
+        $user['subject'] = $this->resolveDynamicSubject('free');
+        $user['emms_ref'] = "AUTOMATED_FREE_USER";
+        return $user;
     }
 
     private function CreateUserObj($UserData)
