@@ -2,7 +2,7 @@
 
 // Fix for CLI/worker contexts where DOCUMENT_ROOT is not defined
 if (empty($_SERVER['DOCUMENT_ROOT'])) {
-  $_SERVER['DOCUMENT_ROOT'] = __DIR__;
+    $_SERVER['DOCUMENT_ROOT'] = __DIR__;
 }
 
 // Evento actual
@@ -51,7 +51,7 @@ $events = $routesConfig['events'];
 $sharedPages = $routesConfig['sharedPages'];
 
 if (!array_key_exists($currentEventKey, $events)) {
-  throw new Exception("Evento '$currentEventKey' no definido.");
+    throw new Exception("Evento '$currentEventKey' no definido.");
 }
 
 $currentEventData = $events[$currentEventKey];
@@ -69,8 +69,8 @@ $GLOBALS['CURRENT_EVENT_DATA'] = $currentEventData;
 
 #GTM (Google Tag Manager) Containers
 if (!defined('GTM_IDS')) define('GTM_IDS', [
-  'dhtrack' => 'GTM-M768WZR',
-  'hotjar'  => 'GTM-TMMV2DF'
+    'dhtrack' => 'GTM-M768WZR',
+    'hotjar'  => 'GTM-TMMV2DF'
 ]);
 
 #IPS WHITE LIST
@@ -168,16 +168,16 @@ $dayDuring = 1;
 if (!defined('DAY_DURING')) define('DAY_DURING', $dayDuring);
 $duringDaysArray = array(
     "1" => array(
-      "youtube" => "rhrLoHn3qmI",
-      "twitch" => "fromdoppler"
+        "youtube" => "rhrLoHn3qmI",
+        "twitch" => "fromdoppler"
     ),
     "2" => array(
-      "youtube" => "3znU96iSNO4",
-      "twitch" => "fromdoppler"
+        "youtube" => "3znU96iSNO4",
+        "twitch" => "fromdoppler"
     ),
     "3" => array(
-      "youtube" => "LjjXLpU_Kmg",
-      "twitch" => "fromdoppler"
+        "youtube" => "LjjXLpU_Kmg",
+        "twitch" => "fromdoppler"
     )
 );
 
