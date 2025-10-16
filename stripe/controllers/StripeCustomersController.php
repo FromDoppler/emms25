@@ -306,16 +306,16 @@ class StripeCustomersController
         $phaseToShow = $phaseData['phaseToShow'] ?? 'pre';
 
         $subjects = [
-          'free' => [
-            'pre' => "🎉 Tienes tu lugar en el EMMS Digital Trends 2025",
-            'during' => "🎉 Ya eres parte del EMMS Digital Trends 2025",
-            'post' => "Revive lo mejor del EMMS Digital Trends 2025 💡",
-          ],
-          'vip' => [
-            'pre' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
-            'during' => "🎟️ Ya eres VIP en el EMMS Digital Trends 2025",
-            'post' => "🎟️ Tu entrada VIP al EMMS Digital Trends",
-          ],
+            'free' => [
+                'pre' => SUBJECT_FREE_PRE_DIGITALT,
+                'during' => SUBJECT_FREE_DURING_DIGITALT,
+                'post' => SUBJECT_FREE_POST_DIGITALT,
+            ],
+            'vip' => [
+                'pre' => SUBJECT_VIP_PRE_DIGITALT,
+                'during' => SUBJECT_VIP_DURING_DIGITALT,
+                'post' => SUBJECT_VIP_POST_DIGITALT,
+            ],
         ];
 
         $selected = $subjects[$type][$phaseToShow] ?? $subjects[$type]['pre'];

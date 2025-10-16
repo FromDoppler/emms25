@@ -2,7 +2,7 @@
 
 // Fix for CLI/worker contexts where DOCUMENT_ROOT is not defined
 if (empty($_SERVER['DOCUMENT_ROOT'])) {
-    $_SERVER['DOCUMENT_ROOT'] = __DIR__;
+  $_SERVER['DOCUMENT_ROOT'] = __DIR__;
 }
 
 // Evento actual
@@ -51,7 +51,7 @@ $events = $routesConfig['events'];
 $sharedPages = $routesConfig['sharedPages'];
 
 if (!array_key_exists($currentEventKey, $events)) {
-    throw new Exception("Evento '$currentEventKey' no definido.");
+  throw new Exception("Evento '$currentEventKey' no definido.");
 }
 
 $currentEventData = $events[$currentEventKey];
@@ -69,8 +69,8 @@ $GLOBALS['CURRENT_EVENT_DATA'] = $currentEventData;
 
 #GTM (Google Tag Manager) Containers
 if (!defined('GTM_IDS')) define('GTM_IDS', [
-    'dhtrack' => 'GTM-M768WZR',
-    'hotjar'  => 'GTM-TMMV2DF'
+  'dhtrack' => 'GTM-M768WZR',
+  'hotjar'  => 'GTM-TMMV2DF'
 ]);
 
 #IPS WHITE LIST
@@ -104,9 +104,34 @@ if (!defined('SUBJECT_PRE_ECOMMERCE')) define('SUBJECT_PRE_ECOMMERCE', '¡Ya ere
 if (!defined('SUBJECT_DURING_ECOMMERCE')) define('SUBJECT_DURING_ECOMMERCE', 'Te damos la bienvenida al #EMMS2025!');
 if (!defined('SUBJECT_POST_ECOMMERCE')) define('SUBJECT_POST_ECOMMERCE', 'Ya puedes ver lo que fue el #EMMS2025');
 ## DT
-if (!defined('SUBJECT_PRE_DIGITALT')) define('SUBJECT_PRE_DIGITALT', '🎉 Tienes tu lugar en el EMMS Digital Trends 2025');
-if (!defined('SUBJECT_DURING_DIGITALT')) define('SUBJECT_DURING_DIGITALT', 'Ya eres parte del EMMS Digital Trends 2025');
+if (!defined('SUBJECT_PRE_DIGITALT'))
+  define('SUBJECT_PRE_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Tienes tu lugar en el EMMS Digital Trends 2025');
+if (!defined('SUBJECT_DURING_DIGITALT'))
+  define('SUBJECT_DURING_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Ya eres parte del EMMS Digital Trends 2025');
 if (!defined('SUBJECT_POST_DIGITALT')) define('SUBJECT_POST_DIGITALT', 'Ya puedes ver lo que fue el EMMSDT 2024');
+
+
+//  SUBJECT STRIPE
+// --- FREE ---
+if (!defined('SUBJECT_FREE_PRE_DIGITALT'))
+    define('SUBJECT_FREE_PRE_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Tienes tu lugar en el EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_FREE_DURING_DIGITALT'))
+    define('SUBJECT_FREE_DURING_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Ya eres parte del EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_FREE_POST_DIGITALT'))
+    define('SUBJECT_FREE_POST_DIGITALT', 'Revive lo mejor del EMMS Digital Trends 2025 ' . html_entity_decode('&#x1F4A1;', ENT_QUOTES, 'UTF-8'));
+
+// --- VIP ---
+if (!defined('SUBJECT_VIP_PRE_DIGITALT'))
+    define('SUBJECT_VIP_PRE_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu entrada VIP al EMMS Digital Trends');
+
+if (!defined('SUBJECT_VIP_DURING_DIGITALT'))
+    define('SUBJECT_VIP_DURING_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Ya eres VIP en el EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_VIP_POST_DIGITALT'))
+    define('SUBJECT_VIP_POST_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu entrada VIP al EMMS Digital Trends');
+
 
 #GOOGLE SPREADSHEET
 //https://docs.google.com/spreadsheets/d/1irsIKBdRzGlmeGpUlJjFcSJFaYZLN9ujvY-cTYpyeM8/edit#gid=0
@@ -142,18 +167,18 @@ if (!defined('MEMCACHED_SERVER')) define('MEMCACHED_SERVER', "memcached");
 $dayDuring = 1;
 if (!defined('DAY_DURING')) define('DAY_DURING', $dayDuring);
 $duringDaysArray = array(
-    "1" => array(
-        "youtube" => "rhrLoHn3qmI",
-        "twitch" => "fromdoppler"
-    ),
-    "2" => array(
-        "youtube" => "3znU96iSNO4",
-        "twitch" => "fromdoppler"
-    ),
-    "3" => array(
-        "youtube" => "LjjXLpU_Kmg",
-        "twitch" => "fromdoppler"
-    )
+  "1" => array(
+    "youtube" => "rhrLoHn3qmI",
+    "twitch" => "fromdoppler"
+  ),
+  "2" => array(
+    "youtube" => "3znU96iSNO4",
+    "twitch" => "fromdoppler"
+  ),
+  "3" => array(
+    "youtube" => "LjjXLpU_Kmg",
+    "twitch" => "fromdoppler"
+  )
 );
 
-require_once (__DIR__ . '/config/redis.php');
+require_once(__DIR__ . '/config/redis.php');
