@@ -167,18 +167,18 @@ if (!defined('MEMCACHED_SERVER')) define('MEMCACHED_SERVER', "memcached");
 $dayDuring = 1;
 if (!defined('DAY_DURING')) define('DAY_DURING', $dayDuring);
 $duringDaysArray = array(
-  "1" => array(
-    "youtube" => "rhrLoHn3qmI",
-    "twitch" => "fromdoppler"
-  ),
-  "2" => array(
-    "youtube" => "3znU96iSNO4",
-    "twitch" => "fromdoppler"
-  ),
-  "3" => array(
-    "youtube" => "LjjXLpU_Kmg",
-    "twitch" => "fromdoppler"
-  )
+    "1" => array(
+      "youtube" => "rhrLoHn3qmI",
+      "twitch" => "fromdoppler"
+    ),
+    "2" => array(
+      "youtube" => "3znU96iSNO4",
+      "twitch" => "fromdoppler"
+    ),
+    "3" => array(
+      "youtube" => "LjjXLpU_Kmg",
+      "twitch" => "fromdoppler"
+    )
 );
 
-require_once(__DIR__ . '/config/redis.php');
+require_once (__DIR__ . '/config/redis.php');
