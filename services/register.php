@@ -152,14 +152,14 @@ function getSubjectEmail($type, $phase)
 {
   $subjects = [
     ECOMMERCE => [
-      'pre' => SUBJECT_PRE_ECOMMERCE,
-      'during' => SUBJECT_DURING_ECOMMERCE,
-      'post' => SUBJECT_POST_ECOMMERCE,
+      'pre' => SUBJECT_FREE_PRE_ECOMMERCE,
+      'during' => SUBJECT_FREE_DURING_ECOMMERCE,
+      'post' => SUBJECT_FREE_POST_ECOMMERCE,
     ],
     DIGITALTRENDS => [
-      'pre' => SUBJECT_PRE_DIGITALT,
-      'during' => SUBJECT_DURING_DIGITALT,
-      'post' => SUBJECT_POST_DIGITALT,
+      'pre' => SUBJECT_FREE_PRE_DIGITALT,
+      'during' => SUBJECT_FREE_DURING_DIGITALT,
+      'post' => SUBJECT_FREE_POST_DIGITALT,
     ]
   ];
 
