@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/getCurrentEvent.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 require_once $_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php';
 require_once 'models/StripeCustomersDatabase.php';
 require_once 'models/RegisteredDatabase.php';
@@ -300,34 +301,11 @@ class StripeCustomersController
         return $tiketTypeMap[$phaseToShow];
     }
 
-    private function resolveDynamicSubject(string $type): string
-    {
-        $phaseData = processPhaseToShow(DIGITALTRENDS);
-        $phaseToShow = $phaseData['phaseToShow'] ?? 'pre';
-
-        $subjects = [
-            'free' => [
-                'pre' => SUBJECT_FREE_PRE_DIGITALT,
-                'during' => SUBJECT_FREE_DURING_DIGITALT,
-                'post' => SUBJECT_FREE_POST_DIGITALT,
-            ],
-            'vip' => [
-                'pre' => SUBJECT_VIP_PRE_DIGITALT,
-                'during' => SUBJECT_VIP_DURING_DIGITALT,
-                'post' => SUBJECT_VIP_POST_DIGITALT,
-            ],
-        ];
-
-        $selected = $subjects[$type][$phaseToShow] ?? $subjects[$type]['pre'];
-
-        return "=?UTF-8?B?" . base64_encode($selected) . "?=";
-    }
-
     private function prepareUserDataVip($UserData, $listId)
     {
         $user = $this->CreateUserObj($UserData);
         $user['list'] = $listId;
-        $user['subject'] = $this->resolveDynamicSubject('vip');
+        $user['subject'] = EmailService::resolveDynamicSubject('vip');
         $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
         $user['final_price'] = $UserData['final_price'] ?? 0;
         $user['payment_status'] = $UserData['payment_status'] ?? '';
@@ -339,7 +317,7 @@ class StripeCustomersController
     {
         $user = $this->CreateUserObj($UserData);
         $user['list'] = $listId;
-        $user['subject'] = $this->resolveDynamicSubject('free');
+        $user['subject'] = EmailService::resolveDynamicSubject('free');
         $user['emms_ref'] = "AUTOMATED_FREE_USER";
         return $user;
     }

@@ -22,13 +22,13 @@ function setDataRequest($ip, $countryGeo, $db)
   $privacy = getPrivacy($postData);
   $promotions = $postData['acceptPromotions'];
   $utmData = getUtmData($postData);
+  //TODO: Hay que cambiar el user type por userEventType, agregar un userType que represente si es free o vip
   $type = $postData['type'];
   $phase = getCurrentPhase($type, $db);
   $list = ($type === ECOMMERCE) ? LIST_LANDING_ECOMMERCE : LIST_LANDING_DIGITALT;
-  $subject = getSubjectEmail($type, $phase);
   $formOrigin = $postData['formOrigin'];
 
-  $user = buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject, $formOrigin);
+  $user = buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $formOrigin);
 
   try {
     validateRequest($postData, $privacy, $promotions);
@@ -107,7 +107,7 @@ function getUtmData($postData)
   ];
 }
 
-function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $subject, $formOrigin)
+function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotions, $utmData, $ip, $countryGeo, $type, $phase, $list, $formOrigin)
 {
   return [
     'register' => date("Y-m-d h:i:s A"),
@@ -135,7 +135,6 @@ function buildUserArray($postData, $eventsData, $firstname, $privacy, $promotion
     'type' => $type,
     'form_id' => $phase,
     'list' => $list,
-    'subject' => $subject,
     'formOrigin' => $formOrigin
   ];
 }
@@ -145,25 +144,6 @@ function validateRequest($postData, $privacy, $promotions)
   Validator::validateEmail($postData['email']);
   Validator::validateBool('privacy', $privacy);
   Validator::validateBool('promotions', $promotions);
-}
-
-
-function getSubjectEmail($type, $phase)
-{
-  $subjects = [
-    ECOMMERCE => [
-      'pre' => SUBJECT_PRE_ECOMMERCE,
-      'during' => SUBJECT_DURING_ECOMMERCE,
-      'post' => SUBJECT_POST_ECOMMERCE,
-    ],
-    DIGITALTRENDS => [
-      'pre' => SUBJECT_PRE_DIGITALT,
-      'during' => SUBJECT_DURING_DIGITALT,
-      'post' => SUBJECT_POST_DIGITALT,
-    ]
-  ];
-
-  return $subjects[$type][$phase] ?? '';
 }
 
 function getCurrentPhase($type, $db)
@@ -230,10 +210,10 @@ function saveSubscriptionSpreadSheet($user, $db)
   }
 }
 
-function sendEmail($user, $subject)
+function sendEmail($user)
 {
   try {
-    EmailService::sendEmailRegister($user, $subject);
+    EmailService::sendEmailRegister($user, 'free');
   } catch (Exception $e) {
     processError("sendEmail (Envia mail por Relay)", $e->getMessage(), ['user' => $user, 'subject' => $subject]);
   }
@@ -278,7 +258,7 @@ function processUser($user, $db)
     saveSubscriptionDoppler($user);
     saveSubscriptionDopplerTable($user, $db);
     saveSubscriptionSpreadSheet($user, $db);
-    sendEmail($user, $user['subject']);
+    sendEmail($user);
   }
 }
 

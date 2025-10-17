@@ -7,7 +7,7 @@ function sendEmail($user, $subject)
     // Delegate to EmailService without duplicate logging
     // EmailService handles all logging internally
     try {
-        EmailService::sendEmailRegister($user, $subject);
+        EmailService::sendEmailRegister($user);
     } catch (Exception $e) {
         // Re-throw with consistent error message
         throw new Exception("Email sending failed: " . $e->getMessage());
