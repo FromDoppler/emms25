@@ -99,14 +99,47 @@ if (!defined('ACCOUNT_RELAY')) define('ACCOUNT_RELAY', $ACCOUNT_RELAY);
 if (!defined('API_KEY_RELAY')) define('API_KEY_RELAY', $API_KEY_RELAY);
 
 #EMAIL SUBJECT
-## ECOMMERCE
-if (!defined('SUBJECT_PRE_ECOMMERCE')) define('SUBJECT_PRE_ECOMMERCE', '¡Ya eres parte del #EMMS2025!');
-if (!defined('SUBJECT_DURING_ECOMMERCE')) define('SUBJECT_DURING_ECOMMERCE', 'Te damos la bienvenida al #EMMS2025!');
-if (!defined('SUBJECT_POST_ECOMMERCE')) define('SUBJECT_POST_ECOMMERCE', 'Ya puedes ver lo que fue el #EMMS2025');
+## Ecommerce
+// --- FREE ---
+if (!defined('SUBJECT_FREE_PRE_ECOMMERCE'))
+    define('SUBJECT_FREE_PRE_ECOMMERCE', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Tienes tu lugar en el EMMS E-commerce 2025');
+
+if (!defined('SUBJECT_FREE_DURING_ECOMMERCE'))
+    define('SUBJECT_FREE_DURING_ECOMMERCE', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Ya eres parte del EMMS E-commerce 2025');
+
+if (!defined('SUBJECT_FREE_POST_ECOMMERCE'))
+    define('SUBJECT_FREE_POST_ECOMMERCE', 'Revive las mejores estrategias del EMMS E-commerce 2025 ' . html_entity_decode('&#x1F4A1;', ENT_QUOTES, 'UTF-8'));
+
+// --- VIP ---
+if (!defined('SUBJECT_VIP_PRE_ECOMMERCE'))
+    define('SUBJECT_VIP_PRE_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu acceso VIP al EMMS E-commerce 2025');
+
+if (!defined('SUBJECT_VIP_DURING_ECOMMERCE'))
+    define('SUBJECT_VIP_DURING_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Ya eres VIP en el EMMS E-commerce 2025');
+
+if (!defined('SUBJECT_VIP_POST_ECOMMERCE'))
+    define('SUBJECT_VIP_POST_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Disfruta de lo que fue el EMMS E-commerce 2025');
+
 ## DT
-if (!defined('SUBJECT_PRE_DIGITALT')) define('SUBJECT_PRE_DIGITALT', '🎉 Tienes tu lugar en el EMMS Digital Trends 2025');
-if (!defined('SUBJECT_DURING_DIGITALT')) define('SUBJECT_DURING_DIGITALT', 'Te damos la bienvenida al #EMMSDT 2024!');
-if (!defined('SUBJECT_POST_DIGITALT')) define('SUBJECT_POST_DIGITALT', 'Ya puedes ver lo que fue el EMMSDT 2024');
+// --- FREE ---
+if (!defined('SUBJECT_FREE_PRE_DIGITALT'))
+    define('SUBJECT_FREE_PRE_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Tienes tu lugar en el EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_FREE_DURING_DIGITALT'))
+    define('SUBJECT_FREE_DURING_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Ya eres parte del EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_FREE_POST_DIGITALT'))
+    define('SUBJECT_FREE_POST_DIGITALT', 'Revive lo mejor del EMMS Digital Trends 2025 ' . html_entity_decode('&#x1F4A1;', ENT_QUOTES, 'UTF-8'));
+
+// --- VIP ---
+if (!defined('SUBJECT_VIP_PRE_DIGITALT'))
+    define('SUBJECT_VIP_PRE_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu entrada VIP al EMMS Digital Trends');
+
+if (!defined('SUBJECT_VIP_DURING_DIGITALT'))
+    define('SUBJECT_VIP_DURING_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Ya eres VIP en el EMMS Digital Trends 2025');
+
+if (!defined('SUBJECT_VIP_POST_DIGITALT'))
+    define('SUBJECT_VIP_POST_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu entrada VIP al EMMS Digital Trends');
 
 #GOOGLE SPREADSHEET
 //https://docs.google.com/spreadsheets/d/1irsIKBdRzGlmeGpUlJjFcSJFaYZLN9ujvY-cTYpyeM8/edit#gid=0
