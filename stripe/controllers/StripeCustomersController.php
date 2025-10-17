@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/Logger.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/functions.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/services/getCurrentEvent.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/services/EmailService.php');
 require_once $_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php';
 require_once 'models/StripeCustomersDatabase.php';
 require_once 'models/RegisteredDatabase.php';
@@ -304,7 +305,7 @@ class StripeCustomersController
     {
         $user = $this->CreateUserObj($UserData);
         $user['list'] = $listId;
-        $user['subject'] = "=?UTF-8?B?" . base64_encode("🎟️ Tu entrada VIP al EMMS Digital Trends") . "?=";
+        $user['subject'] = EmailService::resolveDynamicSubject('vip', DIGITALTRENDS);
         $user['ticketType'] = $this->resolveTicketType(DIGITALTRENDS);
         $user['final_price'] = $UserData['final_price'] ?? 0;
         $user['payment_status'] = $UserData['payment_status'] ?? '';
@@ -316,7 +317,7 @@ class StripeCustomersController
     {
         $user = $this->CreateUserObj($UserData);
         $user['list'] = $listId;
-        $user['subject'] = "Bienvenido al EMMS Digital Trends";
+        $user['subject'] = EmailService::resolveDynamicSubject('free', DIGITALTRENDS);
         $user['emms_ref'] = "AUTOMATED_FREE_USER";
         return $user;
     }

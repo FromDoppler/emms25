@@ -65,4 +65,42 @@ class EmailService
             throw $e;
         }
     }
+
+     public static function resolveDynamicSubject(string $userType, string $eventType = DIGITALTRENDS): string
+    {
+        $phaseData = processPhaseToShow($eventType);
+        $phaseToShow = $phaseData['phaseToShow'] ?? 'pre';
+
+        $subjects = [
+            'free' => [
+                ECOMMERCE => [
+                    'pre' => SUBJECT_FREE_PRE_ECOMMERCE,
+                    'during' => SUBJECT_FREE_DURING_ECOMMERCE,
+                    'post' => SUBJECT_FREE_POST_ECOMMERCE,
+                ],
+                DIGITALTRENDS => [
+                    'pre' => SUBJECT_FREE_PRE_DIGITALT,
+                    'during' => SUBJECT_FREE_DURING_DIGITALT,
+                    'post' => SUBJECT_FREE_POST_DIGITALT,
+                ]
+            ],
+            'vip' => [
+                ECOMMERCE => [
+                    'pre' => SUBJECT_VIP_PRE_ECOMMERCE,
+                    'during' => SUBJECT_VIP_DURING_ECOMMERCE,
+                    'post' => SUBJECT_VIP_POST_ECOMMERCE,
+                ],
+                DIGITALTRENDS => [
+                    'pre' => SUBJECT_VIP_PRE_DIGITALT,
+                    'during' => SUBJECT_VIP_DURING_DIGITALT,
+                    'post' => SUBJECT_VIP_POST_DIGITALT,
+                ]
+            ]
+        ];
+
+        $selected = $subjects[$userType][$eventType][$phaseToShow];
+
+        return $selected;
+    }
+
 }
