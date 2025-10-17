@@ -117,7 +117,7 @@ if (!defined('SUBJECT_VIP_DURING_ECOMMERCE'))
     define('SUBJECT_VIP_DURING_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Ya eres VIP en el EMMS E-commerce 2025');
 
 if (!defined('SUBJECT_VIP_POST_ECOMMERCE'))
-    define('SUBJECT_VIP_POST_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Disfruta de las grabaciones exclusivas del EMMS E-commerce 2025');
+    define('SUBJECT_VIP_POST_ECOMMERCE', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Disfruta de lo que fue el EMMS E-commerce 2025');
 
 ## DT
 // --- FREE ---
