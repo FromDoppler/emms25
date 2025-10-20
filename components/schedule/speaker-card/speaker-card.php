@@ -11,6 +11,6 @@ $speakerId = $speaker['id'] . ($isMobile ? '-mobile' : '');
     <?php render_speaker_image($speaker); ?>
 
     <!-- Información del speaker -->
-    <?php render_speaker_info($speaker,  $isRegistered); ?>
+    <?php render_speaker_info($speaker,  $isRegistered, $digitalTrendsStates); ?>
 
 </div>
