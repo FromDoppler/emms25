@@ -6,7 +6,7 @@ $eventPhase = resolveEventPhase($digitalTrendsStates);
 
 $buttons = shouldHideButton($speaker, $currentPath)
   ? null
-  : getSpeakerButtonData($speaker, $eventPhase, $isRegistered);
+  : getSpeakerButtonData($speaker, $eventPhase, $isRegistered, $currentPath);
 
 if ($buttons):
   if (isset($buttons['text'])) $buttons = [$buttons];

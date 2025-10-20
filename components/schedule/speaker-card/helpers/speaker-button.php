@@ -6,7 +6,7 @@ require_once __DIR__ . '/button/button-utils.php';
 /**
  * Retorna el boton final del speaker segun el contexto.
  */
-function getSpeakerButtonData(array $speaker, string $eventPhase, bool $isRegistered): ?array
+function getSpeakerButtonData(array $speaker, string $eventPhase, bool $isRegistered, string $currentPath = ''): ?array
 {
   if (!shouldShowSpeakerButton($speaker, $eventPhase, $isRegistered)) {
     return null;
@@ -29,6 +29,7 @@ function getSpeakerButtonData(array $speaker, string $eventPhase, bool $isRegist
     $final[] = $button;
   }
 
+  $final = applyRouteButtonOverrides($final, $speaker, $currentPath);
   return $final;
 }
 
