@@ -30,7 +30,7 @@
   background: linear-gradient(240.27deg, #5f08b5 -9.75%, #bd7aff 155.76%);
 }
 
-.landing-checkout-schedule .schedule__tabs .schedule__tab[aria-selected="true"] {
+.gold-schedule .schedule__tabs #day3[aria-selected="true"] {
   background: linear-gradient(90deg, #d59501 0%, #dcc958 100%);
 }
 

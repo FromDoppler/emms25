@@ -38,6 +38,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
     </div>
     <div class="hidden--vip">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/hello-module.php') ?>
+    </div>
+    <div class="gold-schedule">
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+    </div>
+    <div class="hidden--vip">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/entry-plans.php') ?>
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/video-ticketing.php') ?>
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/digital-trends/vip-features.php') ?>
@@ -49,7 +54,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
       ?>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
 
     <div class="show--vip">
       <?php
