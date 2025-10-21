@@ -4,6 +4,24 @@
   margin-top: 10px;
 }
 
+.speaker-card__button.show--vip {
+  display: none;
+}
+
+.speaker-card__button.show--vip.show--vip--hidden {
+  display: block;
+  visibility: hidden;
+}
+
+.speaker-card__button.hidden--vip.toogle {
+  display: none;
+}
+
+.speaker-card__button.show--vip.toogle {
+  display: block;
+  visibility: visible;
+}
+
 .speaker-card__button {
   background: linear-gradient(240.27deg, #7d04f6 -9.75%, #f604cf 155.76%);
   border-radius: 28px;

@@ -7,5 +7,5 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/help
   <p class="speaker-card__title"><?= $speaker['title'] ?></p>
   <?php render_speaker_hour($speaker); ?>
   <!-- CTA -->
-  <?php render_speaker_button($speaker,  $isRegistered); ?>
+  <?php render_speaker_button($speaker,  $isRegistered, $digitalTrendsStates); ?>
 </div>
