@@ -386,6 +386,8 @@
   line-height: 24px;
   text-align: center;
   color: #ffffff;
+  max-width: 640px;
+  margin: 30 auto;
 }
 
 .hero-registration--registered p a {
