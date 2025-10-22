@@ -28,11 +28,8 @@ const toggleVipEcommerceElements = () => {
 
 const toggleVipDigitalTrendsElements = () => {
   const isDTVip = isVipUser(window.APP.EVENTS.EVENTCODES.DIGITALTRENDSVIP);
-  const academyBanner = document.getElementById("aprende-con-doppler");
   if (isDTVip) {
     toggleVipElements();
-  } else if (academyBanner) {
-    academyBanner.style.display = "none";
   }
 };
 
