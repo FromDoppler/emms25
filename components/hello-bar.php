@@ -52,6 +52,11 @@ $contentsLive = [
     'helloBarCtaTxt' => 'HAZTE VIP',
     'helloBarCtaLink' => '#entradas',
   ],
+  '/sponsors-registrado' => [
+    'helloBarText' => '¡Aprovecha 25% OFF en la compra de entradas VIP por tiempo limitado !',
+    'helloBarCtaTxt' => 'adquiere tu entrada vip',
+    'helloBarCtaLink' => '/checkout',
+  ],
   '/*' => [
     'helloBarText' => '🚨EMMS Digital Trends: ¡ya estamos en vivo! 🚨 Conferencias gratuitas, Workshops, Entrevistas, ¡y mucho más!',
     'helloBarCtaTxt' => 'SÚMATE GRATIS',
@@ -60,12 +65,12 @@ $contentsLive = [
 ];
 $contentsDuring = [
   '/' => [
-    'helloBarText' => '¡Ya llegó el EMMS Digital Trends 2024! Únete a otra jornada con más Conferencias gratuitas, Workshops y Networking',
-    'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
+    'helloBarCtaTxt' => 'SÚMATE AHORA',
     'helloBarCtaLink' => '/digital-trends',
   ],
   '/registrado' => [
-    'helloBarText' => 'EMMS Digital Trends: Únete a otra jornada con más Conferencias gratuitas, Workshops y Networking.',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
     'helloBarCtaTxt' => ' MIRA LA TRANSMISIÓN',
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
@@ -83,6 +88,11 @@ $contentsDuring = [
     'helloBarText' => '¡Queda más EMMS Digital Trends! ¿Aún no te has registrado?',
     'helloBarCtaTxt' => 'Reserva tu lugar',
     'helloBarCtaLink' => '#registro',
+  ],
+  '/sponsors-registrado' => [
+    'helloBarText' => '¡Aprovecha 25% OFF en la compra de entradas VIP por tiempo limitado !',
+    'helloBarCtaTxt' => 'adquiere tu entrada vip',
+    'helloBarCtaLink' => '/checkout',
   ],
   '/*' => [
     'helloBarText' => '¡Ya llegó el EMMS Digital Trends 2024! Únete a otra jornada con más Conferencias gratuitas, Workshops y Networking',
