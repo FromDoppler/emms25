@@ -11,7 +11,8 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 <html lang="es">
 
 <head>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/home/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
     <script type="module">
         import {
             hiddenOrShowUserUI
