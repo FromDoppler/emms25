@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
   <main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/hello-module.php') ?>
-    <div class="landing-checkout-schedule">
+    <div class="gold-schedule">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/pages/checkout-lp/components/entry-plans.php') ?>
