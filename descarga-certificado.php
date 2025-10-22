@@ -16,6 +16,7 @@ if ((!isset($_GET['email']))) {
 <head>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 
+  <?php if (defined('SECRET_REFRESH') && !empty(constant('SECRET_REFRESH'))): ?>
   <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
   <script>
     const socket = io("wss://<?= URL_REFRESH ?>", {
@@ -25,6 +26,7 @@ if ((!isset($_GET['email']))) {
       location.reload();
     });
   </script>
+  <?php endif; ?>
 </head>
 
 <body class="emms__previous-editions">

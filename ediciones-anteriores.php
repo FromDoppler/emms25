@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/config/app-config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
@@ -11,6 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
   <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
 
+  <?php if ((defined('SECRET_REFRESH') && !empty(constant('SECRET_REFRESH')))): ?>
   <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
   <script>
     const socket = io("wss://<?= URL_REFRESH ?>", {
@@ -20,6 +22,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
       location.reload();
     });
   </script>
+  <?php endif; ?>
   <script type="module">
     import {
       isUserLogged

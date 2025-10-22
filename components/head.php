@@ -58,3 +58,4 @@ if (PRODUCTION) {
 </script>
 <?php } ?>
 <!-- End Google Tag Manager -->
+<?php renderAppScripts();?>
