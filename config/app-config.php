@@ -17,81 +17,79 @@ function getCurrentPhaseForEvent(string $freeEventId): string {
 $currentEvent = getCurrentEvent();
 $currentPhase = getCurrentPhaseForEvent($currentEvent['freeId']);
 $isRegistered = detectRegistrationStatus($currentEvent['redirects']);
-?>
+$locale = $locale ?? 'es';
 
-<script>
-  window.APP = {
-    EVENTS: {
-      CURRENT: <?= json_encode($currentEvent) ?>,
-      EVENTCODES: {
-        ECOMMERCE: "<?= ECOMMERCE ?>",
-        ECOMMERCEVIP: "<?= ECOMMERCEVIP ?>",
-        DIGITALTRENDS: "<?= DIGITALTRENDS ?>",
-        DIGITALTRENDSVIP: "<?= DIGITALTRENDSVIP ?>"
-      }
-    },
-    VERSION: "<?= VERSION ?>",
-    LOCALE: "<?= $locale ?? 'es' ?>",
-    URLS: {
-      REFRESH: "<?= URL_REFRESH ?>",
-      PATH_REFRESH: "<?= PATH_REFRESH ?>"
-    },
-    utils: {
-        addParams: (baseUrl) => {
-          const currentParams = new URLSearchParams(window.location.search);
-          const url = new URL(baseUrl, window.location.origin);
-
-          currentParams.forEach((value, key) => {
-            url.searchParams.set(key, value);
-          });
-
-          return url.toString();
+function renderAppScripts() {
+    global $currentEvent, $locale;
+    ?>
+    <script>
+      window.APP = {
+        EVENTS: {
+          CURRENT: <?= json_encode($currentEvent) ?>,
+          EVENTCODES: {
+            ECOMMERCE: "<?= ECOMMERCE ?>",
+            ECOMMERCEVIP: "<?= ECOMMERCEVIP ?>",
+            DIGITALTRENDS: "<?= DIGITALTRENDS ?>",
+            DIGITALTRENDSVIP: "<?= DIGITALTRENDSVIP ?>"
+          }
+        },
+        VERSION: "<?= VERSION ?>",
+        LOCALE: "<?= $locale ?>",
+        URLS: {
+          REFRESH: "<?= URL_REFRESH ?>",
+          PATH_REFRESH: "<?= PATH_REFRESH ?>"
+        },
+        utils: {
+            addParams: (baseUrl) => {
+              const currentParams = new URLSearchParams(window.location.search);
+              const url = new URL(baseUrl, window.location.origin);
+              currentParams.forEach((value, key) => {
+                url.searchParams.set(key, value);
+              });
+              return url.toString();
+            }
         }
-    }
-  };
-
-
-</script>
-
-<script type="module">
-  (async () => {
-    try {
-      // Carga socket.io dinámicamente
-      const socketScript = document.createElement('script');
-      socketScript.src = `/src/${window.APP.VERSION}/js/vendors/socket.io.min.js`;
-      document.head.appendChild(socketScript);
-      socketScript.onload = () => {
-        const socket = io(`wss://${window.APP.URLS.REFRESH}`, {
-          path: `/${window.APP.URLS.PATH_REFRESH}/socket.io`
-        });
-        socket.on("state", () => location.reload());
       };
+    </script>
 
-      const { userRegisteredInEvent, checkEncodeUrl } = await import(`/src/${window.APP.VERSION}/js/user.js`);
+    <script type="module">
+      (async () => {
+        try {
+          if (<?= (defined('SECRET_REFRESH') && !empty(constant('SECRET_REFRESH')))? 'true': 'false' ?>) {
+            const socketScript = document.createElement('script');
+            socketScript.src = `/src/${window.APP.VERSION}/js/vendors/socket.io.min.js`;
+            document.head.appendChild(socketScript);
+            socketScript.onload = () => {
+              const socket = io(`wss://${window.APP.URLS.REFRESH}`, {
+                path: `/${window.APP.URLS.PATH_REFRESH}/socket.io`
+              });
+              socket.on("state", () => location.reload());
+            };
+          }
 
-      checkEncodeUrl();
+          const { userRegisteredInEvent, checkEncodeUrl } = await import(`/src/${window.APP.VERSION}/js/user.js`);
+          checkEncodeUrl();
 
-      const currentEvent = window.APP.EVENTS.CURRENT;
-      const isRegistered = userRegisteredInEvent(currentEvent.freeId);
-      currentEvent.isUserRegistered = isRegistered;
+          const currentEvent = window.APP.EVENTS.CURRENT;
+          const isRegistered = userRegisteredInEvent(currentEvent.freeId);
+          currentEvent.isUserRegistered = isRegistered;
 
-      const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
-      const pathKey = currentPath.replace(/^\//, ''); // Remove leading slash for key lookup
+          const currentPath = window.location.pathname.replace(/\/$/, '');
+          const pathKey = currentPath.replace(/^\//, '');
+          const redirectMap = isRegistered
+            ? currentEvent.redirects.registered
+            : currentEvent.redirects.unregistered;
+          const target = redirectMap[pathKey];
 
-      // Use redirects generated from PHP
-      const redirectMap = isRegistered
-        ? currentEvent.redirects.registered
-        : currentEvent.redirects.unregistered;
-
-      const target = redirectMap[pathKey];
-
-      if (target !== undefined) {
-        // Handle empty target (root redirect)
-        const redirectUrl = target === '' ? '/' : '/' + target;
-        window.location.href = window.APP.utils.addParams(redirectUrl);
-      }
-    } catch (err) {
-      console.error('Redirection error:', err);
-    }
-  })();
-</script>
+          if (target !== undefined) {
+            const redirectUrl = target === '' ? '/' : '/' + target;
+            window.location.href = window.APP.utils.addParams(redirectUrl);
+          }
+        } catch (err) {
+          console.error('Redirection error:', err);
+        }
+      })();
+    </script>
+    <?php
+}
+?>
