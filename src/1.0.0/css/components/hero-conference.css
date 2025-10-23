@@ -326,6 +326,7 @@
 .emms__hero-conference__aside {
   width: 35%;
   animation-delay: 0.3s;
+  z-index: 9999;
 }
 
 .emms__hero-conference__aside .emms__cta {
