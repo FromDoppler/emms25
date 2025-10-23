@@ -1,6 +1,7 @@
 "use strict";
 
 import { createDownloadLink, isQADomain } from "./utils/certificateUtils.js";
+import { downloadWorkshopCertificate, getUrlWorkshop } from "./workshop.js";
 
 const buildCertificateUrl = (fullname, type) => {
   const encodeFullname = encodeURI(fullname);
