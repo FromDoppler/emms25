@@ -43,7 +43,7 @@ if ((!isset($_GET['email']))) {
       <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
         <ul class="emms__header__nav__menu">
           <li><a href="/">home</a></li>
-          <li><a href="/ecommerce-registrado">E-COMMERCE</a>
+          <li><a href="/digital-trends-registrado">DIGITAL TRENDS</a>
           </li>
           <li><a href="/sponsors">biblioteca de recursos</a></li>
           <li class="emms__header__nav__menu__dropdown"><a href="./ediciones-anteriores">Qué es el EMMS</a>
@@ -85,12 +85,12 @@ if ((!isset($_GET['email']))) {
     <!-- Hero -->
     <section class="emms__certificate-download">
       <div class="emms__container--md">
-        <h1 class="emms__fade-top">¡Estás a un paso de descargar tu Certificado de Asistencia!</h1>
-        <p class="emms__fade-in">Ingresa tu nombre y apellido para descargarlo ahora 🙂</p>
+        <h1 class="emms__fade-top">¡Tu Certificado de Asistencia ya está disponible!</h1>
+        <p class="emms__fade-in">Ingresa tu nombre y apellido para obtenerlo ahora 🙂</p>
         <form id="certificateForm">
-          <input type="text" placeholder="Nombre y apellido" name="fullname" class="emms__fade-in">
+          <input type="text" placeholder="Ingresa aquí tu Nombre y Apellido" name="fullname" class="emms__fade-in">
           <span class="certificateError">¡Ouch! Debes ingresar al menos 2 caracteres.</span>
-          <a class="emms__cta emms__fade-in" type="button" id="certificateWorkshop"><span class="button__text">QUIERO DESCARGARLO</span></a>
+          <a class="emms__cta emms__fade-in" type="button" id="certificateWorkshop"><span class="button__text">DESCARGA TU CERTIFICADO</span></a>
         </form>
       </div>
     </section>

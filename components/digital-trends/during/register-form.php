@@ -19,9 +19,6 @@ $headerTopClass = $isTransition ? 'top top--transition' : 'top';
       <?php } else { ?>
         <p>Inspírate y aprende en un solo lugar todas las tendencias del Marketing Digital. <br>
         </p>
-        <p>
-          <strong class="text--highlighted">¡Estamos en vivo!</strong> Disfruta ahora de una nueva edición con Conferencias, Workshops, Entrevistas, sorteos, ¡y mucho más!
-        </p>
       <?php } ?>
 
       <ul class="hero-registration__text__checklist dk">

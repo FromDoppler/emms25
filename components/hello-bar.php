@@ -80,7 +80,7 @@ $contentsDuring = [
     'helloBarCtaLink' => '#registro',
   ],
   '/digital-trends-registrado' => [
-    'helloBarText' => '🎫 ¡Quedan pocas! Consigue tu entrada VIP para sumarte a las actividades exclusivas',
+    'helloBarText' => '🎫¡Quedan pocas! Compra tu entrada VIP y accede a beneficios exclusivos.',
     'helloBarCtaTxt' => 'HAZTE VIP',
     'helloBarCtaLink' => '#entradas',
   ],
@@ -95,8 +95,8 @@ $contentsDuring = [
     'helloBarCtaLink' => '/checkout',
   ],
   '/*' => [
-    'helloBarText' => '¡Ya llegó el EMMS Digital Trends 2024! Únete a otra jornada con más Conferencias gratuitas, Workshops y Networking',
-    'helloBarCtaTxt' => 'REGÍSTRATE GRATIS',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
+    'helloBarCtaTxt' => 'SÚMATE AHORA',
     'helloBarCtaLink' => '/digital-trends',
   ],
 ];
@@ -130,7 +130,7 @@ $contentDuring = $contentsDuring[$normalizedUrl] ?? $contentsDuring['/*'];
   <div class="show--vip">
     <div class="hellobar">
       <div class="hellobar__container hellobar__container--during emms__fade-in">
-        <p><strong>⭐ ¡No te pierdas las actividades VIP! Encuentra los links en la agenda para unirte a las salas.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
+        <p><strong>⭐ ¡No te pierdas los workshops! Busca los links en la agenda para unirte a las salas.</strong><a href="#agenda">MIRA LA AGENDA</a></p>
       </div>
     </div>
   </div>
