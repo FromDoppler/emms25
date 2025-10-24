@@ -4,7 +4,7 @@
 
 $contentsLive = [
   '/' => [
-    'subheading' => 'ONLINE Y GRATUITO | <span>¡COMENZÓ LA TRANSMISIÓN!</span>',
+    'subheading' => 'COMENZÓ EL EVENTO MÁS ESPERADO POR MARKETERS Y EMPRENDEDORES',
     'heading' => '<span class="text--transparent"> ¡Únete al EMMS Digital Trends 2025!</span>',
     'body' => 'Te damos la bienvenida al evento que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y en vivo con speakers internacionales de renombre. <a href="/digital-trends">¡Ya comenzó!</a>  ',
     'digital-trendsUrl' => '/digital-trends',
@@ -16,7 +16,7 @@ $contentsLive = [
     'digital-trendsUrl' => '/digital-trends-registrado',
   ],
   '/*' => [
-    'subheading' => 'ONLINE Y GRATUITO |  <span>¡COMENZÓ LA TRANSMISIÓN!<span>',
+    'subheading' => 'COMENZÓ EL EVENTO MÁS ESPERADO POR MARKETERS Y EMPRENDEDORES',
     'heading' => '<span class="text--transparent"> ¡Únete al EMMS Digital Trends 2025!</span>',
     'body' => 'Te damos la bienvenida al evento que reúne a miles de personas en Latinoamérica y España. Capacítate gratis y en vivo con speakers internacionales de renombre. <a href="/digital-trends">¡Ya comenzó!</a> ',
     'digital-trendsUrl' => '/digital-trends',

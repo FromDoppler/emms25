@@ -28,7 +28,7 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/event-numbers.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/speakers-carousel.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>
-    <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/users-comments.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/faqs.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>

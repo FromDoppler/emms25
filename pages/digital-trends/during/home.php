@@ -21,11 +21,7 @@ $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
 
   <main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/home/hello-module.php');   ?>
-    <?php
-    if ($isTransition && !$isLive) {
-      include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php');
-    }
-    ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/central-video.php'); ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/event-numbers.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/speakers-carousel.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/during/premium-content.php') ?>

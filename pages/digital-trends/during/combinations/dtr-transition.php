@@ -7,9 +7,11 @@
    </section>
 
    <div class="emms__bg-dark-gradient">
-     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+     <div class="gold-schedule">
+       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
+     </div>
    </div>
-      <div class="show--vip">
+   <div class="show--vip">
      <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/referral.php') ?>
    </div>
    <div class="hidden--vip centralvideo--tickets">
