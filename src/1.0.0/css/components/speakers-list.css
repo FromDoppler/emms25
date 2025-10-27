@@ -6,7 +6,8 @@
 }
 
 .speakers .spealers__header {
-  margin-bottom: 50px;
+  max-width: 1000px;
+  margin: 50px auto;
 }
 
 .speakers .speakers__title {

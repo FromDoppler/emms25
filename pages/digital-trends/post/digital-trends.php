@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
+$isPost = $digitalTrendsStates['isPost']
 ?>
 
 <!DOCTYPE html>
