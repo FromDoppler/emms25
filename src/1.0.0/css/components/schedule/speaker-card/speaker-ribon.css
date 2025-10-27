@@ -8,11 +8,11 @@
   display: none;
 }
 
-.gold-schedule .speaker-card__ribbon.ribbon-else {
+.gold-schedule--landing.gold-schedule .speaker-card__ribbon.ribbon-else {
   display: block;
 }
 
-.gold-schedule .speaker-card__ribbon.ribbon-else {
+.gold-schedule--landing.gold-schedule .speaker-card__ribbon.ribbon-else {
   background-color: #79f66e;
   top: 150px;
   right: -4px;

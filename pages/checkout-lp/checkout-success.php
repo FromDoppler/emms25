@@ -41,7 +41,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/share.php') ?>
   <main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/checkout-lp/checkout-success.php') ?>
-    <div class="gold-schedule">
+    <div class="gold-schedule gold-schedule--landing">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/schedule.php') ?>
     </div>
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
