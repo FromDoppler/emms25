@@ -62,24 +62,27 @@ function getLinkPostByCurrentUrl($url)
 {
     $urls = [
         '/' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Finaliz%C3%B3%20el%20EMMS%20Digital%20Trends%202024,%20%C2%A1todav%C3%ADa%20est%C3%A1s%20a%20tiempo%20de%20sumarte!%20Reg%C3%ADstrate%20a%20la%20edici%C3%B3n%202024%20del%20evento%20y%20accede%20a%20las%20Conferencias%20de%20los%20mayores%20expertos%20internacionales%20en%20la%20industria.%20Inscr%C3%ADbete%20en%20goemms.com/digital-trends',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=goemms.com/digital-trends',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+            'twitter' => 'https://twitter.com/intent/tweet?text=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20al%20evento%20y%20accede%20a%20las%20conferencias%20de%20las%20principales%20figuras%20internacionales%20de%20la%20industria.%20Inscr%C3%ADbete%20ahora%20en%20https%3A%2F%2Fgoemms.com%2Fdigital-trends',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends&title=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3!&summary=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20ahora%20y%20accede%20a%20las%20conferencias%20gratuitas%20para%20aprender%20las%20%C3%BAltimas%20tendencias%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online.',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoemms.com%2Fdigital-trends&quote=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20y%20accede%20a%20todas%20las%20conferencias%20para%20capacitarte%20con%20referentes%20internacionales%20en%20Marketing%20Digital.'
         ],
+
         '/digital-trends-registrado' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Finaliz%C3%B3%20el%20EMMS%20Digital%20Trends%202024,%20%C2%A1todav%C3%ADa%20est%C3%A1s%20a%20tiempo%20de%20sumarte!%20Reg%C3%ADstrate%20a%20la%20edici%C3%B3n%202024%20del%20evento%20y%20accede%20a%20las%20Conferencias%20de%20los%20mayores%20expertos%20internacionales%20en%20la%20industria.%20Inscr%C3%ADbete%20en%20goemms.com/digital-trends',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=goemms.com/digital-trends',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+            'twitter' => 'https://twitter.com/intent/tweet?text=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20al%20evento%20y%20accede%20a%20las%20conferencias%20de%20las%20principales%20figuras%20internacionales%20de%20la%20industria.%20Inscr%C3%ADbete%20ahora%20en%20https%3A%2F%2Fgoemms.com%2Fdigital-trends',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends&title=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3!&summary=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20ahora%20y%20accede%20a%20las%20conferencias%20gratuitas%20para%20aprender%20las%20%C3%BAltimas%20tendencias%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online.',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoemms.com%2Fdigital-trends&quote=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20y%20accede%20a%20todas%20las%20conferencias%20para%20capacitarte%20con%20referentes%20internacionales%20en%20Marketing%20Digital.'
         ],
+
         '/*' => [
-            'twitter' => 'https://twitter.com/intent/tweet?url=goemms.com/digital-trends&text=Finaliz%C3%B3%20el%20EMMS%20Digital%20Trends%202024,%20%C2%A1todav%C3%ADa%20est%C3%A1s%20a%20tiempo%20de%20sumarte!%20Reg%C3%ADstrate%20a%20la%20edici%C3%B3n%202024%20del%20evento%20y%20accede%20a%20las%20Conferencias%20de%20los%20mayores%20expertos%20internacionales%20en%20la%20industria.%20Inscr%C3%ADbete%20en%20goemms.com/digital-trends',
-            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=goemms.com/digital-trends',
-            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=goemms.com/digital-trends',
+            'twitter' => 'https://twitter.com/intent/tweet?text=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20al%20evento%20y%20accede%20a%20las%20conferencias%20de%20las%20principales%20figuras%20internacionales%20de%20la%20industria.%20Inscr%C3%ADbete%20ahora%20en%20https%3A%2F%2Fgoemms.com%2Fdigital-trends',
+            'linkedln' => 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgoemms.com%2Fdigital-trends&title=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3!&summary=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20ahora%20y%20accede%20a%20las%20conferencias%20gratuitas%20para%20aprender%20las%20%C3%BAltimas%20tendencias%20en%20Marketing%20Digital.%20Es%20gratis%20y%20online.',
+            'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoemms.com%2Fdigital-trends&quote=El%20EMMS%20Digital%20Trends%202025%20ya%20finaliz%C3%B3%2C%20%C2%A1pero%20a%C3%BAn%20puedes%20verlo!%20Reg%C3%ADstrate%20gratis%20y%20accede%20a%20todas%20las%20conferencias%20para%20capacitarte%20con%20referentes%20internacionales%20en%20Marketing%20Digital.'
         ],
     ];
 
     return $urls[$url] ??  $urls['/*'];
 }
+
 
 
 if ($digitalTrendsStates['isPre']) {
