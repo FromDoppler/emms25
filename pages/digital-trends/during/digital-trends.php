@@ -5,6 +5,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/modal/modal.php');
 
 $isTransition = $digitalTrendsStates['isTransition'] && $digitalTrendsStates['isDuring'];
 $isLive = $digitalTrendsStates['isLive'] &&  $digitalTrendsStates['isDuring'];
+$isPost = $digitalTrendsStates['isPost'];
+
 ?>
 
 <!DOCTYPE html>

@@ -8,11 +8,20 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/components/schedule/speaker-card/spea
 <div class="emms__calendar__tabs">
   <?php
   // TODO: Mover days a const .env??
-  $days = [
-    1 => ['date' => '28 DE OCTUBRE', 'short' => 'DÍA 1'],
-    2 => ['date' => '29 DE OCTUBRE', 'short' => 'DÍA 2'],
-    3 => ['date' => '30 DE OCTUBRE', 'short' => 'DÍA 3'],
-  ];
+  if ($isPost) {
+    $days = [
+      1 => ['date' => 'DÍA 1', 'short' => 'DÍA 1'],
+      2 => ['date' => 'DÍA 2', 'short' => 'DÍA 2'],
+      3 => ['date' => 'DÍA 3', 'short' => 'DÍA 3'],
+    ];
+  } else {
+    $days = [
+      1 => ['date' => '28 DE OCTUBRE', 'short' => 'DÍA 1'],
+      2 => ['date' => '29 DE OCTUBRE', 'short' => 'DÍA 2'],
+      3 => ['date' => '30 DE OCTUBRE', 'short' => 'DÍA 3'],
+    ];
+  }
+
 
   $dayDuring = DAY_DURING;
 

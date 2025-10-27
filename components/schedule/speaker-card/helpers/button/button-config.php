@@ -25,7 +25,7 @@ function getButtonConfig(): array
       'guest' => ['text' => 'REGÍSTRATE GRATIS', 'href' => REGISTERFORM_URL],
     ],
     'post' => [
-      'registered' => ['text' => 'ACCEDE A LA CONFERENCIA', 'href' => '{youtube}'],
+      'registered' => ['text' => 'ACCEDE A LA CONFERENCIA', 'href' => 'speaker-interna?slug={slug}'],
       'guest' => ['text' => 'REGÍSTRATE GRATIS', 'href' => REGISTERFORM_URL],
     ],
   ];

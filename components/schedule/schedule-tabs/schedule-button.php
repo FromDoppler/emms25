@@ -10,6 +10,7 @@ $currentUrl = $_SERVER['REQUEST_URI'] ?? '';
 if (
     strpos($currentUrl, 'checkout-lp-landing') !== false ||
     strpos($currentUrl, 'digital-trends-registrado') !== false
+    && !$isPost
 ) {
     $selected = ($day === 3) ? 'true' : 'false';
 }

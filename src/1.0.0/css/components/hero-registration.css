@@ -40,10 +40,12 @@
 
 .hero-registration .hero-registration__text h1,
 .hero-registration .hero-registration__text.hero-registration__text--live h2 {
-  font-size: 48px;
-  line-height: 0.9;
   font-weight: 800;
-  letter-spacing: 4px;
+  font-size: 50px;
+  line-height: 52px;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  max-width: 445px;
 }
 
 .hero-registration.post .hero-registration__text h1,
@@ -181,7 +183,7 @@
   line-height: 24px;
   font-weight: 700;
   margin: 24px 0 0 0;
-  max-width: 335px;
+  max-width: 404px;
 }
 
 .hero-registration .hero-registration__text p .text--highlighted {
@@ -203,6 +205,7 @@
   margin: 0 0 10px 0;
   padding: 0 0 0 28px;
   position: relative;
+  text-transform: uppercase;
 }
 
 .hero-registration .hero-registration__text .hero-registration__text__checklist li:last-child {
@@ -387,7 +390,7 @@
   text-align: center;
   color: #ffffff;
   max-width: 640px;
-  margin: 30 auto;
+  margin: 30px auto;
 }
 
 .hero-registration--registered p a {
