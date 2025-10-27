@@ -189,7 +189,7 @@
   padding-left: 15px;
   position: absolute;
   left: -16px;
-  top: 45px;
+  bottom: 24px;
   background: #79f66e;
   color: #000000;
   font-weight: 900;
@@ -206,7 +206,7 @@
 }
 
 .ribbon__end.ribbon--short {
-  width: 85px;
+  width: 92px;
   padding-left: 30px;
 }
 
@@ -228,7 +228,7 @@
 .ribbon__end:after {
   height: 0;
   width: 0;
-  right: -11.5px;
+  right: -12.5px;
   border-top: 12px solid transparent;
   border-bottom: 21px solid transparent;
   border-left: 12px solid #79f66e;

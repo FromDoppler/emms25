@@ -3,8 +3,15 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
 $normalizedUrl = getNormalizeUrl();
 
-function getSponsorsContent($url)
+function getSponsorsContent($url, $isPost)
 {
+  if ($isPost) {
+    return [
+      'title' => 'Nuestros aliados en el EMMS Digital Trends',
+    ];
+  }
+
+
   $blocks = [
     '/digital-trends' => [
       'title' => 'Nos acompañan en esta edición',
@@ -20,7 +27,7 @@ function getSponsorsContent($url)
   return $blocks[$url] ??  $blocks['/*'];
 }
 
-$content = getSponsorsContent($normalizedUrl);
+$content = getSponsorsContent($normalizedUrl, $isPost);
 $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 if (!$db->hasActiveSponsor()) {
@@ -70,12 +77,20 @@ foreach ($sponsorTypes as $type => $config) {
     <?php endforeach; ?>
 
     <!-- FAQ Link -->
-    <p class="companies__body">
-      ¿Quieres ser aliado del EMMS 2025? ¡Hablemos! <br>
-      Escríbenos a <a href="mailto:partners@fromdoppler.com" class="companies__body-link">partners@fromdoppler.com </a> y te contamos cómo sumarte al evento
-      <a href="/sponsors-promo" class="emms__cta emms__cta--secondary">QUIERO SER ALIADO</a>
-    </p>
+    <?php if ($isPost): ?>
+      <p class="companies__body">
+        ¿Tienes preguntas sobre el EMMS? <a href="<?= htmlspecialchars($faqLink) ?>" class="companies__body-link">Haz clic aquí</a> y
+        encuentra las <br>  preguntas más frecuentes sobre el evento.
+      </p>
+    <?php else: ?>
+      <p class="companies__body">
+        ¿Quieres ser aliado del EMMS 2025? ¡Hablemos! <br>
+        Escríbenos a <a href="mailto:partners@fromdoppler.com" class="companies__body-link">partners@fromdoppler.com </a> y te contamos cómo sumarte al evento
+        <a href="/sponsors-promo" class="emms__cta emms__cta--secondary">QUIERO SER ALIADO</a>
+      </p>
+    <?php endif; ?>
   </div>
+
 </section>
 
 <script>

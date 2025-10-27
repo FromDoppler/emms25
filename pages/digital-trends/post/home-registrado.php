@@ -23,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/speakers-carousel.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/users-comments.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/faqs.php') ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/companies-list.php') ?>
   </main>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>

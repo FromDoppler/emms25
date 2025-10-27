@@ -1,48 +1,53 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
+
+$normalizedUrl = getNormalizeUrl();
 
 $contents = [
   '/' => [
-    'heading' => '¡Vuelve el EMMS Digital Trends!',
-    'body' => '¿Buscas inspiración real, aprendizajes concretos y un espacio para potenciar tu Estrategia? Este evento reúne a las empresas y figuras que están transformando el presente y futuro del Marketing Digital. ¡No te lo pierdas!
-',
-    'button' => 'ASEGURA TU LUGAR GRATIS',
+    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
+    'button' => 'REVÍVELO GRATIS',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',
   ],
   '/digital-trends' => [
-    'heading' => '¿Qué esperas para inscribirte?',
-    'body' => 'Mira este video y descubre por qué el EMMS Digital Trends es el evento clave para transformar tus Estrategias de Marketing Digital, de la mano de especialistas del sector.',
-    'button' => 'INSCRÍBETE AHORA',
+    'heading' => 'Súmate al evento más convocante de Marketing Digital',
+    'body' => 'Mira este video y conoce por qué miles de profesionales de habla hispana eligen capacitarse en el EMMS Digital Trends.',
+    'button' => 'REGÍSTRATE GRATIS',
     'link' => '#registro',
     'youtubeCode' => 'rTImzuky-LE',
   ],
   '/registrado' => [
-    'heading' => '¡Vuelve el EMMS Digital Trends!',
-    'body' => '¿Buscas inspiración real, aprendizajes concretos y un espacio para potenciar tu Estrategia? Este evento reúne a las empresas y figuras que están transformando el presente y futuro del Marketing Digital. ¡No te lo pierdas!',
+    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
     'youtubeCode' => 'isDPHOi2mAs',
   ],
   '/*' => [
-    'heading' => '¡Vuelve el EMMS Digital Trends!',
-    'body' => '¿Buscas inspiración real, aprendizajes concretos y un espacio para potenciar tu Estrategia? Este evento reúne a las empresas y figuras que están transformando el presente y futuro del Marketing Digital. ¡No te lo pierdas!
-',
-    'button' => 'ASEGURA TU LUGAR GRATIS',
+    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
+    'button' => 'REVÍVELO GRATIS',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',
   ],
 ];
 
-
-include_once($_SERVER['DOCUMENT_ROOT'] . '/components/helpers/urlHelper.php');
-$normalizedUrl = getNormalizeUrl();
 $content = $contents[$normalizedUrl] ?? $contents['/*'];
 
 $youtubeBaseUrl = "https://www.youtube.com/embed/";
 $youtubeParams = "?controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&autoplay=0&loop=1";
 $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
 
+$sectionClasses = ['centralvideo'];
+
+if ($normalizedUrl === '/digital-trends') {
+  $sectionClasses[] = 'centralvideo--background';
+}
+
+$sectionClassString = implode(' ', $sectionClasses);
 ?>
 
-<section class="centralvideo">
+<section class="<?php echo $sectionClassString; ?>">
   <div class="emms__container--lg emms__container--lg--column">
     <?php if (!empty($content['heading']) || !empty($content['body'])): ?>
       <div class="centralvideo__title emms__fade-in">
@@ -56,7 +61,7 @@ $videoUrl = $youtubeBaseUrl . $content['youtubeCode'] . $youtubeParams;
     <?php endif; ?>
 
     <div class="centralvideo__video emms__fade-in">
-      <iframe width="560" height="315" src="<?php echo $videoUrl ?>" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="<?php echo $videoUrl; ?>" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <?php if (!empty($content['link']) || !empty($content['button'])): ?>

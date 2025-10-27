@@ -100,6 +100,10 @@
   max-width: 590px;
 }
 
+.home-hero__title.home-hero__title--post p {
+  max-width: 614px;
+}
+
 .home-hero__title p {
   font-size: 16px;
   line-height: 24px;
