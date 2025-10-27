@@ -1,6 +1,7 @@
 "use strict";
 
-import { createDownloadLink, isQADomain } from "./utils/certificateUtils.js";
+import { isQADomain } from "./utils/certificateUtils.js";
+import { downloadWorkshopCertificate, getUrlWorkshop } from "./workshop.js";
 
 const buildCertificateUrl = (fullname, type) => {
   const encodeFullname = encodeURI(fullname);
@@ -8,15 +9,13 @@ const buildCertificateUrl = (fullname, type) => {
   return `https://textify.fromdoppler.com/${domainUrl}?fullname=${encodeFullname}&type=${type}`;
 };
 
-const downloadNormalCertificate = async (fullname, type) => {
-  const fileName = `certificacion-emms2025-${type}.png`;
+const downloadNormalCertificate = (fullname, type) => {
   const url = buildCertificateUrl(fullname, type);
-
-  const response = await fetch(url);
-  if (!response.ok) throw new Error("Error downloading normal certificate");
-
-  const blob = await response.blob();
-  createDownloadLink(blob, fileName);
+  const iframe = document.createElement("iframe");
+  iframe.style.display = "none";
+  iframe.src = url;
+  document.body.appendChild(iframe);
+  iframe.onload = () => document.body.removeChild(iframe);
 };
 
 const forceDownload = async (fullname, type) => {
