@@ -65,13 +65,13 @@ $contentsLive = [
 ];
 $contentsDuring = [
   '/' => [
-    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
-    'helloBarCtaTxt' => 'SÚMATE AHORA',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Conferencias gratuitas, Workshops, ¡y mucho más!',
+    'helloBarCtaTxt' => 'REGÍSTRATE AHORA',
     'helloBarCtaLink' => '/digital-trends',
   ],
   '/registrado' => [
-    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
-    'helloBarCtaTxt' => ' MIRA LA TRANSMISIÓN',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Conferencias gratuitas, Workshops, ¡y mucho más!',
+    'helloBarCtaTxt' => 'SÚMATE AHORA',
     'helloBarCtaLink' => '/digital-trends-registrado',
   ],
   '/digital-trends' => [
@@ -95,8 +95,8 @@ $contentsDuring = [
     'helloBarCtaLink' => '/checkout',
   ],
   '/*' => [
-    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Únete a otra jornada con Conferencias gratuitas, Workshops, ¡y mucho más!',
-    'helloBarCtaTxt' => 'SÚMATE AHORA',
+    'helloBarText' => '¡Comenzó el EMMS Digital Trends 2025! Conferencias gratuitas, Workshops, ¡y mucho más!',
+    'helloBarCtaTxt' => 'REGÍSTRATE AHORA',
     'helloBarCtaLink' => '/digital-trends',
   ],
 ];
