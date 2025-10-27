@@ -16,10 +16,11 @@ if (empty($speakers)) {
     exit;
 }
 $speaker = $speakers[0];
+$isPost = true;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/ecommerce/seo-reg.php'); ?>
@@ -40,10 +41,11 @@ $speaker = $speakers[0];
                 <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/marquee.php') ?>
             </div>
         </section>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/post/speaker-interna/promo-vip.php') ?>
-        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/premium-content.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/premium-content.php') ?>
         <!-- Doppler Banner -->
         <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/academyBanner.php'); ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
+
 
     </main>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
