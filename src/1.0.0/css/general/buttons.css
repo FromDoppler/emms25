@@ -170,10 +170,13 @@
 }
 
 .emms__cta.inactive,
-.emms__cta.emms_cta--inactive {
+.emms__cta.emms__cta--inactive {
   background: #cccccc;
   pointer-events: none;
   color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
 }
 
 /* La diferancia con inactive se que permite interactuar con los titles */

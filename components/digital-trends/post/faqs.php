@@ -9,8 +9,8 @@ $faqItems = [
     "answer" => "Con tu registro podrás acceder a todas las Conferencias de esta y todas las ediciones anteriores para siempre. Además, podrás acceder a una biblioteca repleta de recursos como E-books, Plantillas, descuentos y material audiovisual para que puedas hacer crecer tu negocio aún más."
   ],
   [
-    "question" => "📅 ¿Cuándo se realizará el EMMS 2025?",
-    "answer" => "El EMMS 2025 tiene 2 ediciones:  Digital Trends, que tendrá lugar el 28, 29 y 30 de octubre de 2025 y E-commerce, que se celebró el 28 y 29 de abril de 2025. Registrándote al evento recibirás por Email todos las novedades."
+    "question" => "📅 ¿Cuándo se realizará el EMMS 2026?",
+    "answer" => "El EMMS 2026 tendrá dos ediciones: el EMMS E-commerce y el EMMS Digital Trends. Registrándote al evento recibirás por Email todas las novedades."
   ],
   [
     "question" => "📍 ¿Dónde serán los eventos?",
@@ -22,7 +22,7 @@ $faqItems = [
   ],
   [
     "question" => "✍ ¿Puedo apuntarme a más de una edición?",
-    "answer" => "Por ahora, puedes registrarte de forma gratuita en el EMMS Digital Trends, que tendrá lugar en octubre de 2025. Cuando se acerque la fecha del EMMS E-commerce 2026, te avisaremos por Email para que no te pierdas nada :)"
+    "answer" => "Por ahora, puedes revivir de forma gratuita el EMMS Digital Trends 2025, que se realizó del 28 al 30 de octubre de 2025, y todas las ediciones anteriores. Cuando se acerque la fecha del EMMS E-commerce 2026, te avisaremos por Email para que no te pierdas nada."
   ],
   [
     "question" => "💻 ¿Cómo accedo a la transmisión del EMMS si ya me registré?",

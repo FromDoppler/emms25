@@ -17,7 +17,7 @@ function renderButton($buttonData, $eventState)
             $class .= ' emms__cta--secondary';
             break;
         case 'disabled':
-            $class .= ' emms_cta--inactive';
+            $class .= ' emms__cta--inactive';
             break;
     }
 
@@ -43,7 +43,7 @@ function renderEventCard($eventData, $eventState)
         'isShortRibbon' => '',
         'isRegistered' => '',
         'spanText' => '',
-        'spanExtraClass' => '',
+        'spanExtraClass' => '', //ribbon--coming-soon
         'buttonType' => 'primary',
     );
 
