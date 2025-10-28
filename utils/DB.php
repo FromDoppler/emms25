@@ -192,56 +192,52 @@ class DB
     public function saveRegistered($subscription)
     {
         $email = $this->connection->real_escape_string($subscription['email']);
-
         $registered = $this->query("SELECT id FROM registered WHERE email=?", [$email]);
 
         if ($registered->fetchArray()) {
-            // Update only non-null or empty fields
-            $updateFields = [];
-            $updateValues = [];
-
-            // Defines the list of fields in the database
-            $dbFields = [
-                'phase',
-                'register',
-                'firstname',
-                'phone',
-                'company',
-                'jobPosition',
-                'website',
-                'emailPlatform',
-                'ecommerce',
-                'digital-trends',
-                'source_utm',
-                'medium_utm',
-                'campaign_utm',
-                'content_utm',
-                'term_utm',
-                'emms_ref',
+            $fieldMap = [
+                'phase'             => 'form_id',
+                'firstname'         => 'firstname',
+                'phone'             => 'phone',
+                'company'           => 'company',
+                'jobPosition'       => 'jobPosition',
+                'website'           => 'website',
+                'emailPlatform'     => 'emailPlatform',
+                'ecommerce'         => 'ecommerce',
+                '`digital-trends`'  => 'digital_trends',
+                '`digital-trends-vip`' => 'digital_trends_vip',
+                'source_utm'        => 'source_utm',
+                'medium_utm'        => 'medium_utm',
+                'campaign_utm'      => 'campaign_utm',
+                'content_utm'       => 'content_utm',
+                'term_utm'          => 'term_utm',
+                'emms_ref'          => 'emms_ref',
             ];
 
-            foreach ($dbFields as $field) {
-                // Use the original key, but check if it exists in $subscription
-                if ($field === 'phase' && isset($subscription['form_id'])) {
-                    $updateFields[] = "$field = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription['form_id']);
-                } elseif ($field === 'digital-trends' && isset($subscription['digital_trends'])) {
-                    // Use backticks to escape the column name with hyphens
-                    $updateFields[] = "`$field` = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription['digital_trends']);
-                } elseif (isset($subscription[$field]) || $subscription[$field] === 0) {
-                    $updateFields[] = "$field = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription[$field]);
+            $updateParts = [];
+            $updateValues = [];
+
+            foreach ($fieldMap as $column => $key) {
+                if (array_key_exists($key, $subscription)) {
+                    // Evita sobrescribir 1 con 0 en flags binarios
+                    if (in_array($key, ['ecommerce', 'digital_trends', 'digital_trends_vip'])) {
+                        $updateParts[] = "$column = GREATEST(COALESCE($column, 0), ?)";
+                        $updateValues[] = $subscription[$key];
+                    } else {
+                        // Si viene vacío, conserva el valor anterior
+                        $updateParts[] = "$column = COALESCE(NULLIF(?, ''), $column)";
+                        $updateValues[] = $subscription[$key];
+                    }
                 }
             }
 
-            // Update the database only if there are fields to update
-            if (!empty($updateFields)) {
-                $updateFields = implode(', ', $updateFields);
+            if (!empty($updateParts)) {
+                $sql = "UPDATE registered SET " . implode(', ', $updateParts) . " WHERE email = ?";
                 $updateValues[] = $email;
-
-                $this->query("UPDATE registered SET $updateFields WHERE email=?", $updateValues);
+                $this->query($sql, $updateValues);
             }
+
+        // Si el usuario no existe, insertamos un nuevo registro
         } else {
             $fields = "(`email`, `phase`, `register`, `firstname`, `phone`, `ecommerce`, `digital-trends`, ";
             $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`,";
