@@ -204,6 +204,7 @@ class EmailTemplateManager
     $templateName = 'dt-post-vip-template.html';
     $userData = [
       '$encodeEmail' => $encodeEmail,
+      'name' => $user['firstname'],
       'type' => $user['ticketType'],
       'paymentMethod' =>  $user['payment_status'],
       'date' => $user['register'],
