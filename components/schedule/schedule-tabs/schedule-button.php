@@ -5,11 +5,10 @@ $shouldShowFinalized = ($isFinalized ?? false) && !$isPost && empty($suppressFin
 $finalized = $shouldShowFinalized ? ' - finalizado' : '';
 $id = "day{$day}";
 
-// Para forzar seleccion de dia 3 en checkout-lp-landing y digital-trends-registrado
+// Para forzar seleccion de dia 3 en checkout-lp-landing
 $currentUrl = $_SERVER['REQUEST_URI'] ?? '';
 if (
-    strpos($currentUrl, 'checkout-lp-landing') !== false ||
-    strpos($currentUrl, 'digital-trends-registrado') !== false
+    strpos($currentUrl, 'checkout-lp-landing') !== false
     && !$isPost
 ) {
     $selected = ($day === 3) ? 'true' : 'false';
