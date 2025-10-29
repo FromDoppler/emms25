@@ -1,5 +1,5 @@
 <?php
-
+require_once($_SERVER['DOCUMENT_ROOT'] . '/config/app-config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/cacheSettings.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
@@ -11,10 +11,12 @@ if ((!isset($_GET['email']))) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/pre/home/head.php'); ?>
+
 
   <?php if (defined('SECRET_REFRESH') && !empty(constant('SECRET_REFRESH'))): ?>
   <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>
@@ -37,7 +39,7 @@ if ((!isset($_GET['email']))) {
   <header class="emms__header">
     <div class="emms__container--lg emms__fade-in">
       <div class="emms__header__logo">
-        <a href="/"><img src="/src/img/logos/logo-emms.png" alt="Emms 2024"></a>
+        <a href="/"><img src="/src/img/logos/logo-emms.png" alt="Emms 2025"></a>
       </div>
       <a class="emms__header__nav--mb" id="btn-burger"></a>
       <nav class="emms__header__nav emms__header__nav--hidden" id="nav-mb">
@@ -99,7 +101,7 @@ if ((!isset($_GET['email']))) {
 
   <!-- Footer -->
   <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
-  <script src="/components/digital-trends/during/digital-trends/certificate/certificate2.js?version=<?= VERSION ?>" type="module"></script>
+  <script src="/components/digital-trends/during/digital-trends/certificate/certificateWorkshop.js?version=<?= VERSION ?>" type="module"></script>
 
 </body>
 
