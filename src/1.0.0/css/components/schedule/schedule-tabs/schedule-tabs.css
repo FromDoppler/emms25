@@ -42,7 +42,9 @@
   background: linear-gradient(90deg, #d59501 0%, #dcc958 100%);
   border-radius: 8px 8px 0 0;
   box-shadow: 0 0 10px rgba(220, 201, 88, 0.5);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .schedule__tabs .schedule__tab[aria-selected="false"] {
