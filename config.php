@@ -129,7 +129,7 @@ if (!defined('SUBJECT_FREE_DURING_DIGITALT'))
     define('SUBJECT_FREE_DURING_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' Ya eres parte del EMMS Digital Trends 2025');
 
 if (!defined('SUBJECT_FREE_POST_DIGITALT'))
-    define('SUBJECT_FREE_POST_DIGITALT', 'Revive lo mejor del EMMS Digital Trends 2025 ' . html_entity_decode('&#x1F4A1;', ENT_QUOTES, 'UTF-8'));
+    define('SUBJECT_FREE_POST_DIGITALT', html_entity_decode('&#x1F389;', ENT_QUOTES, 'UTF-8') . ' ¡Te damos la bienvenida al EMMS!');
 
 // --- VIP ---
 if (!defined('SUBJECT_VIP_PRE_DIGITALT'))
@@ -139,7 +139,7 @@ if (!defined('SUBJECT_VIP_DURING_DIGITALT'))
     define('SUBJECT_VIP_DURING_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Ya eres VIP en el EMMS Digital Trends 2025');
 
 if (!defined('SUBJECT_VIP_POST_DIGITALT'))
-    define('SUBJECT_VIP_POST_DIGITALT', html_entity_decode('&#x1F39F;', ENT_QUOTES, 'UTF-8') . ' Tu entrada VIP al EMMS Digital Trends');
+    define('SUBJECT_VIP_POST_DIGITALT', html_entity_decode('&#x1F31F;', ENT_QUOTES, 'UTF-8') . ' Eres parte del EMMS VIP: vive la experiencia completa');
 
 #GOOGLE SPREADSHEET
 //https://docs.google.com/spreadsheets/d/1irsIKBdRzGlmeGpUlJjFcSJFaYZLN9ujvY-cTYpyeM8/edit#gid=0
