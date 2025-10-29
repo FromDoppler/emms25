@@ -25,17 +25,13 @@
                 6 meses (válido para cuentas nuevas).</li>
               <li> Workshops prácticos </li>
               <li>Acceso de por vida a los Workshops</li>
-              <li>Certificado de asistencia a Workshops</li>
               <li>Más guías con herramientas
                 y tips exclusivos</li>
-              <li>Sesiones de preguntas y respuestas
-                con tus referentes del Marketing</li>
               <li>Acceso a todas las conferencias con speakers internacionales </li>
               <li>Volver a ver las conferencias todas las veces que quieras </li>
               <li>Ingreso a la Biblioteca de Recursos
                 con E-books, plantillas, material
                 audiovisual y más</li>
-              <li>Participación en sorteos</li>
               <li>Descuentos en herramientas
                 y capacitaciones</li>
             </ul>
@@ -58,17 +54,13 @@
               <li class="exclude">Cuenta gratuita en Doppler durante 6 meses (válido para cuentas nuevas).</li>
               <li class="exclude"> Workshops prácticos </li>
               <li class="exclude">Acceso de por vida a los Workshops</li>
-              <li class="exclude">Certificado de asistencia a Workshops</li>
               <li class="exclude">Más guías con herramientas
                 y tips exclusivos</li>
-              <li class="exclude">Sesiones de preguntas y respuestas
-                con tus referentes del Marketing</li>
               <li>Acceso a todas las conferencias con speakers internacionales </li>
               <li>Volver a ver las conferencias todas las veces que quieras </li>
               <li>Ingreso a la Biblioteca de Recursos
                 con E-books, plantillas, material
                 audiovisual y más</li>
-              <li>Participación en sorteos</li>
               <li>Descuentos en herramientas
                 y capacitaciones</li>
             </ul>

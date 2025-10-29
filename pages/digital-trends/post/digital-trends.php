@@ -44,10 +44,6 @@ $isPost = $digitalTrendsStates['isPost']
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/central-video.php') ?>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/sponsorsList.php') ?>
   </main>
-  <?php
-  // Form captador
-  render_modal('form-modal', 'form',  'form', true);
-  ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'); ?>
 </body>
 

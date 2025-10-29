@@ -230,9 +230,10 @@ $speakersEcommerce = [
 
     <?php if ($block['block'] === 'home' || $block['block'] === 'registerHome') : ?>
       <p class="emms__fade-in speakers__sub-title">Pronto conocerás la agenda del EMMS E-commerce 2026</p>
-      <p class="emms__fade-in">Mantente pendiente a tu correo electrónico para descubrir a los speakers que nos acompañarán </br>
-        en el próximo evento. Mientras tanto, disfruta de las mejores
-        conferencias de ediciones pasadas.</p>
+      <p class="emms__fade-in">Mantente pendiente a tu Email para descubrir a los Speakers que nos acompañarán </br>
+en el próximo evento. Mientras tanto, disfruta de las mejores
+Conferencias de ediciones pasadas.
+</p>
       <a href="/digital-trends" class="emms__cta emms__cta--md  emms__fade-in">REVIVE EDICIONES ANTERIORES</a>
     <?php elseif ($block['block'] === 'digital-trends') : ?>
       <p class="emms__fade-in speakers__sub-title">¡Muy pronto conocerás la agenda 2025! Regístrate gratis y descúbrela antes que nadie.
