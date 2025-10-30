@@ -5,7 +5,7 @@ if (!function_exists('getContentForUrl')) {
 
     $contentMap = [
       'default' => [
-        'heading' => 'Capacítate gratis con la </br> Biblioteca de Recursos',
+        'heading' => 'Capacítate gratis con la <br> Biblioteca de Recursos',
         'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
       ],
       'group1' => [
@@ -13,7 +13,7 @@ if (!function_exists('getContentForUrl')) {
         'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
       ],
       'group2' => [
-        'heading' => 'Capacítate gratis con la </br> Biblioteca de Recursos',
+        'heading' => 'Capacítate gratis con la <br> Biblioteca de Recursos',
         'body' => 'Aprovecha los beneficios, contenidos descargables y herramientas que traen nuestros aliados para optimizar tu presencia digital.',
       ],
     ];

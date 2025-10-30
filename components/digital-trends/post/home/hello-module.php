@@ -13,7 +13,7 @@ de E-commerce, revive el EMMS Digital Trends.',
   '/registrado' => [
     'subheading' => 'TODAS LAS TENDENCIAS DE MARKETING DIGITAL EN UN SOLO LUGAR',
     'heading' => '<span class="text--transparent">¡Revive la experiencia EMMS Digital Trends 2025!</span>',
-    'body' => 'Te damos la bienvenida al evento que reúne a miles de profesionales en Latinoamérica y España. Aprende las últimas tendencias con speakers internacionales.</br> ¡Revive gratis las conferencias!',
+    'body' => 'Te damos la bienvenida al evento que reúne a miles de profesionales en Latinoamérica y España. Aprende las últimas tendencias con speakers internacionales.<br> ¡Revive gratis las conferencias!',
     'ecommerceUrl' => '/ecommerce-registrado',
   ],
   '/*' => [
