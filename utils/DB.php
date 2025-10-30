@@ -195,49 +195,64 @@ class DB
         $registered = $this->query("SELECT id FROM registered WHERE email=?", [$email]);
 
         if ($registered->fetchArray()) {
-            $fieldMap = [
-                'phase'             => 'form_id',
-                'firstname'         => 'firstname',
-                'phone'             => 'phone',
-                'company'           => 'company',
-                'jobPosition'       => 'jobPosition',
-                'website'           => 'website',
-                'emailPlatform'     => 'emailPlatform',
-                'ecommerce'         => 'ecommerce',
-                '`digital-trends`'  => 'digital_trends',
-                '`digital-trends-vip`' => 'digital_trends_vip',
-                'source_utm'        => 'source_utm',
-                'medium_utm'        => 'medium_utm',
-                'campaign_utm'      => 'campaign_utm',
-                'content_utm'       => 'content_utm',
-                'term_utm'          => 'term_utm',
-                'emms_ref'          => 'emms_ref',
-            ];
 
-            $updateParts = [];
+            // Update only non-null or empty fields
+            $updateFields = [];
             $updateValues = [];
 
-            foreach ($fieldMap as $column => $key) {
-                if (array_key_exists($key, $subscription)) {
-                    // Evita sobrescribir 1 con 0 en flags binarios
-                    if (in_array($key, ['ecommerce', 'digital_trends', 'digital_trends_vip'])) {
-                        $updateParts[] = "$column = GREATEST(COALESCE($column, 0), ?)";
-                        $updateValues[] = $subscription[$key];
-                    } else {
-                        // Si viene vacío, conserva el valor anterior
-                        $updateParts[] = "$column = COALESCE(NULLIF(?, ''), $column)";
-                        $updateValues[] = $subscription[$key];
-                    }
+            // Defines the list of fields in the database
+            $dbFields = [
+                'phase',
+                'register',
+                'firstname',
+                'phone',
+                'company',
+                'jobPosition',
+                'website',
+                'emailPlatform',
+                'ecommerce',
+                'digital-trends',
+                'source_utm',
+                'medium_utm',
+                'campaign_utm',
+                'content_utm',
+                'term_utm',
+                'emms_ref',
+            ];
+
+
+            foreach ($dbFields as $field) {
+                // Saltar si el campo no vino en el payload
+                if (!array_key_exists($field, $subscription) && !($field === 'phase' && isset($subscription['form_id']))) {
+                    continue;
                 }
+
+
+                $value = $field === 'phase'
+                    ? $subscription['form_id']
+                    : $subscription[$field] ?? null;
+
+
+                if ($value === '' || $value === null) {
+                    continue;
+                }
+
+
+                if ($field === 'digital-trends') {
+                    $updateFields[] = "`$field` = ?";
+                } else {
+                    $updateFields[] = "$field = ?";
+                }
+
+                $updateValues[] = $this->connection->real_escape_string($value);
             }
 
-            if (!empty($updateParts)) {
-                $sql = "UPDATE registered SET " . implode(', ', $updateParts) . " WHERE email = ?";
+            if (!empty($updateFields)) {
+                $updateFields = implode(', ', $updateFields);
                 $updateValues[] = $email;
-                $this->query($sql, $updateValues);
+                $this->query("UPDATE registered SET $updateFields WHERE email=?", $updateValues);
             }
 
-        // Si el usuario no existe, insertamos un nuevo registro
         } else {
             $fields = "(`email`, `phase`, `register`, `firstname`, `phone`, `ecommerce`, `digital-trends`, ";
             $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`,";
@@ -266,8 +281,6 @@ class DB
             $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
         }
     }
-
-
 
     public function google_oauth_is_table_empty()
     {
