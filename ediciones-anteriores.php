@@ -6,11 +6,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/utils/DB.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/ecommerce/pre/ecommerce/head.php'); ?>
   <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/components/head.php'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/components/digital-trends/post/home/head.php'); ?>
 
   <?php if ((defined('SECRET_REFRESH') && !empty(constant('SECRET_REFRESH')))): ?>
   <script src='/src/<?= VERSION ?>/js/vendors/socket.io.min.js?version=<?= VERSION ?>'></script>

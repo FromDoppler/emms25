@@ -29,6 +29,10 @@
   text-align: center;
 }
 
+.home-hero__title.home-hero__title--post {
+  max-width: 1130px;
+}
+
 .home-hero__title a {
   color: var(--color-secondary);
   font-weight: bold;
@@ -101,7 +105,7 @@
 }
 
 .home-hero__title.home-hero__title--post p {
-  max-width: 614px;
+  max-width: 710px;
 }
 
 .home-hero__title p {

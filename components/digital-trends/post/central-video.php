@@ -5,8 +5,9 @@ $normalizedUrl = getNormalizeUrl();
 
 $contents = [
   '/' => [
-    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
-    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
+    'heading' => '¿No has asistido? Aquí se reunieron las principales figuras del Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y las principales figuras de la industria eligen
+este evento para compartir sus estrategias de negocio.',
     'button' => 'REVÍVELO GRATIS',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',
@@ -19,13 +20,15 @@ $contents = [
     'youtubeCode' => 'rTImzuky-LE',
   ],
   '/registrado' => [
-    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
-    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
+    'heading' => 'El EMMS, un clásico de cada año para aprender las tendencias en Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y las principales figuras de la industria eligen
+este evento para compartir sus estrategias de negocio.',
     'youtubeCode' => 'isDPHOi2mAs',
   ],
   '/*' => [
-    'heading' => '¿No pudiste asistir? Aquí se reunieron las principales figuras del Marketing Digital',
-    'body' => 'Descubre por qué miles de profesionales y referentes de la industria eligieron el EMMS Digital Trends para capacitarse.',
+    'heading' => '¿No has asistido? Aquí se reunieron las principales figuras del Marketing Digital',
+    'body' => 'Descubre por qué miles de profesionales y las principales figuras de la industria eligen
+este evento para compartir sus estrategias de negocio.',
     'button' => 'REVÍVELO GRATIS',
     'link' => 'digital-trends#registro',
     'youtubeCode' => 'rTImzuky-LE',

@@ -30,8 +30,21 @@
   background: linear-gradient(240.27deg, #5f08b5 -9.75%, #bd7aff 155.76%);
 }
 
+.gold-schedule .schedule__tabs #day3[aria-selected="false"] {
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(213, 149, 1, 0.4) 0%, rgba(220, 201, 88, 0.4) 100%);
+  border-radius: 8px 8px 0 0;
+  transition: background 0.3s ease;
+}
+
 .gold-schedule .schedule__tabs #day3[aria-selected="true"] {
+  color: #ffffff;
   background: linear-gradient(90deg, #d59501 0%, #dcc958 100%);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 0 10px rgba(220, 201, 88, 0.5);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .schedule__tabs .schedule__tab[aria-selected="false"] {

@@ -28,7 +28,7 @@ function render_event_day($day, $eventState)
 ?>
     <div class="emms__calendar__date emms__fade-in">
       <div class="emms__calendar__date__country">
-        <p class="hidden--vip">El evento en vivo ha finalizado, pero puedes registrarte y revivir todas las conferencias.</p>
+        <p class="hidden--vip">El evento en vivo ha finalizado. Revive todas las Conferencias y pon en práctica las últimas tendencias de Marketing Digital en tu negocio</p>
       </div>
     </div>
   <?php

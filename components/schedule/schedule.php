@@ -54,7 +54,7 @@ $block = getScheduleBlock2($normalizedUrl);
     <?php if ($block['block'] === 'digital-trends') : ?>
       <div class="emms__calendar__bottom emms__fade-in  eventHiddenElements">
         <a href="#registro" class="emms__cta">
-          <?php echo $isPost ? 'REGÍSTRATE GRATIS' : 'SÚMATE AHORA'; ?>
+          REGÍSTRATE GRATIS
         </a>
       </div>
       <div class="emms__calendar__bottom  eventShowElements">
