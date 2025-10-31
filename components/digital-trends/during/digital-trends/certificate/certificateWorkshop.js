@@ -1,4 +1,5 @@
-import { handleCertificateSubmit } from "./certificate2.js";
+const certificate = await import(`./certificate2.js?v=${window.APP.VERSION}`);
+const { handleCertificateSubmit } = certificate;
 
 const certificateCta = document.getElementById("certificateCta");
 const certificateModal = document.getElementById("certificateModal");

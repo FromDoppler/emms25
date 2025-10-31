@@ -2,6 +2,7 @@
 // Establecer el tipo de contenido
 header('Content-Type: image/png');
 header("Access-Control-Allow-Origin: https://qa.goemms.com");
+header('Content-Disposition: attachment; filename="certificate-EMMSDT25-qa.png"');
 
 // Tamaño de la imagen
 $img_w = 1080;

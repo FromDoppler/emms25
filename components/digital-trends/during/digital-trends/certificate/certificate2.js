@@ -1,7 +1,9 @@
 "use strict";
 
 import { isQADomain } from "./utils/certificateUtils.js";
-import { downloadWorkshopCertificate, getUrlWorkshop } from "./workshop.js";
+
+const workshop = await import(`./workshop.js?v=${window.APP.VERSION}`);
+const { downloadWorkshopCertificate, getUrlWorkshop } = workshop;
 
 const buildCertificateUrl = (fullname, type) => {
   const encodeFullname = encodeURI(fullname);

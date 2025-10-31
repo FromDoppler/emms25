@@ -22,15 +22,14 @@ const buildWorkshopUrl = (fullname, workshopType) => {
   return `https://textify.fromdoppler.com/${domainUrl}?fullname=${encodeFullname}&type=workshop&workshoptype=${encodeURI(workshopType)}`;
 };
 
-export const downloadWorkshopCertificate = async (fullname) => {
+export const downloadWorkshopCertificate = (fullname) => {
   const workshopType = getUrlWorkshop();
   if (!workshopType) return;
-  const fileName = `certificacion-emms2025-workshop.png`;
+
   const url = buildWorkshopUrl(fullname, workshopType);
-
-  const response = await fetch(url);
-  if (!response.ok) throw new Error("Error downloading workshop certificate");
-
-  const blob = await response.blob();
-  createDownloadLink(blob, fileName);
+  const iframe = document.createElement("iframe");
+  iframe.style.display = "none";
+  iframe.src = url;
+  document.body.appendChild(iframe);
+  iframe.onload = () => document.body.removeChild(iframe);
 };
