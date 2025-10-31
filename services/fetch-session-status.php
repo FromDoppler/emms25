@@ -65,14 +65,21 @@ try {
     if ($cacheEnabled && $http_code === 200) {
         try {
             $responseData = json_decode($response, true);
-            $status = $responseData['status'] ?? null;
 
-            $ttl = ($status === 'complete') ? $CACHE_TTL_COMPLETE : $CACHE_TTL_PENDING;
+            if (is_array($responseData)) {
+                $isFirstTime = $responseData['is_first_time'] ?? null;
 
-            $mem->set($cacheKey, [
-                'code' => $http_code,
-                'body' => $response
-            ], $ttl);
+                // Cachear UNICAMENTE si is_first_time === false
+                if ($isFirstTime === false) {
+                    $status = $responseData['status'] ?? null;
+                    $ttl = ($status === 'complete') ? $CACHE_TTL_COMPLETE : $CACHE_TTL_PENDING;
+
+                    $mem->set($cacheKey, [
+                        'code' => $http_code,
+                        'body' => $response
+                    ], $ttl);
+                }
+            }
         } catch (Exception $e) {
             Logger::warning("cache_set_error", ['error' => $e->getMessage()], 'STRIPE');
         }
