@@ -203,7 +203,6 @@ class DB
             // Defines the list of fields in the database
             $dbFields = [
                 'phase',
-                'register',
                 'firstname',
                 'phone',
                 'company',
