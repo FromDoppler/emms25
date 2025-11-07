@@ -15,7 +15,11 @@ const sendUserData = async (userData) => {
     });
 
     if (fetchResp.ok) {
-      trackMetaPixel("CompleteRegistration");
+      const data = await fetchResp
+        .clone()
+        .json()
+        .catch(() => null);
+      if (data?.is_new === true) trackMetaPixel("CompleteRegistration");
     }
 
     return { fetchResp, encodeEmail: userData.encodeEmail };
