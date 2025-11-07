@@ -192,10 +192,10 @@ class DB
     public function saveRegistered($subscription)
     {
         $email = $this->connection->real_escape_string($subscription['email']);
+
         $registered = $this->query("SELECT id FROM registered WHERE email=?", [$email]);
 
         if ($registered->fetchArray()) {
-
             // Update only non-null or empty fields
             $updateFields = [];
             $updateValues = [];
@@ -220,23 +220,19 @@ class DB
                 'emms_ref',
             ];
 
-
             foreach ($dbFields as $field) {
                 // Saltar si el campo no vino en el payload
                 if (!array_key_exists($field, $subscription) && !($field === 'phase' && isset($subscription['form_id']))) {
                     continue;
                 }
 
-
                 $value = $field === 'phase'
                     ? $subscription['form_id']
                     : $subscription[$field] ?? null;
 
-
                 if ($value === '' || $value === null) {
                     continue;
                 }
-
 
                 if ($field === 'digital-trends') {
                     $updateFields[] = "`$field` = ?";
@@ -250,6 +246,7 @@ class DB
             if (!empty($updateFields)) {
                 $updateFields = implode(', ', $updateFields);
                 $updateValues[] = $email;
+
                 $this->query("UPDATE registered SET $updateFields WHERE email=?", $updateValues);
             }
 
@@ -281,6 +278,8 @@ class DB
             $this->query("INSERT INTO `registered` $fields VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $values);
         }
     }
+
+
 
     public function google_oauth_is_table_empty()
     {
