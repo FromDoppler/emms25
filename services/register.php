@@ -289,10 +289,23 @@ try {
   $db = new DB(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
   $user = setDataRequest($ip, $countryGeo, $db);
 
+  $is_new = false;
+  try {
+    $existing = $db->getUserNameByEmail($user['email']);
+    $is_new = !(is_array($existing) && count($existing) > 0);
+  } catch (Exception $e) {
+    processError("getUserNameByEmail failed: ", $e->getMessage(), []);
+  }
+
   processUser($user, $db);
 
   $db->close();
-  echo json_encode(['status' => 'success', 'message' => 'User registered successfully.', 'user' => print_r($user, true)]);
+  echo json_encode([
+    'status' => 'success',
+    'message' => 'User registered successfully.',
+    'is_new' => $is_new,
+    'user' => print_r($user, true)
+  ]);
 } catch (Exception $e) {
   $errorMessage = "Error in Main Execution: " . $e->getMessage();
   $errorContext = [
