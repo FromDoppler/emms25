@@ -203,7 +203,6 @@ class DB
             // Defines the list of fields in the database
             $dbFields = [
                 'phase',
-                'register',
                 'firstname',
                 'phone',
                 'company',
@@ -221,27 +220,35 @@ class DB
             ];
 
             foreach ($dbFields as $field) {
-                // Use the original key, but check if it exists in $subscription
-                if ($field === 'phase' && isset($subscription['form_id'])) {
-                    $updateFields[] = "$field = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription['form_id']);
-                } elseif ($field === 'digital-trends' && isset($subscription['digital_trends'])) {
-                    // Use backticks to escape the column name with hyphens
-                    $updateFields[] = "`$field` = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription['digital_trends']);
-                } elseif (isset($subscription[$field]) || $subscription[$field] === 0) {
-                    $updateFields[] = "$field = ?";
-                    $updateValues[] = $this->connection->real_escape_string($subscription[$field]);
+                // Saltar si el campo no vino en el payload
+                if (!array_key_exists($field, $subscription) && !($field === 'phase' && isset($subscription['form_id']))) {
+                    continue;
                 }
+
+                $value = $field === 'phase'
+                    ? $subscription['form_id']
+                    : $subscription[$field] ?? null;
+
+                if ($value === '' || $value === null) {
+                    continue;
+                }
+
+                if ($field === 'digital-trends') {
+                    $updateFields[] = "`$field` = ?";
+                } else {
+                    $updateFields[] = "$field = ?";
+                }
+
+                $updateValues[] = $this->connection->real_escape_string($value);
             }
 
-            // Update the database only if there are fields to update
             if (!empty($updateFields)) {
                 $updateFields = implode(', ', $updateFields);
                 $updateValues[] = $email;
 
                 $this->query("UPDATE registered SET $updateFields WHERE email=?", $updateValues);
             }
+
         } else {
             $fields = "(`email`, `phase`, `register`, `firstname`, `phone`, `ecommerce`, `digital-trends`, ";
             $fields .= "`source_utm`, `medium_utm`, `campaign_utm`, `content_utm`, `term_utm`, `emms_ref`,";
