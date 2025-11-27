@@ -1,6 +1,27 @@
 <?php
 $videos = [
     [
+        "title" => "Cómo crear una campaña de Marketing en 20 minutos",
+        "img" => "/src/img/conferences25/portada-rampa-publicidad.png",
+        "link" => "https://www.youtube.com/watch?v=UKdtdLdYwWQ",
+        "logo" => "/src/img/conferences25/logos/rampa-publicidad-logo.png",
+        "altLogo" => "Rampa Publicidad Logo"
+    ],
+    [
+        "title" => "El poder del gemelo digital",
+        "img" => "/src/img/conferences25/portada-nay-perozzi.png",
+        "link" => "https://www.youtube.com/watch?v=RLQkiDTaTzk",
+        "logo" => "/src/img/conferences25/logos/nay-perozzi-logo.jpeg",
+        "altLogo" => "Nay Perozzi Logo"
+    ],
+    [
+        "title" => "Cómo vender con Historias de Instagram",
+        "img" => "/src/img/conferences25/portada-marketing-ingenioso.png",
+        "link" => "https://www.youtube.com/watch?v=yBLrq9yyIbw",
+        "logo" => "/src/img/conferences25/logos/marketing-ingenioso-logo.png",
+        "altLogo" => "Marketing Ingenioso Logo"
+    ],
+    [
         "title" => "Inteligencia Artificial aplicada a E-commerce: todo lo que necesitas saber en 2025",
         "img" => "/src/img/conferences25/portada-partnersacademy.png",
         "link" => "https://youtu.be/q7c1NopFjko",
